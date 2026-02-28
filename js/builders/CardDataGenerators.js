@@ -20,7 +20,7 @@ let analyticsData = null;
 export const loadAnalyticsData = async () => {
   try {
     console.log('🔄 Fetching analytics-data.json...');
-    const response = await fetch('/assets/data/analytics-data.json');
+    const response = await fetch('../../assets/data/analytics-data.json');
 
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}: ${response.statusText}`);
@@ -50,7 +50,7 @@ export const loadAnalyticsData = async () => {
     console.error('❌ CRITICAL ERROR: Failed to load analytics-data.json');
     console.error('📍 Error details:', error.message);
     console.error('⚠️ Cards WILL NOT work without JSON data!');
-    console.error('📁 Ensure file exists at: /assets/data/analytics-data.json');
+    console.error('📁 Ensure file exists at: ../../assets/data/analytics-data.json');
     throw error; // Re-throw to prevent app from continuing
   }
 };
