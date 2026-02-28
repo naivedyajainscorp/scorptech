@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact | SCORP</title>
+        <link rel="icon" type="image/png" href="assets/images/scorp-logo-favicon.png">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.11.3/build/css/intlTelInput.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SCORP NAVIGATION 
+     ═══════════════════════════════════════════════════════════════ -->
+<nav class="navbar navbar-expand-xl s-navbar" id="scorpNavbar">
+    
+    <!-- Brand -->
+    <a class="navbar-brand s-navbar-brand" href="index.html">
+      <div class="s-brand-logo">
+        <img src="assets/images/Scorp-Logo.png" alt="Scorptech" width="24" height="24" style="filter: brightness(0) invert(1);">
+      </div>
+      <span class="s-brand-text">SCORP</span>
+    </a>
+
+    <!-- Animated Hamburger Toggle -->
+    <button class="navbar-toggler s-mobile-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="s-hamburger-box">
+        <span class="s-hamburger-inner"></span>
+      </span>
+    </button>
+
+    <!-- Collapsible Content -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto s-nav-links">
+        
+        <!-- Home -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="index.html">
+            <i class="fas fa-home-alt"></i>
+            <span>Home</span>
+          </a>
+        </li>
+
+        <!-- Sapphire -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="sapphire.html">
+            <i class="fas fa-diamond"></i>
+            <span>Sapphire</span>
+          </a>
+        </li>
+
+        <!-- Contact -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="contact.html">
+            <i class="bi bi-telephone-outbound-fill"></i>
+            <span>Contact</span>
+          </a>
+        </li>
+
+        <!-- About -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="about.html">
+            <i class="fas fa-users-line"></i>
+            <span>About</span>
+          </a>
+        </li>
+
+        <!-- Sapphire Smart Dropdown (Internal Pages) -->
+        <!-- <li class="nav-item dropdown s-nav-dropdown-internal">
+          <a class="nav-link s-nav-link dropdown-toggle" 
+             href="#" 
+             role="button" 
+             data-bs-toggle="dropdown" 
+             aria-expanded="false"
+             data-dropdown-id="sapphire-smart">
+            <i class="bi bi-lightbulb-fill"></i>
+            <span>Sapphire Smart</span>
+            Active Indicator Badge
+            <span class="s-active-badge"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end s-internal-dropdown-menu">
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="analytics.html" data-page="analytics.html">
+                <i class="fas fa-chart-line"></i>
+                <span>Smart Analytics</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="intelligence.html" data-page="intelligence.html">
+                <i class="fas fa-brain"></i>
+                <span>Intelligence</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="mobileUSP.html" data-page="mobileUSP.html">
+                <i class="fas fa-mobile-screen"></i>
+                <span>Mobile Friendly</span>
+              </a>
+            </li>
+          </ul>
+        </li> -->
+
+        <!-- Resources Dropdown (Internal Pages) -->
+        <li class="nav-item dropdown s-nav-dropdown-internal">
+          <a class="nav-link s-nav-link dropdown-toggle" 
+             href="#" 
+             role="button" 
+             data-bs-toggle="dropdown" 
+             aria-expanded="false"
+             data-dropdown-id="resources">
+            <i class="bi bi-grid-3x3-gap-fill"></i>
+            <span>Resources</span>
+            <!-- Active Indicator Badge -->
+            <span class="s-active-badge"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end s-internal-dropdown-menu">
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="faq.html" data-page="faq.html">
+                <i class="fas fa-circle-question"></i>
+                <span>FAQ</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="terms_of_use.html" data-page="terms_of_use.html">
+                <i class="fas fa-file-contract"></i>
+                <span>Terms of Use</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="privacy_policy.html" data-page="privacy_policy.html">
+                <i class="fas fa-file-shield"></i>
+                <span>Privacy Policy</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Announcement Icon -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link s-nav-link-icon" href="announcement.html" title="Announcements">
+            <i class="fa-solid fa-bullhorn fa-rotate-by" style="--fa-rotate-angle: 325deg;"></i>
+          </a>
+        </li>
+
+        <!-- Book Demo Button (Green Styled) -->
+<li class="nav-item">
+  <a class="book-demo-button" href="book-demo.html">
+    <i class="bi bi-calendar-check-fill"></i>
+    <span><strong>Book Demo</strong></span>
+  </a>
+</li>
+
+
+        <!-- Go to Sapphire Dropdown (External Links - Blue Styled) -->
+        <li class="nav-item dropdown s-sapphire-dropdown">
+          <button class="btn s-sapphire-trigger dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            <span>go to</span>
+            <div class="s-sapphire-logo">
+              <img src="assets/images/scorp-sapphire-cropped.png" alt="Sapphire" width="32" height="32" style="border-radius: 4px;">
+            </div>
+            <span><strong>Sapphire</strong></span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end s-sapphire-menu">
+            <li>
+              <a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/login" target="_blank">
+                <i class="bi bi-door-open-fill"></i>
+                <span>Log-in</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/register" target="_blank">
+                <i class="bi bi-person-plus-fill"></i>
+                <span>Sign-up</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+</nav>
+
+<!-- Hero Section - Simple Image Background -->
+<section class="s-hero s-hero-compact" style="position: relative; overflow: hidden;">
+  
+  <!-- Background Image - PUT YOUR URL HERE -->
+  <img src="assets/images/contact-hero.png" alt="Contact Hero" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+  
+  <!-- Strong Overlay for Text Visibility -->
+  <div class="s-hero-overlay" style="z-index: 2; background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.65) 100%);"></div>
+  
+  <!-- Content with Enhanced Visibility -->
+  <div class="container" style="position: relative; z-index: 10;">
+    <div class="s-hero-content">
+      <h1 class="s-hero-title" style="color: white; text-shadow: 0 4px 16px rgba(0, 0, 0, 0.9), 0 2px 4px rgba(0, 0, 0, 1);">
+        Get in Touch
+      </h1>
+      <p class="s-hero-description" style="color: white; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8); font-weight: 500;">
+        Experience excellence in enterprise resource planning. Let's craft a solution that's perfectly tailored to your business needs.
+      </p>
+      
+      <div class="s-hero-actions">
+        <a href="book-demo.html" class="s-btn-success s-btn-glare">
+          <i class="fas fa-calendar-days"></i>
+          Book Sapphire Demo
+        </a>
+        <a href="#ContactFormSection" class="s-btn-white s-btn-glare">
+          <i class="fas fa-paper-plane"></i>
+          Send Enquiry
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+        <!-- Contact Form Section -->
+<section class="contact-form-section mt-2" id="ContactFormSection">
+    <div class="container">
+        <div class="row g-4">
+            
+            <!-- ═══════════════════════════════════════════════════════════════
+                LEFT CARD: Company Information (Top on Mobile)
+                ═══════════════════════════════════════════════════════════════ -->
+<div class="col-lg-5 col-md-12 order-1 order-lg-1">
+    <div class="contact-card h-100 d-flex flex-column">
+        
+        <!-- 🎨 Brand Section with Icon Badge -->
+        <div class="text-center mb-4">
+            <div class="d-inline-flex align-items-center justify-content-center p-3 mb-3" style="width: 90px; height: 90px; background: linear-gradient(135deg, var(--s-primary), var(--s-primary-dark)); border-radius: var(--s-radius-xl); box-shadow: var(--s-shadow-lg);">
+                <img src="assets/images/Scorp-Logo.png" alt="SCORP" width="60" height="60" style="filter: brightness(0) invert(1);">
+            </div>
+            <h2 style="font-family: 'Science Gothic', sans-serif; font-size: 2rem; font-weight: 800; font-style: italic; color: var(--s-primary); margin-bottom: 0.5rem;">
+                SCORP
+            </h2>
+            <p class="text-muted mb-2" style="font-size: 0.85rem; line-height: 1.4;">
+                Scorptech Technologies<br>Private Limited
+            </p>
+            <span class="s-label-xs s-label-primary-soft">Enterprise Solutions</span>
+        </div>
+
+        <hr style="margin: 1.5rem 0; opacity: 0.2;">
+
+        <!-- 📞 Contact Information Grid -->
+        <div class="flex-grow-1 d-flex flex-column justify-content-center">
+            <h6 class="fw-bold text-uppercase mb-4 text-center" style="color: var(--s-primary); font-size: 0.75rem; letter-spacing: 1.5px;">
+                Connect With Us
+            </h6>
+            
+            <!-- Phone -->
+            <div class="d-flex align-items-center mb-3 p-3" style="background: linear-gradient(135deg, rgba(22, 163, 74, 0.08), rgba(34, 197, 94, 0.05)); border-radius: var(--s-radius-md); border-left: 3px solid var(--s-success);">
+                <div class="flex-shrink-0 me-3">
+                    <div class="d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background: var(--s-success); border-radius: var(--s-radius-md);">
+                        <i class="fas fa-phone" style="color: white; font-size: 1rem;"></i>
+                    </div>
+                </div>
+                <div class="flex-grow-1">
+                    <small class="d-block text-uppercase" style="font-size: 0.65rem; color: var(--s-gray-500); font-weight: 600; letter-spacing: 0.5px;">Phone</small>
+                    <p class="mb-0 fw-semibold" style="color: var(--s-gray-900); font-size: 0.95rem;">+91-XXXXXXXXXX</p>
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="d-flex align-items-center mb-3 p-3" style="background: linear-gradient(135deg, rgba(0, 102, 204, 0.08), rgba(51, 153, 255, 0.05)); border-radius: var(--s-radius-md); border-left: 3px solid var(--s-primary);">
+                <div class="flex-shrink-0 me-3">
+                    <div class="d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background: var(--s-primary); border-radius: var(--s-radius-md);">
+                        <i class="fas fa-envelope" style="color: white; font-size: 1rem;"></i>
+                    </div>
+                </div>
+                <div class="flex-grow-1">
+                    <small class="d-block text-uppercase" style="font-size: 0.65rem; color: var(--s-gray-500); font-weight: 600; letter-spacing: 0.5px;">Email</small>
+                    <a href="mailto:support@scorptech.in" class="text-decoration-none fw-semibold" style="color: var(--s-primary); font-size: 0.95rem;">
+                        support@scorptech.in
+                    </a>
+                </div>
+            </div>
+
+            <!-- Location -->
+            <div class="d-flex align-items-center mb-3 p-3" style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.08), rgba(167, 139, 250, 0.05)); border-radius: var(--s-radius-md); border-left: 3px solid var(--s-royal);">
+                <div class="flex-shrink-0 me-3">
+                    <div class="d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background: var(--s-royal); border-radius: var(--s-radius-md);">
+                        <i class="fas fa-map-marker-alt" style="color: white; font-size: 1rem;"></i>
+                    </div>
+                </div>
+                <div class="flex-grow-1">
+                    <small class="d-block text-uppercase" style="font-size: 0.65rem; color: var(--s-gray-500); font-weight: 600; letter-spacing: 0.5px;">Location</small>
+                    <p class="mb-0 fw-semibold" style="color: var(--s-gray-900); font-size: 0.95rem;">Jaipur, Rajasthan, India</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ⏱️ Response Badge -->
+        <div class="mt-auto text-center pt-3">
+            <div class="d-inline-flex align-items-center px-4 py-2" style="background: linear-gradient(135deg, rgba(0, 102, 204, 0.1), rgba(51, 153, 255, 0.08)); border-radius: var(--s-radius-full); border: 1.5px solid rgba(0, 102, 204, 0.2);">
+                <i class="fas fa-clock me-2" style="color: var(--s-primary); font-size: 1rem;"></i>
+                <small style="color: var(--s-gray-700); font-weight: 500;">
+                    We respond within <strong style="color: var(--s-primary);">24 hours</strong>
+                </small>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+
+            <!-- ═══════════════════════════════════════════════════════════════
+                RIGHT CARD: Contact Form (Bottom on Mobile)
+                ═══════════════════════════════════════════════════════════════ -->
+<div class="col-lg-7 col-md-12 order-2 order-lg-2">
+    <div class="demo-form-card">
+        <!-- Form Header -->
+        <div class="text-center mb-4">
+            <h3 class="demo-form-title">
+              <div class="s-icon s-icon-primary s-icon-lg">
+                <i class="fas fa-paper-plane"></i>
+              </div>
+              Send us a Message
+            </h3>
+            <p class="form-description">
+                Fill out the form and we'll get back to you within 24 hours.
+            </p>
+        </div>
+
+        <form action="https://script.google.com/macros/s/AKfycbxqpob6B6vuFvhaynsNbR6FMPsDUgLaVrHrJplP5-hPOdQFVMiguauevrgxUtwFBxWN/exec" method="POST" target="hidden_iframe" id="contact-form" novalidate>
+            <input type="hidden" name="formType" value="contact"/>
+            
+            <!-- Name Input -->
+            <div class="form-group">
+                <label for="nameContact" class="form-label">
+                    <i class="fas fa-user-tie"></i>
+                    Full Name
+                </label>
+                <div class="s-valid-wrapper">
+                    <input type="text" class="form-control" id="nameContact" name="nameContact" placeholder="Enter your full name" required>
+                </div>
+                
+                <div id="name-error-contact" class="form-text text-danger d-none">Please enter a valid name.</div>
+            </div>
+
+            <!-- Email Input -->
+            <div class="form-group">
+                <label for="emailContact" class="form-label">
+                    <i class="bi bi-envelope-at-fill"></i>
+                    Email Address
+                </label>
+                <div class="s-valid-wrapper">
+                    <input type="email" class="form-control" id="emailContact" name="emailContact" placeholder="Enter your email" required>
+                </div>
+                
+                <div id="email-error-contact" class="form-text text-danger d-none">Please enter a valid email.</div>
+            </div>
+
+            <!-- Phone Input -->
+            <div class="form-group">
+                <label for="phoneContact" class="form-label">
+                    <i class="fas fa-mobile-screen-button"></i>
+                    Phone Number
+                </label>
+                <input type="tel" class="form-control" id="phoneContact" name="phoneContact" placeholder="Enter contact number" inputmode="numeric" required>
+                
+                <div id="phone-error-contact" class="form-text text-danger d-none">Please enter a valid contact number</div>
+            </div>
+
+            <!-- Message Input -->
+            <div class="form-group">
+                <label for="messageContact" class="form-label">
+                    <i class="fas fa-comment-dots"></i>
+                    Message/Enquiry
+                </label>
+                <div class="s-valid-wrapper">
+                    <textarea class="form-control" id="messageContact" name="messageContact" rows="5" placeholder="Your message here..." required></textarea>
+                </div>
+                
+                <div id="message-error-contact" class="form-text text-danger d-none">Message too short. Please enter at least 10 words.</div>
+            </div>
+            
+            <div class="text-end">
+                <button type="submit" id="submit-contact-form" class="s-btn s-btn-md s-btn-success s-full-width-btn">
+                    <i class="bi bi-send-fill"></i> Send Message
+                </button>
+            </div>
+        </form>
+        <iframe name="hidden_iframe" style="display:none;"></iframe>
+    </div>
+</div>
+
+            
+        </div>
+    </div>
+</section>
+
+        
+        <!-- FAQ Section -->
+        <section class="contact-faq py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="text-center s-text-gradient-primary mb-5">Frequently Asked Questions</h2>
+                        <!-- <div class="accordion" id="contactFAQ">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading1">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                                    How quickly do you respond to inquiries?
+                                    </button>
+                                </h2>
+                                <div id="faq1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#contactFAQ">
+                                    <div class="accordion-body">
+                                        We typically respond to all inquiries within 2-4 hours during business hours and within 24 hours outside business hours.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading2">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                                    Can I schedule a product demonstration?
+                                    </button>
+                                </h2>
+                                <div id="faq2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#contactFAQ">
+                                    <div class="accordion-body">
+                                        Absolutely! You can book a personalized demo by clicking the "Book a Demo" button or selecting "Request Demo" in the inquiry type.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading3">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                                    Do you provide technical support?
+                                    </button>
+                                </h2>
+                                <div id="faq3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#contactFAQ">
+                                    <div class="accordion-body">
+                                        Yes, we provide comprehensive technical support for all our clients. You can reach our support team through this contact form or by phone.
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+<div class="s-accordion">
+  <div class="s-accordion-item">
+    <button class="s-accordion-trigger" type="button">
+      <span class="s-accordion-trigger-text">How quickly do you respond to inquiries?</span>
+      <i class="fas fa-chevron-down s-accordion-icon"></i>
+    </button>
+    <div class="s-accordion-panel">
+      <div class="s-accordion-body">
+        <p>We typically respond to all inquiries within 2-4 hours during business hours and within 24 hours outside business hours.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="s-accordion-item">
+    <button class="s-accordion-trigger" type="button">
+      <span class="s-accordion-trigger-text">Can I schedule a product demonstration?</span>
+      <i class="fas fa-chevron-down s-accordion-icon"></i>
+    </button>
+    <div class="s-accordion-panel">
+      <div class="s-accordion-body">
+        <p>Absolutely! You can book a personalized demo by clicking the "Book a Demo" button or selecting "Request Demo" in the inquiry type.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="s-accordion-item">
+    <button class="s-accordion-trigger" type="button">
+      <span class="s-accordion-trigger-text">Do you provide technical support?</span>
+      <i class="fas fa-chevron-down s-accordion-icon"></i>
+    </button>
+    <div class="s-accordion-panel">
+      <div class="s-accordion-body">
+        <p>Yes, we provide comprehensive technical support for all our clients. You can reach our support team through this contact form or by phone.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    <!-- FOOTER -->
+    <!-- FOOTER -->
+    <footer class="modern-footer mt-5">
+
+        <!-- BRANDING (ALWAYS CENTERED) -->
+        <div class="footer-brand d-flex flex-column align-items-center mb-4">
+            <div class="footer-logo-wrapper justify-content-center">
+                <div class="footer-logo">
+                    <img src="assets/images/Scorp-Logo.png"
+                         alt="Scorptech"
+                         class="footer-brand-logo">
+                </div>
+                <h5 class="footer-brand-name m-0">SCORP</h5>
+            </div>
+            <p class="footer-tagline text-center">
+                In the business of<br> making yours simple
+            </p>
+        </div>
+
+        <!-- 3-COLUMN LAYOUT (Desktop) / STACK (Mobile) -->
+        <div class="row g-4 footer-columns-wrapper">
+            
+            <!-- EXPLORE -->
+            <div class="col-12 col-md-4">
+                <div class="footer-section">
+                    <h6>
+                        Explore <i class="fas fa-chevron-down footer-collapse-icon"></i>
+                    </h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link"><i class="fas fa-home-alt"></i><span>Home</span></a></li>
+                        <li><a href="about.html" class="footer-link"><i class="fas fa-users-line"></i><span>About</span></a></li>
+                        <li><a href="sapphire.html" class="footer-link"><i class="fas fa-diamond"></i><span>Sapphire</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- RESOURCES -->
+            <div class="col-12 col-md-4">
+                <div class="footer-section">
+                    <h6>
+                        Resources <i class="fas fa-chevron-down footer-collapse-icon"></i>
+                    </h6>
+                    <ul class="footer-links">
+                        <li><a href="faq.html" class="footer-link"><i class="fas fa-person-circle-question"></i><span>FAQs</span></a></li>
+                        <li><a href="privacy_policy.html" class="footer-link"><i class="fas fa-file-shield"></i><span>Privacy Policy</span></a></li>
+                        <li><a href="terms_of_use.html" class="footer-link"><i class="fas fa-file-contract"></i><span>Terms of Use</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="col-12 col-md-4">
+                <div class="footer-section">
+                    <h6>
+                        Get in Touch <i class="fas fa-chevron-down footer-collapse-icon"></i>
+                    </h6>
+                    <ul class="footer-links">
+                        <li><a href="tel:+91XXXXXXXXXX" class="footer-link"><i class="fas fa-mobile"></i><span>Phone: +91-XXXXXXXXXX</span></a></li>
+                        <li><a href="mailto:support@scorptech.in" class="footer-link"><i class="fas fa-envelope"></i><span>support@scorptech.in</span></a></li>
+                        <li><a href="contact.html" class="footer-link"><i class="fas fa-phone"></i><span>Contact</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <!-- BOTTOM -->
+        <div class="footer-bottom flex-column align-items-center text-center">
+            <p class="footer-copyright mb-3">
+                © 2025 SCORP - Scorptech Technologies Private Limited. All rights reserved.
+            </p>
+            <div class="footer-social justify-content-center">
+                <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+    </footer>
+
+        
+        <script type="module" src="js/main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.11.3/build/js/intlTelInput.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/pages/contact.js"></script>
+
+        
+        <!-- Modal -->
+        <div class="modal fade" id="successModalContact" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content success-modal-content">
+                    <div class="modal-header success-modal-header">
+                        <div class="success-icon-large">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                    <div class="modal-body success-modal-body">
+                        <h4 class="success-title">Message Sent Successfully!</h4>
+                        <p class="success-message">Thank you for your response. Our team will reach out to you shortly.</p>
+                        <div class="success-details">
+                            <div class="detail-item">
+                                <i class="fas fa-clock me-2"></i>
+                                <span>Response within 24 hours</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-envelope me-2"></i>
+                                <span>Check your email for updates</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer success-modal-footer">
+                        <button type="button" class="s-btn-success" data-bs-dismiss="modal">
+                        <i class="fas fa-thumbs-up me-2"></i>Got It!
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+

@@ -1,0 +1,1959 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Analytics Intelligence | Sapphire</title>
+        <link rel="icon" type="image/png" href="assets/images/scorp-logo-favicon.png">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+<!-- ═══════════════════════════════════════════════════════════════
+     SCORP NAVIGATION 
+     ═══════════════════════════════════════════════════════════════ -->
+<nav class="navbar navbar-expand-xl s-navbar" id="scorpNavbar">
+    
+    <!-- Brand -->
+    <a class="navbar-brand s-navbar-brand" href="index.html">
+      <div class="s-brand-logo">
+        <img src="assets/images/Scorp-Logo.png" alt="Scorptech" width="24" height="24" style="filter: brightness(0) invert(1);">
+      </div>
+      <span class="s-brand-text">SCORP</span>
+    </a>
+
+    <!-- Animated Hamburger Toggle -->
+    <button class="navbar-toggler s-mobile-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="s-hamburger-box">
+        <span class="s-hamburger-inner"></span>
+      </span>
+    </button>
+
+    <!-- Collapsible Content -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto s-nav-links">
+        
+        <!-- Home -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="index.html">
+            <i class="fas fa-home-alt"></i>
+            <span>Home</span>
+          </a>
+        </li>
+
+        <!-- Sapphire -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="sapphire.html">
+            <i class="fas fa-diamond"></i>
+            <span>Sapphire</span>
+          </a>
+        </li>
+
+        <!-- Contact -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="contact.html">
+            <i class="bi bi-telephone-outbound-fill"></i>
+            <span>Contact</span>
+          </a>
+        </li>
+
+        <!-- About -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="about.html">
+            <i class="fas fa-users-line"></i>
+            <span>About</span>
+          </a>
+        </li>
+
+        <!-- Sapphire Smart Dropdown (Internal Pages) -->
+        <!-- <li class="nav-item dropdown s-nav-dropdown-internal">
+          <a class="nav-link s-nav-link dropdown-toggle" 
+             href="#" 
+             role="button" 
+             data-bs-toggle="dropdown" 
+             aria-expanded="false"
+             data-dropdown-id="sapphire-smart">
+            <i class="bi bi-lightbulb-fill"></i>
+            <span>Sapphire Smart</span>
+            Active Indicator Badge
+            <span class="s-active-badge"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end s-internal-dropdown-menu">
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="analytics.html" data-page="analytics.html">
+                <i class="fas fa-chart-line"></i>
+                <span>Smart Analytics</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="intelligence.html" data-page="intelligence.html">
+                <i class="fas fa-brain"></i>
+                <span>Intelligence</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="mobileUSP.html" data-page="mobileUSP.html">
+                <i class="fas fa-mobile-screen"></i>
+                <span>Mobile Friendly</span>
+              </a>
+            </li>
+          </ul>
+        </li> -->
+
+        <!-- Resources Dropdown (Internal Pages) -->
+        <li class="nav-item dropdown s-nav-dropdown-internal">
+          <a class="nav-link s-nav-link dropdown-toggle" 
+             href="#" 
+             role="button" 
+             data-bs-toggle="dropdown" 
+             aria-expanded="false"
+             data-dropdown-id="resources">
+            <i class="bi bi-grid-3x3-gap-fill"></i>
+            <span>Resources</span>
+            <!-- Active Indicator Badge -->
+            <span class="s-active-badge"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end s-internal-dropdown-menu">
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="faq.html" data-page="faq.html">
+                <i class="fas fa-circle-question"></i>
+                <span>FAQ</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="terms_of_use.html" data-page="terms_of_use.html">
+                <i class="fas fa-file-contract"></i>
+                <span>Terms of Use</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="privacy_policy.html" data-page="privacy_policy.html">
+                <i class="fas fa-file-shield"></i>
+                <span>Privacy Policy</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Announcement Icon -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link s-nav-link-icon" href="announcement.html" title="Announcements">
+            <i class="fa-solid fa-bullhorn fa-rotate-by" style="--fa-rotate-angle: 325deg;"></i>
+          </a>
+        </li>
+
+        <!-- Book Demo Button (Green Styled) -->
+<li class="nav-item">
+  <a class="book-demo-button" href="book-demo.html">
+    <i class="bi bi-calendar-check-fill"></i>
+    <span><strong>Book Demo</strong></span>
+  </a>
+</li>
+
+
+        <!-- Go to Sapphire Dropdown (External Links - Blue Styled) -->
+        <li class="nav-item dropdown s-sapphire-dropdown">
+          <button class="btn s-sapphire-trigger dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            <span>go to</span>
+            <div class="s-sapphire-logo">
+              <img src="assets/images/scorp-sapphire-cropped.png" alt="Sapphire" width="32" height="32" style="border-radius: 4px;">
+            </div>
+            <span><strong>Sapphire</strong></span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end s-sapphire-menu">
+            <li>
+              <a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/login" target="_blank">
+                <i class="bi bi-door-open-fill"></i>
+                <span>Log-in</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/register" target="_blank">
+                <i class="bi bi-person-plus-fill"></i>
+                <span>Sign-up</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+</nav>
+        <!-- ============================================================
+            MAIN HERO SECTION - S-HERO SYSTEM
+            ============================================================ -->
+        <section class="s-hero s-hero-network s-hero-analytics">
+            <!-- Canvas for animated background -->
+            <canvas class="s-hero-network-canvas" id="analyticsNetworkCanvas"></canvas>
+            <!-- Overlay for proper content layering -->
+            <div class="s-hero-network-overlay"></div>
+            <!-- Hero Content -->
+            <div class="container">
+                <div class="s-hero-content">
+                    <h1 class="s-hero-title">
+                        <span class="s-hero-title-line">
+                        <i class="bi bi-bar-chart-fill"></i> Analytics
+                        </span>
+                        <span class="s-hero-title-highlight">Intelligence</span>
+                    </h1>
+                    <p class="s-hero-description">
+                        Transform raw data into strategic intelligence—where every number tells a story, 
+                        every pattern predicts opportunity, and every insight drives confident decision-making 
+                        across your enterprise.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- ============================================================
+            ANALYTICS PILLS RAIL (Horizontal scrolling navigation)
+            ============================================================ -->
+        <section class="pill-rail">
+            <div class="rail-gradient-left"></div>
+            <div class="rail-gradient-right"></div>
+            <div class="pill-track" data-infinite-track>
+                <a href="#cost-analysis" class="s-pill s-pill-xxl s-pill-primary">
+                <i class="fas fa-indian-rupee-sign"></i> Cost Analysis
+                </a>
+                <a href="#asset-tracking" class="s-pill s-pill-xxl s-pill-info">
+                <i class="fas fa-boxes"></i> Asset Tracking
+                </a>
+                <a href="#material-intelligence" class="s-pill s-pill-xxl s-pill-purple">
+                <i class="fas fa-flask"></i> Material Intelligence
+                </a>
+                <a href="#request-analytics" class="s-pill s-pill-xxl s-pill-indigo">
+                <i class="fas fa-clipboard-list"></i> Request Analytics
+                </a>
+                <a href="#blend-tracking" class="s-pill s-pill-xxl s-pill-attention">
+                <i class="fas fa-blender"></i> Blend Tracking
+                </a>
+                <a href="#inspection-reporting" class="s-pill s-pill-xxl s-pill-green">
+                <i class="fas fa-clipboard-check"></i> Inspection
+                </a>
+                <a href="#resolving-opex" class="s-pill s-pill-xxl s-pill-warning">
+                <i class="fas fa-tools"></i> OPEX
+                </a>
+                <a href="#vehicle-mileage" class="s-pill s-pill-xxl s-pill-royal">
+                <i class="fas fa-car"></i> Vehicle Mileage
+                </a>
+                <a href="#audit-logs" class="s-pill s-pill-xxl s-pill-info-special">
+                <i class="fas fa-file-alt"></i> Audit Logs
+                </a>
+            </div>
+        </section>
+        <!-- ============================================================
+            MAIN SECTIONS CONTAINER
+            ============================================================ -->
+        <main class="analytics-sections">
+            <!-- ========================================================
+                SECTION 1: COST ANALYSIS
+                ======================================================== -->
+            <section id="cost-analysis" class="analytics-cost-hero">
+                <div class="analytics-section-hero s-bg-gradient-primary" id="analytics-cost-hero">
+                    <div class="s-section-header">
+                        <h2 class="s-section-title">
+                            <i class="fas fa-calculator"></i> Cost Analysis & Asset Lifecycle
+                        </h2>
+                        <p class="s-section-subtitle">
+                            Every rupee spent on your assets is logged, tracked, and turned into intelligence—from the moment of purchase to final disposal.
+                        </p>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <!-- SECTION: Purchase Cost Intelligence -->
+                    <div class="row mb-5">
+                        <!-- Card 1: Capital Allocation Heatmap -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4">
+                                    <div class="col-lg-5">
+                                        <div id="viz-capital-allocation" class="capital-allocation-heatmap-container">
+                                            <!-- Heatmap renders here via JavaScript -->
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="bi bi-grid-3x2-gap-fill"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Capital Allocation Heatmap</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Visualizes capital concentration across asset categories to highlight spending intensity.</li>
+                                            <li>Identifies <strong class="s-text-primary">over-investment patterns</strong> and <strong class="s-text-primary">under-resourced categories</strong> to guide smarter procurement strategies.</li>
+                                            <li>Deep color intensity indicates heavy allocation while lighter regions expose spending gaps.</li>
+                                            <li>Enables rebalancing of acquisition budgets aligned with operational priorities and ROI outcomes.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 2: Price Benchmarking Grid -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4 flex-lg-row-reverse">
+                                    <div class="col-lg-5">
+                                        <!-- Price Benchmarking - Infinite Scroll -->
+                                        <div id="price-benchmarking-scroll" class="viz-placeholder infinite-scroll-container">
+                                            <div class="infinite-track" data-infinite-track>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-balance-scale"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Price Benchmarking Grid</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Compares purchase prices across asset classes to expose <strong class="s-text-primary">overpayment risks</strong>.</li>
+                                            <li>Reveals <strong class="s-text-primary">bulk discount opportunities</strong> through consolidated buying insights.</li>
+                                            <li>Highlights price outliers and vendor inconsistencies to support negotiation strategies.</li>
+                                            <li>Helps standardize procurement decisions based on real market patterns.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 3: Procurement Trend Timeline -->
+<!-- Card 3: Procurement Trend Timeline -->
+<div class="col-12 mb-4">
+    <div class="s-content-card">
+        <div class="row align-items-center g-4">
+            <!-- LEFT: Visualization Container -->
+            <div class="col-lg-5">
+                <div id="viz-procurement-timeline"></div>
+            </div>
+            
+            <!-- RIGHT: Description -->
+            <div class="col-lg-7 position-relative" style="z-index: 3;">
+                <div class="s-card-title d-flex align-items-center gap-3">
+                    <div class="s-icon s-icon-md s-icon-primary">
+                        <i class="fas fa-chart-area"></i>
+                    </div>
+                    <h3 class="s-text-gradient-primary m-0">Procurement Trend Timeline</h3>
+                </div>
+                <ul class="s-standard-list">
+                    <li>Tracks procurement behavior over extended periods to identify <strong class="s-text-primary">seasonal buying trends</strong>.</li>
+                    <li>Reveals <strong class="s-text-primary">end-of-year budget rushes</strong> and shifts in spending velocity.</li>
+                    <li>Distinguishes whether spikes result from higher volume or higher asset cost.</li>
+                    <li>Supports strategic purchasing windows and improved cash-flow planning.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+                        <!-- Card 4: Purchase Ledger -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4 flex-lg-row-reverse">
+                                    <div class="col-lg-5">
+                                        <!-- Purchase Ledger - Infinite Scroll -->
+                                        <div id="purchase-ledger-scroll" class="viz-placeholder infinite-scroll-container">
+                                            <div class="infinite-track" data-infinite-track>
+                                                <div class="scroll-card">Dummy Card</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-receipt"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Purchase Ledger</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Provides complete visibility into procurement transactions with transparent tracking.</li>
+                                            <li>Highlights <strong class="s-text-primary">bulk discount</strong> acquisitions and <strong class="s-text-primary">premium pricing</strong> anomalies.</li>
+                                            <li>Enables audit-ready documentation with granular transaction details.</li>
+                                            <li>Supports vendor performance evaluation and cost-control analysis.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 5: Depreciation Intelligence -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4">
+                                    <div class="col-lg-5">
+                                        <!-- Depreciation Visualization Container -->
+                                        <div id="viz-depreciation"></div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-chart-line"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Depreciation Intelligence</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Calculates asset depreciation under <strong class="s-text-primary">Company Act 2013 (Written Down Value)</strong> and <strong class="s-text-primary">IT Act 1961 (block depreciation)</strong>.</li>
+                                            <li>Maintains automated book value updates without manual intervention.</li>
+                                            <li>Produces <strong class="s-text-primary">instant compliance-ready depreciation schedules</strong>.</li>
+                                            <li>Helps management plan replacement cycles using real remaining asset value.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ========================================================
+                SECTION 2: MAINTENANCE & PROTECTION
+                ======================================================== -->
+            <section id="maintenance-protection" class="analytics-maintenance-hero">
+                <div class="analytics-section-hero s-bg-gradient-info" id="analytics-maintenance-hero">
+                    <div class="s-section-header">
+                        <h2 class="s-section-title">
+                            <i class="fas fa-shield-alt"></i> Maintenance & Protection Costs
+                        </h2>
+                        <p class="s-section-subtitle">
+                            Monitor all protection costs—warranties, insurance, and maintenance—revealing your total asset protection investment and optimization opportunities.
+                        </p>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <!-- SECTION: Asset Protection Costs -->
+                    <div class="row mb-5">
+                        <!-- Card 1: Protection Cost Overview (Viz LEFT, Content RIGHT) - STATIC CHART -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4">
+                                    <div class="col-lg-5">
+                                        <div class="viz-placeholder" id="viz-protection-consolidated">
+                                            <!-- Consolidated Protection Visualization renders here -->
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-shield-alt"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Consolidated Protection Overview</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Aggregates warranties, insurance, and maintenance contracts into a unified protection view.</li>
+                                            <li>Reveals <strong class="s-text-primary">total asset protection investment</strong> across the organization.</li>
+                                            <li>Highlights opportunities to optimize coverage spending while maintaining risk control.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 2: Protection Individual Items (Viz RIGHT, Content LEFT) - INFINITE SCROLL ✅ -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4 flex-lg-row-reverse">
+                                    <div class="col-lg-5">
+                                        <div id="protection-individual-scroll" class="infinite-scroll-container">
+                                            <div class="infinite-track" data-infinite-track>
+                                                <!-- Will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-list"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Protection Individual Items</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Displays cost breakdowns for warranty, insurance, and maintenance per asset.</li>
+                                            <li>Identifies <strong class="s-text-primary">high-cost items</strong> requiring closer coverage evaluation.</li>
+                                            <li>Enables granular renewal decisions and contract renegotiation planning.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 3: Protection Category Grid (Viz LEFT, Content RIGHT) - STATIC CHART -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4">
+                                    <div class="col-lg-5">
+                                        <div id="viz-protection-category" class="viz-container">
+                                            <!-- ProtectionCategoryGrid.js renders here -->
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="bi bi-grid-3x3-gap-fill"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Protection Category Grid</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Compares spending across <strong class="s-text-primary">vehicle, machinery, and tool</strong> categories.</li>
+                                            <li>Reveals asset classes consuming disproportionate protection budgets.</li>
+                                            <li>Supports <strong class="s-text-primary">benchmark spending</strong> analysis for future budgeting.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 4: Protection Type Breakdown (Viz RIGHT, Content LEFT) - STATIC CHART -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4 flex-lg-row-reverse">
+                                    <div class="col-lg-5">
+                                        <div id="viz-protection-type" class="viz-container">
+                                            <!-- ProtectionTypeBreakdown.js renders here -->
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-chart-pie"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Protection Type Breakdown</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Separates warranty, insurance, and maintenance investments for deeper analysis.</li>
+                                            <li>Helps answer <strong class="s-text-primary">critical questions</strong> about coverage imbalance.</li>
+                                            <li>Drives <strong class="s-text-primary">data-driven decisions</strong> around protection strategy optimization.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ========================================================
+                SECTION 3: INSPECTION & REPORTING
+                ======================================================== -->
+            <section id="inspection-reporting" class="analytics-inspection-hero">
+                <div class="analytics-section-hero s-bg-gradient-warning" id="analytics-inspection-hero">
+                    <div class="s-section-header">
+                        <h2 class="s-section-title">
+                            <i class="fas fa-clipboard-check"></i> Inspection & Reporting
+                        </h2>
+                        <p class="s-section-subtitle">
+                            Comprehensive inspection records with automated compliance tracking—maintaining asset health visibility and regulatory audit readiness.
+                        </p>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <!-- SECTION: Inspection & Reporting -->
+                    <!-- Card 1: Realtime Inspection Tracking (Viz LEFT, Content RIGHT) -->
+                    <div class="col-12 mb-4">
+                        <div class="s-content-card">
+                            <div class="row align-items-center g-4">
+                                <div class="col-lg-5">
+                                    <div id="realtime-inspection-scroll" class="infinite-scroll-container">
+                                        <div class="infinite-track" data-infinite-track>
+                                            <!-- Will be populated by JavaScript -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                    <div class="s-card-title d-flex align-items-center gap-3">
+                                        <div class="s-icon s-icon-md s-icon-primary">
+                                            <i class="fas fa-stream"></i>
+                                        </div>
+                                        <h3 class="s-text-gradient-primary m-0">Realtime Inspection Tracking</h3>
+                                    </div>
+                                    <ul class="s-standard-list">
+                                        <li>Displays live inspection activity with <strong class="s-text-primary">real-time updates on scheduled, conducted, and incomplete inspections</strong>.</li>
+                                        <li>Tracks punctuality metrics, condition findings, and upcoming inspection cycles.</li>
+                                        <li>Enables proactive compliance monitoring before operational issues escalate.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2: Inspection Monitoring (Viz RIGHT, Content LEFT) -->
+                    <div class="col-12 mb-4">
+                        <div class="s-content-card">
+                            <div class="row align-items-center g-4 flex-lg-row-reverse">
+                                <div class="col-lg-5">
+                                    <div id="inspection-efficiency-scroll" class="infinite-scroll-container">
+                                        <div class="infinite-track" data-infinite-track>
+                                            <!-- Will be populated by JavaScript -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                    <div class="s-card-title d-flex align-items-center gap-3">
+                                        <div class="s-icon s-icon-md s-icon-primary">
+                                            <i class="fas fa-tasks"></i>
+                                        </div>
+                                        <h3 class="s-text-gradient-primary m-0">Inspection Monitoring</h3>
+                                    </div>
+                                    <ul class="s-standard-list">
+                                        <li>Tracks inspection outcomes across <strong class="s-text-primary">Tools, Toolkits, Machinery, and Vehicles</strong>.</li>
+                                        <li>Monitors damaged, missing, or incomplete findings alongside remediation status.</li>
+                                        <li>Provides deeper operational visibility beyond simple completion metrics.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3: Report Submission Velocity (Viz LEFT, Content RIGHT) -->
+                    <div class="col-12 mb-4">
+                        <div class="s-content-card">
+                            <div class="row align-items-center g-4">
+                                <div class="col-lg-5">
+                                    <div id="report-submissions-scroll" class="infinite-scroll-container">
+                                        <div class="infinite-track" data-infinite-track>
+                                            <!-- Will be populated by JavaScript -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                    <div class="s-card-title d-flex align-items-center gap-3">
+                                        <div class="s-icon s-icon-md s-icon-primary">
+                                            <i class="fas fa-tachometer-alt"></i>
+                                        </div>
+                                        <h3 class="s-text-gradient-primary m-0">Report Submission Velocity</h3>
+                                    </div>
+                                    <ul class="s-standard-list">
+                                        <li>Captures <strong class="s-text-primary">damage report, malfunction notification, and incident submission</strong> trends.</li>
+                                        <li>Displays reporter identity, severity level, and asset impact in real time.</li>
+                                        <li>Highlights chronic problem assets and accountability patterns.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4: Inspection vs Report Correlation (Viz RIGHT, Content LEFT) -->
+                    <div class="col-12 mb-4">
+                        <div class="s-content-card">
+                            <div class="row align-items-center g-4 flex-lg-row-reverse">
+                                <div class="col-lg-5">
+                                    <div id="viz-inspection-correlation" class="viz-container">
+                                        <!-- InspectionCorrelationViz.js will render here -->
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                    <div class="s-card-title d-flex align-items-center gap-3">
+                                        <div class="s-icon s-icon-md s-icon-primary">
+                                            <i class="fas fa-project-diagram"></i>
+                                        </div>
+                                        <h3 class="s-text-gradient-primary m-0">Inspection vs Report Correlation</h3>
+                                    </div>
+                                    <ul class="s-standard-list">
+                                        <li>Analyzes balance between <strong class="s-text-primary">scheduled inspections and spontaneous reports</strong>.</li>
+                                        <li>Reveals whether proactive monitoring prevents failures or reactive reporting dominates.</li>
+                                        <li>Guides inspection schedule refinement for high-risk assets.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ========================================================
+                SECTION 4: OPEX MANAGEMENT
+                ======================================================== -->
+            <section id="resolving-opex" class="analytics-resolving-hero">
+                <div class="analytics-section-hero s-bg-gradient-danger" id="analytics-opex-hero">
+                    <div class="s-section-header">
+                        <h2 class="s-section-title">
+                            <i class="fas fa-tools"></i> OPEX Management
+                        </h2>
+                        <p class="s-section-subtitle">
+                            Every repair tracked from issue to resolution—revealing operational spending patterns, recovery effectiveness, and true asset operational cost.
+                        </p>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <!-- SECTION: OPEX Management -->
+                    <div class="row mb-5">
+                        <!-- Card 1: OPEX Overview (Viz LEFT, Content RIGHT) - STATIC CHART -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4">
+                                    <div class="col-lg-5">
+                                        <div class="viz-placeholder" id="viz-opex-overview">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-money-bill-wave"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">OPEX Overview</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Consolidates labor, parts, and miscellaneous expenses into a unified spending view.</li>
+                                            <li>Identifies <strong class="s-text-primary">overpaying for services</strong> or <strong class="s-text-primary">hemorrhaging money on frequent part replacements</strong>.</li>
+                                            <li>Supports contract optimization and supplier evaluation.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 2: Net Expense After Recoveries (Viz RIGHT, Content LEFT) - STATIC CHART -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4 flex-lg-row-reverse">
+                                    <div class="col-lg-5">
+                                        <div id="viz-opex-net">
+                                            <!-- NetCostRecovery.js will render here -->
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-balance-scale"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Net Expense After Recoveries</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Calculates net operational cost after insurance, warranty, and maintenance recoveries.</li>
+                                            <li>Displays <strong class="s-text-primary">net operational expense</strong> instead of raw spending.</li>
+                                            <li>Highlights assets that continue draining budgets despite coverage claims.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 3: OPEX Trend Timeline (Viz LEFT, Content RIGHT) - STATIC CHART -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4">
+                                    <div class="col-lg-5">
+                                        <div class="viz-placeholder" id="viz-opex-timeline">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-chart-area"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">OPEX Trend Timeline</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Tracks seasonal cost fluctuations and repair-related anomaly months.</li>
+                                            <li>Uses <strong class="s-text-primary">Multi-line visualization</strong> to separate labor, parts, and overhead trends.</li>
+                                            <li>Helps forecast budgets and renegotiate vendor contracts proactively.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 4: OPEX Asset Monitoring (Viz RIGHT, Content LEFT) - INFINITE SCROLL ✅ -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4 flex-lg-row-reverse">
+                                    <div class="col-lg-5">
+                                        <div id="opex-assets-scroll" class="infinite-scroll-container">
+                                            <div class="infinite-track" data-infinite-track>
+                                                <!-- Will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-wrench"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">OPEX Asset Monitoring</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Provides asset-level expense tracking with detailed cost breakdowns.</li>
+                                            <li>Identifies <strong class="s-text-primary">budget-draining assets</strong> that require lifecycle decisions.</li>
+                                            <li>Supports repair-versus-replace strategy evaluation.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 5: Resolution Status Tracking (Viz LEFT, Content RIGHT) - STATIC CHART -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4">
+                                    <div class="col-lg-5">
+                                        <div id="viz-resolution-status" class="infinite-scroll-container">
+                                            <div class="infinite-track" data-infinite-track></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-check-circle"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Resolution Status Tracking</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Tracks issue lifecycle outcomes such as <strong class="s-text-primary">repaired and returned to service</strong>.</li>
+                                            <li>Highlights <strong class="s-text-primary">full replacement</strong> or recovery scenarios.</li>
+                                            <li>Monitors <strong class="s-text-primary">recovered versus permanently damaged</strong> asset status for accountability.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ========================================================
+                SECTION 4: DISPOSAL INTELLIGENCE
+                ======================================================== -->
+            <section id="disposal-intelligence" class="analytics-performance-hero">
+                <div class="analytics-section-hero s-bg-gradient-dark" id="analytics-disposal-hero">
+                    <div class="s-section-header">
+                        <h2 class="s-section-title">
+                            <i class="fas fa-recycle"></i> Disposal & Recovery
+                        </h2>
+                        <p class="s-section-subtitle">
+                            Track asset end-of-life decisions and recovery proceeds—capturing the final chapter and revenue optimization of asset lifecycle.
+                        </p>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <!-- SECTION: Asset Disposal & Resale -->
+                    <div class="row mb-5">
+                        <!-- Card 1: Disposal Method Distribution (Viz LEFT, Content RIGHT) - STATIC CHART -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4">
+                                    <div class="col-lg-5">
+                                        <div id="viz-disposal-methods"></div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-dumpster"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Disposal Method Distribution</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Breaks down asset exit strategies including sold, scrapped, lost, or donated.</li>
+                                            <li>Identifies patterns in <strong class="s-text-primary">premature failures</strong> versus full-lifecycle utility.</li>
+                                            <li>Guidance for procurement on high-durability asset classes.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 2: Disposal Waterfall Analysis (Viz RIGHT, Content LEFT) - STATIC CHART -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4 flex-lg-row-reverse">
+                                    <div class="col-lg-5">
+                                        <div id="viz-disposal-waterfall">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-water"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Disposal Waterfall Analysis</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Visualizes value erosion from purchase price to final salvage value.</li>
+                                            <li>Clarifies <strong class="s-text-primary">sunk costs</strong> versus recovered capital.</li>
+                                            <li>Supports financial planning for asset replacement cycles.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 3: Category Resale Value Retention (Viz LEFT, Content RIGHT) - STATIC CHART -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4">
+                                    <div class="col-lg-5">
+                                        <div id="viz-disposal-category">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-percentage"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Category Resale Value Retention</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Ranks asset categories by their ability to retain value over time.</li>
+                                            <li>Highlights brands and models with superior property retention.</li>
+                                            <li>Informs future purchasing decisions based on <strong class="s-text-primary">total cost of ownership</strong>.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 4: Disposal Timeline (Viz RIGHT, Content LEFT) - INFINITE SCROLL ✅ -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4 flex-lg-row-reverse">
+                                    <div class="col-lg-5">
+                                        <div id="disposal-timeline-scroll" class="infinite-scroll-container">
+                                            <div class="infinite-track" data-infinite-track>
+                                                <!-- Will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-stream"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Disposal Timeline</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Forecasts upcoming asset retirements based on depreciation schedules.</li>
+                                            <li>Prevents operational disruption through proactive replacement planning.</li>
+                                            <li>Smoothes capital expenditure spikes by spreading disposals over time.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ========================================================
+                SECTION 5: MATERIAL INTELLIGENCE
+                ======================================================== -->
+            <section id="material-intelligence" class="analytics-material-hero">
+                <div class="analytics-section-hero s-bg-gradient-pop" id="analytics-material-hero">
+                    <div class="s-section-header">
+                        <h2 class="s-section-title">
+                            <i class="fas fa-flask"></i> Material Intelligence
+                        </h2>
+                        <p class="s-section-subtitle">
+                            Track material procurement, consumption patterns, and cost dynamics—optimizing inventory management and supplier relationships.
+                        </p>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <!-- SECTION: Material Intelligence -->
+                    <div class="row mb-5">
+                        <!-- Card 1: Purchase Cost Tracking (Viz LEFT, Content RIGHT) -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4">
+                                    <div class="col-lg-5">
+                                        <!-- Purchase Tracking - Infinite Scroll -->
+                                        <div id="purchase-tracking-scroll" class="infinite-scroll-container">
+                                            <div class="infinite-track" data-infinite-track>
+                                                <!-- Will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-shopping-cart"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Purchase Cost Tracking</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Logs purchase prices to calculate <strong class="s-text-primary">weighted average cost</strong> per unit.</li>
+                                            <li>Ensures inventory valuation reflects true market variance.</li>
+                                            <li>Prevents budget shocks from outdated price estimates.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 2: Employee Consumption (Viz RIGHT, Content LEFT) -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4 flex-lg-row-reverse">
+                                    <div class="col-lg-5">
+                                        <!-- Employee Consumption - Infinite Scroll -->
+                                        <div id="employee-consumption-scroll" class="infinite-scroll-container">
+                                            <div class="infinite-track" data-infinite-track>
+                                                <!-- Will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-users"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Employee Consumption</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Links material usage to individual employees for accountability.</li>
+                                            <li>Identifies <strong class="s-text-primary">training needs</strong> where consumption exceeds norms.</li>
+                                            <li>Connects consumable costs directly to labor productivity metrics.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 3: Equipment Allocation (Viz LEFT, Content RIGHT) -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4">
+                                    <div class="col-lg-5">
+                                        <!-- Equipment Allocation - Infinite Scroll -->
+                                        <div id="equipment-allocation-scroll" class="infinite-scroll-container">
+                                            <div class="infinite-track" data-infinite-track>
+                                                <!-- Will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-cogs"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Equipment Allocation</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Allocates parts and fluids to specific assets during maintenance.</li>
+                                            <li>Builds <strong class="s-text-primary">total cost of ownership</strong> profiles for every machine.</li>
+                                            <li>Reveals which assets consume disproportionate maintenance materials.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 4: Waste & Damage Accounting (Viz RIGHT, Content LEFT) -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4 flex-lg-row-reverse">
+                                    <div class="col-lg-5">
+                                        <!-- Waste Accounting - Infinite Scroll -->
+                                        <div id="waste-accounting-scroll" class="infinite-scroll-container">
+                                            <div class="infinite-track" data-infinite-track>
+                                                <!-- Will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Waste & Damage Accounting</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Separates productive consumption from operational loss.</li>
+                                            <li>Tracks <strong class="s-text-primary">breakage, spoilage, and theft</strong> as distinct cost centers.</li>
+                                            <li>Highlights areas for process improvement to reduce material bleed.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ========================================================
+                SECTION 6: REQUEST ANALYTICS
+                ======================================================== -->
+            <section id="request-analytics" class="analytics-request-hero">
+                <div class="analytics-section-hero s-bg-gradient-success" id="analytics-request-hero">
+                    <div class="s-section-header">
+                        <h2 class="s-section-title">
+                            <i class="fas fa-clipboard-list"></i> Request Analytics
+                        </h2>
+                        <p class="s-section-subtitle">
+                            Track asset request workflows—from employee requests through approval and allocation—revealing demand trends and fulfillment efficiency.
+                        </p>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <!-- SECTION: Request Analytics -->
+                    <div class="row mb-5">
+                        <!-- Card 1: Demand Frequency (Viz LEFT, Content RIGHT) -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4">
+                                    <div class="col-lg-5">
+                                        <div id="demand-frequency-scroll" class="infinite-scroll-container">
+                                            <div class="infinite-track" data-infinite-track>
+                                                <!-- Will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-chart-bar"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Demand Frequency</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Identifies <strong class="s-text-primary">most-requested and least-requested</strong> assets with timeframe analysis.</li>
+                                            <li>Reveals which equipment drives operational demand and where underutilized inventory wastes capital.</li>
+                                            <li>Enables targeted procurement strategies that match actual usage patterns.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 2: Requester Profiling (Viz RIGHT, Content LEFT) -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4 flex-lg-row-reverse">
+                                    <div class="col-lg-5">
+                                        <div id="requester-profiling-scroll" class="infinite-scroll-container">
+                                            <div class="infinite-track" data-infinite-track>
+                                                <!-- Will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-user-tag"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Requester Profiling</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Logs <strong class="s-text-primary">who requests specific assets most frequently</strong>.</li>
+                                            <li>Exposes individual usage patterns that guide training needs and workload distribution.</li>
+                                            <li>Identifies power users whose demand signals genuine operational requirements.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 3: Return Condition Analysis (Viz LEFT, Content RIGHT) -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4">
+                                    <div class="col-lg-5">
+                                        <div id="return-condition-scroll" class="infinite-scroll-container">
+                                            <div class="infinite-track" data-infinite-track>
+                                                <!-- Will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-undo"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Return Condition Analysis</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Captures <strong class="s-text-primary">damage reports filed during asset returns</strong>.</li>
+                                            <li>Identifies users who consistently return equipment damaged.</li>
+                                            <li>Flags training gaps or equipment durability issues that inflate maintenance expenses.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 4: Floor Time vs Shelf Time (Viz RIGHT, Content LEFT) -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4 flex-lg-row-reverse">
+                                    <div class="col-lg-5">
+                                        <div id="floor-time-scroll" class="infinite-scroll-container">
+                                            <div class="infinite-track" data-infinite-track>
+                                                <!-- Will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-clock"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Floor Time vs Shelf Time</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Calculates <strong class="s-text-primary">how long assets remain issued versus stored</strong>.</li>
+                                            <li>Distinguishes high-utilization equipment earning its keep from idle inventory.</li>
+                                            <li>Optimizes purchase decisions by revealing which assets justify ownership.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 5: Rejection Pattern Tracking (Viz LEFT, Content RIGHT) -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4">
+                                    <div class="col-lg-5">
+                                        <div id="rejection-patterns-scroll" class="infinite-scroll-container">
+                                            <div class="infinite-track" data-infinite-track>
+                                                <!-- Will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-ban"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Rejection Pattern Tracking</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Monitors <strong class="s-text-primary">most-rejected requests</strong> to surface resource bottlenecks.</li>
+                                            <li>Identifies inappropriate requests or policy friction points that slow operations.</li>
+                                            <li>Enables workflow refinements that accelerate legitimate requests.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ========================================================
+                SECTION 7: MATERIAL REQUEST ANALYTICS
+                ======================================================== -->
+            <section id="material-request" class="analytics-material-request-hero">
+                <div class="analytics-section-hero s-bg-gradient-info" id="analytics-material-request-hero">
+                    <div class="s-section-header">
+                        <h2 class="s-section-title">
+                            <i class="fas fa-dolly"></i> Material Request Analytics
+                        </h2>
+                        <p class="s-section-subtitle">
+                            Volumetric tracking and consumption analysis revealing material usage patterns, waste reduction opportunities, and optimal inventory positioning strategies.
+                        </p>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <!-- SECTION: Material Request Management -->
+                    <div class="row mb-5">
+                        <!-- Card 1: Volumetric Issue Tracking (Viz LEFT, Content RIGHT) -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4">
+                                    <div class="col-lg-5">
+                                        <div id="volumetric-tracking-scroll" class="infinite-scroll-container">
+                                            <div class="infinite-track" data-infinite-track>
+                                                <!-- Will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-weight"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Volumetric Issue Tracking</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Logs material quantities dispensed per request.</li>
+                                            <li>Calculates <strong class="s-text-primary">consumption velocity</strong> that drives reorder points and inventory levels.</li>
+                                            <li>Ensures stockrooms maintain optimal supply without overstocking.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 2: Complete Consumption Analysis (Viz RIGHT, Content LEFT) -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4 flex-lg-row-reverse">
+                                    <div class="col-lg-5">
+                                        <div id="consumption-analysis-scroll" class="infinite-scroll-container">
+                                            <div class="infinite-track" data-infinite-track>
+                                                <!-- Will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-check-double"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Complete Consumption Analysis</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Distinguishes fully-consumed materials from partial usage returns.</li>
+                                            <li>Reveals whether <strong class="s-text-primary">issue quantities match actual needs</strong>.</li>
+                                            <li>Enables portion optimization that cuts material costs.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 3: Return Condition Assessment (Viz LEFT, Content RIGHT) -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4">
+                                    <div class="col-lg-5">
+                                        <div id="return-assessment-scroll" class="infinite-scroll-container">
+                                            <div class="infinite-track" data-infinite-track>
+                                                <!-- Will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-clipboard-check"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Return Condition Assessment</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Compares issued material state against returned condition.</li>
+                                            <li>Flags <strong class="s-text-primary">improper storage, mishandling, or specification mismatches</strong>.</li>
+                                            <li>Identifies whether materials degrade during use or return unused.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 4: Requester Demand Profiling (Viz RIGHT, Content LEFT) -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4 flex-lg-row-reverse">
+                                    <div class="col-lg-5">
+                                        <div id="requester-demand-scroll" class="infinite-scroll-container">
+                                            <div class="infinite-track" data-infinite-track>
+                                                <!-- Will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-user-chart"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Requester Demand Profiling</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Tracks who requests materials most frequently.</li>
+                                            <li>Exposes <strong class="s-text-primary">consumption patterns by individual, team, or department</strong>.</li>
+                                            <li>Reveals training effectiveness and potential waste or theft patterns.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 5: Peak Demand Timing (Viz LEFT, Content RIGHT) -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4">
+                                    <div class="col-lg-5">
+                                        <div id="peak-demand-scroll" class="infinite-scroll-container">
+                                            <div class="infinite-track" data-infinite-track>
+                                                <!-- Will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-business-time"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Peak Demand Timing</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Identifies when materials are most frequently requested.</li>
+                                            <li>Enables <strong class="s-text-primary">strategic inventory positioning and staffing optimization</strong>.</li>
+                                            <li>Ensures critical supplies are accessible during high-demand periods.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ========================================================
+                SECTION 8: BLEND CONSUMPTION
+                ======================================================== -->
+            <section id="blend-tracking" class="analytics-blend-hero">
+                <div class="analytics-section-hero s-bg-gradient-success" id="analytics-blend-hero">
+                    <div class="s-section-header">
+                        <h2 class="s-section-title">
+                            <i class="fas fa-flask-vial"></i> Blend Consumption Tracking
+                        </h2>
+                        <p class="s-section-subtitle">
+                            Specialized tracking for blended materials without return data—optimizing production planning, batch sizing, and waste reduction through consumption pattern analysis.
+                        </p>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <!-- SECTION: Blend Tracking & Analytics -->
+                    <div class="row mb-5">
+                        <!-- Card 1: Issue Frequency Analysis (Viz LEFT, Content RIGHT) -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4">
+                                    <div class="col-lg-5">
+                                        <div id="issue-frequency-scroll" class="infinite-scroll-container">
+                                            <div class="infinite-track" data-infinite-track>
+                                                <!-- Will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-calendar-alt"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Issue Frequency Analysis</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Tracks blend requisitions without return data.</li>
+                                            <li>Measures <strong class="s-text-primary">consumption rates for production planning</strong>.</li>
+                                            <li>Ensures blended materials are prepared in quantities matching operational requirements.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 2: Requester Consumption Patterns (Viz RIGHT, Content LEFT) -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4 flex-lg-row-reverse">
+                                    <div class="col-lg-5">
+                                        <div id="requester-consumption-scroll" class="infinite-scroll-container">
+                                            <div class="infinite-track" data-infinite-track>
+                                                <!-- Will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-user-cog"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Requester Consumption Patterns</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Identifies who requests blends most often.</li>
+                                            <li>Reveals which <strong class="s-text-primary">operations, teams, or processes drive blend usage</strong>.</li>
+                                            <li>Signals where consumption aligns with output expectations or inefficiencies.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 3: Timeframe Demand Intelligence (Viz LEFT, Content RIGHT) -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4">
+                                    <div class="col-lg-5">
+                                        <div id="timeframe-demand-scroll" class="infinite-scroll-container">
+                                            <div class="infinite-track" data-infinite-track>
+                                                <!-- Will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-hourglass-half"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Timeframe Demand Intelligence</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Maps when blends are most frequently issued.</li>
+                                            <li>Optimizes <strong class="s-text-primary">preparation schedules and batch sizing</strong>.</li>
+                                            <li>Minimizes waste from expired or unused blends.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 4: Volume Optimization Tracking (Viz RIGHT, Content LEFT) -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4 flex-lg-row-reverse">
+                                    <div class="col-lg-5">
+                                        <div id="volume-optimization-scroll" class="infinite-scroll-container">
+                                            <div class="infinite-track" data-infinite-track>
+                                                <!-- Will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-flask"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Volume Optimization Tracking</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Analyzes issued blend quantities to determine standard portions.</li>
+                                            <li>Determines if <strong class="s-text-primary">portions align with actual consumption</strong>.</li>
+                                            <li>Highlights customization opportunities to reduce waste.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========================================================
+                SECTION 10: VEHICLE MILEAGE & REFUELING
+                ======================================================== -->
+            <section id="vehicle-mileage" class="analytics-resolving-hero">
+                <div class="analytics-section-hero s-bg-gradient-royal" id="analytics-vehicle-hero">
+                    <div class="s-section-header">
+                        <h2 class="s-section-title">
+                            <i class="fas fa-car-side"></i> Vehicle Mileage & Refueling
+                        </h2>
+                        <p class="s-section-subtitle">
+                            Track fuel consumption and mileage efficiency—optimizing logistics costs and identifying anomalies in fleet operations.
+                        </p>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <!-- SECTION: Vehicle Mileage & Fuel Management -->
+                    <div class="row mb-5">
+                        <!-- Card 1: Vehicle Mileage Tracking (Viz LEFT, Content RIGHT) -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4">
+                                    <div class="col-lg-5">
+                                        <div id="vehicle-mileage-scroll" class="infinite-scroll-container">
+                                            <div class="infinite-track" data-infinite-track>
+                                                <!-- Will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-tachometer-alt"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Vehicle Mileage Tracking</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Tracks every <strong class="s-text-primary">vehicle assignment and mileage update</strong>.</li>
+                                            <li>Reveals driver accountability and vehicle utilization patterns.</li>
+                                            <li>Identifies unauthorized usage and mileage discrepancies.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 2: Refueling Activity Log (Viz RIGHT, Content LEFT) -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4 flex-lg-row-reverse">
+                                    <div class="col-lg-5">
+                                        <div id="refueling-activity-scroll" class="infinite-scroll-container">
+                                            <div class="infinite-track" data-infinite-track>
+                                                <!-- Will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-gas-pump"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Refueling Activity Log</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Monitors all <strong class="s-text-primary">fuel and charging events</strong>.</li>
+                                            <li>Tracks costs for petrol, diesel, and EV charging sessions.</li>
+                                            <li>Accepts grid entries for internal charging visibility.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 3: Fuel Economy Analysis (Viz LEFT, Content RIGHT) -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4">
+                                    <div class="col-lg-5">
+                                        <div id="viz-fuel-economy" class="viz-container" style="min-height: 350px;">
+                                            <!-- FuelEconomy.js renders here -->
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-chart-line"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Fuel Economy Analysis</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Analyzes <strong class="s-text-primary">fuel economy and energy efficiency</strong>.</li>
+                                            <li>Compares conventional vehicle efficiency against electric assets.</li>
+                                            <li>Validates economic benefits of electrification investments.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 4: Economy Performance Feed (Viz RIGHT, Content LEFT) -->
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <div class="row align-items-center g-4 flex-lg-row-reverse">
+                                    <div class="col-lg-5">
+                                        <div id="fuel-economy-scroll" class="infinite-scroll-container">
+                                            <div class="infinite-track" data-infinite-track>
+                                                <!-- Will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 position-relative" style="z-index: 3;">
+                                        <div class="s-card-title d-flex align-items-center gap-3">
+                                            <div class="s-icon s-icon-md s-icon-primary">
+                                                <i class="fas fa-microchip"></i>
+                                            </div>
+                                            <h3 class="s-text-gradient-primary m-0">Economy Performance Feed</h3>
+                                        </div>
+                                        <ul class="s-standard-list">
+                                            <li>Provides <strong class="s-text-primary">real-time efficiency audits</strong> for every active vehicle.</li>
+                                            <li>Highlights outliers in fuel consumption and driver behavior.</li>
+                                            <li>Automatic detection of inefficient assets needing maintenance.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ========================================================
+                SECTION 11: AUDIT LOGS & REGISTERS
+                ======================================================== -->
+            <section id="audit-logs" class="analytics-logs-hero">
+                <div class="analytics-section-hero s-bg-gradient-attention" id="analytics-audit-hero">
+                    <div class="s-section-header">
+                        <h2 class="s-section-title">
+                            <i class="fas fa-shield-check"></i> Audit Logs & Compliance
+                        </h2>
+                        <p class="s-section-subtitle">
+                            Complete audit trails of all transactions—maintaining regulatory compliance and enabling forensic analysis of asset portfolio history.
+                        </p>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <!-- Audit Logs Introduction -->
+                    <div class="row mb-5">
+                        <div class="col-12">
+                            <h2 class="section-heading mb-4 text-center">
+                                <i class="s-icon fas fa-shield-check s-gradient-text"></i> Operational Transparency & Compliance
+                            </h2>
+                            <p class="text-center">
+                                Auditors demand proof. Regulators require documentation. Disputes need evidence. Sapphire 
+                                delivers all three instantly—<strong>no scrambling for paperwork, no reconstructing timelines 
+                                from memory, no gaps in documentation chains</strong>. When audits arrive, compliance 
+                                verification takes clicks, not weeks, because every action was captured from day one in 
+                                tamper-proof, chronologically sequenced records that survive scrutiny.
+                            </p>
+                            <p class="text-center">
+                                Operational transparency isn't optional—<strong>it's operational insurance</strong>. When 
+                                every action leaves a permanent trace, accountability becomes automatic, compliance becomes 
+                                effortless, and strategic decisions rest on documented truth rather than institutional memory.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Dual Intelligence Layers -->
+                    <div class="row mb-5">
+                        <div class="col-lg-6 col-12 mb-4">
+                            <div class="s-content-card h-100 d-flex flex-column">
+                                <div class="s-content-card-header gap-3 mb-3">
+                                    <div class="s-card-title d-flex align-items-center gap-3">
+                                        <div class="s-icon s-icon-md s-icon-primary">
+                                            <i class="fas fa-archive"></i>
+                                        </div>
+                                        <h3 class="s-text-gradient-primary m-0">Universal Activity Log</h3>
+                                    </div>
+                                </div>
+                                <div class="s-content-card-body flex-grow-1">
+                                    <ul class="s-standard-list">
+                                        <li>Chronological record of every system action.</li>
+                                        <li>Immutable audit trail preventing data tampering.</li>
+                                        <li>Supports <strong class="s-text-primary">forensic analysis</strong> of operational history.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12 mb-4">
+                            <div class="s-content-card h-100 d-flex flex-column">
+                                <div class="s-content-card-header gap-3 mb-3">
+                                    <div class="s-card-title d-flex align-items-center gap-3">
+                                        <div class="s-icon s-icon-md s-icon-primary">
+                                            <i class="bi bi-list-columns"></i>
+                                        </div>
+                                        <h3 class="s-text-gradient-primary m-0">Item-Specific Lifecycle Logs</h3>
+                                    </div>
+                                </div>
+                                <div class="s-content-card-body flex-grow-1">
+                                    <ul class="s-standard-list">
+                                        <li>Consolidates history for individual assets.</li>
+                                        <li>Tracks custody changes, maintenance, and location.</li>
+                                        <li>Provides complete <strong class="s-text-primary">provenance</strong> for warranty claims.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Workflow-Specific Registers -->
+                    <div class="row mb-5">
+                        <div class="col-12 mb-4">
+                            <div class="s-content-card">
+                                <h2 class="section-heading text-center mb-4">
+                                    <i class="s-icon fas fa-book"></i> Workflow-Specific Registers
+                                </h2>
+                                <p class="text-center">
+                                    Workflow-tailored registers mimic physical record books with digital precision—maintaining 
+                                    <strong>dedicated archives for location transfers, damage reports, and timestamped findings</strong> 
+                                    that satisfy regulatory requirements while enabling cross-workflow pattern analysis impossible 
+                                    with paper-based systems.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-12 mb-4">
+                            <div class="s-content-card h-100 d-flex flex-column">
+                                <div class="s-content-card-header gap-3 mb-3">
+                                    <div class="s-card-title d-flex align-items-center gap-3">
+                                        <div class="s-icon s-icon-md s-icon-primary">
+                                            <i class="fas fa-exchange-alt"></i>
+                                        </div>
+                                        <h3 class="s-card-title s-text-gradient-primary m-0">Request & Allotment Register</h3>
+                                    </div>
+                                </div>
+                                <div class="s-content-card-body flex-grow-1">
+                                    <ul class="s-standard-list">
+                                        <li>Centralized log of all asset assignments.</li>
+                                        <li>Tracks approval chains and time-stamped handovers.</li>
+                                        <li>Resolves disputes over <strong class="s-text-primary">asset custody</strong>.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-12 mb-4">
+                            <div class="s-content-card h-100 d-flex flex-column">
+                                <div class="s-content-card-header gap-3 mb-3">
+                                    <div class="s-card-title d-flex align-items-center gap-3">
+                                        <div class="s-icon s-icon-md s-icon-primary">
+                                            <i class="fas fa-flag"></i>
+                                        </div>
+                                        <h3 class="s-card-title s-text-gradient-primary m-0">Report Archive</h3>
+                                    </div>
+                                </div>
+                                <div class="s-content-card-body flex-grow-1">
+                                    <ul class="s-standard-list">
+                                        <li>Permanent record of all submitted incident reports.</li>
+                                        <li>Tracks response times and resolution outcomes.</li>
+                                        <li>Identifies recurring failure modes.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-12 mb-4">
+                            <div class="s-content-card h-100 d-flex flex-column">
+                                <div class="s-content-card-header gap-3 mb-3">
+                                    <div class="s-card-title d-flex align-items-center gap-3">
+                                        <div class="s-icon s-icon-md s-icon-primary">
+                                            <i class="fas fa-search"></i>
+                                        </div>
+                                        <h3 class="s-card-title s-text-gradient-primary m-0">Inspection Register</h3>
+                                    </div>
+                                </div>
+                                <div class="s-content-card-body flex-grow-1">
+                                    <ul class="s-standard-list">
+                                        <li>Logs completed safety checks and compliance audits.</li>
+                                        <li>Verifies <strong class="s-text-primary">regulatory adherence</strong> for safety officers.</li>
+                                        <li>Highlights missed or overdue inspections.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-12 mb-4">
+                            <div class="s-content-card h-100 d-flex flex-column">
+                                <div class="s-content-card-header gap-3 mb-3">
+                                    <div class="s-card-title d-flex align-items-center gap-3">
+                                        <div class="s-icon s-icon-md s-icon-primary">
+                                            <i class="fas fa-wrench"></i>
+                                        </div>
+                                        <h3 class="s-card-title s-text-gradient-primary m-0">Resolution Chronicle</h3>
+                                    </div>
+                                </div>
+                                <div class="s-content-card-body flex-grow-1">
+                                    <ul class="s-standard-list">
+                                        <li>Tracks maintenance tickets from open to close.</li>
+                                        <li>Documents parts used and labor hours expended.</li>
+                                        <li>Calculates total cost of resolution per incident.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-12 mb-4">
+                            <div class="s-content-card h-100 d-flex flex-column">
+                                <div class="s-content-card-header gap-3 mb-3">
+                                    <div class="s-card-title d-flex align-items-center gap-3">
+                                        <div class="s-icon s-icon-md s-icon-primary">
+                                            <i class="fas fa-boxes"></i>
+                                        </div>
+                                        <h3 class="s-card-title s-text-gradient-primary m-0">Consumption Archives</h3>
+                                    </div>
+                                </div>
+                                <div class="s-content-card-body flex-grow-1">
+                                    <ul class="s-standard-list">
+                                        <li>Historical record of all material usage.</li>
+                                        <li>Links consumption to specific work orders and users.</li>
+                                        <li>Enables <strong class="s-text-primary">predictive budgeting</strong> based on past trends.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-12 mb-4">
+                            <div class="s-content-card h-100 d-flex flex-column">
+                                <div class="s-content-card-header gap-3 mb-3">
+                                    <div class="s-card-title d-flex align-items-center gap-3">
+                                        <div class="s-icon s-icon-md s-icon-primary">
+                                            <i class="fas fa-archive"></i>
+                                        </div>
+                                        <h3 class="s-card-title s-text-gradient-primary m-0">Transfer & Relocation Log</h3>
+                                    </div>
+                                </div>
+                                <div class="s-content-card-body flex-grow-1">
+                                    <ul class="s-standard-list">
+                                        <li>Tracks physical movement of assets between locations and custodians.</li>
+                                        <li>Maintains <strong class="s-text-primary">chain of custody</strong> for sensitive equipment.</li>
+                                        <li>Supports geographical inventory auditing and loss prevention.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Infinite Filtering Intelligence -->
+                    <div class="row mb-5">
+                        <div class="col-12">
+                            <div class="s-content-card">
+                                <h2 class="section-heading mb-4 text-center">
+                                    <i class="s-icon fas fa-filter s-gradient-text"></i> Infinite Filtering Intelligence
+                                </h2>
+                                <p class="text-center">
+                                    <strong>Infinite filtering intelligence</strong> enables slicing register data across any 
+                                    dimension—<strong>by asset, user, department, timeframe, workflow, or custom criteria</strong>—transforming 
+                                    historical records into strategic intelligence that drives future operational planning, budget 
+                                    forecasting, and process optimization based on documented reality rather than assumptions.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ========================================================
+                EXPIRY NOTE SECTION
+                ======================================================== -->
+            <section class="expiry-note">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <div class="tagline-power-card">
+                                <div class="tagline-animation-wrapper">
+                                    <h2>
+                                        <i class="fas fa-chart-network"></i>
+                                        Intelligence Without Limits
+                                    </h2>
+                                    <p>
+                                        Every data point, every pattern, every insight—captured, analyzed, and delivered 
+                                        in real-time. This is analytics that doesn't just report the past—it predicts the 
+                                        future, optimizes the present, and empowers confident decision-making at every level 
+                                        of your enterprise.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- ============================================================
+            FOOTER (SCORP STANDARD)
+            ============================================================ -->
+    <!-- FOOTER -->
+    <footer class="modern-footer mt-5">
+
+        <!-- BRANDING (ALWAYS CENTERED) -->
+        <div class="footer-brand d-flex flex-column align-items-center mb-4">
+            <div class="footer-logo-wrapper justify-content-center">
+                <div class="footer-logo">
+                    <img src="assets/images/Scorp-Logo.png"
+                         alt="Scorptech"
+                         class="footer-brand-logo">
+                </div>
+                <h5 class="footer-brand-name m-0">SCORP</h5>
+            </div>
+            <p class="footer-tagline text-center">
+                In the business of<br> making yours simple
+            </p>
+        </div>
+
+        <!-- 3-COLUMN LAYOUT (Desktop) / STACK (Mobile) -->
+        <div class="row g-4 footer-columns-wrapper">
+            
+            <!-- EXPLORE -->
+            <div class="col-12 col-md-4">
+                <div class="footer-section">
+                    <h6>
+                        Explore <i class="fas fa-chevron-down footer-collapse-icon"></i>
+                    </h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link"><i class="fas fa-home-alt"></i><span>Home</span></a></li>
+                        <li><a href="about.html" class="footer-link"><i class="fas fa-users-line"></i><span>About</span></a></li>
+                        <li><a href="sapphire.html" class="footer-link"><i class="fas fa-diamond"></i><span>Sapphire</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- RESOURCES -->
+            <div class="col-12 col-md-4">
+                <div class="footer-section">
+                    <h6>
+                        Resources <i class="fas fa-chevron-down footer-collapse-icon"></i>
+                    </h6>
+                    <ul class="footer-links">
+                        <li><a href="faq.html" class="footer-link"><i class="fas fa-person-circle-question"></i><span>FAQs</span></a></li>
+                        <li><a href="privacy_policy.html" class="footer-link"><i class="fas fa-file-shield"></i><span>Privacy Policy</span></a></li>
+                        <li><a href="terms_of_use.html" class="footer-link"><i class="fas fa-file-contract"></i><span>Terms of Use</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="col-12 col-md-4">
+                <div class="footer-section">
+                    <h6>
+                        Get in Touch <i class="fas fa-chevron-down footer-collapse-icon"></i>
+                    </h6>
+                    <ul class="footer-links">
+                        <li><a href="tel:+91XXXXXXXXXX" class="footer-link"><i class="fas fa-mobile"></i><span>Phone: +91-XXXXXXXXXX</span></a></li>
+                        <li><a href="mailto:support@scorptech.in" class="footer-link"><i class="fas fa-envelope"></i><span>support@scorptech.in</span></a></li>
+                        <li><a href="contact.html" class="footer-link"><i class="fas fa-phone"></i><span>Contact</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <!-- BOTTOM -->
+        <div class="footer-bottom flex-column align-items-center text-center">
+            <p class="footer-copyright mb-3">
+                © 2025 SCORP - Scorptech Technologies Private Limited. All rights reserved.
+            </p>
+            <div class="footer-social justify-content-center">
+                <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+    </footer>
+
+        <!-- ============================================================
+            BOOTSTRAP JS (Required for navbar collapse)
+            ============================================================ -->
+            <script type="module" src="js/main.js"></script>
+            <script type="module" src="js/pages/analytics.js"></script>        
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- ============================================================
+            JAVASCRIPT SECTION (Removed - will be added back later)
+            ============================================================ -->
+    </body>
+</html>
+
+

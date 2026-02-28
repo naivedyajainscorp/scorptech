@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SCORP — building human-centered operational solutions for shop-floor teams. Simplicity that works on the floor.">
+    <title>About | SCORP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ═══════════════════════════════════════════════════════════════════
+           ABOUT PAGE SPECIFIC STYLES
+           ═══════════════════════════════════════════════════════════════════ */
+
+        /* Hero Section */
+        .about-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, #f8f9fa 0%, var(--s-white) 100%);
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150%;
+            height: 150%;
+            background-image: url('assets/images/Scorp-Logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.015;
+            pointer-events: none;
+        }
+
+        .about-hero-title {
+            font-size: clamp(3.5rem, 8vw, 7rem);
+            font-weight: 900;
+            line-height: 1.1;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin: 0;
+            padding: 0 20px;
+        }
+
+        /* Statement Sections */
+        .statement-section {
+            padding: 100px 0;
+        }
+
+        .statement-mission {
+            background: var(--s-white);
+        }
+
+        .statement-vision {
+            background: var(--s-gradient-primary);
+            color: white;
+        }
+
+        .statement-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            opacity: 0.8;
+        }
+
+        .statement-text {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-weight: 600;
+            line-height: 1.6;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Human-Centered Card */
+        .human-design-card {
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.03) 0%, rgba(124, 58, 237, 0.03) 100%);
+            border: 2px solid var(--s-gray-200);
+            border-radius: 32px;
+            padding: 80px 60px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .human-design-card:hover {
+            border-color: var(--s-primary);
+            box-shadow: 0 30px 80px rgba(0, 102, 204, 0.12);
+            transform: translateY(-8px);
+        }
+
+        .human-design-icon {
+            width: 100px;
+            height: 100px;
+            background: var(--s-gradient-primary);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 32px;
+            font-size: 3rem;
+            color: white;
+            box-shadow: 0 15px 40px rgba(0, 102, 204, 0.3);
+        }
+
+        /* Recognition Banners */
+        .recognition-banner {
+            background: var(--s-white);
+            border: 2px solid var(--s-gray-200);
+            border-radius: 24px;
+            padding: 40px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .recognition-banner:hover {
+            border-color: var(--s-primary);
+            box-shadow: 0 15px 40px rgba(0, 102, 204, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .recognition-banner:last-child {
+            margin-bottom: 0;
+        }
+
+        .recognition-logo img {
+            max-height: 80px;
+            filter: grayscale(30%);
+            transition: all 0.3s ease;
+        }
+
+        .recognition-banner:hover .recognition-logo img {
+            filter: grayscale(0%);
+        }
+
+        /* Journey Jenga Cards */
+        .jenga-card {
+            background: var(--s-white);
+            border: 2px solid var(--s-gray-200);
+            border-radius: 24px;
+            padding: 60px;
+            margin-bottom: 40px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .jenga-card:nth-child(1) {
+            transform: translateX(-40px);
+        }
+
+        .jenga-card:nth-child(2) {
+            transform: translateX(40px);
+        }
+
+        .jenga-card:nth-child(3) {
+            transform: translateX(-20px);
+            margin-bottom: 0;
+        }
+
+        .jenga-card:hover {
+            border-color: var(--s-primary);
+            box-shadow: 0 20px 60px rgba(0, 102, 204, 0.15);
+            transform: translateX(0) translateY(-8px) !important;
+        }
+
+        .jenga-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--s-gradient-primary);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 32px;
+            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.3);
+        }
+
+        .jenga-card:nth-child(2) .jenga-icon {
+            background: var(--s-gradient-royal);
+        }
+
+        .jenga-card:nth-child(3) .jenga-icon {
+            background: var(--s-gradient-success);
+        }
+
+        /* Philosophy Cards */
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        .philosophy-card {
+            background: var(--s-white);
+            border: 2px solid var(--s-gray-200);
+            border-radius: 24px;
+            padding: 48px;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.4s ease;
+        }
+
+        .philosophy-card:hover {
+            border-color: var(--s-primary);
+            box-shadow: 0 20px 60px rgba(0, 102, 204, 0.12);
+            transform: translateY(-8px);
+        }
+
+        .philosophy-emoji {
+            font-size: 3.5rem;
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        /* Vision Quote */
+        .vision-quote-section {
+            padding: 120px 0;
+            background: linear-gradient(180deg, #f8f9fa 0%, var(--s-white) 100%);
+        }
+
+        .vision-quote-box {
+            position: relative;
+        }
+
+        .vision-quote-box::before {
+            content: '"';
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 10rem;
+            color: var(--s-primary);
+            opacity: 0.05;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .vision-quote-text {
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            font-weight: 600;
+            line-height: 1.6;
+            color: var(--s-gray-800);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* CTA Section */
+        .cta-about {
+            padding: 100px 0;
+            background: var(--s-gradient-primary);
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .philosophy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .philosophy-card {
+                min-height: 350px;
+            }
+
+            .jenga-card:nth-child(1),
+            .jenga-card:nth-child(2),
+            .jenga-card:nth-child(3) {
+                transform: translateX(0);
+            }
+
+            .recognition-banner {
+                flex-direction: column;
+                text-align: center;
+                gap: 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero-title {
+                font-size: 2.5rem;
+            }
+
+            .statement-section {
+                padding: 60px 0;
+            }
+
+            .human-design-card {
+                padding: 40px 30px;
+            }
+
+            .jenga-card {
+                padding: 40px 30px;
+            }
+
+            .philosophy-card {
+                padding: 32px;
+                min-height: 320px;
+            }
+
+            .recognition-banner {
+                padding: 30px 24px;
+            }
+        }
+
+        /* Fade animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+<!-- ═══════════════════════════════════════════════════════════════
+     SCORP NAVIGATION 
+     ═══════════════════════════════════════════════════════════════ -->
+<nav class="navbar navbar-expand-xl s-navbar" id="scorpNavbar">
+    
+    <!-- Brand -->
+    <a class="navbar-brand s-navbar-brand" href="index.html">
+      <div class="s-brand-logo">
+        <img src="assets/images/Scorp-Logo.png" alt="Scorptech" width="24" height="24" style="filter: brightness(0) invert(1);">
+      </div>
+      <span class="s-brand-text">SCORP</span>
+    </a>
+
+    <!-- Animated Hamburger Toggle -->
+    <button class="navbar-toggler s-mobile-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="s-hamburger-box">
+        <span class="s-hamburger-inner"></span>
+      </span>
+    </button>
+
+    <!-- Collapsible Content -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto s-nav-links">
+        
+        <!-- Home -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="index.html">
+            <i class="fas fa-home-alt"></i>
+            <span>Home</span>
+          </a>
+        </li>
+
+        <!-- Sapphire -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="sapphire.html">
+            <i class="fas fa-diamond"></i>
+            <span>Sapphire</span>
+          </a>
+        </li>
+
+        <!-- Contact -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="contact.html">
+            <i class="bi bi-telephone-outbound-fill"></i>
+            <span>Contact</span>
+          </a>
+        </li>
+
+        <!-- About -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="about.html">
+            <i class="fas fa-users-line"></i>
+            <span>About</span>
+          </a>
+        </li>
+
+        <!-- Sapphire Smart Dropdown (Internal Pages) -->
+        <!-- <li class="nav-item dropdown s-nav-dropdown-internal">
+          <a class="nav-link s-nav-link dropdown-toggle" 
+             href="#" 
+             role="button" 
+             data-bs-toggle="dropdown" 
+             aria-expanded="false"
+             data-dropdown-id="sapphire-smart">
+            <i class="bi bi-lightbulb-fill"></i>
+            <span>Sapphire Smart</span>
+            Active Indicator Badge
+            <span class="s-active-badge"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end s-internal-dropdown-menu">
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="analytics.html" data-page="analytics.html">
+                <i class="fas fa-chart-line"></i>
+                <span>Smart Analytics</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="intelligence.html" data-page="intelligence.html">
+                <i class="fas fa-brain"></i>
+                <span>Intelligence</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="mobileUSP.html" data-page="mobileUSP.html">
+                <i class="fas fa-mobile-screen"></i>
+                <span>Mobile Friendly</span>
+              </a>
+            </li>
+          </ul>
+        </li> -->
+
+        <!-- Resources Dropdown (Internal Pages) -->
+        <li class="nav-item dropdown s-nav-dropdown-internal">
+          <a class="nav-link s-nav-link dropdown-toggle" 
+             href="#" 
+             role="button" 
+             data-bs-toggle="dropdown" 
+             aria-expanded="false"
+             data-dropdown-id="resources">
+            <i class="bi bi-grid-3x3-gap-fill"></i>
+            <span>Resources</span>
+            <!-- Active Indicator Badge -->
+            <span class="s-active-badge"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end s-internal-dropdown-menu">
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="faq.html" data-page="faq.html">
+                <i class="fas fa-circle-question"></i>
+                <span>FAQ</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="terms_of_use.html" data-page="terms_of_use.html">
+                <i class="fas fa-file-contract"></i>
+                <span>Terms of Use</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="privacy_policy.html" data-page="privacy_policy.html">
+                <i class="fas fa-file-shield"></i>
+                <span>Privacy Policy</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Announcement Icon -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link s-nav-link-icon" href="announcement.html" title="Announcements">
+            <i class="fa-solid fa-bullhorn fa-rotate-by" style="--fa-rotate-angle: 325deg;"></i>
+          </a>
+        </li>
+
+        <!-- Book Demo Button (Green Styled) -->
+<li class="nav-item">
+  <a class="book-demo-button" href="book-demo.html">
+    <i class="bi bi-calendar-check-fill"></i>
+    <span><strong>Book Demo</strong></span>
+  </a>
+</li>
+
+
+        <!-- Go to Sapphire Dropdown (External Links - Blue Styled) -->
+        <li class="nav-item dropdown s-sapphire-dropdown">
+          <button class="btn s-sapphire-trigger dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            <span>go to</span>
+            <div class="s-sapphire-logo">
+              <img src="assets/images/scorp-sapphire-cropped.png" alt="Sapphire" width="32" height="32" style="border-radius: 4px;">
+            </div>
+            <span><strong>Sapphire</strong></span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end s-sapphire-menu">
+            <li>
+              <a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/login" target="_blank">
+                <i class="bi bi-door-open-fill"></i>
+                <span>Log-in</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/register" target="_blank">
+                <i class="bi bi-person-plus-fill"></i>
+                <span>Sign-up</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="about-hero s-hero">
+        <div class="container">
+            <h1 class="about-hero-title">Simplicity that works on the floor</h1>
+        </div>
+    </section>
+
+    <!-- Mission Statement -->
+    <section class="statement-section statement-mission">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="statement-label">Our Mission</div>
+                    <p class="statement-text">Building systems for shop floors, not corner offices. Because the people doing the actual work shouldn't have to navigate seventeen screens to clock in a task.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Statement -->
+    <section class="statement-section statement-vision">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="statement-label">Our Vision</div>
+                    <p class="statement-text">An industrial world where frontline workers have the right information at the right time—reducing rework, improving safety, and eliminating cognitive burden.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Human-Centered Design -->
+    <section class="s-section-py">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10">
+                    <div class="human-design-card fade-in" data-tilt data-tilt-max="1">
+                        <div class="human-design-icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <h2 class="s-text-4xl s-font-black s-text-gray-900 mb-4">Human-Centered Design</h2>
+                        <p class="s-text-xl s-text-gray-600 s-line-height-relaxed mb-0">We build operational solutions that remove complexity from workflows—without forcing anyone to think like a machine. Just clean, intuitive methods that work the way humans actually work. No feature bloat. No cognitive overload. Just technology that gets out of your way.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recognized By -->
+    <section class="s-section-py s-bg-gray-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="s-section-header text-center mb-5 fade-in">
+                        <div class="s-section-eyebrow">Recognized By</div>
+                        <h2 class="s-section-title">Trusted & Validated</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="recognition-banner fade-in" data-tilt data-tilt-max="1">
+                        <div class="recognition-logo">
+                            <img src="assets/images/start-up-india-logo.png" alt="DPIIT Startup India" loading="lazy">
+                        </div>
+                        <div class="recognition-content">
+                            <h3 class="s-text-3xl s-font-black s-text-gray-900 mb-2">DPIIT Recognized</h3>
+                            <p class="s-text-base s-text-gray-600 mb-0">Department for Promotion of Industry and Internal Trade | Startup India Initiative</p>
+                        </div>
+                    </div>
+
+                    <div class="recognition-banner fade-in" data-tilt data-tilt-max="1">
+                        <div class="recognition-logo">
+                            <img src="assets/images/istart_logo.png" alt="iStart Rajasthan" loading="lazy">
+                        </div>
+                        <div class="recognition-content">
+                            <h3 class="s-text-3xl s-font-black s-text-gray-900 mb-2">iStart Rajasthan</h3>
+                            <p class="s-text-base s-text-gray-600 mb-0">Government of Rajasthan | Registered Startup Entity</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey -->
+    <section class="s-section-py">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="s-section-header text-center mb-5 fade-in">
+                        <div class="s-section-eyebrow">Our Story</div>
+                        <h2 class="s-section-title">From Spark to Sapphire</h2>
+                        <p class="s-text-xl s-text-gray-600 s-line-height-relaxed">How we spent three years watching mechanics struggle with systems designed by people who'd never held a wrench—and decided to fix that.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10">
+                    <div class="jenga-card fade-in" data-tilt data-tilt-max="1">
+                        <div class="jenga-icon">
+                            <i class="bi bi-lightbulb-fill"></i>
+                        </div>
+                        <h3 class="s-text-4xl s-font-black s-text-gray-900 mb-4">Problem Revealed Itself</h3>
+                        <p class="s-text-lg s-text-gray-600 s-line-height-relaxed mb-0">We walked into workshops expecting efficiency. What we found? Talented mechanics buried under mountains of paperwork, toggling between five different systems, and spending more time filing forms than fixing assets. The technology was designed for executives—not for the people actually turning wrenches. That's when we knew: the industry didn't need another complicated system. It needed operational solutions that actually worked.</p>
+                    </div>
+
+                    <div class="jenga-card fade-in" data-tilt data-tilt-max="1">
+                        <div class="jenga-icon">
+                            <i class="bi bi-palette-fill"></i>
+                        </div>
+                        <h3 class="s-text-4xl s-font-black s-text-gray-900 mb-4">Philosophy Born</h3>
+                        <p class="s-text-lg s-text-gray-600 s-line-height-relaxed mb-0">We threw out everything we thought we knew about enterprise technology. No feature bloat. No cognitive overload. Just stepwise workflows, real-time validation, and interfaces so clean a new hire could master them in three minutes. We tested, broke things, rebuilt them simpler. Every decision passed one test: would a mechanic on hour nine of their shift find this intuitive? If not, back to the drawing board.</p>
+                    </div>
+
+                    <div class="jenga-card fade-in" data-tilt data-tilt-max="1">
+                        <div class="jenga-icon">
+                            <i class="bi bi-diamond"></i>
+                        </div>
+                        <h3 class="s-text-4xl s-font-black s-text-gray-900 mb-4">Sapphire is Created</h3>
+                        <p class="s-text-lg s-text-gray-600 s-line-height-relaxed mb-0">Production launch. Real workshops, real assets, real workflows. Sapphire went from concept to workhorse—Asset Management, Procurement, Maintenance, all built on the same principle: simplicity that doesn't compromise capability. Zero training required. 98% user satisfaction. 100% first-attempt success rates. Turns out, when you build solutions for humans, humans actually want to use them.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Design Philosophy -->
+    <section class="s-section-py s-bg-gray-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="s-section-header text-center mb-5 fade-in">
+                        <div class="s-section-eyebrow">How We Think</div>
+                        <h2 class="s-section-title">Core Design Philosophy</h2>
+                        <p class="s-text-xl s-text-gray-600 s-line-height-relaxed">Four principles. Zero compromise. Infinite impact.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-xl-10">
+                    <div class="philosophy-grid">
+                        <div class="philosophy-card fade-in" data-tilt data-tilt-max="2">
+                            <span class="philosophy-emoji">🪶</span>
+                            <h3 class="s-text-3xl s-font-black s-text-gray-900 mb-3">Simplicity First</h3>
+                            <p class="s-text-lg s-text-gray-600 s-line-height-relaxed mb-0">Every interface element has one job—and it does it brilliantly. No clutter, no confusion, no seventeen-step workflows. Just clear, purposeful design that gets out of your way.</p>
+                        </div>
+
+                        <div class="philosophy-card fade-in" data-tilt data-tilt-max="2">
+                            <span class="philosophy-emoji">🔄</span>
+                            <h3 class="s-text-3xl s-font-black s-text-gray-900 mb-3">Stepwise Precision</h3>
+                            <p class="s-text-lg s-text-gray-600 s-line-height-relaxed mb-0">Complex tasks break into digestible steps. Each step validates before you move forward. Mistakes get caught at the source—not after you've hit submit.</p>
+                        </div>
+
+                        <div class="philosophy-card fade-in" data-tilt data-tilt-max="2">
+                            <span class="philosophy-emoji">👁️</span>
+                            <h3 class="s-text-3xl s-font-black s-text-gray-900 mb-3">Complete Transparency</h3>
+                            <p class="s-text-lg s-text-gray-600 s-line-height-relaxed mb-0">Every action tracked. Every decision visible. Complete audit trails for compliance, accountability, and peace of mind. No mysteries, no black boxes.</p>
+                        </div>
+
+                        <div class="philosophy-card fade-in" data-tilt data-tilt-max="2">
+                            <span class="philosophy-emoji">🧩</span>
+                            <h3 class="s-text-3xl s-font-black s-text-gray-900 mb-3">Unified Intelligence</h3>
+                            <p class="s-text-lg s-text-gray-600 s-line-height-relaxed mb-0">Data captured where work happens. Insights delivered where decisions are made. Everything syncs automatically, everywhere, all the time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder -->
+    <section class="s-section-py">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="s-section-header text-center mb-5 fade-in">
+                        <div class="s-section-eyebrow">Leadership</div>
+                        <h2 class="s-section-title">The Mind Behind the Method</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10">
+                    <div class="s-card s-shadow-2xl s-rounded-2xl overflow-hidden fade-in" data-tilt data-tilt-max="1">
+                        <div class="row g-0">
+                            <div class="col-lg-5">
+                                <div style="height: 100%; min-height: 400px; background: linear-gradient(135deg, var(--s-gray-100) 0%, var(--s-gray-200) 100%); position: relative;">
+                                    <img src="assets/images/leader-founder-placeholder.jpg" alt="Founder" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                                    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 50%; background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.6) 100%);"></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="p-5">
+                                    <h3 class="s-text-4xl s-font-black s-text-gray-900 mb-3">Naivedya Jain</h3>
+                                    <p class="s-text-lg s-font-bold s-text-primary mb-4">Founder & CEO</p>
+                                    <p class="s-text-base s-text-gray-600 s-line-height-relaxed mb-4">
+                                        20+ years in manufacturing operations. Spent more time in workshops than boardrooms—and it shows in everything we build. Believes that the best technology is the kind you don't notice. Has never met a process that couldn't be simplified, or a mechanic who deserved complicated tools.
+                                    </p>
+                                    <p class="s-text-base s-text-gray-600 s-line-height-relaxed mb-0">
+                                        Started SCORP after watching one too many talented workers fight with systems designed by people who'd never done their job. Decided that operational excellence shouldn't require a computer science degree.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Quote -->
+    <section class="vision-quote-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10">
+                    <div class="vision-quote-box text-center fade-in">
+                        <p class="vision-quote-text mb-0">
+                            "Technology should enhance capability, not test patience. The moment your tools become the problem, you've already lost."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-about">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class="s-text-5xl s-font-black mb-4">Ready to Experience Simplicity?</h2>
+                    <p class="s-text-2xl mb-5" style="opacity: 0.95;">See how SCORP turns operational complexity into operational clarity—one workflow at a time.</p>
+                    <div class="d-flex gap-3 justify-content-center flex-wrap">
+                        <a class="s-btn-white s-btn-lg s-full-width-btn" href="sapphire.html">
+                            <i class="bi bi-diamond"></i>
+                            <span>Explore Sapphire</span>
+                        </a>
+                        <a class="s-btn-primary s-btn-lg s-full-width-btn" href="contact.html">
+                            <i class="bi bi-chat-dots"></i>
+                            <span>Let's Talk</span>
+                        </a>
+                        <a class="s-btn-success s-btn-lg s-full-width-btn" href="book-demo.html">
+                            <i class="bi bi-calendar-check"></i>
+                            <span>Book Demo</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <!-- FOOTER -->
+    <footer class="modern-footer mt-5">
+
+        <!-- BRANDING (ALWAYS CENTERED) -->
+        <div class="footer-brand d-flex flex-column align-items-center mb-4">
+            <div class="footer-logo-wrapper justify-content-center">
+                <div class="footer-logo">
+                    <img src="assets/images/Scorp-Logo.png"
+                         alt="Scorptech"
+                         class="footer-brand-logo">
+                </div>
+                <h5 class="footer-brand-name m-0">SCORP</h5>
+            </div>
+            <p class="footer-tagline text-center">
+                In the business of<br> making yours simple
+            </p>
+        </div>
+
+        <!-- 3-COLUMN LAYOUT (Desktop) / STACK (Mobile) -->
+        <div class="row g-4 footer-columns-wrapper">
+            
+            <!-- EXPLORE -->
+            <div class="col-12 col-md-4">
+                <div class="footer-section">
+                    <h6>
+                        Explore <i class="fas fa-chevron-down footer-collapse-icon"></i>
+                    </h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link"><i class="fas fa-home-alt"></i><span>Home</span></a></li>
+                        <li><a href="about.html" class="footer-link"><i class="fas fa-users-line"></i><span>About</span></a></li>
+                        <li><a href="sapphire.html" class="footer-link"><i class="fas fa-diamond"></i><span>Sapphire</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- RESOURCES -->
+            <div class="col-12 col-md-4">
+                <div class="footer-section">
+                    <h6>
+                        Resources <i class="fas fa-chevron-down footer-collapse-icon"></i>
+                    </h6>
+                    <ul class="footer-links">
+                        <li><a href="faq.html" class="footer-link"><i class="fas fa-person-circle-question"></i><span>FAQs</span></a></li>
+                        <li><a href="privacy_policy.html" class="footer-link"><i class="fas fa-file-shield"></i><span>Privacy Policy</span></a></li>
+                        <li><a href="terms_of_use.html" class="footer-link"><i class="fas fa-file-contract"></i><span>Terms of Use</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="col-12 col-md-4">
+                <div class="footer-section">
+                    <h6>
+                        Get in Touch <i class="fas fa-chevron-down footer-collapse-icon"></i>
+                    </h6>
+                    <ul class="footer-links">
+                        <li><a href="tel:+91XXXXXXXXXX" class="footer-link"><i class="fas fa-mobile"></i><span>Phone: +91-XXXXXXXXXX</span></a></li>
+                        <li><a href="mailto:support@scorptech.in" class="footer-link"><i class="fas fa-envelope"></i><span>support@scorptech.in</span></a></li>
+                        <li><a href="contact.html" class="footer-link"><i class="fas fa-phone"></i><span>Contact</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <!-- BOTTOM -->
+        <div class="footer-bottom flex-column align-items-center text-center">
+            <p class="footer-copyright mb-3">
+                © 2025 SCORP - Scorptech Technologies Private Limited. All rights reserved.
+            </p>
+            <div class="footer-social justify-content-center">
+                <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        const fadeElements = document.querySelectorAll('.fade-in');
+        fadeElements.forEach((element) => {
+            gsap.to(element, {
+                scrollTrigger: {
+                    trigger: element,
+                    start: 'top 85%',
+                    toggleClass: 'visible',
+                    once: true
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+

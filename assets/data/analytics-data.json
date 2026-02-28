@@ -1,0 +1,2715 @@
+{
+  "meta": {
+    "version": "1.1",
+    "lastUpdated": "2025-11-02",
+    "description": "Optimized analytics data for Sapphire Smart Analytics Dashboard"
+  },
+  "employeeNames": {
+    "firstNames": {
+      "male": [
+        "Raj",
+        "Amit",
+        "Karan",
+        "Vikram",
+        "Rohit",
+        "Sanjay",
+        "Varun",
+        "Aditya",
+        "Rakesh",
+        "Vishal",
+        "Gaurav",
+        "Manish",
+        "Harish",
+        "Arjun",
+        "Deepak",
+        "Suresh",
+        "Akash",
+        "Nikhil",
+        "Siddh",
+        "Yash"
+      ],
+      "female": [
+        "Priya",
+        "Sneha",
+        "Anjali",
+        "Pooja",
+        "Divya",
+        "Neha",
+        "Meera",
+        "Kavya",
+        "Ritu",
+        "Isha",
+        "Swati",
+        "Ananya",
+        "Nisha",
+        "Shruti",
+        "Radhika",
+        "Tanvi",
+        "Jyoti",
+        "Kritika",
+        "Megha",
+        "Aditi"
+      ]
+    },
+    "lastNames": [
+      "Kumar",
+      "Singh",
+      "Patel",
+      "Reddy",
+      "Sharma",
+      "Desai",
+      "Mehta",
+      "Verma",
+      "Iyer",
+      "Malhotra",
+      "Gupta",
+      "Pillai",
+      "Kapoor",
+      "Bhat",
+      "Bajaj",
+      "Bhatt",
+      "Chauhan",
+      "Dixit",
+      "Sinha",
+      "Khatri",
+      "Rao",
+      "Kulkarni",
+      "Sethi",
+      "Agarwal",
+      "Banerjee",
+      "Tiwari",
+      "Pandit",
+      "Ghosh",
+      "Nambiar",
+      "Menon",
+      "Jain",
+      "Pandey",
+      "Rastogi",
+      "Chopra",
+      "Goswami",
+      "Kadam",
+      "Dalal",
+      "Patil",
+      "Shukla",
+      "Naik"
+    ]
+  },
+  "departments": [
+    "Production",
+    "Maintenance",
+    "Quality Control",
+    "Logistics",
+    "Assembly",
+    "Engineering",
+    "IT Services",
+    "Administration"
+  ],
+  "assets": {
+    "tools": [
+      {
+        "name": "Hydraulic Jack",
+        "model": "PowerLift 5T",
+        "code": "TL-661",
+        "category": "TOOL",
+        "priceRange": {
+          "min": 6500,
+          "max": 12000
+        }
+      },
+      {
+        "name": "Torque Wrench",
+        "model": "PrecisionPro 200Nm",
+        "code": "TL-245",
+        "category": "TOOL",
+        "priceRange": {
+          "min": 3500,
+          "max": 8000
+        }
+      },
+      {
+        "name": "Pneumatic Drill",
+        "model": "AirForce HD",
+        "code": "TL-112",
+        "category": "TOOL",
+        "priceRange": {
+          "min": 8000,
+          "max": 15000
+        }
+      },
+      {
+        "name": "Angle Grinder",
+        "model": "MetalMaster 2000W",
+        "code": "TL-789",
+        "category": "TOOL",
+        "priceRange": {
+          "min": 4500,
+          "max": 9000
+        }
+      },
+      {
+        "name": "Electric Saw",
+        "model": "CutPro Circular",
+        "code": "TL-334",
+        "category": "TOOL",
+        "priceRange": {
+          "min": 5500,
+          "max": 11000
+        }
+      },
+      {
+        "name": "Welding Machine",
+        "model": "ArcMaster 300",
+        "code": "TL-456",
+        "category": "TOOL",
+        "priceRange": {
+          "min": 18000,
+          "max": 35000
+        }
+      },
+      {
+        "name": "Impact Driver",
+        "model": "ShockWave Pro",
+        "code": "TL-098",
+        "category": "TOOL",
+        "priceRange": {
+          "min": 6000,
+          "max": 12500
+        }
+      },
+      {
+        "name": "Pipe Wrench",
+        "model": "HeavyGrip 24\"",
+        "code": "TL-673",
+        "category": "TOOL",
+        "priceRange": {
+          "min": 2500,
+          "max": 5500
+        }
+      }
+    ],
+    "toolkits": [
+      {
+        "name": "Socket Set",
+        "model": "46-Piece Professional",
+        "code": "TK-101",
+        "category": "TOOLKIT",
+        "priceRange": {
+          "min": 4500,
+          "max": 8500
+        }
+      },
+      {
+        "name": "Wrench Set",
+        "model": "Combination 12-Piece",
+        "code": "TK-202",
+        "category": "TOOLKIT",
+        "priceRange": {
+          "min": 3200,
+          "max": 6500
+        }
+      },
+      {
+        "name": "Screwdriver Kit",
+        "model": "Precision 32-Bit",
+        "code": "TK-303",
+        "category": "TOOLKIT",
+        "priceRange": {
+          "min": 2800,
+          "max": 5500
+        }
+      },
+      {
+        "name": "Hex Key Set",
+        "model": "Metric & Imperial",
+        "code": "TK-404",
+        "category": "TOOLKIT",
+        "priceRange": {
+          "min": 1500,
+          "max": 3200
+        }
+      },
+      {
+        "name": "Plier Set",
+        "model": "Multi-Purpose 5-Piece",
+        "code": "TK-505",
+        "category": "TOOLKIT",
+        "priceRange": {
+          "min": 3500,
+          "max": 7000
+        }
+      },
+      {
+        "name": "Tool Storage Box",
+        "model": "Heavy Duty Organizer",
+        "code": "TK-606",
+        "category": "TOOLKIT",
+        "priceRange": {
+          "min": 2500,
+          "max": 5000
+        }
+      },
+      {
+        "name": "Ratchet Set",
+        "model": "Quick-Release 24-Piece",
+        "code": "TK-707",
+        "category": "TOOLKIT",
+        "priceRange": {
+          "min": 3800,
+          "max": 7500
+        }
+      },
+      {
+        "name": "Cutting Tool Kit",
+        "model": "Universal 18-Piece",
+        "code": "TK-808",
+        "category": "TOOLKIT",
+        "priceRange": {
+          "min": 4200,
+          "max": 8200
+        }
+      }
+    ],
+    "machinery": [
+      {
+        "name": "CNC Machine",
+        "model": "PrecisionCut 5-Axis",
+        "code": "MC-101",
+        "category": "MACHINERY",
+        "priceRange": {
+          "min": 850000,
+          "max": 1500000
+        }
+      },
+      {
+        "name": "Lathe Machine",
+        "model": "MetalTurn Pro",
+        "code": "MC-567",
+        "category": "MACHINERY",
+        "priceRange": {
+          "min": 320000,
+          "max": 650000
+        }
+      },
+      {
+        "name": "Milling Machine",
+        "model": "MillMaster Vertical",
+        "code": "MC-234",
+        "category": "MACHINERY",
+        "priceRange": {
+          "min": 280000,
+          "max": 550000
+        }
+      },
+      {
+        "name": "Blend Dispenser",
+        "model": "MixFlow Pro 5000",
+        "code": "MC-850",
+        "category": "MACHINERY",
+        "priceRange": {
+          "min": 450000,
+          "max": 920000
+        }
+      },
+      {
+        "name": "Hydraulic Press",
+        "model": "MegaForce 100T",
+        "code": "MC-445",
+        "category": "MACHINERY",
+        "priceRange": {
+          "min": 420000,
+          "max": 780000
+        }
+      },
+      {
+        "name": "Injection Molding Machine",
+        "model": "PlastiFlex 2000",
+        "code": "MC-378",
+        "category": "MACHINERY",
+        "priceRange": {
+          "min": 650000,
+          "max": 1200000
+        }
+      },
+      {
+        "name": "Plasma Cutter",
+        "model": "ArcBeam Industrial",
+        "code": "MC-623",
+        "category": "MACHINERY",
+        "priceRange": {
+          "min": 180000,
+          "max": 350000
+        }
+      }
+    ],
+    "vehicles": [
+      {
+        "brand": "Maruti Suzuki",
+        "name": "Swift Dzire",
+        "model": "VXI",
+        "code": "PV-101",
+        "category": "VEHICLE",
+        "vehicleType": "Passenger Vehicle",
+        "fuelType": "Petrol",
+        "priceRange": {
+          "min": 650000,
+          "max": 850000
+        }
+      },
+      {
+        "brand": "Maruti Suzuki",
+        "name": "Ertiga",
+        "model": "VXI",
+        "code": "PV-102",
+        "category": "VEHICLE",
+        "vehicleType": "Passenger Vehicle",
+        "fuelType": "Petrol",
+        "priceRange": {
+          "min": 850000,
+          "max": 1050000
+        }
+      },
+      {
+        "brand": "Hyundai",
+        "name": "Creta",
+        "model": "SX Diesel",
+        "code": "PV-103",
+        "category": "VEHICLE",
+        "vehicleType": "Passenger Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1150000,
+          "max": 1550000
+        }
+      },
+      {
+        "brand": "Tata Motors",
+        "name": "Nexon EV",
+        "model": "Max",
+        "code": "PV-104",
+        "category": "VEHICLE",
+        "vehicleType": "Passenger Vehicle",
+        "fuelType": "Electric",
+        "priceRange": {
+          "min": 1450000,
+          "max": 1750000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "Scorpio N",
+        "model": "Z8 Diesel",
+        "code": "PV-105",
+        "category": "VEHICLE",
+        "vehicleType": "Passenger Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1550000,
+          "max": 1950000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "XUV700",
+        "model": "AX7 Diesel",
+        "code": "PV-106",
+        "category": "VEHICLE",
+        "vehicleType": "Passenger Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1850000,
+          "max": 2350000
+        }
+      },
+      {
+        "brand": "Tata Motors",
+        "name": "Tigor EV",
+        "model": "XZ+",
+        "code": "PV-107",
+        "category": "VEHICLE",
+        "vehicleType": "Passenger Vehicle",
+        "fuelType": "Electric",
+        "priceRange": {
+          "min": 1250000,
+          "max": 1450000
+        }
+      },
+      {
+        "brand": "Kia",
+        "name": "Seltos",
+        "model": "HTK Diesel",
+        "code": "PV-108",
+        "category": "VEHICLE",
+        "vehicleType": "Passenger Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1150000,
+          "max": 1650000
+        }
+      },
+      {
+        "brand": "Hyundai",
+        "name": "Venue",
+        "model": "SX Petrol",
+        "code": "PV-109",
+        "category": "VEHICLE",
+        "vehicleType": "Passenger Vehicle",
+        "fuelType": "Petrol",
+        "priceRange": {
+          "min": 750000,
+          "max": 1150000
+        }
+      },
+      {
+        "brand": "Maruti Suzuki",
+        "name": "Brezza",
+        "model": "VXI Petrol",
+        "code": "PV-110",
+        "category": "VEHICLE",
+        "vehicleType": "Passenger Vehicle",
+        "fuelType": "Petrol",
+        "priceRange": {
+          "min": 850000,
+          "max": 1250000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "Bolero",
+        "model": "B6 Diesel",
+        "code": "PV-111",
+        "category": "VEHICLE",
+        "vehicleType": "Passenger Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 950000,
+          "max": 1150000
+        }
+      },
+      {
+        "brand": "Toyota",
+        "name": "Innova Crysta",
+        "model": "GX Diesel",
+        "code": "PV-112",
+        "category": "VEHICLE",
+        "vehicleType": "Passenger Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1850000,
+          "max": 2450000
+        }
+      },
+      {
+        "brand": "MG Motor",
+        "name": "ZS EV",
+        "model": "Excite",
+        "code": "PV-113",
+        "category": "VEHICLE",
+        "vehicleType": "Passenger Vehicle",
+        "fuelType": "Electric",
+        "priceRange": {
+          "min": 2150000,
+          "max": 2550000
+        }
+      },
+      {
+        "brand": "Renault",
+        "name": "Kwid",
+        "model": "RXT Petrol",
+        "code": "PV-114",
+        "category": "VEHICLE",
+        "vehicleType": "Passenger Vehicle",
+        "fuelType": "Petrol",
+        "priceRange": {
+          "min": 450000,
+          "max": 550000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "Thar",
+        "model": "LX Diesel",
+        "code": "PV-115",
+        "category": "VEHICLE",
+        "vehicleType": "Passenger Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1350000,
+          "max": 1650000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "Treo",
+        "model": "Electric",
+        "code": "TW-201",
+        "category": "VEHICLE",
+        "vehicleType": "Three-Wheeler",
+        "fuelType": "Electric",
+        "priceRange": {
+          "min": 150000,
+          "max": 200000
+        }
+      },
+      {
+        "brand": "Bajaj",
+        "name": "RE Compact",
+        "model": "Diesel",
+        "code": "TW-202",
+        "category": "VEHICLE",
+        "vehicleType": "Three-Wheeler",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 180000,
+          "max": 220000
+        }
+      },
+      {
+        "brand": "Piaggio",
+        "name": "Ape Xtra",
+        "model": "Diesel LD",
+        "code": "TW-203",
+        "category": "VEHICLE",
+        "vehicleType": "Three-Wheeler",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 200000,
+          "max": 250000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "Alfa Plus",
+        "model": "Diesel",
+        "code": "TW-204",
+        "category": "VEHICLE",
+        "vehicleType": "Three-Wheeler",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 180000,
+          "max": 230000
+        }
+      },
+      {
+        "brand": "Bajaj",
+        "name": "Maxima Z",
+        "model": "Diesel",
+        "code": "TW-205",
+        "category": "VEHICLE",
+        "vehicleType": "Three-Wheeler",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 190000,
+          "max": 240000
+        }
+      },
+      {
+        "brand": "Piaggio",
+        "name": "Ape City",
+        "model": "Petrol",
+        "code": "TW-206",
+        "category": "VEHICLE",
+        "vehicleType": "Three-Wheeler",
+        "fuelType": "Petrol",
+        "priceRange": {
+          "min": 150000,
+          "max": 180000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "e-Alfa Mini",
+        "model": "Electric",
+        "code": "TW-207",
+        "category": "VEHICLE",
+        "vehicleType": "Three-Wheeler",
+        "fuelType": "Electric",
+        "priceRange": {
+          "min": 120000,
+          "max": 170000
+        }
+      },
+      {
+        "brand": "Atul",
+        "name": "Auto",
+        "model": "Diesel",
+        "code": "TW-208",
+        "category": "VEHICLE",
+        "vehicleType": "Three-Wheeler",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 170000,
+          "max": 210000
+        }
+      },
+      {
+        "brand": "Bajaj",
+        "name": "RE Diesel",
+        "model": "4S",
+        "code": "TW-209",
+        "category": "VEHICLE",
+        "vehicleType": "Three-Wheeler",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 185000,
+          "max": 225000
+        }
+      },
+      {
+        "brand": "Piaggio",
+        "name": "Ape Auto",
+        "model": "Diesel DX",
+        "code": "TW-210",
+        "category": "VEHICLE",
+        "vehicleType": "Three-Wheeler",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 195000,
+          "max": 235000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "Treo Zor",
+        "model": "Electric",
+        "code": "TW-211",
+        "category": "VEHICLE",
+        "vehicleType": "Three-Wheeler",
+        "fuelType": "Electric",
+        "priceRange": {
+          "min": 180000,
+          "max": 230000
+        }
+      },
+      {
+        "brand": "Atul",
+        "name": "Elite",
+        "model": "Petrol",
+        "code": "TW-212",
+        "category": "VEHICLE",
+        "vehicleType": "Three-Wheeler",
+        "fuelType": "Petrol",
+        "priceRange": {
+          "min": 140000,
+          "max": 170000
+        }
+      },
+      {
+        "brand": "Bajaj",
+        "name": "RE 4S Champion",
+        "model": "Diesel",
+        "code": "TW-213",
+        "category": "VEHICLE",
+        "vehicleType": "Three-Wheeler",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 190000,
+          "max": 230000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "Alfa Load",
+        "model": "Diesel",
+        "code": "TW-214",
+        "category": "VEHICLE",
+        "vehicleType": "Three-Wheeler",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 185000,
+          "max": 225000
+        }
+      },
+      {
+        "brand": "Piaggio",
+        "name": "Ape E-Xtra",
+        "model": "Electric",
+        "code": "TW-215",
+        "category": "VEHICLE",
+        "vehicleType": "Three-Wheeler",
+        "fuelType": "Electric",
+        "priceRange": {
+          "min": 160000,
+          "max": 200000
+        }
+      },
+      {
+        "brand": "Tata Motors",
+        "name": "Ace Gold",
+        "model": "Diesel BS6",
+        "code": "LCV-301",
+        "category": "VEHICLE",
+        "vehicleType": "Light Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 550000,
+          "max": 650000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "Jeeto",
+        "model": "Diesel",
+        "code": "LCV-302",
+        "category": "VEHICLE",
+        "vehicleType": "Light Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 450000,
+          "max": 550000
+        }
+      },
+      {
+        "brand": "Ashok Leyland",
+        "name": "Dost+",
+        "model": "Diesel",
+        "code": "LCV-303",
+        "category": "VEHICLE",
+        "vehicleType": "Light Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 650000,
+          "max": 750000
+        }
+      },
+      {
+        "brand": "Tata Motors",
+        "name": "Ace EV",
+        "model": "Electric",
+        "code": "LCV-304",
+        "category": "VEHICLE",
+        "vehicleType": "Light Commercial Vehicle",
+        "fuelType": "Electric",
+        "priceRange": {
+          "min": 850000,
+          "max": 1050000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "Supro Profit Truck",
+        "model": "Diesel",
+        "code": "LCV-305",
+        "category": "VEHICLE",
+        "vehicleType": "Light Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 550000,
+          "max": 700000
+        }
+      },
+      {
+        "brand": "Maruti Suzuki",
+        "name": "Super Carry",
+        "model": "Diesel",
+        "code": "LCV-306",
+        "category": "VEHICLE",
+        "vehicleType": "Light Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 500000,
+          "max": 600000
+        }
+      },
+      {
+        "brand": "Tata Motors",
+        "name": "Intra V30",
+        "model": "Diesel",
+        "code": "LCV-307",
+        "category": "VEHICLE",
+        "vehicleType": "Light Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 650000,
+          "max": 800000
+        }
+      },
+      {
+        "brand": "Ashok Leyland",
+        "name": "Bada Dost",
+        "model": "Diesel",
+        "code": "LCV-308",
+        "category": "VEHICLE",
+        "vehicleType": "Light Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 700000,
+          "max": 850000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "Bolero Pickup",
+        "model": "Diesel",
+        "code": "LCV-309",
+        "category": "VEHICLE",
+        "vehicleType": "Light Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 750000,
+          "max": 950000
+        }
+      },
+      {
+        "brand": "Force Motors",
+        "name": "Kargo King",
+        "model": "Diesel",
+        "code": "LCV-310",
+        "category": "VEHICLE",
+        "vehicleType": "Light Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 600000,
+          "max": 750000
+        }
+      },
+      {
+        "brand": "Tata Motors",
+        "name": "Yodha",
+        "model": "Diesel",
+        "code": "LCV-311",
+        "category": "VEHICLE",
+        "vehicleType": "Light Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 850000,
+          "max": 1050000
+        }
+      },
+      {
+        "brand": "Ashok Leyland",
+        "name": "Partner",
+        "model": "Diesel",
+        "code": "LCV-312",
+        "category": "VEHICLE",
+        "vehicleType": "Light Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 650000,
+          "max": 800000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "Furio 7",
+        "model": "Diesel",
+        "code": "LCV-313",
+        "category": "VEHICLE",
+        "vehicleType": "Light Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 950000,
+          "max": 1150000
+        }
+      },
+      {
+        "brand": "Tata Motors",
+        "name": "Magic EV",
+        "model": "Electric",
+        "code": "LCV-314",
+        "category": "VEHICLE",
+        "vehicleType": "Light Commercial Vehicle",
+        "fuelType": "Electric",
+        "priceRange": {
+          "min": 750000,
+          "max": 950000
+        }
+      },
+      {
+        "brand": "Eicher",
+        "name": "Pro 2049",
+        "model": "Diesel",
+        "code": "LCV-315",
+        "category": "VEHICLE",
+        "vehicleType": "Light Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 900000,
+          "max": 1100000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "Supro Maxi Truck",
+        "model": "Diesel",
+        "code": "LCV-316",
+        "category": "VEHICLE",
+        "vehicleType": "Light Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 600000,
+          "max": 750000
+        }
+      },
+      {
+        "brand": "Tata Motors",
+        "name": "LPT 1109",
+        "model": "Diesel",
+        "code": "MCV-401",
+        "category": "VEHICLE",
+        "vehicleType": "Medium Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1550000,
+          "max": 1850000
+        }
+      },
+      {
+        "brand": "Ashok Leyland",
+        "name": "Ecomet 1015",
+        "model": "Diesel",
+        "code": "MCV-402",
+        "category": "VEHICLE",
+        "vehicleType": "Medium Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1450000,
+          "max": 1750000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "Furio 12",
+        "model": "Diesel",
+        "code": "MCV-403",
+        "category": "VEHICLE",
+        "vehicleType": "Medium Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1650000,
+          "max": 1950000
+        }
+      },
+      {
+        "brand": "Eicher",
+        "name": "Pro 3015",
+        "model": "Diesel",
+        "code": "MCV-404",
+        "category": "VEHICLE",
+        "vehicleType": "Medium Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1550000,
+          "max": 1850000
+        }
+      },
+      {
+        "brand": "Tata Motors",
+        "name": "Ultra 1518",
+        "model": "Diesel",
+        "code": "MCV-405",
+        "category": "VEHICLE",
+        "vehicleType": "Medium Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1750000,
+          "max": 2050000
+        }
+      },
+      {
+        "brand": "Ashok Leyland",
+        "name": "Guru 1010",
+        "model": "Diesel",
+        "code": "MCV-406",
+        "category": "VEHICLE",
+        "vehicleType": "Medium Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1350000,
+          "max": 1650000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "Blazo X 28",
+        "model": "Diesel",
+        "code": "MCV-407",
+        "category": "VEHICLE",
+        "vehicleType": "Medium Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1850000,
+          "max": 2150000
+        }
+      },
+      {
+        "brand": "BharatBenz",
+        "name": "1415R",
+        "model": "Diesel",
+        "code": "MCV-408",
+        "category": "VEHICLE",
+        "vehicleType": "Medium Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1650000,
+          "max": 1950000
+        }
+      },
+      {
+        "brand": "Eicher",
+        "name": "Pro 3008",
+        "model": "Diesel",
+        "code": "MCV-409",
+        "category": "VEHICLE",
+        "vehicleType": "Medium Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1450000,
+          "max": 1750000
+        }
+      },
+      {
+        "brand": "Tata Motors",
+        "name": "LPT 1512",
+        "model": "Diesel",
+        "code": "MCV-410",
+        "category": "VEHICLE",
+        "vehicleType": "Medium Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1550000,
+          "max": 1850000
+        }
+      },
+      {
+        "brand": "Ashok Leyland",
+        "name": "Ecomet 1214",
+        "model": "Diesel",
+        "code": "MCV-411",
+        "category": "VEHICLE",
+        "vehicleType": "Medium Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1650000,
+          "max": 1950000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "Furio 14",
+        "model": "Diesel",
+        "code": "MCV-412",
+        "category": "VEHICLE",
+        "vehicleType": "Medium Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1750000,
+          "max": 2050000
+        }
+      },
+      {
+        "brand": "BharatBenz",
+        "name": "1617R",
+        "model": "Diesel",
+        "code": "MCV-413",
+        "category": "VEHICLE",
+        "vehicleType": "Medium Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1850000,
+          "max": 2150000
+        }
+      },
+      {
+        "brand": "Eicher",
+        "name": "Pro 5016",
+        "model": "Diesel",
+        "code": "MCV-414",
+        "category": "VEHICLE",
+        "vehicleType": "Medium Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1950000,
+          "max": 2250000
+        }
+      },
+      {
+        "brand": "Tata Motors",
+        "name": "Ultra 1618",
+        "model": "Diesel",
+        "code": "MCV-415",
+        "category": "VEHICLE",
+        "vehicleType": "Medium Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1850000,
+          "max": 2150000
+        }
+      },
+      {
+        "brand": "Tata Motors",
+        "name": "Prima 4038.S",
+        "model": "Diesel",
+        "code": "HCV-501",
+        "category": "VEHICLE",
+        "vehicleType": "Heavy Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 3850000,
+          "max": 4450000
+        }
+      },
+      {
+        "brand": "Ashok Leyland",
+        "name": "Captain 2518",
+        "model": "Diesel",
+        "code": "HCV-502",
+        "category": "VEHICLE",
+        "vehicleType": "Heavy Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 3550000,
+          "max": 4150000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "Blazo X 49",
+        "model": "Diesel",
+        "code": "HCV-503",
+        "category": "VEHICLE",
+        "vehicleType": "Heavy Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 4250000,
+          "max": 4850000
+        }
+      },
+      {
+        "brand": "BharatBenz",
+        "name": "3143R",
+        "model": "Diesel",
+        "code": "HCV-504",
+        "category": "VEHICLE",
+        "vehicleType": "Heavy Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 3950000,
+          "max": 4550000
+        }
+      },
+      {
+        "brand": "Eicher",
+        "name": "Pro 6025",
+        "model": "Diesel",
+        "code": "HCV-505",
+        "category": "VEHICLE",
+        "vehicleType": "Heavy Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 3650000,
+          "max": 4250000
+        }
+      },
+      {
+        "brand": "Tata Motors",
+        "name": "Signa 4825.TK",
+        "model": "Diesel",
+        "code": "HCV-506",
+        "category": "VEHICLE",
+        "vehicleType": "Heavy Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 4050000,
+          "max": 4650000
+        }
+      },
+      {
+        "brand": "Ashok Leyland",
+        "name": "U-Truck 3118",
+        "model": "Diesel",
+        "code": "HCV-507",
+        "category": "VEHICLE",
+        "vehicleType": "Heavy Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 3750000,
+          "max": 4350000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "Blazo X 55",
+        "model": "Diesel",
+        "code": "HCV-508",
+        "category": "VEHICLE",
+        "vehicleType": "Heavy Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 4450000,
+          "max": 5050000
+        }
+      },
+      {
+        "brand": "BharatBenz",
+        "name": "4228R",
+        "model": "Diesel",
+        "code": "HCV-509",
+        "category": "VEHICLE",
+        "vehicleType": "Heavy Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 4150000,
+          "max": 4750000
+        }
+      },
+      {
+        "brand": "Eicher",
+        "name": "Pro 8031",
+        "model": "Diesel",
+        "code": "HCV-510",
+        "category": "VEHICLE",
+        "vehicleType": "Heavy Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 3950000,
+          "max": 4550000
+        }
+      },
+      {
+        "brand": "Tata Motors",
+        "name": "Signa 5525.S",
+        "model": "Diesel",
+        "code": "HCV-511",
+        "category": "VEHICLE",
+        "vehicleType": "Heavy Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 4250000,
+          "max": 4850000
+        }
+      },
+      {
+        "brand": "Ashok Leyland",
+        "name": "Captain 3118",
+        "model": "Diesel",
+        "code": "HCV-512",
+        "category": "VEHICLE",
+        "vehicleType": "Heavy Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 3850000,
+          "max": 4450000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "Blazo 31",
+        "model": "Diesel",
+        "code": "HCV-513",
+        "category": "VEHICLE",
+        "vehicleType": "Heavy Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 3650000,
+          "max": 4250000
+        }
+      },
+      {
+        "brand": "BharatBenz",
+        "name": "3723R",
+        "model": "Diesel",
+        "code": "HCV-514",
+        "category": "VEHICLE",
+        "vehicleType": "Heavy Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 4050000,
+          "max": 4650000
+        }
+      },
+      {
+        "brand": "Eicher",
+        "name": "Pro 6031",
+        "model": "Diesel",
+        "code": "HCV-515",
+        "category": "VEHICLE",
+        "vehicleType": "Heavy Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 3750000,
+          "max": 4350000
+        }
+      },
+      {
+        "brand": "Tata Motors",
+        "name": "Prima 3338.K",
+        "model": "Diesel",
+        "code": "HCV-516",
+        "category": "VEHICLE",
+        "vehicleType": "Heavy Commercial Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 3950000,
+          "max": 4550000
+        }
+      },
+      {
+        "brand": "Tata Motors",
+        "name": "Starbus",
+        "model": "LP 410 Diesel",
+        "code": "BUS-601",
+        "category": "VEHICLE",
+        "vehicleType": "Bus",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 2550000,
+          "max": 3050000
+        }
+      },
+      {
+        "brand": "Ashok Leyland",
+        "name": "Viking",
+        "model": "52-Seater Diesel",
+        "code": "BUS-602",
+        "category": "VEHICLE",
+        "vehicleType": "Bus",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 2450000,
+          "max": 2950000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "Tourister",
+        "model": "COSMO Diesel",
+        "code": "BUS-603",
+        "category": "VEHICLE",
+        "vehicleType": "Bus",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 2350000,
+          "max": 2850000
+        }
+      },
+      {
+        "brand": "Tata Motors",
+        "name": "Ultra Electric",
+        "model": "Electric",
+        "code": "BUS-604",
+        "category": "VEHICLE",
+        "vehicleType": "Bus",
+        "fuelType": "Electric",
+        "priceRange": {
+          "min": 5550000,
+          "max": 6550000
+        }
+      },
+      {
+        "brand": "Eicher",
+        "name": "Skyline Pro",
+        "model": "Diesel",
+        "code": "BUS-605",
+        "category": "VEHICLE",
+        "vehicleType": "Bus",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 2650000,
+          "max": 3150000
+        }
+      },
+      {
+        "brand": "Ashok Leyland",
+        "name": "Lynx",
+        "model": "49-Seater Diesel",
+        "code": "BUS-606",
+        "category": "VEHICLE",
+        "vehicleType": "Bus",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 2250000,
+          "max": 2750000
+        }
+      },
+      {
+        "brand": "BharatBenz",
+        "name": "Staff Bus",
+        "model": "Diesel",
+        "code": "BUS-607",
+        "category": "VEHICLE",
+        "vehicleType": "Bus",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 2550000,
+          "max": 3050000
+        }
+      },
+      {
+        "brand": "Tata Motors",
+        "name": "Starbus Electric",
+        "model": "Electric",
+        "code": "BUS-608",
+        "category": "VEHICLE",
+        "vehicleType": "Bus",
+        "fuelType": "Electric",
+        "priceRange": {
+          "min": 5850000,
+          "max": 6850000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "Tourister COSMO",
+        "model": "Staff Diesel",
+        "code": "BUS-609",
+        "category": "VEHICLE",
+        "vehicleType": "Bus",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 2450000,
+          "max": 2950000
+        }
+      },
+      {
+        "brand": "Ashok Leyland",
+        "name": "Cheetah",
+        "model": "Diesel",
+        "code": "BUS-610",
+        "category": "VEHICLE",
+        "vehicleType": "Bus",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 2350000,
+          "max": 2850000
+        }
+      },
+      {
+        "brand": "Force Motors",
+        "name": "Urbania",
+        "model": "Diesel",
+        "code": "BUS-611",
+        "category": "VEHICLE",
+        "vehicleType": "Bus",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 2850000,
+          "max": 3350000
+        }
+      },
+      {
+        "brand": "Tata Motors",
+        "name": "LP 712",
+        "model": "Diesel",
+        "code": "BUS-612",
+        "category": "VEHICLE",
+        "vehicleType": "Bus",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 2150000,
+          "max": 2650000
+        }
+      },
+      {
+        "brand": "Eicher",
+        "name": "Skyline",
+        "model": "Staff Diesel",
+        "code": "BUS-613",
+        "category": "VEHICLE",
+        "vehicleType": "Bus",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 2250000,
+          "max": 2750000
+        }
+      },
+      {
+        "brand": "Ashok Leyland",
+        "name": "Falcon",
+        "model": "Diesel",
+        "code": "BUS-614",
+        "category": "VEHICLE",
+        "vehicleType": "Bus",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 2450000,
+          "max": 2950000
+        }
+      },
+      {
+        "brand": "BharatBenz",
+        "name": "1623C",
+        "model": "Diesel",
+        "code": "BUS-615",
+        "category": "VEHICLE",
+        "vehicleType": "Bus",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 2650000,
+          "max": 3150000
+        }
+      },
+      {
+        "brand": "Force Motors",
+        "name": "Traveller",
+        "model": "3350 Diesel",
+        "code": "SHT-701",
+        "category": "VEHICLE",
+        "vehicleType": "Shuttle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1550000,
+          "max": 1850000
+        }
+      },
+      {
+        "brand": "Tata Motors",
+        "name": "Winger",
+        "model": "Diesel",
+        "code": "SHT-702",
+        "category": "VEHICLE",
+        "vehicleType": "Shuttle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1450000,
+          "max": 1750000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "Tourister",
+        "model": "Shuttle Diesel",
+        "code": "SHT-703",
+        "category": "VEHICLE",
+        "vehicleType": "Shuttle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1350000,
+          "max": 1650000
+        }
+      },
+      {
+        "brand": "Force Motors",
+        "name": "Urbania",
+        "model": "Staff Shuttle",
+        "code": "SHT-704",
+        "category": "VEHICLE",
+        "vehicleType": "Shuttle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 2050000,
+          "max": 2350000
+        }
+      },
+      {
+        "brand": "Tata Motors",
+        "name": "Magic",
+        "model": "Diesel",
+        "code": "SHT-705",
+        "category": "VEHICLE",
+        "vehicleType": "Shuttle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 850000,
+          "max": 1050000
+        }
+      },
+      {
+        "brand": "Maruti Suzuki",
+        "name": "Eeco",
+        "model": "CNG",
+        "code": "SHT-706",
+        "category": "VEHICLE",
+        "vehicleType": "Shuttle",
+        "fuelType": "Petrol",
+        "priceRange": {
+          "min": 550000,
+          "max": 650000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "Supro",
+        "model": "Passenger Diesel",
+        "code": "SHT-707",
+        "category": "VEHICLE",
+        "vehicleType": "Shuttle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 650000,
+          "max": 850000
+        }
+      },
+      {
+        "brand": "Ashok Leyland",
+        "name": "Dost Express",
+        "model": "Diesel",
+        "code": "SHT-708",
+        "category": "VEHICLE",
+        "vehicleType": "Shuttle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 950000,
+          "max": 1150000
+        }
+      },
+      {
+        "brand": "Force Motors",
+        "name": "Traveller 26",
+        "model": "Diesel",
+        "code": "SHT-709",
+        "category": "VEHICLE",
+        "vehicleType": "Shuttle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1650000,
+          "max": 1950000
+        }
+      },
+      {
+        "brand": "Tata Motors",
+        "name": "Starbus Electric",
+        "model": "Mini Electric",
+        "code": "SHT-710",
+        "category": "VEHICLE",
+        "vehicleType": "Shuttle",
+        "fuelType": "Electric",
+        "priceRange": {
+          "min": 3550000,
+          "max": 4050000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "Supro Passenger",
+        "model": "Van Diesel",
+        "code": "SHT-711",
+        "category": "VEHICLE",
+        "vehicleType": "Shuttle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 750000,
+          "max": 950000
+        }
+      },
+      {
+        "brand": "Force Motors",
+        "name": "Traveller CX",
+        "model": "Diesel",
+        "code": "SHT-712",
+        "category": "VEHICLE",
+        "vehicleType": "Shuttle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1750000,
+          "max": 2050000
+        }
+      },
+      {
+        "brand": "Tata Motors",
+        "name": "Venture",
+        "model": "Diesel",
+        "code": "SHT-713",
+        "category": "VEHICLE",
+        "vehicleType": "Shuttle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1250000,
+          "max": 1550000
+        }
+      },
+      {
+        "brand": "Ashok Leyland",
+        "name": "MiTR",
+        "model": "Staff Diesel",
+        "code": "SHT-714",
+        "category": "VEHICLE",
+        "vehicleType": "Shuttle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1450000,
+          "max": 1750000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "TRO",
+        "model": "Electric Shuttle",
+        "code": "SHT-715",
+        "category": "VEHICLE",
+        "vehicleType": "Shuttle",
+        "fuelType": "Electric",
+        "priceRange": {
+          "min": 2250000,
+          "max": 2650000
+        }
+      },
+      {
+        "brand": "JCB",
+        "name": "3DX Super",
+        "model": "Diesel",
+        "code": "EME-801",
+        "category": "VEHICLE",
+        "vehicleType": "Earth-Moving Equipment",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1850000,
+          "max": 2350000
+        }
+      },
+      {
+        "brand": "Tata Hitachi",
+        "name": "EX 200",
+        "model": "Diesel",
+        "code": "EME-802",
+        "category": "VEHICLE",
+        "vehicleType": "Earth-Moving Equipment",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 4550000,
+          "max": 5550000
+        }
+      },
+      {
+        "brand": "Caterpillar",
+        "name": "140K",
+        "model": "Grader Diesel",
+        "code": "EME-803",
+        "category": "VEHICLE",
+        "vehicleType": "Earth-Moving Equipment",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 6550000,
+          "max": 7550000
+        }
+      },
+      {
+        "brand": "Komatsu",
+        "name": "PC210",
+        "model": "Diesel",
+        "code": "EME-804",
+        "category": "VEHICLE",
+        "vehicleType": "Earth-Moving Equipment",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 5050000,
+          "max": 6050000
+        }
+      },
+      {
+        "brand": "JCB",
+        "name": "JS 205",
+        "model": "Excavator Diesel",
+        "code": "EME-805",
+        "category": "VEHICLE",
+        "vehicleType": "Earth-Moving Equipment",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 4050000,
+          "max": 5050000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "Earthmaster VX",
+        "model": "Diesel",
+        "code": "EME-806",
+        "category": "VEHICLE",
+        "vehicleType": "Earth-Moving Equipment",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1550000,
+          "max": 1950000
+        }
+      },
+      {
+        "brand": "Volvo",
+        "name": "EC140E",
+        "model": "Diesel",
+        "code": "EME-807",
+        "category": "VEHICLE",
+        "vehicleType": "Earth-Moving Equipment",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 4750000,
+          "max": 5750000
+        }
+      },
+      {
+        "brand": "L&T",
+        "name": "Komatsu PC130",
+        "model": "Diesel",
+        "code": "EME-808",
+        "category": "VEHICLE",
+        "vehicleType": "Earth-Moving Equipment",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 3950000,
+          "max": 4950000
+        }
+      },
+      {
+        "brand": "JCB",
+        "name": "432ZX",
+        "model": "Wheeled Diesel",
+        "code": "EME-809",
+        "category": "VEHICLE",
+        "vehicleType": "Earth-Moving Equipment",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 2650000,
+          "max": 3350000
+        }
+      },
+      {
+        "brand": "Tata Hitachi",
+        "name": "EX 70",
+        "model": "Mini Diesel",
+        "code": "EME-810",
+        "category": "VEHICLE",
+        "vehicleType": "Earth-Moving Equipment",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 2250000,
+          "max": 2850000
+        }
+      },
+      {
+        "brand": "Caterpillar",
+        "name": "320D2",
+        "model": "Diesel",
+        "code": "EME-811",
+        "category": "VEHICLE",
+        "vehicleType": "Earth-Moving Equipment",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 5550000,
+          "max": 6550000
+        }
+      },
+      {
+        "brand": "Komatsu",
+        "name": "D65",
+        "model": "Bulldozer Diesel",
+        "code": "EME-812",
+        "category": "VEHICLE",
+        "vehicleType": "Earth-Moving Equipment",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 7050000,
+          "max": 8050000
+        }
+      },
+      {
+        "brand": "JCB",
+        "name": "VM 115",
+        "model": "Diesel",
+        "code": "EME-813",
+        "category": "VEHICLE",
+        "vehicleType": "Earth-Moving Equipment",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 3150000,
+          "max": 3850000
+        }
+      },
+      {
+        "brand": "Volvo",
+        "name": "EC210B",
+        "model": "Diesel",
+        "code": "EME-814",
+        "category": "VEHICLE",
+        "vehicleType": "Earth-Moving Equipment",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 5250000,
+          "max": 6250000
+        }
+      },
+      {
+        "brand": "L&T",
+        "name": "Case 1107",
+        "model": "Diesel",
+        "code": "EME-815",
+        "category": "VEHICLE",
+        "vehicleType": "Earth-Moving Equipment",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 4450000,
+          "max": 5450000
+        }
+      },
+      {
+        "brand": "JCB",
+        "name": "3CX Eco",
+        "model": "Diesel",
+        "code": "EME-816",
+        "category": "VEHICLE",
+        "vehicleType": "Earth-Moving Equipment",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1950000,
+          "max": 2450000
+        }
+      },
+      {
+        "brand": "Tata Motors",
+        "name": "Fire Truck",
+        "model": "LPT 1412 Diesel",
+        "code": "SPV-901",
+        "category": "VEHICLE",
+        "vehicleType": "Special Purpose Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 4550000,
+          "max": 5550000
+        }
+      },
+      {
+        "brand": "Ashok Leyland",
+        "name": "Garbage Compactor",
+        "model": "Diesel",
+        "code": "SPV-902",
+        "category": "VEHICLE",
+        "vehicleType": "Special Purpose Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 3850000,
+          "max": 4850000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "Mobile Crane",
+        "model": "Diesel",
+        "code": "SPV-903",
+        "category": "VEHICLE",
+        "vehicleType": "Special Purpose Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 5550000,
+          "max": 6550000
+        }
+      },
+      {
+        "brand": "Force Motors",
+        "name": "Ambulance",
+        "model": "Diesel",
+        "code": "SPV-904",
+        "category": "VEHICLE",
+        "vehicleType": "Special Purpose Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 1850000,
+          "max": 2350000
+        }
+      },
+      {
+        "brand": "Tata Motors",
+        "name": "Water Tanker",
+        "model": "LPT 1109 Diesel",
+        "code": "SPV-905",
+        "category": "VEHICLE",
+        "vehicleType": "Special Purpose Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 2550000,
+          "max": 3050000
+        }
+      },
+      {
+        "brand": "Eicher",
+        "name": "Road Sweeper",
+        "model": "Diesel",
+        "code": "SPV-906",
+        "category": "VEHICLE",
+        "vehicleType": "Special Purpose Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 3250000,
+          "max": 3950000
+        }
+      },
+      {
+        "brand": "BharatBenz",
+        "name": "Fuel Tanker",
+        "model": "Diesel",
+        "code": "SPV-907",
+        "category": "VEHICLE",
+        "vehicleType": "Special Purpose Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 4050000,
+          "max": 4850000
+        }
+      },
+      {
+        "brand": "Ashok Leyland",
+        "name": "Tipper",
+        "model": "2518 Diesel",
+        "code": "SPV-908",
+        "category": "VEHICLE",
+        "vehicleType": "Special Purpose Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 3550000,
+          "max": 4350000
+        }
+      },
+      {
+        "brand": "Tata Motors",
+        "name": "Refrigerated Van",
+        "model": "Ultra Diesel",
+        "code": "SPV-909",
+        "category": "VEHICLE",
+        "vehicleType": "Special Purpose Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 2850000,
+          "max": 3550000
+        }
+      },
+      {
+        "brand": "Mahindra",
+        "name": "Forklift",
+        "model": "Electric",
+        "code": "SPV-910",
+        "category": "VEHICLE",
+        "vehicleType": "Special Purpose Vehicle",
+        "fuelType": "Electric",
+        "priceRange": {
+          "min": 850000,
+          "max": 1250000
+        }
+      },
+      {
+        "brand": "Force Motors",
+        "name": "Mobile Workshop",
+        "model": "Diesel",
+        "code": "SPV-911",
+        "category": "VEHICLE",
+        "vehicleType": "Special Purpose Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 2250000,
+          "max": 2850000
+        }
+      },
+      {
+        "brand": "Tata Motors",
+        "name": "Cement Mixer",
+        "model": "Diesel",
+        "code": "SPV-912",
+        "category": "VEHICLE",
+        "vehicleType": "Special Purpose Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 3850000,
+          "max": 4650000
+        }
+      },
+      {
+        "brand": "Eicher",
+        "name": "Vacuum Truck",
+        "model": "Diesel",
+        "code": "SPV-913",
+        "category": "VEHICLE",
+        "vehicleType": "Special Purpose Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 3350000,
+          "max": 4150000
+        }
+      },
+      {
+        "brand": "Ashok Leyland",
+        "name": "Boom Truck",
+        "model": "Diesel",
+        "code": "SPV-914",
+        "category": "VEHICLE",
+        "vehicleType": "Special Purpose Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 4650000,
+          "max": 5450000
+        }
+      },
+      {
+        "brand": "BharatBenz",
+        "name": "Mobile Toilet",
+        "model": "Diesel",
+        "code": "SPV-915",
+        "category": "VEHICLE",
+        "vehicleType": "Special Purpose Vehicle",
+        "fuelType": "Diesel",
+        "priceRange": {
+          "min": 2650000,
+          "max": 3350000
+        }
+      }
+    ]
+  },
+  "materials": [
+    {
+      "name": "Hydraulic Fluid",
+      "unit": "Liter",
+      "priceRange": {
+        "min": 450,
+        "max": 850
+      }
+    },
+    {
+      "name": "Industrial Lubricant",
+      "unit": "Liter",
+      "priceRange": {
+        "min": 380,
+        "max": 720
+      }
+    },
+    {
+      "name": "Cutting Oil",
+      "unit": "Liter",
+      "priceRange": {
+        "min": 320,
+        "max": 650
+      }
+    },
+    {
+      "name": "Coolant Fluid",
+      "unit": "Liter",
+      "priceRange": {
+        "min": 280,
+        "max": 550
+      }
+    },
+    {
+      "name": "Sandpaper (Assorted)",
+      "unit": "Pack",
+      "priceRange": {
+        "min": 120,
+        "max": 280
+      }
+    },
+    {
+      "name": "Paint (All Types)",
+      "unit": "Liter",
+      "priceRange": {
+        "min": 450,
+        "max": 950
+      }
+    },
+    {
+      "name": "Thinner",
+      "unit": "Liter",
+      "priceRange": {
+        "min": 180,
+        "max": 380
+      }
+    },
+    {
+      "name": "Degreaser",
+      "unit": "Liter",
+      "priceRange": {
+        "min": 220,
+        "max": 480
+      }
+    },
+    {
+      "name": "Welding Electrodes",
+      "unit": "Kg",
+      "priceRange": {
+        "min": 250,
+        "max": 550
+      }
+    },
+    {
+      "name": "Gas Cylinders",
+      "unit": "Unit",
+      "priceRange": {
+        "min": 1200,
+        "max": 2500
+      }
+    },
+    {
+      "name": "Safety Equipment",
+      "unit": "Set",
+      "priceRange": {
+        "min": 350,
+        "max": 850
+      }
+    },
+    {
+      "name": "Fasteners (Assorted)",
+      "unit": "Kg",
+      "priceRange": {
+        "min": 180,
+        "max": 420
+      }
+    },
+    {
+      "name": "Wire Rope",
+      "unit": "Meter",
+      "priceRange": {
+        "min": 85,
+        "max": 180
+      }
+    },
+    {
+      "name": "Cleaning Supplies",
+      "unit": "Pack",
+      "priceRange": {
+        "min": 150,
+        "max": 350
+      }
+    },
+    {
+      "name": "Rust Remover",
+      "unit": "Liter",
+      "priceRange": {
+        "min": 280,
+        "max": 580
+      }
+    }
+  ],
+  "blends": [
+    {
+      "name": "Concrete Mix",
+      "unit": "Bag",
+      "priceRange": {
+        "min": 350,
+        "max": 550
+      }
+    },
+    {
+      "name": "Epoxy Resin",
+      "unit": "Kg",
+      "priceRange": {
+        "min": 850,
+        "max": 1500
+      }
+    },
+    {
+      "name": "Polyurethane Foam",
+      "unit": "Kg",
+      "priceRange": {
+        "min": 650,
+        "max": 1200
+      }
+    },
+    {
+      "name": "Adhesive Compound",
+      "unit": "Kg",
+      "priceRange": {
+        "min": 450,
+        "max": 850
+      }
+    },
+    {
+      "name": "Paint Mix (Custom)",
+      "unit": "Liter",
+      "priceRange": {
+        "min": 550,
+        "max": 1100
+      }
+    },
+    {
+      "name": "Sealant",
+      "unit": "Tube",
+      "priceRange": {
+        "min": 180,
+        "max": 380
+      }
+    },
+    {
+      "name": "Chemical Solution A",
+      "unit": "Liter",
+      "priceRange": {
+        "min": 720,
+        "max": 1400
+      }
+    },
+    {
+      "name": "Chemical Solution B",
+      "unit": "Liter",
+      "priceRange": {
+        "min": 680,
+        "max": 1350
+      }
+    }
+  ],
+  "vendors": [
+    {
+      "name": "Precision Tools Emporium",
+      "category": "TOOL"
+    },
+    {
+      "name": "Hand Craft Tool Supply",
+      "category": "TOOL"
+    },
+    {
+      "name": "Industrial ToolBox Co",
+      "category": "TOOL"
+    },
+    {
+      "name": "Workshop Essentials Hub",
+      "category": "TOOL"
+    },
+    {
+      "name": "Power Grip Tool Traders",
+      "category": "TOOL"
+    },
+    {
+      "name": "Apex Tool Distributors",
+      "category": "TOOL"
+    },
+    {
+      "name": "Tool Master Warehouse",
+      "category": "TOOL"
+    },
+    {
+      "name": "Pro Edge Equipment House",
+      "category": "TOOL"
+    },
+    {
+      "name": "Elite Craft Tool Center",
+      "category": "TOOL"
+    },
+    {
+      "name": "Vertex Tooling Solutions",
+      "category": "TOOL"
+    },
+    {
+      "name": "Heavy Machine Industries",
+      "category": "MACHINERY"
+    },
+    {
+      "name": "Mega Fab Machinery Ltd",
+      "category": "MACHINERY"
+    },
+    {
+      "name": "Precision CNC Suppliers",
+      "category": "MACHINERY"
+    },
+    {
+      "name": "Titan Press Equipment Co",
+      "category": "MACHINERY"
+    },
+    {
+      "name": "Auto Machine Providers",
+      "category": "MACHINERY"
+    },
+    {
+      "name": "Core Machinery Traders",
+      "category": "MACHINERY"
+    },
+    {
+      "name": "Advanced Manufacturing Supply",
+      "category": "MACHINERY"
+    },
+    {
+      "name": "Industrial Power Systems",
+      "category": "MACHINERY"
+    },
+    {
+      "name": "Machine Works International",
+      "category": "MACHINERY"
+    },
+    {
+      "name": "Metal Forge Equipment Hub",
+      "category": "MACHINERY"
+    },
+    {
+      "name": "Raw Material Depot",
+      "category": "MATERIAL"
+    },
+    {
+      "name": "Chem Source Industries",
+      "category": "MATERIAL"
+    },
+    {
+      "name": "Bulk Supply Traders",
+      "category": "MATERIAL"
+    },
+    {
+      "name": "Alloy Craft Material Co",
+      "category": "MATERIAL"
+    },
+    {
+      "name": "Fluid Tech Consumables",
+      "category": "MATERIAL"
+    },
+    {
+      "name": "Premium Stock Suppliers",
+      "category": "MATERIAL"
+    },
+    {
+      "name": "Industrial Chemicals Ltd",
+      "category": "MATERIAL"
+    },
+    {
+      "name": "Base Material Distributors",
+      "category": "MATERIAL"
+    },
+    {
+      "name": "Component Source Providers",
+      "category": "MATERIAL"
+    },
+    {
+      "name": "Material Flow Corporation",
+      "category": "MATERIAL"
+    },
+    {
+      "name": "Fleet Line Auto Services",
+      "category": "VEHICLE"
+    },
+    {
+      "name": "Commercial Vehicle Hub",
+      "category": "VEHICLE"
+    },
+    {
+      "name": "Motor Pool Distributors",
+      "category": "VEHICLE"
+    },
+    {
+      "name": "Transport Pro Solutions",
+      "category": "VEHICLE"
+    },
+    {
+      "name": "Cargo Fleet Suppliers",
+      "category": "VEHICLE"
+    },
+    {
+      "name": "Auto Logistics Traders",
+      "category": "VEHICLE"
+    },
+    {
+      "name": "Vehicle Care Industries",
+      "category": "VEHICLE"
+    },
+    {
+      "name": "Mobility Plus Motors",
+      "category": "VEHICLE"
+    },
+    {
+      "name": "Drive Force Auto Supply",
+      "category": "VEHICLE"
+    },
+    {
+      "name": "Transit Works Corporation",
+      "category": "VEHICLE"
+    }
+  ],
+  "conditions": [
+    {
+      "label": "Available",
+      "cssClass": "s-pill s-pill-success",
+      "validFor": [
+        "TOOL",
+        "TOOLKIT",
+        "MACHINERY",
+        "VEHICLE",
+        "MATERIAL"
+      ],
+      "severity": 1
+    },
+    {
+      "label": "Damage",
+      "cssClass": "s-pill s-pill-danger",
+      "validFor": [
+        "TOOL",
+        "TOOLKIT",
+        "MACHINERY",
+        "VEHICLE"
+      ],
+      "severity": 8
+    },
+    {
+      "label": "Partially Damage",
+      "cssClass": "s-pill s-pill-attention",
+      "validFor": [
+        "TOOL",
+        "TOOLKIT",
+        "MACHINERY",
+        "VEHICLE"
+      ],
+      "severity": 6
+    },
+    {
+      "label": "Missing",
+      "cssClass": "s-pill s-pill-warning",
+      "validFor": [
+        "TOOL",
+        "TOOLKIT",
+        "MACHINERY",
+        "VEHICLE"
+      ],
+      "severity": 7
+    },
+    {
+      "label": "Missing Parts",
+      "cssClass": "s-pill s-pill-warning",
+      "validFor": [
+        "TOOLKIT"
+      ],
+      "severity": 7
+    },
+    {
+      "label": "Under Maintenance",
+      "cssClass": "s-pill s-pill-pop",
+      "validFor": [
+        "TOOL",
+        "TOOLKIT",
+        "MACHINERY",
+        "VEHICLE"
+      ],
+      "severity": 4
+    },
+    {
+      "label": "Expired",
+      "cssClass": "s-pill s-pill-danger",
+      "validFor": [
+        "MATERIAL"
+      ],
+      "severity": 9
+    },
+    {
+      "label": "Unfit",
+      "cssClass": "s-pill s-pill-info-special",
+      "validFor": [
+        "MATERIAL"
+      ],
+      "severity": 8
+    }
+  ],
+  "floors": [
+    "Ground Floor",
+    "First Floor",
+    "Second Floor",
+    "Third Floor",
+    "Basement",
+    "Mezzanine"
+  ],
+  "kitParts": {
+    "Socket Set": [
+      "10mm Socket",
+      "12mm Socket",
+      "14mm Socket",
+      "17mm Socket",
+      "19mm Socket",
+      "21mm Socket",
+      "Ratchet Handle",
+      "Extension Bar",
+      "Universal Joint",
+      "Adapter"
+    ],
+    "Wrench Set": [
+      "8mm Wrench",
+      "10mm Wrench",
+      "12mm Wrench",
+      "14mm Wrench",
+      "17mm Wrench",
+      "19mm Wrench"
+    ],
+    "Screwdriver Kit": [
+      "Phillips #1 Bit",
+      "Phillips #2 Bit",
+      "Flathead 4mm Bit",
+      "Flathead 6mm Bit",
+      "Torx T10 Bit",
+      "Torx T20 Bit",
+      "Hex 3mm Bit",
+      "Driver Handle"
+    ],
+    "Hex Key Set": [
+      "1.5mm Hex Key",
+      "2mm Hex Key",
+      "2.5mm Hex Key",
+      "3mm Hex Key",
+      "4mm Hex Key",
+      "5mm Hex Key",
+      "6mm Hex Key",
+      "8mm Hex Key"
+    ],
+    "Plier Set": [
+      "Needle Nose Plier",
+      "Combination Plier",
+      "Wire Cutter",
+      "Locking Plier",
+      "Diagonal Cutter"
+    ],
+    "Tool Storage Box": [
+      "Organizer Tray",
+      "Latch Mechanism",
+      "Handle Grip",
+      "Storage Foam"
+    ],
+    "Ratchet Set": [
+      "3/8 Ratchet",
+      "1/2 Ratchet",
+      "Extension 3 inch",
+      "Extension 6 inch",
+      "Flex Head",
+      "Spinner Handle"
+    ],
+    "Cutting Tool Kit": [
+      "Utility Knife",
+      "Scissors",
+      "Wire Stripper",
+      "Cable Cutter",
+      "Snips"
+    ]
+  },
+  "damageNotes": {
+    "TOOL": [
+      "Minor scratches on surface",
+      "Handle broken off",
+      "Worn out grip padding",
+      "Blade edge dulled",
+      "Chuck mechanism jammed",
+      "Trigger malfunction",
+      "Battery terminal corroded",
+      "Measuring scale faded",
+      "Safety guard damaged",
+      "Rust patches visible"
+    ],
+    "TOOLKIT": [
+      "Socket piece",
+      "Wrench",
+      "Screwdriver bit",
+      "Hex key",
+      "Plier",
+      "Organizer tray",
+      "Latch mechanism",
+      "Storage foam",
+      "Handle grip",
+      "Ratchet handle"
+    ],
+    "MACHINERY": [
+      "Oil leakage detected",
+      "Electrical short circuit",
+      "Belt drive slipping",
+      "Bearing noise excessive",
+      "Blend dispenser system fault",
+      "Hydraulic pressure drop",
+      "Control panel unresponsive",
+      "Motor overheating issue",
+      "Dispenser valve clogged",
+      "Calibration error detected",
+      "Blend ratio inconsistent",
+      "Feed mechanism jammed"
+    ],
+    "VEHICLE": [
+      "Dents on body panels",
+      "Engine oil leakage",
+      "Brake pad worn thin",
+      "Tire tread below limit",
+      "Battery voltage low",
+      "Windshield crack visible",
+      "Headlight lens clouded",
+      "Suspension noise detected",
+      "Exhaust smoke excessive",
+      "Transmission fluid leak"
+    ],
+    "MATERIAL": [
+      "Contamination due to improper storage",
+      "Moisture damage from storage",
+      "Packaging seal compromised",
+      "Chemical degradation visible",
+      "Storage-induced clumping",
+      "Temperature exposure damage",
+      "Cross-contamination detected",
+      "Improper stacking damage",
+      "Batch integrity compromised",
+      "Shelf life expired"
+    ]
+  }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapphire Assessment Report — Asset Management Maturity</title>
+    <link rel="icon" type="image/png" href="assets/images/scorp-sapphire-cropped.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/assessment-report-pdf.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="report-wrapper">
+        <div id="report-container">
+            <div class="a4-page">
+                <div class="page-content" style="display:flex;align-items:center;justify-content:center;">
+                    <div class="report-loading">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <h2>Generating Your Report</h2>
+                        <p>Analysing your assessment responses…</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="s-floating-button">
+        <div class="s-fab-backdrop"></div>
+        <button class="s-fab-trigger" aria-label="Report Actions">
+            <i class="fas fa-compass"></i>
+        </button>
+        <div class="s-fab-menu">
+            <div class="s-fab-menu-header">
+                <h6 class="s-fab-menu-title">Report Actions</h6>
+            </div>
+            <div class="s-fab-menu-body">
+                <button class="s-fab-menu-item" id="ar-download-pdf">
+                    <div class="s-fab-menu-item-icon"><i class="fas fa-file-arrow-down"></i></div>
+                    <span class="s-fab-menu-item-text">Download Report</span>
+                </button>
+                <!-- <button class="s-fab-menu-item" id="ar-print">
+                    <div class="s-fab-menu-item-icon"><i class="fas fa-print"></i></div>
+                    <span class="s-fab-menu-item-text">Print Report</span>
+                </button> -->
+                <button class="s-fab-menu-item" id="ar-email">
+                    <div class="s-fab-menu-item-icon"><i class="fas fa-envelope"></i></div>
+                    <span class="s-fab-menu-item-text">Email Report</span>
+                </button>
+                <a class="s-fab-menu-item" href="assessment.html">
+                    <div class="s-fab-menu-item-icon"><i class="fas fa-redo"></i></div>
+                    <span class="s-fab-menu-item-text">Retake Assessment</span>
+                </a>
+            </div>
+            <div class="s-fab-menu-footer">
+            <a href="book-demo.html" class="s-fab-cta-btn s-fab-cta-primary">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Book Demo</span>
+            </a>
+            <a href="contact.html" class="s-fab-cta-btn s-fab-cta-secondary">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Redirect Modal — all classes ar- prefixed -->
+    <div class="ar-redirect-modal" id="ar-redirect-modal">
+        <div class="ar-modal-overlay" id="ar-modal-overlay"></div>
+        <div class="ar-modal-content">
+            <div class="ar-modal-icon">
+                <i class="fas fa-file-arrow-down"></i>
+            </div>
+            <h3>Report Downloaded!</h3>
+            <p id="ar-modal-message">Redirecting you in…</p>
+            <div class="ar-modal-countdown" id="ar-modal-countdown">5</div>
+            <div class="ar-modal-progress-bar">
+                <div class="ar-modal-progress-fill" id="ar-modal-progress-fill"></div>
+            </div>
+            <button class="ar-modal-skip" id="ar-modal-skip">Skip — go now</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/data/assessment-data.js"></script>
+    <script src="assets/data/assessment-responses.js"></script>
+    <script type="module" src="js/pages/assessment-report.js"></script>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAPPHIRE Assessment | Asset Management Maturity Diagnostic</title>
+    <link rel="icon" type="image/png" href="assets/images/scorp-sapphire-cropped.png">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    
+    <!-- Your Design System (imports everything) -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Lordicon -->
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+</head>
+<body>
+    
+    <!-- ============================================
+         QUESTIONNAIRE CONTAINER
+         Dynamic content rendered by assessment.js
+         ============================================ -->
+    <main class="assessment-main py-2">
+        <div class="s-container">
+            <!-- ============================================
+                 PROGRESS BAR (moved inside main content)
+                 ============================================ -->
+            <div class="assessment-progress-container mb-4">
+                <div class="assessment-progress-bar">
+                    <div class="assessment-progress-fill" style="width: 0%"></div>
+                </div>
+                <p class="assessment-progress-text">0% Complete</p>
+            </div>
+
+            <div id="questionnaire-container" class="assessment-questionnaire" data-aos="fade-up" data-aos-duration="600">
+                <!-- Content dynamically rendered by JavaScript -->
+                <div class="assessment-loading">
+                    <i class="fas fa-spinner fa-spin fa-3x mb-3"></i>
+                    <p>Loading assessment...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="modern-footer mt-5">
+
+        <!-- BRANDING (ALWAYS CENTERED) -->
+        <div class="footer-brand d-flex flex-column align-items-center mb-4">
+            <div class="footer-logo-wrapper justify-content-center">
+                <div class="footer-logo">
+                    <img src="assets/images/Scorp-Logo.png"
+                         alt="Scorptech"
+                         class="footer-brand-logo">
+                </div>
+                <h5 class="footer-brand-name m-0">SCORP</h5>
+            </div>
+            <p class="footer-tagline text-center">
+                In the business of<br> making yours simple
+            </p>
+        </div>
+
+        <!-- 3-COLUMN LAYOUT (Desktop) / STACK (Mobile) -->
+        <div class="row g-4 footer-columns-wrapper">
+            
+            <!-- EXPLORE -->
+            <div class="col-12 col-md-4">
+                <div class="footer-section">
+                    <h6>
+                        Explore <i class="fas fa-chevron-down footer-collapse-icon"></i>
+                    </h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link"><i class="fas fa-home-alt"></i><span>Home</span></a></li>
+                        <li><a href="about.html" class="footer-link"><i class="fas fa-users-line"></i><span>About</span></a></li>
+                        <li><a href="sapphire.html" class="footer-link"><i class="fas fa-diamond"></i><span>Sapphire</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- RESOURCES -->
+            <div class="col-12 col-md-4">
+                <div class="footer-section">
+                    <h6>
+                        Resources <i class="fas fa-chevron-down footer-collapse-icon"></i>
+                    </h6>
+                    <ul class="footer-links">
+                        <li><a href="faq.html" class="footer-link"><i class="fas fa-person-circle-question"></i><span>FAQs</span></a></li>
+                        <li><a href="privacy_policy.html" class="footer-link"><i class="fas fa-file-shield"></i><span>Privacy Policy</span></a></li>
+                        <li><a href="terms_of_use.html" class="footer-link"><i class="fas fa-file-contract"></i><span>Terms of Use</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="col-12 col-md-4">
+                <div class="footer-section">
+                    <h6>
+                        Get in Touch <i class="fas fa-chevron-down footer-collapse-icon"></i>
+                    </h6>
+                    <ul class="footer-links">
+                        <li><a href="tel:+91XXXXXXXXXX" class="footer-link"><i class="fas fa-mobile"></i><span>Phone: +91-XXXXXXXXXX</span></a></li>
+                        <li><a href="mailto:support@scorptech.in" class="footer-link"><i class="fas fa-envelope"></i><span>support@scorptech.in</span></a></li>
+                        <li><a href="contact.html" class="footer-link"><i class="fas fa-phone"></i><span>Contact</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <!-- BOTTOM -->
+        <div class="footer-bottom flex-column align-items-center text-center">
+            <p class="footer-copyright mb-3">
+                © 2025 SCORP - Scorptech Technologies Private Limited. All rights reserved.
+            </p>
+            <div class="footer-social justify-content-center">
+                <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ============================================
+         JAVASCRIPT
+         ============================================ -->
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+    
+	<script type="module" src="js/main.js"></script>
+
+    <!-- Assessment Data -->
+    <script src="assets/data/assessment-data.js"></script>
+    
+    <!-- Assessment Engine -->
+    <script src="js/pages/assessment.js"></script>
+</body>
+</html>
+
+
+

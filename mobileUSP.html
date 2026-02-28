@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile USP - SAPPHIRE | SCORP</title>
+    <link rel="icon" type="image/png" href="assets/images/scorp-sapphire-cropped.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ═══════════════════════════════════════════════════════════════
+         SCORP NAVIGATION 
+         ═══════════════════════════════════════════════════════════════ -->
+    <nav class="navbar navbar-expand-xl s-navbar" id="scorpNavbar">
+        
+        <!-- Brand -->
+        <a class="navbar-brand s-navbar-brand" href="index.html">
+        <div class="s-brand-logo">
+            <img src="assets/images/Scorp-Logo.png" alt="Scorptech" width="24" height="24" style="filter: brightness(0) invert(1);">
+        </div>
+        <span class="s-brand-text">SCORP</span>
+        </a>
+
+        <!-- Animated Hamburger Toggle -->
+        <button class="navbar-toggler s-mobile-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="s-hamburger-box">
+            <span class="s-hamburger-inner"></span>
+        </span>
+        </button>
+
+        <!-- Collapsible Content -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto s-nav-links">
+            
+            <!-- Home -->
+            <li class="nav-item">
+            <a class="nav-link s-nav-link" href="index.html">
+                <i class="fas fa-home-alt"></i>
+                <span>Home</span>
+            </a>
+            </li>
+
+            <!-- Sapphire -->
+            <li class="nav-item">
+            <a class="nav-link s-nav-link" href="sapphire.html">
+                <i class="fas fa-diamond"></i>
+                <span>Sapphire</span>
+            </a>
+            </li>
+
+            <!-- Contact -->
+            <li class="nav-item">
+            <a class="nav-link s-nav-link" href="contact.html">
+                <i class="bi bi-telephone-outbound-fill"></i>
+                <span>Contact</span>
+            </a>
+            </li>
+
+            <!-- About -->
+            <li class="nav-item">
+            <a class="nav-link s-nav-link" href="about.html">
+                <i class="fas fa-users-line"></i>
+                <span>About</span>
+            </a>
+            </li>
+
+            <!-- Sapphire Smart Dropdown (Internal Pages) -->
+            <!-- <li class="nav-item dropdown s-nav-dropdown-internal">
+            <a class="nav-link s-nav-link dropdown-toggle" 
+                href="#" 
+                role="button" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false"
+                data-dropdown-id="sapphire-smart">
+                <i class="bi bi-lightbulb-fill"></i>
+                <span>Sapphire Smart</span>
+                Active Indicator Badge
+                <span class="s-active-badge"></span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end s-internal-dropdown-menu">
+                <li>
+                <a class="dropdown-item s-internal-menu-item" href="analytics.html" data-page="analytics.html">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Smart Analytics</span>
+                </a>
+                </li>
+                <li>
+                <a class="dropdown-item s-internal-menu-item" href="intelligence.html" data-page="intelligence.html">
+                    <i class="fas fa-brain"></i>
+                    <span>Intelligence</span>
+                </a>
+                </li>
+                <li>
+                <a class="dropdown-item s-internal-menu-item" href="mobileUSP.html" data-page="mobileUSP.html">
+                    <i class="fas fa-mobile-screen"></i>
+                    <span>Mobile Friendly</span>
+                </a>
+                </li>
+            </ul>
+            </li> -->
+
+            <!-- Resources Dropdown (Internal Pages) -->
+            <li class="nav-item dropdown s-nav-dropdown-internal">
+            <a class="nav-link s-nav-link dropdown-toggle" 
+                href="#" 
+                role="button" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false"
+                data-dropdown-id="resources">
+                <i class="bi bi-grid-3x3-gap-fill"></i>
+                <span>Resources</span>
+                <!-- Active Indicator Badge -->
+                <span class="s-active-badge"></span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end s-internal-dropdown-menu">
+                <li>
+                <a class="dropdown-item s-internal-menu-item" href="faq.html" data-page="faq.html">
+                    <i class="fas fa-circle-question"></i>
+                    <span>FAQ</span>
+                </a>
+                </li>
+                <li>
+                <a class="dropdown-item s-internal-menu-item" href="terms_of_use.html" data-page="terms_of_use.html">
+                    <i class="fas fa-file-contract"></i>
+                    <span>Terms of Use</span>
+                </a>
+                </li>
+                <li>
+                <a class="dropdown-item s-internal-menu-item" href="privacy_policy.html" data-page="privacy_policy.html">
+                    <i class="fas fa-file-shield"></i>
+                    <span>Privacy Policy</span>
+                </a>
+                </li>
+            </ul>
+            </li>
+
+            <!-- Announcement Icon -->
+            <li class="nav-item">
+            <a class="nav-link s-nav-link s-nav-link-icon" href="announcement.html" title="Announcements">
+                <i class="fa-solid fa-bullhorn fa-rotate-by" style="--fa-rotate-angle: 325deg;"></i>
+            </a>
+            </li>
+
+            <!-- Book Demo Button (Green Styled) -->
+<li class="nav-item">
+  <a class="book-demo-button" href="book-demo.html">
+    <i class="bi bi-calendar-check-fill"></i>
+    <span><strong>Book Demo</strong></span>
+  </a>
+</li>
+
+
+            <!-- Go to Sapphire Dropdown (External Links - Blue Styled) -->
+            <li class="nav-item dropdown s-sapphire-dropdown">
+            <button class="btn s-sapphire-trigger dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                <span>go to</span>
+                <div class="s-sapphire-logo">
+                <img src="assets/images/scorp-sapphire-cropped.png" alt="Sapphire" width="32" height="32" style="border-radius: 4px;">
+                </div>
+                <span><strong>Sapphire</strong></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end s-sapphire-menu">
+                <li>
+                <a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/login" target="_blank">
+                    <i class="bi bi-door-open-fill"></i>
+                    <span>Log-in</span>
+                </a>
+                </li>
+                <li>
+                <a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/register" target="_blank">
+                    <i class="bi bi-person-plus-fill"></i>
+                    <span>Sign-up</span>
+                </a>
+                </li>
+            </ul>
+            </li>
+
+        </ul>
+        </div>
+    </nav>
+
+<section class="s-hero s-hero-gradient">
+    <img src="assets/images/sapphire_hero_1.jpeg" 
+         alt="Mobile Excellence Hero" 
+         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+    <div class="s-hero-overlay"></div>
+    <div class="container">
+        <div class="s-hero-content">
+            <h1 class="s-hero-title">
+                <span class="s-hero-title-line">Mobile-First</span>
+                <span class="s-hero-title-highlight">Operations</span>
+            </h1>
+            <p class="s-hero-description">
+                Enterprise asset management at your fingertips with real-time control
+            </p>
+        </div>
+    </div>
+</section>
+
+    <!-- Mobile USP Section -->
+    <section class="mobile-usp-section">
+
+        <div class="container-fluid">
+            <div class="section-header">
+                <div class="header-badge">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Mobile-First Excellence</span>
+                </div>
+                
+
+                <!-- Title with Word Rotator Animation -->
+                <div class="s-word-rotator-container">
+                    <div data-word-rotator data-speed="2500">
+                        <span>Navigate</span>
+                        <span>Approve</span>
+                        <span>Update</span>
+                        <span>Track</span>
+                    </div>
+                    <div class="s-word-rotator-static">On the Go!</div>
+                </div>
+                
+                <p class="main-subtitle">
+                    Experience enterprise-grade asset management with unmatched mobile capabilities and real-time operations
+                </p>
+            </div>
+
+            <div class="usp-layout-container">
+                <div class="usp-main-grid">
+                    <!-- Phone Showcase Side (Left) -->
+                    <div class="phone-showcase-side">
+                        <div class="phone-showcase-card">
+                            <div class="phone-content">
+                                <h3 class="phone-showcase-title">Mobile Excellence</h3>
+                                <p class="phone-showcase-desc">
+                                    Manage operations, track updates, and act in real time, wherever work takes you. Built for the modern workforce with enterprise-grade security.
+                                </p>
+                                <div class="showcase-features">
+                                    <div class="showcase-feature">
+                                        <i class="fas fa-bolt"></i>
+                                        <span>Lightning Fast</span>
+                                    </div>
+                                    <div class="showcase-feature">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span>Enterprise Secure</span>
+                                    </div>
+                                    <div class="showcase-feature">
+                                        <i class="fas fa-sync-alt"></i>
+                                        <span>Real-time Sync</span>
+                                    </div>
+                                    <div class="showcase-feature">
+                                        <i class="fas fa-users"></i>
+                                        <span>Team Collaboration</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Phone carousel -->
+                            <div class="phone-visual">
+                                <div class="phone-parallax-container" id="phoneParallax">
+                                    <div class="phone-shadow"></div>
+                                    <div class="phonev2-frame">
+                                        <div class="phonev2-screen">
+                                            <div id="phoneCarousel" class="carousel slide phone-carousel" data-bs-ride="carousel" data-bs-interval="3500">
+                                                <div class="carousel-inner">
+                                                    <div class="carousel-item active">
+                                                        <img src="assets/images/workplace-management-carousel-phone.png" class="phone-carousel-img" alt="Workplaces">
+                                                        <div class="phone-caption">
+                                                            <i class="fas fa-building"></i>
+                                                            <span class="text-center">Workplaces</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="assets/images/user-management-carousel-phone.png" class="phone-carousel-img" alt="User Management">
+                                                        <div class="phone-caption">
+                                                            <i class="fas fa-users-cog"></i>
+                                                            <span class="text-center">User Management</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="assets/images/master-data-carousel-phone.png" class="phone-carousel-img" alt="Master Data">
+                                                        <div class="phone-caption">
+                                                            <i class="fas fa-database"></i>
+                                                            <span class="text-center">Master Data Management</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="assets/images/smart-inventories-carousel-phone.png" class="phone-carousel-img" alt="Smart Inventories">
+                                                        <div class="phone-caption">
+                                                            <i class="fas fa-boxes"></i>
+                                                            <span class="text-center">Smart Inventories</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="assets/images/item-requisition-carousel-phone.png" class="phone-carousel-img" alt="Item Requisition">
+                                                        <div class="phone-caption">
+                                                            <i class="fas fa-clipboard-list"></i>
+                                                            <span class="text-center">Item Requisition</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="assets/images/reports-and-inspection-carousel-phone.png" class="phone-carousel-img" alt="Reports">
+                                                        <div class="phone-caption">
+                                                            <i class="fas fa-flag"></i>
+                                                            <span class="text-center">Inspection and Reports</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="assets/images/service-and-maintenance-carousel-phone.png" class="phone-carousel-img" alt="Service">
+                                                        <div class="phone-caption">
+                                                            <i class="fas fa-tools"></i>
+                                                            <span class="text-center">Service and Maintenance</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="assets/images/my-workstation-carousel-phone.png" class="phone-carousel-img" alt="Employee Workstations">
+                                                        <div class="phone-caption">
+                                                            <i class="fas fa-desktop"></i>
+                                                            <span class="text-center">Employee Workstations</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="assets/images/sapphire_hero_5.jpeg" class="phone-carousel-img" alt="Sapphire">
+                                                        <div class="phone-caption" style="bottom: 35%;">
+                                                            <img src="assets/images/scorp-sapphire-cropped.png" alt="Sapphire Logo" width="40" height="40">
+                                                            <span class="text-center">Sapphire</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="assets/images/smartphoneframe.png" alt="Phone Frame" class="phone-overlay">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature Cards Side (Right) -->
+                    <div class="feature-cards-side">
+                        <div class="feature-cards-grid">
+                            <div class="mobile-feature-card">
+                                <div class="mobile-icon-box-glass">
+                                    <img src="assets/images/mobile_first_operations.png" alt="1-Touch Operations">
+                                </div>
+                                <div class="mobile-feature-content">
+                                    <h5 class="mobile-feature-title">1-Touch Operations</h5>
+                                    <button class="mobile-explore-btn" data-bs-toggle="modal" data-bs-target="#touchOpsModal">
+                                        Explore <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="mobile-feature-card">
+                                <div class="mobile-icon-box-glass">
+                                    <img src="assets/images/sapphire_quick_data_logging.png" alt="Quick Data Logging">
+                                </div>
+                                <div class="mobile-feature-content">
+                                    <h5 class="mobile-feature-title">Quick Data Logging</h5>
+                                    <button class="mobile-explore-btn" data-bs-toggle="modal" data-bs-target="#dataLoggingModal">
+                                        Explore <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="mobile-feature-card">
+                                <div class="mobile-icon-box-glass">
+                                    <img src="assets/images/sapphire_smart_inventrories.png" alt="Smart Inventories">
+                                </div>
+                                <div class="mobile-feature-content">
+                                    <h5 class="mobile-feature-title">Smart Inventories</h5>
+                                    <button class="mobile-explore-btn" data-bs-toggle="modal" data-bs-target="#smartInventoryModal">
+                                        Explore <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="mobile-feature-card">
+                                <div class="mobile-icon-box-glass">
+                                    <img src="assets/images/sapphire_on-the-go_inspections.png" alt="On-The-Go Inspections">
+                                </div>
+                                <div class="mobile-feature-content">
+                                    <h5 class="mobile-feature-title">On-The-Go Inspections</h5>
+                                    <button class="mobile-explore-btn" data-bs-toggle="modal" data-bs-target="#inspectionModal">
+                                        Explore <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="mobile-feature-card">
+                                <div class="mobile-icon-box-glass">
+                                    <img src="assets/images/sapphire_instant_approvals.png" alt="Instant Approvals">
+                                </div>
+                                <div class="mobile-feature-content">
+                                    <h5 class="mobile-feature-title">Instant Approvals</h5>
+                                    <button class="mobile-explore-btn" data-bs-toggle="modal" data-bs-target="#approvalsModal">
+                                        Explore <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="mobile-feature-card">
+                                <div class="mobile-icon-box-glass">
+                                    <img src="assets/images/sapphire_live_tracking_and_updates.png" alt="Live Tracking">
+                                </div>
+                                <div class="mobile-feature-content">
+                                    <h5 class="mobile-feature-title">Live Tracking & Updates</h5>
+                                    <button class="mobile-explore-btn" data-bs-toggle="modal" data-bs-target="#trackingModal">
+                                        Explore <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+        <!-- ═══════════════════════════════════════════════════════════════
+            FOOTER
+            ═══════════════════════════════════════════════════════════════ -->
+    <!-- FOOTER -->
+    <footer class="modern-footer mt-5">
+
+        <!-- BRANDING (ALWAYS CENTERED) -->
+        <div class="footer-brand d-flex flex-column align-items-center mb-4">
+            <div class="footer-logo-wrapper justify-content-center">
+                <div class="footer-logo">
+                    <img src="assets/images/Scorp-Logo.png"
+                         alt="Scorptech"
+                         class="footer-brand-logo">
+                </div>
+                <h5 class="footer-brand-name m-0">SCORP</h5>
+            </div>
+            <p class="footer-tagline text-center">
+                In the business of<br> making yours simple
+            </p>
+        </div>
+
+        <!-- 3-COLUMN LAYOUT (Desktop) / STACK (Mobile) -->
+        <div class="row g-4 footer-columns-wrapper">
+            
+            <!-- EXPLORE -->
+            <div class="col-12 col-md-4">
+                <div class="footer-section">
+                    <h6>
+                        Explore <i class="fas fa-chevron-down footer-collapse-icon"></i>
+                    </h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link"><i class="fas fa-home-alt"></i><span>Home</span></a></li>
+                        <li><a href="about.html" class="footer-link"><i class="fas fa-users-line"></i><span>About</span></a></li>
+                        <li><a href="sapphire.html" class="footer-link"><i class="fas fa-diamond"></i><span>Sapphire</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- RESOURCES -->
+            <div class="col-12 col-md-4">
+                <div class="footer-section">
+                    <h6>
+                        Resources <i class="fas fa-chevron-down footer-collapse-icon"></i>
+                    </h6>
+                    <ul class="footer-links">
+                        <li><a href="faq.html" class="footer-link"><i class="fas fa-person-circle-question"></i><span>FAQs</span></a></li>
+                        <li><a href="privacy_policy.html" class="footer-link"><i class="fas fa-file-shield"></i><span>Privacy Policy</span></a></li>
+                        <li><a href="terms_of_use.html" class="footer-link"><i class="fas fa-file-contract"></i><span>Terms of Use</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="col-12 col-md-4">
+                <div class="footer-section">
+                    <h6>
+                        Get in Touch <i class="fas fa-chevron-down footer-collapse-icon"></i>
+                    </h6>
+                    <ul class="footer-links">
+                        <li><a href="tel:+91XXXXXXXXXX" class="footer-link"><i class="fas fa-mobile"></i><span>Phone: +91-XXXXXXXXXX</span></a></li>
+                        <li><a href="mailto:support@scorptech.in" class="footer-link"><i class="fas fa-envelope"></i><span>support@scorptech.in</span></a></li>
+                        <li><a href="contact.html" class="footer-link"><i class="fas fa-phone"></i><span>Contact</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <!-- BOTTOM -->
+        <div class="footer-bottom flex-column align-items-center text-center">
+            <p class="footer-copyright mb-3">
+                © 2025 SCORP - Scorptech Technologies Private Limited. All rights reserved.
+            </p>
+            <div class="footer-social justify-content-center">
+                <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+      <!-- Feature Modals -->
+    
+    <!-- 1-Touch Operations Modal -->
+    <div class="modal fade feature-modal" id="touchOpsModal" tabindex="-1" aria-labelledby="touchOpsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content feature-modal-content">
+                <div class="modal-header feature-modal-header">
+                    <div class="modal-header-animation"></div>
+                    <div class="modal-icon-large">
+                        <i class="fas fa-hand-pointer"></i>
+                    </div>
+                    <div class="modal-title-content">
+                        <h5 class="modal-title-main">1-Touch Operations</h5>
+                        <p class="modal-title-sub">Simplified Workflow Management</p>
+                    </div>
+                </div>
+                <div class="modal-body feature-modal-body">
+                    <div class="modal-feature-image">
+                        <img src="assets/images/mobile_first_operations.png" alt="1-Touch Operations">
+                    </div>
+                    <p class="modal-description">
+                        Transform complex multi-step processes into simple, intuitive single-touch actions. Our intelligent interface learns your workflow patterns and provides contextual shortcuts, reducing operational complexity by up to 75% while maintaining full audit trails and compliance standards.
+                    </p>
+                </div>
+                <div class="modal-footer feature-modal-footer">
+                    <button type="button" class="s-btn-success" data-bs-dismiss="modal">
+                        <i class="fas fa-thumbs-up fa-beat me-2"></i>Got it
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Data Logging Modal -->
+    <div class="modal fade feature-modal" id="dataLoggingModal" tabindex="-1" aria-labelledby="dataLoggingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content feature-modal-content">
+                <div class="modal-header feature-modal-header">
+                    <div class="modal-header-animation"></div>
+                    <div class="modal-icon-large">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div class="modal-title-content">
+                        <h5 class="modal-title-main">Quick Data Logging</h5>
+                        <p class="modal-title-sub">Real-time Data Capture</p>
+                    </div>
+                </div>
+                <div class="modal-body feature-modal-body">
+                    <div class="modal-feature-image">
+                        <img src="assets/images/sapphire_quick_data_logging.png" alt="Quick Data Logging">
+                    </div>
+                    <p class="modal-description">
+                        Capture critical data instantly with voice recognition, barcode scanning, and smart forms that auto-populate based on context. Real-time synchronization ensures all teams have access to the latest information, with automatic backup and conflict resolution.
+                    </p>
+                </div>
+                <div class="modal-footer feature-modal-footer">
+                    <button type="button" class="s-btn-success" data-bs-dismiss="modal">
+                        <i class="fas fa-thumbs-up fa-beat me-2"></i>Got it
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Smart Inventories Modal -->
+    <div class="modal fade feature-modal" id="smartInventoryModal" tabindex="-1" aria-labelledby="smartInventoryModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content feature-modal-content">
+                <div class="modal-header feature-modal-header">
+                    <div class="modal-header-animation"></div>
+                    <div class="modal-icon-large">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <div class="modal-title-content">
+                        <h5 class="modal-title-main">Smart Inventories</h5>
+                        <p class="modal-title-sub">AI-Powered Asset Tracking</p>
+                    </div>
+                </div>
+                <div class="modal-body feature-modal-body">
+                    <div class="modal-feature-image">
+                        <img src="assets/images/sapphire_smart_inventrories.png" alt="Smart Inventories">
+                    </div>
+                    <p class="modal-description">
+                        Leverage machine learning algorithms to predict inventory needs, optimize stock levels, and prevent stockouts. Automated reorder points, supplier integration, and demand forecasting ensure you always have the right items at the right time.
+                    </p>
+                </div>
+                <div class="modal-footer feature-modal-footer">
+                    <button type="button" class="s-btn-success" data-bs-dismiss="modal">
+                        <i class="fas fa-thumbs-up fa-beat me-2"></i>Got it
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- On-The-Go Inspections Modal -->
+    <div class="modal fade feature-modal" id="inspectionModal" tabindex="-1" aria-labelledby="inspectionModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content feature-modal-content">
+                <div class="modal-header feature-modal-header">
+                    <div class="modal-header-animation"></div>
+                    <div class="modal-icon-large">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <div class="modal-title-content">
+                        <h5 class="modal-title-main">On-The-Go Inspections</h5>
+                        <p class="modal-title-sub">Digital Inspection Workflows</p>
+                    </div>
+                </div>
+                <div class="modal-body feature-modal-body">
+                    <div class="modal-feature-image">
+                        <img src="assets/images/sapphire_on-the-go_inspections.png" alt="On-The-Go Inspections">
+                    </div>
+                    <p class="modal-description">
+                        Conduct comprehensive inspections with customizable digital checklists, photo annotations, and voice notes. GPS tagging, offline capability, and automatic report generation ensure thorough documentation and compliance tracking.
+                    </p>
+                </div>
+                <div class="modal-footer feature-modal-footer">
+                    <button type="button" class="s-btn-success" data-bs-dismiss="modal">
+                        <i class="fas fa-thumbs-up fa-beat me-2"></i>Got it
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Instant Approvals Modal -->
+    <div class="modal fade feature-modal" id="approvalsModal" tabindex="-1" aria-labelledby="approvalsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content feature-modal-content">
+                <div class="modal-header feature-modal-header">
+                    <div class="modal-header-animation"></div>
+                    <div class="modal-icon-large">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="modal-title-content">
+                        <h5 class="modal-title-main">Instant Approvals</h5>
+                        <p class="modal-title-sub">Streamlined Authorization</p>
+                    </div>
+                </div>
+                <div class="modal-body feature-modal-body">
+                    <div class="modal-feature-image">
+                        <img src="assets/images/sapphire_instant_approvals.png" alt="Instant Approvals">
+                    </div>
+                    <p class="modal-description">
+                        Accelerate decision-making with smart routing, digital signatures, and contextual approvals. Multi-level authorization workflows with automatic escalation ensure nothing falls through the cracks while maintaining security and compliance.
+                    </p>
+                </div>
+                <div class="modal-footer feature-modal-footer">
+                    <button type="button" class="s-btn-success" data-bs-dismiss="modal">
+                        <i class="fas fa-thumbs-up fa-beat me-2"></i>Got it
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Live Tracking & Updates Modal -->
+    <div class="modal fade feature-modal" id="trackingModal" tabindex="-1" aria-labelledby="trackingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content feature-modal-content">
+                <div class="modal-header feature-modal-header">
+                    <div class="modal-header-animation"></div>
+                    <div class="modal-icon-large">
+                        <i class="fas fa-broadcast-tower"></i>
+                    </div>
+                    <div class="modal-title-content">
+                        <h5 class="modal-title-main">Live Tracking & Updates</h5>
+                        <p class="modal-title-sub">Real-time Operations Monitor</p>
+                    </div>
+                </div>
+                <div class="modal-body feature-modal-body">
+                    <div class="modal-feature-image">
+                        <img src="assets/images/sapphire_live_tracking_and_updates.png" alt="Live Tracking">
+                    </div>
+                    <p class="modal-description">
+                        Monitor operations in real-time with live dashboards, instant notifications, and predictive alerts. Track asset locations, monitor performance metrics, and receive proactive notifications about potential issues before they impact operations.
+                    </p>
+                </div>
+                <div class="modal-footer feature-modal-footer">
+                    <button type="button" class="s-btn-success" data-bs-dismiss="modal">
+                        <i class="fas fa-thumbs-up fa-beat me-2"></i>Got it
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>  
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/pages/mobile-usp.js"></script>
+</body>
+</html>
+
+
+

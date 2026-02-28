@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FAQs | SCORP</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SCORP NAVIGATION 
+     ═══════════════════════════════════════════════════════════════ -->
+<nav class="navbar navbar-expand-xl s-navbar" id="scorpNavbar">
+    
+    <!-- Brand -->
+    <a class="navbar-brand s-navbar-brand" href="index.html">
+      <div class="s-brand-logo">
+        <img src="assets/images/Scorp-Logo.png" alt="Scorptech" width="24" height="24" style="filter: brightness(0) invert(1);">
+      </div>
+      <span class="s-brand-text">SCORP</span>
+    </a>
+
+    <!-- Animated Hamburger Toggle -->
+    <button class="navbar-toggler s-mobile-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="s-hamburger-box">
+        <span class="s-hamburger-inner"></span>
+      </span>
+    </button>
+
+    <!-- Collapsible Content -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto s-nav-links">
+        
+        <!-- Home -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="index.html">
+            <i class="fas fa-home-alt"></i>
+            <span>Home</span>
+          </a>
+        </li>
+
+        <!-- Sapphire -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="sapphire.html">
+            <i class="fas fa-diamond"></i>
+            <span>Sapphire</span>
+          </a>
+        </li>
+
+        <!-- Contact -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="contact.html">
+            <i class="bi bi-telephone-outbound-fill"></i>
+            <span>Contact</span>
+          </a>
+        </li>
+
+        <!-- About -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="about.html">
+            <i class="fas fa-users-line"></i>
+            <span>About</span>
+          </a>
+        </li>
+
+        <!-- Sapphire Smart Dropdown (Internal Pages) -->
+        <!-- <li class="nav-item dropdown s-nav-dropdown-internal">
+          <a class="nav-link s-nav-link dropdown-toggle" 
+             href="#" 
+             role="button" 
+             data-bs-toggle="dropdown" 
+             aria-expanded="false"
+             data-dropdown-id="sapphire-smart">
+            <i class="bi bi-lightbulb-fill"></i>
+            <span>Sapphire Smart</span>
+            Active Indicator Badge
+            <span class="s-active-badge"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end s-internal-dropdown-menu">
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="analytics.html" data-page="analytics.html">
+                <i class="fas fa-chart-line"></i>
+                <span>Smart Analytics</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="intelligence.html" data-page="intelligence.html">
+                <i class="fas fa-brain"></i>
+                <span>Intelligence</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="mobileUSP.html" data-page="mobileUSP.html">
+                <i class="fas fa-mobile-screen"></i>
+                <span>Mobile Friendly</span>
+              </a>
+            </li>
+          </ul>
+        </li> -->
+
+        <!-- Resources Dropdown (Internal Pages) -->
+        <li class="nav-item dropdown s-nav-dropdown-internal">
+          <a class="nav-link s-nav-link dropdown-toggle" 
+             href="#" 
+             role="button" 
+             data-bs-toggle="dropdown" 
+             aria-expanded="false"
+             data-dropdown-id="resources">
+            <i class="bi bi-grid-3x3-gap-fill"></i>
+            <span>Resources</span>
+            <!-- Active Indicator Badge -->
+            <span class="s-active-badge"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end s-internal-dropdown-menu">
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="faq.html" data-page="faq.html">
+                <i class="fas fa-circle-question"></i>
+                <span>FAQ</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="terms_of_use.html" data-page="terms_of_use.html">
+                <i class="fas fa-file-contract"></i>
+                <span>Terms of Use</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="privacy_policy.html" data-page="privacy_policy.html">
+                <i class="fas fa-file-shield"></i>
+                <span>Privacy Policy</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Announcement Icon -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link s-nav-link-icon" href="announcement.html" title="Announcements">
+            <i class="fa-solid fa-bullhorn fa-rotate-by" style="--fa-rotate-angle: 325deg;"></i>
+          </a>
+        </li>
+
+        <!-- Book Demo Button (Green Styled) -->
+<li class="nav-item">
+  <a class="book-demo-button" href="book-demo.html">
+    <i class="bi bi-calendar-check-fill"></i>
+    <span><strong>Book Demo</strong></span>
+  </a>
+</li>
+
+
+        <!-- Go to Sapphire Dropdown (External Links - Blue Styled) -->
+        <li class="nav-item dropdown s-sapphire-dropdown">
+          <button class="btn s-sapphire-trigger dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            <span>go to</span>
+            <div class="s-sapphire-logo">
+              <img src="assets/images/scorp-sapphire-cropped.png" alt="Sapphire" width="32" height="32" style="border-radius: 4px;">
+            </div>
+            <span><strong>Sapphire</strong></span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end s-sapphire-menu">
+            <li>
+              <a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/login" target="_blank">
+                <i class="bi bi-door-open-fill"></i>
+                <span>Log-in</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/register" target="_blank">
+                <i class="bi bi-person-plus-fill"></i>
+                <span>Sign-up</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+</nav>
+
+
+
+        <!-- FAQ Section -->
+        <section class="py-5 s-hero">
+        <div class="container">
+            <h2 class="fw-bold s-text-gradient-primary text-center mb-4">Frequently Asked Questions</h2>
+            <div class="s-accordion" id="faqAccordion">
+                <div class="s-accordion-item s-accordion-active">
+                    <button class="s-accordion-trigger">
+                        <span class="s-accordion-trigger-text">What is Sapphire?</span>
+                        <i class="fas fa-chevron-down s-accordion-icon"></i>
+                    </button>
+                    <div class="s-accordion-panel">
+                        <div class="s-accordion-body">
+                            <p>Sapphire is an advanced ERP platform purpose-built for fixed asset lifecycle management. Designed for modern workplaces, it enables real-time operations, simplified workflows, and intuitive usability across departments and industries.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="s-accordion-item">
+                    <button class="s-accordion-trigger">
+                        <span class="s-accordion-trigger-text">क्या सैफायर भारत में निर्मित है?<br>(Is Sapphire Made in India?)</span>
+                        <i class="fas fa-chevron-down s-accordion-icon"></i>
+                    </button>
+                    <div class="s-accordion-panel">
+                        <div class="s-accordion-body">
+                            <p>हाँ, सैफायर पूरी तरह से भारत में डिज़ाइन और विकसित किया गया है। <strong>स्कॉर्पटेक टेक्नोलॉजीज प्राइवेट लिमिटेड</strong> एक भारतीय कंपनी है और सैफायर भारतीय तकनीकी आत्मनिर्भरता का प्रतीक है。</p>
+                            <br>
+                            <img src="assets/images/made-in-india-seal.png" alt="Made in India Seal" style="max-width:150px;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="s-accordion-item">
+                    <button class="s-accordion-trigger">
+                        <span class="s-accordion-trigger-text">Is Sapphire suitable for small and medium enterprises?</span>
+                        <i class="fas fa-chevron-down s-accordion-icon"></i>
+                    </button>
+                    <div class="s-accordion-panel">
+                        <div class="s-accordion-body">
+                            <p>Yes. Sapphire is engineered to be cost-effective and scalable, making it an ideal solution for MSMEs seeking digital transformation without heavy IT investment.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="s-accordion-item">
+                    <button class="s-accordion-trigger">
+                        <span class="s-accordion-trigger-text">Can Sapphire be accessed on mobile devices?</span>
+                        <i class="fas fa-chevron-down s-accordion-icon"></i>
+                    </button>
+                    <div class="s-accordion-panel">
+                        <div class="s-accordion-body">
+                            <p>Absolutely. Sapphire is fully mobile-optimized. Every module and feature is accessible from smartphones—enabling real-time updates, inspections, approvals, and operations on the go.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="s-accordion-item">
+                    <button class="s-accordion-trigger">
+                        <span class="s-accordion-trigger-text">Does Sapphire support multi-location workplaces?</span>
+                        <i class="fas fa-chevron-down s-accordion-icon"></i>
+                    </button>
+                    <div class="s-accordion-panel">
+                        <div class="s-accordion-body">
+                            <p>Yes. Sapphire allows seamless management of multiple branches, hierarchical addresses, department-level structuring, and shift planning across locations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="s-accordion-item">
+                    <button class="s-accordion-trigger">
+                        <span class="s-accordion-trigger-text">What kind of assets can Sapphire track?</span>
+                        <i class="fas fa-chevron-down s-accordion-icon"></i>
+                    </button>
+                    <div class="s-accordion-panel">
+                        <div class="s-accordion-body">
+                            <p>Sapphire can manage a diverse set of "<strong>fixed assets</strong>"—ranging from hand tools, machinery, and vehicles to materials, blends, and consumables—across their complete lifecycle.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="s-accordion-item">
+                    <button class="s-accordion-trigger">
+                        <span class="s-accordion-trigger-text">What are the reporting features available?</span>
+                        <i class="fas fa-chevron-down s-accordion-icon"></i>
+                    </button>
+                    <div class="s-accordion-panel">
+                        <div class="s-accordion-body">
+                            <p>The platform provides role-specific inspection checklists, item-level reporting rubrics, and real-time condition reports, enabling structured audits and actionable insights.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="s-accordion-item">
+                    <button class="s-accordion-trigger">
+                        <span class="s-accordion-trigger-text">Can Sapphire handle maintenance schedules and warranties?</span>
+                        <i class="fas fa-chevron-down s-accordion-icon"></i>
+                    </button>
+                    <div class="s-accordion-panel">
+                        <div class="s-accordion-body">
+                            <p>Yes. Sapphire logs scheduled and event-based maintenance, including services covered under warranties, maintenance contracts, and insurance policies. Spare parts, labor, and material usage are also tracked and recorded.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="s-accordion-item">
+                    <button class="s-accordion-trigger">
+                        <span class="s-accordion-trigger-text">Does Sapphire support role-based access?</span>
+                        <i class="fas fa-chevron-down s-accordion-icon"></i>
+                    </button>
+                    <div class="s-accordion-panel">
+                        <div class="s-accordion-body">
+                            <p>Yes. With dedicated portals for different user roles (owners, managers, issuers, staff), Sapphire ensures secure, streamlined, and role-specific access throughout the system.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="s-accordion-item">
+                    <button class="s-accordion-trigger">
+                        <span class="s-accordion-trigger-text">Is the system customizable?</span>
+                        <i class="fas fa-chevron-down s-accordion-icon"></i>
+                    </button>
+                    <div class="s-accordion-panel">
+                        <div class="s-accordion-body">
+                            <p>Sapphire encapsulates all essential generic workflows. However, for specific needs, custom modules can be developed on request. These are scoped separately and involve additional cost and time.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="s-accordion-item">
+                    <button class="s-accordion-trigger">
+                        <span class="s-accordion-trigger-text">Can Sapphire handle requests like issue, return or location change?</span>
+                        <i class="fas fa-chevron-down s-accordion-icon"></i>
+                    </button>
+                    <div class="s-accordion-panel">
+                        <div class="s-accordion-body">
+                            <p>Yes. Sapphire includes structured request workflows for issuing items, submitting returns or surrenders, and processing location changes—each integrated with approval hierarchies and logs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="s-accordion-item">
+                    <button class="s-accordion-trigger">
+                        <span class="s-accordion-trigger-text">What kind of analytics does Sapphire offer?</span>
+                        <i class="fas fa-chevron-down s-accordion-icon"></i>
+                    </button>
+                    <div class="s-accordion-panel">
+                        <div class="s-accordion-body">
+                            <p>Sapphire includes performance, financial, and operational analytics: usage trends, breakdown frequencies, failure rates, asset downtime, service logs, and consumption behavior across time.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="s-accordion-item">
+                    <button class="s-accordion-trigger">
+                        <span class="s-accordion-trigger-text">How does Sapphire handle inspections?</span>
+                        <i class="fas fa-chevron-down s-accordion-icon"></i>
+                    </button>
+                    <div class="s-accordion-panel">
+                        <div class="s-accordion-body">
+                            <p>Inspections are conducted using pre-defined checklists. These can be scheduled periodically, performed on the go, and used to generate structured reports that enable prompt resolution of issues.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="s-accordion-item">
+                    <button class="s-accordion-trigger">
+                        <span class="s-accordion-trigger-text">How does Sapphire help in reducing asset downtime?</span>
+                        <i class="fas fa-chevron-down s-accordion-icon"></i>
+                    </button>
+                    <div class="s-accordion-panel">
+                        <div class="s-accordion-body">
+                            <p>With real-time alerts and metrics like MTBF, MTTR, and service intervals, Sapphire ensures proactive maintenance and planning—minimizing operational disruptions and maximizing uptime.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="s-accordion-item">
+                    <button class="s-accordion-trigger">
+                        <span class="s-accordion-trigger-text">How secure is Sapphire’s data?</span>
+                        <i class="fas fa-chevron-down s-accordion-icon"></i>
+                    </button>
+                    <div class="s-accordion-panel">
+                        <div class="s-accordion-body">
+                            <p>Security is integral to Sapphire’s architecture. It features encrypted storage, role-based access, audit trails, and centralized workflows to ensure data integrity and protection.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="s-accordion-item">
+                    <button class="s-accordion-trigger">
+                        <span class="s-accordion-trigger-text">Does Sapphire support integrations with external software?</span>
+                        <i class="fas fa-chevron-down s-accordion-icon"></i>
+                    </button>
+                    <div class="s-accordion-panel">
+                        <div class="s-accordion-body">
+                            <p>Yes. Sapphire can integrate via APIs and supports exportable formats to sync with accounting systems, HRMS, or third-party platforms as required.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="s-accordion-item">
+                    <button class="s-accordion-trigger">
+                        <span class="s-accordion-trigger-text">Can Sapphire generate financial summaries?</span>
+                        <i class="fas fa-chevron-down s-accordion-icon"></i>
+                    </button>
+                    <div class="s-accordion-panel">
+                        <div class="s-accordion-body">
+                            <p>Yes. It provides detailed financial reporting, including ownership costs, maintenance expenses, consumption tracking, warranty utilization, and depreciation assessments.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="s-accordion-item">
+                    <button class="s-accordion-trigger">
+                        <span class="s-accordion-trigger-text">How is Sapphire implemented?</span>
+                        <i class="fas fa-chevron-down s-accordion-icon"></i>
+                    </button>
+                    <div class="s-accordion-panel">
+                        <div class="s-accordion-body">
+                            <p>Sapphire is currently deployed directly within enterprise environments (on-premise or private cloud). However, it will soon be available as a fully cloud-based SaaS solution. Deployment today is guided, fast, and minimally disruptive.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="s-accordion-item">
+                    <button class="s-accordion-trigger">
+                        <span class="s-accordion-trigger-text">Does Sapphire require specialized training to use?</span>
+                        <i class="fas fa-chevron-down s-accordion-icon"></i>
+                    </button>
+                    <div class="s-accordion-panel">
+                        <div class="s-accordion-body">
+                            <p>No. The system is designed for intuitive adoption. With simplified UIs and clear workflows, even users with limited digital literacy can begin using Sapphire with minimal onboarding.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="s-accordion-item">
+                    <button class="s-accordion-trigger">
+                        <span class="s-accordion-trigger-text">Does Sapphire support depreciation calculations?</span>
+                        <i class="fas fa-chevron-down s-accordion-icon"></i>
+                    </button>
+                    <div class="s-accordion-panel">
+                        <div class="s-accordion-body">
+                            <p>Yes. Sapphire provides dual-mode depreciation tracking based on both the Indian Companies Act and the Income Tax Act. It also calculates partial-year depreciation as per standard Indian accounting norms.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+        <!-- Footer -->
+    <!-- FOOTER -->
+    <footer class="modern-footer mt-5">
+
+        <!-- BRANDING (ALWAYS CENTERED) -->
+        <div class="footer-brand d-flex flex-column align-items-center mb-4">
+            <div class="footer-logo-wrapper justify-content-center">
+                <div class="footer-logo">
+                    <img src="assets/images/Scorp-Logo.png"
+                         alt="Scorptech"
+                         class="footer-brand-logo">
+                </div>
+                <h5 class="footer-brand-name m-0">SCORP</h5>
+            </div>
+            <p class="footer-tagline text-center">
+                In the business of<br> making yours simple
+            </p>
+        </div>
+
+        <!-- 3-COLUMN LAYOUT (Desktop) / STACK (Mobile) -->
+        <div class="row g-4 footer-columns-wrapper">
+            
+            <!-- EXPLORE -->
+            <div class="col-12 col-md-4">
+                <div class="footer-section">
+                    <h6>
+                        Explore <i class="fas fa-chevron-down footer-collapse-icon"></i>
+                    </h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link"><i class="fas fa-home-alt"></i><span>Home</span></a></li>
+                        <li><a href="about.html" class="footer-link"><i class="fas fa-users-line"></i><span>About</span></a></li>
+                        <li><a href="sapphire.html" class="footer-link"><i class="fas fa-diamond"></i><span>Sapphire</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- RESOURCES -->
+            <div class="col-12 col-md-4">
+                <div class="footer-section">
+                    <h6>
+                        Resources <i class="fas fa-chevron-down footer-collapse-icon"></i>
+                    </h6>
+                    <ul class="footer-links">
+                        <li><a href="faq.html" class="footer-link"><i class="fas fa-person-circle-question"></i><span>FAQs</span></a></li>
+                        <li><a href="privacy_policy.html" class="footer-link"><i class="fas fa-file-shield"></i><span>Privacy Policy</span></a></li>
+                        <li><a href="terms_of_use.html" class="footer-link"><i class="fas fa-file-contract"></i><span>Terms of Use</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="col-12 col-md-4">
+                <div class="footer-section">
+                    <h6>
+                        Get in Touch <i class="fas fa-chevron-down footer-collapse-icon"></i>
+                    </h6>
+                    <ul class="footer-links">
+                        <li><a href="tel:+91XXXXXXXXXX" class="footer-link"><i class="fas fa-mobile"></i><span>Phone: +91-XXXXXXXXXX</span></a></li>
+                        <li><a href="mailto:support@scorptech.in" class="footer-link"><i class="fas fa-envelope"></i><span>support@scorptech.in</span></a></li>
+                        <li><a href="contact.html" class="footer-link"><i class="fas fa-phone"></i><span>Contact</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <!-- BOTTOM -->
+        <div class="footer-bottom flex-column align-items-center text-center">
+            <p class="footer-copyright mb-3">
+                © 2025 SCORP - Scorptech Technologies Private Limited. All rights reserved.
+            </p>
+            <div class="footer-social justify-content-center">
+                <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+    </footer>
+
+        <!-- Bootstrap Bundle -->
+        <script type="module" src="js/main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
+

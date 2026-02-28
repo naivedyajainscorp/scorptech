@@ -1,0 +1,1319 @@
+/* ═══════════════════════════════════════════════════
+   SAPPHIRE ASSESSMENT REPORT — PDF STYLESHEET
+   Extends core.css / components.css — no overrides
+   ═══════════════════════════════════════════════════ */
+
+/* ── @PAGE — A4 print ─────────────────────────────── */
+@page {
+    size: A4 portrait;
+    margin: 0;
+}
+
+/* ── BODY ─────────────────────────────────────────── */
+body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background: var(--s-gray-100);
+    margin: 0;
+    padding: 0;
+}
+
+/* ── REPORT WRAPPER ───────────────────────────────── */
+.report-wrapper {
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 24px 0 40px;
+    background: var(--s-gray-100);
+}
+
+/* ── RESPONSIVE A4 SCALING (fits every screen) ──── */
+/*
+   A4 = 210mm wide = 794px at 96dpi.
+   We keep the page at 210mm and scale it down on
+   smaller viewports so it always fits without overflow.
+*/
+@media screen and (max-width: 860px) {
+    .report-wrapper {
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    .a4-page {
+        transform-origin: top center;
+        transform: scale(var(--a4-scale, 1));
+        margin-bottom: calc((297mm * var(--a4-scale, 1)) - 297mm + 16px) !important;
+    }
+}
+
+/* ── A4 PAGE CONTAINER ────────────────────────────── */
+.a4-page {
+    width: 210mm;
+    height: 297mm;
+    background: var(--s-white);
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.14);
+    margin: 0 auto 20px auto;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── PAGE HEADER ──────────────────────────────────── */
+.page-header {
+    flex-shrink: 0;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 26px;
+    background: var(--s-gray-50);
+    border-bottom: 2.5px solid var(--s-primary);
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-logo {
+    height: 22px;
+    width: auto;
+}
+
+.header-title {
+    font-family: 'Science Gothic', sans-serif;
+    font-size: 9.5pt;
+    font-weight: var(--s-font-bold);
+    color: var(--s-primary);
+    letter-spacing: 0.4px;
+}
+
+.header-meta {
+    font-size: 7.5pt;
+    color: var(--s-gray-500);
+    font-family: 'Verdana', sans-serif;
+}
+
+/* ── PAGE CONTENT ─────────────────────────────────── */
+.page-content {
+    flex: 1;
+    /* overflow: hidden; */
+    padding: 16px 26px;
+    /* Slightly reduced top padding */
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── PAGE FOOTER ──────────────────────────────────── */
+.page-footer {
+    flex-shrink: 0;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 26px;
+    background: var(--s-gray-50);
+    border-top: 1px solid var(--s-gray-200);
+}
+
+.footer-disclaimer {
+    font-family: 'Verdana', sans-serif;
+    font-size: 5.5pt;
+    color: var(--s-gray-400);
+    max-width: 68%;
+    line-height: 1.3;
+}
+
+.footer-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-copyright {
+    font-size: 6.5pt;
+    color: var(--s-gray-500);
+    font-family: 'Verdana', sans-serif;
+}
+
+.page-number {
+    font-family: 'Science Gothic', sans-serif;
+    font-size: 7.5pt;
+    font-weight: var(--s-font-semibold);
+    color: var(--s-primary);
+}
+
+/* ═══════════════════════════════════════════════════
+   COVER PAGE
+   ═══════════════════════════════════════════════════ */
+.cover-page {
+    width: 210mm;
+    height: 297mm;
+    background: linear-gradient(165deg, #0d1b2e 0%, #0a1628 45%, #003380 100%);
+    color: var(--s-white);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.cover-page::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 80% 20%, rgba(0, 102, 204, 0.25) 0%, transparent 55%),
+        radial-gradient(circle at 15% 80%, rgba(51, 153, 255, 0.12) 0%, transparent 45%);
+    pointer-events: none;
+}
+
+.cover-content {
+    position: relative;
+    z-index: 1;
+    padding: 52px 44px 44px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Brand row — logos only */
+.cover-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 70px;
+}
+
+.cover-logo {
+    height: 38px;
+    width: auto;
+}
+
+.cover-logo-divider {
+    width: 1px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Title block */
+.cover-title-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cover-doc-type {
+    font-family: 'Verdana', sans-serif;
+    font-size: 9pt;
+    font-weight: 600;
+    color: rgba(100, 180, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+.cover-title {
+    font-family: 'Science Gothic', sans-serif;
+    font-size: 38pt;
+    font-weight: var(--s-font-extrabold);
+    font-style: italic;
+    color: var(--s-white);
+    line-height: 1.05;
+    margin-bottom: 22px;
+}
+
+.cover-divider {
+    width: 64px;
+    height: 4px;
+    background: var(--s-primary);
+    border-radius: 2px;
+    margin-bottom: 24px;
+}
+
+.cover-subtitle {
+    font-family: 'Verdana', sans-serif;
+    font-size: 11pt;
+    color: rgba(200, 220, 255, 0.85);
+    line-height: 1.65;
+    max-width: 460px;
+}
+
+/* Cover footer — org + date */
+.cover-footer {
+    margin-top: auto;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.cover-footer-info {
+    font-family: 'Verdana', sans-serif;
+    font-size: 9pt;
+    color: rgba(200, 215, 240, 0.8);
+    line-height: 1.7;
+}
+
+.cover-footer-info strong {
+    display: block;
+    font-size: 11pt;
+    color: var(--s-white);
+    margin-bottom: 3px;
+}
+
+.cover-confidential {
+    font-family: 'Verdana', sans-serif;
+    font-size: 7pt;
+    color: rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+}
+
+/* ═══════════════════════════════════════════════════
+   TABLE OF CONTENTS
+   ═══════════════════════════════════════════════════ */
+.toc-title {
+    font-family: 'Science Gothic', sans-serif;
+    font-size: 17pt;
+    font-weight: var(--s-font-extrabold);
+    font-style: italic;
+    color: var(--s-gray-900);
+    margin-bottom: 6px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--s-primary);
+}
+
+.toc-subtitle {
+    font-family: 'Verdana', sans-serif;
+    font-size: 8.5pt;
+    color: var(--s-gray-500);
+    margin-bottom: 22px;
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc-item {
+    display: flex;
+    align-items: baseline;
+    padding: 7px 0;
+    border-bottom: 1px dotted var(--s-gray-200);
+}
+
+.toc-item:last-child {
+    border-bottom: none;
+}
+
+.toc-level-1 {
+    font-family: 'Science Gothic', sans-serif;
+    font-size: 10pt;
+    font-weight: var(--s-font-semibold);
+    color: var(--s-gray-900);
+}
+
+.toc-level-2 {
+    font-family: 'Verdana', sans-serif;
+    font-size: 8.5pt;
+    color: var(--s-gray-600);
+    padding-left: 18px;
+}
+
+.toc-label {
+    flex: 1;
+}
+
+.toc-number {
+    display: inline-block;
+    width: 22px;
+    font-weight: var(--s-font-bold);
+    color: var(--s-primary);
+    margin-right: 8px;
+}
+
+.toc-dots {
+    flex: 1;
+    border-bottom: 1px dotted var(--s-gray-300);
+    margin: 0 8px;
+    min-width: 16px;
+}
+
+.toc-page-num {
+    font-family: 'Science Gothic', sans-serif;
+    font-weight: var(--s-font-semibold);
+    color: var(--s-primary);
+    font-size: 9pt;
+    min-width: 18px;
+    text-align: right;
+}
+
+.toc-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+}
+
+/* ═══════════════════════════════════════════════════
+   SECTION TITLE — shared across all pages
+   ═══════════════════════════════════════════════════ */
+.section-title {
+    font-family: 'Science Gothic', sans-serif;
+    font-size: 13pt;
+    font-weight: var(--s-font-extrabold);
+    font-style: italic;
+    color: var(--s-gray-900);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--s-primary);
+}
+
+.section-title i {
+    color: var(--s-primary);
+    font-size: 11pt;
+}
+
+.section-intro {
+    font-family: 'Verdana', sans-serif;
+    font-size: 12px;
+    color: var(--s-gray-600);
+    margin-bottom: 16px;
+    line-height: 1.65;
+    text-align: justify;
+}
+
+/* ═══════════════════════════════════════════════════
+   SCORE OVERVIEW
+   ═══════════════════════════════════════════════════ */
+.score-summary {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.score-primary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.score-circle {
+    width: 120px;
+    height: 120px;
+    position: relative;
+}
+
+.score-circle svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.score-bg {
+    fill: none;
+    stroke: var(--s-gray-200);
+    stroke-width: 12;
+}
+
+.score-fill {
+    fill: none;
+    stroke: var(--s-primary);
+    stroke-width: 12;
+    stroke-linecap: round;
+    stroke-dasharray: 534;
+    transition: stroke-dashoffset 1s ease;
+}
+
+.score-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.score-number {
+    font-family: 'Science Gothic', sans-serif;
+    font-size: 26pt;
+    font-weight: var(--s-font-bold);
+    color: var(--s-gray-900);
+    line-height: 1;
+    display: block;
+}
+
+.score-percent {
+    font-size: 11pt;
+    color: var(--s-gray-500);
+    font-family: 'Science Gothic', sans-serif;
+}
+
+.score-label {
+    text-align: center;
+}
+
+.score-label strong {
+    display: block;
+    font-family: 'Science Gothic', sans-serif;
+    font-size: 8.5pt;
+    color: var(--s-gray-900);
+    margin-bottom: 2px;
+}
+
+.score-label span {
+    font-family: 'Verdana', sans-serif;
+    font-size: 7.5pt;
+    color: var(--s-gray-500);
+}
+
+.score-interpretation {
+    flex: 1;
+    padding: 14px 16px;
+    background: var(--s-gray-50);
+    border: 1px solid var(--s-gray-200);
+    border-radius: var(--s-radius-sm);
+    border-left: 4px solid var(--s-primary);
+}
+
+.score-interpretation h3 {
+    font-family: 'Science Gothic', sans-serif;
+    font-size: 10.5pt;
+    font-weight: var(--s-font-bold);
+    font-style: italic;
+    color: var(--s-gray-900);
+    margin-bottom: 8px;
+}
+
+.score-interpretation p {
+    font-family: 'Verdana', sans-serif;
+    font-size: 12px;
+    color: var(--s-gray-700);
+    line-height: 1.65;
+    text-align: justify;
+    margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════
+   SECTION CARDS — performance page
+   ═══════════════════════════════════════════════════ */
+.sections-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.section-card {
+    padding: 10px 14px;
+    background: var(--s-white);
+    border: 1px solid var(--s-gray-200);
+    border-radius: var(--s-radius-sm);
+    border-left: 4px solid var(--section-color, var(--s-primary));
+    page-break-inside: avoid;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.section-icon {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--s-white);
+    border-radius: var(--s-radius-xs);
+    font-size: 13px;
+    flex-shrink: 0;
+    background: var(--section-color, var(--s-primary));
+}
+
+.section-info h3 {
+    font-family: 'Science Gothic', sans-serif;
+    font-size: 10pt;
+    font-weight: var(--s-font-bold);
+    font-style: italic;
+    color: var(--s-gray-900);
+    margin: 0 0 2px;
+}
+
+.section-score {
+    font-family: 'Verdana', sans-serif;
+    font-size: 10pt;
+}
+
+.section-progress {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 7px;
+    background: var(--s-gray-100);
+    border-radius: var(--s-radius-full);
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: var(--s-radius-full);
+    background: var(--section-color, var(--s-primary));
+}
+
+.progress-label {
+    font-family: 'Science Gothic', sans-serif;
+    font-size: 9.5pt;
+    font-weight: var(--s-font-bold);
+    color: var(--s-gray-800);
+    min-width: 34px;
+    text-align: right;
+}
+
+.section-maturity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-maturity p {
+    font-family: 'Verdana', sans-serif;
+    font-size: 7.5pt;
+    color: var(--s-gray-500);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* ═══════════════════════════════════════════════════
+   INSIGHT SECTION — per topic
+   ═══════════════════════════════════════════════════ */
+.insight-section {
+    margin-bottom: 12px;
+}
+
+.insight-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 13px;
+    border-left: 4px solid var(--section-color, var(--s-primary));
+    background: var(--s-gray-50);
+    margin-bottom: 10px;
+    border-radius: 0 var(--s-radius-xs) var(--s-radius-xs) 0;
+}
+
+.insight-header i {
+    font-size: 11pt;
+    color: var(--section-color, var(--s-primary));
+}
+
+.insight-header h3 {
+    font-family: 'Science Gothic', sans-serif;
+    font-size: 11pt;
+    font-weight: var(--s-font-bold);
+    font-style: italic;
+    color: var(--s-gray-900);
+    margin: 0;
+}
+
+.insight-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.insight-item {
+    /* padding: 2px 4px;
+    border: 1px solid var(--s-gray-200);
+    border-radius: var(--s-radius-sm);
+    background: var(--s-white); */
+    flex-shrink: 1;
+}
+
+.insight-question {
+    font-family: 'Science Gothic', sans-serif;
+    font-size: 9pt;
+    font-weight: var(--s-font-semibold);
+    color: var(--s-gray-800);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.insight-question i {
+    color: var(--s-primary);
+    font-size: 9.5pt;
+    margin-top: 1px;
+    flex-shrink: 0;
+}
+
+.insight-response {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Your Response */
+.insight-primary {
+    padding: 10px 12px;
+    border-radius: var(--s-radius-xs);
+    background: rgba(0, 102, 204, 0.05);
+    border-left: 3px solid var(--s-primary);
+}
+
+.insight-primary h4 {
+    font-family: 'Science Gothic', sans-serif;
+    font-size: 8pt;
+    font-weight: var(--s-font-semibold);
+    color: var(--s-primary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+.insight-primary h4 i {
+    color: var(--s-primary);
+    font-size: 8.5pt;
+}
+
+.insight-primary p {
+    font-family: 'Verdana', sans-serif;
+    font-size: 12px;
+    /* color: var(--s-gray-700); */
+    /* line-height: 1.65; */
+    text-align: justify;
+    margin: 0;
+}
+
+/* How Sapphire Helps */
+.insight-secondary {
+    padding: 10px 12px;
+    border-radius: var(--s-radius-xs);
+    background: rgba(0, 102, 204, 0.04);
+    border-left: 3px solid var(--s-primary);
+}
+
+.insight-secondary h4 {
+    font-family: 'Science Gothic', sans-serif;
+    font-size: 8pt;
+    font-weight: var(--s-font-semibold);
+    color: var(--s-primary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+.insight-secondary h4 i {
+    color: var(--s-primary);
+    font-size: 8pt;
+}
+
+.insight-secondary p {
+    font-family: 'Verdana', sans-serif;
+    font-size: 12px;
+    /* color: var(--s-gray-700); */
+    /* line-height: 1.65; */
+    text-align: justify;
+    margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════
+   ACTION PLAN
+   ═══════════════════════════════════════════════════ */
+.action-priorities {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.action-card {
+    display: flex;
+    gap: 14px;
+    padding: 14px;
+    border: 1px solid var(--s-gray-200);
+    border-radius: var(--s-radius-sm);
+    background: var(--s-white);
+    page-break-inside: avoid;
+}
+
+.action-rank {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--s-radius-full);
+    flex-shrink: 0;
+    font-family: 'Science Gothic', sans-serif;
+    font-style: normal;
+    font-weight: var(--s-font-bold);
+    font-size: 14pt;
+    color: var(--s-white);
+}
+
+.priority-1 .action-rank {
+    background: var(--s-danger);
+}
+
+.priority-2 .action-rank {
+    background: var(--s-warning);
+}
+
+.priority-3 .action-rank {
+    background: var(--s-primary);
+}
+
+.action-content {
+    flex: 1;
+}
+
+.action-content h3 {
+    font-family: 'Science Gothic', sans-serif;
+    font-size: 10.5pt;
+    font-weight: var(--s-font-bold);
+    font-style: italic;
+    color: var(--s-gray-900);
+    margin-bottom: 6px;
+}
+
+.action-why,
+.action-impact {
+    font-family: 'Verdana', sans-serif;
+    font-size: 12px;
+    color: var(--s-gray-600);
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 6px;
+}
+
+.action-why strong,
+.action-impact strong {
+    color: var(--s-gray-800);
+}
+
+.action-steps {
+    margin-top: 8px;
+}
+
+.action-steps strong {
+    font-family: 'Science Gothic', sans-serif;
+    font-size: 8pt;
+    color: var(--s-gray-700);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.action-steps ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.action-steps li {
+    font-family: 'Verdana', sans-serif;
+    font-size: 12px;
+    color: var(--s-gray-600);
+    padding: 2px 0 2px 16px;
+    position: relative;
+    line-height: 1.55;
+}
+
+.action-steps li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--s-primary);
+    font-weight: var(--s-font-bold);
+}
+
+/* ═══════════════════════════════════════════════════
+   BONUS — Aspirations & Challenges
+   ═══════════════════════════════════════════════════ */
+.bonus-card {
+    padding: 14px;
+    border-radius: var(--s-radius-sm);
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+}
+
+.wishes-card {
+    background: rgba(0, 102, 204, 0.04);
+    border: 1px solid rgba(0, 102, 204, 0.18);
+}
+
+.pains-card {
+    background: rgba(234, 179, 8, 0.04);
+    border: 1px solid rgba(234, 179, 8, 0.22);
+}
+
+.bonus-card h3 {
+    font-family: 'Science Gothic', sans-serif;
+    font-size: 10.5pt;
+    font-weight: var(--s-font-bold);
+    font-style: italic;
+    color: var(--s-gray-900);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.wishes-card h3 i {
+    color: var(--s-primary);
+}
+
+.pains-card h3 i {
+    color: var(--s-warning);
+}
+
+.bonus-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bonus-list li {
+    font-family: 'Verdana', sans-serif;
+    font-size: 12px;
+    color: var(--s-gray-600);
+    padding: 3px 0 3px 14px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.bonus-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--s-primary);
+    font-weight: var(--s-font-bold);
+}
+
+.bonus-solution {
+    padding: 14px;
+    background: var(--s-gray-50);
+    border: 1px solid var(--s-gray-200);
+    border-left: 4px solid var(--s-success);
+    border-radius: var(--s-radius-sm);
+}
+
+.bonus-solution h3 {
+    font-family: 'Science Gothic', sans-serif;
+    font-size: 10.5pt;
+    font-weight: var(--s-font-bold);
+    font-style: italic;
+    color: var(--s-gray-900);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.bonus-solution h3 i {
+    color: var(--s-success);
+}
+
+.bonus-solution p {
+    font-family: 'Verdana', sans-serif;
+    font-size: 12px;
+    color: var(--s-gray-600);
+    line-height: 1.65;
+    text-align: justify;
+    margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════
+   CLOSING PAGE
+   ═══════════════════════════════════════════════════ */
+.closing-page {
+    width: 210mm;
+    height: 297mm;
+    background: linear-gradient(165deg, #0d1b2e 0%, #0a1628 45%, #003380 100%);
+    color: var(--s-white);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.closing-page::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(0, 102, 204, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 85% 15%, rgba(51, 153, 255, 0.1) 0%, transparent 40%);
+    pointer-events: none;
+}
+
+.closing-content {
+    position: relative;
+    z-index: 1;
+    padding: 52px 44px 44px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.closing-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 60px;
+}
+
+.closing-logo {
+    height: 36px;
+    width: auto;
+}
+
+.closing-logo-divider {
+    width: 1px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.closing-title-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.closing-title {
+    font-family: 'Science Gothic', sans-serif;
+    font-size: 32pt;
+    font-weight: var(--s-font-extrabold);
+    font-style: italic;
+    color: var(--s-white);
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+.closing-divider {
+    width: 56px;
+    height: 4px;
+    background: var(--s-primary);
+    border-radius: 2px;
+    margin-bottom: 20px;
+}
+
+.closing-subtitle {
+    font-family: 'Verdana', sans-serif;
+    font-size: 10.5pt;
+    color: rgba(200, 220, 255, 0.85);
+    line-height: 1.65;
+    max-width: 440px;
+}
+
+.closing-contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 44px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.closing-contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.closing-contact-item i {
+    font-size: 16pt;
+    color: rgba(100, 180, 255, 0.9);
+}
+
+.closing-contact-item label {
+    font-family: 'Verdana', sans-serif;
+    font-size: 7.5pt;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.closing-contact-item span,
+.closing-contact-item a {
+    font-family: 'Verdana', sans-serif;
+    font-size: 9.5pt;
+    color: var(--s-white);
+    text-decoration: none;
+}
+
+.closing-contact-item a:hover {
+    text-decoration: underline;
+}
+
+.closing-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.closing-links {
+    display: flex;
+    gap: 22px;
+    font-family: 'Verdana', sans-serif;
+    font-size: 8pt;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.closing-links a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.closing-copyright {
+    font-family: 'Verdana', sans-serif;
+    font-size: 7.5pt;
+    color: rgba(255, 255, 255, 0.25);
+}
+
+/* ═══════════════════════════════════════════════════
+   LOADING / ERROR
+   ═══════════════════════════════════════════════════ */
+.report-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-align: center;
+}
+
+.report-loading i {
+    font-size: 2.8rem;
+    color: var(--s-primary);
+}
+
+.report-loading h2 {
+    font-family: 'Science Gothic', sans-serif;
+    color: var(--s-gray-800);
+}
+
+.report-loading p {
+    font-family: 'Verdana', sans-serif;
+    color: var(--s-gray-500);
+    font-size: 13px;
+}
+
+.report-error {
+    text-align: center;
+    padding: 60px 32px;
+}
+
+.report-error i {
+    font-size: 3.5rem;
+    color: var(--s-warning);
+    margin-bottom: 20px;
+}
+
+.report-error h2 {
+    font-family: 'Science Gothic', sans-serif;
+    color: var(--s-gray-800);
+    margin-bottom: 10px;
+}
+
+.report-error p {
+    font-family: 'Verdana', sans-serif;
+    color: var(--s-gray-500);
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+/* 
+   SFloatingButton - All styles now defined in css/components.css
+   This section removed to prevent conflicts
+*/
+
+/* ═══════════════════════════════════════════════════
+   REDIRECT MODAL — ar- prefix, exclusive to this page
+   ═══════════════════════════════════════════════════ */
+.ar-redirect-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: var(--s-z-modal, 1100);
+    align-items: center;
+    justify-content: center;
+}
+
+.ar-redirect-modal.active {
+    display: flex;
+}
+
+.ar-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.ar-modal-content {
+    position: relative;
+    z-index: 1;
+    background: var(--s-white);
+    border-radius: var(--s-radius-lg);
+    padding: 36px 32px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: var(--s-shadow-modal, 0 24px 64px rgba(0, 0, 0, 0.25));
+}
+
+.ar-modal-icon {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 102, 204, 0.1);
+    border-radius: var(--s-radius-full);
+    color: var(--s-primary);
+    font-size: 22px;
+}
+
+.ar-modal-content h3 {
+    font-family: 'Science Gothic', sans-serif;
+    font-size: 13pt;
+    font-weight: var(--s-font-bold);
+    font-style: italic;
+    color: var(--s-gray-900);
+    margin-bottom: 6px;
+}
+
+.ar-modal-content p {
+    font-family: 'Verdana', sans-serif;
+    font-size: 9pt;
+    color: var(--s-gray-600);
+    margin-bottom: 14px;
+}
+
+.ar-modal-countdown {
+    font-family: 'Science Gothic', sans-serif;
+    font-size: 26pt;
+    font-weight: var(--s-font-bold);
+    color: var(--s-primary);
+    margin-bottom: 12px;
+}
+
+.ar-modal-progress-bar {
+    width: 100%;
+    height: 4px;
+    background: var(--s-gray-200);
+    border-radius: var(--s-radius-full);
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.ar-modal-progress-fill {
+    height: 100%;
+    background: var(--s-primary);
+    border-radius: var(--s-radius-full);
+    width: 100%;
+    transition: width 1s linear;
+}
+
+.ar-modal-skip {
+    font-family: 'Verdana', sans-serif;
+    font-size: 8pt;
+    color: var(--s-gray-400);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* ═══════════════════════════════════════════════════
+   PAGE BREAK CONTROLS
+   ═══════════════════════════════════════════════════ */
+.section-card,
+.action-card,
+.bonus-card,
+.bonus-solution {
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+h1,
+h2,
+h3,
+h4,
+.section-title,
+.insight-header {
+    page-break-after: avoid;
+    break-after: avoid;
+}
+
+p,
+li {
+    orphans: 3;
+    widows: 3;
+}
+
+/* ═══════════════════════════════════════════════════
+   PRINT — clean output
+   ═══════════════════════════════════════════════════ */
+@media print {
+    body {
+        background: white;
+    }
+
+    .report-wrapper {
+        padding: 0;
+        background: white;
+    }
+
+    .a4-page {
+        box-shadow: none;
+        width: 100%;
+        height: 297mm;
+        page-break-after: always;
+        break-after: page;
+        margin: 0;
+        transform: none !important;
+    }
+
+    .s-fab-wrapper,
+    .s-floating-button,
+    .ar-redirect-modal,
+    .report-loading {
+        display: none !important;
+    }
+}
+
+/* ═══════════════════════════════════════════════════
+   PDF COLOR PRESERVATION
+   ═══════════════════════════════════════════════════ */
+*,
+*::before,
+*::after {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}

@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Book a Demo | Sapphire</title>
+        <link rel="icon" type="image/png" href="assets/images/scorp-sapphire-cropped.png">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.11.3/build/css/intlTelInput.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <link rel="icon" type="image/x-icon" href="your-favicon-path/favicon.ico">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SCORP NAVIGATION 
+     ═══════════════════════════════════════════════════════════════ -->
+<nav class="navbar navbar-expand-xl s-navbar" id="scorpNavbar">
+    
+    <!-- Brand -->
+    <a class="navbar-brand s-navbar-brand" href="index.html">
+      <div class="s-brand-logo">
+        <img src="assets/images/Scorp-Logo.png" alt="Scorptech" width="24" height="24" style="filter: brightness(0) invert(1);">
+      </div>
+      <span class="s-brand-text">SCORP</span>
+    </a>
+
+    <!-- Animated Hamburger Toggle -->
+    <button class="navbar-toggler s-mobile-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="s-hamburger-box">
+        <span class="s-hamburger-inner"></span>
+      </span>
+    </button>
+
+    <!-- Collapsible Content -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto s-nav-links">
+        
+        <!-- Home -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="index.html">
+            <i class="fas fa-home-alt"></i>
+            <span>Home</span>
+          </a>
+        </li>
+
+        <!-- Sapphire -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="sapphire.html">
+            <i class="fas fa-diamond"></i>
+            <span>Sapphire</span>
+          </a>
+        </li>
+
+        <!-- Contact -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="contact.html">
+            <i class="bi bi-telephone-outbound-fill"></i>
+            <span>Contact</span>
+          </a>
+        </li>
+
+        <!-- About -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="about.html">
+            <i class="fas fa-users-line"></i>
+            <span>About</span>
+          </a>
+        </li>
+
+        <!-- Sapphire Smart Dropdown (Internal Pages) -->
+        <!-- <li class="nav-item dropdown s-nav-dropdown-internal">
+          <a class="nav-link s-nav-link dropdown-toggle" 
+             href="#" 
+             role="button" 
+             data-bs-toggle="dropdown" 
+             aria-expanded="false"
+             data-dropdown-id="sapphire-smart">
+            <i class="bi bi-lightbulb-fill"></i>
+            <span>Sapphire Smart</span>
+            Active Indicator Badge
+            <span class="s-active-badge"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end s-internal-dropdown-menu">
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="analytics.html" data-page="analytics.html">
+                <i class="fas fa-chart-line"></i>
+                <span>Smart Analytics</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="intelligence.html" data-page="intelligence.html">
+                <i class="fas fa-brain"></i>
+                <span>Intelligence</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="mobileUSP.html" data-page="mobileUSP.html">
+                <i class="fas fa-mobile-screen"></i>
+                <span>Mobile Friendly</span>
+              </a>
+            </li>
+          </ul>
+        </li> -->
+
+        <!-- Resources Dropdown (Internal Pages) -->
+        <li class="nav-item dropdown s-nav-dropdown-internal">
+          <a class="nav-link s-nav-link dropdown-toggle" 
+             href="#" 
+             role="button" 
+             data-bs-toggle="dropdown" 
+             aria-expanded="false"
+             data-dropdown-id="resources">
+            <i class="bi bi-grid-3x3-gap-fill"></i>
+            <span>Resources</span>
+            <!-- Active Indicator Badge -->
+            <span class="s-active-badge"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end s-internal-dropdown-menu">
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="faq.html" data-page="faq.html">
+                <i class="fas fa-circle-question"></i>
+                <span>FAQ</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="terms_of_use.html" data-page="terms_of_use.html">
+                <i class="fas fa-file-contract"></i>
+                <span>Terms of Use</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="privacy_policy.html" data-page="privacy_policy.html">
+                <i class="fas fa-file-shield"></i>
+                <span>Privacy Policy</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Announcement Icon -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link s-nav-link-icon" href="announcement.html" title="Announcements">
+            <i class="fa-solid fa-bullhorn fa-rotate-by" style="--fa-rotate-angle: 325deg;"></i>
+          </a>
+        </li>
+
+        <!-- Book Demo Button (Green Styled) -->
+<li class="nav-item">
+  <a class="book-demo-button" href="book-demo.html">
+    <i class="bi bi-calendar-check-fill"></i>
+    <span><strong>Book Demo</strong></span>
+  </a>
+</li>
+
+
+        <!-- Go to Sapphire Dropdown (External Links - Blue Styled) -->
+        <li class="nav-item dropdown s-sapphire-dropdown">
+          <button class="btn s-sapphire-trigger dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            <span>go to</span>
+            <div class="s-sapphire-logo">
+              <img src="assets/images/scorp-sapphire-cropped.png" alt="Sapphire" width="32" height="32" style="border-radius: 4px;">
+            </div>
+            <span><strong>Sapphire</strong></span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end s-sapphire-menu">
+            <li>
+              <a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/login" target="_blank">
+                <i class="bi bi-door-open-fill"></i>
+                <span>Log-in</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/register" target="_blank">
+                <i class="bi bi-person-plus-fill"></i>
+                <span>Sign-up</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+</nav>
+
+
+<section class="s-hero s-hero-compact mb-5" style="position: relative; overflow: hidden;">
+  <img src="assets/images/book-demo-hero.png" alt="Book Demo Hero" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+  <div class="s-hero-overlay" style="z-index: 2;"></div>
+  <div class="container" style="position: relative; z-index: 10;">
+    <div class="s-hero-content">
+      <h1 class="s-hero-title">Book Your Free Demo</h1>
+      <p class="s-hero-description">
+        See <span class="s-hero-brand-highlight">SAPPHIRE ERP</span> in action! Schedule a personalized demo with our experts and discover how we can transform your asset management operations.
+      </p>
+      <div class="s-hero-actions">
+        <a class="s-btn-success s-btn-glare" href="#DemoFormSection">
+          <i class="fas fa-laptop-code me-1"></i>
+          Live Interactive Demo
+        </a>
+        <a class="s-btn-primary s-btn-glare" href="sapphire.html">
+          <i class="fas fa-diamond me-1"></i>
+          Explore SAPPHIRE
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+        <!-- Why Demo Section -->
+        <section class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-12">
+                    <div class="s-content-card mb-4">
+                        <div class="form-header">
+                            <h3><i class="fas fa-question-circle me-2"></i>Why book a demo?</h3>
+                            <p class="form-description">Our demos are tailored to your specific needs and industry requirements</p>
+                        </div>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="s-icon s-icon-blue me-3">
+                                                <i class="fas fa-user-cog"></i>
+                                            </div>
+                                            <h5 class="card-title mb-0 text-primary">Personalized Experience</h5>
+                                        </div>
+                                        <p class="text-muted">See features relevant to your business</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="s-icon s-icon-green me-3">
+                                                <i class="fas fa-comments"></i>
+                                            </div>
+                                            <h5 class="card-title mb-0 text-primary">Ask Questions</h5>
+                                        </div>
+                                        <p class="text-muted">Get answers from our experts</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="s-icon s-icon-purple me-3">
+                                                <i class="fas fa-cogs"></i>
+                                            </div>
+                                            <h5 class="card-title mb-0 text-primary">Implementation Guidance</h5>
+                                        </div>
+                                        <p class="text-muted">Learn about deployment options</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="s-icon s-icon-amber me-3">
+                                                <i class="fas fa-chart-bar"></i>
+                                            </div>
+                                            <h5 class="card-title mb-0 text-primary">ROI Analysis</h5>
+                                        </div>
+                                        <p class="text-muted">Understand potential cost savings</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="s-content-card">
+                        <div class="form-header">
+                            <h3><i class="fas fa-star me-2"></i> What You'll Experience</h3>
+                            <p class="form-description">Our demos are tailored to your specific needs and industry requirements</p>
+                        </div>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="s-icon s-icon-blue me-3">
+                                                <i class="fas fa-tv"></i>
+                                            </div>
+                                            <h5 class="card-title mb-0 text-primary">Live Interactive Demo</h5>
+                                        </div>
+                                        <p class="text-muted">See SAPPHIRE ERP in action with a personalized walkthrough of key features and modules.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="s-icon s-icon-green me-3">
+                                                <i class="fas fa-user-tie"></i>
+                                            </div>
+                                            <h5 class="card-title mb-0 text-primary">Expert Consultation</h5>
+                                        </div>
+                                        <p class="text-muted">Discuss your specific requirements with our solution experts and get professional advice.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="s-icon s-icon-purple me-3">
+                                                <i class="fas fa-industry"></i>
+                                            </div>
+                                            <h5 class="card-title mb-0 text-primary">Custom Use Cases</h5>
+                                        </div>
+                                        <p class="text-muted">We'll show examples and scenarios relevant to your specific industry and business needs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="s-icon s-icon-amber me-3">
+                                                <i class="bi bi bi-graph-up-arrow"></i>
+                                            </div>
+                                            <h5 class="card-title mb-0 text-primary">ROI Analysis</h5>
+                                        </div>
+                                        <p class="text-muted">Understand the potential cost savings and return on investment for your organization.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial Section -->
+            <!-- <div class="row justify-content-center mb-5">
+                <div class="col-lg-8">
+                  <div class="card border-0 shadow-lg bg-gradient" style="background: linear-gradient(135deg, #f8fafc 0%, #e1f5fe 100%);">
+                    <div class="card-body p-5 text-center">
+                      <i class="fas fa-quote-left fa-3x text-primary opacity-25 mb-3"></i>
+                      <blockquote class="blockquote mb-4">
+                        <p class="fs-5">"The demo was incredibly helpful. The team showed us exactly how SAPPHIRE ERP would solve our specific challenges. We signed up immediately after!"</p>
+                      </blockquote>
+                      <div class="d-flex align-items-center justify-content-center">
+                        <div class="s-icon s-icon-lg s-icon-blue me-3">
+                          <i class="fas fa-user"></i>
+                        </div>
+                        <div class="text-start">
+                          <h6 class="mb-0 text-primary fw-bold">Sarah Johnson</h6>
+                          <small class="text-muted">CFO, TechCorp Industries</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div> -->
+        </section>
+        <!-- Form Section -->
+        <section class="demo-form-section" id="DemoFormSection">
+            <div class="container">
+            <div class="form-header s-card text-center mb-4">
+                <h2 class="demo-form-title">
+                    <div class="s-icon s-icon-lg s-icon-blue">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    Schedule Your Demo
+                </h2>
+                <p class="text-muted">Fill out the form below and we'll contact you within 2 hours to schedule your personalized demo.</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="demo-form px-1">
+                        <form action="https://script.google.com/macros/s/AKfycbxqpob6B6vuFvhaynsNbR6FMPsDUgLaVrHrJplP5-hPOdQFVMiguauevrgxUtwFBxWN/exec" method="POST" target="hidden_iframe" id="demoForm" novalidate>
+                            <input type="hidden" name="formType" value="demo"/>
+                            <!-- 👤 Personal Info -->
+                            <div class="demo-form-card mb-4 p-4">
+                                <header class="s-card-header mb-0">
+                                    <div class="s-icon s-icon-blue"><i class="fas fa-address-card"></i></div>
+                                    <h3 id="title-workplace" class="s-title">Personal Information</h3>
+                                </header>
+                                <hr style="border: none; border-bottom: 2px solid var(--s-primary); margin: 0.5rem 0;">
+                                <div class="row">
+                                    <div class="col-12 col-md-4 mb-3">
+                                        <label for="name-demo" class="form-label s-text-primary">
+                                            <div class="s-icon-sm s-icon-blue-3 text-light"><i class="bi bi-person-fill"></i></div>
+                                            Full Name
+                                        </label>
+                                        <div class="s-valid-wrapper">
+                                            <input type="text" class="form-control text-capitalize" id="name-demo" name="nameDemo" required>
+                                        </div>
+                                        
+                                        <div class="invalid-feedback">Please enter your full name</div>
+                                    </div>
+                                    <div class="col-12 col-md-4 mb-3">
+                                        <label for="phone-demo" class="form-label s-text-primary">
+                                            <div class="s-icon-sm s-icon-blue-3 text-light"><i class="fas fa-mobile-alt"></i></div>
+                                            Phone Number
+                                        </label>
+                                        <div class="s-valid-wrapper">
+                                            <input type="tel" id="phone-demo" name="phoneDemo" class="form-control" placeholder="Enter contact number" required>
+                                        </div>
+
+                                        <div class="text-danger phone-error d-none">Please enter a valid phone number</div>
+                                    </div>
+                                    <div class="col-12 col-md-8 mb-3">
+                                        <label for="email-demo" class="form-label s-text-primary">
+                                            <div class="s-icon-sm s-icon-blue-3 text-light"><i class="bi bi-envelope-at-fill"></i></div>
+                                            Email Address
+                                        </label>
+                                        <div class="s-valid-wrapper">
+                                            <input type="email" class="form-control" id="email-demo" name="emailDemo" required>
+                                        </div>
+                                        
+                                        <div class="invalid-feedback">Please enter a valid email address</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Company Info -->
+                            <div class="demo-form-card mb-4 p-4">
+                                <header class="s-card-header mb-0">
+                                    <div class="s-icon s-icon-blue"><i class="bi bi-buildings"></i></div>
+                                    <h3 id="title-workplace" class="s-title">Organization Details</h3>
+                                </header>
+                                <hr style="border: none; border-bottom: 2px solid var(--s-primary); margin: 0.5rem 0;">
+                                    <div class="mb-3">
+                                        <label for="organization-demo" class="form-label s-text-primary">
+                                            <div class="s-icon-sm s-icon-blue-3 text-light"><i class="bi bi-building-fill"></i></div>
+                                            Organization Name
+                                        </label>
+                                        <div class="s-valid-wrapper">
+                                            <input type="text" class="form-control text-capitalize" id="organization-demo" name="organizationDemo" required>
+                                        </div>
+                                        
+                                        <div class="invalid-feedback">Please enter a valid name of the organization</div>
+                                    </div>
+                                <div class="mb-3">
+                                    <label for="message-demo" class="form-label s-text-primary">
+                                        <div class="s-icon-sm s-icon-blue-3 text-light"><i class="fas fa-message"></i> </div>
+                                        About Organization <i class="text-muted">(optional)</i>
+                                    </label>
+                                    <div class="s-valid-wrapper">
+                                        <textarea class="form-control" id="message-demo" name="messageDemo" rows="3"></textarea>
+                                    </div>
+
+                                    <div class="invalid-feedback">Description too short...</div>
+                                </div>
+                            </div>
+                            <!-- Address -->
+                            <div class="demo-form-card mb-4 p-4">
+                                <header class="s-card-header mb-0">
+                                    <div class="s-icon s-icon-blue"><i class="fas fa-map-location-dot"></i></div>
+                                    <h3 id="title-workplace" class="s-title">Organization Details</h3>
+                                </header>
+                                <hr style="border: none; border-bottom: 2px solid var(--s-primary); margin: 0.5rem 0;">
+                                <div class="mb-3">
+                                    <label for="plot-demo" class="form-label s-text-primary">
+                                        <div class="s-icon-sm s-icon-blue-3 text-light"><i class="bi bi-building-check"></i></div>
+                                        Plot number
+                                    </label>
+                                    <div class="s-valid-wrapper">
+                                        <input type="text" class="form-control text-capitalize" id="plot-demo" name="plotDemo" required>
+                                    </div>
+                                    
+                                    <div class="invalid-feedback">Please enter a plot number</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="road-demo" class="form-label s-text-primary">
+                                        <div class="s-icon-sm s-icon-blue-3 text-light"><i class="fas fa-route"></i> </div>
+                                        Road/Locality
+                                    </label>
+                                    <div class="s-valid-wrapper">
+                                        <textarea class="form-control text-capitalize" id="road-demo" name="roadDemo" rows="2" required></textarea>
+                                    </div>
+
+                                    <div class="invalid-feedback">Please enter address details</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="landmark" class="form-label s-text-primary">
+                                        <div class="s-icon-sm s-icon-blue-3 text-light"><i class="fas fa-landmark"></i></div>
+                                        Nearby Landmark <i class="text-muted">(if any)</i>
+                                    </label>
+                                    <div class="s-valid-wrapper">
+                                        <input type="text" id="landmark" class="form-control text-capitalize" name="landmarkDemo"  required>
+                                    </div>
+                                    
+                                    <div class="invalid-feedback">Please enter a landmark for reference</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-md-6">
+                                        <!-- ✅ ADD position-relative class here -->
+                                        <div class="mb-3">
+                                            <label for="pincode" class="form-label s-text-primary">
+                                                <div class="s-icon-sm s-icon-blue-3 text-light"><i class="bi bi-geo-fill"></i></div>
+                                                PINCODE/ZIPCODE
+                                            </label>
+                                            <div class="s-valid-wrapper">
+                                                <input type="text" id="pincode" name="pincodeDemo" class="form-control" placeholder="6-digit PIN" />
+                                                <div class="pincode-loader" id="pincode-loader">
+                                                    <i class="fas fa-spinner fa-spin"></i>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="invalid-feedback">Please enter a valid area PINCODE/ZIPCODE</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="mb-3">
+                                            <label for="district" class="form-label s-text-primary">
+                                                <div class="s-icon-sm s-icon-blue-3 text-light"><i class="fas fa-city"></i></div>
+                                                City / District
+                                            </label>
+                                            <div class="s-valid-wrapper">
+                                                <input type="text" id="district" class="form-control text-muted" name="districtDemo" readonly  placeholder="waiting for PINCODE/ZIPCODE..." />
+                                            </div>
+                                            
+                                            <div class="invalid-feedback">Please enter a valid PINCODE to fetch your City</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="mb-3">
+                                            <label for="state" class="form-label s-text-primary">
+                                                <div class="s-icon-sm s-icon-blue-3 text-light"><i class="bi bi-map-fill"></i></div>
+                                                State
+                                            </label>
+                                            <div class="s-valid-wrapper">
+                                                <input type="text" id="state" class="form-control text-muted" name="stateDemo"  readonly  placeholder="waiting for PINCODE/ZIPCODE..."/>
+                                            </div>
+                                            
+                                            <div class="invalid-feedback">Please enter a valid PINCODE to fetch your State</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="mb-3">
+                                            <label for="state" class="form-label s-text-primary">
+                                                <div class="s-icon-sm s-icon-blue-3 text-light"><i class="fas fa-flag"></i></div>
+                                                Country
+                                            </label>
+                                            <div class="s-valid-wrapper">
+                                                <input type="text" id="country" class="form-control text-muted" name="countryDemo" readonly  placeholder="waiting for PINCODE/ZIPCODE..." />
+                                            </div>
+                                            
+                                            <div class="invalid-feedback">Please enter a valid PINCODE to fetch your Country</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="location" class="form-label s-text-primary  ">
+                                        <div class="s-icon-sm s-icon-blue-3 text-light"><i class="fas fa-location-dot"></i></div>
+                                        Location
+                                    </label>
+                                    <div class="livemap" id="map"></div>
+                                    <div class="d-flex input-group ">
+                                        <input type="text" id="location" class="form-control" placeholder="Click to fetch your location ➤" disabled readonly>
+                                        <button id="get-location" class="btn-location">
+                                        <i class="fa fa-location-crosshairs fa-beat-fade" style="animation-duration: 2s;" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                    <div class="accordion mt-3" id="locationHelpAccordion">
+                                        <div class="accordion-item border border-info rounded-2">
+                                            <h2 class="accordion-header" id="headingLocationHelp">
+                                                <button class="accordion-button bg-gradient bg-info-subtle text-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLocationHelp" aria-expanded="false" aria-controls="collapseLocationHelp">
+                                                Trouble fetching exact location?
+                                                </button>
+                                            </h2>
+                                            <div id="collapseLocationHelp" class="accordion-collapse collapse" aria-labelledby="headingLocationHelp" data-bs-parent="#locationHelpAccordion">
+                                                <div class="accordion-body small">
+                                                    <div class="alert text-start alert-primary py-2 px-3 mb-1">
+                                                        <i class="fas fa-location-dot me-2 text-primary"></i>
+                                                        <strong>You can manually drag the map marker to set your precise location.</strong>
+                                                    </div>
+                                                    <ul class="mb-2 ps-3">
+                                                        <li>Ensure that your device's GPS/location services are turned <strong>ON</strong>.</li>
+                                                        <li>Allow location permission for this browser tab when prompted.</li>
+                                                        <li>Try refreshing the page or clearing your browser cache.</li>
+                                                    </ul>
+                                                    <div class="alert text-start alert-primary py-2 px-3 mb-1">
+                                                        <i>Try to move the pin manually on the map and then, tap the
+                                                        <button type="button" class="btn-location ms-1" title="Fetch location again">
+                                                        <i class="fas fa-location-crosshairs"></i>
+                                                        </button> button again</i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="latDemo" id="lat">
+                                    <input type="hidden" name="lngDemo" id="lng">
+                                    <!-- <input type="text" id="location" class="form-control" placeholder="Click map or use button" readonly> -->
+                                </div>
+                            </div>
+                            <!--Organization Type -->
+                            <div class="demo-form-card mb-4 p-4">
+                                <header class="s-card-header mb-0">
+                                    <div class="s-icon s-icon-blue"><i class="fas fa-landmark-dome"></i></div>
+                                    <h3 id="title-workplace" class="s-title">Organization Type</h3>
+                                </header>
+                                <hr style="border: none; border-bottom: 2px solid var(--s-primary); margin: 0.5rem 0;">
+                                <div class="radio-options-grid">
+                                    <label class="form-check-label radio-option" for="gov">
+                                    <input class="form-check-input" type="radio" name="orgType" id="gov" value="Government">
+                                    <span>Government</span>
+                                    </label>
+                                    <label class="form-check-label radio-option" for="non-gov">
+                                    <input class="form-check-input" type="radio" name="orgType" id="non-gov" value="Non-Government">
+                                    <span>Non-Government</span>
+                                    </label>
+                                </div>
+                                <!-- Error message -->
+                                <div id="orgTypeError" class="alert alert-danger text-start text-danger mb-0 mt-3 p-1 d-none" style="width: fit-content;">Please select your organization type.</div>
+                            </div>
+                            <!-- Industry & Scale -->
+                            <div class="demo-form-card mb-4 p-4 industrytypecard">
+                                <header class="s-card-header mb-0">
+                                    <div class="s-icon s-icon-blue"><i class="fas fa-industry"></i></div>
+                                    <h3 id="title-workplace" class="s-title">Organization Type</h3>
+                                </header>
+                                <hr style="border: none; border-bottom: 2px solid var(--s-primary); margin: 0.5rem 0;">
+                                <!-- Industry Type -->
+                                <div class="">
+                                    <!-- Service & Manufacturing -->
+                                    <fieldset class="mb-3 p-1">
+                                        <legend class="fieldset-legend">
+                                            <div class="s-icon-sm s-icon-blue">
+                                                <i class="fas fa-cogs"></i> 
+                                            </div>
+                                            <h6 class="text-start">Service & Manufacturing</h6>
+                                        </legend>
+                                        <div class="options-grid">
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind1" name="industry_manufacturing[]" value="Manufacturing Plants & Factories">
+                                            <span class="checkbox-label text-start">Manufacturing Plants & Factories</span>
+                                            </label>
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind2" name="industry_manufacturing[]" value="Service Stations">
+                                            <span class="checkbox-label text-start">Service Stations</span>
+                                            </label>
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind3" name="industry_manufacturing[]" value="Construction & Engineering Sites">
+                                            <span class="checkbox-label text-start">Construction & Engineering Sites</span>
+                                            </label>
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind4" name="industry_manufacturing[]" value="Warehouses & Logistics Centers">
+                                            <span class="checkbox-label text-start">Warehouses & Logistics Centers</span>
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                    <!-- Healthcare & Research -->
+                                    <fieldset class="mb-3 p-1">
+                                        <legend class="fieldset-legend">
+                                            <div class="s-icon-sm s-icon-blue">
+                                                <i class="fas fa-hospital"></i>
+                                            </div>
+                                            <h6 class="text-start">Healthcare & Research</h6>
+                                        </legend>
+                                        <div class="options-grid">
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind5" name="industry_healthcare[]" value="Hospitals">
+                                            <span class="checkbox-label text-start">Hospitals</span>
+                                            </label>
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind6" name="industry_healthcare[]" value="Diagnostic Centers">
+                                            <span class="checkbox-label text-start">Diagnostic Centers</span>
+                                            </label>
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind7" name="industry_healthcare[]" value="Research & Test Laboratories">
+                                            <span class="checkbox-label text-start">Research & Test Laboratories</span>
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                    <!-- Corporate & Commercial -->
+                                    <fieldset class="mb-3 p-1">
+                                        <legend class="fieldset-legend">
+                                            <div class="s-icon-sm s-icon-blue">
+                                                <i class="fas fa-building"></i>
+                                            </div>
+                                            <h6 class="text-start">Corporate & Commercial</h6>
+                                        </legend>
+                                        <div class="options-grid">
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind8" name="industry_corporate[]" value="Corporate Offices">
+                                            <span class="checkbox-label text-start">Corporate Offices</span>
+                                            </label>
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind9" name="industry_corporate[]" value="Co-working & IT Parks">
+                                            <span class="checkbox-label text-start">Co-working & IT Parks</span>
+                                            </label>
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind10" name="industry_corporate[]" value="Retail Chains & Shopping Malls">
+                                            <span class="checkbox-label text-start">Retail Chains & Shopping Malls</span>
+                                            </label>
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind11" name="industry_corporate[]" value="Real Estate Developers">
+                                            <span class="checkbox-label text-start">Real Estate Developers</span>
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                    <!-- Education & Training -->
+                                    <fieldset class="mb-3 p-1">
+                                        <legend class="fieldset-legend">
+                                            <div class="s-icon-sm s-icon-blue">
+                                                <i class="fas fa-graduation-cap"></i>
+                                            </div>
+                                            <h6 class="text-start">Education & Training</h6>
+                                        </legend>
+                                        <div class="options-grid">
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind12" name="industry_education[]" value="Schools, Universities & Colleges">
+                                            <span class="checkbox-label text-start">Schools, Universities & Colleges</span>
+                                            </label>
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind13" name="industry_education[]" value="Training & Vocational Center">
+                                            <span class="checkbox-label text-start">Training & Vocational Centers</span>
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                    <!-- Hospitality & Lifestyle -->
+                                    <fieldset class="mb-3 p-1">
+                                        <legend class="fieldset-legend">
+                                            <div class="s-icon-sm s-icon-blue">
+                                                <i class="fas fa-concierge-bell"></i>
+                                            </div>
+                                            <h6 class="text-start">Hospitality & Lifestyle</h6>
+                                        </legend>
+                                        <div class="options-grid">
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind14" name="industry_hospitality[]" value="Hotels, Guest Houses & Lodges">
+                                            <span class="checkbox-label text-start">Hotels, Guest Houses & Lodges</span>
+                                            </label>
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind15" name="industry_hospitality[]" value="Restaurants & Cafes">
+                                            <span class="checkbox-label text-start">Restaurants & Cafes</span>
+                                            </label>
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind16" name="industry_hospitality[]" value="Fitness Centers & Gyms">
+                                            <span class="checkbox-label text-start">Fitness Centers & Gyms</span>
+                                            </label>
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind17" name="industry_hospitality[]" value="Clubs & Leisure Facilities">
+                                            <span class="checkbox-label text-start">Clubs & Leisure Facilities</span>
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                    <!-- Transport & Operations -->
+                                    <fieldset class="mb-3 p-1">
+                                        <legend class="fieldset-legend">
+                                            <div class="s-icon-sm s-icon-blue">
+                                                <i class="fas fa-shipping-fast"></i>
+                                            </div>
+                                            <h6 class="text-start">Transport & Operations</h6>
+                                        </legend>
+                                        <div class="options-grid">
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind18" name="industry_transport[]" value="Transportation Agencies">
+                                            <span class="checkbox-label text-start">Transportation Agencies</span>
+                                            </label>
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind19" name="industry_transport[]" value="Logistics & Fleet Operations">
+                                            <span class="checkbox-label text-start">Logistics & Fleet Operations</span>
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                    <!-- Entertainment & Events -->
+                                    <fieldset class="mb-3 p-1">
+                                        <legend class="fieldset-legend">
+                                            <div class="s-icon-sm s-icon-blue">
+                                                <i class="fas fa-theater-masks"></i>
+                                            </div>
+                                            <h6 class="text-start">Entertainment & Events</h6>
+                                        </legend>
+                                        <div class="options-grid">
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind20" name="industry_entertainment[]" value="Movie Theaters">
+                                            <span class="checkbox-label text-start">Movie Theaters</span>
+                                            </label>
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind21" name="industry_entertainment[]" value="Amusement Parks & Event Zones">
+                                            <span class="checkbox-label text-start">Amusement Parks & Event Zones</span>
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                    <!-- Aviation, Ports & Terminals -->
+                                    <fieldset class="mb-3 p-1">
+                                        <legend class="fieldset-legend">
+                                            <div class="s-icon-sm s-icon-blue">
+                                                <i class="fas fa-anchor"></i>
+                                            </div>
+                                            <h6 class="text-start">Aviation, Ports & Terminals</h6>
+                                        </legend>
+                                        <div class="options-grid">
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind22" name="industry_aviation[]" value="Airport Hangars">
+                                            <span class="checkbox-label text-start">Airport Hangars</span>
+                                            </label>
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind23" name="industry_aviation[]" value="Cargo Terminals">
+                                            <span class="checkbox-label text-start">Cargo Terminals</span>
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                    <!-- Government & Public Services -->
+                                    <fieldset class="mb-3 p-1">
+                                        <legend class="fieldset-legend">
+                                            <div class="s-icon-sm s-icon-blue">
+                                                <i class="fas fa-landmark"></i>
+                                            </div>
+                                            <h6 class="text-start">Government & Public Services</h6>
+                                        </legend>
+                                        <div class="options-grid">
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind24" name="industry_government[]" value="Municipal Departments">
+                                            <span class="checkbox-label text-start">Municipal Departments</span>
+                                            </label>
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind25" name="industry_government[]" value="Public Utility Boards">
+                                            <span class="checkbox-label text-start">Public Utility Boards</span>
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                    <!-- Energy & Utilities -->
+                                    <fieldset class="mb-3 p-1">
+                                        <legend class="fieldset-legend">
+                                            <div class="s-icon-sm s-icon-blue">
+                                                <i class="fas fa-bolt"></i>
+                                            </div>
+                                            <h6 class="text-start">Energy & Utilities</h6>
+                                        </legend>
+                                        <div class="options-grid">
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind26" name="industry_energy[]" value="Power Generation Units">
+                                            <span class="checkbox-label text-start">Power Generation Units</span>
+                                            </label>
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind27" name="industry_energy[]" value="Transmission Networks">
+                                            <span class="checkbox-label text-start">Transmission Networks</span>
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                    <!-- Agriculture & Agri-Processing -->
+                                    <fieldset class="mb-3 p-1">
+                                        <legend class="fieldset-legend">
+                                            <div class="s-icon-sm s-icon-blue">
+                                                <i class="fas fa-seedling"></i>
+                                            </div>
+                                            <h6 class="text-start">Agriculture & Agri-Processing</h6>
+                                        </legend>
+                                        <div class="options-grid">
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind28" name="industry_agriculture[]" value="Agro-Processing Units">
+                                            <span class="checkbox-label text-start">Agro-Processing Units</span>
+                                            </label>
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind29" name="industry_agriculture[]" value="Fertilizer & Irrigation Depots">
+                                            <span class="checkbox-label text-start">Fertilizer & Irrigation Depots</span>
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                    <!-- Field Response Units -->
+                                    <fieldset class="mb-3 p-1">
+                                        <legend class="fieldset-legend">
+                                            <div class="s-icon-sm s-icon-blue">
+                                                <i class="fas fa-truck-monster"></i>
+                                            </div>
+                                            <h6 class="text-start">Field Response Units</h6>
+                                        </legend>
+                                        <div class="options-grid">
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind30" name="industry_fieldresponse[]" value="Disaster Response Storage">
+                                            <span class="checkbox-label text-start">Disaster Response Storage</span>
+                                            </label>
+                                            <label class="checkbox-option">
+                                            <input class="form-check-input" type="checkbox" id="ind31" name="industry_fieldresponse[]" value="Rescue Equipment Depots">
+                                            <span class="checkbox-label text-start">Rescue Equipment Depots</span>
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                    <hr style="border: none; border-bottom: 2px solid var(--s-primary); margin: 0.5rem 0;">
+                                    <!-- Other Industries -->
+                                    <fieldset class="mb-3 p-1">
+                                        <legend class="fieldset-legend mb-1">
+                                            <div class="s-icon-sm s-icon-blue">
+                                                <i class="fas fa-building-circle-exclamation"></i>
+                                            </div>
+                                            <h6 class="text-start">Other Industry <i class="text-muted fw-light"><br>(if not listed above)</i></h6>
+                                        </legend>
+                                        <hr style="border: 1px solid #0066cc; border-radius: 10px;">
+                                        <p class="text-muted mb-3">In case your industry is not included in the list above, kindly use the "Add" option to enter it manually.</p>
+                                        <div id="otherIndustryContainer">
+                                            <!-- <div class="d-flex mb-2 align-items-center">
+                                                <input type="text" class="form-control me-2" name="otherIndustry[]" placeholder="Specify other industry">
+                                                <button type="button" class="btn btn-outline-danger btn-sm remove-field" title="Remove"><i class="fas fa-times"></i></button>
+                                                </div> -->
+                                        </div>
+                                        <button type="button" class="s-btn s-btn-sm s-btn-primary-outline mt-2" id="addOtherIndustry"><i class="fas fa-plus me-1"></i> Add </button>
+                                    </fieldset>
+                                </div>
+                                <div id="industryError" class="alert alert-danger text-start text-danger m-1 d-none">
+                                    select at least one industry type.
+                                    If your industry type is not listed,
+                                    <br>
+                                    please specify another by adding "Other Industry(s)" using 
+                                    <button type="button" class="btn btn-sm btn-outline-primary rounded-3"><i class="fas fa-plus"></i> Add</button>
+                                </div>
+                            </div>
+                            <div class="demo-form-card mb-4 p-4">
+                                <!-- Franchise Brand Field -->
+                                <fieldset class="mb-3 p-1">
+                                    <legend class="fieldset-legend mb-1">
+                                        <div class="s-icon-sm s-icon-blue">
+                                            <i class="fas fa-shop"></i>
+                                        </div>
+                                        <h6 class="text-start">Franchise Brands <i class="text-muted fw-light">(if any)</i></h6>
+                                    </legend>
+                                    <hr style="border: none; border-bottom: 2px solid var(--s-primary); margin: 0.5rem 0;">
+                                    <p class="text-start fw-light text-muted mt-2 mb-1">If your organization operates outlet(s) of any franchise brands, please specify their names below. Use the "<i class="fa-plus"></i> Add" button to list multiple entries, if applicable.</p>
+                                    <div id="franchiseContainer">
+                                        <!-- <div class="d-flex mb-2 align-items-center">
+                                            <input type="text" class="form-control me-2" name="franchiseBrand[]" placeholder="Enter brand name">
+                                            <button type="button" class="btn btn-outline-danger btn-sm remove-field" title="Remove"><i class="fas fa-times"></i></button>
+                                            </div> -->
+                                    </div>
+                                    <button type="button" class="s-btn s-btn-sm s-btn-primary-outline mt-2" id="addFranchise"><i class="fas fa-plus me-1"></i> Add</button>
+                                </fieldset>
+                            </div>
+                            <!-- Equipment Quantity -->
+                            <div class="demo-form-card mb-4 p-4">
+                                <header class="s-card-header mb-0">
+                                    <div class="s-icon s-icon-blue"><i class="fas fa-warehouse"></i></div>
+                                    <h3 id="title-workplace" class="s-title">Asset Quantity</h3>
+                                </header>
+                                <hr style="border: none; border-bottom: 2px solid var(--s-primary); margin: 0.5rem 0;">
+                                <p class="mb-1 text-start text-primary fw-bold">Number of Assets per Workplace</p>
+                                <p class="text-muted mb-3" style="font-size: 13px;">Help us understand the scale and systems of your asset environment by mentioning the average count of tools, machines, and materials per workplace.</p>
+                                <div class="radio-options-grid">
+                                    <label class="form-check-label radio-option" for="aq1">
+                                    <input class="form-check-input" type="radio" name="assetquantity" id="aq1" value="Less than 100" required>
+                                    <span>Less than 100</span>
+                                    </label>
+                                    <label class="form-check-label radio-option" for="aq2">
+                                    <input class="form-check-input" type="radio" name="assetquantity" id="aq2" value="100 to 300" required>
+                                    <span>100 to 300</span>
+                                    </label>
+                                    <label class="form-check-label radio-option" for="aq3">
+                                    <input class="form-check-input" type="radio" name="assetquantity" id="aq3" value="300 to 500" required>
+                                    <span>300 to 500</span>
+                                    </label>
+                                    <label class="form-check-label radio-option" for="aq4">
+                                    <input class="form-check-input" type="radio" name="assetquantity" id="aq4" value="More than 500" required>
+                                    <span>More than 500</span>
+                                    </label>
+                                </div>
+                                <div id="assetQuantityError" class="alert alert-danger text-start text-danger mb-0 mt-3 p-1 d-none" style="width: fit-content;">Please select an approximate asset count.</div>
+                            </div>
+                            <!-- Equipment Cost -->
+                            <div class="demo-form-card mb-4 p-4">
+                                <header class="s-card-header mb-0">
+                                    <div class="s-icon s-icon-blue"><i class="fas fa-indian-rupee-sign"></i></div>
+                                    <h3 id="title-workplace" class="s-title">Asset Cost</h3>
+                                </header>
+                                <hr style="border: none; border-bottom: 2px solid var(--s-primary); margin: 0.5rem 0;">
+                                <p class="form-label mb-1 text-start text-primary fw-bold">Estimated Asset Value per Workplace</p>
+                                <small class="text-muted d-block mb-3">Approximate cost of machinery, tools, and materials per workplace.</small>
+                                <div class="radio-options-grid">
+                                    <label class="form-check-label radio-option" for="assetcost1">
+                                    <input class="form-check-input" type="radio" name="asset_cost" id="assetcost1" value="Less than ₹10 Lakhs" required>
+                                    <span>Less than ₹10 Lakhs</span>
+                                    </label>
+                                    <label class="form-check-label radio-option" for="assetcost2">
+                                    <input class="form-check-input" type="radio" name="asset_cost" id="assetcost2" value="₹10 to ₹30 Lakhs" required>
+                                    <span>₹10 to ₹30 Lakhs</span>
+                                    </label>
+                                    <label class="form-check-label radio-option" for="assetcost3">
+                                    <input class="form-check-input" type="radio" name="asset_cost" id="assetcost3" value="₹30 to ₹50 Lakhs" required>
+                                    <span>₹30 to ₹50 Lakhs</span>
+                                    </label>
+                                    <label class="form-check-label radio-option" for="assetcost4">
+                                    <input class="form-check-input" type="radio" name="asset_cost" id="assetcost4" value="More than ₹50 Lakhs" required>
+                                    <span>More than ₹50 Lakhs</span>
+                                    </label>
+                                </div>
+                                <div id="assetCostError" class="alert alert-danger text-start text-danger mb-0 mt-3 p-1 d-none" style="width: fit-content;">Please select an estimated asset cost range.</div>
+                            </div>
+                            <!-- Current Software -->
+                            <div class="demo-form-card mb-4 p-4">
+                                <header class="s-card-header mb-0">
+                                    <div class="s-icon s-icon-blue"><i class="fas fa-computer"></i></div>
+                                    <h3 id="title-workplace" class="s-title">Management System</h3>
+                                </header>
+                                <hr style="border: none; border-bottom: 2px solid var(--s-primary); margin: 0.5rem 0;">
+                                <p class="mb-1 text-start text-primary fw-bold">Current Asset Management System</p>
+                                <small class="text-muted d-block mb-3">Select the tool or platform your organization currently uses.</small>
+                                <div class="mb-1 text-start">
+                                    <label class="form-check-label radio-content radio-option special none-special" for="sw1" id="managementFrameworkGroup">
+                                        <input class="form-check-input" type="radio" name="asset_software" id="sw1" value="None" required aria-describedby="noneHelp">
+                                        <span>NONE</span>
+                                        <p id="noneHelp" class="none-description mt-2" style="font-size: 15px;">
+                                            <i>Select "<strong>NONE</strong>" if you do not currently use any application to manage your fix-assets.</i>
+                                        </p>
+                                    </label>
+                                </div>
+                                <hr style="border: 1px solid #0066cc; border-radius: 10px; margin: 1rem 1rem; padding: 0 10px;">
+                                <fieldset class="mb-0">
+                                    <legend class="form-label">Current asset management system</legend>
+                                    <div class="radio-options-grid">
+                                        <label class="form-check-label radio-option" for="sw2">
+                                        <input class="form-check-input" type="radio" name="asset_software" id="sw2" value="MS Excel / Google Sheets">
+                                        <span>MS Excel / Google Sheets</span>
+                                        </label>
+                                        <label class="form-check-label radio-option" for="sw3">
+                                        <input class="form-check-input" type="radio" name="asset_software" id="sw3" value="SAP">
+                                        <span>SAP</span>
+                                        </label>
+                                        <label class="form-check-label radio-option" for="sw4">
+                                        <input class="form-check-input" type="radio" name="asset_software" id="sw4" value="Oracle">
+                                        <span>Oracle</span>
+                                        </label>
+                                        <label class="form-check-label radio-option" for="sw5">
+                                        <input class="form-check-input" type="radio" name="asset_software" id="sw5" value="ZOHO">
+                                        <span>ZOHO</span>
+                                        </label>
+                                        <label class="form-check-label radio-option" for="sw6">
+                                        <input class="form-check-input" type="radio" name="asset_software" id="sw6" value="ERP NEXT">
+                                        <span>ERP NEXT</span>
+                                        </label>
+                                        <label class="form-check-label radio-option" for="sw7">
+                                        <input class="form-check-input" type="radio" name="asset_software" id="sw7" value="Odoo">
+                                        <span>Odoo</span>
+                                        </label>
+                                        <label class="form-check-label radio-option" for="sw8">
+                                        <input class="form-check-input" type="radio" name="asset_software" id="sw8" value="Focus">
+                                        <span>Focus</span>
+                                        </label>
+                                        <label class="form-check-label radio-option" for="sw9">
+                                        <input class="form-check-input" type="radio" name="asset_software" id="sw9" value="InfraOn">
+                                        <span>InfraOn</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+                                <hr style="border: 1px solid #0066cc; border-radius: 10px; margin: 0 10px; padding: 0 10px;">
+                                <div class="text-start mt-2 mb-1">
+                                    <label class="form-check-label radio-option" for="sw10">
+                                    <input class="form-check-input" type="radio" name="asset_software" id="sw10" value="Other">
+                                    <span>Other (<i>please specify</i>)</span>
+                                    </label>
+                                </div>
+                                <div class="mb-2 mt-2" id="otherFrameworkInput" style="display: none;">
+                                    <label for="frameworkOtherText" class="form-label small text-muted">Please specify the other framework used</label>
+                                    <div class="s-valid-wrapper">
+                                        <input type="text" class="form-control text-capitalize" id="frameworkOtherText" name="frameworkOtherText" placeholder="Enter framework name">
+                                    </div>
+                                    <div class="invalid-feedback d-none" id="frameworkOtherError">Please enter a valid framework name.</div>
+                                </div>
+                                <div id="ManagementFrameworkError" class="alert alert-danger text-start text-danger mb-0 mt-3 p-1 d-none" style="width: fit-content;">
+                                    Please select a management system.
+                                </div>
+                            </div>
+                            <div class="mt-3 text-end">
+                                <button type="submit" class="s-btn-success" id="submit-demo-form"> <i class="fas fa-check"></i> Submit</button>
+                            </div>
+                        </form>
+                        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer -->
+    <!-- FOOTER -->
+    <!-- FOOTER -->
+    <footer class="modern-footer mt-5">
+
+        <!-- BRANDING (ALWAYS CENTERED) -->
+        <div class="footer-brand d-flex flex-column align-items-center mb-4">
+            <div class="footer-logo-wrapper justify-content-center">
+                <div class="footer-logo">
+                    <img src="assets/images/Scorp-Logo.png"
+                         alt="Scorptech"
+                         class="footer-brand-logo">
+                </div>
+                <h5 class="footer-brand-name m-0">SCORP</h5>
+            </div>
+            <p class="footer-tagline text-center">
+                In the business of<br> making yours simple
+            </p>
+        </div>
+
+        <!-- 3-COLUMN LAYOUT (Desktop) / STACK (Mobile) -->
+        <div class="row g-4 footer-columns-wrapper">
+            
+            <!-- EXPLORE -->
+            <div class="col-12 col-md-4">
+                <div class="footer-section">
+                    <h6>
+                        Explore <i class="fas fa-chevron-down footer-collapse-icon"></i>
+                    </h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link"><i class="fas fa-home-alt"></i><span>Home</span></a></li>
+                        <li><a href="about.html" class="footer-link"><i class="fas fa-users-line"></i><span>About</span></a></li>
+                        <li><a href="sapphire.html" class="footer-link"><i class="fas fa-diamond"></i><span>Sapphire</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- RESOURCES -->
+            <div class="col-12 col-md-4">
+                <div class="footer-section">
+                    <h6>
+                        Resources <i class="fas fa-chevron-down footer-collapse-icon"></i>
+                    </h6>
+                    <ul class="footer-links">
+                        <li><a href="faq.html" class="footer-link"><i class="fas fa-person-circle-question"></i><span>FAQs</span></a></li>
+                        <li><a href="privacy_policy.html" class="footer-link"><i class="fas fa-file-shield"></i><span>Privacy Policy</span></a></li>
+                        <li><a href="terms_of_use.html" class="footer-link"><i class="fas fa-file-contract"></i><span>Terms of Use</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="col-12 col-md-4">
+                <div class="footer-section">
+                    <h6>
+                        Get in Touch <i class="fas fa-chevron-down footer-collapse-icon"></i>
+                    </h6>
+                    <ul class="footer-links">
+                        <li><a href="tel:+91XXXXXXXXXX" class="footer-link"><i class="fas fa-mobile"></i><span>Phone: +91-XXXXXXXXXX</span></a></li>
+                        <li><a href="mailto:support@scorptech.in" class="footer-link"><i class="fas fa-envelope"></i><span>support@scorptech.in</span></a></li>
+                        <li><a href="contact.html" class="footer-link"><i class="fas fa-phone"></i><span>Contact</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <!-- BOTTOM -->
+        <div class="footer-bottom flex-column align-items-center text-center">
+            <p class="footer-copyright mb-3">
+                © 2025 SCORP - Scorptech Technologies Private Limited. All rights reserved.
+            </p>
+            <div class="footer-social justify-content-center">
+                <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+    </footer>
+
+        <script type="module" src="js/main.js"></script>
+        <script type="module" src="js/pages/book-demo.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.11.3/build/js/intlTelInput.min.js"></script>
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> 
+        
+        <!-- modals and popups -->
+        <div class="modal fade" id="successModalDemo" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content border-0 shadow-lg rounded-3">
+                    <div class="modal-header bg-success bg-gradient text-white text-center border-0">
+                        <h5 class="modal-title w-100">
+                            <i class="fas fa-rocket fa-fade me-2"></i> Request Confirmed!
+                        </h5>
+                        <!-- <button type="button" class="btn-close white-close" style="filter: invert(1);" data-bs-dismiss="modal"></button> -->
+                    </div>
+                    <div class="modal-body text-center px-4">
+                        <i class="fas fa-check-to-slot text-success fa-5x fa-beat-fade"></i> 
+                        <h4 class="fw-bold mt-3 text-dark">Your demo request has been sent successfully!</h4>
+                        <p class="text-muted fs-5">
+                            Our team will connect with you shortly to schedule your personalized session. <br><br> 
+                            <strong>Thank you for your interest in Sapphire</strong>—we look forward to showing you what it can do.
+                        </p>
+                        <div class="mt-4">
+                            <button type="button" class="btn btn-success px-4 shadow-lg" data-bs-dismiss="modal">
+                            <i class="fas fa-thumbs-up me-2"></i> Got it!
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+

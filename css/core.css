@@ -1,0 +1,740 @@
+@font-face {
+    font-family: 'Science Gothic';
+    src: url('/fonts/ScienceGothic-Reg.ttf') format('truetype');
+    font-weight: 100 900;
+    font-stretch: 50% 200%;
+    font-display: swap;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   1.2 CSS Variables (Design Tokens) - ALL with "s-" prefix
+   ───────────────────────────────────────────────────────────────────────────── */
+:root {
+    /* ═══════════════════════════════════════════════════════════════════════════
+       BRAND COLORS (SCORP Primary Identity)
+       ═══════════════════════════════════════════════════════════════════════════ */
+    --s-primary: #0066cc;
+    --s-primary-vibrant: #0099ff;
+    --s-primary-dark: #004d99;
+    --s-primary-light: #3399ff;
+    --s-accent: #1a73e8;
+    --s-primary-500: #3490fa;
+    --s-primary-600: #2563eb;
+    --s-primary-700: #1747a6;
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       NEUTRAL PALETTE (Slate/Gray Scale - 11 Shades)
+       ═══════════════════════════════════════════════════════════════════════════ */
+    --s-white: #ffffff;
+    --s-gray-50: #f8fafc;
+    --s-gray-100: #f1f5f9;
+    --s-gray-200: #e2e8f0;
+    --s-gray-300: #cbd5e1;
+    --s-gray-400: #94a3b8;
+    --s-gray-500: #64748b;
+    --s-gray-600: #475569;
+    --s-gray-700: #334155;
+    --s-gray-800: #1e293b;
+    --s-gray-900: #0f172a;
+    --s-black: #000000;
+    --s-neutral-100: #f3f6fb;
+    --s-neutral-200: #e9eef6;
+    --s-neutral-300: #d9e1ee;
+    --s-neutral-500: #6b7280;
+    --s-neutral-600: #4b5563;
+    --s-neutral-700: #374151;
+    --s-neutral-800: #1f2937;
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       EXTENDED COLOR PALETTE
+       ═══════════════════════════════════════════════════════════════════════════ */
+    --s-cyan-500: #06b6d4;
+    --s-cyan-600: #0891b2;
+    --s-green-500: #22c55e;
+    --s-green-600: #16a34a;
+    --s-green-700: #15803d;
+    --s-amber-500: #f59e0b;
+    --s-amber-600: #d97706;
+    --s-amber-700: #b45309;
+    --s-purple-500: #8b5cf6;
+    --s-purple-600: #6d28d9;
+    --s-indigo-500: #6366f1;
+    --s-indigo-600: #4f46e5;
+    --s-teal-500: #14b8a6;
+    --s-teal-600: #0d9488;
+    --s-red-600: #dc2626;
+    --s-red-700: #b91c1c;
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       SEMANTIC COLORS (State & Action Colors)
+       ═══════════════════════════════════════════════════════════════════════════ */
+    --s-success: #16a34a;
+    --s-success-soft: #22c55e;
+    --s-success-lime: #5acc17;
+    --s-success-lime-light: #a3e635;
+    --s-danger: #dc2626;
+    --s-danger-light: #ef4444;
+    --s-warning: #eab308;
+    --s-warning-light: #fbbf24;
+    --s-amber: #f59e0b;
+    --s-amber-light: #fbbf24;
+    /* INFO = CYAN */
+    --s-info: var(--s-cyan-600);
+    --s-info-light: var(--s-cyan-500);
+    --s-info-rgb: 2, 132, 199;
+
+    /* INFO SPECIAL = TEAL */
+    --s-info-special: var(--s-teal-600);
+    --s-info-special-light: var(--s-teal-500);
+    --s-info-special-rgb: 13, 148, 136;
+    --s-attention: #ea580c;
+    --s-attention-light: #f97316;
+    --s-royal: #7c3aed;
+    --s-royal-light: #a78bfa;
+    --s-royal-lighter: #c4b5fd;
+    --s-pop: #ec4899;
+    --s-pop-light: #f472b6;
+
+    /* ═══════════════════════════════════════════════════════════════════════════ 
+        FROSTED GLASS EFFECT COLORS
+    ════════════════════════════════════════════════════════════════════════════*/
+
+    --s-frost-light: #ffffff33;
+    --s-frost-dark: #ffffff0d;
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       SEMANTIC ALIASES (Shortcuts)
+       ═══════════════════════════════════════════════════════════════════════════ */
+    --s-error: var(--s-danger);
+    --s-link: var(--s-primary);
+    --s-link-hover: var(--s-primary-dark);
+    --s-text-primary: var(--s-primary);
+    --s-text-secondary: var(--s-gray-900);
+    --s-text-muted: var(--s-gray-500);
+    --s-bg-light: var(--s-gray-50);
+    --s-bg-medium: var(--s-gray-100);
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       GRADIENTS - PRIMARY
+       ═══════════════════════════════════════════════════════════════════════════ */
+    --s-gradient-primary: linear-gradient(135deg, #0066cc, #3399ff);
+    --s-gradient-primary-dark: linear-gradient(135deg, #004d99, #0066cc);
+    --s-gradient-light: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --s-gradient-subtle: linear-gradient(135deg, rgba(0, 102, 204, 0.05) 0%, rgba(0, 102, 204, 0.02) 100%);
+    --s-gradient-overlay: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
+    --s-gradient-light-bg: linear-gradient(135deg, #ffffff, #f1f5f9);
+    --s-gradient-dark: linear-gradient(135deg, #334155, #475569);
+    --s-gradient-black: linear-gradient(135deg, #000000, #1e293b);
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       GRADIENTS - SEMANTIC STATES
+       ═══════════════════════════════════════════════════════════════════════════ */
+    --s-gradient-secondary: linear-gradient(135deg, #64748b, #94a3b8);
+    --s-gradient-success: linear-gradient(135deg, #16a34a, #22c55e);
+    --s-gradient-success-soft: linear-gradient(135deg, #5acc17, #a3e635);
+    --s-gradient-danger: linear-gradient(135deg, #dc2626, #ef4444);
+    --s-gradient-warning: linear-gradient(135deg, #eab308, #fbbf24);
+    --s-gradient-amber: linear-gradient(135deg, #f59e0b, #d97706);
+    --s-gradient-attention: linear-gradient(135deg, #ea580c, #f97316);
+    --s-gradient-info: linear-gradient(135deg, var(--s-info), var(--s-info-light));
+    --s-gradient-info-special: linear-gradient(135deg, var(--s-info-special), var(--s-info-special-light));
+    --s-gradient-royal: linear-gradient(135deg, #7c3aed, #a78bfa);
+    --s-gradient-royal-light: linear-gradient(135deg, #a78bfa, #c4b5fd);
+    --s-gradient-pop: linear-gradient(135deg, #ec4899, #f472b6);
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       GRADIENTS - ICON-SPECIFIC (For Icon System)
+       ═══════════════════════════════════════════════════════════════════════════ */
+    --s-gradient-cyan: linear-gradient(135deg, var(--s-cyan-500), var(--s-cyan-600));
+    --s-gradient-green: linear-gradient(135deg, var(--s-green-500), var(--s-green-600));
+    --s-gradient-purple: linear-gradient(135deg, var(--s-purple-500), var(--s-purple-600));
+    --s-gradient-indigo: linear-gradient(135deg, var(--s-indigo-500), var(--s-indigo-600));
+    --s-gradient-teal: linear-gradient(135deg, var(--s-teal-500), var(--s-teal-600));
+    --s-gradient-red: linear-gradient(135deg, var(--s-red-600), var(--s-red-700));
+    --s-gradient-slate: linear-gradient(135deg, var(--s-gray-500), var(--s-gray-600));
+    --s-gradient-neutral: linear-gradient(135deg, var(--s-neutral-200), var(--s-neutral-300));
+    /*═══════════════════════════════════════════════════════════════════════════
+       GRADIENTS - FROSTED GLASS EFFECT
+       ═══════════════════════════════════════════════════════════════════════════ */
+    --s-gradient-frost: linear-gradient(135deg, var(--s-frost-light), var(--s-frost-dark));
+
+    /* ═══════════════════════════════════════════════════════════════════════════════
+   S-BG GRADIENT UTILITIES - ULTRA-CONSOLIDATED OOCSS
+   Maximum consolidation using attribute selectors and CSS variables
+   Usage: <div class="s-bg-primary">...</div>
+═══════════════════════════════════════════════════════════════════════════════ */
+
+    /* ─────────────────────────────────────────────────────────────────────────────
+   BASE - All gradient backgrounds in one rule
+───────────────────────────────────────────────────────────────────────────── */
+    [class*="s-bg-"] {
+        color: var(--s-white);
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────────
+   LIGHT VARIANTS - Override text color
+───────────────────────────────────────────────────────────────────────────── */
+    .s-bg-light-bg,
+    .s-bg-subtle,
+    .s-bg-overlay {
+        color: var(--s-gray-900);
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────────
+    ALL GRADIENTS - Single property assignment
+───────────────────────────────────────────────────────────────────────────── */
+    .s-bg-primary {
+        background: var(--s-gradient-primary);
+    }
+
+    .s-bg-primary-dark {
+        background: var(--s-gradient-primary-dark);
+    }
+
+    .s-bg-light {
+        background: var(--s-gradient-light);
+    }
+
+    .s-bg-subtle {
+        background: var(--s-gradient-subtle);
+    }
+
+    .s-bg-overlay {
+        background: var(--s-gradient-overlay);
+    }
+
+    .s-bg-light-bg {
+        background: var(--s-gradient-light-bg);
+    }
+
+    .s-bg-dark {
+        background: var(--s-gradient-dark);
+    }
+
+    .s-bg-black {
+        background: var(--s-gradient-black);
+    }
+
+    .s-bg-secondary {
+        background: var(--s-gradient-secondary);
+    }
+
+    .s-bg-success {
+        background: var(--s-gradient-success);
+    }
+
+    .s-bg-success-soft {
+        background: var(--s-gradient-success-soft);
+    }
+
+    .s-bg-danger {
+        background: var(--s-gradient-danger);
+    }
+
+    .s-bg-warning {
+        background: var(--s-gradient-warning);
+    }
+
+    .s-bg-amber {
+        background: var(--s-gradient-amber);
+    }
+
+    .s-bg-attention {
+        background: var(--s-gradient-attention);
+    }
+
+    .s-bg-info {
+        background: var(--s-gradient-info);
+    }
+
+    .s-bg-info-special {
+        background: var(--s-gradient-info-special);
+    }
+
+    .s-bg-royal {
+        background: var(--s-gradient-royal);
+    }
+
+    .s-bg-royal-light {
+        background: var(--s-gradient-royal-light);
+    }
+
+    .s-bg-pop {
+        background: var(--s-gradient-pop);
+    }
+
+
+
+    .s-bg-green {
+        background: var(--s-gradient-green);
+    }
+
+    .s-bg-purple {
+        background: var(--s-gradient-purple);
+    }
+
+    .s-bg-indigo {
+        background: var(--s-gradient-indigo);
+    }
+
+
+
+    .s-bg-red {
+        background: var(--s-gradient-red);
+    }
+
+    .s-bg-slate {
+        background: var(--s-gradient-slate);
+    }
+
+    .s-bg-neutral {
+        background: var(--s-gradient-neutral);
+    }
+
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       SHADOWS - BASE (General Purpose)
+       ═══════════════════════════════════════════════════════════════════════════ */
+    --s-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --s-shadow-sm: 0 2px 4px rgba(0, 102, 204, 0.1);
+    --s-shadow-md: 0 4px 12px rgba(0, 102, 204, 0.15);
+    --s-shadow-lg: 0 8px 25px rgba(0, 102, 204, 0.2);
+    --s-shadow-xl: 0 20px 40px rgba(0, 102, 204, 0.25);
+    --s-shadow-2xl: 0 30px 60px rgba(0, 102, 204, 0.3);
+    --s-shadow-glow: 0 0 30px rgba(0, 102, 204, 0.4);
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       SHADOWS - BUTTON-SPECIFIC (For Button States)
+       ═══════════════════════════════════════════════════════════════════════════ */
+    --s-shadow-btn-primary: 0 2px 6px 0 rgba(0, 102, 204, 0.08),
+    0 4px 12px 0 rgba(0, 102, 204, 0.06);
+    --s-shadow-btn-primary-hover: 0 3px 8px 0 rgba(0, 102, 204, 0.1),
+    0 6px 16px 0 rgba(0, 102, 204, 0.08);
+    --s-shadow-btn-secondary: 0 2px 6px 0 rgba(100, 116, 139, 0.08),
+    0 4px 12px 0 rgba(100, 116, 139, 0.06);
+    --s-shadow-btn-secondary-hover: 0 3px 8px 0 rgba(100, 116, 139, 0.1),
+    0 6px 16px 0 rgba(100, 116, 139, 0.08);
+    --s-shadow-btn-success: 0 2px 6px 0 rgba(22, 163, 74, 0.08),
+    0 4px 12px 0 rgba(22, 163, 74, 0.06);
+    --s-shadow-btn-success-hover: 0 3px 8px 0 rgba(22, 163, 74, 0.1),
+    0 6px 16px 0 rgba(22, 163, 74, 0.08);
+    --s-shadow-btn-success-soft: 0 2px 6px 0 rgba(132, 204, 22, 0.08),
+    0 4px 12px 0 rgba(132, 204, 22, 0.06);
+    --s-shadow-btn-success-soft-hover: 0 3px 8px 0 rgba(132, 204, 22, 0.1),
+    0 6px 16px 0 rgba(132, 204, 22, 0.08);
+    --s-shadow-btn-danger: 0 2px 6px 0 rgba(220, 38, 38, 0.08),
+    0 4px 12px 0 rgba(220, 38, 38, 0.06);
+    --s-shadow-btn-danger-hover: 0 3px 8px 0 rgba(220, 38, 38, 0.1),
+    0 6px 16px 0 rgba(220, 38, 38, 0.08);
+    --s-shadow-btn-warning: 0 2px 6px 0 rgba(234, 179, 8, 0.08),
+    0 4px 12px 0 rgba(234, 179, 8, 0.06);
+    --s-shadow-btn-warning-hover: 0 3px 8px 0 rgba(234, 179, 8, 0.1),
+    0 6px 16px 0 rgba(234, 179, 8, 0.08);
+    --s-shadow-btn-amber: 0 2px 6px 0 rgba(245, 158, 11, 0.08),
+    0 4px 12px 0 rgba(245, 158, 11, 0.06);
+    --s-shadow-btn-amber-hover: 0 3px 8px 0 rgba(245, 158, 11, 0.1),
+    0 6px 16px 0 rgba(245, 158, 11, 0.08);
+    --s-shadow-btn-info: 0 2px 6px 0 rgba(2, 132, 199, 0.08),
+    0 4px 12px 0 rgba(2, 132, 199, 0.06);
+    --s-shadow-btn-info-hover: 0 3px 8px 0 rgba(2, 132, 199, 0.1),
+    0 6px 16px 0 rgba(2, 132, 199, 0.08);
+    --s-shadow-btn-attention: 0 2px 6px 0 rgba(234, 88, 12, 0.08),
+    0 4px 12px 0 rgba(234, 88, 12, 0.06);
+    --s-shadow-btn-attention-hover: 0 3px 8px 0 rgba(234, 88, 12, 0.1),
+    0 6px 16px 0 rgba(234, 88, 12, 0.08);
+    --s-shadow-btn-royal: 0 2px 6px 0 rgba(124, 58, 237, 0.08),
+    0 4px 12px 0 rgba(124, 58, 237, 0.06);
+    --s-shadow-btn-royal-hover: 0 3px 8px 0 rgba(124, 58, 237, 0.1),
+    0 6px 16px 0 rgba(124, 58, 237, 0.08);
+    --s-shadow-btn-pop: 0 2px 6px 0 rgba(236, 72, 153, 0.08),
+    0 4px 12px 0 rgba(236, 72, 153, 0.06);
+    --s-shadow-btn-pop-hover: 0 3px 8px 0 rgba(236, 72, 153, 0.1),
+    0 6px 16px 0 rgba(236, 72, 153, 0.08);
+    --s-shadow-btn-dark: 0 2px 6px 0 rgba(51, 65, 85, 0.1),
+    0 4px 12px 0 rgba(51, 65, 85, 0.08);
+    --s-shadow-btn-dark-hover: 0 3px 8px 0 rgba(51, 65, 85, 0.12),
+    0 6px 16px 0 rgba(51, 65, 85, 0.1);
+    --s-shadow-btn-black: 0 2px 6px 0 rgba(0, 0, 0, 0.1),
+    0 4px 12px 0 rgba(0, 0, 0, 0.08);
+    --s-shadow-btn-black-hover: 0 3px 8px 0 rgba(0, 0, 0, 0.12),
+    0 6px 16px 0 rgba(0, 0, 0, 0.1);
+    --s-shadow-btn-white: 0 2px 6px 0 rgba(100, 116, 139, 0.06),
+    0 4px 12px 0 rgba(100, 116, 139, 0.04);
+    --s-shadow-btn-white-hover: 0 3px 8px 0 rgba(100, 116, 139, 0.08),
+    0 6px 16px 0 rgba(100, 116, 139, 0.06);
+    --s-shadow-btn-outline: 0 1px 4px 0 rgba(0, 0, 0, 0.04),
+    0 2px 8px 0 rgba(0, 0, 0, 0.03);
+    --s-shadow-btn-outline-hover: 0 2px 6px 0 rgba(0, 102, 204, 0.08),
+    0 4px 12px 0 rgba(0, 102, 204, 0.06);
+
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       SHADOWS - COMPONENT-SPECIFIC
+       ═══════════════════════════════════════════════════════════════════════════ */
+    --s-shadow-card: 0 4px 16px rgba(0, 102, 204, 0.1);
+    --s-shadow-card-hover: 0 8px 28px rgba(0, 102, 204, 0.18);
+    --s-shadow-nav: 0 8px 32px rgba(0, 102, 204, 0.12),
+    0 2px 8px rgba(0, 102, 204, 0.08);
+    --s-shadow-dropdown: 0 12px 40px rgba(0, 102, 204, 0.2);
+    --s-shadow-modal: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       TRANSITIONS (Easing Functions)
+       ═══════════════════════════════════════════════════════════════════════════ */
+    --s-transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --s-transition-base: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --s-transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --s-transition-slow: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --s-transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       SPACING SCALE (Numeric Scale)
+       ═══════════════════════════════════════════════════════════════════════════ */
+    --s-space-0: 0;
+    --s-space-1: 0.25rem;
+    --s-space-2: 0.5rem;
+    --s-space-3: 0.75rem;
+    --s-space-4: 1rem;
+    --s-space-5: 1.25rem;
+    --s-space-6: 1.5rem;
+    --s-space-8: 2rem;
+    --s-space-10: 2.5rem;
+    --s-space-12: 3rem;
+    --s-space-16: 4rem;
+    --s-space-20: 5rem;
+    --s-space-24: 6rem;
+    --s-space-xs: var(--s-space-2);
+    --s-space-sm: var(--s-space-3);
+    --s-space-md: var(--s-space-4);
+    --s-space-lg: var(--s-space-6);
+    --s-space-xl: var(--s-space-8);
+    --s-space-2xl: var(--s-space-12);
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       BORDER RADIUS SCALE
+       ═══════════════════════════════════════════════════════════════════════════ */
+    --s-radius-none: 0;
+    --s-radius-xs: 0.25rem;
+    --s-radius-sm: 0.5rem;
+    --s-radius-md: 0.75rem;
+    --s-radius-lg: 1rem;
+    --s-radius-xl: 1.5rem;
+    --s-radius-2xl: 2rem;
+    --s-radius-full: 9999px;
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       TYPOGRAPHY SCALE (Font Sizes)
+       ═══════════════════════════════════════════════════════════════════════════ */
+    --s-text-xs: 0.75rem;
+    --s-text-sm: 0.875rem;
+    --s-text-base: 1rem;
+    --s-text-lg: 1.125rem;
+    --s-text-xl: 1.25rem;
+    --s-text-2xl: 1.5rem;
+    --s-text-3xl: 1.875rem;
+    --s-text-4xl: 2.25rem;
+    --s-text-5xl: 3rem;
+    --s-text-6xl: 3.75rem;
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       FONT WEIGHTS
+       ═══════════════════════════════════════════════════════════════════════════ */
+    --s-font-normal: 400;
+    --s-font-medium: 500;
+    --s-font-semibold: 600;
+    --s-font-bold: 700;
+    --s-font-extrabold: 800;
+    --s-font-black: 900;
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       LINE HEIGHTS
+       ═══════════════════════════════════════════════════════════════════════════ */
+    --s-leading-tight: 1.2;
+    --s-leading-snug: 1.375;
+    --s-leading-normal: 1.5;
+    --s-leading-relaxed: 1.625;
+    --s-leading-loose: 2;
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       Z-INDEX SCALE (Layering System)
+       ═══════════════════════════════════════════════════════════════════════════ */
+    --s-z-base: 1;
+    --s-z-dropdown: 10;
+    --s-z-sticky: 100;
+    --s-z-fixed: 1000;
+    --s-z-modal-backdrop: 1040;
+    --s-z-modal: 1050;
+    --s-z-popover: 1060;
+    --s-z-tooltip: 1070;
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       CONTAINER WIDTHS (Responsive Breakpoints)
+       ═══════════════════════════════════════════════════════════════════════════ */
+    --s-container-sm: 640px;
+    --s-container-md: 768px;
+    --s-container-lg: 1024px;
+    --s-container-xl: 1280px;
+    --s-container-2xl: 1536px;
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       ICON SYSTEM (Sizes & Font Sizes)
+       ═══════════════════════════════════════════════════════════════════════════ */
+    --s-icon-size-sm: 2rem;
+    --s-icon-size-md: 3rem;
+    --s-icon-size-lg: 4rem;
+    --s-icon-size-xl: 6rem;
+    --s-icon-fs-sm: 0.9rem;
+    --s-icon-fs-md: 1.25rem;
+    --s-icon-fs-lg: 2rem;
+    --s-icon-fs-xl: 3rem;
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       MODULE CARD ADJUSTMENTS
+       ═══════════════════════════════════════════════════════════════════════════ */
+    --card-height: 540px;
+    --ring: #2563eb;
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       THEME VARIABLES (Future Dark Mode Support)
+       ═══════════════════════════════════════════════════════════════════════════ */
+    --s-theme-bg: var(--s-white);
+    --s-theme-bg-secondary: var(--s-gray-50);
+    --s-theme-text: var(--s-gray-900);
+    --s-theme-text-secondary: var(--s-gray-600);
+    --s-theme-border: var(--s-gray-200);
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       SLIDER ANIMATION VARIABLES
+       ═══════════════════════════════════════════════════════════════════════════ */
+    --s-slider-font-size: clamp(1.6rem, 2.5vw + 1rem, 3rem);
+    --s-slider-line-height: 1.3;
+    --s-slider-row-height: calc(var(--s-slider-font-size) * var(--s-slider-line-height));
+    --s-slider-duration: 3500ms;
+}
+
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   1.3 Global Reset & Base Styles
+   ───────────────────────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: Verdana, 'Noto Sans Devanagari', Geneva, Tahoma, sans-serif;
+    font-size: var(--s-text-base);
+    line-height: var(--s-leading-relaxed);
+    color: var(--s-black);
+    background: url('/assets/images/white_bg-highres.png') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* opacity: 0;
+    animation: luxuryFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards; */
+}
+
+
+
+/* Remove default list styles */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Remove default button styles */
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* Image defaults */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Improve table styling */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Form element defaults */
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   2. TYPOGRAPHY
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   2.1 Heading Styles (Science Gothic)
+   ───────────────────────────────────────────────────────────────────────────── */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Science Gothic', 'Noto Sans Devanagari', sans-serif;
+    font-weight: var(--s-font-extrabold);
+    font-style: italic;
+    line-height: var(--s-leading-tight);
+    padding-right: 0.15em;
+    margin-right: -0.15em;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, var(--s-text-6xl));
+    margin-bottom: var(--s-space-8);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, var(--s-text-5xl));
+    margin-bottom: var(--s-space-6);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, var(--s-text-4xl));
+    margin-bottom: var(--s-space-5);
+}
+
+h4 {
+    font-size: clamp(1.25rem, 2.5vw, var(--s-text-3xl));
+    margin-bottom: var(--s-space-4);
+}
+
+h5 {
+    font-size: clamp(1.125rem, 2vw, var(--s-text-2xl));
+    margin-bottom: var(--s-space-3);
+}
+
+h6 {
+    font-size: clamp(1rem, 1.5vw, var(--s-text-xl));
+    margin-bottom: var(--s-space-3);
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   2.2 Body Text (Verdana)
+   ───────────────────────────────────────────────────────────────────────────── */
+
+p {
+    font-family: Verdana, 'Noto Sans Devanagari', Geneva, Tahoma, sans-serif;
+    font-size: var(--s-text-base);
+    line-height: var(--s-leading-relaxed);
+    color: var(--s-gray-700);
+    margin-bottom: var(--s-space-4);
+}
+
+.s-lead {
+    font-size: var(--s-text-lg);
+    font-weight: var(--s-font-medium);
+    color: var(--s-gray-600);
+    line-height: var(--s-leading-relaxed);
+}
+
+.s-small-text {
+    font-size: var(--s-text-sm);
+    color: var(--s-gray-500);
+}
+
+.s-text-muted {
+    color: var(--s-gray-500);
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   2.3 Hindi Text Support (Noto Sans Devanagari)
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.s-hindi,
+[lang="hi"] {
+    font-family: 'Noto Sans Devanagari', Verdana, Geneva, sans-serif;
+    font-weight: var(--s-font-normal);
+}
+
+h1.s-hindi,
+h2.s-hindi,
+h3.s-hindi,
+h4.s-hindi,
+h5.s-hindi,
+h6.s-hindi,
+[lang="hi"] h1,
+[lang="hi"] h2,
+[lang="hi"] h3,
+[lang="hi"] h4,
+[lang="hi"] h5,
+[lang="hi"] h6 {
+    font-family: 'Noto Sans Devanagari', 'Science Gothic', sans-serif;
+    font-weight: var(--s-font-extrabold);
+}
+
+
+
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: clamp(1.5rem, 3vw, var(--s-text-2xl));
+        margin-bottom: var(--s-space-5);
+    }
+
+    h2 {
+        font-size: clamp(1.375rem, 2.75vw, var(--s-text-xl));
+        margin-bottom: var(--s-space-4);
+    }
+
+    h3 {
+        font-size: clamp(1.25rem, 2.5vw, var(--s-text-lg));
+        margin-bottom: var(--s-space-3);
+    }
+
+    p {
+        font-size: var(--s-text-sm);
+    }
+}
+
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: var(--s-text-xl);
+        margin-bottom: var(--s-space-4);
+    }
+
+    h2 {
+        font-size: var(--s-text-lg);
+        margin-bottom: var(--s-space-3);
+    }
+
+    h3 {
+        font-size: var(--s-text-base);
+        margin-bottom: var(--s-space-2);
+    }
+
+}

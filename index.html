@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SCORP - In the business of making yours simple</title>
+        <link rel="icon" type="image/png" href="assets/images/scorp-logo-favicon.png">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+        <script src="https://cdn.lordicon.com/lordicon.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SCORP NAVIGATION 
+     ═══════════════════════════════════════════════════════════════ -->
+<nav class="navbar navbar-expand-xl s-navbar" id="scorpNavbar">
+    
+    <!-- Brand -->
+    <a class="navbar-brand s-navbar-brand" href="index.html">
+      <div class="s-brand-logo">
+        <img src="assets/images/Scorp-Logo.png" alt="Scorptech" width="24" height="24" style="filter: brightness(0) invert(1);">
+      </div>
+      <span class="s-brand-text">SCORP</span>
+    </a>
+
+    <!-- Animated Hamburger Toggle -->
+    <button class="navbar-toggler s-mobile-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="s-hamburger-box">
+        <span class="s-hamburger-inner"></span>
+      </span>
+    </button>
+
+    <!-- Collapsible Content -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto s-nav-links">
+        
+        <!-- Home -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="index.html">
+            <i class="fas fa-home-alt"></i>
+            <span>Home</span>
+          </a>
+        </li>
+
+        <!-- Sapphire -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="sapphire.html">
+            <i class="fas fa-diamond"></i>
+            <span>Sapphire</span>
+          </a>
+        </li>
+
+        <!-- Contact -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="contact.html">
+            <i class="bi bi-telephone-outbound-fill"></i>
+            <span>Contact</span>
+          </a>
+        </li>
+
+        <!-- About -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="about.html">
+            <i class="fas fa-users-line"></i>
+            <span>About</span>
+          </a>
+        </li>
+
+        <!-- Sapphire Smart Dropdown (Internal Pages) -->
+        <!-- <li class="nav-item dropdown s-nav-dropdown-internal">
+          <a class="nav-link s-nav-link dropdown-toggle" 
+             href="#" 
+             role="button" 
+             data-bs-toggle="dropdown" 
+             aria-expanded="false"
+             data-dropdown-id="sapphire-smart">
+            <i class="bi bi-lightbulb-fill"></i>
+            <span>Sapphire Smart</span>
+            Active Indicator Badge
+            <span class="s-active-badge"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end s-internal-dropdown-menu">
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="analytics.html" data-page="analytics.html">
+                <i class="fas fa-chart-line"></i>
+                <span>Smart Analytics</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="intelligence.html" data-page="intelligence.html">
+                <i class="fas fa-brain"></i>
+                <span>Intelligence</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="mobileUSP.html" data-page="mobileUSP.html">
+                <i class="fas fa-mobile-screen"></i>
+                <span>Mobile Friendly</span>
+              </a>
+            </li>
+          </ul>
+        </li> -->
+
+        <!-- Resources Dropdown (Internal Pages) -->
+        <li class="nav-item dropdown s-nav-dropdown-internal">
+          <a class="nav-link s-nav-link dropdown-toggle" 
+             href="#" 
+             role="button" 
+             data-bs-toggle="dropdown" 
+             aria-expanded="false"
+             data-dropdown-id="resources">
+            <i class="bi bi-grid-3x3-gap-fill"></i>
+            <span>Resources</span>
+            <!-- Active Indicator Badge -->
+            <span class="s-active-badge"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end s-internal-dropdown-menu">
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="faq.html" data-page="faq.html">
+                <i class="fas fa-circle-question"></i>
+                <span>FAQ</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="terms_of_use.html" data-page="terms_of_use.html">
+                <i class="fas fa-file-contract"></i>
+                <span>Terms of Use</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="privacy_policy.html" data-page="privacy_policy.html">
+                <i class="fas fa-file-shield"></i>
+                <span>Privacy Policy</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Announcement Icon -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link s-nav-link-icon" href="announcement.html" title="Announcements">
+            <i class="fa-solid fa-bullhorn fa-rotate-by" style="--fa-rotate-angle: 325deg;"></i>
+          </a>
+        </li>
+
+        <!-- Book Demo Button (Green Styled) -->
+<li class="nav-item">
+  <a class="book-demo-button" href="book-demo.html">
+    <i class="bi bi-calendar-check-fill"></i>
+    <span><strong>Book Demo</strong></span>
+  </a>
+</li>
+
+
+        <!-- Go to Sapphire Dropdown (External Links - Blue Styled) -->
+        <li class="nav-item dropdown s-sapphire-dropdown">
+          <button class="btn s-sapphire-trigger dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            <span>go to</span>
+            <div class="s-sapphire-logo">
+              <img src="assets/images/scorp-sapphire-cropped.png" alt="Sapphire" width="32" height="32" style="border-radius: 4px;">
+            </div>
+            <span><strong>Sapphire</strong></span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end s-sapphire-menu">
+            <li>
+              <a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/login" target="_blank">
+                <i class="bi bi-door-open-fill"></i>
+                <span>Log-in</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/register" target="_blank">
+                <i class="bi bi-person-plus-fill"></i>
+                <span>Sign-up</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+</nav>
+
+
+
+
+        <!-- Hero Section -->
+<!-- Home Hero Section with Video Background -->
+<section class="s-hero" id="homeHero" style="position: relative; overflow: hidden; padding-top: 120px;">
+  
+  <!-- Video Background - ADD YOUR VIDEO SOURCES HERE -->
+  <video autoplay muted loop playsinline preload="auto" poster="assets/images/ScorpHero.png" class="hero-video-bg">
+    <source src="assets/videos/scorpherovid.mp4" type="video/mp4">
+    <source src="assets/videos/scorpherovid.mp4" type="video/webm">
+    <!-- Fallback to image if video fails -->
+  </video>
+  
+  <!-- Dark Overlay for text readability -->
+  <div class="s-hero-overlay"></div>
+
+  <div class="container">
+    <div class="s-hero-content">
+      <h1 class="s-hero-title">
+        <span class="s-hero-title-line">In the business</span>
+        <span class="s-hero-title-line">of making yours</span>
+        <span class="s-hero-title-highlight">SIMPLE</span>
+      </h1>
+      <p class="s-hero-description">
+        At SCORP, we design enterprise applications to simplify business operations. 
+        Our flagship ERP solution, <strong class="s-hero-brand-highlight">Sapphire</strong>, adapts to your workflows—so your teams can focus on what matters most.
+      </p>
+      
+      <!-- Triple Features Section -->
+      <div class="s-hero-features" data-animate="fade-up" data-delay="600">
+        <div class="s-hero-feature">
+          <div class="s-hero-feature-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <span>Lean</span>
+        </div>
+        <div class="s-hero-feature">
+          <div class="s-hero-feature-icon">
+            <i class="fas fa-users-cog"></i>
+          </div>
+          <span>Simple</span>
+        </div>
+        <div class="s-hero-feature">
+          <div class="s-hero-feature-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <span>Intuitive</span>
+        </div>
+      </div>
+
+      <div class="s-hero-actions">
+        <a href="book-demo.html" class="s-btn-success s-btn-glare">
+          <i class="fas fa-calendar"></i>
+          Book a Demo
+        </a>
+        <a href="sapphire.html" class="s-btn-primary s-btn-glare">
+          <i class="fas fa-search"></i>
+          Explore Sapphire
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+        <!-- Why SCORP Section -->
+<div class="s-section-header">
+    <h2 class="s-section-title gradient">Why Scorp?</h2>
+    <p class="s-section-subtitle">Technology should elevate operations — not complicate them. That belief shapes everything we build.</p>
+</div>
+
+<!-- Why SCORP Section -->
+<section class="why-scorp-section px-4">
+    <div class="row justify-content-center mt-4">
+        <!-- Card 1 -->
+        <div class="col-xl-3 col-md-6 col-lg-6">
+            <div class="s-feature-card">
+                <div class="s-icon-box-glass">
+                    <img src="assets/images/effortless_to_use.png" style="height: 15rem; width: 20rem;" alt="Effortless to Use">
+                </div>
+                <div class="s-feature-content">
+                    <h5>Effortless to Use</h5>
+                    <p>
+                        Good software doesn’t explain itself. It makes sense instantly.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-xl-3 col-md-6 col-lg-6">
+            <div class="s-feature-card">
+                <div class="s-icon-box-glass">
+                    <img src="assets/images/quick_to_implement.png" style="height: 15rem; width: 20rem;" alt="Quick to Implement">
+                </div>
+                <div class="s-feature-content">
+                    <h5>Quick to Implement</h5>
+                    <p>
+                        We don’t bend your business into a rigid template. We study it. Respect it. Then build around it. That’s why implementation feels less like disruption and more like alignment.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-xl-3 col-md-6 col-lg-6">
+            <div class="s-feature-card">
+                <div class="s-icon-box-glass">
+                    <img src="assets/images/continuously_evolving.png" style="height: 15rem; width: 22rem;" alt="Continuously Evolving">
+                </div>
+                <div class="s-feature-content">
+                    <h5>Continuously Evolving</h5>
+                    <p>
+                        Stagnant software ages fast. We listen. We refine. We sharpen. Sapphire grows with your ambition — not behind it.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-xl-3 col-lg-6 col-md-6">
+            <div class="s-feature-card">
+                <div class="s-icon-box-glass">
+                    <img src="assets/images/built_for_the_real_world.png" style="height: 15rem; width: 22rem;" alt="Built for the Real World">
+                </div>
+                <div class="s-feature-content">
+                    <h5>Built for the Real World</h5>
+                    <p>
+                        Spreadsheets don’t run factories. People do. Sapphire is engineered for real deadlines, real pressure, real accountability. Because that’s where performance is tested — and proven.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        <!-- CTA Section -->
+<section class="s-cta-section">
+    <!-- Network Animation Background -->
+    <canvas id="ctaNetworkCanvas" class="s-cta-canvas"></canvas>
+    
+    <div class="container">
+        <div class="s-cta-content">
+            <h3 class="s-cta-title" data-animate="fade-up">
+                Ready to simplify your ERP experience?
+            </h3>
+            
+            <div class="s-cta-actions" data-animate="fade-up" data-delay="200">
+                <a href="book-demo.html" class="s-btn s-btn-lg s-btn-primary s-btn-glare s-full-width-btn">
+                    <i class="bi bi-collection-play-fill me-1"></i>
+                    <span>Book a Demo</span>
+                </a>
+                
+                <a href="contact.html" class="s-btn s-btn-lg s-btn-secondary s-btn-glare s-full-width-btn">
+                    <i class="bi bi-telephone-outbound-fill me-1"></i>
+                    <span>Talk to Our Team</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        <!-- ═══════════════════════════════════════════════════════════════
+            FOOTER
+            ═══════════════════════════════════════════════════════════════ -->
+<footer class="modern-footer mt-5">
+
+    <!-- BRANDING (ALWAYS CENTERED) -->
+    <div class="footer-brand d-flex flex-column align-items-center mb-4">
+            <div class="footer-logo-wrapper justify-content-center">
+                <div class="footer-logo">
+                    <img src="assets/images/Scorp-Logo.png"
+                         alt="Scorptech"
+                         class="footer-brand-logo">
+                </div>
+                <h5 class="footer-brand-name m-0">SCORP</h5>
+            </div>
+        <p class="footer-tagline text-center">
+            In the business of<br> making yours simple
+        </p>
+    </div>
+
+    <!-- 3-COLUMN LAYOUT (Desktop) / STACK (Mobile) -->
+    <div class="row g-4 footer-columns-wrapper">
+        
+        <!-- EXPLORE -->
+        <div class="col-12 col-md-4">
+            <div class="footer-section">
+                <h6>
+                    Explore <i class="fas fa-chevron-down footer-collapse-icon"></i>
+                </h6>
+                <ul class="footer-links">
+                    <li><a href="index.html" class="footer-link"><i class="fas fa-home-alt"></i><span>Home</span></a></li>
+                    <li><a href="about.html" class="footer-link"><i class="fas fa-users-line"></i><span>About</span></a></li>
+                    <li><a href="sapphire.html" class="footer-link"><i class="fas fa-diamond"></i><span>Sapphire</span></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- RESOURCES -->
+        <div class="col-12 col-md-4">
+            <div class="footer-section">
+                <h6>
+                    Resources <i class="fas fa-chevron-down footer-collapse-icon"></i>
+                </h6>
+                <ul class="footer-links">
+                    <li><a href="faq.html" class="footer-link"><i class="fas fa-person-circle-question"></i><span>FAQs</span></a></li>
+                    <li><a href="privacy_policy.html" class="footer-link"><i class="fas fa-file-shield"></i><span>Privacy Policy</span></a></li>
+                    <li><a href="terms_of_use.html" class="footer-link"><i class="fas fa-file-contract"></i><span>Terms of Use</span></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="col-12 col-md-4">
+            <div class="footer-section">
+                <h6>
+                    Get in Touch <i class="fas fa-chevron-down footer-collapse-icon"></i>
+                </h6>
+                <ul class="footer-links">
+                    <li><a href="tel:+91XXXXXXXXXX" class="footer-link"><i class="fas fa-mobile"></i><span>Phone: +91-XXXXXXXXXX</span></a></li>
+                    <li><a href="mailto:support@scorptech.in" class="footer-link"><i class="fas fa-envelope"></i><span>support@scorptech.in</span></a></li>
+                    <li><a href="contact.html" class="footer-link"><i class="fas fa-phone"></i><span>Contact</span></a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <!-- BOTTOM -->
+    <div class="footer-bottom flex-column align-items-center text-center">
+        <p class="footer-copyright mb-3">
+            © 2025 SCORP - Scorptech Technologies Private Limited. All rights reserved.
+        </p>
+        <div class="footer-social justify-content-center">
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
+        </div>
+    </div>
+
+</footer>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script type="module" src="js/main.js"></script>
+        <script type="module" src="js/pages/index.js"></script>
+  <!-- <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(reg => console.log('✅ Service Worker registered:', reg.scope))
+          .catch(err => console.error('❌ Service Worker registration failed:', err));
+      });
+    }
+  </script> -->
+</body>
+</html>
+
+

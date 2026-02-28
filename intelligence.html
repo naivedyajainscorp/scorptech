@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapphire Intelligence - SCORP</title>
+    <link rel="icon" type="image/png" href="assets/images/scorp-logo-favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SCORP NAVIGATION 
+     ═══════════════════════════════════════════════════════════════ -->
+<nav class="navbar navbar-expand-xl s-navbar" id="scorpNavbar">
+    
+    <!-- Brand -->
+    <a class="navbar-brand s-navbar-brand" href="index.html">
+      <div class="s-brand-logo">
+        <img src="assets/images/Scorp-Logo.png" alt="Scorptech" width="24" height="24" style="filter: brightness(0) invert(1);">
+      </div>
+      <span class="s-brand-text">SCORP</span>
+    </a>
+
+    <!-- Animated Hamburger Toggle -->
+    <button class="navbar-toggler s-mobile-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="s-hamburger-box">
+        <span class="s-hamburger-inner"></span>
+      </span>
+    </button>
+
+    <!-- Collapsible Content -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto s-nav-links">
+        
+        <!-- Home -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="index.html">
+            <i class="fas fa-home-alt"></i>
+            <span>Home</span>
+          </a>
+        </li>
+
+        <!-- Sapphire -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="sapphire.html">
+            <i class="fas fa-diamond"></i>
+            <span>Sapphire</span>
+          </a>
+        </li>
+
+        <!-- Contact -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="contact.html">
+            <i class="bi bi-telephone-outbound-fill"></i>
+            <span>Contact</span>
+          </a>
+        </li>
+
+        <!-- About -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="about.html">
+            <i class="fas fa-users-line"></i>
+            <span>About</span>
+          </a>
+        </li>
+
+        <!-- Sapphire Smart Dropdown (Internal Pages) -->
+        <!-- <li class="nav-item dropdown s-nav-dropdown-internal">
+          <a class="nav-link s-nav-link dropdown-toggle" 
+             href="#" 
+             role="button" 
+             data-bs-toggle="dropdown" 
+             aria-expanded="false"
+             data-dropdown-id="sapphire-smart">
+            <i class="bi bi-lightbulb-fill"></i>
+            <span>Sapphire Smart</span>
+            Active Indicator Badge
+            <span class="s-active-badge"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end s-internal-dropdown-menu">
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="analytics.html" data-page="analytics.html">
+                <i class="fas fa-chart-line"></i>
+                <span>Smart Analytics</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="intelligence.html" data-page="intelligence.html">
+                <i class="fas fa-brain"></i>
+                <span>Intelligence</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="mobileUSP.html" data-page="mobileUSP.html">
+                <i class="fas fa-mobile-screen"></i>
+                <span>Mobile Friendly</span>
+              </a>
+            </li>
+          </ul>
+        </li> -->
+
+        <!-- Resources Dropdown (Internal Pages) -->
+        <li class="nav-item dropdown s-nav-dropdown-internal">
+          <a class="nav-link s-nav-link dropdown-toggle" 
+             href="#" 
+             role="button" 
+             data-bs-toggle="dropdown" 
+             aria-expanded="false"
+             data-dropdown-id="resources">
+            <i class="bi bi-grid-3x3-gap-fill"></i>
+            <span>Resources</span>
+            <!-- Active Indicator Badge -->
+            <span class="s-active-badge"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end s-internal-dropdown-menu">
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="faq.html" data-page="faq.html">
+                <i class="fas fa-circle-question"></i>
+                <span>FAQ</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="terms_of_use.html" data-page="terms_of_use.html">
+                <i class="fas fa-file-contract"></i>
+                <span>Terms of Use</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="privacy_policy.html" data-page="privacy_policy.html">
+                <i class="fas fa-file-shield"></i>
+                <span>Privacy Policy</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Announcement Icon -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link s-nav-link-icon" href="announcement.html" title="Announcements">
+            <i class="fa-solid fa-bullhorn fa-rotate-by" style="--fa-rotate-angle: 325deg;"></i>
+          </a>
+        </li>
+
+        <!-- Book Demo Button (Green Styled) -->
+<li class="nav-item">
+  <a class="book-demo-button" href="book-demo.html">
+    <i class="bi bi-calendar-check-fill"></i>
+    <span><strong>Book Demo</strong></span>
+  </a>
+</li>
+
+
+        <!-- Go to Sapphire Dropdown (External Links - Blue Styled) -->
+        <li class="nav-item dropdown s-sapphire-dropdown">
+          <button class="btn s-sapphire-trigger dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            <span>go to</span>
+            <div class="s-sapphire-logo">
+              <img src="assets/images/scorp-sapphire-cropped.png" alt="Sapphire" width="32" height="32" style="border-radius: 4px;">
+            </div>
+            <span><strong>Sapphire</strong></span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end s-sapphire-menu">
+            <li>
+              <a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/login" target="_blank">
+                <i class="bi bi-door-open-fill"></i>
+                <span>Log-in</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/register" target="_blank">
+                <i class="bi bi-person-plus-fill"></i>
+                <span>Sign-up</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+</nav>
+
+
+    <!-- HERO SECTION -->
+    <section class="s-hero s-hero-gradient">
+        <div class="s-hero-overlay"></div>
+        <div class="container">
+            <div class="s-hero-content">
+                <h1 class="s-hero-title">
+                    <span class="s-hero-title-line">Sapphire</span>
+                    <span class="s-hero-title-highlight">Intelligence</span>
+                </h1>
+                <p class="s-hero-description">
+                    Transform operational complexity into strategic intelligence with SAPPHIRE
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION HEADER -->
+    <div class="s-section-header">
+        <h2 class="s-section-title gradient">Intelligence Modules</h2>
+        <p class="s-section-subtitle">Comprehensive modules for enterprise operational excellence</p>
+    </div>
+
+ <!-- ========================================
+     SECTION 1: ENTERPRISE OPERATIONS INTELLIGENCE
+     ======================================== -->
+<section id="section-enterprise" class="intelligence-section">
+  <div class="container my-5">
+    <div class="intelligence-content-wrapper">
+      
+      <!-- Section Header -->
+      <div class="intelligence-section-header">
+        <div class="s-icon s-icon-blue s-icon-xl">
+          <i class="fas fa-sitemap"></i>
+        </div>
+        <div>
+          <h2 class="intelligence-section-title s-text-gradient-primary">
+            Enterprise Operations Intelligence
+          </h2>
+          <span class="s-badge s-badge-primary">MULTI-LOCATION</span>
+        </div>
+      </div>
+
+      <!-- Enterprise Organization Management -->
+      <div class="intelligence-content">
+        <div class="intelligence-content-header">
+          <div class="s-icon s-icon-blue s-icon-lg">
+            <i class="fas fa-building"></i>
+          </div>
+          <h3 class="intelligence-content-title" style="color: var(--s-primary);">
+            Enterprise Organization Management
+          </h3>
+        </div>
+        
+        <div class="intelligence-content-text">
+          <p>
+            Command your entire enterprise ecosystem from a unified organizational command center that serves as the strategic foundation for all business operations. Create, configure, and control unlimited workplace branches under your organizational flagship while maintaining centralized oversight of fiscal parameters, operational schedules, and corporate identity.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-3">
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-blue">
+                  <i class="fas fa-sitemap"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Centralized Enterprise Architecture</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Establish and manage your complete organizational hierarchy with instant workplace creation, configuration, and removal capabilities.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-blue">
+                  <i class="fas fa-cogs"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Unified Operational Governance</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Configure shift timings, fiscal year parameters, and operational standards across all workplace branches.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-blue">
+                  <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Executive Command Console</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Access comprehensive organizational intelligence from a single strategic control interface.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch Operations Excellence -->
+      <div class="intelligence-content">
+        <div class="intelligence-content-header">
+          <div class="s-icon s-icon-blue s-icon-lg">
+            <i class="fas fa-building-flag"></i>
+          </div>
+          <h3 class="intelligence-content-title" style="color: var(--s-primary);">
+            Branch Operations Excellence
+          </h3>
+        </div>
+        
+        <div class="intelligence-content-text">
+          <p>
+            Optimize individual workplace performance through precision branch management. Configure complex shift architectures including overlapping schedules and 24-hour operations while maintaining comprehensive branch intelligence through centralized contact management, location profiling, and operational parameters.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-3">
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-blue">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Advanced Shift Orchestration</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Design and deploy sophisticated shift patterns including overlapping coverage and continuous 24-hour operations.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-blue">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Comprehensive Branch Profiling</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Maintain complete location intelligence with detailed address management and multi-channel contact coordination.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-blue">
+                  <i class="fas fa-chess-king"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Autonomous Operational Control</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Enable independent branch-level management while maintaining centralized oversight capabilities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Multiple Enterprise Location Orchestration -->
+      <div class="intelligence-content">
+        <div class="intelligence-content-header">
+          <div class="s-icon s-icon-blue s-icon-lg">
+            <i class="fas fa-globe-americas"></i>
+          </div>
+          <h3 class="intelligence-content-title" style="color: var(--s-primary);">
+            Multiple Enterprise Location Orchestration
+          </h3>
+        </div>
+        
+        <div class="intelligence-content-text">
+          <p>
+            Master unlimited enterprise locations with seamless workplace switching. Instantly pivot between branches to monitor and manage each location independently—where changes stay compartmentalized and localized.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-3">
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-blue">
+                  <i class="fas fa-chart-network"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Compartmentalized Workspace Control</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Access location-specific dashboards instantly without losing workflow continuity.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-blue">
+                  <i class="fas fa-mouse-pointer"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">One-Click Location Switching</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Intelligent distribution based on skills and location requirements.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-blue">
+                  <i class="fas fa-gavel"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Localized Decision Authority</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Execute branch-specific operational decisions exclusively to the selected workplace.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Complete Employee Management -->
+      <div class="intelligence-content">
+        <div class="intelligence-content-header">
+          <div class="s-icon s-icon-blue s-icon-lg">
+            <i class="fas fa-user-shield"></i>
+          </div>
+          <h3 class="intelligence-content-title" style="color: var(--s-primary);">
+            Complete Employee Management
+          </h3>
+        </div>
+        
+        <div class="intelligence-content-text">
+          <p>
+            Centralize complete employee lifecycle management with intelligent role assignment and granular access control. Maintain comprehensive employee profiles from onboarding to offboarding, dynamically assign executive and clerical roles, and enforce precise permissions across all enterprise touchpoints.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-3">
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-blue">
+                  <i class="bi bi-person-lines-fill"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Employee Profile Management</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Maintain complete employee records across the entire organizational hierarchy.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-blue">
+                  <i class="fas fa-user-tie"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Intelligent Role Orchestration</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Assign preset executive and clerical roles instantly while creating custom designations.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-blue">
+                  <i class="bi bi-list-columns-reverse"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Complete Audit Trail</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Track every user management action with comprehensive logging for compliance and security.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Master Data Metrics Harmonization -->
+      <div class="intelligence-content">
+        <div class="intelligence-content-header">
+          <div class="s-icon s-icon-blue s-icon-lg">
+            <i class="bi bi-columns-gap"></i>
+          </div>
+          <h3 class="intelligence-content-title" style="color: var(--s-primary);">
+            Master Data Metrics Harmonization
+          </h3>
+        </div>
+        
+        <div class="intelligence-content-text">
+          <p>
+            Streamline enterprise data entry with localized standard input libraries that eliminate repetitive typing and ensure consistent data quality. Create workplace-specific dropdown menus, preset values, and standardized entry formats that accelerate form completion while maintaining data integrity.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-3">
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-blue">
+                  <i class="bi bi-menu-button-fill"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Localized Standard Input Libraries</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Configure workplace-specific dropdown menus and preset values for local operational requirements.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-blue">
+                  <i class="bi bi-speedometer"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Accelerated Form Completion</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Eliminate repetitive data entry with intelligent auto-complete reducing input time by up to 75%.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-blue">
+                  <i class="bi bi-check2-square"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Data Integrity Enforcement</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Prevent data inconsistencies through controlled input validation and standardized formats.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ========================================
+     SECTION 2: STRATEGIC INVENTORY INTELLIGENCE
+     ======================================== -->
+<section id="section-inventory" class="intelligence-section">
+  <div class="container my-5">
+    <div class="intelligence-content-wrapper">
+      
+      <div class="intelligence-section-header">
+        <div class="s-icon s-icon-green s-icon-xl">
+          <i class="fas fa-boxes"></i>
+        </div>
+        <div>
+          <h2 class="intelligence-section-title s-text-gradient-success">
+            Strategic Inventory Intelligence
+          </h2>
+          <span class="s-badge s-badge-success">OPERATIONAL CLARITY</span>
+        </div>
+      </div>
+
+      <!-- Vivid Item Categories -->
+      <div class="intelligence-content">
+        <div class="intelligence-content-header">
+          <div class="s-icon s-icon-green s-icon-lg">
+            <i class="fas fa-tags"></i>
+          </div>
+          <h3 class="intelligence-content-title" style="color: var(--s-green-600);">
+            Vivid Item Categories
+          </h3>
+        </div>
+        
+        <div class="intelligence-content-text">
+          <p>
+            Eliminate inventory confusion with our structured, pre-defined item categories—a strategic framework that provides unparalleled clarity without the chaos of infinite custom classifications. This architecture covers every possible asset type, from single-unit tools to complex assemblies.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-3">
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-green">
+                  <i class="fas fa-wrench"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Tools</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Standard, single-unit operational assets deployed for specific workplace functions.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-green">
+                  <i class="fas fa-box"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Toolkits</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Composite units managed as a whole, while allowing granular tracking of each child part.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-green">
+                  <i class="fas fa-cogs"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Machinery</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                High-value, complex, or stationary machinery with integrated blend dispensing capabilities.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-green">
+                  <i class="fas fa-vial"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Materials</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Consumable inventory managed in volume-based, date-sensitive batches for quality control.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-green">
+                  <i class="fas fa-blender"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Blends</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Formula-based solutions with precise compositions, created from combined materials.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-green">
+                  <i class="fas fa-sitemap"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Assembly</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Groups independent items into a single operational system to link performance and maintenance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Easy Bulk Entry -->
+      <div class="intelligence-content">
+        <div class="intelligence-content-header">
+          <div class="s-icon s-icon-green s-icon-lg">
+            <i class="fas fa-truck-loading"></i>
+          </div>
+          <h3 class="intelligence-content-title" style="color: var(--s-green-600);">
+            Easy Bulk Entry
+          </h3>
+        </div>
+        
+        <div class="intelligence-content-text">
+          <p>
+            Transform high-volume asset onboarding from a tedious administrative burden into a streamlined, intelligent workflow. Our bulk entry system eliminates repetitive manual input by capturing common attributes once and intelligently cascading them across every unit.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-3">
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-green">
+                  <i class="fas fa-barcode"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Intelligent Unit Code Orchestration</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Automated code generation with smart unit sequencing preventing duplication and preserving continuity.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-green">
+                  <i class="fas fa-project-diagram"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Category-Adaptive Entry Flows</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Contextual workflows that dynamically adjust based on asset type.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-green">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Unified Compliance & Financial Integration</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Consolidated entry of inspection checkpoints, maintenance cycles, and financial parameters.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Smart Inventories -->
+      <div class="intelligence-content">
+        <div class="intelligence-content-header">
+          <div class="s-icon s-icon-green s-icon-lg">
+            <i class="fas fa-microchip"></i>
+          </div>
+          <h3 class="intelligence-content-title" style="color: var(--s-green-600);">
+            Smart Inventories
+          </h3>
+        </div>
+        
+        <div class="intelligence-content-text">
+          <p>
+            Transition from static spreadsheets to an active, real-time inventory command center. Our Smart Inventories system tracks distributable hand tools, maintains a live count of assets in continuous use, and reserves items for special jobs.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-3">
+          <div class="col-lg-3 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-green">
+                  <i class="fas fa-archive"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Reserve</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Centralized holding for all assets not currently in active use.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-green">
+                  <i class="fas fa-tools"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Hand-Tools Reserve</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Specialized sub-category for all distributable hand tools.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-green">
+                  <i class="fas fa-running"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Active Inventory</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Live ledger of all items currently in use on the floor.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-green">
+                  <i class="fas fa-box-open"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Spare Parts & Materials</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Dedicated inventory for installable and consumable items.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dedicated Workstations -->
+      <div class="intelligence-content">
+        <div class="intelligence-content-header">
+          <div class="s-icon s-icon-green s-icon-lg">
+            <i class="fas fa-desktop"></i>
+          </div>
+          <h3 class="intelligence-content-title" style="color: var(--s-green-600);">
+            Dedicated Workstations
+          </h3>
+        </div>
+        
+        <div class="intelligence-content-text">
+          <p>
+            Empower your workforce with My Workstation, a personalized asset command center that gives every employee a clear, consolidated view of their operational environment. This dedicated portal allows all roles to seamlessly view and manage assets assigned to them.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-3">
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-green">
+                  <i class="fas fa-toolbox"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Toolbox</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                View and manage all permanently assigned items from the Hand-Tool Reserve.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-green">
+                  <i class="fas fa-desktop"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Workstation</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Complete inventory of all assets located at your designated physical workstation.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-green">
+                  <i class="fas fa-dolly"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Issued Items</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Track all assets temporarily issued via a formal request process.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ========================================
+     SECTION 3: ASSET LIFECYCLE INTELLIGENCE
+     ======================================== -->
+<section id="section-lifecycle" class="intelligence-section">
+  <div class="container my-5">
+    <div class="intelligence-content-wrapper">
+      
+      <div class="intelligence-section-header">
+        <div class="s-icon s-icon-amber s-icon-xl">
+          <i class="fas fa-sync-alt"></i>
+        </div>
+        <div>
+          <h2 class="intelligence-section-title" style="background: var(--s-gradient-amber); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+            Asset Lifecycle Intelligence
+          </h2>
+          <span class="s-badge s-badge-warning">PREDICTIVE ANALYTICS</span>
+        </div>
+      </div>
+
+      <!-- Issuing and Assignment -->
+      <div class="intelligence-content">
+        <div class="intelligence-content-header">
+          <div class="s-icon s-icon-amber s-icon-lg">
+            <i class="fas fa-hand-holding"></i>
+          </div>
+          <h3 class="intelligence-content-title" style="color: var(--s-amber-600);">
+            Issuing and Assignment
+          </h3>
+        </div>
+        
+        <div class="intelligence-content-text">
+          <p>
+            Activate asset deployment through seamless issuing requests and direct executive assignments—both executing with single-click simplicity. The system auto-generates comprehensive activity logs, movement registers, and complete chain-of-custody records capturing every transaction detail.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-3">
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-amber">
+                  <i class="fas fa-bolt"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">One-Click Execution Speed</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Single-tap issuing, assignment, and returns eliminate workflow bottlenecks.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-amber">
+                  <i class="fas fa-clipboard-check"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Automatic Audit Trail Generation</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                System-captured metadata creates comprehensive documentation instantly.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-amber">
+                  <i class="fas fa-eye"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Real-Time Movement Visibility</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Track every asset transaction enterprise-wide with live status updates.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reporting and Inspection -->
+      <div class="intelligence-content">
+        <div class="intelligence-content-header">
+          <div class="s-icon s-icon-amber s-icon-lg">
+            <i class="fas fa-clipboard-list"></i>
+          </div>
+          <h3 class="intelligence-content-title" style="color: var(--s-amber-600);">
+            Reporting and Inspection
+          </h3>
+        </div>
+        
+        <div class="intelligence-content-text">
+          <p>
+            Maintain continuous asset health visibility through automated inspection scheduling and objective reporting workflows. The system generates inspection cycles based on defined frequencies, automatically populating field teams' pending inspection queues with time-bound alerts.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-3">
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-amber">
+                  <i class="fas fa-calendar-check"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Automated Continuous Scheduling</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                System-generated inspection cycles eliminate manual planning.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-amber">
+                  <i class="fas fa-network-wired"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Decentralized Execution with Centralized Intelligence</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Field personnel conduct inspections while real-time data feeds unified dashboards.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-amber">
+                  <i class="fas fa-filter"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Objective Reporting Discipline</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Structured protocols prevent duplicate case creation and maintain clean audit trails.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Maintenance Upkeep -->
+      <div class="intelligence-content">
+        <div class="intelligence-content-header">
+          <div class="s-icon s-icon-amber s-icon-lg">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3 class="intelligence-content-title" style="color: var(--s-amber-600);">
+            Maintenance Upkeep
+          </h3>
+        </div>
+        
+        <div class="intelligence-content-text">
+          <p>
+            Gain complete control with custom maintenance cycles and automated reminders for every asset. Service, repair, or skip actions are one click away, backed by instant updates in the dedicated Maintenance Sheet.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-3">
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-amber">
+                  <i class="fas fa-sync-alt"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Custom Maintenance Cycles</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Set and adapt cycles—automated alerts ensure nothing is missed.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-amber">
+                  <i class="fas fa-receipt"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Integrated Financial Tracking</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Input and track costs, claims, and warranty benefits at the source.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-amber">
+                  <i class="fas fa-file-alt"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Unified Maintenance Registry</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Unify all maintenance, repair, and replacements into a single sheet.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Asset Disposition Management -->
+      <div class="intelligence-content">
+        <div class="intelligence-content-header">
+          <div class="s-icon s-icon-amber s-icon-lg">
+            <i class="fas fa-exchange-alt"></i>
+          </div>
+          <h3 class="intelligence-content-title" style="color: var(--s-amber-600);">
+            Asset Disposition Management
+          </h3>
+        </div>
+        
+        <div class="intelligence-content-text">
+          <p>
+            Manage final asset disposition with clarity and control. Document asset sales with proceeds and invoices. Fully depreciated assets are flagged for smart archival, ensuring historical accountability without active clutter.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-3">
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-amber">
+                  <i class="fas fa-indian-rupee-sign"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Sale Documentation</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Record sold assets with proceeds, invoice tracking, and buyer information.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-amber">
+                  <i class="fas fa-archive"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Smart Archival System</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Fully depreciated assets automatically flagged for historical reference without operational clutter.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-amber">
+                  <i class="fas fa-trash-restore"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Discarding Protocol</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Formal disposal workflows with justification, approval, and audit trail capture.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ========================================
+     SECTION 4: FINANCIAL OPERATIONS INTELLIGENCE
+     ======================================== -->
+<section id="section-financial" class="intelligence-section">
+  <div class="container my-5">
+    <div class="intelligence-content-wrapper">
+      
+      <div class="intelligence-section-header">
+        <div class="s-icon s-icon-indigo s-icon-xl">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <div>
+          <h2 class="intelligence-section-title" style="background: var(--s-gradient-indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+            Financial Operations Intelligence
+          </h2>
+          <span class="s-badge s-badge-info">COST VISIBILITY</span>
+        </div>
+      </div>
+
+      <!-- Acquisition Intelligence -->
+      <div class="intelligence-content">
+        <div class="intelligence-content-header">
+          <div class="s-icon s-icon-indigo s-icon-lg">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <h3 class="intelligence-content-title" style="color: var(--s-indigo-600);">
+            Acquisition Intelligence
+          </h3>
+        </div>
+        
+        <div class="intelligence-content-text">
+          <p>
+            Transform procurement from a transactional process into a strategic intelligence layer. Capture complete purchase context including vendor relationships, warranty terms, and multi-currency handling with real-time exchange rate integration.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-3">
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-indigo">
+                  <i class="fas fa-file-invoice-dollar"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Complete Purchase Documentation</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Record invoice details, vendor relationships, and warranty terms at the point of acquisition.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-indigo">
+                  <i class="fas fa-globe"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Multi-Currency Intelligence</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Handle international purchases with automatic exchange rate capture and conversion tracking.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-indigo">
+                  <i class="fas fa-building"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Vendor Relationship Management</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Maintain comprehensive vendor profiles with contact details, payment terms, and purchase history.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Depreciation Intelligence -->
+      <div class="intelligence-content">
+        <div class="intelligence-content-header">
+          <div class="s-icon s-icon-indigo s-icon-lg">
+            <i class="fas fa-calculator"></i>
+          </div>
+          <h3 class="intelligence-content-title" style="color: var(--s-indigo-600);">
+            Depreciation Intelligence
+          </h3>
+        </div>
+        
+        <div class="intelligence-content-text">
+          <p>
+            Automate complex depreciation calculations across multiple accounting methods while maintaining complete financial compliance. The system supports straight-line, written-down-value, and custom depreciation schedules with automatic fiscal year alignment.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-3">
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-indigo">
+                  <i class="fas fa-chart-area"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Multi-Method Depreciation Engine</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Support for straight-line, WDV, and custom depreciation schedules with automatic calculation.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-indigo">
+                  <i class="fas fa-calendar-alt"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Fiscal Year Alignment</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Automatic alignment with organizational fiscal parameters for compliance reporting.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-indigo">
+                  <i class="fas fa-balance-scale"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Real-Time Book Value Tracking</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Continuous calculation of current asset value with historical depreciation ledger.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Operational Expenditure Tracking -->
+      <div class="intelligence-content">
+        <div class="intelligence-content-header">
+          <div class="s-icon s-icon-indigo s-icon-lg">
+            <i class="fas fa-receipt"></i>
+          </div>
+          <h3 class="intelligence-content-title" style="color: var(--s-indigo-600);">
+            Operational Expenditure Tracking
+          </h3>
+        </div>
+        
+        <div class="intelligence-content-text">
+          <p>
+            Achieve complete operational expense visibility by capturing every maintenance, repair, and service cost at the transaction level. The system links all OPEX activities directly to specific assets, creating an unbroken financial audit trail.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-3">
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-indigo">
+                  <i class="fas fa-link"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Asset-Level Cost Attribution</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Every maintenance and repair cost is directly linked to specific assets for precise tracking.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-indigo">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Warranty & Insurance Integration</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Track claims, coverage benefits, and out-of-pocket expenses with complete documentation.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-indigo">
+                  <i class="fas fa-chart-pie"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Total Cost of Ownership Analytics</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Comprehensive TCO calculation combining acquisition, maintenance, and operational costs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Material Consumption Analytics -->
+      <div class="intelligence-content">
+        <div class="intelligence-content-header">
+          <div class="s-icon s-icon-indigo s-icon-lg">
+            <i class="fas fa-flask"></i>
+          </div>
+          <h3 class="intelligence-content-title" style="color: var(--s-indigo-600);">
+            Material Consumption Analytics
+          </h3>
+        </div>
+        
+        <div class="intelligence-content-text">
+          <p>
+            Transform raw material tracking into strategic cost intelligence. Monitor batch-level consumption, track employee usage patterns, and analyze equipment-specific material requirements with complete financial integration.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-3">
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-indigo">
+                  <i class="fas fa-layer-group"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Batch-Level Traceability</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Track material consumption by batch with expiry monitoring and quality assurance integration.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-indigo">
+                  <i class="fas fa-user-clock"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Employee Consumption Patterns</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Analyze individual and team-level material usage for efficiency optimization.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-indigo">
+                  <i class="fas fa-industry"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Equipment-Specific Allocation</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Link material consumption to specific equipment for precise cost per unit production analysis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vehicle Operations Analytics -->
+      <div class="intelligence-content">
+        <div class="intelligence-content-header">
+          <div class="s-icon s-icon-indigo s-icon-lg">
+            <i class="fas fa-car"></i>
+          </div>
+          <h3 class="intelligence-content-title" style="color: var(--s-indigo-600);">
+            Vehicle Operations Analytics
+          </h3>
+        </div>
+        
+        <div class="intelligence-content-text">
+          <p>
+            Gain complete visibility into vehicle fleet operations with integrated mileage tracking, fuel consumption analytics, and comprehensive maintenance cost management. The system captures every trip, refuel, and service event for total fleet intelligence.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-3">
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-indigo">
+                  <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Comprehensive Mileage Tracking</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Capture every journey with route details, purpose documentation, and driver attribution.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-indigo">
+                  <i class="fas fa-gas-pump"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Fuel Consumption Analytics</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Track refueling events with cost analysis, efficiency metrics, and anomaly detection.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="intel-benefit-card">
+              <div class="intel-benefit-card-header">
+                <div class="s-icon s-icon-indigo">
+                  <i class="fas fa-wrench"></i>
+                </div>
+                <h6 class="intel-benefit-card-title">Fleet Maintenance Intelligence</h6>
+              </div>
+              <p class="intel-benefit-card-text">
+                Integrated service scheduling, cost tracking, and predictive maintenance recommendations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- CTA SECTION -->
+    <section class="s-cta-section">
+        <div class="container">
+            <div class="s-cta-content">
+                <h3 class="s-cta-title">Ready to transform your operations with intelligence?</h3>
+                <div class="s-cta-actions">
+                    <a href="book-demo.html" class="s-btn s-btn-lg s-btn-primary s-btn-glare s-full-width-btn">
+                        <i class="bi bi-collection-play-fill me-2"></i>
+                        <span>Book a Demo</span>
+                    </a>
+                    <a href="contact.html" class="s-btn s-btn-lg s-btn-secondary s-btn-glare s-full-width-btn">
+                        <i class="bi bi-telephone-outbound-fill me-2"></i>
+                        <span>Talk to Our Team</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="modern-footer mt-5">
+
+        <!-- BRANDING (ALWAYS CENTERED) -->
+        <div class="footer-brand d-flex flex-column align-items-center mb-4">
+            <div class="footer-logo-wrapper justify-content-center">
+                <div class="footer-logo">
+                    <img src="assets/images/Scorp-Logo.png"
+                         alt="Scorptech"
+                         class="footer-brand-logo">
+                </div>
+                <h5 class="footer-brand-name m-0">SCORP</h5>
+            </div>
+            <p class="footer-tagline text-center">
+                In the business of<br> making yours simple
+            </p>
+        </div>
+
+        <!-- 3-COLUMN LAYOUT (Desktop) / STACK (Mobile) -->
+        <div class="row g-4 footer-columns-wrapper">
+            
+            <!-- EXPLORE -->
+            <div class="col-12 col-md-4">
+                <div class="footer-section">
+                    <h6>
+                        Explore <i class="fas fa-chevron-down footer-collapse-icon"></i>
+                    </h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link"><i class="fas fa-home-alt"></i><span>Home</span></a></li>
+                        <li><a href="about.html" class="footer-link"><i class="fas fa-users-line"></i><span>About</span></a></li>
+                        <li><a href="sapphire.html" class="footer-link"><i class="fas fa-diamond"></i><span>Sapphire</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- RESOURCES -->
+            <div class="col-12 col-md-4">
+                <div class="footer-section">
+                    <h6>
+                        Resources <i class="fas fa-chevron-down footer-collapse-icon"></i>
+                    </h6>
+                    <ul class="footer-links">
+                        <li><a href="faq.html" class="footer-link"><i class="fas fa-person-circle-question"></i><span>FAQs</span></a></li>
+                        <li><a href="privacy_policy.html" class="footer-link"><i class="fas fa-file-shield"></i><span>Privacy Policy</span></a></li>
+                        <li><a href="terms_of_use.html" class="footer-link"><i class="fas fa-file-contract"></i><span>Terms of Use</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="col-12 col-md-4">
+                <div class="footer-section">
+                    <h6>
+                        Get in Touch <i class="fas fa-chevron-down footer-collapse-icon"></i>
+                    </h6>
+                    <ul class="footer-links">
+                        <li><a href="tel:+91XXXXXXXXXX" class="footer-link"><i class="fas fa-mobile"></i><span>Phone: +91-XXXXXXXXXX</span></a></li>
+                        <li><a href="mailto:support@scorptech.in" class="footer-link"><i class="fas fa-envelope"></i><span>support@scorptech.in</span></a></li>
+                        <li><a href="contact.html" class="footer-link"><i class="fas fa-phone"></i><span>Contact</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <!-- BOTTOM -->
+        <div class="footer-bottom flex-column align-items-center text-center">
+            <p class="footer-copyright mb-3">
+                © 2025 SCORP - Scorptech Technologies Private Limited. All rights reserved.
+            </p>
+            <div class="footer-social justify-content-center">
+                <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- S-Floating Button -->
+<div class="s-floating-button">
+  <!-- Backdrop -->
+  <div class="s-fab-backdrop"></div>
+  
+  <!-- Main Button -->
+  <button class="s-fab-trigger" aria-label="Quick Navigation">
+    <i class="fas fa-compass"></i>
+  </button>
+  
+  <!-- Menu -->
+  <div class="s-fab-menu">
+    <!-- Header -->
+    <div class="s-fab-menu-header">
+      <h6 class="s-fab-menu-title">Quick Navigation</h6>
+    </div>
+    
+    <!-- Body - Page Sections -->
+    <div class="s-fab-menu-body">
+      <a href="#section-enterprise" class="s-fab-menu-item">
+        <div class="s-fab-menu-item-icon">
+          <i class="fas fa-sitemap"></i>
+        </div>
+        <span class="s-fab-menu-item-text">Enterprise Operations</span>
+      </a>
+      
+      <a href="#section-inventory" class="s-fab-menu-item">
+        <div class="s-fab-menu-item-icon">
+          <i class="fas fa-boxes"></i>
+        </div>
+        <span class="s-fab-menu-item-text">Strategic Inventory</span>
+      </a>
+      
+      <a href="#section-lifecycle" class="s-fab-menu-item">
+        <div class="s-fab-menu-item-icon">
+          <i class="fas fa-sync-alt"></i>
+        </div>
+        <span class="s-fab-menu-item-text">Asset Lifecycle</span>
+      </a>
+      
+      <a href="#section-financial" class="s-fab-menu-item">
+        <div class="s-fab-menu-item-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <span class="s-fab-menu-item-text">Financial Operations</span>
+      </a>
+      
+      <div class="s-fab-menu-divider"></div>
+      
+      <a href="sapphire.html" class="s-fab-menu-item">
+        <div class="s-fab-menu-item-icon">
+          <i class="fas fa-diamond"></i>
+        </div>
+        <span class="s-fab-menu-item-text">SAPPHIRE Platform</span>
+      </a>
+    </div>
+    
+    <!-- Footer - CTA Links -->
+    <div class="s-fab-menu-footer">
+      <a href="book-demo.html" class="s-fab-cta-btn s-fab-cta-primary">
+        <i class="fas fa-calendar-alt"></i>
+        <span>Book Demo</span>
+      </a>
+      <a href="contact.html" class="s-fab-cta-btn s-fab-cta-secondary">
+        <i class="fas fa-envelope"></i>
+        <span>Contact</span>
+      </a>
+    </div>
+  </div>
+
+    <div class="s-fab-menu">
+    <!-- Header -->
+    <div class="s-fab-menu-header">
+      <h6 class="s-fab-menu-title">Quick Navigation</h6>
+    </div>
+    
+    <!-- Body - Page Sections -->
+    <div class="s-fab-menu-body">
+      <a href="#section-enterprise" class="s-fab-menu-item">
+        <div class="s-fab-menu-item-icon">
+          <i class="fas fa-sitemap"></i>
+        </div>
+        <span class="s-fab-menu-item-text">Enterprise Operations</span>
+      </a>
+      
+      <a href="#section-inventory" class="s-fab-menu-item">
+        <div class="s-fab-menu-item-icon">
+          <i class="fas fa-boxes"></i>
+        </div>
+        <span class="s-fab-menu-item-text">Strategic Inventory</span>
+      </a>
+      
+      <a href="#section-lifecycle" class="s-fab-menu-item">
+        <div class="s-fab-menu-item-icon">
+          <i class="fas fa-sync-alt"></i>
+        </div>
+        <span class="s-fab-menu-item-text">Asset Lifecycle</span>
+      </a>
+      
+      <a href="#section-financial" class="s-fab-menu-item">
+        <div class="s-fab-menu-item-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <span class="s-fab-menu-item-text">Financial Operations</span>
+      </a>
+      
+      <div class="s-fab-menu-divider"></div>
+      
+      <a href="sapphire.html" class="s-fab-menu-item">
+        <div class="s-fab-menu-item-icon">
+          <i class="fas fa-diamond"></i>
+        </div>
+        <span class="s-fab-menu-item-text">SAPPHIRE Platform</span>
+      </a>
+    </div>
+    
+    <!-- Footer - CTA Links -->
+    <div class="s-fab-menu-footer">
+      <a href="book-demo.html" class="s-fab-cta-btn s-fab-cta-primary">
+        <i class="fas fa-calendar-alt"></i>
+        <span>Book Demo</span>
+      </a>
+      <a href="contact.html" class="s-fab-cta-btn s-fab-cta-secondary">
+        <i class="fas fa-envelope"></i>
+        <span>Contact</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/pages/intelligence.js"></script>
+</body>
+</html>
+
+
+
