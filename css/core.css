@@ -539,7 +539,7 @@ body {
     font-size: var(--s-text-base);
     line-height: var(--s-leading-relaxed);
     color: var(--s-black);
-    background: url('/assets/images/white_bg-highres.png') no-repeat center center fixed;
+    background: url('../assets/images/white_bg-highres.png') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     padding: 0;
