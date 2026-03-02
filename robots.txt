@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /assets/tools/
+
+Sitemap: https://scorptech.in/sitemap.xml
