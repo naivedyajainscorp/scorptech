@@ -1,5 +1,15 @@
 User-agent: *
 Allow: /
-Disallow: /assets/tools/
+
+Disallow: /assets/
+Disallow: /assessment.html
+Disallow: /privacypolicy.html
+Disallow: /termsofuse.html
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
 
 Sitemap: https://scorptech.in/sitemap.xml

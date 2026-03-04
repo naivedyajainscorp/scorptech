@@ -5460,6 +5460,15 @@
   font-size: 1.1rem !important;
 }
 
+/* Hide floating button during modals - z-index 9999 respects modal backdrop */
+.modal.show ~ * .s-floating-button,
+.modal-backdrop.show ~ * .s-floating-button,
+body.modal-open .s-floating-button {
+  display: none !important;
+}
+
+
+
 /* ═══════════════════════════════════════════════════════════════
    S-FAB-CTA — FULL VARIANT SYSTEM
    Glare: stack .s-btn-glare on any variant
