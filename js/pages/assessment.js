@@ -3,6 +3,31 @@
  * Handles multi-section questionnaire flow, progress tracking, and response collection
  */
 
+/**
+ * Dynamically resolves question IDs that are checkbox-type and contain a
+ * "None of the above" option. This is computed once from assessmentData so
+ * any future questions with that option are automatically included.
+ */
+function getNoneExclusiveQuestions(data) {
+    const ids = new Set();
+    if (!data || !Array.isArray(data.assessmentSections)) return ids;
+    data.assessmentSections.forEach(section => {
+        if (!Array.isArray(section.questions)) return;
+        section.questions.forEach(question => {
+            if (question.type !== "checkbox") return;
+            if (!Array.isArray(question.options)) return;
+            const hasNone = question.options.some(opt =>
+                typeof opt.label === "string" &&
+                opt.label.toLowerCase().includes("none of the above")
+            );
+            if (hasNone) {
+                ids.add(question.id);
+            }
+        });
+    });
+    return ids;
+}
+
 class SapphireAssessment {
     constructor(data) {
         this.data = data;
@@ -24,7 +49,11 @@ class SapphireAssessment {
             total: 0,
             maxPossible: 0
         };
-        
+
+        // Dynamically compute which checkbox questions contain "None of the above"
+        // This runs once at startup; no hardcoding needed — new questions are auto-detected
+        this._noneExclusiveIds = getNoneExclusiveQuestions(data);
+
         this.init();
     }
 
@@ -40,7 +69,7 @@ class SapphireAssessment {
 
     createConfirmModal() {
         if (document.getElementById('confirm-modal')) return;
-        
+
         const modal = document.createElement('div');
         modal.id = 'confirm-modal';
         modal.className = 'assessment-hint-modal';
@@ -78,12 +107,12 @@ class SapphireAssessment {
             const closeBtn = document.getElementById('confirm-close-btn');
             const cancelBtn = document.getElementById('confirm-cancel-btn');
             const proceedBtn = document.getElementById('confirm-proceed-btn');
-            
+
             titleEl.textContent = title;
             textEl.textContent = message;
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
-            
+
             const cleanup = () => {
                 modal.classList.remove('active');
                 document.body.style.overflow = '';
@@ -91,17 +120,17 @@ class SapphireAssessment {
                 cancelBtn.replaceWith(cancelBtn.cloneNode(true));
                 proceedBtn.replaceWith(proceedBtn.cloneNode(true));
             };
-            
+
             document.getElementById('confirm-close-btn').addEventListener('click', () => {
                 cleanup();
                 resolve(false);
             });
-            
+
             document.getElementById('confirm-cancel-btn').addEventListener('click', () => {
                 cleanup();
                 resolve(false);
             });
-            
+
             document.getElementById('confirm-proceed-btn').addEventListener('click', () => {
                 cleanup();
                 resolve(true);
@@ -109,108 +138,108 @@ class SapphireAssessment {
         });
     }
 
-setupNavigationWarnings() {
-    // Flag to allow navigation when explicitly confirmed
-    this.allowNavigation = false;
-    
-    // 1. Native browser dialog for close/refresh (required by browsers)
-    window.addEventListener('beforeunload', (e) => {
-        if (this.allowNavigation) return;
-        
-        // Only show warning if assessment has started
-        if (typeof this.currentSection === 'number' || 
-            Object.keys(this.responses.sections).length > 0) {
-            const message = 'You have unsaved assessment progress. Are you sure you want to leave?';
-            e.preventDefault();
-            e.returnValue = message;
-            return message;
-        }
-    });
-    
-    // 2. Intercept browser back/forward button
-    window.addEventListener('popstate', async (e) => {
-        if (this.allowNavigation) return;
-        
-        if (typeof this.currentSection === 'number') {
-            e.preventDefault();
-            
-            const confirmed = await this.showConfirmModal(
-                'Leave Assessment?',
-                'Using browser navigation will lose all your assessment progress. Are you sure you want to leave?'
-            );
-            
-            if (confirmed) {
-                this.allowNavigation = true;
-                this.responses.sections = {};
-                window.history.back();
-            } else {
-                window.history.pushState(null, '', window.location.href);
-            }
-        }
-    });
-    
-    // 3. Intercept all link clicks on the page
-    document.addEventListener('click', async (e) => {
-        if (this.allowNavigation) return;
-        
-        const link = e.target.closest('a');
-        if (link && link.href && !link.target) {
-            // Check if assessment is active
-            if (typeof this.currentSection === 'number' || 
+    setupNavigationWarnings() {
+        // Flag to allow navigation when explicitly confirmed
+        this.allowNavigation = false;
+
+        // 1. Native browser dialog for close/refresh (required by browsers)
+        window.addEventListener('beforeunload', (e) => {
+            if (this.allowNavigation) return;
+
+            // Only show warning if assessment has started
+            if (typeof this.currentSection === 'number' ||
                 Object.keys(this.responses.sections).length > 0) {
-                
-                // Don't intercept anchor links (#)
-                if (link.getAttribute('href')?.startsWith('#')) return;
-                
+                const message = 'You have unsaved assessment progress. Are you sure you want to leave?';
                 e.preventDefault();
-                
+                e.returnValue = message;
+                return message;
+            }
+        });
+
+        // 2. Intercept browser back/forward button
+        window.addEventListener('popstate', async (e) => {
+            if (this.allowNavigation) return;
+
+            if (typeof this.currentSection === 'number') {
+                e.preventDefault();
+
                 const confirmed = await this.showConfirmModal(
                     'Leave Assessment?',
-                    'Navigating away will lose all your assessment progress. Are you sure you want to leave?'
+                    'Using browser navigation will lose all your assessment progress. Are you sure you want to leave?'
                 );
-                
+
                 if (confirmed) {
                     this.allowNavigation = true;
                     this.responses.sections = {};
-                    window.location.href = link.href;
+                    window.history.back();
+                } else {
+                    window.history.pushState(null, '', window.location.href);
                 }
             }
-        }
-    }, true); // Use capture phase to catch before other handlers
-    
-    // 4. Intercept form submissions (if any)
-    document.addEventListener('submit', async (e) => {
-        if (this.allowNavigation) return;
-        
-        // Check if this is not our assessment forms
-        const form = e.target;
-        if (!form.id || (!form.id.includes('profile') && !form.id.includes('organization') && !form.id.includes('assessment'))) {
-            if (typeof this.currentSection === 'number' || 
-                Object.keys(this.responses.sections).length > 0) {
-                
-                e.preventDefault();
-                
-                const confirmed = await this.showConfirmModal(
-                    'Leave Assessment?',
-                    'Submitting this form will lose all your assessment progress. Are you sure you want to continue?'
-                );
-                
-                if (confirmed) {
-                    this.allowNavigation = true;
-                    this.responses.sections = {};
-                    form.submit();
+        });
+
+        // 3. Intercept all link clicks on the page
+        document.addEventListener('click', async (e) => {
+            if (this.allowNavigation) return;
+
+            const link = e.target.closest('a');
+            if (link && link.href && !link.target) {
+                // Check if assessment is active
+                if (typeof this.currentSection === 'number' ||
+                    Object.keys(this.responses.sections).length > 0) {
+
+                    // Don't intercept anchor links (#)
+                    if (link.getAttribute('href')?.startsWith('#')) return;
+
+                    e.preventDefault();
+
+                    const confirmed = await this.showConfirmModal(
+                        'Leave Assessment?',
+                        'Navigating away will lose all your assessment progress. Are you sure you want to leave?'
+                    );
+
+                    if (confirmed) {
+                        this.allowNavigation = true;
+                        this.responses.sections = {};
+                        window.location.href = link.href;
+                    }
                 }
             }
-        }
-    }, true);
-    
-    // Push initial state to enable popstate detection
-    window.history.pushState(null, '', window.location.href);
-}
+        }, true); // Use capture phase to catch before other handlers
+
+        // 4. Intercept form submissions (if any)
+        document.addEventListener('submit', async (e) => {
+            if (this.allowNavigation) return;
+
+            // Check if this is not our assessment forms
+            const form = e.target;
+            if (!form.id || (!form.id.includes('profile') && !form.id.includes('organization') && !form.id.includes('assessment'))) {
+                if (typeof this.currentSection === 'number' ||
+                    Object.keys(this.responses.sections).length > 0) {
+
+                    e.preventDefault();
+
+                    const confirmed = await this.showConfirmModal(
+                        'Leave Assessment?',
+                        'Submitting this form will lose all your assessment progress. Are you sure you want to continue?'
+                    );
+
+                    if (confirmed) {
+                        this.allowNavigation = true;
+                        this.responses.sections = {};
+                        form.submit();
+                    }
+                }
+            }
+        }, true);
+
+        // Push initial state to enable popstate detection
+        window.history.pushState(null, '', window.location.href);
+    }
 
     createHintModal() {
         if (document.getElementById('hint-modal')) return;
-        
+
         const modal = document.createElement('div');
         modal.id = 'hint-modal';
         modal.className = 'assessment-hint-modal';
@@ -230,10 +259,10 @@ setupNavigationWarnings() {
             </div>
         `;
         document.body.appendChild(modal);
-        
+
         modal.querySelector('.assessment-hint-close').addEventListener('click', () => this.closeHintModal());
         modal.querySelector('.assessment-hint-overlay').addEventListener('click', () => this.closeHintModal());
-        
+
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && modal.classList.contains('active')) {
                 this.closeHintModal();
@@ -241,25 +270,25 @@ setupNavigationWarnings() {
         });
     }
 
-showHintModal(hintText) {
-  const modal = document.getElementById('hint-modal');
-  const hintTextEl = document.getElementById('hint-text');
-  
-  // Step 1: Insert HTML (instant, synchronous)
-  hintTextEl.innerHTML = hintText;
-  
-  // Step 2: Show modal
-  modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
-  
-  // Step 3: Initialize accordions (should work immediately)
-  if (typeof window.refreshAccordions === 'function') {
-    window.refreshAccordions();
-    console.log('✅ Accordions initialized');
-  } else {
-    console.error('❌ refreshAccordions not found!');
-  }
-}
+    showHintModal(hintText) {
+        const modal = document.getElementById('hint-modal');
+        const hintTextEl = document.getElementById('hint-text');
+
+        // Step 1: Insert HTML (instant, synchronous)
+        hintTextEl.innerHTML = hintText;
+
+        // Step 2: Show modal
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        // Step 3: Initialize accordions (should work immediately)
+        if (typeof window.refreshAccordions === 'function') {
+            window.refreshAccordions();
+            console.log('✅ Accordions initialized');
+        } else {
+            console.error('❌ refreshAccordions not found!');
+        }
+    }
 
 
 
@@ -271,7 +300,7 @@ showHintModal(hintText) {
 
     createQuestionSelector() {
         if (document.getElementById('question-selector')) return;
-        
+
         const selector = document.createElement('div');
         selector.id = 'question-selector';
         selector.className = 'question-selector';
@@ -282,14 +311,14 @@ showHintModal(hintText) {
             </button>
             <div class="question-selector-dropdown" id="question-selector-dropdown"></div>
         `;
-        
+
         document.body.appendChild(selector);
-        
+
         document.getElementById('question-selector-btn').addEventListener('click', (e) => {
             e.stopPropagation();
             this.toggleQuestionSelector();
         });
-        
+
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.question-selector')) {
                 this.closeQuestionSelector();
@@ -300,7 +329,7 @@ showHintModal(hintText) {
     toggleQuestionSelector() {
         const dropdown = document.getElementById('question-selector-dropdown');
         const isOpen = dropdown.classList.contains('active');
-        
+
         if (isOpen) {
             this.closeQuestionSelector();
         } else {
@@ -318,26 +347,26 @@ showHintModal(hintText) {
 
     updateQuestionSelector() {
         if (typeof this.currentSection !== 'number') return;
-        
+
         const dropdown = document.getElementById('question-selector-dropdown');
         if (!dropdown) return;
-        
+
         let html = '';
-        
+
         this.data.assessmentSections.forEach((section, sectionIdx) => {
             // Show sections up to the furthest reached section
             if (sectionIdx <= this.furthestSection) {
                 let sectionHtml = '';
                 let hasItems = false;
-                
+
                 section.questions.forEach((question, qIdx) => {
                     const answered = this.responses.sections[section.id]?.[question.id];
                     const isCurrent = sectionIdx === this.currentSection && qIdx === this.currentQuestion;
-                    
+
                     // Show all questions up to furthest reached in this section
-                    const isAccessible = sectionIdx < this.furthestSection || 
-                                (sectionIdx === this.furthestSection && qIdx <= this.furthestQuestion);
-                    
+                    const isAccessible = sectionIdx < this.furthestSection ||
+                        (sectionIdx === this.furthestSection && qIdx <= this.furthestQuestion);
+
                     if (isAccessible) {
                         hasItems = true;
                         sectionHtml += `
@@ -351,16 +380,16 @@ showHintModal(hintText) {
                         `;
                     }
                 });
-                
+
                 if (hasItems) {
                     html += `<div class="selector-section-header">${section.name}</div>`;
                     html += sectionHtml;
                 }
             }
         });
-        
+
         dropdown.innerHTML = html || '<div style="padding: 1rem; text-align: center; color: var(--s-gray-500);">No questions visited yet</div>';
-        
+
         dropdown.querySelectorAll('.selector-question-item').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const sectionIdx = parseInt(e.currentTarget.dataset.section);
@@ -396,13 +425,13 @@ showHintModal(hintText) {
         const sectionHeader = document.querySelector('.assessment-section-header');
         const formCard = document.querySelector('.demo-form-card');
         const questionCard = document.querySelector('.assessment-question-card');
-        
+
         const target = badge || sectionHeader || formCard || questionCard;
-        
+
         if (target) {
             const yOffset = -20;
             const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
-            
+
             window.scrollTo({
                 top: y,
                 behavior: 'smooth'
@@ -434,7 +463,7 @@ showHintModal(hintText) {
                         </div>
 
                         <div class="assessment-form-actions d-flex justify-content-center justify-content-md-end mt-4 pt-3 border-top">
-                            <button type="button" class="s-btn s-btn-primary s-btn-lg px-4 py-2" id="next-btn">
+                            <button type="button" class="s-btn s-btn-primary  px-4 py-2" id="next-btn">
                                 <span class="d-none d-sm-inline">Continue to Organization</span>
                                 <span class="d-inline d-sm-none">Next</span>
                                 <i class="fas fa-arrow-right ms-2"></i>
@@ -473,12 +502,12 @@ showHintModal(hintText) {
                         </div>
 
                         <div class="assessment-form-actions d-flex flex-column flex-sm-row justify-content-center justify-content-md-between align-items-center gap-3 mt-4 pt-3 border-top">
-                            <button type="button" class="s-btn s-btn-outline-secondary s-btn-lg order-2 order-sm-1" id="back-btn">
+                            <button type="button" class="s-btn s-btn-outline-secondary  order-2 order-sm-1" id="back-btn">
                                 <i class="fas fa-arrow-left me-2"></i>
                                 <span class="d-none d-sm-inline">Back to Profile</span>
                                 <span class="d-inline d-sm-none">Back</span>
                             </button>
-                            <button type="button" class="s-btn s-btn-success s-btn-lg order-1 order-sm-2 px-4 py-2" id="next-btn">
+                            <button type="button" class="s-btn s-btn-success  order-1 order-sm-2 px-4 py-2" id="next-btn">
                                 <span>Start Assessment</span>
                                 <i class="fas fa-arrow-right ms-2"></i>
                             </button>
@@ -528,12 +557,12 @@ showHintModal(hintText) {
             </div>
 
             <div class="assessment-form-actions d-flex flex-column flex-sm-row justify-content-center justify-content-md-between align-items-center gap-3 mt-4">
-                <button type="button" class="s-btn s-btn-secondary s-btn-lg order-2 order-sm-1" id="back-btn">
+                <button type="button" class="s-btn s-btn-secondary  order-2 order-sm-1" id="back-btn">
                     <i class="fas fa-arrow-left me-2"></i>
                     <span class="d-none d-sm-inline">${this.currentQuestion > 0 ? 'Previous Question' : 'Back to Organization'}</span>
                     <span class="d-inline d-sm-none">Back</span>
                 </button>
-                <button type="button" class="s-btn s-btn-primary s-btn-lg order-1 order-sm-2 px-4 py-2" id="next-btn" disabled>
+                <button type="button" class="s-btn s-btn-primary  order-1 order-sm-2 px-4 py-2" id="next-btn" disabled>
                     <span>${this.currentQuestion < section.questions.length - 1 ? 'Next Question' : 'Next Section'}</span>
                     <i class="fas fa-arrow-right ms-2"></i>
                 </button>
@@ -593,12 +622,12 @@ showHintModal(hintText) {
             </div>
 
             <div class="assessment-form-actions d-flex flex-column flex-sm-row justify-content-center justify-content-md-between align-items-center gap-3 mt-4">
-                <button type="button" class="s-btn s-btn-secondary s-btn-lg order-2 order-sm-1" id="back-btn">
+                <button type="button" class="s-btn s-btn-secondary  order-2 order-sm-1" id="back-btn">
                     <i class="fas fa-arrow-left me-2"></i>
                     <span class="d-none d-sm-inline">Back to Questions</span>
                     <span class="d-inline d-sm-none">Back</span>
                 </button>
-                <button type="button" class="s-btn s-btn-primary s-btn-lg order-1 order-sm-2 px-4 py-2" id="next-btn">
+                <button type="button" class="s-btn s-btn-primary  order-1 order-sm-2 px-4 py-2" id="next-btn">
                     <span>${bonusType === 'wishes' ? 'Continue to Pain Points' : 'Complete Assessment'}</span>
                     <i class="fas fa-arrow-right ms-2"></i>
                 </button>
@@ -614,8 +643,8 @@ showHintModal(hintText) {
     renderField(field, useGrid = false) {
         const icon = field.icon ? `<div class="s-icon s-icon-sm s-icon-primary"><i class="fas ${field.icon}"></i></div>` : '';
         const required = field.required ? '<span class="s-text-danger">*</span>' : '';
-        
-        switch(field.type) {
+
+        switch (field.type) {
             case 'text':
                 return `
                     <div class="mb-3">
@@ -632,7 +661,7 @@ showHintModal(hintText) {
                         >
                     </div>
                 `;
-                
+
             case 'radio':
                 const gridClass = useGrid ? 'radio-options-grid' : 'assessment-options-vertical';
                 return `
@@ -658,7 +687,7 @@ showHintModal(hintText) {
                         </div>
                     </div>
                 `;
-                
+
             case 'select':
                 return `
                     <div class="mb-3">
@@ -678,7 +707,7 @@ showHintModal(hintText) {
                         </select>
                     </div>
                 `;
-                
+
             default:
                 return '';
         }
@@ -686,9 +715,9 @@ showHintModal(hintText) {
 
     renderQuestion(question) {
         const icon = question.icon ? `<div class="s-icon s-icon-md s-icon-primary"><i class="fas ${question.icon}"></i></div>` : '';
-        
-            // ✅ AFTER (no escaping, just store ID)
-            const hintButton = question.hint ? `
+
+        // ✅ AFTER (no escaping, just store ID)
+        const hintButton = question.hint ? `
             <button type="button" class="assessment-hint-trigger" 
                 data-qid="${question.id}" 
                 title="Why we ask this">
@@ -696,8 +725,8 @@ showHintModal(hintText) {
             </button>
             ` : '';
 
-        
-        switch(question.type) {
+
+        switch (question.type) {
             case 'radio':
                 return `
                     <div class="assessment-question-header">
@@ -728,7 +757,7 @@ showHintModal(hintText) {
                         `).join('')}
                     </div>
                 `;
-                
+
             case 'checkbox':
                 return `
                     <div class="assessment-question-header">
@@ -760,7 +789,7 @@ showHintModal(hintText) {
                         `).join('')}
                     </div>
                 `;
-                
+
             default:
                 return '<p>Unsupported question type</p>';
         }
@@ -780,7 +809,7 @@ showHintModal(hintText) {
     attachQuestionListeners(question) {
         const inputs = document.querySelectorAll(`input[name="${question.id}"]`);
         const nextBtn = document.getElementById('next-btn');
-        
+
         inputs.forEach(input => {
             input.addEventListener('change', () => {
                 if (question.type === 'radio') {
@@ -791,22 +820,56 @@ showHintModal(hintText) {
                 }
             });
         });
+
+        this.applyNoneExclusiveLogic(question);
     }
 
-            attachHintListener(question) {
-            const hintBtn = document.querySelector('.assessment-hint-trigger');
-            if (hintBtn) {
-                hintBtn.addEventListener('click', (e) => {
+    applyNoneExclusiveLogic(question) {
+        // Only apply to questions dynamically identified as having a "None of the above" option
+        if (!this._noneExclusiveIds || !this._noneExclusiveIds.has(question.id)) return;
+
+        const checkboxes = document.querySelectorAll(`input[name="${question.id}"]`);
+        if (!checkboxes.length) return;
+
+        // Find the "none of the above" checkbox by matching its label text (case-insensitive)
+        const noneOption = Array.from(checkboxes).find(cb => {
+            const label = cb.closest('label');
+            return label && label.textContent.toLowerCase().includes('none of the above');
+        });
+        if (!noneOption) return;
+
+        checkboxes.forEach(cb => {
+            cb.addEventListener("change", () => {
+                if (cb === noneOption && cb.checked) {
+                    // "None of the above" selected → deselect all other options
+                    checkboxes.forEach(other => {
+                        if (other !== noneOption) {
+                            other.checked = false;
+                        }
+                    });
+                } else if (cb !== noneOption && cb.checked) {
+                    // Any other option selected → deselect "None of the above"
+                    noneOption.checked = false;
+                }
+            });
+        });
+    }
+
+
+    attachHintListener(question) {
+        const hintBtn = document.querySelector('.assessment-hint-trigger');
+        if (hintBtn) {
+            hintBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                
+
                 // ✅ Get hint directly from question object (not from dataset)
-                const hintText = question.hint || 
-                                `[TEST MODE]\n\nQuestion ID: ${question.id}\n\n(No hint text defined for this question yet)`;
-                
+                const hintText = question.hint ||
+                    `[TEST MODE]\n\nQuestion ID: ${question.id}\n\n(No hint text defined for this question yet)`;
+
                 this.showHintModal(hintText);
-                });
-            }
-            }
+            });
+        }
+    }
 
 
     refreshFormEnhancements() {
@@ -817,62 +880,62 @@ showHintModal(hintText) {
         }
     }
 
-handleNext() {
-    if (this.currentSection === 'profile') {
-        if (this.validateAndSaveProfile()) {
-            this.currentSection = 'organization';
-            this.renderOrganizationSection();
-            this.updateProgress();
+    handleNext() {
+        if (this.currentSection === 'profile') {
+            if (this.validateAndSaveProfile()) {
+                this.currentSection = 'organization';
+                this.renderOrganizationSection();
+                this.updateProgress();
+            }
         }
-    } 
-    else if (this.currentSection === 'organization') {
-        if (this.validateAndSaveOrganization()) {
-            this.currentSection = 0;
-            this.currentQuestion = 0;
-            this.renderAssessmentSection(0);
-            this.updateProgress();
-            const progressBar = document.querySelector('.assessment-progress-container');
-            const selector = document.getElementById('question-selector');
-            if (progressBar) progressBar.style.display = 'block';
-            if (selector) selector.style.display = 'block';
+        else if (this.currentSection === 'organization') {
+            if (this.validateAndSaveOrganization()) {
+                this.currentSection = 0;
+                this.currentQuestion = 0;
+                this.renderAssessmentSection(0);
+                this.updateProgress();
+                const progressBar = document.querySelector('.assessment-progress-container');
+                const selector = document.getElementById('question-selector');
+                if (progressBar) progressBar.style.display = 'block';
+                if (selector) selector.style.display = 'block';
+            }
         }
-    } 
-    else if (typeof this.currentSection === 'number') {
-        this.saveAssessmentResponse();
-        
-        const section = this.data.assessmentSections[this.currentSection];
-        
-        if (this.currentQuestion < section.questions.length - 1) {
-            // More questions in current section
-            this.currentQuestion++;
-            this.renderAssessmentSection(this.currentSection);
-            this.updateProgress();
-        } 
-        else if (this.currentSection < this.data.assessmentSections.length - 1) {
-            // Move to next assessment section
-            this.currentSection++;
-            this.currentQuestion = 0;
-            this.renderAssessmentSection(this.currentSection);
-            this.updateProgress();
-        } 
-        else {
-            // ✅ Finished all assessment sections (s5_q12) → go to wishes
-            this.currentSection = 'wishes';
-            this.renderBonusSection('wishes');
+        else if (typeof this.currentSection === 'number') {
+            this.saveAssessmentResponse();
+
+            const section = this.data.assessmentSections[this.currentSection];
+
+            if (this.currentQuestion < section.questions.length - 1) {
+                // More questions in current section
+                this.currentQuestion++;
+                this.renderAssessmentSection(this.currentSection);
+                this.updateProgress();
+            }
+            else if (this.currentSection < this.data.assessmentSections.length - 1) {
+                // Move to next assessment section
+                this.currentSection++;
+                this.currentQuestion = 0;
+                this.renderAssessmentSection(this.currentSection);
+                this.updateProgress();
+            }
+            else {
+                // ✅ Finished all assessment sections (s5_q12) → go to wishes
+                this.currentSection = 'wishes';
+                this.renderBonusSection('wishes');
+            }
+        }
+        else if (this.currentSection === 'wishes') {
+            // ✅ Save wishes responses and move to pain
+            this.saveBonusResponse('wishes');
+            this.currentSection = 'pain';
+            this.renderBonusSection('pain');
+        }
+        else if (this.currentSection === 'pain') {
+            // ✅ Save pain responses and complete assessment
+            this.saveBonusResponse('pain');
+            this.completeAssessment();
         }
     }
-    else if (this.currentSection === 'wishes') {
-        // ✅ Save wishes responses and move to pain
-        this.saveBonusResponse('wishes');
-        this.currentSection = 'pain';
-        this.renderBonusSection('pain');
-    }
-    else if (this.currentSection === 'pain') {
-        // ✅ Save pain responses and complete assessment
-        this.saveBonusResponse('pain');
-        this.completeAssessment();
-    }
-}
 
 
     async handleBack() {
@@ -881,7 +944,7 @@ handleNext() {
             this.renderProfileSection();
             this.loadProfileData();
             this.updateProgress();
-        } 
+        }
         else if (typeof this.currentSection === 'number') {
             if (this.currentQuestion > 0) {
                 this.currentQuestion--;
@@ -901,7 +964,7 @@ handleNext() {
                     'Clear Assessment Progress?',
                     'Going back will clear all your assessment progress. Are you sure you want to continue?'
                 );
-                
+
                 if (confirmed) {
                     // Clear assessment responses
                     this.responses.sections = {};
@@ -936,7 +999,7 @@ handleNext() {
     }
 
 
-        saveBonusResponse(bonusType) {
+    saveBonusResponse(bonusType) {
         const checkboxes = document.querySelectorAll(`input[name="${bonusType}"]:checked`);
         const selectedValues = Array.from(checkboxes).map(cb => cb.value);
         this.responses.bonus[bonusType] = selectedValues;
@@ -959,12 +1022,12 @@ handleNext() {
             form.reportValidity();
             return false;
         }
-        
+
         const formData = new FormData(form);
         formData.forEach((value, key) => {
             this.responses.profile[key] = value;
         });
-        
+
         return true;
     }
 
@@ -974,23 +1037,23 @@ handleNext() {
             form.reportValidity();
             return false;
         }
-        
+
         const formData = new FormData(form);
         formData.forEach((value, key) => {
             this.responses.organization[key] = value;
         });
-        
+
         return true;
     }
 
     saveAssessmentResponse() {
         const section = this.data.assessmentSections[this.currentSection];
         const question = section.questions[this.currentQuestion];
-        
+
         if (!this.responses.sections[section.id]) {
             this.responses.sections[section.id] = {};
         }
-        
+
         if (question.type === 'radio') {
             const selected = document.querySelector(`input[name="${question.id}"]:checked`);
             if (selected) {
@@ -1004,7 +1067,7 @@ handleNext() {
             const checked = document.querySelectorAll(`input[name="${question.id}"]:checked`);
             const values = [];
             let totalScore = 0;
-            
+
             checked.forEach(input => {
                 values.push({
                     value: input.value,
@@ -1013,13 +1076,13 @@ handleNext() {
                 });
                 totalScore += parseInt(input.dataset.score || 0);
             });
-            
+
             this.responses.sections[section.id][question.id] = {
                 values: values,
                 score: totalScore
             };
         }
-        
+
         // Update progress after saving response
         this.updateProgress();
     }
@@ -1058,9 +1121,9 @@ handleNext() {
         const section = this.data.assessmentSections[this.currentSection];
         const question = section.questions[this.currentQuestion];
         const response = this.responses.sections[section.id]?.[question.id];
-        
+
         if (!response) return;
-        
+
         if (question.type === 'radio' && response.value) {
             const radio = document.querySelector(`input[name="${question.id}"][value="${response.value}"]`);
             if (radio) {
@@ -1082,47 +1145,47 @@ handleNext() {
         if (typeof this.currentSection !== 'number') {
             return;
         }
-        
+
         const totalQuestions = this.data.assessmentSections.reduce((sum, section) => sum + section.questions.length, 0);
-        
+
         // Count only answered questions
         let answeredCount = 0;
         this.data.assessmentSections.forEach(section => {
             const sectionResponses = this.responses.sections[section.id] || {};
             answeredCount += Object.keys(sectionResponses).length;
         });
-        
+
         const percentage = Math.round((answeredCount / totalQuestions) * 100);
-        
+
         const progressBar = document.querySelector('.assessment-progress-fill');
         const progressText = document.querySelector('.assessment-progress-text');
-        
+
         if (progressBar) progressBar.style.width = `${percentage}%`;
         if (progressText) progressText.textContent = `${percentage}% Complete`;
     }
 
-completeAssessment() {
-    this.calculateScores();
-    
-    localStorage.setItem('sapphire_assessment_responses', JSON.stringify(this.responses));
-    localStorage.setItem('sapphire_assessment_scores', JSON.stringify(this.scores));
+    completeAssessment() {
+        this.calculateScores();
 
-    this.allowNavigation = true;
-    
-    window.location.href = 'assessment-report.html';
-}
+        localStorage.setItem('sapphire_assessment_responses', JSON.stringify(this.responses));
+        localStorage.setItem('sapphire_assessment_scores', JSON.stringify(this.scores));
+
+        this.allowNavigation = true;
+
+        window.location.href = 'assessment-report.html';
+    }
 
     calculateScores() {
         let totalScore = 0;
         let maxPossible = 0;
-        
+
         this.data.assessmentSections.forEach(section => {
             let sectionScore = 0;
             let sectionMax = 0;
-            
+
             section.questions.forEach(question => {
                 const response = this.responses.sections[section.id]?.[question.id];
-                
+
                 if (question.type === 'radio') {
                     if (response) {
                         sectionScore += response.score;
@@ -1137,7 +1200,7 @@ completeAssessment() {
                     sectionMax += sumScores;
                 }
             });
-            
+
             this.scores.bySection[section.id] = {
                 name: section.name,
                 score: sectionScore,
@@ -1146,11 +1209,11 @@ completeAssessment() {
                 color: section.color,
                 icon: section.icon
             };
-            
+
             totalScore += sectionScore;
             maxPossible += sectionMax;
         });
-        
+
         this.scores.total = totalScore;
         this.scores.maxPossible = maxPossible;
         this.scores.percentage = maxPossible > 0 ? Math.round((totalScore / maxPossible) * 100) : 0;

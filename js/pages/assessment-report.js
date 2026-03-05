@@ -129,25 +129,11 @@ class AssessmentReport {
             this.scores = sample.scores;
         }
 
-        // A4 responsive scale
-        this.setA4Scale();
-        window.addEventListener('resize', () => this.setA4Scale());
-
         this.renderReport();
 
         this.attachEventListeners();
     }
 
-    setA4Scale() {
-        const A4_PX = 794; // 210mm at 96dpi
-        const vw = window.innerWidth;
-        if (vw < A4_PX + 40) {
-            const scale = (vw - 16) / A4_PX;
-            document.documentElement.style.setProperty('--a4-scale', scale.toFixed(4));
-        } else {
-            document.documentElement.style.setProperty('--a4-scale', '1');
-        }
-    }
 
     /* ───── RENDER PIPELINE ──────────────────────────── */
     renderReport() {
@@ -267,7 +253,6 @@ class AssessmentReport {
                 <img src="assets/images/scorp-sapphire-cropped.png" alt="Sapphire" class="header-logo">
                 <span class="header-title">Asset Management Maturity Report</span>
             </div>
-            <span class="header-meta">${title || (this.responses?.profile?.fullName || '')}</span>
         `;
         return el;
     }
@@ -512,7 +497,7 @@ class AssessmentReport {
                         <p>${insights?.secondary || this.getDefaultSapphireHelp(sectionKey)}</p>
                     </div>
                 </div>
-            `;  
+            `;
             return el;
         }).filter(Boolean);
 
@@ -543,22 +528,13 @@ class AssessmentReport {
                         ${theme.label}
                     </div>
                     <div class="insight-section">
-                        <div class="insight-header" style="--section-color:${theme.color}">
-                            <i class="fas ${theme.icon}"></i>
-                            <h3>Personalised Insights</h3>
-                        </div>
                         <div class="insight-items"></div>
                     </div>
                 `;
                 isFirst = false;
             } else {
                 content.innerHTML = `
-                    <p class="section-intro" style="color:var(--s-gray-500);font-size:8pt;margin-bottom:10px;">${theme.label} — continued</p>
                     <div class="insight-section">
-                        <div class="insight-header" style="--section-color:${theme.color}">
-                            <i class="fas ${theme.icon}"></i>
-                            <h3>Personalised Insights</h3>
-                        </div>
                         <div class="insight-items"></div>
                     </div>
                 `;
@@ -932,36 +908,26 @@ class AssessmentReport {
     }
 
     /* ───── PDF EXPORT ──────────────────────────────── */
-downloadPDF() {
-    const btn = document.getElementById('ar-download-pdf');
-
-    if (btn) {
-        btn.disabled = true;
-        const span = btn.querySelector('span');
-        if (span) span.textContent = 'Preparing PDF…';
-    }
-
-    // Ensure 1:1 A4 scaling before printing
-    const prevScale = getComputedStyle(document.documentElement)
-        .getPropertyValue('--a4-scale')
-        .trim();
-
-    document.documentElement.style.setProperty('--a4-scale', '1');
-
-    // Small delay ensures layout stabilizes
-    setTimeout(() => {
-        window.print();
-
-        // Restore scale after print dialog closes
-        document.documentElement.style.setProperty('--a4-scale', prevScale || '1');
+    downloadPDF() {
+        const btn = document.getElementById('ar-download-pdf');
 
         if (btn) {
-            btn.disabled = false;
+            btn.disabled = true;
             const span = btn.querySelector('span');
-            if (span) span.textContent = 'Download PDF';
+            if (span) span.textContent = 'Preparing PDF…';
         }
-    }, 150);
-}
+
+        // Use browser print — @media print enforces A4 layout
+        setTimeout(() => {
+            window.print();
+
+            if (btn) {
+                btn.disabled = false;
+                const span = btn.querySelector('span');
+                if (span) span.textContent = 'Download PDF';
+            }
+        }, 150);
+    }
 
 
     /* ───── REDIRECT MODAL ──────────────────────────── */

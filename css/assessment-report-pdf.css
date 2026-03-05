@@ -16,42 +16,23 @@ body {
     background: var(--s-gray-100);
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 /* ── REPORT WRAPPER ───────────────────────────────── */
 .report-wrapper {
-    max-width: 210mm;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 24px 0 40px;
-    background: var(--s-gray-100);
+    padding: 24px 16px 40px;
 }
 
-/* ── RESPONSIVE A4 SCALING (fits every screen) ──── */
-/*
-   A4 = 210mm wide = 794px at 96dpi.
-   We keep the page at 210mm and scale it down on
-   smaller viewports so it always fits without overflow.
-*/
-@media screen and (max-width: 860px) {
-    .report-wrapper {
-        padding: 0;
-        overflow-x: hidden;
-    }
-
-    .a4-page {
-        transform-origin: top center;
-        transform: scale(var(--a4-scale, 1));
-        margin-bottom: calc((297mm * var(--a4-scale, 1)) - 297mm + 16px) !important;
-    }
-}
-
-/* ── A4 PAGE CONTAINER ────────────────────────────── */
+/* ── A4 PAGE CONTAINER (responsive on screen) ──── */
 .a4-page {
-    width: 210mm;
+    width: 100%;
     height: 297mm;
     background: var(--s-white);
     box-shadow: 0 4px 32px rgba(0, 0, 0, 0.14);
-    margin: 0 auto 20px auto;
+    margin: 0 auto 24px auto;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -65,7 +46,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 26px;
+    padding: 0 1rem;
     background: var(--s-gray-50);
     border-bottom: 2.5px solid var(--s-primary);
 }
@@ -86,20 +67,20 @@ body {
     font-size: 9.5pt;
     font-weight: var(--s-font-bold);
     color: var(--s-primary);
-    letter-spacing: 0.4px;
+    /* letter-spacing: 0.4px; */
 }
 
-.header-meta {
+/* .header-meta {
     font-size: 7.5pt;
     color: var(--s-gray-500);
     font-family: 'Verdana', sans-serif;
-}
+} */
 
 /* ── PAGE CONTENT ─────────────────────────────────── */
 .page-content {
     flex: 1;
     /* overflow: hidden; */
-    padding: 16px 26px;
+    padding: 0.5rem 1rem;
     /* Slightly reduced top padding */
     display: flex;
     flex-direction: column;
@@ -107,12 +88,12 @@ body {
 
 /* ── PAGE FOOTER ──────────────────────────────────── */
 .page-footer {
-    flex-shrink: 0;
+    /* flex-shrink: 0; */
     height: 38px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 26px;
+    padding: 0 8px;
     background: var(--s-gray-50);
     border-top: 1px solid var(--s-gray-200);
 }
@@ -148,7 +129,7 @@ body {
    COVER PAGE
    ═══════════════════════════════════════════════════ */
 .cover-page {
-    width: 210mm;
+    /* width: 210mm; */
     height: 297mm;
     background: linear-gradient(165deg, #0d1b2e 0%, #0a1628 45%, #003380 100%);
     color: var(--s-white);
@@ -373,7 +354,7 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 14px;
+    margin-bottom: 20px;
     padding-bottom: 8px;
     border-bottom: 2px solid var(--s-primary);
 }
@@ -608,31 +589,6 @@ body {
     margin-bottom: 12px;
 }
 
-.insight-header {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 9px 13px;
-    border-left: 4px solid var(--section-color, var(--s-primary));
-    background: var(--s-gray-50);
-    margin-bottom: 10px;
-    border-radius: 0 var(--s-radius-xs) var(--s-radius-xs) 0;
-}
-
-.insight-header i {
-    font-size: 11pt;
-    color: var(--section-color, var(--s-primary));
-}
-
-.insight-header h3 {
-    font-family: 'Science Gothic', sans-serif;
-    font-size: 11pt;
-    font-weight: var(--s-font-bold);
-    font-style: italic;
-    color: var(--s-gray-900);
-    margin: 0;
-}
-
 .insight-items {
     display: flex;
     flex-direction: column;
@@ -697,7 +653,7 @@ body {
 
 .insight-primary p {
     font-family: 'Verdana', sans-serif;
-    font-size: 12px;
+    font-size: 12pt;
     /* color: var(--s-gray-700); */
     /* line-height: 1.65; */
     text-align: justify;
@@ -730,8 +686,7 @@ body {
 
 .insight-secondary p {
     font-family: 'Verdana', sans-serif;
-    font-size: 12px;
-    /* color: var(--s-gray-700); */
+    font-size: 12pt;    /* color: var(--s-gray-700); */
     /* line-height: 1.65; */
     text-align: justify;
     margin: 0;
@@ -946,7 +901,7 @@ body {
    CLOSING PAGE
    ═══════════════════════════════════════════════════ */
 .closing-page {
-    width: 210mm;
+    /* width: 210mm; */
     height: 297mm;
     background: linear-gradient(165deg, #0d1b2e 0%, #0a1628 45%, #003380 100%);
     color: var(--s-white);
@@ -1265,8 +1220,7 @@ h1,
 h2,
 h3,
 h4,
-.section-title,
-.insight-header {
+.section-title {
     page-break-after: avoid;
     break-after: avoid;
 }
@@ -1286,20 +1240,28 @@ li {
     }
 
     .report-wrapper {
+        max-width: none;
+        margin: 0;
         padding: 0;
-        background: white;
     }
 
     .a4-page {
-        box-shadow: none;
-        width: 100%;
+        width: 210mm;
         height: 297mm;
+        margin: 0;
+        box-shadow: none;
+        display: flex;
+        flex-direction: column;
         page-break-after: always;
         break-after: page;
-        margin: 0;
-        transform: none !important;
     }
 
+    /* Professional document margins */
+    .page-content {
+        /* padding: 18mm 16mm 16mm 16mm; */
+    }
+
+    /* Hide UI elements during print */
     .s-fab-wrapper,
     .s-floating-button,
     .ar-redirect-modal,
