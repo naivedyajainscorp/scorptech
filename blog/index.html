@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapphire EAM Blog | SCORP Intelligence</title>
+    <meta name="description" content="42 articles on Enterprise Asset Management. Fundamentals, industries, Sapphire modules, analytics. Jaipur operations truth.">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/core.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/utilities.css">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Blog Index Custom Styles */
+        .s-hero-blog {
+            position: relative;
+            background: url('../assets/images/mesh-hero-bg-3.jpg') no-repeat center center;
+            background-size: cover;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        .s-hero-blog::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.7));
+            z-index: 1;
+        }
+        .s-hero-blog .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Card Decoration & Alignment */
+        .s-cm-pic-card {
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .s-cm-pic-card-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .s-cm-pic-card-text {
+            flex-grow: 1;
+        }
+        .s-cm-pic-card-action {
+            margin-top: auto;
+            padding-top: 1.5rem;
+        }
+
+        /* Pill Badge Placement & Hover Fix */
+        .s-cm-pic-card-img {
+            position: relative;
+        }
+        .s-cm-pic-card-img-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            z-index: 10;
+            pointer-events: none; /* Allows hover on card even if over badge */
+        }
+        .s-cm-pic-card-img-badge .s-pill {
+            pointer-events: auto; /* Re-enable for the pill itself if needed */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            backdrop-filter: blur(8px);
+        }
+        
+        .s-cm-pic-card:hover .s-cm-pic-card-img img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body data-theme="light">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-xl s-navbar" id="scorpNavbar">
+        <a class="navbar-brand s-navbar-brand" href="../index.html">
+            <div class="s-brand-logo">
+                <img src="../assets/images/Scorp-Logo.png" alt="SCORP" width="24" height="24" style="filter: brightness(0) invert(1);">
+            </div>
+            <span class="s-brand-text">SCORP</span>
+        </a>
+        <button class="navbar-toggler s-mobile-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="s-hamburger-box"><span class="s-hamburger-inner"></span></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav ms-auto s-nav-links">
+                <li class="nav-item"><a class="nav-link s-nav-link" href="../index.html"><i class="fas fa-home-alt"></i><span>Home</span></a></li>
+                <li class="nav-item"><a class="nav-link s-nav-link active" href="index.html"><i class="fas fa-blog"></i><span>Blog</span></a></li>
+                <li class="nav-item"><a class="nav-link s-nav-link" href="../sapphire.html"><i class="fas fa-diamond"></i><span>Sapphire</span></a></li>
+                <li class="nav-item dropdown s-nav-dropdown-internal">
+                    <a class="nav-link s-nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        <i class="bi bi-lightbulb"></i><span>Sapphire Smart</span><span class="s-active-badge"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end s-internal-dropdown-menu">
+                        <li><a class="dropdown-item s-internal-menu-item" href="../analytics.html"><i class="fas fa-chart-line"></i><span>Smart Analytics</span></a></li>
+                        <li><a class="dropdown-item s-internal-menu-item" href="../intelligence.html"><i class="fas fa-brain"></i><span>Intelligence</span></a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link s-nav-link s-nav-link-icon" href="../announcement.html" title="Announcements"><i class="fa-solid fa-bullhorn fa-rotate-by" style="--fa-rotate-angle: 325deg;"></i></a></li>
+                <li class="nav-item"><a class="book-demo-button" href="../book-demo.html"><i class="bi bi-calendar-check-fill"></i><span><strong>Book Demo</strong></span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="s-hero s-hero-blog py-5">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-xl-9 col-lg-11">
+                    <div class="d-flex justify-content-center mb-3">
+                        <span class="s-pill s-pill-sm" style="background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.25);">
+                            <i class="fas fa-blog me-2"></i>Knowledge Hub · Sapphire EAM
+                        </span>
+                    </div>
+                    <h1 class="s-section-title s-text-gradient-primary s-font-black fst-italic mb-3">
+                        EAM Intelligence.<br>All of It. Here.
+                    </h1>
+                    <p class="s-section-subtitle s-text-white mb-5">
+                        42 deep-dive articles across 6 pillars — from EAM fundamentals and Sapphire modules
+                        to 13 industry verticals, analytics, and business value. No filler.
+                    </p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
+                        <div class="s-stat-chip">
+                            <i class="fas fa-file-alt s-text-primary"></i>
+                            <div>
+                                <div class="s-stat-num">42</div>
+                                <div class="s-stat-label">Articles</div>
+                            </div>
+                        </div>
+                        <div class="s-stat-chip">
+                            <i class="fas fa-layer-group s-text-primary"></i>
+                            <div>
+                                <div class="s-stat-num">6</div>
+                                <div class="s-stat-label">Pillars</div>
+                            </div>
+                        </div>
+                        <div class="s-stat-chip">
+                            <i class="fas fa-industry s-text-primary"></i>
+                            <div>
+                                <div class="s-stat-num">13</div>
+                                <div class="s-stat-label">Industries</div>
+                            </div>
+                        </div>
+                        <div class="s-stat-chip">
+                            <i class="fas fa-map-marker-alt s-text-primary"></i>
+                            <div>
+                                <div class="s-stat-num">JPN</div>
+                                <div class="s-stat-label">Jaipur-built</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-3 justify-content-center">
+                        <div class="col-lg-5 col-md-7">
+                            <div class="input-group s-input-group">
+                                <span class="input-group-text s-bg-white">
+                                    <i class="fas fa-search s-text-primary"></i>
+                                </span>
+                                <input type="text" class="form-control" id="blog-search"
+                                    placeholder="Search 42 articles… EAM, healthcare, OEE…">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-5">
+                            <select class="form-select s-select" id="pillar-filter-select">
+                                <option value="">All Pillars</option>
+                                <option value="Fundamentals">Fundamentals</option>
+                                <option value="Modules">Modules</option>
+                                <option value="Industries">Industries</option>
+                                <option value="Analytics">Analytics</option>
+                                <option value="Business Value">Business Value</option>
+                                <option value="Special Editions">Special Editions</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- BLOG GRID -->
+    <section class="py-5">
+        <div class="container-fluid px-4">
+            <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-3">
+                <p class="s-text-gray-600 mb-0 small">
+                    <i class="fas fa-layer-group me-1 s-text-primary"></i>
+                    Showing <strong id="count-showing">42</strong> articles
+                </p>
+                <div class="d-flex align-items-center gap-2">
+                    <span class="s-text-gray-500 small">Sort:</span>
+                    <select class="form-select form-select-sm s-select" id="sort-select" style="width:auto;">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="read-asc">Shortest Read</option>
+                        <option value="read-desc">Longest Read</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row g-4" id="blog-grid"></div>
+            <div class="text-center py-5 d-none" id="no-results">
+                <i class="fas fa-search fa-3x s-text-gray-400 mb-3"></i>
+                <h5 class="s-text-gray-600 mb-2">No articles found</h5>
+                <button class="s-btn s-btn-primary s-btn-sm" onclick="resetFilters()">
+                    <i class="fas fa-times me-2"></i>Clear Filters
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="modern-footer mt-5">
+        <div class="container">
+            <div class="footer-brand d-flex flex-column align-items-center mb-4">
+                <div class="footer-logo-wrapper justify-content-center">
+                    <div class="footer-logo">
+                        <img src="../assets/images/Scorp-Logo.png" alt="Scorptech" class="footer-brand-logo">
+                    </div>
+                </div>
+                <h5 class="footer-brand-name m-0">SCORP</h5>
+                <p class="footer-tagline text-center">In the business of<br>making yours simple</p>
+            </div>
+            <div class="row g-4 footer-columns-wrapper">
+                <div class="col-12 col-md-4">
+                    <div class="footer-section">
+                        <h6>Explore</h6>
+                        <ul class="footer-links">
+                            <li><a href="../index.html" class="footer-link"><i class="fas fa-home-alt"></i><span>Home</span></a></li>
+                            <li><a href="../about.html" class="footer-link"><i class="fas fa-users-line"></i><span>About</span></a></li>
+                            <li><a href="../sapphire.html" class="footer-link"><i class="fas fa-diamond"></i><span>Sapphire</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="footer-section">
+                        <h6>Resources</h6>
+                        <ul class="footer-links">
+                            <li><a href="../faq.html" class="footer-link"><i class="fas fa-circle-question"></i><span>FAQs</span></a></li>
+                            <li><a href="../privacy_policy.html" class="footer-link"><i class="fas fa-file-shield"></i><span>Privacy Policy</span></a></li>
+                            <li><a href="../terms_of_use.html" class="footer-link"><i class="fas fa-file-contract"></i><span>Terms of Use</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="footer-section">
+                        <h6>Get in Touch</h6>
+                        <ul class="footer-links">
+                            <li><a href="tel:+91XXXXXXXXXX" class="footer-link"><i class="fas fa-mobile"></i><span>Phone +91-XXXXXXXXXX</span></a></li>
+                            <li><a href="mailto:support@scorptech.in" class="footer-link"><i class="fas fa-envelope"></i><span>support@scorptech.in</span></a></li>
+                            <li><a href="../contact.html" class="footer-link"><i class="fas fa-phone"></i><span>Contact</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom flex-column align-items-center text-center">
+                <p class="footer-copyright mb-3">&copy; 2026 SCORP - Scorptech Technologies Private Limited. All rights reserved.</p>
+                <div class="footer-social justify-content-center">
+                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../js/main.js"></script>
+
+    <script>
+    const blogs = [
+        { id:1,  slug:"what-is-eam-enterprise-asset-management-guide",      title:"What is Enterprise Asset Management (EAM)? Complete Guide",          pillar:"Fundamentals",    excerpt:"EAM definition, evolution from CMMS, modern capabilities and why Indian enterprises can't ignore it.",           readMin:12, date:"2026-03-05", image:"../assets/images_industries/warehouse.jpeg" },
+        { id:2,  slug:"eam-vs-cmms-vs-erp-differences",                     title:"EAM vs CMMS vs ERP: The Real Differences",                           pillar:"Fundamentals",    excerpt:"Feature comparison matrix, overlap zones, and a decision tree for picking the right system.",                  readMin:10, date:"2026-03-06", image:"../assets/images_industries/warehouse.jpeg" },
+        { id:3,  slug:"asset-lifecycle-management-guide",                    title:"Asset Lifecycle: From Procurement to Disposal",                      pillar:"Fundamentals",    excerpt:"The 5 phases of asset life, cost curves at each stage, and where most orgs leak money.",                      readMin:11, date:"2026-03-10", image:"../assets/images_industries/manufacturing_factory.jpeg" },
+        { id:4,  slug:"preventive-predictive-reactive-maintenance",          title:"Preventive vs Predictive vs Reactive Maintenance",                   pillar:"Fundamentals",    excerpt:"Strategy comparison with real ROI data — when each maintenance mode actually makes financial sense.",          readMin:9,  date:"2026-03-13", image:"../assets/images_industries/manufacturing_factory.jpeg" },
+        { id:5,  slug:"total-cost-of-ownership-asset-management",            title:"Total Cost of Ownership: The Hidden Math of Asset Mismanagement",    pillar:"Fundamentals",    excerpt:"TCO formula, hidden cost categories (downtime, compliance penalties), and real savings estimation.",          readMin:10, date:"2026-03-17", image:"../assets/images_industries/warehouse.jpeg" },
+        { id:6,  slug:"oee-overall-equipment-effectiveness-guide",           title:"OEE Explained: The Metric That Runs Factories",                      pillar:"Fundamentals",    excerpt:"Availability × Performance × Quality breakdown, industry benchmarks, and improvement levers.",               readMin:8,  date:"2026-03-20", image:"../assets/images_industries/manufacturing_factory.jpeg" },
+        { id:7,  slug:"eam-implementation-roadmap-indian-enterprises",       title:"EAM Implementation Roadmap: What Indian Enterprises Get Wrong",      pillar:"Fundamentals",    excerpt:"Step-by-step rollout guide, the 5 failure patterns, change management, and SME-specific pitfalls.",          readMin:14, date:"2026-03-24", image:"../assets/images_industries/warehouse.jpeg" },
+        { id:8,  slug:"work-order-management-backbone-operations",           title:"Work Order Management: The Backbone of Maintenance Operations",      pillar:"Modules",         excerpt:"WO lifecycle (create → assign → execute → close), priority matrix, and mobile execution flow.",              readMin:10, date:"2026-03-27", image:"../assets/images_industries/manufacturing_factory.jpeg" },
+        { id:9,  slug:"spare-parts-inventory-management-eam",                title:"Spare Parts & Inventory: Stop Bleeding Money on Stockouts",          pillar:"Modules",         excerpt:"Min/max stocking, ABC analysis, automated reorder triggers, and bin management in Sapphire.",               readMin:11, date:"2026-03-31", image:"../assets/images_industries/warehouse.jpeg" },
+        { id:10, slug:"preventive-maintenance-scheduling-automation",        title:"PM Scheduling: Time-Based vs Usage-Based Automation",                pillar:"Modules",         excerpt:"Calendar PMs vs meter-based triggers, auto-scheduling logic, PM compliance rate tracking.",                 readMin:9,  date:"2026-04-03", image:"../assets/images_industries/manufacturing_factory.jpeg" },
+        { id:11, slug:"asset-register-single-source-of-truth",               title:"Asset Register: Building Your Single Source of Truth",               pillar:"Modules",         excerpt:"What to capture (hierarchy, specs, docs, location), tagging strategy, QR and barcode setup.",               readMin:8,  date:"2026-04-07", image:"../assets/images_industries/warehouse.jpeg" },
+        { id:12, slug:"mobile-eam-field-technician-revolution",              title:"Mobile EAM: How Technicians Work Smarter in the Field",              pillar:"Modules",         excerpt:"Offline capability, barcode scanning, photo capture, real-time work order updates from the floor.",         readMin:9,  date:"2026-04-10", image:"../assets/images_industries/manufacturing_factory.jpeg" },
+        { id:13, slug:"vendor-contractor-management-eam",                    title:"Vendor & Contractor Management in Sapphire EAM",                     pillar:"Modules",         excerpt:"AMC tracking, vendor scorecards, SLA definitions, performance analytics and renewal alerts.",               readMin:10, date:"2026-04-14", image:"../assets/images_industries/warehouse.jpeg" },
+        { id:14, slug:"compliance-audit-trails-eam",                         title:"Compliance & Audit Trails: Never Fail an Inspection Again",          pillar:"Modules",         excerpt:"Regulatory documentation, e-signatures, inspection checklists, and audit-ready report generation.",         readMin:11, date:"2026-04-17", image:"../assets/images_industries/manufacturing_factory.jpeg" },
+        { id:15, slug:"healthcare-medical-equipment-compliance",             title:"Healthcare: Medical Equipment Compliance is Non-Negotiable",         pillar:"Industries",      excerpt:"Hospital biomedical equipment, NABH/JCI calibration, PPM schedules, life support asset tracking.",          readMin:14, date:"2026-03-07", image:"../assets/images_industries/hospital.jpeg" },
+        { id:16, slug:"manufacturing-equipment-downtime-eam",                title:"Manufacturing: Heavy Equipment Downtime Costs More Than You Think",  pillar:"Industries",      excerpt:"OEE in production plants, CNC/press/conveyor maintenance, shift-based scheduling and ROI math.",            readMin:13, date:"2026-04-21", image:"../assets/images_industries/manufacturing_factory.jpeg" },
+        { id:17, slug:"hospitality-hotels-resorts-facility-eam",             title:"Hospitality: Hotels, Resorts & Facility EAM",                        pillar:"Industries",      excerpt:"HVAC, elevators, F&B equipment — how equipment failures directly hit guest experience and ratings.",        readMin:11, date:"2026-04-24", image:"../assets/images_industries/hotel_resort.jpeg" },
+        { id:18, slug:"education-campus-infrastructure-management",          title:"Education: Campus Infrastructure Asset Management",                  pillar:"Industries",      excerpt:"Labs, utilities, IT equipment, sports facilities — semester-based maintenance planning for institutions.",   readMin:10, date:"2026-04-28", image:"../assets/images_industries/college_campus.jpeg" },
+        { id:19, slug:"real-estate-facilities-management-eam",               title:"Real Estate & Facilities: Multi-Property Asset Control",             pillar:"Industries",      excerpt:"Building-level hierarchy, tenant SLAs, green building compliance, and energy monitoring at scale.",         readMin:12, date:"2026-05-01", image:"../assets/images_industries/commercial_building.jpeg" },
+        { id:20, slug:"pharma-gmp-compliance-equipment-validation",          title:"Pharma: GMP Compliance & Equipment Validation",                      pillar:"Industries",      excerpt:"IQ/OQ/PQ validation, calibration masters, FDA/WHO-GMP audit prep in Sapphire EAM.",                       readMin:14, date:"2026-05-05", image:"../assets/images_industries/pharma_lab.jpeg" },
+        { id:21, slug:"energy-utilities-grid-asset-management",              title:"Energy & Utilities: Managing Grid Assets at Scale",                  pillar:"Industries",      excerpt:"Transformers, substations, transmission lines — predictive maintenance for critical infrastructure.",       readMin:13, date:"2026-05-08", image:"../assets/images_industries/energy_plant.jpeg" },
+        { id:22, slug:"food-beverage-equipment-hygiene-fssai",               title:"Food & Beverage: Equipment Hygiene & FSSAI Compliance",              pillar:"Industries",      excerpt:"Cold chain monitoring, sanitation logs, CIP cycles, and FSSAI compliance documentation.",                 readMin:11, date:"2026-05-12", image:"../assets/images_industries/food_plant.jpeg" },
+        { id:23, slug:"it-parks-commercial-real-estate-eam",                 title:"IT Parks & Commercial Real Estate: Critical Infrastructure EAM",     pillar:"Industries",      excerpt:"BMS integration, UPS/genset tracking, HVAC for data rooms, tenant operations and SLAs.",                  readMin:12, date:"2026-05-15", image:"../assets/images_industries/it_park.jpeg" },
+        { id:24, slug:"logistics-warehousing-fleet-facility-management",     title:"Logistics & Warehousing: Fleet + Facility Management",               pillar:"Industries",      excerpt:"Forklifts, conveyors, loading docks, fleet telematics, dock scheduling and throughput analytics.",        readMin:12, date:"2026-05-19", image:"../assets/images_industries/warehouse.jpeg" },
+        { id:25, slug:"retail-multi-store-asset-management",                 title:"Retail: Multi-Store Asset Management at Scale",                      pillar:"Industries",      excerpt:"Refrigeration, POS equipment, store rollout tracking, and centralised maintenance command.",               readMin:10, date:"2026-05-22", image:"../assets/images_industries/retail_store.jpeg" },
+        { id:26, slug:"government-psu-public-asset-accountability",          title:"Government & PSU: Public Asset Accountability",                      pillar:"Industries",      excerpt:"GFR compliance, audit requirements, budget cycle management, and public accountability norms.",             readMin:11, date:"2026-05-26", image:"../assets/images_industries/government_building.jpeg" },
+        { id:27, slug:"construction-infrastructure-site-asset-tracking",     title:"Construction & Infrastructure: Site Asset Tracking",                 pillar:"Industries",      excerpt:"Equipment utilisation, site-to-site transfers, idle time analysis, and hire vs own decisions.",            readMin:12, date:"2026-05-29", image:"../assets/images_industries/construction_site.jpeg" },
+        { id:28, slug:"predictive-analytics-asset-failure-prevention",       title:"Predictive Analytics: Know Before Your Assets Fail",                 pillar:"Analytics",       excerpt:"IoT sensor integration, anomaly detection, ML-based failure prediction, and alert-to-WO automation.",    readMin:13, date:"2026-06-02", image:"../assets/images_industries/manufacturing_factory.jpeg" },
+        { id:29, slug:"maintenance-kpis-that-actually-matter",               title:"Maintenance KPIs That Actually Matter",                              pillar:"Analytics",       excerpt:"MTBF, MTTR, PM compliance rate, backlog index, and wrench time — with Indian industry benchmarks.",        readMin:10, date:"2026-06-05", image:"../assets/images_industries/warehouse.jpeg" },
+        { id:30, slug:"asset-performance-dashboards-what-to-track",          title:"Asset Performance Dashboards: What to Track & Why",                  pillar:"Analytics",       excerpt:"Sapphire analytics walkthrough, KPI hierarchy, executive vs ops views, and drill-down logic.",            readMin:11, date:"2026-06-09", image:"../assets/images_industries/manufacturing_factory.jpeg" },
+        { id:31, slug:"cost-analytics-maintenance-budget-savings",           title:"Cost Analytics: Finding Hidden Savings in Your Maintenance Budget",  pillar:"Analytics",       excerpt:"Variance analysis, cost-per-asset trends, labour vs material split, and budget optimisation.",            readMin:10, date:"2026-06-12", image:"../assets/images_industries/warehouse.jpeg" },
+        { id:32, slug:"energy-monitoring-sustainability-analytics-eam",      title:"Energy Monitoring & Sustainability Analytics",                       pillar:"Analytics",      excerpt:"Energy consumption per asset, carbon KPIs, ESG reporting, and green target tracking in Sapphire.",       readMin:10, date:"2026-06-16", image:"../assets/images_industries/manufacturing_factory.jpeg" },
+        { id:33, slug:"mtbf-mttr-reliability-numbers-guide",                 title:"MTBF & MTTR: The Numbers That Define Reliability",                   pillar:"Analytics",       excerpt:"Calculation guide, Indian industry benchmarks, improvement levers, and Sapphire reliability module.",    readMin:9,  date:"2026-06-19", image:"../assets/images_industries/warehouse.jpeg" },
+        { id:34, slug:"roi-of-eam-implementation-real-numbers",              title:"ROI of EAM Implementation: Real Numbers",                            pillar:"Business Value",  excerpt:"Payback period models, cost savings categories, and a framework for building Indian enterprise case studies.", readMin:12, date:"2026-06-23", image:"../assets/images_industries/warehouse.jpeg" },
+        { id:35, slug:"eam-for-cfos-how-finance-reads-asset-data",           title:"EAM for CFOs: How Finance Reads Asset Data",                         pillar:"Business Value",  excerpt:"Depreciation schedules, capex vs opex decisions, audit-ready financials, and asset write-off management.",  readMin:11, date:"2026-06-26", image:"../assets/images_industries/manufacturing_factory.jpeg" },
+        { id:36, slug:"making-business-case-for-eam-investment",             title:"Making the Business Case for EAM Investment",                        pillar:"Business Value",  excerpt:"Stakeholder presentation framework, objection handling playbook, and cost-benefit analysis template.",     readMin:12, date:"2026-06-30", image:"../assets/images_industries/warehouse.jpeg" },
+        { id:38, slug:"sapphire-eam-for-indian-msmes",                       title:"Sapphire EAM for Indian MSMEs: Built Different",                     pillar:"Business Value",  excerpt:"SME-specific deployment needs, right-sizing for scale, speed to value, and the Jaipur operations context.",  readMin:10, date:"2026-07-07", image:"../assets/images_industries/manufacturing_factory.jpeg" },
+        { id:37, slug:"land-air-water-vehicles-eam",                         title:"Land/Air/Water Vehicles: 2-Wheelers to Aircraft Carriers",           pillar:"Special Editions",excerpt:"Complete EAM for automotive workshops, aviation MRO, and ship drydocks — the full cross-industry deep dive.", readMin:18, date:"2026-03-08", image:"../assets/images_industries/automotive_service_station.jpeg" },
+        { id:39, slug:"smart-cities-iot-urban-asset-management",             title:"Smart Cities & IoT: The Future of Urban Asset Management",           pillar:"Special Editions",excerpt:"Municipal assets, smart infrastructure, sensor networks, and public maintenance operations at city scale.",  readMin:15, date:"2026-07-10", image:"../assets/images_industries/manufacturing_factory.jpeg" },
+        { id:40, slug:"digital-twins-and-eam-next-frontier",                 title:"Digital Twins & EAM: The Next Frontier",                             pillar:"Special Editions",excerpt:"Virtual asset models, real-time synchronisation, predictive simulation, and an implementation roadmap.",     readMin:14, date:"2026-07-14", image:"../assets/images_industries/warehouse.jpeg" },
+        { id:41, slug:"iot-integration-with-eam-sensors-to-work-orders",     title:"IoT Integration with EAM: From Sensors to Work Orders",              pillar:"Special Editions",excerpt:"Sensor protocols (MQTT/OPC-UA), connectivity layers, alert-to-WO automation in Sapphire IoT connector.",  readMin:13, date:"2026-07-17", image:"../assets/images_industries/manufacturing_factory.jpeg" },
+        { id:42, slug:"scorp-story-jaipur-honest-industrial-software",       title:"The SCORP Story: Jaipur's Bet on Honest Industrial Software",         pillar:"Special Editions",excerpt:"Founding story, why Jaipur, product philosophy, and the vision for transparent EAM in the Indian market.",  readMin:10, date:"2026-07-21", image:"../assets/images_industries/warehouse.jpeg" },
+    ];
+
+    const PILLAR_CONFIG = {
+        'Fundamentals':    { color:'primary', icon:'fas fa-book-open' },
+        'Modules':         { color:'success', icon:'fas fa-puzzle-piece' },
+        'Industries':      { color:'info',    icon:'fas fa-industry' },
+        'Analytics':       { color:'amber',   icon:'fas fa-chart-line' },
+        'Business Value':  { color:'danger',  icon:'fas fa-briefcase' },
+        'Special Editions':{ color:'royal',   icon:'fas fa-star' },
+    };
+
+    function cfg(pillar) { return PILLAR_CONFIG[pillar] || { color:'secondary', icon:'fas fa-file-alt' }; }
+
+    function renderBlogs(list) {
+        const grid = document.getElementById('blog-grid');
+        const noRes = document.getElementById('no-results');
+        
+        if (!list.length) {
+            grid.innerHTML = '';
+            noRes.classList.remove('d-none');
+            return;
+        }
+        noRes.classList.add('d-none');
+
+        grid.innerHTML = list.map(blog => {
+            const p = cfg(blog.pillar);
+            return `
+            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                <a href="${blog.slug}.html" class="text-decoration-none">
+                    <div class="s-cm-pic-card h-100">
+                        <div class="s-cm-pic-card-img">
+                            <img src="${blog.image}" alt="${blog.title}" loading="lazy">
+                            <div class="s-cm-pic-card-img-overlay"></div>
+                            <div class="s-cm-pic-card-img-badge">
+                                <span class="s-pill s-pill-${p.color} s-pill-sm">
+                                    <i class="${p.icon} me-1"></i>${blog.pillar}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="s-cm-pic-card-content p-4">
+                            <h5 class="s-cm-pic-card-title s-text-gradient-${p.color} mb-2">${blog.title}</h5>
+                            <p class="s-cm-pic-card-text s-text-gray-600 mb-3">${blog.excerpt}</p>
+                            <div class="s-cm-pic-card-action">
+                                <span class="s-btn s-btn-${p.color} s-btn-sm">
+                                    Read <i class="fas fa-arrow-right ms-1"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>`;
+        }).join('');
+    }
+
+    function updateCount(total) {
+        document.getElementById('count-showing').textContent = total;
+    }
+
+    let activePillar = '';
+    let searchTerm = '';
+    let sortMode = 'newest';
+
+    function getFiltered() {
+        return blogs.filter(b =>
+            (!activePillar || b.pillar === activePillar) &&
+            (!searchTerm || b.title.toLowerCase().includes(searchTerm) || b.excerpt.toLowerCase().includes(searchTerm))
+        );
+    }
+
+    function getSorted(list) {
+        const copy = [...list];
+        if (sortMode === 'newest') return copy.sort((a,b) => new Date(b.date) - new Date(a.date));
+        if (sortMode === 'oldest') return copy.sort((a,b) => new Date(a.date) - new Date(b.date));
+        if (sortMode === 'read-asc') return copy.sort((a,b) => a.readMin - b.readMin);
+        if (sortMode === 'read-desc') return copy.sort((a,b) => b.readMin - a.readMin);
+        return copy;
+    }
+
+    function applyFilters() {
+        const filtered = getSorted(getFiltered());
+        renderBlogs(filtered);
+        updateCount(filtered.length);
+    }
+
+    function resetFilters() {
+        activePillar = '';
+        searchTerm = '';
+        document.getElementById('blog-search').value = '';
+        document.getElementById('pillar-filter-select').value = '';
+        applyFilters();
+    }
+
+    document.getElementById('blog-search').addEventListener('input', e => {
+        searchTerm = e.target.value.trim().toLowerCase();
+        applyFilters();
+    });
+
+    document.getElementById('pillar-filter-select').addEventListener('change', e => {
+        activePillar = e.target.value;
+        applyFilters();
+    });
+
+    document.getElementById('sort-select').addEventListener('change', e => {
+        sortMode = e.target.value;
+        applyFilters();
+    });
+
+    applyFilters();
+    </script>
+
+</body>
+</html>
