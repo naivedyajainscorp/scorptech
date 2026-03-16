@@ -1,4 +1,162 @@
-﻿<!DOCTYPE html>
+
+
+/* ════════════════════════════════════════════════════════════════════════════
+   SAPPHIRE PAGE INITIALIZATION
+   ════════════════════════════════════════════════════════════════════════════ */
+
+console.log('💎 Sapphire page initialization started');
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 1. AOS (Animate On Scroll) Initialization
+// ─────────────────────────────────────────────────────────────────────────────
+
+function initAOS() {
+  if (typeof AOS === 'undefined') {
+    console.warn('⚠️ AOS library not loaded');
+    return;
+  }
+  
+  AOS.init({
+    duration: 300,
+    once: true,
+    offset: 50
+  });
+  
+  console.log('✅ AOS initialized');
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 2. Sapphire Hero Grid Generator
+// ─────────────────────────────────────────────────────────────────────────────
+
+function initializeSapphireHeroGrid() {
+  const sapphireGrid = document.getElementById('sapphireCorporateGrid');
+  if (!sapphireGrid) {
+    console.log('ℹ️ Sapphire hero grid container not found');
+    return;
+  }
+
+  sapphireGrid.innerHTML = ''; // Clear existing content
+
+  // Calculate grid size based on screen size
+  let gridCols = 10;
+  let gridRows = 10;
+  
+  if (window.innerWidth < 576) {
+    gridCols = 5;
+    gridRows = 6;
+  } else if (window.innerWidth < 768) {
+    gridCols = 6;
+    gridRows = 8;
+  } else if (window.innerWidth < 992) {
+    gridCols = 8;
+    gridRows = 9;
+  }
+
+  const totalCells = gridCols * gridRows;
+
+  // Create grid cells with Sapphire-specific classes
+  for (let i = 0; i < totalCells; i++) {
+    const gridCell = document.createElement('div');
+    gridCell.className = 'sapphire-grid-cell';
+
+    // Add pulse element
+    const gridPulse = document.createElement('div');
+    gridPulse.className = 'sapphire-grid-pulse';
+
+    // Add random delay for staggered animation
+    const randomDelay = Math.random() * 2;
+    gridCell.style.animationDelay = `${randomDelay}s`;
+    gridPulse.style.animationDelay = `${randomDelay + 1}s`;
+
+    gridCell.appendChild(gridPulse);
+    sapphireGrid.appendChild(gridCell);
+  }
+
+  console.log(`✅ Sapphire hero grid initialized (${gridCols}x${gridRows} = ${totalCells} cells)`);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 3. Module Showcase — Tab + Panel System
+// ─────────────────────────────────────────────────────────────────────────────
+
+/* ══════════════════════════════════════════════════════
+   MODULE SHOWCASE — Tab + Panel System
+   Replaces all fullscreen core-module modal behaviour.
+   ══════════════════════════════════════════════════════ */
+
+function initModuleShowcase() {
+  const tabs      = document.querySelectorAll('.s-showcase-tab');
+  const panels    = document.querySelectorAll('.s-showcase-panel');
+  const showcase  = document.getElementById('module-showcase');
+  const navEl     = document.getElementById('showcaseNav');
+
+  if (!tabs.length || !panels.length) return;
+
+  function activateModule(moduleId) {
+    tabs.forEach(t => {
+      const isActive = t.dataset.showcaseTarget === moduleId;
+      t.classList.toggle('active', isActive);
+      t.setAttribute('aria-selected', String(isActive));
+    });
+
+    panels.forEach(p => {
+      p.classList.toggle('active', p.id === `showcase-${moduleId}`);
+    });
+
+    // Scroll active tab into view within the horizontal scroller
+    const activeTab = document.querySelector(`.s-showcase-tab[data-showcase-target="${moduleId}"]`);
+    activeTab?.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+  }
+
+  // Tab bar clicks
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => activateModule(tab.dataset.showcaseTarget));
+  });
+
+  // Card "Explore" buttons → scroll to showcase + activate module
+  document.querySelectorAll('[data-showcase-target]').forEach(btn => {
+    // Skip tabs themselves (they already have the click handler above)
+    if (btn.classList.contains('s-showcase-tab')) return;
+
+    btn.addEventListener('click', () => {
+      activateModule(btn.dataset.showcaseTarget);
+      const navOffset = navEl ? navEl.offsetHeight : 0;
+      const top = showcase.getBoundingClientRect().top + window.scrollY - 64 - navOffset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
+  });
+
+  console.log('✅ Module Showcase initialized');
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// INITIALIZATION
+// ─────────────────────────────────────────────────────────────────────────────
+
+document.addEventListener('DOMContentLoaded', () => {
+  initAOS();
+  initializeSapphireHeroGrid();
+  initModuleShowcase();
+
+  // Reinitialize grid on window resize (debounced)
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      initializeSapphireHeroGrid();
+    }, 250);
+  }, { passive: true });
+
+  console.log('✅ Sapphire page fully initialized');
+});
+
+// Remove loading class when page fully loads
+window.addEventListener('load', () => {
+  document.body.classList.remove('loading');
+}, { passive: true });
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -437,6 +595,360 @@
       <span class="s-text-gradient-primary fw-bold fst-italic">Sapphire Core Suite</span>
     </h2>
   </div> 
+  <!--mx-xl-5 mx-lg-3 p-lg-5 mx-md-1 px-md-2  -->
+<section class="container mb-4 core-modules-grid">
+    <!-- Workplace Management -->
+    <article class="core-modules-card" data-tilt aria-labelledby="title-workplace">
+      <header class="core-modules-card-head">
+        <div class="s-icon s-icon-blue"><i class="fas fa-building"></i></div>
+        <h3 id="title-workplace" class="core-modules-title">Workplace Management</h3>
+      </header>
+
+      <div id="crs-card-workplace" class="carousel slide core-modules-thumb-wrap" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="hover">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="core-modules-thumb d-block w-100"
+                src="assets/images/multi-workplace.png"
+                alt="Multiple workplaces" loading="eager" decoding="async">
+          </div>
+          <div class="carousel-item">
+            <img class="core-modules-thumb d-block w-100"
+                src="assets/images/workplace_management-citywide_workplaces.png"
+                alt="City-wide workplaces overview" loading="eager" decoding="async">
+          </div>
+          <div class="carousel-item">
+            <img class="core-modules-thumb d-block w-100"
+                src="assets/images/workplace_management-Owner_citywide_office.png"
+                alt="Owner citywide office controls" loading="lazy" decoding="async">
+          </div>
+          <div class="carousel-item">
+            <img class="core-modules-thumb d-block w-100"
+                src="assets/images/workplace-management-shift-timings.png"
+                alt="Multi Workplace shift and schedule management" loading="lazy" decoding="async">
+          </div>
+          <div class="carousel-item">
+            <img class="core-modules-thumb d-block w-100"
+                src="assets/images/workplace-management-analytics.png"
+                alt="Switch between multiple workplaces to view analytics" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="carousel-indicators core-modules-indicators">
+          <button type="button" data-bs-target="#crs-card-workplace" data-bs-slide-to="0" class="active" aria-current="true"></button>
+          <button type="button" data-bs-target="#crs-card-workplace" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#crs-card-workplace" data-bs-slide-to="2"></button>
+          <button type="button" data-bs-target="#crs-card-workplace" data-bs-slide-to="3"></button>
+          <button type="button" data-bs-target="#crs-card-workplace" data-bs-slide-to="4"></button>
+        </div>
+      </div>
+
+      <div class="pill-row mt-3">
+        <span class="s-pill">Manage</span>
+        <span class="s-pill">Monitor</span>
+        <span class="s-pill">Multi‑Site</span>
+      </div>
+
+      <p class="core-modules-desc mt-2">
+        Command operations from anywhere—manage multiple locations, schedules, and workflows with unprecedented clarity.
+      </p>
+
+      <div class="core-modules-stats mt-3">
+        <div class="core-modules-stat"><span class="core-modules-stat-head">24/7</span><span class="core-modules-stat-foot">ACCESS</span></div>
+        <div class="core-modules-stat"><span class="core-modules-stat-head">&infin;</span><span class="core-modules-stat-foot">LOCATIONS</span></div>
+      </div>
+
+      <button class="core-modules-btn mt-3" data-showcase-target="workplace" type="button">
+        Explore <i class="fas fa-arrow-right s-arrow"></i>
+      </button>
+    </article>
+
+    <!-- User Management -->
+    <article class="core-modules-card" data-tilt aria-labelledby="title-user">
+      <header class="core-modules-card-head">
+        <div class="s-icon s-icon-info"><i class="fas fa-2x fa-users"></i></div>
+        <h3 id="title-user" class="core-modules-title">User Management</h3>
+      </header>
+
+      <div id="crs-card-user" class="carousel slide core-modules-thumb-wrap" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="hover">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="core-modules-thumb d-block w-100" src="assets/images/user-management-1.png" alt="User profiles and records" loading="eager" decoding="async">
+          </div>
+          <div class="carousel-item">
+            <img class="core-modules-thumb d-block w-100" src="assets/images/user-management-2.jpeg" alt="Roles and permissions" loading="lazy" decoding="async">
+          </div>
+          <div class="carousel-item">
+            <img class="core-modules-thumb d-block w-100" src="assets/images/user-management-user-analytics.png" alt="user activity and tracking analytics" loading="lazy" decoding="async">
+          </div>
+          <div class="carousel-item">
+            <img class="core-modules-thumb d-block w-100" src="assets/images/user-management-4.png" alt="Roles and hierarchy distributions" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="carousel-indicators core-modules-indicators">
+          <button type="button" data-bs-target="#crs-card-user" data-bs-slide-to="0" class="active" aria-current="true"></button>
+          <button type="button" data-bs-target="#crs-card-user" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#crs-card-user" data-bs-slide-to="2"></button>
+          <button type="button" data-bs-target="#crs-card-user" data-bs-slide-to="3"></button>
+        </div>
+      </div>
+
+      <div class="pill-row mt-3">
+        <span class="s-pill">Security</span>
+        <span class="s-pill">RBAC</span>
+        <span class="s-pill">Control</span>
+      </div>
+
+      <p class="core-modules-desc mt-2">
+        Centralized hub to manage employees—profiles, access, activity, and granular role‑based permissions.
+      </p>
+
+      <div class="core-modules-stats mt-3">
+        <div class="core-modules-stat"><span class="core-modules-stat-head">SSO</span><span class="core-modules-stat-foot">LOGIN</span></div>
+        <div class="core-modules-stat"><span class="core-modules-stat-head">RBAC</span><span class="core-modules-stat-foot">CONTROL</span></div>
+      </div>
+
+      <button class="core-modules-btn mt-3" data-showcase-target="user" type="button">
+        Explore <i class="fas fa-arrow-right s-arrow"></i>
+      </button>
+    </article>
+
+    <!-- Master Data Management -->
+    <article class="core-modules-card" data-tilt aria-labelledby="title-master">
+      <header class="core-modules-card-head">
+        <div class="s-icon s-icon-green"><i class="fas fa-database"></i></div>
+        <h3 id="title-master" class="core-modules-title">Master Data Management (MDM)</h3>
+      </header>
+
+      <div id="crs-card-master" class="carousel slide core-modules-thumb-wrap" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="hover">
+        <div class="carousel-inner">
+          <div class="carousel-item active"><img class="core-modules-thumb d-block w-100" src="assets/images/masterdata-inventory.png" alt="Inventory categories" loading="eager"></div>
+          <div class="carousel-item"><img class="core-modules-thumb d-block w-100" src="assets/images/masterdata-locations.png" alt="Locations 5-level matrix" loading="lazy"></div>
+          <div class="carousel-item"><img class="core-modules-thumb d-block w-100" src="assets/images/masterdata-units.png" alt="Units of Measurement" loading="lazy"></div>
+        </div>
+        <div class="carousel-indicators core-modules-indicators">
+          <button type="button" data-bs-target="#crs-card-master" data-bs-slide-to="0" class="active" aria-current="true"></button>
+          <button type="button" data-bs-target="#crs-card-master" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#crs-card-master" data-bs-slide-to="2"></button>
+        </div>
+      </div>
+
+      <div class="pill-row mt-3"><span class="s-pill">Define</span><span class="s-pill">Govern</span><span class="s-pill">Utilize</span></div>
+      <p class="core-modules-desc mt-2">Centralizes critical operational definitions—every workflow draws from a single, consistent source.</p>
+
+      <div class="core-modules-stats mt-3">
+        <div class="core-modules-stat"><span class="core-modules-stat-head">5‑Level</span><span class="core-modules-stat-foot">MATRIX</span></div>
+        <div class="core-modules-stat"><span class="core-modules-stat-head">SI+Custom</span><span class="core-modules-stat-foot">UNITS</span></div>
+      </div>
+
+      <button class="core-modules-btn mt-3" data-showcase-target="master" type="button">
+        Explore <i class="fas fa-arrow-right s-arrow"></i>
+      </button>
+    </article>
+
+    <!-- Inventory Management -->
+    <article class="core-modules-card" data-tilt aria-labelledby="title-inventory">
+      <header class="core-modules-card-head">
+        <div class="s-icon s-icon-amber"><i class="fas fa-box-open"></i></div>
+        <h3 id="title-inventory" class="core-modules-title">Inventory Management</h3>
+      </header>
+
+      <div id="crs-card-inventory" class="carousel slide core-modules-thumb-wrap" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="hover">
+        <div class="carousel-inner">
+          <div class="carousel-item active"><img class="core-modules-thumb d-block w-100" src="assets/images/inventory-reserve.png" alt="Reserve assets" loading="eager"></div>
+          <div class="carousel-item"><img class="core-modules-thumb d-block w-100" src="assets/images/inventory-hand_tool_reserve.png" alt="Hand-tool reserve" loading="lazy"></div>
+          <div class="carousel-item"><img class="core-modules-thumb d-block w-100" src="assets/images/inventory-general_inventory.png" alt="Active inventory" loading="lazy"></div>
+        </div>
+        <div class="carousel-indicators core-modules-indicators">
+          <button type="button" data-bs-target="#crs-card-inventory" data-bs-slide-to="0" class="active" aria-current="true"></button>
+          <button type="button" data-bs-target="#crs-card-inventory" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#crs-card-inventory" data-bs-slide-to="2"></button>
+        </div>
+      </div>
+
+      <div class="pill-row mt-3"><span class="s-pill">Compartmentalized</span><span class="s-pill">Classified</span><span class="s-pill">Track</span></div>
+      <p class="core-modules-desc mt-2">End‑to‑end visibility across inventory tiers—from reserves to active floor items.</p>
+
+      <div class="core-modules-stats mt-3">
+        <div class="core-modules-stat"><span class="core-modules-stat-head">Reserve</span><span class="core-modules-stat-foot">ASSETS</span></div>
+        <div class="core-modules-stat"><span class="core-modules-stat-head">Active</span><span class="core-modules-stat-foot">INVENTORY</span></div>
+      </div>
+
+      <button class="core-modules-btn mt-3" data-showcase-target="inventory" type="button">
+        Explore <i class="fas fa-arrow-right s-arrow"></i>
+      </button>
+    </article>
+
+    <!-- Request Handling -->
+    <article class="core-modules-card" data-tilt aria-labelledby="title-request">
+      <header class="core-modules-card-head">
+        <div class="s-icon s-icon-red"><i class="fas fa-receipt"></i></div>
+        <h3 id="title-request" class="core-modules-title">Request Handling</h3>
+      </header>
+
+      <div id="crs-card-request" class="carousel slide core-modules-thumb-wrap" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="hover">
+        <div class="carousel-inner">
+          <div class="carousel-item active"><img class="core-modules-thumb d-block w-100" src="assets/images/request-issue_request.png" alt="Issue request" loading="eager"></div>
+          <div class="carousel-item"><img class="core-modules-thumb d-block w-100" src="assets/images/request-retrun_request.png" alt="Return request" loading="lazy"></div>
+          <div class="carousel-item"><img class="core-modules-thumb d-block w-100" src="assets/images/request-location_change.png" alt="Location change" loading="lazy"></div>
+        </div>
+        <div class="carousel-indicators core-modules-indicators">
+          <button type="button" data-bs-target="#crs-card-request" data-bs-slide-to="0" class="active" aria-current="true"></button>
+          <button type="button" data-bs-target="#crs-card-request" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#crs-card-request" data-bs-slide-to="2"></button>
+        </div>
+      </div>
+
+      <div class="pill-row mt-3"><span class="s-pill">Structured</span><span class="s-pill">Tracked</span><span class="s-pill">Approved</span></div>
+      <p class="core-modules-desc mt-2">Structured, automated approval flows for all asset requests—fully logged and transparently routed.</p>
+
+      <div class="core-modules-stats mt-3">
+        <div class="core-modules-stat"><span class="core-modules-stat-head">Issue</span><span class="core-modules-stat-foot">REQUESTS</span></div>
+        <div class="core-modules-stat"><span class="core-modules-stat-head">Return</span><span class="core-modules-stat-foot">REQUESTS</span></div>
+      </div>
+
+      <button class="core-modules-btn mt-3" data-showcase-target="request" type="button">
+        Explore <i class="fas fa-arrow-right s-arrow"></i>
+      </button>
+    </article>
+
+    <!-- Inspection & Reporting -->
+    <article class="core-modules-card" data-tilt aria-labelledby="title-inspection">
+      <header class="core-modules-card-head">
+        <div class="s-icon s-icon-slate"><i class="fas fa-clipboard-check"></i></div>
+        <h3 id="title-inspection" class="core-modules-title">Inspection & Reporting</h3>
+      </header>
+
+      <div id="crs-card-inspection-reporting" class="carousel slide core-modules-thumb-wrap" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="hover">
+        <div class="carousel-inner">
+          <div class="carousel-item active"><img class="core-modules-thumb d-block w-100" src="assets/images/inspection-reporting-1.png" alt="Issue request" loading="eager"></div>
+          <div class="carousel-item"><img class="core-modules-thumb d-block w-100" src="assets/images/inspection-reporting-2.png" alt="Return request" loading="lazy"></div>
+          <div class="carousel-item"><img class="core-modules-thumb d-block w-100" src="assets/images/inspection-reporting-3.png" alt="Location change" loading="lazy"></div>
+        </div>
+        <div class="carousel-indicators core-modules-indicators">
+          <button type="button" data-bs-target="#crs-card-inspection-reporting" data-bs-slide-to="0" class="active" aria-current="true"></button>
+          <button type="button" data-bs-target="#crs-card-inspection-reporting" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#crs-card-inspection-reporting" data-bs-slide-to="2"></button>
+        </div>
+      </div>
+
+      <div class="pill-row mt-3"><span class="s-pill">Inspect</span><span class="s-pill">Report</span><span class="s-pill">Record</span></div>
+      <p class="core-modules-desc mt-2">Specialized inspection workflows with checkpoints, schedules, reminders, and clear audit trails.</p>
+
+      <div class="core-modules-stats mt-3">
+        <div class="core-modules-stat"><span class="core-modules-stat-head">Checks</span><span class="core-modules-stat-foot">POINTS</span></div>
+        <div class="core-modules-stat"><span class="core-modules-stat-head">Audit</span><span class="core-modules-stat-foot">READY</span></div>
+      </div>
+
+      <button class="core-modules-btn mt-3" data-showcase-target="inspection" type="button">
+        Explore <i class="fas fa-arrow-right s-arrow"></i>
+      </button>
+    </article>
+
+    <!-- Report Resolution -->
+    <article class="core-modules-card" data-tilt aria-labelledby="title-resolution">
+      <header class="core-modules-card-head">
+        <div class="s-icon s-icon-info-special"><i class="fas fa-tools"></i></div>
+        <h3 id="title-resolution" class="core-modules-title">Report Resolution</h3>
+      </header>
+
+      <div id="crs-card-resolution" class="carousel slide core-modules-thumb-wrap" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="hover">
+        <div class="carousel-inner">
+          <div class="carousel-item active"><img class="core-modules-thumb d-block w-100" src="assets/images/resolution-repair.png" alt="Issue request" loading="eager"></div>
+          <div class="carousel-item"><img class="core-modules-thumb d-block w-100" src="assets/images/resolution-replacement.png" alt="Return request" loading="lazy"></div>
+          <div class="carousel-item"><img class="core-modules-thumb d-block w-100" src="assets/images/resolution-discard.png" alt="Location change" loading="lazy"></div>
+          <div class="carousel-item"><img class="core-modules-thumb d-block w-100" src="assets/images/resolution-data_entry.png" alt="Location change" loading="lazy"></div>
+          <div class="carousel-item"><img class="core-modules-thumb d-block w-100" src="assets/images/resolution-report_analysis.png" alt="Location change" loading="lazy"></div>
+        </div>
+        <div class="carousel-indicators core-modules-indicators">
+          <button type="button" data-bs-target="#crs-card-resolution" data-bs-slide-to="0" class="active" aria-current="true"></button>
+          <button type="button" data-bs-target="#crs-card-resolution" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#crs-card-resolution" data-bs-slide-to="2"></button>
+          <button type="button" data-bs-target="#crs-card-resolution" data-bs-slide-to="3"></button>
+          <button type="button" data-bs-target="#crs-card-resolution" data-bs-slide-to="4"></button>
+        </div>
+      </div>
+
+      <div class="pill-row mt-3"><span class="s-pill">Resolve</span><span class="s-pill">Restore</span><span class="s-pill">Traceable</span></div>
+      <p class="core-modules-desc mt-2">Turns inspection findings into actions—repairs, replacements, or discarding—with seamless traceability.</p>
+
+      <div class="core-modules-stats mt-3">
+        <div class="core-modules-stat"><span class="core-modules-stat-head">Repair</span><span class="core-modules-stat-foot">WORKFLOW</span></div>
+        <div class="core-modules-stat"><span class="core-modules-stat-head">Trace</span><span class="core-modules-stat-foot">LINKED</span></div>
+      </div>
+
+      <button class="core-modules-btn mt-3" data-showcase-target="resolution" type="button">
+        Explore <i class="fas fa-arrow-right s-arrow"></i>
+      </button>
+    </article>
+
+    <!-- Service & Maintenance -->
+    <article class="core-modules-card" data-tilt aria-labelledby="title-service">
+      <header class="core-modules-card-head">
+        <div class="s-icon s-icon-indigo"><i class="fas fa-wrench"></i></div>
+        <h3 id="title-service" class="core-modules-title">Service & Maintenance</h3>
+      </header>
+
+      <div id="crs-card-service-maintenance" class="carousel slide core-modules-thumb-wrap" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="hover">
+        <div class="carousel-inner">
+          <div class="carousel-item active"><img class="core-modules-thumb d-block w-100" src="assets/images/service_and_maintenance-set_reminders.png" alt="Issue request" loading="eager"></div>
+          <div class="carousel-item"><img class="core-modules-thumb d-block w-100" src="assets/images/service_and_maintenance-repair_&_service.png" alt="Return request" loading="lazy"></div>
+          <div class="carousel-item"><img class="core-modules-thumb d-block w-100" src="assets/images/service_and_maintenance-data_logging.png" alt="Location change" loading="lazy"></div>
+        </div>
+        <div class="carousel-indicators core-modules-indicators">
+          <button type="button" data-bs-target="#crs-card-service-maintenance" data-bs-slide-to="0" class="active" aria-current="true"></button>
+          <button type="button" data-bs-target="#crs-card-service-maintenance" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#crs-card-service-maintenance" data-bs-slide-to="2"></button>
+        </div>
+      </div>
+
+      <div class="pill-row mt-3"><span class="s-pill">Set Cycles</span><span class="s-pill">Log Events</span><span class="s-pill">Track Costs</span></div>
+      <p class="core-modules-desc mt-2">Centralizes all servicing, linking events with coverage plans, benefits, and cost integration.</p>
+
+      <div class="core-modules-stats mt-3">
+        <div class="core-modules-stat"><span class="core-modules-stat-head">Cycles</span><span class="core-modules-stat-foot">REMIND</span></div>
+        <div class="core-modules-stat"><span class="core-modules-stat-head">Events</span><span class="core-modules-stat-foot">LOGGED</span></div>
+      </div>
+
+      <button class="core-modules-btn mt-3" data-showcase-target="service" type="button">
+        Explore <i class="fas fa-arrow-right s-arrow"></i>
+      </button>
+    </article>
+
+    <!-- My Workstation -->
+    <article class="core-modules-card" data-tilt aria-labelledby="title-workstation">
+      <header class="core-modules-card-head">
+        <div class="s-icon s-icon-purple"><i class="fas fa-desktop"></i></div>
+        <h3 id="title-workstation" class="core-modules-title">My Workstation</h3>
+      </header>
+
+      <div id="crs-card-workstation" class="carousel slide core-modules-thumb-wrap"
+        data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="hover">
+          <div class="carousel-inner">
+            <div class="carousel-item active"><img class="core-modules-thumb d-block w-100" src="assets/images/my_workstation-toolbox.png" alt="Toolbox" loading="eager"></div>
+            <div class="carousel-item"><img class="core-modules-thumb d-block w-100" src="assets/images/my_workstation-workstation.png" alt="Workstation items" loading="lazy"></div>
+            <div class="carousel-item"><img class="core-modules-thumb d-block w-100" src="assets/images/my_workstation-vehicle.png" alt="Issued vehicles" loading="lazy"></div>
+          </div>
+          <div class="carousel-indicators core-modules-indicators">
+            <button type="button" data-bs-target="#crs-card-workstation" data-bs-slide-to="0" class="active" aria-current="true"></button>
+            <button type="button" data-bs-target="#crs-card-workstation" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#crs-card-workstation" data-bs-slide-to="2"></button>
+          </div>
+      </div>
+
+      <div class="pill-row mt-3"><span class="s-pill">Sync</span><span class="s-pill">Empower</span><span class="s-pill">Monitor</span></div>
+      <p class="core-modules-desc mt-2">Decentralized action, centralized intelligence—employee portal for assets and accountability.</p>
+
+      <div class="core-modules-stats mt-3">
+        <div class="core-modules-stat"><span class="core-modules-stat-head">Toolbox</span><span class="core-modules-stat-foot">TOOLS</span></div>
+        <div class="core-modules-stat"><span class="core-modules-stat-head">Vehicles</span><span class="core-modules-stat-foot">ISSUED</span></div>
+      </div>
+
+      <button class="core-modules-btn mt-3" data-showcase-target="workstation" type="button">
+        Explore <i class="fas fa-arrow-right s-arrow"></i>
+      </button>
+    </article>
+  </section>
+
+
 <!-- ═══════════════════════════════════════════════════════════════════
      SAPPHIRE MODULE SHOWCASE
      Replaces all fullscreen core-module modals.
@@ -477,6 +989,30 @@
                 aria-controls="showcase-service" data-showcase-target="service">
           <div class="s-icon s-icon-royal s-icon-sm"><i class="fas fa-wrench"></i></div>
           <span>Service</span>
+        </button>
+
+        <button class="s-showcase-tab" role="tab" aria-selected="false"
+                aria-controls="showcase-inspection" data-showcase-target="inspection">
+          <div class="s-icon s-icon-indigo s-icon-sm"><i class="fas fa-clipboard-check"></i></div>
+          <span>Inspections</span>
+        </button>
+
+        <button class="s-showcase-tab" role="tab" aria-selected="false"
+                aria-controls="showcase-request" data-showcase-target="request">
+          <div class="s-icon s-icon-attention s-icon-sm"><i class="fas fa-receipt"></i></div>
+          <span>Requests</span>
+        </button>
+
+        <button class="s-showcase-tab" role="tab" aria-selected="false"
+                aria-controls="showcase-master" data-showcase-target="master">
+          <div class="s-icon s-icon-success s-icon-sm"><i class="fas fa-database"></i></div>
+          <span>Master Data</span>
+        </button>
+
+        <button class="s-showcase-tab" role="tab" aria-selected="false"
+                aria-controls="showcase-resolution" data-showcase-target="resolution">
+          <div class="s-icon s-icon-info-special s-icon-sm"><i class="fas fa-file-chart-column"></i></div>
+          <span>Resolution</span>
         </button>
 
       </div>
@@ -559,6 +1095,12 @@
                 </div>
               </li>
             </ul>
+            <div class="core-module-pill-row mt-4">
+              <span class="core-module-pill"><i class="bi bi-buildings"></i> Multi-Branch</span>
+              <span class="core-module-pill"><i class="bi bi-gear"></i> Operate</span>
+              <span class="core-module-pill"><i class="bi bi-clock"></i> Anytime</span>
+              <span class="core-module-pill"><i class="bi bi-geo-alt"></i> Anywhere</span>
+            </div>
           </div>
           <div class="col-lg-7">
             <div class="s-showcase-screen-primary">
@@ -591,7 +1133,7 @@
                     <span class="s-label s-label-primary-soft s-label-sm"><i class="bi bi-map"></i> Network</span>
                   </div>
                 </div>
-                <p class="s-cm-feature-text s-text-justify">Manage every branch across cities from one unified dashboard. One login, all locations.</p>
+                <p class="s-cm-feature-text">Manage every branch across cities from one unified dashboard. One login, all locations.</p>
                 <div class="d-flex gap-2 flex-wrap">
                   <span class="s-pill s-pill-primary s-pill-sm"><i class="bi bi-buildings"></i> Branches</span>
                   <span class="s-pill s-pill-info s-pill-sm"><i class="bi bi-map"></i> Map View</span>
@@ -612,7 +1154,7 @@
                     <span class="s-label s-label-royal-soft s-label-sm"><i class="bi bi-person-badge"></i> Command</span>
                   </div>
                 </div>
-                <p class="s-cm-feature-text s-text-justify">Top-level visibility across all operations. Watch the entire business move from a single screen.</p>
+                <p class="s-cm-feature-text">Top-level visibility across all operations. Watch the entire business move from a single screen.</p>
                 <div class="d-flex gap-2 flex-wrap">
                   <span class="s-pill s-pill-royal s-pill-sm"><i class="bi bi-eye"></i> Oversight</span>
                   <span class="s-pill s-pill-green s-pill-sm"><i class="bi bi-check2-all"></i> Control</span>
@@ -633,7 +1175,7 @@
                     <span class="s-label s-label-success-soft s-label-sm"><i class="bi bi-clock"></i> Schedule</span>
                   </div>
                 </div>
-                <p class="s-cm-feature-text s-text-justify">Define and adjust shifts per branch with time guardrails. Visibility for managers and workers alike.</p>
+                <p class="s-cm-feature-text">Define and adjust shifts per branch with time guardrails. Visibility for managers and workers alike.</p>
                 <div class="d-flex gap-2 flex-wrap">
                   <span class="s-pill s-pill-green s-pill-sm"><i class="bi bi-calendar3"></i> Shifts</span>
                   <span class="s-pill s-pill-amber s-pill-sm"><i class="bi bi-alarm"></i> Alerts</span>
@@ -654,7 +1196,7 @@
                     <span class="s-label s-label-info-soft s-label-sm"><i class="bi bi-graph-up"></i> Insights</span>
                   </div>
                 </div>
-                <p class="s-cm-feature-text s-text-justify">Per-branch performance metrics rolled up into enterprise-level reporting with real-time data.</p>
+                <p class="s-cm-feature-text">Per-branch performance metrics rolled up into enterprise-level reporting with real-time data.</p>
                 <div class="d-flex gap-2 flex-wrap">
                   <span class="s-pill s-pill-info s-pill-sm"><i class="bi bi-bar-chart"></i> Reports</span>
                   <span class="s-pill s-pill-royal s-pill-sm"><i class="bi bi-lightning"></i> Live</span>
@@ -746,8 +1288,13 @@
                 </div>
               </li>
             </ul>
+            <div class="core-module-pill-row mt-4">
+              <span class="core-module-pill"><i class="bi bi-person-check"></i> RBAC</span>
+              <span class="core-module-pill"><i class="bi bi-shield-check"></i> Security</span>
+              <span class="core-module-pill"><i class="bi bi-activity"></i> Audit</span>
+              <span class="core-module-pill"><i class="bi bi-globe"></i> Everywhere</span>
+            </div>
           </div>
-
           <div class="col-lg-7">
             <div class="s-showcase-screen-primary">
               <img src="assets/images/user-management-1.png" alt="User Management — live interface" class="w-100">
@@ -778,7 +1325,7 @@
                     <span class="s-label s-label-royal-soft s-label-sm"><i class="bi bi-shield-lock"></i> RBAC</span>
                   </div>
                 </div>
-                <p class="s-cm-feature-text s-text-justify">Assign permissions with precision. Control what each role can see, do, and report on across all modules.</p>
+                <p class="s-cm-feature-text">Assign permissions with precision. Control what each role can see, do, and report on across all modules.</p>
               </div>
             </div>
           </div>
@@ -795,7 +1342,7 @@
                     <span class="s-label s-label-info-soft s-label-sm"><i class="bi bi-graph-up"></i> Insights</span>
                   </div>
                 </div>
-                <p class="s-cm-feature-text s-text-justify">Activity heatmaps, login patterns, and operational contribution data for every user on your team.</p>
+                <p class="s-cm-feature-text">Activity heatmaps, login patterns, and operational contribution data for every user on your team.</p>
               </div>
             </div>
           </div>
@@ -812,7 +1359,7 @@
                     <span class="s-label s-label-success-soft s-label-sm"><i class="bi bi-diagram-3"></i> Structure</span>
                   </div>
                 </div>
-                <p class="s-cm-feature-text s-text-justify">Visual org structure with cascading access. No ambiguity about who reports to whom or who can do what.</p>
+                <p class="s-cm-feature-text">Visual org structure with cascading access. No ambiguity about who reports to whom or who can do what.</p>
               </div>
             </div>
           </div>
@@ -900,8 +1447,12 @@
                 </div>
               </li>
             </ul>
+            <div class="core-module-pill-row mt-4">
+              <span class="core-module-pill"><i class="bi bi-arrow-repeat"></i> Sync</span>
+              <span class="core-module-pill"><i class="bi bi-person-gear"></i> Empower</span>
+              <span class="core-module-pill"><i class="bi bi-eye"></i> Monitor</span>
+            </div>
           </div>
-
           <div class="col-lg-7">
             <div class="s-showcase-screen-primary">
               <img src="assets/images/my_workstation-toolbox.png" alt="My Workstation — live interface" class="w-100">
@@ -932,7 +1483,7 @@
                     <span class="s-label s-label-pop-soft s-label-sm"><i class="bi bi-tools"></i> Personal</span>
                   </div>
                 </div>
-                <p class="s-cm-feature-text s-text-justify">Permanently issued tools with complete accountability. Conduct self-inspections, report damage, and track condition over time. Request repairs or replacements directly.</p>
+                <p class="s-cm-feature-text">Permanently issued tools with complete accountability. Conduct self-inspections, report damage, and track condition over time. Request repairs or replacements directly.</p>
                 <div class="d-flex gap-2 flex-wrap">
                   <span class="s-pill s-pill-pop s-pill-sm"><i class="bi bi-tools"></i> Tools</span>
                   <span class="s-pill s-pill-info s-pill-sm"><i class="bi bi-clipboard-check"></i> Inspect</span>
@@ -954,7 +1505,7 @@
                     <span class="s-label s-label-royal-soft s-label-sm"><i class="bi bi-laptop"></i> Assigned</span>
                   </div>
                 </div>
-                <p class="s-cm-feature-text s-text-justify">Items mapped to a specific workstation, role, and shift. Usage logs and responsibility chains built in from day one.</p>
+                <p class="s-cm-feature-text">Items mapped to a specific workstation, role, and shift. Usage logs and responsibility chains built in from day one.</p>
                 <div class="d-flex gap-2 flex-wrap">
                   <span class="s-pill s-pill-royal s-pill-sm"><i class="bi bi-person-badge"></i> Assigned</span>
                   <span class="s-pill s-pill-green s-pill-sm"><i class="bi bi-check-circle"></i> Accountable</span>
@@ -1039,7 +1590,11 @@
                 </div>
               </li>
             </ul>
-
+            <div class="core-module-pill-row mt-4">
+              <span class="core-module-pill"><i class="bi bi-box-seam"></i> Compartmentalized</span>
+              <span class="core-module-pill"><i class="bi bi-tags"></i> Classified</span>
+              <span class="core-module-pill"><i class="bi bi-activity"></i> Track</span>
+            </div>
           </div>
           <div class="col-lg-7">
             <div class="s-showcase-screen-primary">
@@ -1071,7 +1626,7 @@
                     <span class="s-label s-label-warning-soft s-label-sm"><i class="bi bi-box"></i> Storage</span>
                   </div>
                 </div>
-                <p class="s-cm-feature-text s-text-justify">Inactive and active-use items kept off the floor with complete lifecycle tracking.</p>
+                <p class="s-cm-feature-text">Inactive and active-use items kept off the floor with complete lifecycle tracking.</p>
               </div>
             </div>
           </div>
@@ -1088,7 +1643,7 @@
                     <span class="s-label s-label-pop-soft s-label-sm"><i class="bi bi-hammer"></i> Tools</span>
                   </div>
                 </div>
-                <p class="s-cm-feature-text s-text-justify">Permanently assigned tools issued to people or workstations. Full trail of who holds what and since when.</p>
+                <p class="s-cm-feature-text">Permanently assigned tools issued to people or workstations. Full trail of who holds what and since when.</p>
               </div>
             </div>
           </div>
@@ -1105,7 +1660,7 @@
                     <span class="s-label s-label-success-soft s-label-sm"><i class="bi bi-arrow-left-right"></i> Floor</span>
                   </div>
                 </div>
-                <p class="s-cm-feature-text s-text-justify">Request, consume, and dispense flows with real-time tracking at the operational floor level.</p>
+                <p class="s-cm-feature-text">Request, consume, and dispense flows with real-time tracking at the operational floor level.</p>
               </div>
             </div>
           </div>
@@ -1193,7 +1748,12 @@
                 </div>
               </li>
             </ul>
-
+            <div class="core-module-pill-row mt-4">
+              <span class="core-module-pill"><i class="bi bi-arrow-clockwise"></i> Restore</span>
+              <span class="core-module-pill"><i class="fa-solid fa-lightbulb"></i> Smart</span>
+              <span class="core-module-pill"><i class="bi bi-link-45deg"></i> Traceable</span>
+              <span class="core-module-pill"><i class="bi bi-file-earmark"></i> Paperless</span>
+            </div>
           </div>
           <div class="col-lg-7">
             <div class="s-showcase-screen-primary">
@@ -1225,7 +1785,7 @@
                     <span class="s-label s-label-royal-soft s-label-sm"><i class="bi bi-wrench"></i> Execution</span>
                   </div>
                 </div>
-                <p class="s-cm-feature-text s-text-justify">Log every repair event with technician, cost, parts used, and resolution time. Historical data builds your maintenance intelligence.</p>
+                <p class="s-cm-feature-text">Log every repair event with technician, cost, parts used, and resolution time. Historical data builds your maintenance intelligence.</p>
               </div>
             </div>
           </div>
@@ -1242,7 +1802,7 @@
                     <span class="s-label s-label-success-soft s-label-sm"><i class="bi bi-journal-text"></i> Records</span>
                   </div>
                 </div>
-                <p class="s-cm-feature-text s-text-justify">Structured data entry for every maintenance touchpoint. No loose notes, no missing records. Everything traceable.</p>
+                <p class="s-cm-feature-text">Structured data entry for every maintenance touchpoint. No loose notes, no missing records. Everything traceable.</p>
               </div>
             </div>
           </div>
@@ -1259,7 +1819,7 @@
                     <span class="s-label s-label-warning-soft s-label-sm"><i class="bi bi-alarm"></i> Alerts</span>
                   </div>
                 </div>
-                <p class="s-cm-feature-text s-text-justify">Schedule service reminders per asset, per interval. Due-date warnings escalate automatically until acknowledged.</p>
+                <p class="s-cm-feature-text">Schedule service reminders per asset, per interval. Due-date warnings escalate automatically until acknowledged.</p>
               </div>
             </div>
           </div>
@@ -1347,7 +1907,13 @@
                 </div>
               </li>
             </ul>
-
+            <div class="core-module-pill-row mt-4">
+              <span class="core-module-pill"><i class="bi bi-clipboard-check"></i> Inspect</span>
+              <span class="core-module-pill"><i class="bi bi-file-earmark-text"></i> Report</span>
+              <span class="core-module-pill"><i class="bi bi-journal-text"></i> Record</span>
+              <span class="core-module-pill"><i class="bi bi-file-earmark"></i> Paperless</span>
+              <span class="core-module-pill"><i class="bi bi-check-circle"></i> Reliable</span>
+            </div>
           </div>
           <div class="col-lg-7">
             <div class="s-showcase-screen-primary">
@@ -1466,7 +2032,12 @@
                 </div>
               </li>
             </ul>
-
+            <div class="core-module-pill-row mt-4">
+              <span class="core-module-pill"><i class="bi bi-send"></i> Submit</span>
+              <span class="core-module-pill"><i class="bi bi-diagram-3"></i> Route</span>
+              <span class="core-module-pill"><i class="bi bi-check2-circle"></i> Approve</span>
+              <span class="core-module-pill"><i class="bi bi-file-earmark"></i> Paperless</span>
+            </div>
           </div>
           <div class="col-lg-7">
             <div class="s-showcase-screen-primary">
@@ -1560,7 +2131,11 @@
                 </div>
               </li>
             </ul>
-
+            <div class="core-module-pill-row mt-4">
+              <span class="core-module-pill"><i class="bi bi-arrow-repeat"></i> Consistent</span>
+              <span class="core-module-pill"><i class="bi bi-globe"></i> Everywhere</span>
+              <span class="core-module-pill"><i class="bi bi-check-circle"></i> Consistency</span>
+            </div>
           </div>
           <div class="col-lg-7">
             <div class="s-showcase-screen-primary">
@@ -1592,7 +2167,7 @@
                     <span class="s-label s-label-danger-soft s-label-sm"><i class="bi bi-lightning"></i> Energy</span>
                   </div>
                 </div>
-                <p class="s-cm-feature-text s-text-justify">Fuel grades and electric specifications for vehicles and generators. Define petrol, diesel, CNG, and electric charging standards.</p>
+                <p class="s-cm-feature-text">Fuel grades and electric specifications for vehicles and generators. Define petrol, diesel, CNG, and electric charging standards.</p>
                 <div class="d-flex gap-2 flex-wrap">
                   <span class="s-pill s-pill-danger s-pill-sm"><i class="bi bi-droplet"></i> Grades</span>
                   <span class="s-pill s-pill-green s-pill-sm"><i class="bi bi-lightning-charge"></i> Electric</span>
@@ -1614,7 +2189,7 @@
                     <span class="s-label s-label-pop-soft s-label-sm"><i class="bi bi-shop"></i> Suppliers</span>
                   </div>
                 </div>
-                <p class="s-cm-feature-text s-text-justify">Normalize suppliers and manufacturers for analytics. Consistent brand data feeds clean reporting across all asset categories.</p>
+                <p class="s-cm-feature-text">Normalize suppliers and manufacturers for analytics. Consistent brand data feeds clean reporting across all asset categories.</p>
                 <div class="d-flex gap-2 flex-wrap">
                   <span class="s-pill s-pill-pop s-pill-sm"><i class="bi bi-tags"></i> Brands</span>
                   <span class="s-pill s-pill-info s-pill-sm"><i class="bi bi-graph-up"></i> Analytics</span>
@@ -1706,7 +2281,12 @@
                 </div>
               </li>
             </ul>
-
+            <div class="core-module-pill-row mt-4">
+              <span class="core-module-pill"><i class="bi bi-flag"></i> Flag</span>
+              <span class="core-module-pill"><i class="bi bi-arrow-right-circle"></i> Resolve</span>
+              <span class="core-module-pill"><i class="bi bi-link-45deg"></i> Traceable</span>
+              <span class="core-module-pill"><i class="bi bi-check-all"></i> Confirmed</span>
+            </div>
           </div>
           <div class="col-lg-7">
             <div class="s-showcase-screen-primary">
@@ -1757,8 +2337,8 @@
                 <h3 class="s-cm-feature-title s-text-gradient-primary">Manufacturing Plants & Factories</h3>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Production lines don't stop for paperwork — and they won't stop for a missing tool trolley either. Between precision instruments rotating through shifts, machinery due for calibration, and spare parts that vanish without a trail, the floor becomes a guessing game.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire puts every asset — from single-unit tools to composite assemblies — on a live ledger, with issue-return logs, maintenance cycles, and inspection schedules that actually run themselves.</p>
+            <p class="s-cm-feature-text">Production lines don't stop for paperwork — and they won't stop for a missing tool trolley either. Between precision instruments rotating through shifts, machinery due for calibration, and spare parts that vanish without a trail, the floor becomes a guessing game.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire puts every asset — from single-unit tools to composite assemblies — on a live ledger, with issue-return logs, maintenance cycles, and inspection schedules that actually run themselves.</p>
           </div>
         </div>
       </div>
@@ -1776,8 +2356,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-info">Service Stations</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Diagnostic tools, hydraulic lifts, and calibration rigs don't wait for you to remember when they were last serviced. They just fail — usually mid-job. Between technicians sharing tools across bays and no formal record of who has what, the station runs on memory and luck.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire replaces both with chain-of-custody issue logs, automated inspection cycles, and maintenance reminders that don't require a sticky note to function.</p>
+            <p class="s-cm-feature-text">Diagnostic tools, hydraulic lifts, and calibration rigs don't wait for you to remember when they were last serviced. They just fail — usually mid-job. Between technicians sharing tools across bays and no formal record of who has what, the station runs on memory and luck.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire replaces both with chain-of-custody issue logs, automated inspection cycles, and maintenance reminders that don't require a sticky note to function.</p>
           </div>
         </div>
       </div>
@@ -1795,8 +2375,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-amber">Construction & Engineering Sites</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Heavy equipment across multiple sites, rental vs. owned assets nobody's properly documented, and safety inspections that someone keeps meaning to schedule. The site doesn't care about intentions — it cares about uptime.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire tracks every asset across locations, flags overdue service cycles, and maintains complete inspection audit trails — whether the crane belongs to you or someone you're paying by the day.</p>
+            <p class="s-cm-feature-text">Heavy equipment across multiple sites, rental vs. owned assets nobody's properly documented, and safety inspections that someone keeps meaning to schedule. The site doesn't care about intentions — it cares about uptime.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire tracks every asset across locations, flags overdue service cycles, and maintains complete inspection audit trails — whether the crane belongs to you or someone you're paying by the day.</p>
           </div>
         </div>
       </div>
@@ -1814,8 +2394,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-green">Warehouses & Logistics Centers</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">A broken forklift at the wrong hour doesn't just slow you down — it turns into a missed SLA and an awkward conversation with a client. Material handling equipment sees brutal daily use and rarely gets the attention it deserves until something breaks.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire tracks every piece of handling equipment through its service cycle, logs floor-level usage in real time, and ensures the next inspection isn't just an intention on a calendar.</p>
+            <p class="s-cm-feature-text">A broken forklift at the wrong hour doesn't just slow you down — it turns into a missed SLA and an awkward conversation with a client. Material handling equipment sees brutal daily use and rarely gets the attention it deserves until something breaks.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire tracks every piece of handling equipment through its service cycle, logs floor-level usage in real time, and ensures the next inspection isn't just an intention on a calendar.</p>
           </div>
         </div>
       </div>
@@ -1844,8 +2424,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-danger">Hospitals</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Medical equipment doesn't come with a grace period for negligence. A ventilator with an overdue calibration, an infusion pump without a maintenance record — these aren't administrative oversights, they're liability.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire maintains complete asset histories, automates PPM schedules, and tracks warranty and service contracts so clinical teams focus on patients, not paperwork chasing compliance officers down corridors.</p>
+            <p class="s-cm-feature-text">Medical equipment doesn't come with a grace period for negligence. A ventilator with an overdue calibration, an infusion pump without a maintenance record — these aren't administrative oversights, they're liability.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire maintains complete asset histories, automates PPM schedules, and tracks warranty and service contracts so clinical teams focus on patients, not paperwork chasing compliance officers down corridors.</p>
           </div>
         </div>
       </div>
@@ -1863,8 +2443,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-info">Diagnostic Centers</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">CT scanners and MRI machines don't earn revenue sitting idle. Every missed maintenance window is a missed appointment — which, if you follow the logic, is a missed invoice.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire automates service scheduling, flags AMC renewals before they quietly lapse, and logs every calibration event with a clean audit trail. The equipment stays operational, the compliance officer stays calm, and the appointments keep running.</p>
+            <p class="s-cm-feature-text">CT scanners and MRI machines don't earn revenue sitting idle. Every missed maintenance window is a missed appointment — which, if you follow the logic, is a missed invoice.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire automates service scheduling, flags AMC renewals before they quietly lapse, and logs every calibration event with a clean audit trail. The equipment stays operational, the compliance officer stays calm, and the appointments keep running.</p>
           </div>
         </div>
       </div>
@@ -1882,8 +2462,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-royal">Research & Test Laboratories</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Lab instruments are expensive, shared, and precise — three qualities that make poor tracking genuinely costly. When a result gets questioned, the first thing an audit asks is whether the instrument was calibrated.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire tracks every issue-return cycle, maintains calibration records against each asset, and keeps a searchable inspection history so data integrity never hangs on someone's memory.</p>
+            <p class="s-cm-feature-text">Lab instruments are expensive, shared, and precise — three qualities that make poor tracking genuinely costly. When a result gets questioned, the first thing an audit asks is whether the instrument was calibrated.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire tracks every issue-return cycle, maintains calibration records against each asset, and keeps a searchable inspection history so data integrity never hangs on someone's memory.</p>
           </div>
         </div>
       </div>
@@ -1912,8 +2492,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-primary">Corporate Offices</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Office infrastructure fails quietly — the HVAC underperforms for months before anyone formally logs it, the UPS battery is three years past replacement, and the AV system in the boardroom dies right before the pitch.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire tracks AMC schedules, manages asset assignments across departments, and ensures the systems running your office aren't maintained solely in someone's mental checklist.</p>
+            <p class="s-cm-feature-text">Office infrastructure fails quietly — the HVAC underperforms for months before anyone formally logs it, the UPS battery is three years past replacement, and the AV system in the boardroom dies right before the pitch.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire tracks AMC schedules, manages asset assignments across departments, and ensures the systems running your office aren't maintained solely in someone's mental checklist.</p>
           </div>
         </div>
       </div>
@@ -1931,8 +2511,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-indigo">Co-working & IT Parks</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Shared spaces have a peculiar talent for making accountability disappear. Networking hardware, access control systems, and common area equipment serve dozens of tenants — and belong definitively to none of them.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire assigns every asset a clear ownership record, tracks maintenance cycles across the facility, and gives management the visibility to resolve faults before the next tenant raises a formal complaint.</p>
+            <p class="s-cm-feature-text">Shared spaces have a peculiar talent for making accountability disappear. Networking hardware, access control systems, and common area equipment serve dozens of tenants — and belong definitively to none of them.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire assigns every asset a clear ownership record, tracks maintenance cycles across the facility, and gives management the visibility to resolve faults before the next tenant raises a formal complaint.</p>
           </div>
         </div>
       </div>
@@ -1950,8 +2530,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-pop">Retail Chains & Shopping Malls</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Escalators, HVAC systems, and POS terminals spread across a dozen outlets — and the central team has no clear idea which ones are overdue for service. One non-functional escalator becomes a footfall problem.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire centralizes maintenance scheduling across all locations, tracks inspection histories per asset, and ensures nothing operationally critical is quietly waiting to fail during peak hours.</p>
+            <p class="s-cm-feature-text">Escalators, HVAC systems, and POS terminals spread across a dozen outlets — and the central team has no clear idea which ones are overdue for service. One non-functional escalator becomes a footfall problem.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire centralizes maintenance scheduling across all locations, tracks inspection histories per asset, and ensures nothing operationally critical is quietly waiting to fail during peak hours.</p>
           </div>
         </div>
       </div>
@@ -1969,8 +2549,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-amber">Real Estate Developers</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Properties get handed over. Warranties quietly expire. MEP systems go unserviced because nobody formalized the AMC in the handover chaos. Managing assets across under-construction and completed projects without a structured system means things fall through the cracks — expensive cracks.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire tracks asset lifecycle from procurement through handover, documents warranties, and keeps post-handover obligations from becoming forgotten ones.</p>
+            <p class="s-cm-feature-text">Properties get handed over. Warranties quietly expire. MEP systems go unserviced because nobody formalized the AMC in the handover chaos. Managing assets across under-construction and completed projects without a structured system means things fall through the cracks — expensive cracks.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire tracks asset lifecycle from procurement through handover, documents warranties, and keeps post-handover obligations from becoming forgotten ones.</p>
           </div>
         </div>
       </div>
@@ -1999,8 +2579,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-primary">Schools, Universities & Colleges</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">A campus runs thousands of assets — lab equipment, sports infrastructure, generators, HVAC — spread across buildings nobody fully maps. Inspections get skipped, replacements happen reactively, and the finance team argues with facilities about what was purchased when.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire structures the entire asset inventory with bulk onboarding, automated inspection cycles, and depreciation tracking that keeps everyone's spreadsheet honest.</p>
+            <p class="s-cm-feature-text">A campus runs thousands of assets — lab equipment, sports infrastructure, generators, HVAC — spread across buildings nobody fully maps. Inspections get skipped, replacements happen reactively, and the finance team argues with facilities about what was purchased when.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire structures the entire asset inventory with bulk onboarding, automated inspection cycles, and depreciation tracking that keeps everyone's spreadsheet honest.</p>
           </div>
         </div>
       </div>
@@ -2018,8 +2598,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-green">Training & Vocational Centers</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Trade equipment gets handled hard by people learning to handle it — lathes, welders, simulators — and the wear shows. Without a formal issue-return system and maintenance schedule, equipment degrades quietly until it's unusable during a session.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire tracks tool distribution through My Workstation, logs usage cycles, and automates service scheduling so trainees always work with equipment that's been cleared to run.</p>
+            <p class="s-cm-feature-text">Trade equipment gets handled hard by people learning to handle it — lathes, welders, simulators — and the wear shows. Without a formal issue-return system and maintenance schedule, equipment degrades quietly until it's unusable during a session.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire tracks tool distribution through My Workstation, logs usage cycles, and automates service scheduling so trainees always work with equipment that's been cleared to run.</p>
           </div>
         </div>
       </div>
@@ -2048,8 +2628,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-amber">Hotels, Guest Houses & Lodges</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">An offline lift or a malfunctioning AC in a guest room isn't an inconvenience — it's a review. Hospitality properties run on the invisible work of maintaining hundreds of assets operating around the clock.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire schedules preventive maintenance across every floor and facility, tracks AMC contracts and warranty claims, and ensures the infrastructure holding the guest experience together doesn't quietly let it fall apart.</p>
+            <p class="s-cm-feature-text">An offline lift or a malfunctioning AC in a guest room isn't an inconvenience — it's a review. Hospitality properties run on the invisible work of maintaining hundreds of assets operating around the clock.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire schedules preventive maintenance across every floor and facility, tracks AMC contracts and warranty claims, and ensures the infrastructure holding the guest experience together doesn't quietly let it fall apart.</p>
           </div>
         </div>
       </div>
@@ -2067,8 +2647,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-danger">Restaurants & Cafes</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Commercial kitchens fail at the worst times — usually during service. When refrigeration loses temperature or the exhaust system acts up, you're not just dealing with a breakdown, you're dealing with a food safety risk.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire automates maintenance scheduling for every piece of kitchen equipment, tracks service vendor history, and keeps warranty and AMC records from becoming something you remember only after the incident.</p>
+            <p class="s-cm-feature-text">Commercial kitchens fail at the worst times — usually during service. When refrigeration loses temperature or the exhaust system acts up, you're not just dealing with a breakdown, you're dealing with a food safety risk.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire automates maintenance scheduling for every piece of kitchen equipment, tracks service vendor history, and keeps warranty and AMC records from becoming something you remember only after the incident.</p>
           </div>
         </div>
       </div>
@@ -2086,8 +2666,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-royal">Clubs & Leisure Facilities</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">AV rigs, lighting systems, HVAC, and pool treatment equipment all have service windows that don't care about the event calendar. Miss one, and a member notices before maintenance does.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire tracks every asset's maintenance cycle across the facility, logs inspection outcomes, and surfaces upcoming service due dates before they become mid-event surprises. The experience holds because the infrastructure actually does.</p>
+            <p class="s-cm-feature-text">AV rigs, lighting systems, HVAC, and pool treatment equipment all have service windows that don't care about the event calendar. Miss one, and a member notices before maintenance does.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire tracks every asset's maintenance cycle across the facility, logs inspection outcomes, and surfaces upcoming service due dates before they become mid-event surprises. The experience holds because the infrastructure actually does.</p>
           </div>
         </div>
       </div>
@@ -2105,8 +2685,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-green">Fitness Centers & Gyms</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Treadmills used by forty people a day have finite patience for neglect. When one fails, it's a breakdown, a complaint, and a potential liability — in that order.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire tracks usage per asset, automates preventive maintenance scheduling, and manages warranty claims so the floor stays fully operational. Members pay for results, not explanations about equipment that was overdue for service three months ago.</p>
+            <p class="s-cm-feature-text">Treadmills used by forty people a day have finite patience for neglect. When one fails, it's a breakdown, a complaint, and a potential liability — in that order.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire tracks usage per asset, automates preventive maintenance scheduling, and manages warranty claims so the floor stays fully operational. Members pay for results, not explanations about equipment that was overdue for service three months ago.</p>
           </div>
         </div>
       </div>
@@ -2135,8 +2715,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-primary">Transportation Agencies</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">A fleet without structured maintenance records is an audit waiting to happen and a breakdown waiting to occur. Service intervals slip, permit renewals get missed, and the compliance paper trail is whatever someone assembled the morning of the inspection.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire tracks every vehicle's service history, flags permit and insurance renewals before expiry, and keeps the full documentation chain intact without requiring a dedicated person to chase it.</p>
+            <p class="s-cm-feature-text">A fleet without structured maintenance records is an audit waiting to happen and a breakdown waiting to occur. Service intervals slip, permit renewals get missed, and the compliance paper trail is whatever someone assembled the morning of the inspection.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire tracks every vehicle's service history, flags permit and insurance renewals before expiry, and keeps the full documentation chain intact without requiring a dedicated person to chase it.</p>
           </div>
         </div>
       </div>
@@ -2154,8 +2734,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-amber">Logistics & Fleet Operations</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Delivery commitments are only as reliable as the vehicles honoring them. A breakdown mid-route doesn't just delay one shipment — it triggers a cascade.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire manages preventive maintenance for every fleet asset, logs fuel consumption and trip data per vehicle, and tracks breakdown patterns so corrective action comes before the next unplanned roadside stop. The fleet moves. The SLAs hold.</p>
+            <p class="s-cm-feature-text">Delivery commitments are only as reliable as the vehicles honoring them. A breakdown mid-route doesn't just delay one shipment — it triggers a cascade.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire manages preventive maintenance for every fleet asset, logs fuel consumption and trip data per vehicle, and tracks breakdown patterns so corrective action comes before the next unplanned roadside stop. The fleet moves. The SLAs hold.</p>
           </div>
         </div>
       </div>
@@ -2184,8 +2764,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-royal">Movie Theaters</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Projection systems, surround sound rigs, and HVAC have no interest in your show schedule — they'll fail whenever they're due. Managing maintenance across multiple screens with shared technical assets and overlapping service contracts requires more than a mental note.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire tracks inspection cycles per screen, manages AMC records, and gives technical teams a live view of what's serviced, what's pending, and what's quietly overdue.</p>
+            <p class="s-cm-feature-text">Projection systems, surround sound rigs, and HVAC have no interest in your show schedule — they'll fail whenever they're due. Managing maintenance across multiple screens with shared technical assets and overlapping service contracts requires more than a mental note.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire tracks inspection cycles per screen, manages AMC records, and gives technical teams a live view of what's serviced, what's pending, and what's quietly overdue.</p>
           </div>
         </div>
       </div>
@@ -2203,8 +2783,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-pop">Concert Halls</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">High-value rigging systems, lighting rigs, and stage machinery go through intense use, then sit in storage until the next booking. The damage missed between deployments is the damage that causes the incident.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire logs post-event inspection outcomes, maintains service histories for load-bearing and technical assets, and ensures that when the hall gets booked again, every asset is ready — not just assumed to be.</p>
+            <p class="s-cm-feature-text">High-value rigging systems, lighting rigs, and stage machinery go through intense use, then sit in storage until the next booking. The damage missed between deployments is the damage that causes the incident.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire logs post-event inspection outcomes, maintains service histories for load-bearing and technical assets, and ensures that when the hall gets booked again, every asset is ready — not just assumed to be.</p>
           </div>
         </div>
       </div>
@@ -2222,8 +2802,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-info-special">Amusement Parks & Event Zones</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Rides operate under safety inspection regimes where a missed log entry is as serious as a mechanical fault. Managing inspection cycles, certification expiry dates, and operator qualifications across dozens of attractions without a structured system is a liability that compounds quietly.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire automates inspection scheduling, maintains complete audit trails, and flags upcoming certification deadlines before they become compliance failures.</p>
+            <p class="s-cm-feature-text">Rides operate under safety inspection regimes where a missed log entry is as serious as a mechanical fault. Managing inspection cycles, certification expiry dates, and operator qualifications across dozens of attractions without a structured system is a liability that compounds quietly.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire automates inspection scheduling, maintains complete audit trails, and flags upcoming certification deadlines before they become compliance failures.</p>
           </div>
         </div>
       </div>
@@ -2252,8 +2832,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-primary">Airport Hangars</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Aviation maintenance operates at a level of documentation rigor that makes most industries look casual. Every tool that enters a maintenance bay has a calibration record. Every service event has a traceable log.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire maintains chain-of-custody for all tooling and support equipment, tracks calibration schedules per asset, and creates the audit trails that aviation authority compliance requires — not after the fact, but as a matter of routine.</p>
+            <p class="s-cm-feature-text">Aviation maintenance operates at a level of documentation rigor that makes most industries look casual. Every tool that enters a maintenance bay has a calibration record. Every service event has a traceable log.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire maintains chain-of-custody for all tooling and support equipment, tracks calibration schedules per asset, and creates the audit trails that aviation authority compliance requires — not after the fact, but as a matter of routine.</p>
           </div>
         </div>
       </div>
@@ -2271,8 +2851,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-info">Ground Support Bays</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Ground support operates on margins that don't accommodate surprises. Towing vehicles, fuel trucks, and baggage handling systems have to be ready at turnaround — not en route to a service bay.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire schedules preventive maintenance across every ground support asset, logs operator-reported faults in real time, and tracks asset availability so the support bay never becomes the reason a turnaround runs late.</p>
+            <p class="s-cm-feature-text">Ground support operates on margins that don't accommodate surprises. Towing vehicles, fuel trucks, and baggage handling systems have to be ready at turnaround — not en route to a service bay.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire schedules preventive maintenance across every ground support asset, logs operator-reported faults in real time, and tracks asset availability so the support bay never becomes the reason a turnaround runs late.</p>
           </div>
         </div>
       </div>
@@ -2290,8 +2870,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-royal">Shipping Ports & Docks</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Port cranes and heavy loading equipment operate under extreme load in conditions that accelerate wear faster than scheduled intervals assume. Missing a maintenance window isn't just a compliance risk — it's a structural one.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire tracks service cycles for every piece of lifting and handling equipment, maintains inspection logs for audit requirements, and manages spare parts records so critical assets don't sit idle waiting for a part nobody tracked.</p>
+            <p class="s-cm-feature-text">Port cranes and heavy loading equipment operate under extreme load in conditions that accelerate wear faster than scheduled intervals assume. Missing a maintenance window isn't just a compliance risk — it's a structural one.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire tracks service cycles for every piece of lifting and handling equipment, maintains inspection logs for audit requirements, and manages spare parts records so critical assets don't sit idle waiting for a part nobody tracked.</p>
           </div>
         </div>
       </div>
@@ -2309,8 +2889,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-amber">Cargo Terminals</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Forklifts, conveyor systems, and temperature-controlled storage don't get a day off. When any one of them fails, cargo commitments fail with them.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire tracks maintenance schedules across every terminal asset, logs breakdown events with full resolution chains, and keeps compliance records inspection-ready so port authority audits don't become an operational fire drill on top of an already demanding operation.</p>
+            <p class="s-cm-feature-text">Forklifts, conveyor systems, and temperature-controlled storage don't get a day off. When any one of them fails, cargo commitments fail with them.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire tracks maintenance schedules across every terminal asset, logs breakdown events with full resolution chains, and keeps compliance records inspection-ready so port authority audits don't become an operational fire drill on top of an already demanding operation.</p>
           </div>
         </div>
       </div>
@@ -2339,8 +2919,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-primary">Municipal Departments</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Public assets span vehicles, road machinery, public lighting, and infrastructure spread across geographies large enough to lose things in. Without structured lifecycle tracking, assets go unserviced, replacements happen prematurely, and the audit trail is whatever spreadsheet someone partially maintained.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire tracks every public asset from procurement to disposal — bringing the accountability that public infrastructure spending demands and rarely gets.</p>
+            <p class="s-cm-feature-text">Public assets span vehicles, road machinery, public lighting, and infrastructure spread across geographies large enough to lose things in. Without structured lifecycle tracking, assets go unserviced, replacements happen prematurely, and the audit trail is whatever spreadsheet someone partially maintained.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire tracks every public asset from procurement to disposal — bringing the accountability that public infrastructure spending demands and rarely gets.</p>
           </div>
         </div>
       </div>
@@ -2358,8 +2938,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-indigo">Rail Maintenance Units</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Track maintenance equipment must be certified before deployment and accountable after return. Operating within strict maintenance windows means every missed service cycle has downstream consequences.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire tracks equipment readiness, automates pre-deployment inspection scheduling, and maintains the certification and operator records that make the difference between a maintenance window used efficiently and one quietly wasted.</p>
+            <p class="s-cm-feature-text">Track maintenance equipment must be certified before deployment and accountable after return. Operating within strict maintenance windows means every missed service cycle has downstream consequences.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire tracks equipment readiness, automates pre-deployment inspection scheduling, and maintains the certification and operator records that make the difference between a maintenance window used efficiently and one quietly wasted.</p>
           </div>
         </div>
       </div>
@@ -2377,8 +2957,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-info">Public Utility Boards</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Thousands of distributed assets — transformers, pumping stations, metering equipment — across service areas too large for manual oversight. A missed service cycle rarely stays isolated.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire centralizes maintenance scheduling, tracks fault histories per asset, and gives decision-makers the visibility to prioritize capital replacement before a field failure becomes a service disruption the public actually notices.</p>
+            <p class="s-cm-feature-text">Thousands of distributed assets — transformers, pumping stations, metering equipment — across service areas too large for manual oversight. A missed service cycle rarely stays isolated.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire centralizes maintenance scheduling, tracks fault histories per asset, and gives decision-makers the visibility to prioritize capital replacement before a field failure becomes a service disruption the public actually notices.</p>
           </div>
         </div>
       </div>
@@ -2396,8 +2976,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-green">State Workshops</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Government vehicles and machinery serve multiple departments from shared pools — which, in practice, means nobody fully owns maintenance accountability.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire tracks every asset across shared allocations, logs service histories per unit, and maintains formal induction-to-disposal records that prevent duplicate procurement and ensure public equipment stays assigned, serviced on schedule, and accounted for at every step.</p>
+            <p class="s-cm-feature-text">Government vehicles and machinery serve multiple departments from shared pools — which, in practice, means nobody fully owns maintenance accountability.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire tracks every asset across shared allocations, logs service histories per unit, and maintains formal induction-to-disposal records that prevent duplicate procurement and ensure public equipment stays assigned, serviced on schedule, and accounted for at every step.</p>
           </div>
         </div>
       </div>
@@ -2426,8 +3006,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-amber">Power Generation Units</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Turbines and generators don't negotiate with missed maintenance windows. When generation capacity fails, the downstream consequences are immediate and wide.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire tracks maintenance cycles for every critical asset, manages spare parts availability, and links every service event to its financial record — so the total cost of keeping the lights on is as visible as the consequence of not doing so.</p>
+            <p class="s-cm-feature-text">Turbines and generators don't negotiate with missed maintenance windows. When generation capacity fails, the downstream consequences are immediate and wide.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire tracks maintenance cycles for every critical asset, manages spare parts availability, and links every service event to its financial record — so the total cost of keeping the lights on is as visible as the consequence of not doing so.</p>
           </div>
         </div>
       </div>
@@ -2445,8 +3025,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-info">Water Supply Infrastructure</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Pumping stations, filtration systems, and pipelines serving entire communities require inspection discipline that manual systems can't deliver at scale.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire automates inspection scheduling across distributed infrastructure, tracks fault histories per asset, and maintains contractor and AMC records so service coverage never quietly lapses while the pipeline does its job without complaint.</p>
+            <p class="s-cm-feature-text">Pumping stations, filtration systems, and pipelines serving entire communities require inspection discipline that manual systems can't deliver at scale.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire automates inspection scheduling across distributed infrastructure, tracks fault histories per asset, and maintains contractor and AMC records so service coverage never quietly lapses while the pipeline does its job without complaint.</p>
           </div>
         </div>
       </div>
@@ -2464,8 +3044,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-danger">Transmission Networks</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">High-voltage infrastructure has a straightforward relationship with neglect: it absorbs it silently and then fails publicly. Grid reliability depends on inspection regimes that are executed, not just scheduled.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire automates inspection cycles for transmission assets, logs every field event against the asset record, and surfaces condition trends that let engineers act before a fault cascades into something the grid can't quietly absorb.</p>
+            <p class="s-cm-feature-text">High-voltage infrastructure has a straightforward relationship with neglect: it absorbs it silently and then fails publicly. Grid reliability depends on inspection regimes that are executed, not just scheduled.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire automates inspection cycles for transmission assets, logs every field event against the asset record, and surfaces condition trends that let engineers act before a fault cascades into something the grid can't quietly absorb.</p>
           </div>
         </div>
       </div>
@@ -2494,8 +3074,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-green">Farm Equipment Warehouses</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Agricultural machinery is idle for months and then absolutely critical for weeks. Finding out a tractor is due for service when the season has already arrived isn't a scheduling problem — it's a revenue problem.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire tracks maintenance histories and upcoming service cycles year-round, manages spare parts stock, and ensures every asset in the warehouse is field-ready when the field actually needs it.</p>
+            <p class="s-cm-feature-text">Agricultural machinery is idle for months and then absolutely critical for weeks. Finding out a tractor is due for service when the season has already arrived isn't a scheduling problem — it's a revenue problem.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire tracks maintenance histories and upcoming service cycles year-round, manages spare parts stock, and ensures every asset in the warehouse is field-ready when the field actually needs it.</p>
           </div>
         </div>
       </div>
@@ -2513,8 +3093,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-amber">Agro-Processing Units</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Processing lines don't respect harvest timelines. A conveyor failure or milling breakdown during peak season translates directly to crop losses and broken commitments.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire tracks service cycles for every piece of processing equipment, automates maintenance reminders, and manages spare parts inventory against equipment-level consumption — so the line keeps running when the pressure to run it is highest.</p>
+            <p class="s-cm-feature-text">Processing lines don't respect harvest timelines. A conveyor failure or milling breakdown during peak season translates directly to crop losses and broken commitments.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire tracks service cycles for every piece of processing equipment, automates maintenance reminders, and manages spare parts inventory against equipment-level consumption — so the line keeps running when the pressure to run it is highest.</p>
           </div>
         </div>
       </div>
@@ -2532,8 +3112,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-info">Fertilizer & Irrigation Depots</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Storage tanks, pumps, and distribution equipment handling regulated materials operate under compliance obligations that make "we missed the inspection" an expensive statement.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire tracks inspection schedules and safety certifications for every piece of containment and handling equipment, maintaining the audit trail that regulators expect — and that incidents, when they happen, require you to actually have.</p>
+            <p class="s-cm-feature-text">Storage tanks, pumps, and distribution equipment handling regulated materials operate under compliance obligations that make "we missed the inspection" an expensive statement.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire tracks inspection schedules and safety certifications for every piece of containment and handling equipment, maintaining the audit trail that regulators expect — and that incidents, when they happen, require you to actually have.</p>
           </div>
         </div>
       </div>
@@ -2562,8 +3142,8 @@
                 <h5 class="s-cm-feature-title s-gradient-text-danger">Disaster Response Storage</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Response-readiness is the only metric that matters, and it's tested exactly once — during the emergency. Generators, rescue tools, and communication equipment that sit unused between deployments require structured inspection cycles to be trusted when deployed.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire automates inspection scheduling, tracks asset locations across storage sites, and ensures nothing reaches a deployment scenario without a verified service record behind it.</p>
+            <p class="s-cm-feature-text">Response-readiness is the only metric that matters, and it's tested exactly once — during the emergency. Generators, rescue tools, and communication equipment that sit unused between deployments require structured inspection cycles to be trusted when deployed.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire automates inspection scheduling, tracks asset locations across storage sites, and ensures nothing reaches a deployment scenario without a verified service record behind it.</p>
           </div>
         </div>
       </div>
@@ -2581,8 +3161,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-amber">Relief Logistics</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Relief operations move fast, in difficult conditions, with equipment that can't be replaced mid-mission. Vehicles and distribution assets need to be tracked, maintained, and located across deployment sites without administrative overhead nobody has time for during a crisis.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire maintains live asset location records, logs service histories, and tracks spare parts availability — so the logistics holds up when the operation demands it most.</p>
+            <p class="s-cm-feature-text">Relief operations move fast, in difficult conditions, with equipment that can't be replaced mid-mission. Vehicles and distribution assets need to be tracked, maintained, and located across deployment sites without administrative overhead nobody has time for during a crisis.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire maintains live asset location records, logs service histories, and tracks spare parts availability — so the logistics holds up when the operation demands it most.</p>
           </div>
         </div>
       </div>
@@ -2600,8 +3180,8 @@
                 <h5 class="s-cm-feature-title s-text-gradient-royal">Rescue Equipment Depots</h5>
               </div>
             </div>
-            <p class="s-cm-feature-text s-text-justify">Breathing apparatus, hydraulic tools, and life-safety equipment are not the category where "probably fine" is an acceptable assessment. Every post-deployment inspection needs to be logged. Every certification expiry date needs to be tracked.</p>
-            <p class="s-cm-feature-text s-text-justify mt-2">Sapphire automates inspection cycles, flags certifications approaching expiry, and maintains a complete deployment-to-return record so that when the call comes in, every asset in the depot can be trusted without hesitation.</p>
+            <p class="s-cm-feature-text">Breathing apparatus, hydraulic tools, and life-safety equipment are not the category where "probably fine" is an acceptable assessment. Every post-deployment inspection needs to be logged. Every certification expiry date needs to be tracked.</p>
+            <p class="s-cm-feature-text mt-2">Sapphire automates inspection cycles, flags certifications approaching expiry, and maintains a complete deployment-to-return record so that when the call comes in, every asset in the depot can be trusted without hesitation.</p>
           </div>
         </div>
       </div>
@@ -3323,3 +3903,4 @@ class IntelligenceAnalytics {
 
 </body>
 </html>
+

@@ -1,0 +1,1665 @@
+Now let me read the CSS files to understand the design variables and modal component styles.Now let me read the CSS file to get the design token variables.Now I have full context. Let me read the frontend design skill before producing the redesign.I now have a full picture of the codebase. Here's the complete architecture redesign.
+
+---
+
+## Architecture Decision
+
+**Out:** Nine fullscreen Bootstrap modals triggered from card buttons.
+
+**In:** A single `#module-showcase` section — a sticky-tab + inline panel system. The Core Suite cards stay as the visual index; their "Explore" buttons now scroll to and activate the right module panel. Every panel delivers: a tinted header strip (icon + title + stats), a 5/7 split (feature list + primary screenshot), and a sub-feature gallery using the existing `s-cm-pic-card` pattern — all with real UI screenshots from your asset library.
+
+---
+
+## File 1 — `sapphire.html`
+
+### Part A — Update the `core-modules-grid` card buttons
+
+Replace every `data-bs-toggle="modal" data-bs-target="#modal-*"` on the `core-modules-btn` elements:
+
+```html
+<!-- BEFORE: -->
+<button class="core-modules-btn mt-3" data-bs-toggle="modal" data-bs-target="#modal-workplace" type="button">
+  Explore <i class="fas fa-arrow-right s-arrow"></i>
+</button>
+
+<!-- AFTER: -->
+<button class="core-modules-btn mt-3" data-showcase-target="workplace" type="button">
+  Explore <i class="fas fa-arrow-right s-arrow"></i>
+</button>
+```
+
+Apply the same pattern to all other cards:
+
+| Old `data-bs-target` | New `data-showcase-target` |
+|---|---|
+| `#modal-workplace` | `workplace` |
+| `#modal-user` | `user` |
+| `#modal-inventory` | `inventory` |
+| `#modal-service` | `service` |
+| `#modal-inspection` | `inspection` |
+| `#modal-request` | `request` |
+| `#modal-master` | `master` |
+| `#modal-workstation` | `workstation` |
+| `#modal-resolution` | `resolution` |
+
+---
+
+### Part B — Remove all modal `<div>`s and replace with the showcase section
+
+Find the comment `<!-- Modals (subset shown; others mirror content) -->` and remove everything from that comment through to the last closing `</div></div></div>` of the final modal. Replace the entire block with the following:
+
+```html
+<!-- ═══════════════════════════════════════════════════════════════════
+     SAPPHIRE MODULE SHOWCASE
+     Replaces all fullscreen core-module modals.
+     Tab nav + inline panels. All modal content preserved in-page.
+     ═══════════════════════════════════════════════════════════════════ -->
+<section id="module-showcase" class="s-module-showcase">
+
+  <!-- ── Sticky Tab Navigation ── -->
+  <div class="s-showcase-nav" id="showcaseNav">
+    <div class="container-fluid">
+      <div class="s-showcase-tabs" role="tablist" aria-label="Sapphire Modules">
+
+        <button class="s-showcase-tab active" role="tab" aria-selected="true"
+                aria-controls="showcase-workplace" data-showcase-target="workplace">
+          <div class="s-icon s-icon-blue s-icon-sm"><i class="fas fa-building"></i></div>
+          <span>Workplace</span>
+        </button>
+
+        <button class="s-showcase-tab" role="tab" aria-selected="false"
+                aria-controls="showcase-user" data-showcase-target="user">
+          <div class="s-icon s-icon-info s-icon-sm"><i class="fas fa-users"></i></div>
+          <span>Users</span>
+        </button>
+
+        <button class="s-showcase-tab" role="tab" aria-selected="false"
+                aria-controls="showcase-workstation" data-showcase-target="workstation">
+          <div class="s-icon s-icon-pop s-icon-sm"><i class="fas fa-desktop"></i></div>
+          <span>My Station</span>
+        </button>
+
+        <button class="s-showcase-tab" role="tab" aria-selected="false"
+                aria-controls="showcase-inventory" data-showcase-target="inventory">
+          <div class="s-icon s-icon-amber s-icon-sm"><i class="fas fa-box-open"></i></div>
+          <span>Inventory</span>
+        </button>
+
+        <button class="s-showcase-tab" role="tab" aria-selected="false"
+                aria-controls="showcase-service" data-showcase-target="service">
+          <div class="s-icon s-icon-royal s-icon-sm"><i class="fas fa-wrench"></i></div>
+          <span>Service</span>
+        </button>
+
+        <button class="s-showcase-tab" role="tab" aria-selected="false"
+                aria-controls="showcase-inspection" data-showcase-target="inspection">
+          <div class="s-icon s-icon-indigo s-icon-sm"><i class="fas fa-clipboard-check"></i></div>
+          <span>Inspections</span>
+        </button>
+
+        <button class="s-showcase-tab" role="tab" aria-selected="false"
+                aria-controls="showcase-request" data-showcase-target="request">
+          <div class="s-icon s-icon-attention s-icon-sm"><i class="fas fa-receipt"></i></div>
+          <span>Requests</span>
+        </button>
+
+        <button class="s-showcase-tab" role="tab" aria-selected="false"
+                aria-controls="showcase-master" data-showcase-target="master">
+          <div class="s-icon s-icon-success s-icon-sm"><i class="fas fa-database"></i></div>
+          <span>Master Data</span>
+        </button>
+
+        <button class="s-showcase-tab" role="tab" aria-selected="false"
+                aria-controls="showcase-resolution" data-showcase-target="resolution">
+          <div class="s-icon s-icon-info-special s-icon-sm"><i class="fas fa-file-chart-column"></i></div>
+          <span>Resolution</span>
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Module Panels ── -->
+  <div class="s-showcase-panels">
+
+
+    <!-- ════════════════════════════════════════
+         PANEL 1 — WORKPLACE MANAGEMENT
+         ════════════════════════════════════════ -->
+    <div class="s-showcase-panel active" id="showcase-workplace" role="tabpanel" aria-labelledby="tab-workplace">
+
+      <!-- Header -->
+      <div class="s-showcase-panel-head s-showcase-head-primary">
+        <div class="container-fluid px-3 px-md-4">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-5">
+              <div class="d-flex align-items-center gap-3 mb-2">
+                <div class="s-icon s-icon-primary s-icon-xl"><i class="fas fa-building"></i></div>
+                <div>
+                  <h2 class="s-showcase-title s-gradient-text-primary mb-1">Workplace Management</h2>
+                  <p class="s-showcase-sub mb-0">Complete operational control from anywhere</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <div class="s-cm-modal-stats-grid">
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-primary s-icon-lg"><i class="bi bi-clock-fill"></i></div>
+                  <div><div class="s-cm-stat-value">24/7</div><div class="s-cm-stat-label">Access</div></div>
+                </div>
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-blue s-icon-lg"><i class="bi bi-geo-alt-fill"></i></div>
+                  <div><div class="s-cm-stat-value">&infin;</div><div class="s-cm-stat-label">Locations</div></div>
+                </div>
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-green s-icon-lg"><i class="bi bi-lightning-charge-fill"></i></div>
+                  <div><div class="s-cm-stat-value">Real-Time</div><div class="s-cm-stat-label">Sync</div></div>
+                </div>
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-royal s-icon-lg"><i class="bi bi-diagram-3-fill"></i></div>
+                  <div><div class="s-cm-stat-value">Multi</div><div class="s-cm-stat-label">Branch</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Split -->
+      <div class="container-fluid px-3 px-md-4 py-5">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-5">
+            <div class="s-cm-modal-lead mb-4">
+              <p class="mb-0">Oversee every branch—city-wide or country-wide—with seamless control from one platform.</p>
+            </div>
+            <ul class="core-modules-content-label-list">
+              <li class="s-content-label-primary">
+                <i class="bi bi-person-workspace"></i>
+                <div>
+                  <strong>Location profiles</strong>
+                  <div class="core-modules-description">Addresses, contacts, schedules, and on-ground workflows unified.</div>
+                </div>
+              </li>
+              <li class="s-content-label-primary">
+                <i class="fas fa-calendar-check"></i>
+                <div>
+                  <strong>Shift scheduling</strong>
+                  <div class="core-modules-description">Create & adjust shifts per branch with guardrails and visibility.</div>
+                </div>
+              </li>
+              <li class="s-content-label-primary">
+                <i class="fas fa-route"></i>
+                <div>
+                  <strong>Operate & navigate</strong>
+                  <div class="core-modules-description">Jump between workplaces, own workstations by default.</div>
+                </div>
+              </li>
+            </ul>
+            <div class="core-module-pill-row mt-4">
+              <span class="core-module-pill"><i class="bi bi-buildings"></i> Multi-Branch</span>
+              <span class="core-module-pill"><i class="bi bi-gear"></i> Operate</span>
+              <span class="core-module-pill"><i class="bi bi-clock"></i> Anytime</span>
+              <span class="core-module-pill"><i class="bi bi-geo-alt"></i> Anywhere</span>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="s-showcase-screen-primary">
+              <img src="assets/images/multi-workplace.png" alt="Workplace Management — live interface" class="w-100">
+              <div class="s-showcase-screen-badge">
+                <span class="s-pill s-pill-primary s-pill-sm"><i class="bi bi-display"></i> Live UI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sub-feature Gallery -->
+      <div class="container-fluid px-3 px-md-4 pb-5">
+        <div class="s-cm-section-header mb-4">
+          <div class="s-icon s-icon-primary s-icon-md"><i class="fas fa-star"></i></div>
+          <h3 class="mb-0">Workplace Features</h3>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="s-cm-pic-card">
+              <div class="s-cm-pic-card-img">
+                <img src="assets/images/workplace_management-citywide_workplaces.png" alt="City-wide workplaces" class="w-100">
+              </div>
+              <div class="s-cm-modal-feature">
+                <div class="s-cm-feature-header">
+                  <div class="s-icon s-icon-primary s-icon-lg"><i class="fas fa-city"></i></div>
+                  <div class="flex-grow-1">
+                    <h5 class="s-cm-feature-title s-text-gradient-primary">City-Wide Workplaces</h5>
+                    <span class="s-label s-label-primary-soft s-label-sm"><i class="bi bi-map"></i> Network</span>
+                  </div>
+                </div>
+                <p class="s-cm-feature-text">Manage every branch across cities from one unified dashboard. One login, all locations.</p>
+                <div class="d-flex gap-2 flex-wrap">
+                  <span class="s-pill s-pill-primary s-pill-sm"><i class="bi bi-buildings"></i> Branches</span>
+                  <span class="s-pill s-pill-info s-pill-sm"><i class="bi bi-map"></i> Map View</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="s-cm-pic-card">
+              <div class="s-cm-pic-card-img">
+                <img src="assets/images/workplace_management-Owner_citywide_office.png" alt="Owner dashboard" class="w-100">
+              </div>
+              <div class="s-cm-modal-feature">
+                <div class="s-cm-feature-header">
+                  <div class="s-icon s-icon-royal s-icon-lg"><i class="fas fa-crown"></i></div>
+                  <div class="flex-grow-1">
+                    <h5 class="s-cm-feature-title s-text-gradient-royal">Owner Dashboard</h5>
+                    <span class="s-label s-label-royal-soft s-label-sm"><i class="bi bi-person-badge"></i> Command</span>
+                  </div>
+                </div>
+                <p class="s-cm-feature-text">Top-level visibility across all operations. Watch the entire business move from a single screen.</p>
+                <div class="d-flex gap-2 flex-wrap">
+                  <span class="s-pill s-pill-royal s-pill-sm"><i class="bi bi-eye"></i> Oversight</span>
+                  <span class="s-pill s-pill-green s-pill-sm"><i class="bi bi-check2-all"></i> Control</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="s-cm-pic-card">
+              <div class="s-cm-pic-card-img">
+                <img src="assets/images/workplace-management-shift-timings.png" alt="Shift timings" class="w-100">
+              </div>
+              <div class="s-cm-modal-feature">
+                <div class="s-cm-feature-header">
+                  <div class="s-icon s-icon-green s-icon-lg"><i class="fas fa-calendar-alt"></i></div>
+                  <div class="flex-grow-1">
+                    <h5 class="s-cm-feature-title s-text-gradient-success">Shift Timings</h5>
+                    <span class="s-label s-label-success-soft s-label-sm"><i class="bi bi-clock"></i> Schedule</span>
+                  </div>
+                </div>
+                <p class="s-cm-feature-text">Define and adjust shifts per branch with time guardrails. Visibility for managers and workers alike.</p>
+                <div class="d-flex gap-2 flex-wrap">
+                  <span class="s-pill s-pill-green s-pill-sm"><i class="bi bi-calendar3"></i> Shifts</span>
+                  <span class="s-pill s-pill-amber s-pill-sm"><i class="bi bi-alarm"></i> Alerts</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="s-cm-pic-card">
+              <div class="s-cm-pic-card-img">
+                <img src="assets/images/workplace-management-analytics.png" alt="Workplace analytics" class="w-100">
+              </div>
+              <div class="s-cm-modal-feature">
+                <div class="s-cm-feature-header">
+                  <div class="s-icon s-icon-info s-icon-lg"><i class="fas fa-chart-bar"></i></div>
+                  <div class="flex-grow-1">
+                    <h5 class="s-cm-feature-title s-text-gradient-info">Analytics</h5>
+                    <span class="s-label s-label-info-soft s-label-sm"><i class="bi bi-graph-up"></i> Insights</span>
+                  </div>
+                </div>
+                <p class="s-cm-feature-text">Per-branch performance metrics rolled up into enterprise-level reporting with real-time data.</p>
+                <div class="d-flex gap-2 flex-wrap">
+                  <span class="s-pill s-pill-info s-pill-sm"><i class="bi bi-bar-chart"></i> Reports</span>
+                  <span class="s-pill s-pill-royal s-pill-sm"><i class="bi bi-lightning"></i> Live</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- END PANEL 1 -->
+
+
+    <!-- ════════════════════════════════════════
+         PANEL 2 — USER MANAGEMENT
+         ════════════════════════════════════════ -->
+    <div class="s-showcase-panel" id="showcase-user" role="tabpanel">
+
+      <div class="s-showcase-panel-head s-showcase-head-info">
+        <div class="container-fluid px-3 px-md-4">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-5">
+              <div class="d-flex align-items-center gap-3 mb-2">
+                <div class="s-icon s-icon-info s-icon-xl"><i class="fas fa-users"></i></div>
+                <div>
+                  <h2 class="s-showcase-title s-gradient-text-info mb-1">User Management</h2>
+                  <p class="s-showcase-sub mb-0">Centralized workforce control</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <div class="s-cm-modal-stats-grid">
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-info s-icon-lg"><i class="bi bi-person-fill"></i></div>
+                  <div><div class="s-cm-stat-value">Unlimited</div><div class="s-cm-stat-label">Users</div></div>
+                </div>
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-royal s-icon-lg"><i class="bi bi-shield-lock-fill"></i></div>
+                  <div><div class="s-cm-stat-value">Role-Based</div><div class="s-cm-stat-label">Access</div></div>
+                </div>
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-green s-icon-lg"><i class="bi bi-lightning-charge-fill"></i></div>
+                  <div><div class="s-cm-stat-value">Real-Time</div><div class="s-cm-stat-label">Sync</div></div>
+                </div>
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-amber s-icon-lg"><i class="bi bi-journal-text"></i></div>
+                  <div><div class="s-cm-stat-value">Complete</div><div class="s-cm-stat-label">Audit</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid px-3 px-md-4 py-5">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-5">
+            <div class="s-cm-modal-lead mb-4">
+              <p class="mb-0">Centralized hub to manage employees—profiles, access, activity, and granular role-based permissions.</p>
+            </div>
+            <ul class="core-modules-content-label-list">
+              <li class="s-content-label-primary">
+                <i class="bi bi-person-vcard"></i>
+                <div>
+                  <strong>Employee profiles</strong>
+                  <div class="core-modules-description">Complete records: personal, professional, and operational context in one place.</div>
+                </div>
+              </li>
+              <li class="s-content-label-primary">
+                <i class="bi bi-shield-lock"></i>
+                <div>
+                  <strong>Role-Based Access Control</strong>
+                  <div class="core-modules-description">Granular permissions by role, workplace, and module. No over-exposure, no under-empowerment.</div>
+                </div>
+              </li>
+              <li class="s-content-label-primary">
+                <i class="bi bi-activity"></i>
+                <div>
+                  <strong>Activity tracking</strong>
+                  <div class="core-modules-description">Every user action logged with timestamp, location, and context. Full accountability.</div>
+                </div>
+              </li>
+              <li class="s-content-label-primary">
+                <i class="bi bi-diagram-3"></i>
+                <div>
+                  <strong>Role hierarchy</strong>
+                  <div class="core-modules-description">Structured chains of command — owner, manager, supervisor, operator, viewer.</div>
+                </div>
+              </li>
+            </ul>
+            <div class="core-module-pill-row mt-4">
+              <span class="core-module-pill"><i class="bi bi-person-check"></i> RBAC</span>
+              <span class="core-module-pill"><i class="bi bi-shield-check"></i> Security</span>
+              <span class="core-module-pill"><i class="bi bi-activity"></i> Audit</span>
+              <span class="core-module-pill"><i class="bi bi-globe"></i> Everywhere</span>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="s-showcase-screen-primary">
+              <img src="assets/images/user-management-1.png" alt="User Management — live interface" class="w-100">
+              <div class="s-showcase-screen-badge">
+                <span class="s-pill s-pill-info s-pill-sm"><i class="bi bi-display"></i> Live UI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid px-3 px-md-4 pb-5">
+        <div class="s-cm-section-header mb-4">
+          <div class="s-icon s-icon-info s-icon-md"><i class="fas fa-star"></i></div>
+          <h3 class="mb-0">User Management Screens</h3>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="s-cm-pic-card">
+              <div class="s-cm-pic-card-img">
+                <img src="assets/images/user-management-2.jpeg" alt="Roles and permissions" class="w-100">
+              </div>
+              <div class="s-cm-modal-feature">
+                <div class="s-cm-feature-header">
+                  <div class="s-icon s-icon-royal s-icon-lg"><i class="fas fa-user-shield"></i></div>
+                  <div class="flex-grow-1">
+                    <h5 class="s-cm-feature-title s-text-gradient-royal">Roles & Permissions</h5>
+                    <span class="s-label s-label-royal-soft s-label-sm"><i class="bi bi-shield-lock"></i> RBAC</span>
+                  </div>
+                </div>
+                <p class="s-cm-feature-text">Assign permissions with precision. Control what each role can see, do, and report on across all modules.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="s-cm-pic-card">
+              <div class="s-cm-pic-card-img">
+                <img src="assets/images/user-management-user-analytics.png" alt="User analytics" class="w-100">
+              </div>
+              <div class="s-cm-modal-feature">
+                <div class="s-cm-feature-header">
+                  <div class="s-icon s-icon-info s-icon-lg"><i class="fas fa-chart-line"></i></div>
+                  <div class="flex-grow-1">
+                    <h5 class="s-cm-feature-title s-text-gradient-info">User Analytics</h5>
+                    <span class="s-label s-label-info-soft s-label-sm"><i class="bi bi-graph-up"></i> Insights</span>
+                  </div>
+                </div>
+                <p class="s-cm-feature-text">Activity heatmaps, login patterns, and operational contribution data for every user on your team.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="s-cm-pic-card">
+              <div class="s-cm-pic-card-img">
+                <img src="assets/images/user-management-4.png" alt="Role hierarchy" class="w-100">
+              </div>
+              <div class="s-cm-modal-feature">
+                <div class="s-cm-feature-header">
+                  <div class="s-icon s-icon-green s-icon-lg"><i class="fas fa-sitemap"></i></div>
+                  <div class="flex-grow-1">
+                    <h5 class="s-cm-feature-title s-text-gradient-success">Role Hierarchy</h5>
+                    <span class="s-label s-label-success-soft s-label-sm"><i class="bi bi-diagram-3"></i> Structure</span>
+                  </div>
+                </div>
+                <p class="s-cm-feature-text">Visual org structure with cascading access. No ambiguity about who reports to whom or who can do what.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- END PANEL 2 -->
+
+
+    <!-- ════════════════════════════════════════
+         PANEL 3 — MY WORKSTATION
+         ════════════════════════════════════════ -->
+    <div class="s-showcase-panel" id="showcase-workstation" role="tabpanel">
+
+      <div class="s-showcase-panel-head s-showcase-head-pop">
+        <div class="container-fluid px-3 px-md-4">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-5">
+              <div class="d-flex align-items-center gap-3 mb-2">
+                <div class="s-icon s-icon-pop s-icon-xl"><i class="fas fa-desktop"></i></div>
+                <div>
+                  <h2 class="s-showcase-title s-gradient-text-pop mb-1">My Workstation</h2>
+                  <p class="s-showcase-sub mb-0">Decentralized action, centralized intelligence</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <div class="s-cm-modal-stats-grid">
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-pop s-icon-lg"><i class="bi bi-tools"></i></div>
+                  <div><div class="s-cm-stat-value">Toolbox</div><div class="s-cm-stat-label">Tools</div></div>
+                </div>
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-royal s-icon-lg"><i class="bi bi-car-front-fill"></i></div>
+                  <div><div class="s-cm-stat-value">Vehicles</div><div class="s-cm-stat-label">Issued</div></div>
+                </div>
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-green s-icon-lg"><i class="bi bi-lightning-charge-fill"></i></div>
+                  <div><div class="s-cm-stat-value">Real-Time</div><div class="s-cm-stat-label">Status</div></div>
+                </div>
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-amber s-icon-lg"><i class="bi bi-journal-check"></i></div>
+                  <div><div class="s-cm-stat-value">Complete</div><div class="s-cm-stat-label">Trails</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid px-3 px-md-4 py-5">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-5">
+            <div class="s-cm-modal-lead mb-4">
+              <p class="mb-0">Employee-facing portal for every asset assigned to them—tools, vehicles, workstation items, and blends—with full accountability at every step.</p>
+            </div>
+            <ul class="core-modules-content-label-list">
+              <li class="s-content-label-primary">
+                <i class="fas fa-toolbox"></i>
+                <div>
+                  <strong>Toolbox</strong>
+                  <div class="core-modules-description">Permanently issued tools with inspections and reports.</div>
+                </div>
+              </li>
+              <li class="s-content-label-primary">
+                <i class="fas fa-clipboard"></i>
+                <div>
+                  <strong>Workstation items</strong>
+                  <div class="core-modules-description">Mapped to location, role, and shift with usage logs.</div>
+                </div>
+              </li>
+              <li class="s-content-label-primary">
+                <i class="fas fa-car"></i>
+                <div>
+                  <strong>Issued vehicles</strong>
+                  <div class="core-modules-description">Mileage and refueling with return checks.</div>
+                </div>
+              </li>
+              <li class="s-content-label-primary">
+                <i class="fas fa-flask"></i>
+                <div>
+                  <strong>Blends</strong>
+                  <div class="core-modules-description">Issued/dispensed materials with batch traceability.</div>
+                </div>
+              </li>
+            </ul>
+            <div class="core-module-pill-row mt-4">
+              <span class="core-module-pill"><i class="bi bi-arrow-repeat"></i> Sync</span>
+              <span class="core-module-pill"><i class="bi bi-person-gear"></i> Empower</span>
+              <span class="core-module-pill"><i class="bi bi-eye"></i> Monitor</span>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="s-showcase-screen-primary">
+              <img src="assets/images/my_workstation-toolbox.png" alt="My Workstation — live interface" class="w-100">
+              <div class="s-showcase-screen-badge">
+                <span class="s-pill s-pill-pop s-pill-sm"><i class="bi bi-display"></i> Live UI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid px-3 px-md-4 pb-5">
+        <div class="s-cm-section-header mb-4">
+          <div class="s-icon s-icon-pop s-icon-md"><i class="fas fa-star"></i></div>
+          <h3 class="mb-0">Workstation Features</h3>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="s-cm-pic-card">
+              <div class="s-cm-pic-card-img">
+                <img src="assets/images/my_workstation-toolbox.png" alt="Personal toolbox" class="w-100">
+              </div>
+              <div class="s-cm-modal-feature">
+                <div class="s-cm-feature-header">
+                  <div class="s-icon s-icon-pop s-icon-lg"><i class="fas fa-toolbox"></i></div>
+                  <div class="flex-grow-1">
+                    <h5 class="s-cm-feature-title s-text-gradient-pop">Toolbox</h5>
+                    <span class="s-label s-label-pop-soft s-label-sm"><i class="bi bi-tools"></i> Personal</span>
+                  </div>
+                </div>
+                <p class="s-cm-feature-text">Permanently issued tools with complete accountability. Conduct self-inspections, report damage, and track condition over time. Request repairs or replacements directly.</p>
+                <div class="d-flex gap-2 flex-wrap">
+                  <span class="s-pill s-pill-pop s-pill-sm"><i class="bi bi-tools"></i> Tools</span>
+                  <span class="s-pill s-pill-info s-pill-sm"><i class="bi bi-clipboard-check"></i> Inspect</span>
+                  <span class="s-pill s-pill-amber s-pill-sm"><i class="bi bi-exclamation-triangle"></i> Report</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="s-cm-pic-card">
+              <div class="s-cm-pic-card-img">
+                <img src="assets/images/my_workstation-workstation.png" alt="Workstation items" class="w-100">
+              </div>
+              <div class="s-cm-modal-feature">
+                <div class="s-cm-feature-header">
+                  <div class="s-icon s-icon-royal s-icon-lg"><i class="fas fa-clipboard"></i></div>
+                  <div class="flex-grow-1">
+                    <h5 class="s-cm-feature-title s-text-gradient-royal">Workstation Items</h5>
+                    <span class="s-label s-label-royal-soft s-label-sm"><i class="bi bi-laptop"></i> Assigned</span>
+                  </div>
+                </div>
+                <p class="s-cm-feature-text">Items mapped to a specific workstation, role, and shift. Usage logs and responsibility chains built in from day one.</p>
+                <div class="d-flex gap-2 flex-wrap">
+                  <span class="s-pill s-pill-royal s-pill-sm"><i class="bi bi-person-badge"></i> Assigned</span>
+                  <span class="s-pill s-pill-green s-pill-sm"><i class="bi bi-check-circle"></i> Accountable</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- END PANEL 3 -->
+
+
+    <!-- ════════════════════════════════════════
+         PANEL 4 — INVENTORY MANAGEMENT
+         ════════════════════════════════════════ -->
+    <div class="s-showcase-panel" id="showcase-inventory" role="tabpanel">
+
+      <div class="s-showcase-panel-head s-showcase-head-amber">
+        <div class="container-fluid px-3 px-md-4">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-5">
+              <div class="d-flex align-items-center gap-3 mb-2">
+                <div class="s-icon s-icon-amber s-icon-xl"><i class="fas fa-box-open"></i></div>
+                <div>
+                  <h2 class="s-showcase-title s-gradient-text-amber mb-1">Inventory Management</h2>
+                  <p class="s-showcase-sub mb-0">End-to-end visibility</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <div class="s-cm-modal-stats-grid">
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-amber s-icon-lg"><i class="bi bi-layers-fill"></i></div>
+                  <div><div class="s-cm-stat-value">3</div><div class="s-cm-stat-label">Tiers</div></div>
+                </div>
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-green s-icon-lg"><i class="bi bi-eye-fill"></i></div>
+                  <div><div class="s-cm-stat-value">Zero</div><div class="s-cm-stat-label">Blind Spots</div></div>
+                </div>
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-info s-icon-lg"><i class="bi bi-lightning-charge-fill"></i></div>
+                  <div><div class="s-cm-stat-value">Real-Time</div><div class="s-cm-stat-label">Tracking</div></div>
+                </div>
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-royal s-icon-lg"><i class="bi bi-file-earmark-check"></i></div>
+                  <div><div class="s-cm-stat-value">Paperless</div><div class="s-cm-stat-label">Records</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid px-3 px-md-4 py-5">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-5">
+            <div class="s-cm-modal-lead mb-4">
+              <p class="mb-0">Visibility across reserves, distributable reserves, and active inventory on the floor.</p>
+            </div>
+            <ul class="core-modules-content-label-list">
+              <li class="s-content-label-primary">
+                <i class="fas fa-archive"></i>
+                <div>
+                  <strong>Reserve assets</strong>
+                  <div class="core-modules-description">Inactive and active-use items kept off the floor with lifecycle context.</div>
+                </div>
+              </li>
+              <li class="s-content-label-primary">
+                <i class="fas fa-tools"></i>
+                <div>
+                  <strong>Distributable reserve</strong>
+                  <div class="core-modules-description">Permanently assigned tools issued to people or workstations.</div>
+                </div>
+              </li>
+              <li class="s-content-label-primary">
+                <i class="fas fa-warehouse"></i>
+                <div>
+                  <strong>Active inventory</strong>
+                  <div class="core-modules-description">Request, consume, and dispense flows with real-time tracking.</div>
+                </div>
+              </li>
+            </ul>
+            <div class="core-module-pill-row mt-4">
+              <span class="core-module-pill"><i class="bi bi-box-seam"></i> Compartmentalized</span>
+              <span class="core-module-pill"><i class="bi bi-tags"></i> Classified</span>
+              <span class="core-module-pill"><i class="bi bi-activity"></i> Track</span>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="s-showcase-screen-primary">
+              <img src="assets/images/inventory-modal-hero.jpg" alt="Inventory Management — live interface" class="w-100">
+              <div class="s-showcase-screen-badge">
+                <span class="s-pill s-pill-amber s-pill-sm"><i class="bi bi-display"></i> Live UI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid px-3 px-md-4 pb-5">
+        <div class="s-cm-section-header mb-4">
+          <div class="s-icon s-icon-amber s-icon-md"><i class="fas fa-star"></i></div>
+          <h3 class="mb-0">Inventory Types</h3>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="s-cm-pic-card">
+              <div class="s-cm-pic-card-img">
+                <img src="assets/images/inventory-reserve.png" alt="Reserve assets" class="w-100">
+              </div>
+              <div class="s-cm-modal-feature">
+                <div class="s-cm-feature-header">
+                  <div class="s-icon s-icon-amber s-icon-lg"><i class="fas fa-archive"></i></div>
+                  <div class="flex-grow-1">
+                    <h5 class="s-cm-feature-title s-text-gradient-amber">Reserve Assets</h5>
+                    <span class="s-label s-label-warning-soft s-label-sm"><i class="bi bi-box"></i> Storage</span>
+                  </div>
+                </div>
+                <p class="s-cm-feature-text">Inactive and active-use items kept off the floor with complete lifecycle tracking.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="s-cm-pic-card">
+              <div class="s-cm-pic-card-img">
+                <img src="assets/images/inventory-hand_tool_reserve.png" alt="Hand-tool reserve" class="w-100">
+              </div>
+              <div class="s-cm-modal-feature">
+                <div class="s-cm-feature-header">
+                  <div class="s-icon s-icon-pop s-icon-lg"><i class="fas fa-tools"></i></div>
+                  <div class="flex-grow-1">
+                    <h5 class="s-cm-feature-title s-text-gradient-pop">Distributable Reserve</h5>
+                    <span class="s-label s-label-pop-soft s-label-sm"><i class="bi bi-hammer"></i> Tools</span>
+                  </div>
+                </div>
+                <p class="s-cm-feature-text">Permanently assigned tools issued to people or workstations. Full trail of who holds what and since when.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="s-cm-pic-card">
+              <div class="s-cm-pic-card-img">
+                <img src="assets/images/inventory-general_inventory.png" alt="Active inventory" class="w-100">
+              </div>
+              <div class="s-cm-modal-feature">
+                <div class="s-cm-feature-header">
+                  <div class="s-icon s-icon-green s-icon-lg"><i class="fas fa-warehouse"></i></div>
+                  <div class="flex-grow-1">
+                    <h5 class="s-cm-feature-title s-text-gradient-success">Active Inventory</h5>
+                    <span class="s-label s-label-success-soft s-label-sm"><i class="bi bi-arrow-left-right"></i> Floor</span>
+                  </div>
+                </div>
+                <p class="s-cm-feature-text">Request, consume, and dispense flows with real-time tracking at the operational floor level.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- END PANEL 4 -->
+
+
+    <!-- ════════════════════════════════════════
+         PANEL 5 — SERVICE & MAINTENANCE
+         ════════════════════════════════════════ -->
+    <div class="s-showcase-panel" id="showcase-service" role="tabpanel">
+
+      <div class="s-showcase-panel-head s-showcase-head-royal">
+        <div class="container-fluid px-3 px-md-4">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-5">
+              <div class="d-flex align-items-center gap-3 mb-2">
+                <div class="s-icon s-icon-royal s-icon-xl"><i class="fas fa-wrench"></i></div>
+                <div>
+                  <h2 class="s-showcase-title s-gradient-text-royal mb-1">Service &amp; Maintenance</h2>
+                  <p class="s-showcase-sub mb-0">Scheduling, logging, and coverage</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <div class="s-cm-modal-stats-grid">
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-indigo s-icon-lg"><i class="bi bi-arrow-repeat"></i></div>
+                  <div><div class="s-cm-stat-value">Automated</div><div class="s-cm-stat-label">Cycles</div></div>
+                </div>
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-green s-icon-lg"><i class="bi bi-file-earmark-text"></i></div>
+                  <div><div class="s-cm-stat-value">Complete</div><div class="s-cm-stat-label">Logging</div></div>
+                </div>
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-amber s-icon-lg"><i class="bi bi-cash-coin"></i></div>
+                  <div><div class="s-cm-stat-value">Financial</div><div class="s-cm-stat-label">Integration</div></div>
+                </div>
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-royal s-icon-lg"><i class="bi bi-shield-check"></i></div>
+                  <div><div class="s-cm-stat-value">Full</div><div class="s-cm-stat-label">Coverage</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid px-3 px-md-4 py-5">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-5">
+            <div class="s-cm-modal-lead mb-4">
+              <p class="mb-0">Centralizes servicing activities and links events with contracts, insurance, and costs.</p>
+            </div>
+            <ul class="core-modules-content-label-list">
+              <li class="s-content-label-primary">
+                <i class="fas fa-calendar-alt"></i>
+                <div>
+                  <strong>Scheduled maintenance</strong>
+                  <div class="core-modules-description">Recurring service cycles set once, run automatically. Never miss a service window.</div>
+                </div>
+              </li>
+              <li class="s-content-label-primary">
+                <i class="fas fa-wrench"></i>
+                <div>
+                  <strong>Repair & service logs</strong>
+                  <div class="core-modules-description">Complete history per asset: what was done, when, by whom, and at what cost.</div>
+                </div>
+              </li>
+              <li class="s-content-label-primary">
+                <i class="fas fa-bell"></i>
+                <div>
+                  <strong>Smart reminders</strong>
+                  <div class="core-modules-description">Due-date alerts and escalations sent to the right person before service is overdue.</div>
+                </div>
+              </li>
+              <li class="s-content-label-primary">
+                <i class="fas fa-file-invoice-dollar"></i>
+                <div>
+                  <strong>Cost & contract linkage</strong>
+                  <div class="core-modules-description">Tie each service event to contracts, AMC, and insurance. Finance gets visibility by default.</div>
+                </div>
+              </li>
+            </ul>
+            <div class="core-module-pill-row mt-4">
+              <span class="core-module-pill"><i class="bi bi-arrow-clockwise"></i> Restore</span>
+              <span class="core-module-pill"><i class="fa-solid fa-lightbulb"></i> Smart</span>
+              <span class="core-module-pill"><i class="bi bi-link-45deg"></i> Traceable</span>
+              <span class="core-module-pill"><i class="bi bi-file-earmark"></i> Paperless</span>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="s-showcase-screen-primary">
+              <img src="assets/images/service_and_maintenance-modal-hero.png" alt="Service & Maintenance — live interface" class="w-100">
+              <div class="s-showcase-screen-badge">
+                <span class="s-pill s-pill-indigo s-pill-sm"><i class="bi bi-display"></i> Live UI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid px-3 px-md-4 pb-5">
+        <div class="s-cm-section-header mb-4">
+          <div class="s-icon s-icon-royal s-icon-md"><i class="fas fa-star"></i></div>
+          <h3 class="mb-0">Maintenance Screens</h3>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="s-cm-pic-card">
+              <div class="s-cm-pic-card-img">
+                <img src="assets/images/service_and_maintenance-repair_&_service.png" alt="Repair and service" class="w-100">
+              </div>
+              <div class="s-cm-modal-feature">
+                <div class="s-cm-feature-header">
+                  <div class="s-icon s-icon-royal s-icon-lg"><i class="fas fa-tools"></i></div>
+                  <div class="flex-grow-1">
+                    <h5 class="s-cm-feature-title s-text-gradient-royal">Repair & Service</h5>
+                    <span class="s-label s-label-royal-soft s-label-sm"><i class="bi bi-wrench"></i> Execution</span>
+                  </div>
+                </div>
+                <p class="s-cm-feature-text">Log every repair event with technician, cost, parts used, and resolution time. Historical data builds your maintenance intelligence.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="s-cm-pic-card">
+              <div class="s-cm-pic-card-img">
+                <img src="assets/images/service_and_maintenance-data_logging.png" alt="Data logging" class="w-100">
+              </div>
+              <div class="s-cm-modal-feature">
+                <div class="s-cm-feature-header">
+                  <div class="s-icon s-icon-green s-icon-lg"><i class="fas fa-database"></i></div>
+                  <div class="flex-grow-1">
+                    <h5 class="s-cm-feature-title s-text-gradient-success">Data Logging</h5>
+                    <span class="s-label s-label-success-soft s-label-sm"><i class="bi bi-journal-text"></i> Records</span>
+                  </div>
+                </div>
+                <p class="s-cm-feature-text">Structured data entry for every maintenance touchpoint. No loose notes, no missing records. Everything traceable.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="s-cm-pic-card">
+              <div class="s-cm-pic-card-img">
+                <img src="assets/images/service_and_maintenance-set_reminders.png" alt="Set reminders" class="w-100">
+              </div>
+              <div class="s-cm-modal-feature">
+                <div class="s-cm-feature-header">
+                  <div class="s-icon s-icon-amber s-icon-lg"><i class="fas fa-bell"></i></div>
+                  <div class="flex-grow-1">
+                    <h5 class="s-cm-feature-title s-text-gradient-amber">Set Reminders</h5>
+                    <span class="s-label s-label-warning-soft s-label-sm"><i class="bi bi-alarm"></i> Alerts</span>
+                  </div>
+                </div>
+                <p class="s-cm-feature-text">Schedule service reminders per asset, per interval. Due-date warnings escalate automatically until acknowledged.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- END PANEL 5 -->
+
+
+    <!-- ════════════════════════════════════════
+         PANEL 6 — INSPECTION & REPORTING
+         ════════════════════════════════════════ -->
+    <div class="s-showcase-panel" id="showcase-inspection" role="tabpanel">
+
+      <div class="s-showcase-panel-head s-showcase-head-indigo">
+        <div class="container-fluid px-3 px-md-4">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-5">
+              <div class="d-flex align-items-center gap-3 mb-2">
+                <div class="s-icon s-icon-indigo s-icon-xl"><i class="fas fa-clipboard-check"></i></div>
+                <div>
+                  <h2 class="s-showcase-title s-gradient-text-indigo mb-1">Inspection &amp; Reporting</h2>
+                  <p class="s-showcase-sub mb-0">Structured assessments with audit trails</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <div class="s-cm-modal-stats-grid">
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-indigo s-icon-lg"><i class="bi bi-list-check"></i></div>
+                  <div><div class="s-cm-stat-value">Objective</div><div class="s-cm-stat-label">Checkpoints</div></div>
+                </div>
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-green s-icon-lg"><i class="bi bi-arrow-repeat"></i></div>
+                  <div><div class="s-cm-stat-value">Continuous</div><div class="s-cm-stat-label">Assessment</div></div>
+                </div>
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-amber s-icon-lg"><i class="bi bi-bell-fill"></i></div>
+                  <div><div class="s-cm-stat-value">Smart</div><div class="s-cm-stat-label">Reminders</div></div>
+                </div>
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-royal s-icon-lg"><i class="bi bi-file-earmark-check"></i></div>
+                  <div><div class="s-cm-stat-value">Paperless</div><div class="s-cm-stat-label">Records</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid px-3 px-md-4 py-5">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-5">
+            <div class="s-cm-modal-lead mb-4">
+              <p class="mb-0">Specialized inspection workflows with checkpoints, schedules, reminders, and non-overlapping reports.</p>
+            </div>
+            <ul class="core-modules-content-label-list">
+              <li class="s-content-label-primary">
+                <i class="fas fa-list-check"></i>
+                <div>
+                  <strong>Objective checkpoints</strong>
+                  <div class="core-modules-description">Predefined inspection criteria. Consistent scoring across every asset, every technician.</div>
+                </div>
+              </li>
+              <li class="s-content-label-primary">
+                <i class="fas fa-calendar-check"></i>
+                <div>
+                  <strong>Scheduled inspections</strong>
+                  <div class="core-modules-description">Set intervals per asset type. Reminders fire automatically before the deadline.</div>
+                </div>
+              </li>
+              <li class="s-content-label-primary">
+                <i class="fas fa-file-alt"></i>
+                <div>
+                  <strong>Non-overlapping reports</strong>
+                  <div class="core-modules-description">Each inspection creates a clean, unique record. No duplicate entries. No conflicting data.</div>
+                </div>
+              </li>
+              <li class="s-content-label-primary">
+                <i class="fas fa-history"></i>
+                <div>
+                  <strong>Inspection history</strong>
+                  <div class="core-modules-description">Full chronological trail per asset. Spot degradation patterns before they become failures.</div>
+                </div>
+              </li>
+            </ul>
+            <div class="core-module-pill-row mt-4">
+              <span class="core-module-pill"><i class="bi bi-clipboard-check"></i> Inspect</span>
+              <span class="core-module-pill"><i class="bi bi-file-earmark-text"></i> Report</span>
+              <span class="core-module-pill"><i class="bi bi-journal-text"></i> Record</span>
+              <span class="core-module-pill"><i class="bi bi-file-earmark"></i> Paperless</span>
+              <span class="core-module-pill"><i class="bi bi-check-circle"></i> Reliable</span>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="s-showcase-screen-primary">
+              <img src="assets/images/inspection-reporting-modal-hero.png" alt="Inspection & Reporting — live interface" class="w-100">
+              <div class="s-showcase-screen-badge">
+                <span class="s-pill s-pill-indigo s-pill-sm"><i class="bi bi-display"></i> Live UI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Benefit Badges -->
+      <div class="container-fluid px-3 px-md-4 pb-5">
+        <div class="s-cm-section-header mb-4">
+          <div class="s-icon s-icon-indigo s-icon-md"><i class="fas fa-star"></i></div>
+          <h3 class="mb-0">Why It Works</h3>
+        </div>
+        <div class="row g-3">
+          <div class="col-6 col-md-4 col-xl-3">
+            <div class="s-cm-benefit-badge s-bg-indigo"><i class="bi bi-list-check"></i><span>Objective</span></div>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3">
+            <div class="s-cm-benefit-badge s-bg-primary"><i class="bi bi-arrow-repeat"></i><span>Continuous</span></div>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3">
+            <div class="s-cm-benefit-badge s-bg-success"><i class="bi bi-file-earmark-check"></i><span>Compliant</span></div>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3">
+            <div class="s-cm-benefit-badge s-bg-pop"><i class="bi bi-bell"></i><span>Automated</span></div>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3">
+            <div class="s-cm-benefit-badge s-bg-danger"><i class="bi bi-phone"></i><span>Mobile Ready</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- END PANEL 6 -->
+
+
+    <!-- ════════════════════════════════════════
+         PANEL 7 — REQUEST HANDLING
+         ════════════════════════════════════════ -->
+    <div class="s-showcase-panel" id="showcase-request" role="tabpanel">
+
+      <div class="s-showcase-panel-head s-showcase-head-attention">
+        <div class="container-fluid px-3 px-md-4">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-5">
+              <div class="d-flex align-items-center gap-3 mb-2">
+                <div class="s-icon s-icon-attention s-icon-xl"><i class="fas fa-receipt"></i></div>
+                <div>
+                  <h2 class="s-showcase-title s-gradient-text-attention mb-1">Request Handling</h2>
+                  <p class="s-showcase-sub mb-0">Automated, transparent approvals</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <div class="s-cm-modal-stats-grid">
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-attention s-icon-lg"><i class="bi bi-lightning-charge-fill"></i></div>
+                  <div><div class="s-cm-stat-value">Smart</div><div class="s-cm-stat-label">Approvals</div></div>
+                </div>
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-green s-icon-lg"><i class="bi bi-diagram-3-fill"></i></div>
+                  <div><div class="s-cm-stat-value">Automated</div><div class="s-cm-stat-label">Routing</div></div>
+                </div>
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-amber s-icon-lg"><i class="bi bi-journal-text"></i></div>
+                  <div><div class="s-cm-stat-value">Complete</div><div class="s-cm-stat-label">Audit</div></div>
+                </div>
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-royal s-icon-lg"><i class="bi bi-eye-fill"></i></div>
+                  <div><div class="s-cm-stat-value">Real-Time</div><div class="s-cm-stat-label">Status</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid px-3 px-md-4 py-5">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-5">
+            <div class="s-cm-modal-lead mb-4">
+              <p class="mb-0">Structured request workflows for assets, inventory, and services—with approval chains, status visibility, and zero manual follow-up.</p>
+            </div>
+            <ul class="core-modules-content-label-list">
+              <li class="s-content-label-primary">
+                <i class="fas fa-paper-plane"></i>
+                <div>
+                  <strong>Request submission</strong>
+                  <div class="core-modules-description">Any employee can raise a request for assets, tools, inventory, or services in seconds.</div>
+                </div>
+              </li>
+              <li class="s-content-label-primary">
+                <i class="fas fa-route"></i>
+                <div>
+                  <strong>Approval routing</strong>
+                  <div class="core-modules-description">Requests automatically route to the right approver based on role and request type.</div>
+                </div>
+              </li>
+              <li class="s-content-label-primary">
+                <i class="fas fa-eye"></i>
+                <div>
+                  <strong>Status transparency</strong>
+                  <div class="core-modules-description">Requester sees real-time status. Approver gets queue. Manager sees pipeline. No chasing.</div>
+                </div>
+              </li>
+              <li class="s-content-label-primary">
+                <i class="fas fa-history"></i>
+                <div>
+                  <strong>Request history</strong>
+                  <div class="core-modules-description">Every request archived with full approval chain, timestamps, and resolution record.</div>
+                </div>
+              </li>
+            </ul>
+            <div class="core-module-pill-row mt-4">
+              <span class="core-module-pill"><i class="bi bi-send"></i> Submit</span>
+              <span class="core-module-pill"><i class="bi bi-diagram-3"></i> Route</span>
+              <span class="core-module-pill"><i class="bi bi-check2-circle"></i> Approve</span>
+              <span class="core-module-pill"><i class="bi bi-file-earmark"></i> Paperless</span>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="s-showcase-screen-primary">
+              <img src="assets/images/request-modal-hero.png" alt="Request Handling — live interface" class="w-100">
+              <div class="s-showcase-screen-badge">
+                <span class="s-pill s-pill-danger s-pill-sm"><i class="bi bi-display"></i> Live UI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- END PANEL 7 -->
+
+
+    <!-- ════════════════════════════════════════
+         PANEL 8 — MASTER DATA MANAGEMENT
+         ════════════════════════════════════════ -->
+    <div class="s-showcase-panel" id="showcase-master" role="tabpanel">
+
+      <div class="s-showcase-panel-head s-showcase-head-success">
+        <div class="container-fluid px-3 px-md-4">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-5">
+              <div class="d-flex align-items-center gap-3 mb-2">
+                <div class="s-icon s-icon-success s-icon-xl"><i class="fas fa-database"></i></div>
+                <div>
+                  <h2 class="s-showcase-title s-gradient-text-success mb-1">Master Data Management</h2>
+                  <p class="s-showcase-sub mb-0">Single source of truth</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <div class="s-cm-modal-stats-grid">
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-green s-icon-lg"><i class="bi bi-layers-fill"></i></div>
+                  <div><div class="s-cm-stat-value">8</div><div class="s-cm-stat-label">Modules</div></div>
+                </div>
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-info s-icon-lg"><i class="bi bi-arrow-repeat"></i></div>
+                  <div><div class="s-cm-stat-value">Consistent</div><div class="s-cm-stat-label">Everywhere</div></div>
+                </div>
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-royal s-icon-lg"><i class="bi bi-globe"></i></div>
+                  <div><div class="s-cm-stat-value">Global</div><div class="s-cm-stat-label">Standards</div></div>
+                </div>
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-amber s-icon-lg"><i class="bi bi-lightning-charge-fill"></i></div>
+                  <div><div class="s-cm-stat-value">Live</div><div class="s-cm-stat-label">Sync</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid px-3 px-md-4 py-5">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-5">
+            <div class="s-cm-modal-lead mb-4">
+              <p class="mb-0">Centralizes all critical definitions—workflows and reports stay consistent everywhere.</p>
+            </div>
+            <ul class="core-modules-content-label-list">
+              <li class="s-content-label-primary">
+                <i class="fas fa-sitemap"></i>
+                <div>
+                  <strong>5-Level asset hierarchy</strong>
+                  <div class="core-modules-description">Category → Sub-category → Type → Sub-type → Item. Full classification depth for every asset.</div>
+                </div>
+              </li>
+              <li class="s-content-label-primary">
+                <i class="fas fa-ruler-combined"></i>
+                <div>
+                  <strong>SI + custom units</strong>
+                  <div class="core-modules-description">Standard international units and your own custom units. Inventory, fuel, and blend definitions all normalized.</div>
+                </div>
+              </li>
+              <li class="s-content-label-primary">
+                <i class="fas fa-tags"></i>
+                <div>
+                  <strong>Brands & OEMs</strong>
+                  <div class="core-modules-description">Normalize suppliers and manufacturers for consistent analytics across your fleet and facilities.</div>
+                </div>
+              </li>
+              <li class="s-content-label-primary">
+                <i class="fas fa-gas-pump"></i>
+                <div>
+                  <strong>Fuel types</strong>
+                  <div class="core-modules-description">Fuel grades and electric specifications for vehicles and generators. Petrol, diesel, CNG, and EV charging standards.</div>
+                </div>
+              </li>
+            </ul>
+            <div class="core-module-pill-row mt-4">
+              <span class="core-module-pill"><i class="bi bi-arrow-repeat"></i> Consistent</span>
+              <span class="core-module-pill"><i class="bi bi-globe"></i> Everywhere</span>
+              <span class="core-module-pill"><i class="bi bi-check-circle"></i> Consistency</span>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="s-showcase-screen-primary">
+              <img src="assets/images/master-data-modal-hero.png" alt="Master Data Management — live interface" class="w-100">
+              <div class="s-showcase-screen-badge">
+                <span class="s-pill s-pill-success s-pill-sm"><i class="bi bi-display"></i> Live UI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid px-3 px-md-4 pb-5">
+        <div class="s-cm-section-header mb-4">
+          <div class="s-icon s-icon-success s-icon-md"><i class="fas fa-star"></i></div>
+          <h3 class="mb-0">Master Data Modules</h3>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="s-cm-pic-card">
+              <div class="s-cm-pic-card-img">
+                <img src="assets/images/masterdata-fuels.png" alt="Fuel types and grades" class="w-100">
+              </div>
+              <div class="s-cm-modal-feature">
+                <div class="s-cm-feature-header">
+                  <div class="s-icon s-icon-danger s-icon-lg"><i class="fas fa-gas-pump"></i></div>
+                  <div class="flex-grow-1">
+                    <h5 class="s-cm-feature-title s-text-gradient-danger">Fuel Types</h5>
+                    <span class="s-label s-label-danger-soft s-label-sm"><i class="bi bi-lightning"></i> Energy</span>
+                  </div>
+                </div>
+                <p class="s-cm-feature-text">Fuel grades and electric specifications for vehicles and generators. Define petrol, diesel, CNG, and electric charging standards.</p>
+                <div class="d-flex gap-2 flex-wrap">
+                  <span class="s-pill s-pill-danger s-pill-sm"><i class="bi bi-droplet"></i> Grades</span>
+                  <span class="s-pill s-pill-green s-pill-sm"><i class="bi bi-lightning-charge"></i> Electric</span>
+                  <span class="s-pill s-pill-amber s-pill-sm"><i class="bi bi-speedometer"></i> Tracking</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="s-cm-pic-card">
+              <div class="s-cm-pic-card-img">
+                <img src="assets/images/masterdata-brands.png" alt="Brands and OEMs" class="w-100">
+              </div>
+              <div class="s-cm-modal-feature">
+                <div class="s-cm-feature-header">
+                  <div class="s-icon s-icon-pop s-icon-lg"><i class="fas fa-tags"></i></div>
+                  <div class="flex-grow-1">
+                    <h5 class="s-cm-feature-title s-text-gradient-pop">Brands &amp; OEMs</h5>
+                    <span class="s-label s-label-pop-soft s-label-sm"><i class="bi bi-shop"></i> Suppliers</span>
+                  </div>
+                </div>
+                <p class="s-cm-feature-text">Normalize suppliers and manufacturers for analytics. Consistent brand data feeds clean reporting across all asset categories.</p>
+                <div class="d-flex gap-2 flex-wrap">
+                  <span class="s-pill s-pill-pop s-pill-sm"><i class="bi bi-tags"></i> Brands</span>
+                  <span class="s-pill s-pill-info s-pill-sm"><i class="bi bi-graph-up"></i> Analytics</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- END PANEL 8 -->
+
+
+    <!-- ════════════════════════════════════════
+         PANEL 9 — REPORT RESOLUTION
+         ════════════════════════════════════════ -->
+    <div class="s-showcase-panel" id="showcase-resolution" role="tabpanel">
+
+      <div class="s-showcase-panel-head s-showcase-head-info-special">
+        <div class="container-fluid px-3 px-md-4">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-5">
+              <div class="d-flex align-items-center gap-3 mb-2">
+                <div class="s-icon s-icon-info-special s-icon-xl"><i class="fas fa-file-circle-check"></i></div>
+                <div>
+                  <h2 class="s-showcase-title mb-1" style="background: var(--s-gradient-info-special); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Report Resolution</h2>
+                  <p class="s-showcase-sub mb-0">Close the loop on every logged issue</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <div class="s-cm-modal-stats-grid">
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-info-special s-icon-lg"><i class="bi bi-link-45deg"></i></div>
+                  <div><div class="s-cm-stat-value">Linked</div><div class="s-cm-stat-label">Reports</div></div>
+                </div>
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-green s-icon-lg"><i class="bi bi-journal-check"></i></div>
+                  <div><div class="s-cm-stat-value">Complete</div><div class="s-cm-stat-label">Trails</div></div>
+                </div>
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-royal s-icon-lg"><i class="bi bi-clipboard2-check"></i></div>
+                  <div><div class="s-cm-stat-value">Structured</div><div class="s-cm-stat-label">Resolution</div></div>
+                </div>
+                <div class="s-cm-modal-stat-card">
+                  <div class="s-icon s-icon-amber s-icon-lg"><i class="bi bi-file-earmark-check"></i></div>
+                  <div><div class="s-cm-stat-value">Paperless</div><div class="s-cm-stat-label">Records</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid px-3 px-md-4 py-5">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-5">
+            <div class="s-cm-modal-lead mb-4">
+              <p class="mb-0">Every report raised—damage, defect, or discrepancy—gets a structured resolution path. Nothing falls through the cracks.</p>
+            </div>
+            <ul class="core-modules-content-label-list">
+              <li class="s-content-label-primary">
+                <i class="fas fa-flag"></i>
+                <div>
+                  <strong>Issue flagging</strong>
+                  <div class="core-modules-description">Any user can raise a report. It gets logged, timestamped, and assigned immediately.</div>
+                </div>
+              </li>
+              <li class="s-content-label-primary">
+                <i class="fas fa-tasks"></i>
+                <div>
+                  <strong>Resolution workflow</strong>
+                  <div class="core-modules-description">Reports move through stages: open → acknowledged → in-progress → resolved. No ambiguity.</div>
+                </div>
+              </li>
+              <li class="s-content-label-primary">
+                <i class="fas fa-link"></i>
+                <div>
+                  <strong>Asset linkage</strong>
+                  <div class="core-modules-description">Each report ties back to the asset, inspection, or service event that triggered it. Context is always preserved.</div>
+                </div>
+              </li>
+              <li class="s-content-label-primary">
+                <i class="fas fa-check-double"></i>
+                <div>
+                  <strong>Closure confirmation</strong>
+                  <div class="core-modules-description">Reports don't close until resolution is confirmed. Both raiser and resolver sign off. Complete accountability.</div>
+                </div>
+              </li>
+            </ul>
+            <div class="core-module-pill-row mt-4">
+              <span class="core-module-pill"><i class="bi bi-flag"></i> Flag</span>
+              <span class="core-module-pill"><i class="bi bi-arrow-right-circle"></i> Resolve</span>
+              <span class="core-module-pill"><i class="bi bi-link-45deg"></i> Traceable</span>
+              <span class="core-module-pill"><i class="bi bi-check-all"></i> Confirmed</span>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="s-showcase-screen-primary">
+              <img src="assets/images/inspection-reporting-modal-hero.png" alt="Report Resolution — live interface" class="w-100">
+              <div class="s-showcase-screen-badge">
+                <span class="s-pill s-pill-sm" style="background: var(--s-gradient-info-special); color: #fff;"><i class="bi bi-display"></i> Live UI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- END PANEL 9 -->
+
+
+  </div>
+  <!-- end .s-showcase-panels -->
+
+</section>
+<!-- end #module-showcase -->
+```
+
+---
+
+## File 2 — `style.css` additions
+
+Add this block at the end of `style.css`, clearly after the existing modal rules (which you are now removing):
+
+```css
+/* ═══════════════════════════════════════════════════════════════
+   SAPPHIRE MODULE SHOWCASE SYSTEM
+   Replaces all fullscreen core-module modals.
+   ═══════════════════════════════════════════════════════════════ */
+
+.s-module-showcase {
+  background: var(--s-white);
+  border-top: 1px solid var(--s-gray-200);
+}
+
+/* ── Tab Navigation ─────────────────────────────────────────── */
+
+.s-showcase-nav {
+  position: sticky;
+  top: 64px;
+  z-index: 100;
+  background: var(--s-white);
+  border-bottom: 1px solid var(--s-gray-200);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.05);
+}
+
+.s-showcase-tabs {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.s-showcase-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.s-showcase-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.125rem;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: var(--s-text-sm);
+  font-weight: var(--s-font-medium);
+  color: var(--s-gray-500);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: var(--s-transition-fast);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.s-showcase-tab:hover {
+  color: var(--s-primary);
+  background: rgba(0, 102, 204, 0.04);
+}
+
+.s-showcase-tab.active {
+  color: var(--s-primary);
+  border-bottom-color: var(--s-primary);
+  background: rgba(0, 102, 204, 0.04);
+}
+
+.s-showcase-tab .s-icon-sm {
+  width: 28px;
+  height: 28px;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+/* ── Panels ─────────────────────────────────────────────────── */
+
+.s-showcase-panels {
+  min-height: 640px;
+}
+
+.s-showcase-panel {
+  display: none;
+  animation: s-panel-in 0.28s ease;
+}
+
+.s-showcase-panel.active {
+  display: block;
+}
+
+@keyframes s-panel-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Panel Header ───────────────────────────────────────────── */
+
+.s-showcase-panel-head {
+  padding: 2.5rem 0 2rem;
+  border-bottom: 1px solid var(--s-gray-200);
+}
+
+/* Per-module tint variants */
+.s-showcase-head-primary     { background: rgba(0, 102, 204, 0.04); }
+.s-showcase-head-info        { background: rgba(6, 182, 212, 0.04); }
+.s-showcase-head-pop         { background: rgba(139, 92, 246, 0.04); }
+.s-showcase-head-amber       { background: rgba(245, 158, 11, 0.04); }
+.s-showcase-head-royal       { background: rgba(124, 58, 237, 0.04); }
+.s-showcase-head-indigo      { background: rgba(99, 102, 241, 0.04); }
+.s-showcase-head-attention   { background: rgba(239, 68, 68, 0.04); }
+.s-showcase-head-success     { background: rgba(16, 185, 129, 0.04); }
+.s-showcase-head-info-special{ background: rgba(14, 165, 233, 0.04); }
+
+/* ── Title & Subtitle ───────────────────────────────────────── */
+
+.s-showcase-title {
+  font-size: clamp(1.4rem, 2.5vw, 1.875rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.s-showcase-sub {
+  font-size: var(--s-text-base);
+  color: var(--s-gray-500);
+  margin: 0;
+}
+
+/* ── Primary Screenshot ─────────────────────────────────────── */
+
+.s-showcase-screen-primary {
+  position: relative;
+  border-radius: var(--s-radius-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.10), 0 4px 16px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--s-gray-200);
+  background: var(--s-gray-100);
+}
+
+.s-showcase-screen-primary img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.4s ease;
+}
+
+.s-showcase-screen-primary:hover img {
+  transform: scale(1.015);
+}
+
+.s-showcase-screen-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+
+@media (max-width: 991.98px) {
+  .s-showcase-panel-head {
+    padding: 1.75rem 0 1.5rem;
+  }
+  .s-showcase-tab span {
+    display: none;
+  }
+  .s-showcase-tab {
+    padding: 0.875rem 0.75rem;
+    justify-content: center;
+  }
+  .s-showcase-tab .s-icon-sm {
+    margin: 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .s-showcase-nav {
+    top: 56px;
+  }
+  .s-showcase-title {
+    font-size: 1.25rem;
+  }
+}
+```
+
+---
+
+## File 3 — `sapphire.js` additions
+
+Add this function to `sapphire.js` and call it from the page's init block (wherever `initCardTiltEffects()` or other inits are called):
+
+```js
+/* ══════════════════════════════════════════════════════
+   MODULE SHOWCASE — Tab + Panel System
+   Replaces all fullscreen core-module modal behaviour.
+   ══════════════════════════════════════════════════════ */
+
+export function initModuleShowcase() {
+  const tabs      = document.querySelectorAll('.s-showcase-tab');
+  const panels    = document.querySelectorAll('.s-showcase-panel');
+  const showcase  = document.getElementById('module-showcase');
+  const navEl     = document.getElementById('showcaseNav');
+
+  if (!tabs.length || !panels.length) return;
+
+  function activateModule(moduleId) {
+    tabs.forEach(t => {
+      const isActive = t.dataset.showcaseTarget === moduleId;
+      t.classList.toggle('active', isActive);
+      t.setAttribute('aria-selected', String(isActive));
+    });
+
+    panels.forEach(p => {
+      p.classList.toggle('active', p.id === `showcase-${moduleId}`);
+    });
+
+    // Scroll active tab into view within the horizontal scroller
+    const activeTab = document.querySelector(`.s-showcase-tab[data-showcase-target="${moduleId}"]`);
+    activeTab?.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+  }
+
+  // Tab bar clicks
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => activateModule(tab.dataset.showcaseTarget));
+  });
+
+  // Card "Explore" buttons → scroll to showcase + activate module
+  document.querySelectorAll('[data-showcase-target]').forEach(btn => {
+    // Skip tabs themselves (they already have the click handler above)
+    if (btn.classList.contains('s-showcase-tab')) return;
+
+    btn.addEventListener('click', () => {
+      activateModule(btn.dataset.showcaseTarget);
+      const navOffset = navEl ? navEl.offsetHeight : 0;
+      const top = showcase.getBoundingClientRect().top + window.scrollY - 64 - navOffset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
+  });
+}
+```
+
+Then in the existing init block (look for the DOMContentLoaded or the page-level init call area):
+
+```js
+// existing init calls ...
+initModuleShowcase();
+```
+
+---
+
+**Change Summary**
+
+The entire modal system is replaced by a single `#module-showcase` section using a sticky horizontal tab bar and nine animated inline panels. The "Explore" buttons on the `core-modules-grid` cards switch their `data-bs-toggle/target` attributes to `data-showcase-target` — the JS then scrolls to the showcase and activates the correct panel on click. Every panel preserves the exact content from its former modal (lead text, `core-modules-content-label-list`, stat grids, pill rows) while surfacing real UI screenshots via the existing `s-cm-pic-card` component and a new `s-showcase-screen-primary` wrapper that gives the primary screenshot a polished frame with hover-zoom. Nine new `s-showcase-head-*` utility classes handle the per-module tinted header backgrounds using design-system color values. No Bootstrap modal JS is invoked anywhere; no new libraries are introduced. The tab bar is mobile-optimised: labels collapse to icon-only at `<992px` via a single media query rule.

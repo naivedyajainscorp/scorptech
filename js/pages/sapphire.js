@@ -75,42 +75,57 @@ function initializeSapphireHeroGrid() {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// 3. Modal Focus Management (Accessibility)
+// 3. Module Showcase — Tab + Panel System
 // ─────────────────────────────────────────────────────────────────────────────
 
-function initModalFocusReturn() {
-  if (typeof bootstrap === 'undefined') {
-    console.log('ℹ️ Bootstrap not loaded, skipping modal focus management');
-    return;
+/* ══════════════════════════════════════════════════════
+   MODULE SHOWCASE — Tab + Panel System
+   Replaces all fullscreen core-module modal behaviour.
+   ══════════════════════════════════════════════════════ */
+
+function initModuleShowcase() {
+  const tabs      = document.querySelectorAll('.s-showcase-tab');
+  const panels    = document.querySelectorAll('.s-showcase-panel');
+  const showcase  = document.getElementById('module-showcase');
+  const navEl     = document.getElementById('showcaseNav');
+
+  if (!tabs.length || !panels.length) return;
+
+  function activateModule(moduleId) {
+    tabs.forEach(t => {
+      const isActive = t.dataset.showcaseTarget === moduleId;
+      t.classList.toggle('active', isActive);
+      t.setAttribute('aria-selected', String(isActive));
+    });
+
+    panels.forEach(p => {
+      p.classList.toggle('active', p.id === `showcase-${moduleId}`);
+    });
+
+    // Scroll active tab into view within the horizontal scroller
+    const activeTab = document.querySelector(`.s-showcase-tab[data-showcase-target="${moduleId}"]`);
+    activeTab?.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
   }
 
-  let lastFocusedElement = null;
+  // Tab bar clicks
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => activateModule(tab.dataset.showcaseTarget));
+  });
 
-  // Track which button opened the modal
-  document.querySelectorAll('[data-bs-toggle="modal"]').forEach(button => {
-    button.addEventListener('click', () => {
-      lastFocusedElement = button;
+  // Card "Explore" buttons → scroll to showcase + activate module
+  document.querySelectorAll('[data-showcase-target]').forEach(btn => {
+    // Skip tabs themselves (they already have the click handler above)
+    if (btn.classList.contains('s-showcase-tab')) return;
+
+    btn.addEventListener('click', () => {
+      activateModule(btn.dataset.showcaseTarget);
+      const navOffset = navEl ? navEl.offsetHeight : 0;
+      const top = showcase.getBoundingClientRect().top + window.scrollY - 64 - navOffset;
+      window.scrollTo({ top, behavior: 'smooth' });
     });
   });
 
-  // Focus modal title when shown (accessibility)
-  document.querySelectorAll('.modal').forEach(modal => {
-    modal.addEventListener('shown.bs.modal', () => {
-      const modalTitle = modal.querySelector('.s-modal-title, .modal-title');
-      if (modalTitle) {
-        modalTitle.focus();
-      }
-    });
-
-    // Return focus to button when modal closes (accessibility)
-    modal.addEventListener('hidden.bs.modal', () => {
-      if (lastFocusedElement) {
-        lastFocusedElement.focus();
-      }
-    });
-  });
-
-  console.log('✅ Modal focus management initialized');
+  console.log('✅ Module Showcase initialized');
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -120,7 +135,7 @@ function initModalFocusReturn() {
 document.addEventListener('DOMContentLoaded', () => {
   initAOS();
   initializeSapphireHeroGrid();
-  initModalFocusReturn();
+  initModuleShowcase();
 
   // Reinitialize grid on window resize (debounced)
   let resizeTimeout;

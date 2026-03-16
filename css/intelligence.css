@@ -1,0 +1,507 @@
+/* ═══════════════════════════════════════════════════════════════
+   INTELLIGENCE PAGE — intelligence.css
+   SCORP Design System Integration
+═══════════════════════════════════════════════════════════════ */
+
+
+/* ── INTEL HERO ─────────────────────────────────────────────── */
+.intel-hero {
+    position: relative;
+    background: linear-gradient(135deg, #060f1e 0%, #0a1628 35%, #0d1b3e 65%, #0f2034 100%);
+    padding-top: 60px;
+    padding-bottom: 2.5rem;
+    overflow: hidden;
+}
+.intel-hero-deco {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.045) 1px, transparent 1px);
+    background-size: 38px 38px;
+    pointer-events: none;
+    z-index: 0;
+}
+.intel-hero-deco::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 60%, #0f2034 100%);
+}
+.intel-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+}
+.intel-hero-content {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 560px;
+}
+.intel-hero-ring {
+    flex: 0 0 auto;
+    width: min(560px, 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+}
+.intel-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(51,153,255,0.12);
+    border: 1px solid rgba(51,153,255,0.30);
+    color: #66b3ff;
+    padding: 0.45rem 1.1rem;
+    border-radius: var(--s-radius-full);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+.intel-hero-badge i { font-size: 0.85rem; }
+
+.intel-hero-title {
+    color: #fff;
+    font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+    font-family: 'Science Gothic', Arial, sans-serif;
+}
+.intel-hero-title-accent {
+    background: linear-gradient(135deg, #3399ff, #66b3ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.intel-hero-desc {
+    color: rgba(255,255,255,0.72);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 2rem;
+    max-width: 480px;
+    font-family: Verdana, sans-serif;
+}
+.intel-hero-desc em { color: rgba(255,255,255,0.92); font-style: italic; }
+
+.intel-hero-nav-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.32);
+    margin-bottom: 0.65rem;
+}
+.intel-hero-pills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.55rem;
+    margin-bottom: 2rem;
+}
+.intel-hero-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.65rem 1rem;
+    border-radius: var(--s-radius-full);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.10);
+    color: rgba(255,255,255,0.82);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.intel-hero-pill:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.22);
+    color: #fff;
+    transform: translateY(-2px);
+}
+.intel-hero-pill span        { flex: 1; overflow: hidden; text-overflow: ellipsis; }
+.intel-hero-pill-arrow       { font-size: 0.5rem; opacity: 0.55; flex-shrink: 0; }
+
+.intel-hero-pill--primary    { border-color: rgba(0,102,204,0.40); }
+.intel-hero-pill--amber      { border-color: rgba(245,158,11,0.40); }
+.intel-hero-pill--attention  { border-color: rgba(234,88,12,0.40); }
+.intel-hero-pill--royal      { border-color: rgba(124,58,237,0.40); }
+
+.intel-hero-pill--primary:hover   { background: rgba(0,102,204,0.18);  border-color: rgba(0,102,204,0.55); }
+.intel-hero-pill--amber:hover     { background: rgba(245,158,11,0.18); border-color: rgba(245,158,11,0.55); }
+.intel-hero-pill--attention:hover { background: rgba(234,88,12,0.18);  border-color: rgba(234,88,12,0.55); }
+.intel-hero-pill--royal:hover     { background: rgba(124,58,237,0.18); border-color: rgba(124,58,237,0.55); }
+
+.intel-hero-pill--primary i:first-child   { color: #3399ff; }
+.intel-hero-pill--amber i:first-child     { color: #fbbf24; }
+.intel-hero-pill--attention i:first-child { color: #fb923c; }
+.intel-hero-pill--royal i:first-child     { color: #a78bfa; }
+
+.intel-hero-cta { margin-top: 0.25rem; }
+
+
+/* ── HERO RING CANVAS ───────────────────────────────────────── */
+.intel-ring-wrap {
+    width: 100%;
+    max-width: 620px;
+    overflow: visible;
+}
+.intel-ring-wrap canvas {
+    width: 100% !important;
+    display: block;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   1. STICKY SECTION NAV
+═══════════════════════════════════════════════════════════════ */
+.intel-snav {
+    position: sticky;
+    top: 88px;
+    margin-top: 2px;
+    z-index: var(--s-z-sticky);
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: var(--s-shadow-lg);
+    margin-left: 5vw;
+    margin-right: 5vw;
+    border-radius: var(--s-radius-lg);
+}
+.intel-snav-inner {
+    display: flex;
+    gap: 0.25rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 0.5rem 0;
+    white-space: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.intel-snav-inner::-webkit-scrollbar { display: none; }
+
+.intel-snav-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: var(--s-radius-full);
+    color: var(--s-gray-600);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: var(--s-transition-smooth);
+}
+.intel-snav-item:hover  { background: var(--s-gray-100); color: var(--s-gray-900); }
+.intel-snav-item.active { background: var(--s-gray-100); color: var(--s-gray-900); font-weight: 700; }
+
+.intel-snav-item[data-domain="enterprise"].active { color: #0066cc; }
+.intel-snav-item[data-domain="inventory"].active   { color: #f59e0b; }
+.intel-snav-item[data-domain="lifecycle"].active   { color: #f97316; }
+.intel-snav-item[data-domain="financial"].active   { color: #7c3aed; }
+
+.intel-snav-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: var(--s-transition-smooth);
+}
+.intel-snav-item.active .intel-snav-dot {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px currentColor;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   2. DOMAIN ROW — CSS Grid (replaces Bootstrap row for sticky)
+═══════════════════════════════════════════════════════════════ */
+.intel-domain-row {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+.intel-canvas-col {
+    align-self: stretch;
+}
+
+.intel-domain-row.canvas-right {
+    grid-template-columns: 7fr 5fr;
+    direction: rtl;
+}
+.intel-domain-row.canvas-right > * {
+    direction: ltr;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   3. CANVAS CARDS (sticky cycle animations)
+═══════════════════════════════════════════════════════════════ */
+.intel-canvas-card {
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1.5px solid rgba(255,255,255,0.95);
+    border-radius: var(--s-radius-xl);
+    box-shadow: var(--s-shadow-lg);
+    overflow: hidden;
+    max-width: 100%;
+    position: sticky;
+    top: 172px;
+}
+.intel-canvas-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.875rem 1.25rem 0.25rem;
+}
+.intel-canvas-title {
+    font-family: 'Science Gothic', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--s-gray-700);
+}
+.intel-anim-live {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--s-success);
+}
+.intel-anim-live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--s-success);
+    animation: intel-pulse 2s infinite;
+}
+@keyframes intel-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.5; transform: scale(1.35); }
+}
+.intel-cycle-canvas {
+    display: block;
+    width: 100% !important;
+}
+.intel-anim-caption {
+    padding: 0.6rem 1.25rem 1rem;
+    font-size: 0.82rem;
+    color: var(--s-gray-600);
+    line-height: 1.55;
+    min-height: 60px;
+    transition: opacity 0.3s ease;
+    font-family: Verdana, sans-serif;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   4. FEATURE CARDS
+═══════════════════════════════════════════════════════════════ */
+.intel-feat-card {
+    background: #fff;
+    border: 1px solid var(--s-gray-200);
+    border-radius: var(--s-radius-lg);
+    padding: 1rem 1.1rem;
+    transition: var(--s-transition-smooth);
+    box-shadow: var(--s-shadow-xs);
+}
+.intel-feat-card:hover {
+    box-shadow: var(--s-shadow-md);
+    transform: translateY(-2px);
+    border-color: var(--s-gray-300);
+}
+.intel-feat-title {
+    font-size: 0.92rem;
+    font-weight: 700;
+    margin-bottom: 0.15rem;
+}
+.intel-feat-desc {
+    font-size: 0.83rem;
+    color: var(--s-gray-600);
+    line-height: 1.5;
+    margin-bottom: 0.6rem;
+}
+.intel-bullet {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.45rem;
+    font-size: 0.8rem;
+    color: var(--s-gray-700);
+    margin-bottom: 0.3rem;
+}
+.intel-bullet i { font-size: 0.7rem; margin-top: 3px; flex-shrink: 0; }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   5. CATEGORY GRID (Inventory section)
+═══════════════════════════════════════════════════════════════ */
+.intel-cat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin: 0.6rem 0 1rem;
+}
+.intel-cat-tile {
+    background: var(--s-gray-50);
+    border: 1px solid var(--s-gray-200);
+    border-radius: var(--s-radius-md);
+    padding: 0.6rem 0.4rem;
+    text-align: center;
+    transition: var(--s-transition-smooth);
+}
+.intel-cat-tile:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--s-shadow-sm);
+    border-color: var(--s-amber-500);
+    background: #fff;
+}
+.intel-cat-name {
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: var(--s-gray-800);
+    margin-top: 0.35rem;
+}
+.intel-cat-desc {
+    font-size: 0.66rem;
+    color: var(--s-gray-500);
+    line-height: 1.3;
+    margin-top: 0.15rem;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   6. SCENARIO BOXES
+═══════════════════════════════════════════════════════════════ */
+.intel-scenario {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    border-radius: var(--s-radius-lg);
+    padding: 1.1rem 1.4rem;
+    margin-top: 2rem;
+}
+.intel-scenario-icon  { font-size: 1.4rem; margin-top: 2px; flex-shrink: 0; }
+.intel-scenario-label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 0.35rem;
+}
+.intel-scenario-text  { font-size: 0.875rem; line-height: 1.6; margin: 0; }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   7. SCROLL REVEAL
+═══════════════════════════════════════════════════════════════ */
+.intel-reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1),
+                transform 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+.intel-reveal.in  { opacity: 1; transform: translateY(0); }
+.intel-reveal-d1  { transition-delay: 0.12s; }
+.intel-reveal-d2  { transition-delay: 0.24s; }
+.intel-reveal-d3  { transition-delay: 0.36s; }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   8. SECTION-SCOPED FEAT-TITLE GRADIENTS
+═══════════════════════════════════════════════════════════════ */
+#section-enterprise .intel-feat-title {
+    background-image: linear-gradient(135deg, #0066cc, #3399ff, #0066cc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+#section-inventory .intel-feat-title {
+    background-image: linear-gradient(135deg, #b45309, #d97706, #f59e0b, #b45309);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+#section-lifecycle .intel-feat-title {
+    background-image: linear-gradient(135deg, #ea580c, #f97316, #fb923c, #ea580c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+#section-financial .intel-feat-title {
+    background-image: linear-gradient(135deg, #7c3aed, #a78bfa, #c4b5fd, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   9. RESPONSIVE
+═══════════════════════════════════════════════════════════════ */
+@media (max-width: 1100px) {
+    .intel-hero-inner { padding: 0 2.5rem; gap: 1.5rem; }
+    .intel-hero-ring  { width: min(600px, 48%); }
+}
+
+@media (max-width: 991px) {
+    .intel-domain-row,
+    .intel-domain-row.canvas-right {
+        display: flex;
+        flex-direction: column;
+    }
+    /* canvas-right sections: flip stack so canvas is on top */
+    .intel-domain-row.canvas-right {
+        flex-direction: column-reverse;
+    }
+    .intel-canvas-card {
+        position: static;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 880px) {
+    .intel-hero-inner {
+        flex-direction: column;
+        padding: 0 1.5rem;
+        text-align: center;
+    }
+    .intel-hero-content { max-width: 100%; }
+    .intel-hero-desc    { max-width: 100%; margin-left: auto; margin-right: auto; }
+    .intel-hero-ring    { width: min(500px, 100%); }
+    .intel-hero-pills   { grid-template-columns: 1fr 1fr; }
+    .intel-hero-badge, .intel-hero-nav-label {
+        margin-left: auto;
+        margin-right: auto;
+        display: inline-flex;
+    }
+}
+
+@media (max-width: 767px) {
+    .intel-snav      { top: 9vh; }
+    .intel-ring-wrap { max-width: 320px; }
+    .intel-cat-grid  { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 540px) {
+    .intel-hero-inner { padding: 0 1rem; }
+    .intel-hero-pills { grid-template-columns: 1fr; }
+    .intel-hero-ring  { width: 100%; }
+    .intel-ring-wrap  { max-width: 340px; margin: 0 auto; }
+    .intel-cat-grid   { grid-template-columns: repeat(2, 1fr); }
+}

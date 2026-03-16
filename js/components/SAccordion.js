@@ -108,19 +108,36 @@ function toggleItem(item) {
     trigger.setAttribute('aria-expanded', 'false');
     
   } else {
+    // CLOSE SIBLINGS FIRST
+    const accordion = item.closest('.s-accordion');
+    if (accordion) {
+      accordion.querySelectorAll('.s-accordion-item.s-accordion-active').forEach(sibling => {
+        if (sibling === item) return; // skip self
+        const sibPanel   = sibling.querySelector('.s-accordion-panel');
+        const sibTrigger = sibling.querySelector('.s-accordion-trigger');
+        if (!sibPanel) return;
+
+        sibPanel.style.height = sibPanel.scrollHeight + 'px';
+        void sibPanel.offsetHeight; // force reflow
+        sibPanel.style.height = '0px';
+        sibling.classList.remove('s-accordion-active');
+        sibTrigger?.setAttribute('aria-expanded', 'false');
+      });
+    }
+
     // OPEN
     const targetHeight = panel.scrollHeight;
     panel.style.height = targetHeight + 'px';
     item.classList.add('s-accordion-active');
     trigger.setAttribute('aria-expanded', 'true');
-    
-    // After animation, set to auto for responsiveness
+
     setTimeout(() => {
       if (item.classList.contains('s-accordion-active')) {
         panel.style.height = 'auto';
       }
     }, 300);
   }
+
 }
 
 /**

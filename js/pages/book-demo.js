@@ -84,6 +84,8 @@ function getFullPhoneNumber() {
   return iti.getNumber();
 }
 
+
+
 // ********************************************
 // 🗺️ Map Initialization & Location Fetching
 // ********************************************
@@ -162,11 +164,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
-// ********************************************
-// 📍 Pincode Autofill: District, State, Country
-// Using India Post API
-// ********************************************
 
 // ********************************************
 // 📍 Pincode Autofill: District, State, Country

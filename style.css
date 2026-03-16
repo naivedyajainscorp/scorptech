@@ -1,19 +1,20 @@
+/* design system */
 @import url('css/core.css');
 @import url('css/components.css');
 @import url('css/sections.css');
-
+@import url('css/utilities.css');
+/* pages */
 @import url('css/mobileUSP.css');
 @import url('css/about.css');
 @import url('css/book-demo.css');
 @import url('css/contact.css');
 @import url('css/smart-analytics.css');
 @import url('css/sapphire-assessment.css');
-
-/* @import url('css/pages.css'); */
-
-@import url('css/utilities.css');
-@import url('css/animations.css');
 @import url('css/assessment-report-pdf.css');
+@import url('css/intelligence.css');
+
+@import url('css/animations.css');
+
 
 
 
@@ -2310,4 +2311,178 @@ select:focus {
   font-size: 0.825rem;
   margin-top: 0.4rem;
   color: var(--s-danger) !important;
+}/* ═══════════════════════════════════════════════════════════════
+   SAPPHIRE MODULE SHOWCASE SYSTEM
+   Replaces all fullscreen core-module modals.
+   ═══════════════════════════════════════════════════════════════ */
+
+
+/* ── Tab Navigation ─────────────────────────────────────────── */
+
+.s-showcase-nav {
+    position: sticky;
+    top: 6rem;
+    z-index: 100;
+    background: var(--s-white);
+    border-bottom: 1px solid var(--s-gray-200);
+    box-shadow: var(--s-shadow-lg);
+    margin:0 1.25rem;
+    border-radius: 1.25rem;}
+
+.s-showcase-tabs {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  align-items: center;
+  justify-content:space-around;
+}
+
+.s-showcase-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.s-showcase-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.125rem;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: var(--s-text-sm);
+  font-weight: var(--s-font-medium);
+  color: var(--s-gray-500);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: var(--s-transition-fast);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.s-showcase-tab:hover {
+  color: var(--s-primary);
+  background: rgba(0, 102, 204, 0.04);
+}
+
+.s-showcase-tab.active {
+  color: var(--s-primary);
+  border-bottom-color: var(--s-primary);
+  background: rgba(0, 102, 204, 0.04);
+}
+
+.s-showcase-tab .s-icon-sm {
+  width: 28px;
+  height: 28px;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+/* ── Panels ─────────────────────────────────────────────────── */
+
+.s-showcase-panels {
+  min-height: 640px;
+}
+
+.s-showcase-panel {
+  display: none;
+  animation: s-panel-in 0.28s ease;
+}
+
+.s-showcase-panel.active {
+  display: block;
+}
+
+@keyframes s-panel-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Panel Header ───────────────────────────────────────────── */
+
+.s-showcase-panel-head {
+  padding: 2.5rem 0 2rem;
+  border-bottom: 1px solid var(--s-gray-200);
+}
+
+/* Per-module tint variants */
+.s-showcase-head-primary     { background: rgba(0, 102, 204, 0.04); }
+.s-showcase-head-info        { background: rgba(6, 182, 212, 0.04); }
+.s-showcase-head-pop         { background: rgba(139, 92, 246, 0.04); }
+.s-showcase-head-amber       { background: rgba(245, 158, 11, 0.04); }
+.s-showcase-head-royal       { background: rgba(124, 58, 237, 0.04); }
+.s-showcase-head-indigo      { background: rgba(99, 102, 241, 0.04); }
+.s-showcase-head-attention   { background: rgba(239, 68, 68, 0.04); }
+.s-showcase-head-success     { background: rgba(16, 185, 129, 0.04); }
+.s-showcase-head-info-special{ background: rgba(14, 165, 233, 0.04); }
+
+/* ── Title & Subtitle ───────────────────────────────────────── */
+
+.s-showcase-title {
+  font-size: clamp(1.4rem, 2.5vw, 1.875rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.s-showcase-sub {
+  font-size: var(--s-text-base);
+  color: var(--s-gray-500);
+  margin: 0;
+}
+
+/* ── Primary Screenshot ─────────────────────────────────────── */
+
+.s-showcase-screen-primary {
+  position: relative;
+  border-radius: var(--s-radius-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.10), 0 4px 16px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--s-gray-200);
+  background: var(--s-gray-100);
+}
+
+.s-showcase-screen-primary img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.4s ease;
+}
+
+.s-showcase-screen-primary:hover img {
+  transform: scale(1.015);
+}
+
+.s-showcase-screen-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+
+@media (max-width: 991.98px) {
+  .s-showcase-panel-head {
+    padding: 1.75rem 0 1.5rem;
+  }
+  .s-showcase-tab span {
+    display: none;
+  }
+  .s-showcase-tab {
+    padding: 0.875rem 0.75rem;
+    justify-content: center;
+  }
+  .s-showcase-tab .s-icon-sm {
+    margin: 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .s-showcase-nav {
+    top: 56px;
+  }
+  .s-showcase-title {
+    font-size: 1.25rem;
+  }
 }
