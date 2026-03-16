@@ -12,6 +12,7 @@ import { initAccordions } from './components/SAccordion.js';
 import FloatingElementCard from './components/FloatingElementCard.js';
 import { FormEnhancements } from './utils/form-enhancements.js';
 import { initFooterManager } from './components/FooterManager.js';
+import { initIntelligencePage } from './pages/intelligence.js';
 
 
 
@@ -93,6 +94,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   console.log('✅ All universal components initialized');
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // INTELLIGENCE PAGE INITIALIZATION
+  // ─────────────────────────────────────────────────────────────────────────────
+  if (document.getElementById('masterRingCanvas')) {
+    initIntelligencePage();
+  }
 });
 
 

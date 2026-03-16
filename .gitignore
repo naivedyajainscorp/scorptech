@@ -1,8 +1,60 @@
+# ==================================================
+# SCORP DEVELOPMENT FILES (NOT NEEDED FOR WEBSITE)
+# ==================================================
+
 _export.ps1
+generate_blogs.py
+
 scorp_html.txt
 scorp_css_json.txt
 scorp_js.txt
 scorp_structure.txt
 scorp_full_export.txt
 scorp_misc.txt
-generate_blogs.py
+
+
+# ==================================================
+# DEVELOPMENT / EDITOR
+# ==================================================
+
+.vscode/
+.gemini/
+
+
+# ==================================================
+# TEMP FILES
+# ==================================================
+
+tmp/
+*.log
+
+
+# ==================================================
+# NODE DEPENDENCIES (CONTENT EXTRACTOR TOOL)
+# ==================================================
+
+node_modules/
+assets/data/tools/content-extractor/node_modules/
+
+
+# ==================================================
+# GENERATED EXPORT FILES
+# ==================================================
+
+assets/data/tools/content-extractor/exports/
+
+
+# ==================================================
+# PYTHON CACHE
+# ==================================================
+
+__pycache__/
+*.pyc
+
+
+# ==================================================
+# SYSTEM FILES
+# ==================================================
+
+.DS_Store
+Thumbs.db

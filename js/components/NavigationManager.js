@@ -103,7 +103,7 @@ export function initNavigationManager() {
 
   const dropdownPageMap = {
     'resources': ['faq.html', 'terms_of_use.html', 'privacy_policy.html'],
-    'sapphire-smart': ['analytics.html', 'intelligence.html', 'mobileUSP.html'],
+    'sapphire-smart': ['analytics.html', 'intelligence.html', 'mobileUSP.html', 'how-do-I-use-sapphire.html'],
   };
 
   Object.keys(dropdownPageMap).forEach(dropdownId => {

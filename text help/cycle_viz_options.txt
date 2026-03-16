@@ -1,0 +1,793 @@
+    /* ═══════════════════════════════════════════════════════════
+     MASTER LIFECYCLE RING — TRUE 3D PERSPECTIVE
+  ═══════════════════════════════════════════════════════════ */
+  (function () {
+    const canvas = qs('masterRingCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let W, H, cx, cy, R;
+
+    // Camera angles — tune these to taste
+    const ROT_X = 0.36;   // ~30° forward tilt (the "coin" lean)
+    const ROT_Y = -0.18;  // ~8° left rotation (breaks symmetry, feels dynamic)
+    const FOV   = 700;    // perspective strength — lower = more dramatic
+
+    let activeNode = 0, prevNode = 0, phaseTime = 0;
+    let lastTs = performance.now(), hoverNode = -1;
+
+    const TRAVEL_DUR = 0.7, DWELL_DUR = 2.5, TOTAL_DUR = TRAVEL_DUR + DWELL_DUR;
+    const nodeGlow = [1, 0, 0, 0, 0, 0];
+    const particles = [{ ph: 0 }, { ph: TAU * 0.33 }, { ph: TAU * 0.67 }];
+    const PSPEED = 0.14;
+    const ripples = [];
+
+    const nodes = [
+      { label: 'Acquire',  icon: '\uf07a', color: COLORS.primary   },
+      { label: 'Deploy',   icon: '\uf135', color: COLORS.amber     },
+      { label: 'Inspect',  icon: '\uf002', color: COLORS.attention },
+      { label: 'Maintain', icon: '\uf0ad', color: COLORS.attention },
+      { label: 'Track',    icon: '\uf201', color: COLORS.royal     },
+      { label: 'Dispose',  icon: '\uf328', color: COLORS.primary   },
+    ];
+
+    function resize() {
+      const rect = canvas.parentElement.getBoundingClientRect();
+      W = canvas.width  = Math.min(520, rect.width);
+      H = canvas.height = Math.round(W * 1.28); // tall canvas = no label clipping
+      canvas.style.height = H + 'px';
+      cx = W / 2;
+      cy = H * 0.52;
+      R  = W * 0.330;
+    }
+
+    // Full 3D → 2D perspective projection
+    function proj(x3, y3, z3) {
+      const y1 =  y3 * Math.cos(ROT_X) - z3 * Math.sin(ROT_X);
+      const z1 =  y3 * Math.sin(ROT_X) + z3 * Math.cos(ROT_X);
+      const x2 =  x3 * Math.cos(ROT_Y) + z1 * Math.sin(ROT_Y);
+      const z2 = -x3 * Math.sin(ROT_Y) + z1 * Math.cos(ROT_Y);
+      const sc = FOV / (FOV + z2);
+      return { x: cx + x2 * sc, y: cy + y1 * sc, z: z2, sc };
+    }
+
+    function nodePos(i) {
+      const a = (TAU / nodes.length) * i - Math.PI / 2;
+      return { ...proj(R * Math.cos(a), 0, R * Math.sin(a)), a };
+    }
+
+    function traceRing(y3 = 0, steps = 96) {
+      ctx.beginPath();
+      for (let i = 0; i <= steps; i++) {
+        const a = TAU * i / steps;
+        const p = proj(R * Math.cos(a), y3, R * Math.sin(a));
+        i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y);
+      }
+      ctx.closePath();
+    }
+
+    function traceArc(a0, a1, y3 = 0, steps = 32) {
+      ctx.beginPath();
+      for (let i = 0; i <= steps; i++) {
+        const a = a0 + (a1 - a0) * i / steps;
+        const p = proj(R * Math.cos(a), y3, R * Math.sin(a));
+        i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y);
+      }
+    }
+
+    function lerpHex(h1, h2, t) {
+      const pr = s => parseInt(s, 16);
+      const a = h1.replace('#',''), b = h2.replace('#','').slice(0,6);
+      return `rgb(${Math.round(lerp(pr(a.slice(0,2)),pr(b.slice(0,2)),t))},`+
+             `${Math.round(lerp(pr(a.slice(2,4)),pr(b.slice(2,4)),t))},`+
+             `${Math.round(lerp(pr(a.slice(4,6)),pr(b.slice(4,6)),t))})`;
+    }
+
+    function draw(ts) {
+      const dt = Math.min((ts - lastTs) / 1000, 0.05); lastTs = ts;
+      phaseTime += dt;
+
+      if (phaseTime > TOTAL_DUR) {
+        phaseTime -= TOTAL_DUR;
+        prevNode   = activeNode;
+        activeNode = (activeNode + 1) % nodes.length;
+        const p = nodePos(activeNode);
+        ripples.push({ x: p.x, y: p.y, r: W*0.06, color: nodes[activeNode].color, alpha: 0.85 });
+      }
+
+      const tP = Math.min(phaseTime / TRAVEL_DUR, 1);
+      const sP = easeInOut(tP);
+
+      nodes.forEach((_, i) => {
+        nodeGlow[i] = i === activeNode
+          ? Math.min(1, nodeGlow[i] + dt * 4)
+          : Math.max(0, nodeGlow[i] - dt * 3);
+      });
+      particles.forEach(p => { p.ph = (p.ph + dt * PSPEED * TAU) % TAU; });
+
+      ctx.clearRect(0, 0, W, H);
+
+      /* ── 1. AMBIENT BACKGROUND GLOW ── */
+      const amb = ctx.createRadialGradient(cx, cy, 0, cx, cy, W * 0.58);
+      amb.addColorStop(0,   nodes[activeNode].color + '1e');
+      amb.addColorStop(0.65,nodes[activeNode].color + '09');
+      amb.addColorStop(1,   'transparent');
+      ctx.fillStyle = amb; ctx.fillRect(0, 0, W, H);
+
+      /* ── 2. RING RIM EXTRUSION (face-normal lighting) ── */
+      const rimH = W * 0.040;
+      const rimSegs = 72;
+      for (let i = 0; i < rimSegs; i++) {
+        const a0 = TAU * i / rimSegs;
+        const a1 = TAU * (i + 1) / rimSegs;
+        const am = (a0 + a1) / 2;
+
+        // Face normal dot light direction (0.4, -0.7, 0.6)
+        const diffuse = Math.max(0, Math.cos(am) * 0.4 + Math.sin(am) * 0.6);
+        const alpha   = lerp(0.025, 0.30, diffuse);
+
+        const pA0 = proj(R * Math.cos(a0), 0,    R * Math.sin(a0));
+        const pA1 = proj(R * Math.cos(a1), 0,    R * Math.sin(a1));
+        const pB0 = proj(R * Math.cos(a0), rimH, R * Math.sin(a0));
+        const pB1 = proj(R * Math.cos(a1), rimH, R * Math.sin(a1));
+
+        ctx.beginPath();
+        ctx.moveTo(pA0.x, pA0.y); ctx.lineTo(pA1.x, pA1.y);
+        ctx.lineTo(pB1.x, pB1.y); ctx.lineTo(pB0.x, pB0.y);
+        ctx.closePath();
+        ctx.fillStyle = `rgba(80,150,255,${alpha})`; ctx.fill();
+      }
+
+      /* ── 3. RING SURFACE TRACKS ── */
+      traceRing(0);
+      ctx.strokeStyle = 'rgba(255,255,255,0.07)'; ctx.lineWidth = 1.5;
+      ctx.setLineDash([4, 10]); ctx.stroke(); ctx.setLineDash([]);
+
+      traceRing(rimH);
+      ctx.strokeStyle = 'rgba(20,50,110,0.18)'; ctx.lineWidth = 1; ctx.stroke();
+
+      /* ── 4. ARCS (3D traced) ── */
+      const n = nodes.length;
+      for (let i = 0; i < n; i++) {
+        const a0 = (TAU / n) * i       - Math.PI / 2;
+        const a1 = (TAU / n) * (i + 1) - Math.PI / 2;
+
+        if (i === prevNode && tP < 1) {
+          const ae = a0 + (a1 - a0) * sP;
+          ctx.lineCap = 'round';
+
+          traceArc(a0, ae, 0, 32);
+          ctx.strokeStyle = nodes[activeNode].color + '1e'; ctx.lineWidth = 20; ctx.stroke();
+
+          traceArc(a0, ae, 0, 32);
+          ctx.strokeStyle = nodes[activeNode].color + '55'; ctx.lineWidth = 8; ctx.stroke();
+
+          traceArc(a0, ae, 0, 32);
+          ctx.strokeStyle = nodes[activeNode].color; ctx.lineWidth = 2.5; ctx.stroke();
+
+          // Rim arc glow
+          traceArc(a0, ae, rimH, 16);
+          ctx.strokeStyle = nodes[activeNode].color + '38'; ctx.lineWidth = 3; ctx.stroke();
+
+          ctx.lineCap = 'butt';
+        } else {
+          traceArc(a0, a1, 0, 16);
+          ctx.strokeStyle = 'rgba(255,255,255,0.09)'; ctx.lineWidth = 1; ctx.stroke();
+        }
+      }
+
+      /* ── 5. COMET PARTICLES (true 3D path) ── */
+      particles.forEach(pt => {
+        const na = Math.round(pt.ph / (TAU / n)) % n;
+        const pc = nodes[na]?.color || COLORS.primary;
+
+        for (let j = 7; j >= 1; j--) {
+          const ta = pt.ph - j * 0.046;
+          const tp = proj(R * Math.cos(ta), 0, R * Math.sin(ta));
+          const al = Math.floor((1 - j/8) * 150).toString(16).padStart(2,'00');
+          const sz = Math.max(0.5, (3.8 - j*0.4) * tp.sc);
+          ctx.beginPath(); ctx.arc(tp.x, tp.y, sz, 0, TAU);
+          ctx.fillStyle = pc + al; ctx.fill();
+        }
+        const hp = proj(R * Math.cos(pt.ph), 0, R * Math.sin(pt.ph));
+        ctx.beginPath(); ctx.arc(hp.x, hp.y, 4.5 * hp.sc, 0, TAU);
+        ctx.fillStyle = '#ffffff'; ctx.fill();
+        ctx.strokeStyle = pc; ctx.lineWidth = 1.5; ctx.stroke();
+        ctx.beginPath(); ctx.arc(hp.x, hp.y, 10 * hp.sc, 0, TAU);
+        ctx.fillStyle = pc + '28'; ctx.fill();
+      });
+
+      /* ── 6. RIPPLES ── */
+      for (let i = ripples.length - 1; i >= 0; i--) {
+        const rip = ripples[i];
+        rip.r += W * 0.0025;
+        rip.alpha = Math.max(0, rip.alpha - 0.02);
+        if (rip.alpha <= 0) { ripples.splice(i, 1); continue; }
+        const ah = Math.floor(rip.alpha * 255).toString(16).padStart(2,'00');
+        ctx.beginPath(); ctx.arc(rip.x, rip.y, rip.r, 0, TAU);
+        ctx.strokeStyle = rip.color + ah; ctx.lineWidth = 2; ctx.stroke();
+        ctx.beginPath(); ctx.arc(rip.x, rip.y, rip.r * 0.62, 0, TAU);
+        ctx.strokeStyle = rip.color + Math.floor(rip.alpha*60).toString(16).padStart(2,'00');
+        ctx.lineWidth = 7; ctx.stroke();
+      }
+
+      /* ── 7. NODES — depth sorted back→front ── */
+      const sorted = [...Array(n).keys()].sort((a, b) => nodePos(a).z - nodePos(b).z);
+      const bR = W * 0.064;
+
+      for (const i of sorted) {
+        const pos = nodePos(i);
+        const g = nodeGlow[i], isH = hoverNode === i;
+        const r = (bR + g * W * 0.016 + (isH ? W * 0.006 : 0)) * pos.sc;
+
+        // Depth fade — far nodes dimmer
+        const da = lerp(0.58, 1.0, (-pos.z + R * 1.1) / (R * 2.2));
+
+        // Cast shadow
+        ctx.beginPath();
+        ctx.ellipse(pos.x, pos.y + r * 0.48 + W * 0.007 * pos.sc, r * 0.85, r * 0.20, 0, 0, TAU);
+        ctx.fillStyle = `rgba(0,0,0,${0.17 * pos.sc})`; ctx.fill();
+
+        // Outer aura
+        if (g > 0.05 || isH) {
+          ctx.globalAlpha = da * (isH ? 0.55 : g * 0.44);
+          ctx.beginPath(); ctx.arc(pos.x, pos.y, r + W * 0.022 * pos.sc, 0, TAU);
+          ctx.strokeStyle = nodes[i].color + '88';
+          ctx.lineWidth = 9 * pos.sc; ctx.stroke();
+          ctx.globalAlpha = 1;
+        }
+
+        // Node body
+        ctx.globalAlpha = da;
+        ctx.beginPath(); ctx.arc(pos.x, pos.y, r, 0, TAU);
+        if (g > 0.01) {
+          const gr = ctx.createRadialGradient(pos.x - r*0.28, pos.y - r*0.34, 0, pos.x, pos.y, r);
+          gr.addColorStop(0,    lerpHex('#2e4d80', nodes[i].color, g));
+          gr.addColorStop(0.55, lerpHex('#1a2d4a', nodes[i].color, g * 0.60));
+          gr.addColorStop(1,    lerpHex('#080f1e', nodes[i].color, g * 0.35));
+          ctx.fillStyle = gr;
+        } else {
+          ctx.fillStyle = 'rgba(255,255,255,0.042)';
+        }
+        ctx.fill();
+
+        // Specular highlight — top-left light source = sphere feel
+        const hl = ctx.createRadialGradient(
+          pos.x - r*0.30, pos.y - r*0.38, r*0.04,
+          pos.x - r*0.08, pos.y - r*0.08, r
+        );
+        hl.addColorStop(0,   `rgba(255,255,255,${0.24 + g*0.14})`);
+        hl.addColorStop(0.3, 'rgba(255,255,255,0.04)');
+        hl.addColorStop(1,   'transparent');
+        ctx.beginPath(); ctx.arc(pos.x, pos.y, r, 0, TAU);
+        ctx.fillStyle = hl; ctx.fill();
+
+        // Bottom warm reflection
+        const refl = ctx.createRadialGradient(pos.x, pos.y + r*0.6, 0, pos.x, pos.y + r, r*0.65);
+        refl.addColorStop(0, nodes[i].color + Math.floor(g * 35).toString(16).padStart(2,'00'));
+        refl.addColorStop(1, 'transparent');
+        ctx.beginPath(); ctx.arc(pos.x, pos.y, r, 0, TAU);
+        ctx.fillStyle = refl; ctx.fill();
+
+        // Border
+        ctx.strokeStyle = nodes[i].color + Math.floor(lerp(40, 220, g)).toString(16).padStart(2,'00');
+        ctx.lineWidth = (g > 0.1 ? 2 : 1.2) * pos.sc; ctx.stroke();
+        ctx.globalAlpha = 1;
+
+        // Icon — perspective-scaled size
+        const iSz = Math.round(lerp(W * 0.029, W * 0.040, g) * pos.sc);
+        ctx.font = `900 ${iSz}px "Font Awesome 7 Free"`;
+        ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.fillStyle = g > 0.5 ? '#ffffff' : nodes[i].color;
+        ctx.globalAlpha = da * (g > 0.5 ? 1 : lerp(0.48, 1, 1 - g));
+        ctx.fillText(nodes[i].icon, pos.x, pos.y);
+        ctx.globalAlpha = 1;
+      }
+
+      /* ── 8. LABELS (screen-space radial push) ── */
+      const lSz = Math.round(W * 0.026);
+      ctx.font = `600 ${lSz}px Verdana, sans-serif`;
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+
+      for (let i = 0; i < n; i++) {
+        const pos = nodePos(i), g = nodeGlow[i];
+
+        // Push label outward from screen-center in screen-space
+        const dx = pos.x - cx, dy = pos.y - cy;
+        const dl = Math.hypot(dx, dy);
+        const push = W * 0.118 * pos.sc;
+        const lx = pos.x + (dx / dl) * push;
+        const ly = pos.y + (dy / dl) * push;
+
+        const text = nodes[i].label;
+        const tw = ctx.measureText(text).width;
+        const ph = lSz + 10, pw = tw + 18, pr = ph / 2;
+
+        if (g < 1) {
+          ctx.globalAlpha = 1 - g;
+          ctx.fillStyle   = 'rgba(255,255,255,0.06)';
+          ctx.strokeStyle = nodes[i].color + '55'; ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.roundRect(lx - pw/2, ly - ph/2, pw, ph, pr);
+          ctx.fill(); ctx.stroke();
+          ctx.fillStyle = nodes[i].color;
+          ctx.fillText(text, lx, ly);
+          ctx.globalAlpha = 1;
+        }
+        if (g > 0) {
+          ctx.globalAlpha = g;
+          ctx.shadowColor = nodes[i].color + '80'; ctx.shadowBlur = 12;
+          ctx.fillStyle   = nodes[i].color;
+          ctx.beginPath(); ctx.roundRect(lx - pw/2, ly - ph/2, pw, ph, pr);
+          ctx.fill(); ctx.shadowBlur = 0;
+          ctx.fillStyle = '#ffffff'; ctx.fillText(text, lx, ly);
+          ctx.globalAlpha = 1;
+        }
+      }
+
+      /* ── 9. HUB ── */
+      // Tick-dot orbit ring projected through 3D
+      const rot1 = ts * 0.00022;
+      for (let i = 0; i < 12; i++) {
+        const a  = rot1 + TAU * i / 12;
+        const hp = proj(W * 0.145 * Math.cos(a), 0, W * 0.145 * Math.sin(a));
+        ctx.beginPath(); ctx.arc(hp.x, hp.y, i % 3 === 0 ? 2.5 : 1.2, 0, TAU);
+        ctx.fillStyle = i % 3 === 0 ? 'rgba(255,255,255,0.45)' : 'rgba(255,255,255,0.15)';
+        ctx.fill();
+      }
+
+      const hR = W * 0.122;
+
+      // Hub ground shadow
+      ctx.beginPath();
+      ctx.ellipse(cx, cy + W * 0.024, hR * 0.9, hR * 0.22, 0, 0, TAU);
+      ctx.fillStyle = 'rgba(0,0,0,0.30)'; ctx.fill();
+
+      // Hub body sphere gradient
+      const hubG = ctx.createRadialGradient(cx - W*0.044, cy - W*0.050, 0, cx, cy, hR);
+      hubG.addColorStop(0,    '#243d60');
+      hubG.addColorStop(0.45, '#172d4a');
+      hubG.addColorStop(1,    '#060f1e');
+      ctx.beginPath(); ctx.arc(cx, cy, hR, 0, TAU);
+      ctx.fillStyle = hubG; ctx.fill();
+
+      // Hub specular
+      const hubHL = ctx.createRadialGradient(cx - W*0.054, cy - W*0.064, 0, cx, cy, hR);
+      hubHL.addColorStop(0,   'rgba(255,255,255,0.18)');
+      hubHL.addColorStop(0.4, 'rgba(255,255,255,0.04)');
+      hubHL.addColorStop(1,   'transparent');
+      ctx.beginPath(); ctx.arc(cx, cy, hR, 0, TAU);
+      ctx.fillStyle = hubHL; ctx.fill();
+
+      // Pulsing border + glow
+      const pulse = 0.45 + 0.55 * (0.5 + 0.5 * Math.sin(ts * 0.0022));
+      ctx.strokeStyle = nodes[activeNode].color + Math.floor(pulse * 165).toString(16).padStart(2,'00');
+      ctx.lineWidth = 2.5; ctx.stroke();
+      ctx.strokeStyle = nodes[activeNode].color + Math.floor(pulse * 50).toString(16).padStart(2,'00');
+      ctx.lineWidth = 14; ctx.stroke();
+
+      // Hub text
+      ctx.font      = `700 ${Math.round(W * 0.034)}px 'Science Gothic', sans-serif`;
+      ctx.fillStyle = '#ffffff'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillText('SAPPHIRE', cx, cy - W * 0.017);
+      ctx.font      = `500 ${Math.round(W * 0.022)}px Verdana, sans-serif`;
+      ctx.fillStyle = nodes[activeNode].color;
+      ctx.fillText(nodes[activeNode].label, cx, cy + W * 0.022);
+
+      requestAnimationFrame(draw);
+    }
+
+    canvas.addEventListener('mousemove', e => {
+      const rect = canvas.getBoundingClientRect();
+      const mx = (e.clientX - rect.left) * (W / rect.width);
+      const my = (e.clientY - rect.top)  * (H / rect.height);
+      hoverNode = -1;
+      for (let i = 0; i < nodes.length; i++) {
+        const p = nodePos(i);
+        if (Math.hypot(mx - p.x, my - p.y) < W * 0.09) { hoverNode = i; break; }
+      }
+      canvas.style.cursor = hoverNode >= 0 ? 'pointer' : 'default';
+    });
+
+    canvas.addEventListener('click', () => {
+      if (hoverNode >= 0) {
+        prevNode = activeNode; activeNode = hoverNode; phaseTime = 0;
+        const p = nodePos(activeNode);
+        ripples.push({ x: p.x, y: p.y, r: W*0.06, color: nodes[activeNode].color, alpha: 0.85 });
+      }
+    });
+
+    resize();
+    window.addEventListener('resize', resize);
+    requestAnimationFrame(draw);
+  })();
+
+  __________________________________________________________________________________________________________
+
+
+    /* ═══════════════════════════════════════════════════════════
+     MASTER LIFECYCLE RING — 3D MISSION CONTROL
+  ═══════════════════════════════════════════════════════════ */
+  (function () {
+    const canvas = qs('masterRingCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let W, H, cx, cy, R;
+
+    // 3D Tilt
+    const TILT   = 0.40;               // ~23° tilt in radians
+    const yScale = Math.cos(TILT);     // Y compression ≈ 0.921
+    const zScale = Math.sin(TILT);     // depth factor  ≈ 0.389
+
+    let activeNode = 0, prevNode = 0;
+    let phaseTime  = 0;
+    let lastTs     = performance.now();
+    let hoverNode  = -1;
+
+    const TRAVEL_DUR = 0.7, DWELL_DUR = 2.5;
+    const TOTAL_DUR  = TRAVEL_DUR + DWELL_DUR;
+
+    const nodeGlow = [1, 0, 0, 0, 0, 0];
+    const particles = [
+      { phase: 0           },
+      { phase: TAU * 0.33  },
+      { phase: TAU * 0.67  },
+    ];
+    const PARTICLE_SPEED = 0.14;
+    const ripples = [];
+
+    const nodes = [
+      { label: 'Acquire',  icon: '\uf07a', color: COLORS.primary   },
+      { label: 'Deploy',   icon: '\uf135', color: COLORS.amber     },
+      { label: 'Inspect',  icon: '\uf002', color: COLORS.attention },
+      { label: 'Maintain', icon: '\uf0ad', color: COLORS.attention },
+      { label: 'Track',    icon: '\uf201', color: COLORS.royal     },
+      { label: 'Dispose',  icon: '\uf328', color: COLORS.primary   },
+    ];
+
+    function resize() {
+      const rect = canvas.parentElement.getBoundingClientRect();
+      W = canvas.width  = Math.min(520, rect.width);
+      H = canvas.height = Math.round(W * 1.22);  // Extra height — fixes label clipping
+      canvas.style.height = H + 'px';
+      cx = W / 2;
+      cy = H / 2;
+      R  = W * 0.30;
+    }
+
+    // Projected 3D position of node i
+    function getPos(i) {
+      const a   = (TAU / nodes.length) * i - Math.PI / 2;
+      const x3  = R * Math.cos(a);
+      const z3  = R * Math.sin(a);
+      const sx  = cx + x3;
+      const sy  = cy + z3 * yScale;
+      const depth = z3 / R; // -1 (far/top) → +1 (close/bottom)
+      return { x: sx, y: sy, a, depth };
+    }
+
+    function depthScale(depth) {
+      return lerp(0.80, 1.06, (depth + 1) / 2);
+    }
+
+    function lerpHex(hex1, hex2, t) {
+      const p = s => parseInt(s, 16);
+      const a = hex1.replace('#', ''), b = hex2.replace('#', '').slice(0, 6);
+      const r = Math.round(lerp(p(a.slice(0,2)), p(b.slice(0,2)), t));
+      const g = Math.round(lerp(p(a.slice(2,4)), p(b.slice(2,4)), t));
+      const v = Math.round(lerp(p(a.slice(4,6)), p(b.slice(4,6)), t));
+      return `rgb(${r},${g},${v})`;
+    }
+
+    function draw(ts) {
+      const dt = Math.min((ts - lastTs) / 1000, 0.05);
+      lastTs = ts;
+      phaseTime += dt;
+
+      if (phaseTime > TOTAL_DUR) {
+        phaseTime -= TOTAL_DUR;
+        prevNode   = activeNode;
+        activeNode = (activeNode + 1) % nodes.length;
+        const p = getPos(activeNode);
+        ripples.push({ x: p.x, y: p.y, r: W * 0.07, color: nodes[activeNode].color, alpha: 0.8 });
+      }
+
+      const travelP = Math.min(phaseTime / TRAVEL_DUR, 1);
+      const smoothP = easeInOut(travelP);
+
+      for (let i = 0; i < nodes.length; i++) {
+        if (i === activeNode) nodeGlow[i] = Math.min(1, nodeGlow[i] + dt * 4);
+        else                  nodeGlow[i] = Math.max(0, nodeGlow[i] - dt * 3);
+      }
+      particles.forEach(p => {
+        p.phase += dt * PARTICLE_SPEED * TAU;
+        if (p.phase > TAU) p.phase -= TAU;
+      });
+
+      ctx.clearRect(0, 0, W, H);
+
+      /* ── 1. AMBIENT GLOW ── */
+      const amb = ctx.createRadialGradient(cx, cy, 0, cx, cy, W * 0.52);
+      amb.addColorStop(0,   nodes[activeNode].color + '1a');
+      amb.addColorStop(0.6, nodes[activeNode].color + '08');
+      amb.addColorStop(1,   'transparent');
+      ctx.fillStyle = amb;
+      ctx.fillRect(0, 0, W, H);
+
+      /* ── 2. 3D RING TRACK — thick rim ── */
+      const rimLayers = [
+        { yOff: W * 0.022, color: 'rgba(0,5,20,0.55)',   lw: W * 0.028 }, // bottom shadow
+        { yOff: W * 0.014, color: 'rgba(30,60,120,0.20)', lw: W * 0.022 }, // mid rim
+        { yOff: W * 0.007, color: 'rgba(60,110,200,0.15)',lw: W * 0.016 }, // upper rim
+        { yOff: 0,          color: 'rgba(255,255,255,0.07)', lw: 1.5, dash: [4, 10] }, // surface
+      ];
+      rimLayers.forEach(l => {
+        ctx.beginPath();
+        ctx.ellipse(cx, cy + l.yOff, R, R * yScale, 0, 0, TAU);
+        ctx.strokeStyle = l.color;
+        ctx.lineWidth   = l.lw;
+        if (l.dash) ctx.setLineDash(l.dash);
+        ctx.stroke();
+        ctx.setLineDash([]);
+      });
+
+      /* ── 3. ARCS (elliptical) ── */
+      const n = nodes.length;
+      for (let i = 0; i < n; i++) {
+        const a0 = (TAU / n) * i       - Math.PI / 2;
+        const a1 = (TAU / n) * (i + 1) - Math.PI / 2;
+
+        if (i === prevNode && travelP < 1) {
+          const arcEnd = a0 + (a1 - a0) * smoothP;
+          ctx.lineCap = 'round';
+
+          ctx.beginPath(); ctx.ellipse(cx, cy, R, R * yScale, 0, a0, arcEnd);
+          ctx.strokeStyle = nodes[activeNode].color + '22'; ctx.lineWidth = 18; ctx.stroke();
+
+          ctx.beginPath(); ctx.ellipse(cx, cy, R, R * yScale, 0, a0, arcEnd);
+          ctx.strokeStyle = nodes[activeNode].color + '55'; ctx.lineWidth = 8; ctx.stroke();
+
+          ctx.beginPath(); ctx.ellipse(cx, cy, R, R * yScale, 0, a0, arcEnd);
+          ctx.strokeStyle = nodes[activeNode].color; ctx.lineWidth = 2.5; ctx.stroke();
+
+          ctx.lineCap = 'butt';
+        } else {
+          ctx.beginPath(); ctx.ellipse(cx, cy, R, R * yScale, 0, a0, a1);
+          ctx.strokeStyle = 'rgba(255,255,255,0.09)'; ctx.lineWidth = 1; ctx.stroke();
+        }
+      }
+
+      /* ── 4. COMET PARTICLES (on elliptical path) ── */
+      particles.forEach(pt => {
+        const nearIdx = Math.round(pt.phase / (TAU / n)) % n;
+        const pColor  = nodes[nearIdx]?.color || COLORS.primary;
+
+        for (let j = 6; j >= 1; j--) {
+          const ta  = pt.phase - j * 0.05 - Math.PI / 2;
+          const tx  = cx + R * Math.cos(ta);
+          const ty  = cy + R * Math.sin(ta) * yScale;
+          const al  = Math.floor((1 - j / 7) * 170).toString(16).padStart(2, '0');
+          ctx.beginPath(); ctx.arc(tx, ty, Math.max(0.5, 3.5 - j * 0.4), 0, TAU);
+          ctx.fillStyle = pColor + al; ctx.fill();
+        }
+        const ha = pt.phase - Math.PI / 2;
+        const hx = cx + R * Math.cos(ha);
+        const hy = cy + R * Math.sin(ha) * yScale;
+        ctx.beginPath(); ctx.arc(hx, hy, 4.5, 0, TAU);
+        ctx.fillStyle = '#ffffff'; ctx.fill();
+        ctx.strokeStyle = pColor; ctx.lineWidth = 1.5; ctx.stroke();
+        ctx.beginPath(); ctx.arc(hx, hy, 10, 0, TAU);
+        ctx.fillStyle = pColor + '28'; ctx.fill();
+      });
+
+      /* ── 5. RIPPLES ── */
+      for (let i = ripples.length - 1; i >= 0; i--) {
+        const rip = ripples[i];
+        rip.r    += W * 0.0028;
+        rip.alpha = Math.max(0, rip.alpha - 0.022);
+        if (rip.alpha <= 0) { ripples.splice(i, 1); continue; }
+        const ah = Math.floor(rip.alpha * 255).toString(16).padStart(2,'0');
+        ctx.beginPath(); ctx.arc(rip.x, rip.y, rip.r, 0, TAU);
+        ctx.strokeStyle = rip.color + ah; ctx.lineWidth = 2; ctx.stroke();
+        ctx.beginPath(); ctx.arc(rip.x, rip.y, rip.r * 0.65, 0, TAU);
+        ctx.strokeStyle = rip.color + Math.floor(rip.alpha * 70).toString(16).padStart(2,'00');
+        ctx.lineWidth = 7; ctx.stroke();
+      }
+
+      /* ── 6. NODES (back to front by depth) ── */
+      const sortedIdx = [...Array(n).keys()].sort((a, b) => getPos(a).depth - getPos(b).depth);
+      const baseR = W * 0.066;
+
+      for (const i of sortedIdx) {
+        const pos = getPos(i);
+        const g   = nodeGlow[i];
+        const ds  = depthScale(pos.depth);
+        const isH = hoverNode === i;
+        const r   = (baseR + g * W * 0.015 + (isH ? W * 0.007 : 0)) * ds;
+        const da  = lerp(0.68, 1.0, (pos.depth + 1) / 2); // depth alpha
+
+        // Ground shadow ellipse (3D grounding)
+        ctx.beginPath();
+        ctx.ellipse(pos.x, pos.y + r * 0.55 + W * 0.008, r * 0.9, r * 0.22, 0, 0, TAU);
+        ctx.fillStyle = `rgba(0,0,0,${0.2 * ds})`;
+        ctx.fill();
+
+        // Outer aura
+        if (g > 0.05 || isH) {
+          ctx.globalAlpha = da * (isH ? 0.6 : g * 0.5);
+          ctx.beginPath(); ctx.arc(pos.x, pos.y, r + W * 0.026, 0, TAU);
+          ctx.strokeStyle = nodes[i].color + '88';
+          ctx.lineWidth   = 10; ctx.stroke();
+          ctx.globalAlpha = 1;
+        }
+
+        // Node body
+        ctx.globalAlpha = da;
+        ctx.beginPath(); ctx.arc(pos.x, pos.y, r, 0, TAU);
+        if (g > 0.01) {
+          const grad = ctx.createRadialGradient(pos.x - r*0.28, pos.y - r*0.32, 0, pos.x, pos.y, r);
+          grad.addColorStop(0,   lerpHex('#2e4d80', nodes[i].color, g));
+          grad.addColorStop(0.55, lerpHex('#1a2d4a', nodes[i].color, g * 0.65));
+          grad.addColorStop(1,   lerpHex('#080f1e', nodes[i].color, g * 0.4));
+          ctx.fillStyle = grad;
+        } else {
+          ctx.fillStyle = 'rgba(255,255,255,0.045)';
+        }
+        ctx.fill();
+
+        // Specular highlight — makes it look like a sphere
+        const hl = ctx.createRadialGradient(pos.x - r*0.32, pos.y - r*0.38, r*0.05, pos.x - r*0.1, pos.y - r*0.1, r * 0.85);
+        hl.addColorStop(0,   `rgba(255,255,255,${0.22 + g * 0.14})`);
+        hl.addColorStop(0.35,'rgba(255,255,255,0.04)');
+        hl.addColorStop(1,   'transparent');
+        ctx.beginPath(); ctx.arc(pos.x, pos.y, r, 0, TAU);
+        ctx.fillStyle = hl; ctx.fill();
+
+        // Border
+        const bAlpha = Math.floor(lerp(45, 220, g)).toString(16).padStart(2,'0');
+        ctx.strokeStyle = nodes[i].color + bAlpha;
+        ctx.lineWidth   = g > 0.1 ? 2 : 1.2; ctx.stroke();
+        ctx.globalAlpha = 1;
+
+        // Icon
+        const iSz = Math.round(lerp(W*0.032, W*0.043, g) * ds);
+        ctx.font         = `900 ${iSz}px "Font Awesome 7 Free"`;
+        ctx.textAlign    = 'center'; ctx.textBaseline = 'middle';
+        ctx.fillStyle    = g > 0.5 ? '#ffffff' : nodes[i].color;
+        ctx.globalAlpha  = da * (g > 0.5 ? 1 : lerp(0.5, 1, 1 - g));
+        ctx.fillText(nodes[i].icon, pos.x, pos.y);
+        ctx.globalAlpha  = 1;
+      }
+
+      /* ── 7. LABELS (pills, pushed radially beyond projected node) ── */
+      const lSize = Math.round(W * 0.027);
+      ctx.font = `600 ${lSize}px Verdana, sans-serif`;
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+
+      for (let i = 0; i < n; i++) {
+        const a   = (TAU / n) * i - Math.PI / 2;
+        const nx  = cx + R * Math.cos(a);
+        const ny  = cy + R * Math.sin(a) * yScale;
+        const dirX = nx - cx, dirY = ny - cy;
+        const projDist = Math.hypot(dirX, dirY);
+
+        // isVertical check on projected Y relative to ring height
+        const isVertical = Math.abs(Math.sin(a) * yScale) > 0.55;
+        const push = W * (isVertical ? 0.155 : 0.125);
+
+        const lx = cx + (dirX / projDist) * (projDist + push);
+        const ly = cy + (dirY / projDist) * (projDist + push);
+
+        const g    = nodeGlow[i];
+        const text = nodes[i].label;
+        const tw   = ctx.measureText(text).width;
+        const ph   = lSize + 10, pw = tw + 18, pr = ph / 2;
+
+        if (g < 1) {
+          ctx.globalAlpha = 1 - g;
+          ctx.fillStyle   = 'rgba(255,255,255,0.07)';
+          ctx.strokeStyle = nodes[i].color + '55';
+          ctx.lineWidth   = 1;
+          ctx.beginPath(); ctx.roundRect(lx - pw/2, ly - ph/2, pw, ph, pr);
+          ctx.fill(); ctx.stroke();
+          ctx.fillStyle   = nodes[i].color;
+          ctx.fillText(text, lx, ly);
+          ctx.globalAlpha = 1;
+        }
+        if (g > 0) {
+          ctx.globalAlpha = g;
+          ctx.shadowColor = nodes[i].color + '88';
+          ctx.shadowBlur  = 12;
+          ctx.fillStyle   = nodes[i].color;
+          ctx.beginPath(); ctx.roundRect(lx - pw/2, ly - ph/2, pw, ph, pr);
+          ctx.fill();
+          ctx.shadowBlur  = 0;
+          ctx.fillStyle   = '#ffffff';
+          ctx.fillText(text, lx, ly);
+          ctx.globalAlpha = 1;
+        }
+      }
+
+      /* ── 8. HUB ── */
+      // Rotating tick orbit (also elliptical for 3D)
+      const rot1 = ts * 0.00024;
+      for (let i = 0; i < 12; i++) {
+        const a  = rot1 + (TAU / 12) * i;
+        const dx = cx + W * 0.148 * Math.cos(a);
+        const dy = cy + W * 0.148 * Math.sin(a) * yScale;
+        ctx.beginPath(); ctx.arc(dx, dy, i % 3 === 0 ? 2.5 : 1.2, 0, TAU);
+        ctx.fillStyle = i % 3 === 0 ? 'rgba(255,255,255,0.45)' : 'rgba(255,255,255,0.15)';
+        ctx.fill();
+      }
+
+      // Inner dashed orbit
+      ctx.beginPath(); ctx.ellipse(cx, cy, W * 0.142, W * 0.142 * yScale, 0, 0, TAU);
+      ctx.strokeStyle = nodes[activeNode].color + '30';
+      ctx.lineWidth   = 1;
+      ctx.setLineDash([3, 9]); ctx.stroke(); ctx.setLineDash([]);
+
+      // Hub ground shadow
+      ctx.beginPath();
+      ctx.ellipse(cx, cy + W * 0.022, W * 0.125, W * 0.038, 0, 0, TAU);
+      ctx.fillStyle = 'rgba(0,0,0,0.35)';
+      ctx.fill();
+
+      // Hub body — off-center gradient for 3D sphere feel
+      const hubG = ctx.createRadialGradient(cx - W*0.045, cy - W*0.048, 0, cx, cy, W * 0.128);
+      hubG.addColorStop(0,   '#243d60');
+      hubG.addColorStop(0.45,'#172d4a');
+      hubG.addColorStop(1,   '#060f1e');
+      ctx.beginPath(); ctx.arc(cx, cy, W * 0.125, 0, TAU);
+      ctx.fillStyle = hubG; ctx.fill();
+
+      // Hub specular
+      const hubHL = ctx.createRadialGradient(cx - W*0.055, cy - W*0.065, 0, cx, cy, W * 0.12);
+      hubHL.addColorStop(0,   'rgba(255,255,255,0.15)');
+      hubHL.addColorStop(0.4, 'rgba(255,255,255,0.04)');
+      hubHL.addColorStop(1,   'transparent');
+      ctx.beginPath(); ctx.arc(cx, cy, W * 0.125, 0, TAU);
+      ctx.fillStyle = hubHL; ctx.fill();
+
+      // Pulse border
+      const pulse = 0.45 + 0.55 * (0.5 + 0.5 * Math.sin(ts * 0.0022));
+      const pA    = Math.floor(pulse * 165).toString(16).padStart(2,'0');
+      ctx.strokeStyle = nodes[activeNode].color + pA; ctx.lineWidth = 2.5; ctx.stroke();
+      ctx.strokeStyle = nodes[activeNode].color + Math.floor(pulse*55).toString(16).padStart(2,'0');
+      ctx.lineWidth   = 14; ctx.stroke();
+
+      // Hub text
+      ctx.font      = `700 ${Math.round(W * 0.034)}px 'Science Gothic', sans-serif`;
+      ctx.fillStyle = '#ffffff';
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillText('SAPPHIRE', cx, cy - W * 0.017);
+      ctx.font      = `500 ${Math.round(W * 0.022)}px Verdana, sans-serif`;
+      ctx.fillStyle = nodes[activeNode].color;
+      ctx.fillText(nodes[activeNode].label, cx, cy + W * 0.022);
+
+      requestAnimationFrame(draw);
+    }
+
+    canvas.addEventListener('mousemove', e => {
+      const rect = canvas.getBoundingClientRect();
+      const mx = (e.clientX - rect.left) * (W / rect.width);
+      const my = (e.clientY - rect.top)  * (H / rect.height);
+      hoverNode = -1;
+      for (let i = 0; i < nodes.length; i++) {
+        const p = getPos(i);
+        if (Math.hypot(mx - p.x, my - p.y) < W * 0.09) { hoverNode = i; break; }
+      }
+      canvas.style.cursor = hoverNode >= 0 ? 'pointer' : 'default';
+    });
+
+    canvas.addEventListener('click', () => {
+      if (hoverNode >= 0) {
+        prevNode   = activeNode;
+        activeNode = hoverNode;
+        phaseTime  = 0;
+        const p = getPos(activeNode);
+        ripples.push({ x: p.x, y: p.y, r: W * 0.07, color: nodes[activeNode].color, alpha: 0.8 });
+      }
+    });
+
+    resize();
+    window.addEventListener('resize', resize);
+    requestAnimationFrame(draw);
+  })();
