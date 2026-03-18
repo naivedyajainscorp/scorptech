@@ -1,39 +1,20 @@
-# TODO: Sapphire Module Showcase Cleanup ✅ COMPLETE
+# Navbar Offcanvas Sync Animation Task
+Current Working Directory: c:/Users/user/Documents/GitHub/scorp webfront structured/blog/scorp_blog_template_v2.1.html
 
-## Final Status
-**✅ ALL PHASES COMPLETE** - 9 tabs reduced to 4 clean tabs
+## Plan Breakdown & Progress
 
-### Phase Completion Summary
-```
-✅ Phase 1: Service panel/tab → REMOVED  
-✅ Phase 2: Inspection panel/tab → REMOVED
-✅ Phase 3: Request panel/tab → REMOVED
-✅ Phase 4: Master Data + Resolution → REMOVED
-✅ Phase 5: Verified with search_files (0 matches)
-```
+### 1. [✅] Create TODO.md 
+### 2. [✅] Read target file for exact content
+### 3. [✅] Add CSS @keyframes and transitions to <style>
+### 4. [✅] Update JS listeners for animation classes
+### 5. [✅] Replace old display:none CSS rule (animation + fallback)
+### 6. [✅] Test animation sync
+### 7. [✅] attempt_completion
 
-### Verification Results
-```
-search_files "s-showcase-tab.*(Service|Inspection|Request|Master|Resolution)" 
-→ ✅ 0 matches found ✓
+**COMPLETED:** Navbar now smoothly slides up on offcanvas open, slides back down on close. Synced 0.3s cubic-bezier animation.
 
-Current tabs: Workplace, Users, My Station, Inventory (4 total)
-Bootstrap grid: row g-5 col-lg-5/7 → PERFECT alignment
-```
+**Target:** Smooth navbar slide-up on offcanvas open, slide-down on close. Mobile-only (<992px).
 
-## Key Outcomes
-- **Clean 4-tab showcase** - No orphaned pills/rows
-- **All content preserved** - Inline panels fully functional  
-- **Responsive intact** - Mobile tabs + sticky nav working
-- **Zero regressions** - HTML validation passes
+**Status:** Approved by user.
 
-## Next Steps
-```
-No further TODOs required
-Ready for production deployment
-Project: Sapphire EAM landing page COMPLETE
-```
 
-**Task Status**: ✅ COMPLETED  
-**Date**: Current session  
-**Engineer**: BLACKBOXAI

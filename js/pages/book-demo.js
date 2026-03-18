@@ -93,77 +93,100 @@ function getFullPhoneNumber() {
 document.addEventListener("DOMContentLoaded", function () {
   const mapEl = document.getElementById("map");
   if (!mapEl) return;
-  const map = L.map("map").setView([26.9124, 75.7873], 12); // Default: Jaipur, Rajasthan, India
+
+  const map = L.map("map").setView([26.9124, 75.7873], 12);
   map.removeControl(map.attributionControl);
-  // Load free OpenStreetMap tiles
-  // Clean light base layer
+
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; OpenStreetMap contributors'
   }).addTo(map);
-  let marker = L.marker([28.6139, 77.2090], { draggable: true }).addTo(map);
-  function updateLocation(lat, lng) {
-    document.getElementById("lat").value = lat;
-    document.getElementById("lng").value = lng;
 
-    // 🔥 Fetch readable address (Reverse Geocoding)
+  let marker = L.marker([26.9124, 75.7873], { draggable: true }).addTo(map);
+
+  let isLocating      = false;
+  let locationFetched = false;
+
+  function applyLocation(lat, lng) {
+    marker.setLatLng([lat, lng]);
+    map.flyTo([lat, lng], 16, { animate: true, duration: 1.2 });
+    document.getElementById("lat").value = lat.toFixed(6);
+    document.getElementById("lng").value = lng.toFixed(6);
+
     fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`)
-      .then(response => response.json())
+      .then(r => r.json())
       .then(data => {
-        if (data.display_name) {
-          document.getElementById("location").value = data.display_name; //  Show correct address
-        } else {
-          document.getElementById("location").value = "Location set"; //  Fallback text
-        }
+        document.getElementById("location").value = data.display_name || `${lat.toFixed(5)}, ${lng.toFixed(5)}`;
       })
       .catch(() => {
-        document.getElementById("location").value = "Location set"; //  Error fallback
+        document.getElementById("location").value = `${lat.toFixed(5)}, ${lng.toFixed(5)}`;
       });
+
+    locationFetched = true;
+    document.getElementById("location").dispatchEvent(new Event("change", { bubbles: false }));
+    document.getElementById("demoForm").noValidate = true;
   }
+
   // 🔹 Update when marker is dragged
   marker.on("dragend", function () {
-    const position = marker.getLatLng();
-    updateLocation(position.lat, position.lng);
+    const { lat, lng } = marker.getLatLng();
+    applyLocation(lat, lng);
   });
+
   // 🔹 Update when map is clicked
   map.on("click", function (event) {
     marker.setLatLng(event.latlng);
-    updateLocation(event.latlng.lat, event.latlng.lng);
+    applyLocation(event.latlng.lat, event.latlng.lng);
   });
 
-  // 📍"Get My Location" button
+  // 📍 "Get My Location" button
   document.getElementById("get-location").addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent unintended validation
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        function (position) {
-          console.log("Location fetched:", position.coords);
+    event.preventDefault();
 
-          const lat = position.coords.latitude;
-          const lng = position.coords.longitude;
+    if (isLocating) return;
 
-          map.setView([lat, lng], 15);
-          marker.setLatLng([lat, lng]);
-          updateLocation(lat, lng);
-
-          document.getElementById("location").dispatchEvent(new Event("change", { bubbles: false }));
-          document.getElementById("demoForm").noValidate = true;
-        },
-        function (error) {
-          console.warn("Geolocation Error:", error.message);
-          alert("⚠️ Unable to fetch location. Please check GPS settings or use manual selection.");
-        },
-        {
-          enableHighAccuracy: true,
-          timeout: 5000,
-          maximumAge: 0
-        }
-      );
-    } else {
-      alert("Unfortunately, your browser does not support Geolocation.");
+    if (locationFetched) {
+      map.flyTo(marker.getLatLng(), 16, { animate: true, duration: 1.0 });
+      return;
     }
+
+    if (!navigator.geolocation) {
+      alert("Geolocation is not supported by this browser.");
+      return;
+    }
+
+    isLocating = true;
+
+    navigator.geolocation.getCurrentPosition(
+      function (position) {
+        isLocating = false;
+        applyLocation(position.coords.latitude, position.coords.longitude);
+      },
+      function (error) {
+        isLocating = false;
+        switch (error.code) {
+          case error.PERMISSION_DENIED:
+            alert("⚠️ Location access was blocked.\nPlease allow location permission in your browser settings and try again.");
+            break;
+          case error.POSITION_UNAVAILABLE:
+            alert("⚠️ Your location could not be determined.\nPlease make sure GPS / Location Services are turned ON and try again.");
+            break;
+          case error.TIMEOUT:
+            alert("⚠️ Location request timed out.\nPlease check your GPS signal and try again.");
+            break;
+          default:
+            alert("⚠️ An unexpected error occurred while fetching your location. Please try again.");
+        }
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 15000,
+        maximumAge: 0
+      }
+    );
   });
 });
+
 
 // ********************************************
 // 📍 Pincode Autofill: District, State, Country
