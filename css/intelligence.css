@@ -165,7 +165,7 @@
 .intel-snav {
     position: sticky;
     top: 88px;
-    margin-top: 2px;
+    margin-top: 0.5rem;
     z-index: var(--s-z-sticky);
     background: rgba(255,255,255,0.92);
     backdrop-filter: blur(20px);
@@ -174,7 +174,24 @@
     margin-left: 5vw;
     margin-right: 5vw;
     border-radius: var(--s-radius-lg);
+    opacity: 0;
+    pointer-events: none;
+    /* transform: translateY(-20px); */
+    /* transition: opacity 0.4s ease, transform 0.4s ease, pointer-events 0.4s ease; */
+    transform: translateY(-16px) scale(0.96);
+    filter: blur(6px);
+    transform-origin: top center;
+    transition: opacity 0.35s cubic-bezier(0.22, 0.61, 0.36, 1),
+                transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1),
+                filter 0.35s ease-out;
 }
+.intel-snav.snav-visible {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
 .intel-snav-inner {
     display: flex;
     gap: 0.25rem;

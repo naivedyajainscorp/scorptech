@@ -139,75 +139,76 @@ document.addEventListener("DOMContentLoaded", function () {
     applyLocation(event.latlng.lat, event.latlng.lng);
   });
 
-  // 📍 "Get My Location" button - Fixed for multiple detections
-  if (document.getElementById("get-location")) {
-    document.getElementById("get-location").addEventListener("click", function (event) {
-      event.preventDefault();
+// 📍 "Get My Location" button - Fixed for multiple detections
+const getLocationBtn = document.getElementById("get-location");
 
-      // 1. Prevent concurrent requests if one is already in flight
-      if (isLocating) return;
+if (getLocationBtn) {
+  getLocationBtn.addEventListener("click", function (event) {
+    event.preventDefault();
 
-      if (!navigator.geolocation) {
-        alert("Geolocation is not supported by this browser.");
-        return;
-      }
+    // 1. Prevent concurrent requests if one is already in flight
+    if (isLocating) return;
 
-      // 2. UI Feedback: Show loading state and disable button
-      const btn = this;
-      const originalHTML = btn.innerHTML;
-      isLocating = true;
-      btn.classList.add('disabled');
-      btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> <span>Detecting...</span>';
+    if (!navigator.geolocation) {
+      alert("Geolocation is not supported by this browser.");
+      return;
+    }
 
-      // 3. Initiate fresh Geolocation request
-      navigator.geolocation.getCurrentPosition(
-        function (position) {
-          isLocating = false;
-          locationFetched = true; // Still track state, but don't block logic
-          
-          // Update the map marker and hidden form inputs
-          applyLocation(position.coords.latitude, position.coords.longitude);
-          
-          // 4. Success UI Feedback
-          btn.innerHTML = '<i class="fas fa-check-circle"></i> <span>Location Updated</span>';
-          btn.classList.replace('s-btn-primary', 's-btn-success');
+    // 2. UI Feedback: Show loading state and disable button
+    const btn = this;
+    const originalHTML = btn.innerHTML;
+    isLocating = true;
+    btn.classList.add('disabled');
+    btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> <span>Detecting...</span>';
 
-          // Reset button appearance after 3 seconds so they can click again
-          setTimeout(() => {
-            btn.innerHTML = originalHTML;
-            btn.classList.remove('disabled');
-            btn.classList.replace('s-btn-success', 's-btn-primary');
-          }, 3000);
-        },
-        function (error) {
-          // Reset state on error
-          isLocating = false;
+    // 3. Initiate fresh Geolocation request
+    navigator.geolocation.getCurrentPosition(
+      function (position) {
+        isLocating = false;
+        locationFetched = true; // Still track state, but don't block logic
+        
+        // Update the map marker and hidden form inputs
+        applyLocation(position.coords.latitude, position.coords.longitude);
+        
+        // 4. Success UI Feedback
+        btn.innerHTML = '<i class="fas fa-check-circle"></i> <span>Location Updated</span>';
+        btn.classList.replace('s-btn-primary', 's-btn-success');
+
+        // Reset button appearance after 3 seconds so they can click again
+        setTimeout(() => {
           btn.innerHTML = originalHTML;
           btn.classList.remove('disabled');
-          
-          switch (error.code) {
-            case error.PERMISSION_DENIED:
-              alert("⚠️ Location access was blocked.\nPlease allow location permission in your browser settings and try again.");
-              break;
-            case error.POSITION_UNAVAILABLE:
-              alert("⚠️ Your location could not be determined.\nPlease check GPS / Location Services.");
-              break;
-            case error.TIMEOUT:
-              alert("⚠️ Location request timed out.\nPlease check your signal.");
-              break;
-            default:
-              alert("⚠️ An unexpected error occurred. Please try again.");
-          }
-        },
-        {
-          enableHighAccuracy: true,
-          timeout: 15000,
-          maximumAge: 0 // Force a fresh location rather than using a cached one
+          btn.classList.replace('s-btn-success', 's-btn-primary');
+        }, 3000);
+      },
+      function (error) {
+        // Reset state on error
+        isLocating = false;
+        btn.innerHTML = originalHTML;
+        btn.classList.remove('disabled');
+        
+        switch (error.code) {
+          case error.PERMISSION_DENIED:
+            alert("⚠️ Location access was blocked.\nPlease allow location permission in your browser settings and try again.");
+            break;
+          case error.POSITION_UNAVAILABLE:
+            alert("⚠️ Your location could not be determined.\nPlease check GPS / Location Services.");
+            break;
+          case error.TIMEOUT:
+            alert("⚠️ Location request timed out.\nPlease check your signal.");
+            break;
+          default:
+            alert("⚠️ An unexpected error occurred. Please try again.");
         }
-      );
-    });
-  }
-});
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 15000,
+        maximumAge: 0 // Force a fresh location rather than using a cached one
+      }
+    );
+  });
+}
 
 
 // ********************************************

@@ -605,13 +605,13 @@ body {
 
 .insight-question {
     font-family: 'Science Gothic', sans-serif;
-    font-size: 9pt;
+    font-size: 14pt;
     font-weight: var(--s-font-semibold);
     color: var(--s-gray-800);
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 8px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .insight-question i {
@@ -637,7 +637,7 @@ body {
 
 .insight-primary h4 {
     font-family: 'Science Gothic', sans-serif;
-    font-size: 8pt;
+    font-size: 12pt;
     font-weight: var(--s-font-semibold);
     color: var(--s-primary);
     display: flex;
@@ -653,8 +653,8 @@ body {
 
 .insight-primary p {
     font-family: 'Verdana', sans-serif;
-    font-size: 12pt;
-    /* color: var(--s-gray-700); */
+    font-size: 9pt;
+    color: var(--s-gray-900);
     /* line-height: 1.65; */
     text-align: justify;
     margin: 0;
@@ -670,7 +670,7 @@ body {
 
 .insight-secondary h4 {
     font-family: 'Science Gothic', sans-serif;
-    font-size: 8pt;
+    font-size: 12pt;
     font-weight: var(--s-font-semibold);
     color: var(--s-primary);
     display: flex;
@@ -681,12 +681,13 @@ body {
 
 .insight-secondary h4 i {
     color: var(--s-primary);
-    font-size: 8pt;
+    font-size: 12pt;
 }
 
 .insight-secondary p {
     font-family: 'Verdana', sans-serif;
-    font-size: 12pt;    /* color: var(--s-gray-700); */
+    font-size: 9pt;    
+    color: var(--s-gray-900);
     /* line-height: 1.65; */
     text-align: justify;
     margin: 0;

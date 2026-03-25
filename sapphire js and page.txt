@@ -1121,11 +1121,11 @@ window.addEventListener('load', () => {
         </div>
         <div class="row g-4">
           <div class="col-lg-3 col-md-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/workplace_management-citywide_workplaces.png" alt="City-wide workplaces" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-primary s-icon-lg"><i class="fas fa-city"></i></div>
                   <div class="flex-grow-1">
@@ -1142,11 +1142,11 @@ window.addEventListener('load', () => {
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/workplace_management-Owner_citywide_office.png" alt="Owner dashboard" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-royal s-icon-lg"><i class="fas fa-crown"></i></div>
                   <div class="flex-grow-1">
@@ -1163,11 +1163,11 @@ window.addEventListener('load', () => {
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/workplace-management-shift-timings.png" alt="Shift timings" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-green s-icon-lg"><i class="fas fa-calendar-alt"></i></div>
                   <div class="flex-grow-1">
@@ -1184,11 +1184,11 @@ window.addEventListener('load', () => {
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/workplace-management-analytics.png" alt="Workplace analytics" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-info s-icon-lg"><i class="fas fa-chart-bar"></i></div>
                   <div class="flex-grow-1">
@@ -1313,11 +1313,11 @@ window.addEventListener('load', () => {
         </div>
         <div class="row g-4">
           <div class="col-lg-4 col-md-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/user-management-2.jpeg" alt="Roles and permissions" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-royal s-icon-lg"><i class="fas fa-user-shield"></i></div>
                   <div class="flex-grow-1">
@@ -1330,11 +1330,11 @@ window.addEventListener('load', () => {
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/user-management-user-analytics.png" alt="User analytics" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-info s-icon-lg"><i class="fas fa-chart-line"></i></div>
                   <div class="flex-grow-1">
@@ -1347,11 +1347,11 @@ window.addEventListener('load', () => {
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/user-management-4.png" alt="Role hierarchy" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-green s-icon-lg"><i class="fas fa-sitemap"></i></div>
                   <div class="flex-grow-1">
@@ -1471,11 +1471,11 @@ window.addEventListener('load', () => {
         </div>
         <div class="row g-4">
           <div class="col-lg-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/my_workstation-toolbox.png" alt="Personal toolbox" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-pop s-icon-lg"><i class="fas fa-toolbox"></i></div>
                   <div class="flex-grow-1">
@@ -1493,11 +1493,11 @@ window.addEventListener('load', () => {
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/my_workstation-workstation.png" alt="Workstation items" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-royal s-icon-lg"><i class="fas fa-clipboard"></i></div>
                   <div class="flex-grow-1">
@@ -1614,11 +1614,11 @@ window.addEventListener('load', () => {
         </div>
         <div class="row g-4">
           <div class="col-lg-4 col-md-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/inventory-reserve.png" alt="Reserve assets" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-amber s-icon-lg"><i class="fas fa-archive"></i></div>
                   <div class="flex-grow-1">
@@ -1631,11 +1631,11 @@ window.addEventListener('load', () => {
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/inventory-hand_tool_reserve.png" alt="Hand-tool reserve" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-pop s-icon-lg"><i class="fas fa-tools"></i></div>
                   <div class="flex-grow-1">
@@ -1648,11 +1648,11 @@ window.addEventListener('load', () => {
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/inventory-general_inventory.png" alt="Active inventory" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-green s-icon-lg"><i class="fas fa-warehouse"></i></div>
                   <div class="flex-grow-1">
@@ -1773,11 +1773,11 @@ window.addEventListener('load', () => {
         </div>
         <div class="row g-4">
           <div class="col-lg-4 col-md-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/service_and_maintenance-repair_&_service.png" alt="Repair and service" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-royal s-icon-lg"><i class="fas fa-tools"></i></div>
                   <div class="flex-grow-1">
@@ -1790,11 +1790,11 @@ window.addEventListener('load', () => {
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/service_and_maintenance-data_logging.png" alt="Data logging" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-green s-icon-lg"><i class="fas fa-database"></i></div>
                   <div class="flex-grow-1">
@@ -1807,11 +1807,11 @@ window.addEventListener('load', () => {
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/service_and_maintenance-set_reminders.png" alt="Set reminders" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-amber s-icon-lg"><i class="fas fa-bell"></i></div>
                   <div class="flex-grow-1">
@@ -2155,11 +2155,11 @@ window.addEventListener('load', () => {
         </div>
         <div class="row g-4">
           <div class="col-lg-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/masterdata-fuels.png" alt="Fuel types and grades" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-danger s-icon-lg"><i class="fas fa-gas-pump"></i></div>
                   <div class="flex-grow-1">
@@ -2177,11 +2177,11 @@ window.addEventListener('load', () => {
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/masterdata-brands.png" alt="Brands and OEMs" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-pop s-icon-lg"><i class="fas fa-tags"></i></div>
                   <div class="flex-grow-1">
@@ -2326,11 +2326,11 @@ window.addEventListener('load', () => {
 
       <!-- Manufacturing Plants & Factories -->
       <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/manufacturing_factory.jpeg" alt="Manufacturing Plants" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-primary s-icon-lg"><i class="fas fa-cogs"></i></div>
               <div class="flex-grow-1">
@@ -2345,11 +2345,11 @@ window.addEventListener('load', () => {
 
       <!-- Service Stations -->
       <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="100">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/automotive_service_station.jpeg" alt="Service Stations" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-info s-icon-lg"><i class="fas fa-wrench"></i></div>
               <div class="flex-grow-1">
@@ -2364,11 +2364,11 @@ window.addEventListener('load', () => {
 
       <!-- Construction & Engineering Sites -->
       <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/construction.jpeg" alt="Construction Sites" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-amber s-icon-lg"><i class="fas fa-hard-hat"></i></div>
               <div class="flex-grow-1">
@@ -2383,11 +2383,11 @@ window.addEventListener('load', () => {
 
       <!-- Warehouses & Logistics Centers -->
       <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="300">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/warehouse.jpeg" alt="Warehouses & Logistics Centers" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-green s-icon-lg"><i class="fas fa-warehouse"></i></div>
               <div class="flex-grow-1">
@@ -2413,11 +2413,11 @@ window.addEventListener('load', () => {
 
       <!-- Hospitals -->
       <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/hospital.jpeg" alt="Hospitals" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-danger s-icon-lg"><i class="fas fa-hospital"></i></div>
               <div class="flex-grow-1">
@@ -2432,11 +2432,11 @@ window.addEventListener('load', () => {
 
       <!-- Diagnostic Centers -->
       <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="100">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/diagnostic_center.jpeg" alt="Diagnostic Centers" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-info s-icon-lg"><i class="fas fa-microscope"></i></div>
               <div class="flex-grow-1">
@@ -2451,11 +2451,11 @@ window.addEventListener('load', () => {
 
       <!-- Research & Test Laboratories -->
       <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/research_test_laoratories.jpeg" alt="Research & Test Laboratories" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-royal s-icon-lg"><i class="fas fa-flask"></i></div>
               <div class="flex-grow-1">
@@ -2481,11 +2481,11 @@ window.addEventListener('load', () => {
 
       <!-- Corporate Offices -->
       <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/Corporate_Offices.jpeg" alt="Corporate Offices" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-primary s-icon-lg"><i class="fas fa-building"></i></div>
               <div class="flex-grow-1">
@@ -2500,11 +2500,11 @@ window.addEventListener('load', () => {
 
       <!-- Co-working & IT Parks -->
       <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="100">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/coworkingITpark.png" alt="Co-working & IT Parks" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-indigo s-icon-lg"><i class="fas fa-laptop-code"></i></div>
               <div class="flex-grow-1">
@@ -2519,11 +2519,11 @@ window.addEventListener('load', () => {
 
       <!-- Retail Chains & Shopping Malls -->
       <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/Retail_Chains_&_Shopping_malls.jpeg" alt="Retail Chains & Shopping Malls" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-pop s-icon-lg"><i class="fas fa-store"></i></div>
               <div class="flex-grow-1">
@@ -2538,11 +2538,11 @@ window.addEventListener('load', () => {
 
       <!-- Real Estate Developers -->
       <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="300">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/Real_Estate_Developors.jpeg" alt="Real Estate Developers" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-amber s-icon-lg"><i class="fas fa-city"></i></div>
               <div class="flex-grow-1">
@@ -2568,11 +2568,11 @@ window.addEventListener('load', () => {
 
       <!-- Schools, Universities & Colleges -->
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/schools_universites.jpeg" alt="Schools, Universities & Colleges" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-primary s-icon-lg"><i class="fas fa-university"></i></div>
               <div class="flex-grow-1">
@@ -2587,11 +2587,11 @@ window.addEventListener('load', () => {
 
       <!-- Training & Vocational Centers -->
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="100">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/Training_&_Vocational_centers.jpeg" alt="Training & Vocational Centers" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-green s-icon-lg"><i class="fas fa-chalkboard-teacher"></i></div>
               <div class="flex-grow-1">
@@ -2617,11 +2617,11 @@ window.addEventListener('load', () => {
 
       <!-- Hotels, Guest Houses & Lodges -->
       <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/Hotels_Guest_Houses.jpeg" alt="Hotels, Guest Houses & Lodges" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-amber s-icon-lg"><i class="fas fa-hotel"></i></div>
               <div class="flex-grow-1">
@@ -2636,11 +2636,11 @@ window.addEventListener('load', () => {
 
       <!-- Restaurants & Cafes -->
       <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="100">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/Restaurants_&_Cafes.jpeg" alt="Restaurants & Cafes" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-danger s-icon-lg"><i class="fas fa-utensils"></i></div>
               <div class="flex-grow-1">
@@ -2655,11 +2655,11 @@ window.addEventListener('load', () => {
 
       <!-- Clubs & Leisure Facilities -->
       <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/Clubs_&_Leisure_Facilities.jpeg" alt="Clubs & Leisure Facilities" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-royal s-icon-lg"><i class="fas fa-glass-cheers"></i></div>
               <div class="flex-grow-1">
@@ -2674,11 +2674,11 @@ window.addEventListener('load', () => {
 
       <!-- Fitness Centers & Gyms -->
       <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="300">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/Fitness_Centers_&_Gym.jpeg" alt="Fitness Centers & Gyms" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-green s-icon-lg"><i class="fas fa-dumbbell"></i></div>
               <div class="flex-grow-1">
@@ -2704,11 +2704,11 @@ window.addEventListener('load', () => {
 
       <!-- Transportation Agencies -->
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/transporation_agency.jpeg" alt="Transportation Agencies" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-primary s-icon-lg"><i class="fas fa-bus-alt"></i></div>
               <div class="flex-grow-1">
@@ -2723,11 +2723,11 @@ window.addEventListener('load', () => {
 
       <!-- Logistics & Fleet Operations -->
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="100">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/Logistics_&_Fleet_Operations.png" alt="Logistics & Fleet Operations" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-amber s-icon-lg"><i class="fas fa-truck"></i></div>
               <div class="flex-grow-1">
@@ -2753,11 +2753,11 @@ window.addEventListener('load', () => {
 
       <!-- Movie Theaters -->
       <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/Movie_Theaters.jpeg" alt="Movie Theaters" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-royal s-icon-lg"><i class="fas fa-film"></i></div>
               <div class="flex-grow-1">
@@ -2772,11 +2772,11 @@ window.addEventListener('load', () => {
 
       <!-- Concert Halls -->
       <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="100">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/Concert_Hall.jpeg" alt="Concert Halls" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-pop s-icon-lg"><i class="fas fa-music"></i></div>
               <div class="flex-grow-1">
@@ -2791,11 +2791,11 @@ window.addEventListener('load', () => {
 
       <!-- Amusement Parks & Event Zones -->
       <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/Amusement_Parks.jpeg" alt="Amusement Parks & Event Zones" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-info-special s-icon-lg"><i class="fa-solid fa-ticket fa-rotate-by" style="--fa-rotate-angle: 135deg;"></i></div>
               <div class="flex-grow-1">
@@ -2821,11 +2821,11 @@ window.addEventListener('load', () => {
 
       <!-- Airport Hangars -->
       <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/Airport_Hangars.jpeg" alt="Airport Hangars" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-primary s-icon-lg"><i class="fas fa-plane fa-rotate-by" style="--fa-rotate-angle: 315deg;"></i></div>
               <div class="flex-grow-1">
@@ -2840,11 +2840,11 @@ window.addEventListener('load', () => {
 
       <!-- Ground Support Bays -->
       <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="100">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/Ground_support_bays.jpeg" alt="Ground Support Bays" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-info s-icon-lg"><i class="fas fa-truck-loading"></i></div>
               <div class="flex-grow-1">
@@ -2859,11 +2859,11 @@ window.addEventListener('load', () => {
 
       <!-- Shipping Ports & Docks -->
       <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/Shipping_Ports_&_Dock.jpeg" alt="Shipping Ports & Docks" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-royal s-icon-lg"><i class="fas fa-anchor"></i></div>
               <div class="flex-grow-1">
@@ -2878,11 +2878,11 @@ window.addEventListener('load', () => {
 
       <!-- Cargo Terminals -->
       <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="300">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/Cargo_Terminals.jpeg" alt="Cargo Terminals" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-amber s-icon-lg"><i class="fas fa-boxes"></i></div>
               <div class="flex-grow-1">
@@ -2908,11 +2908,11 @@ window.addEventListener('load', () => {
 
       <!-- Municipal Departments -->
       <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/muncipal_departments.png" alt="Municipal Departments" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-primary s-icon-lg"><i class="fas fa-city"></i></div>
               <div class="flex-grow-1">
@@ -2927,11 +2927,11 @@ window.addEventListener('load', () => {
 
       <!-- Rail Maintenance Units -->
       <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="100">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/Rail Maintenance Units.png" alt="Rail Maintenance Units" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-indigo s-icon-lg"><i class="fas fa-train"></i></div>
               <div class="flex-grow-1">
@@ -2946,11 +2946,11 @@ window.addEventListener('load', () => {
 
       <!-- Public Utility Boards -->
       <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/Public_Utility_Board.jpeg" alt="Public Utility Boards" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-info s-icon-lg"><i class="fas fa-network-wired"></i></div>
               <div class="flex-grow-1">
@@ -2965,11 +2965,11 @@ window.addEventListener('load', () => {
 
       <!-- State Workshops -->
       <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="300">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/state-workshops.png" alt="State Workshops" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-green s-icon-lg"><i class="fas fa-tools"></i></div>
               <div class="flex-grow-1">
@@ -2995,11 +2995,11 @@ window.addEventListener('load', () => {
 
       <!-- Power Generation Units -->
       <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/power_generation_unit.png" alt="Power Generation Units" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-amber s-icon-lg"><i class="fas fa-bolt"></i></div>
               <div class="flex-grow-1">
@@ -3014,11 +3014,11 @@ window.addEventListener('load', () => {
 
       <!-- Water Supply Infrastructure -->
       <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="100">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/Water_Supply_Infrastructure.png" alt="Water Supply Infrastructure" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-info s-icon-lg"><i class="fas fa-tint"></i></div>
               <div class="flex-grow-1">
@@ -3033,11 +3033,11 @@ window.addEventListener('load', () => {
 
       <!-- Transmission Networks -->
       <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/Transmission_Network.png" alt="Transmission Networks" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-danger s-icon-lg"><i class="fas fa-project-diagram"></i></div>
               <div class="flex-grow-1">
@@ -3063,11 +3063,11 @@ window.addEventListener('load', () => {
 
       <!-- Farm Equipment Warehouses -->
       <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/Farm_Equipment_Warehouse.png" alt="Farm Equipment Warehouses" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-green s-icon-lg"><i class="fas fa-tractor"></i></div>
               <div class="flex-grow-1">
@@ -3082,11 +3082,11 @@ window.addEventListener('load', () => {
 
       <!-- Agro-Processing Units -->
       <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="100">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/Agro_Processing_Unit.jpeg" alt="Agro-Processing Units" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-amber s-icon-lg"><i class="fas fa-seedling"></i></div>
               <div class="flex-grow-1">
@@ -3101,11 +3101,11 @@ window.addEventListener('load', () => {
 
       <!-- Fertilizer & Irrigation Depots -->
       <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/Fertilizer_&_Irrigation_depots.png" alt="Fertilizer & Irrigation Depots" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-info s-icon-lg"><i class="fas fa-water"></i></div>
               <div class="flex-grow-1">
@@ -3131,11 +3131,11 @@ window.addEventListener('load', () => {
 
       <!-- Disaster Response Storage -->
       <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/Disaster_Response_Storage.png" alt="Disaster Response Storage" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-danger s-icon-lg"><i class="fas fa-exclamation-triangle"></i></div>
               <div class="flex-grow-1">
@@ -3150,11 +3150,11 @@ window.addEventListener('load', () => {
 
       <!-- Relief Logistics -->
       <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="100">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/Relief_Logistics.png" alt="Relief Logistics" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-amber s-icon-lg"><i class="fas fa-hands-helping"></i></div>
               <div class="flex-grow-1">
@@ -3169,11 +3169,11 @@ window.addEventListener('load', () => {
 
       <!-- Rescue Equipment Depots -->
       <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200">
-        <div class="s-cm-pic-card h-100">
-          <div class="s-cm-pic-card-img">
+        <div class="s-pic-card h-100">
+          <div class="s-pic-card-img">
             <img src="assets/images_industries/Rescue_Equipment_Depots.png" alt="Rescue Equipment Depots" class="w-100" loading="lazy">
           </div>
-          <div class="s-cm-modal-feature">
+          <div class="s-cm-feature">
             <div class="s-cm-feature-header">
               <div class="s-icon s-icon-royal s-icon-lg"><i class="fas fa-first-aid"></i></div>
               <div class="flex-grow-1">

@@ -127,7 +127,7 @@ export class InspectionCorrelationViz {
                 <div style="width: 100%; margin-bottom: 1.25rem;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 0.5rem;">
                         <div style="display: flex; align-items: center; gap: 0.5rem;">
-                            <div class="s-icon s-icon-xs s-icon-info-special">
+                            <div class="s-icon s-icon-md s-icon-info-special">
                                 <i class="fas fa-clipboard-check"></i>
                             </div>
                             <div style="display: flex; flex-direction: column;">
@@ -151,7 +151,7 @@ export class InspectionCorrelationViz {
                 <div style="width: 100%; margin-bottom: 1.25rem;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 0.5rem;">
                         <div style="display: flex; align-items: center; gap: 0.5rem;">
-                            <div class="s-icon s-icon-xs s-icon-attention">
+                            <div class="s-icon s-icon-md s-icon-attention">
                                 <i class="fas fa-flag"></i>
                             </div>
                             <div style="display: flex; flex-direction: column;">

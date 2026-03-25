@@ -198,7 +198,7 @@ export class ProtectionCategoryGrid {
                                 <!-- Extended Warranty -->
                                 <div style="display: flex; justify-content: space-between; align-items: center;">
                                     <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                        <div class="s-icon s-icon-xs s-icon-info">
+                                        <div class="s-icon s-icon-md s-icon-info">
                                             <i class="fas fa-shield-alt"></i>
                                         </div>
                                         <span class="s-text-gray-600 s-font-semibold s-text-sm">Extended warranty</span>
@@ -209,7 +209,7 @@ export class ProtectionCategoryGrid {
                                 <!-- Insurance Policy -->
                                 <div style="display: flex; justify-content: space-between; align-items: center;">
                                     <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                        <div class="s-icon s-icon-xs s-icon-green">
+                                        <div class="s-icon s-icon-md s-icon-green">
                                             <i class="fas fa-file-contract"></i>
                                         </div>
                                         <span class="s-text-gray-600 s-font-semibold s-text-sm">Insurance policy</span>
@@ -220,7 +220,7 @@ export class ProtectionCategoryGrid {
                                 <!-- Maintenance Contract -->
                                 <div style="display: flex; justify-content: space-between; align-items: center;">
                                     <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                        <div class="s-icon s-icon-xs s-icon-amber">
+                                        <div class="s-icon s-icon-md s-icon-amber">
                                             <i class="fas fa-tools"></i>
                                         </div>
                                         <span class="s-text-gray-600 s-font-semibold s-text-sm">Maintenance contract</span>

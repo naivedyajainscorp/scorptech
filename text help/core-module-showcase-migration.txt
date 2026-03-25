@@ -6,7 +6,7 @@ Now let me read the CSS files to understand the design variables and modal compo
 
 **Out:** Nine fullscreen Bootstrap modals triggered from card buttons.
 
-**In:** A single `#module-showcase` section — a sticky-tab + inline panel system. The Core Suite cards stay as the visual index; their "Explore" buttons now scroll to and activate the right module panel. Every panel delivers: a tinted header strip (icon + title + stats), a 5/7 split (feature list + primary screenshot), and a sub-feature gallery using the existing `s-cm-pic-card` pattern — all with real UI screenshots from your asset library.
+**In:** A single `#module-showcase` section — a sticky-tab + inline panel system. The Core Suite cards stay as the visual index; their "Explore" buttons now scroll to and activate the right module panel. Every panel delivers: a tinted header strip (icon + title + stats), a 5/7 split (feature list + primary screenshot), and a sub-feature gallery using the existing `s-pic-card` pattern — all with real UI screenshots from your asset library.
 
 ---
 
@@ -221,11 +221,11 @@ Find the comment `<!-- Modals (subset shown; others mirror content) -->` and rem
         </div>
         <div class="row g-4">
           <div class="col-lg-3 col-md-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/workplace_management-citywide_workplaces.png" alt="City-wide workplaces" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-primary s-icon-lg"><i class="fas fa-city"></i></div>
                   <div class="flex-grow-1">
@@ -242,11 +242,11 @@ Find the comment `<!-- Modals (subset shown; others mirror content) -->` and rem
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/workplace_management-Owner_citywide_office.png" alt="Owner dashboard" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-royal s-icon-lg"><i class="fas fa-crown"></i></div>
                   <div class="flex-grow-1">
@@ -263,11 +263,11 @@ Find the comment `<!-- Modals (subset shown; others mirror content) -->` and rem
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/workplace-management-shift-timings.png" alt="Shift timings" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-green s-icon-lg"><i class="fas fa-calendar-alt"></i></div>
                   <div class="flex-grow-1">
@@ -284,11 +284,11 @@ Find the comment `<!-- Modals (subset shown; others mirror content) -->` and rem
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/workplace-management-analytics.png" alt="Workplace analytics" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-info s-icon-lg"><i class="fas fa-chart-bar"></i></div>
                   <div class="flex-grow-1">
@@ -413,11 +413,11 @@ Find the comment `<!-- Modals (subset shown; others mirror content) -->` and rem
         </div>
         <div class="row g-4">
           <div class="col-lg-4 col-md-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/user-management-2.jpeg" alt="Roles and permissions" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-royal s-icon-lg"><i class="fas fa-user-shield"></i></div>
                   <div class="flex-grow-1">
@@ -430,11 +430,11 @@ Find the comment `<!-- Modals (subset shown; others mirror content) -->` and rem
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/user-management-user-analytics.png" alt="User analytics" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-info s-icon-lg"><i class="fas fa-chart-line"></i></div>
                   <div class="flex-grow-1">
@@ -447,11 +447,11 @@ Find the comment `<!-- Modals (subset shown; others mirror content) -->` and rem
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/user-management-4.png" alt="Role hierarchy" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-green s-icon-lg"><i class="fas fa-sitemap"></i></div>
                   <div class="flex-grow-1">
@@ -571,11 +571,11 @@ Find the comment `<!-- Modals (subset shown; others mirror content) -->` and rem
         </div>
         <div class="row g-4">
           <div class="col-lg-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/my_workstation-toolbox.png" alt="Personal toolbox" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-pop s-icon-lg"><i class="fas fa-toolbox"></i></div>
                   <div class="flex-grow-1">
@@ -593,11 +593,11 @@ Find the comment `<!-- Modals (subset shown; others mirror content) -->` and rem
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/my_workstation-workstation.png" alt="Workstation items" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-royal s-icon-lg"><i class="fas fa-clipboard"></i></div>
                   <div class="flex-grow-1">
@@ -714,11 +714,11 @@ Find the comment `<!-- Modals (subset shown; others mirror content) -->` and rem
         </div>
         <div class="row g-4">
           <div class="col-lg-4 col-md-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/inventory-reserve.png" alt="Reserve assets" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-amber s-icon-lg"><i class="fas fa-archive"></i></div>
                   <div class="flex-grow-1">
@@ -731,11 +731,11 @@ Find the comment `<!-- Modals (subset shown; others mirror content) -->` and rem
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/inventory-hand_tool_reserve.png" alt="Hand-tool reserve" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-pop s-icon-lg"><i class="fas fa-tools"></i></div>
                   <div class="flex-grow-1">
@@ -748,11 +748,11 @@ Find the comment `<!-- Modals (subset shown; others mirror content) -->` and rem
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/inventory-general_inventory.png" alt="Active inventory" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-green s-icon-lg"><i class="fas fa-warehouse"></i></div>
                   <div class="flex-grow-1">
@@ -873,11 +873,11 @@ Find the comment `<!-- Modals (subset shown; others mirror content) -->` and rem
         </div>
         <div class="row g-4">
           <div class="col-lg-4 col-md-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/service_and_maintenance-repair_&_service.png" alt="Repair and service" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-royal s-icon-lg"><i class="fas fa-tools"></i></div>
                   <div class="flex-grow-1">
@@ -890,11 +890,11 @@ Find the comment `<!-- Modals (subset shown; others mirror content) -->` and rem
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/service_and_maintenance-data_logging.png" alt="Data logging" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-green s-icon-lg"><i class="fas fa-database"></i></div>
                   <div class="flex-grow-1">
@@ -907,11 +907,11 @@ Find the comment `<!-- Modals (subset shown; others mirror content) -->` and rem
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/service_and_maintenance-set_reminders.png" alt="Set reminders" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-amber s-icon-lg"><i class="fas fa-bell"></i></div>
                   <div class="flex-grow-1">
@@ -1255,11 +1255,11 @@ Find the comment `<!-- Modals (subset shown; others mirror content) -->` and rem
         </div>
         <div class="row g-4">
           <div class="col-lg-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/masterdata-fuels.png" alt="Fuel types and grades" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-danger s-icon-lg"><i class="fas fa-gas-pump"></i></div>
                   <div class="flex-grow-1">
@@ -1277,11 +1277,11 @@ Find the comment `<!-- Modals (subset shown; others mirror content) -->` and rem
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="s-cm-pic-card">
-              <div class="s-cm-pic-card-img">
+            <div class="s-pic-card">
+              <div class="s-pic-card-img">
                 <img src="assets/images/masterdata-brands.png" alt="Brands and OEMs" class="w-100">
               </div>
-              <div class="s-cm-modal-feature">
+              <div class="s-cm-feature">
                 <div class="s-cm-feature-header">
                   <div class="s-icon s-icon-pop s-icon-lg"><i class="fas fa-tags"></i></div>
                   <div class="flex-grow-1">
@@ -1662,4 +1662,4 @@ initModuleShowcase();
 
 **Change Summary**
 
-The entire modal system is replaced by a single `#module-showcase` section using a sticky horizontal tab bar and nine animated inline panels. The "Explore" buttons on the `core-modules-grid` cards switch their `data-bs-toggle/target` attributes to `data-showcase-target` — the JS then scrolls to the showcase and activates the correct panel on click. Every panel preserves the exact content from its former modal (lead text, `core-modules-content-label-list`, stat grids, pill rows) while surfacing real UI screenshots via the existing `s-cm-pic-card` component and a new `s-showcase-screen-primary` wrapper that gives the primary screenshot a polished frame with hover-zoom. Nine new `s-showcase-head-*` utility classes handle the per-module tinted header backgrounds using design-system color values. No Bootstrap modal JS is invoked anywhere; no new libraries are introduced. The tab bar is mobile-optimised: labels collapse to icon-only at `<992px` via a single media query rule.
+The entire modal system is replaced by a single `#module-showcase` section using a sticky horizontal tab bar and nine animated inline panels. The "Explore" buttons on the `core-modules-grid` cards switch their `data-bs-toggle/target` attributes to `data-showcase-target` — the JS then scrolls to the showcase and activates the correct panel on click. Every panel preserves the exact content from its former modal (lead text, `core-modules-content-label-list`, stat grids, pill rows) while surfacing real UI screenshots via the existing `s-pic-card` component and a new `s-showcase-screen-primary` wrapper that gives the primary screenshot a polished frame with hover-zoom. Nine new `s-showcase-head-*` utility classes handle the per-module tinted header backgrounds using design-system color values. No Bootstrap modal JS is invoked anywhere; no new libraries are introduced. The tab bar is mobile-optimised: labels collapse to icon-only at `<992px` via a single media query rule.

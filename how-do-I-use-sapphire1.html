@@ -1,0 +1,1793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Asset Management Assessment — Discover Your Maturity Score | SCORP Sapphire</title>
+  <meta name="description" content="Take SCORP's free Asset Management Maturity Assessment. Know exactly where your organisation stands — procurement, tracking, maintenance, compliance — and get a prioritised improvement roadmap in 5 minutes.">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/core.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/utilities.css">
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════════════
+       HOW-DO-I-USE-SAPPHIRE — PAGE STYLES
+       Approach: Editorial data intelligence. Science Gothic at full power.
+       Typography carries the page. Product mockup anchors the hero.
+       Zero decorative noise.
+       ═══════════════════════════════════════════════════════════════════ */
+
+    /* ── Hero ──────────────────────────────────────────────────────────── */
+
+    .htu-hero {
+      padding-top: 128px;
+      padding-bottom: 96px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--s-white);
+    }
+
+    /* Tight ruled lines texture in background */
+    .htu-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          rgba(0, 102, 204, 0.028) 0px,
+          rgba(0, 102, 204, 0.028) 1px,
+          transparent 1px,
+          transparent 64px
+        );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Gradient vignette, bottom fade */
+    .htu-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 180px;
+      background: linear-gradient(to top, var(--s-white), transparent);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .htu-hero .container-xl { position: relative; z-index: 2; }
+
+    /* Two-column hero grid — text left (55), card right (45) */
+    .htu-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 440px;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    /* ── Hero Text Column ─────────────────────────────────────────────── */
+
+    .htu-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Science Gothic', sans-serif;
+      font-style: italic;
+      font-weight: var(--s-font-bold);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--s-primary);
+      border: 1px solid rgba(0, 102, 204, 0.2);
+      background: rgba(0, 102, 204, 0.04);
+      padding: 0.38rem 0.9rem;
+      border-radius: var(--s-radius-full);
+      margin-bottom: 1.75rem;
+      opacity: 0;
+      animation: htu-up 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.05s both;
+    }
+
+    .htu-eyebrow-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--s-primary);
+      animation: htu-dot-blink 1.8s ease-in-out infinite;
+    }
+
+    @keyframes htu-dot-blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.3; }
+    }
+
+    .htu-headline {
+      font-family: 'Science Gothic', sans-serif;
+      font-style: italic;
+      font-weight: 900;
+      font-size: clamp(2.8rem, 5.5vw, 4.6rem);
+      line-height: 1.0;
+      letter-spacing: -0.01em;
+      color: var(--s-gray-900);
+      margin: 0 0 1.5rem;
+      opacity: 0;
+      animation: htu-up 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.18s both;
+    }
+
+    .htu-headline-accent {
+      display: block;
+      background: var(--s-gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      padding-right: 0.08em;
+    }
+
+    .htu-subhead {
+      font-family: Verdana, sans-serif;
+      font-size: 1.02rem;
+      line-height: 1.72;
+      color: var(--s-gray-500);
+      max-width: 500px;
+      margin: 0 0 2.25rem;
+      opacity: 0;
+      animation: htu-up 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.32s both;
+    }
+
+    .htu-subhead strong { color: var(--s-gray-800); font-weight: 600; }
+
+    /* Meta row — time, free, instant */
+    .htu-meta {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: htu-up 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.44s both;
+    }
+
+    .htu-meta-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'Science Gothic', sans-serif;
+      font-style: italic;
+      font-weight: var(--s-font-semibold);
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      padding: 0.4rem 0.85rem;
+      border-radius: var(--s-radius-full);
+      border: 1px solid var(--s-gray-200);
+      color: var(--s-gray-600);
+      background: var(--s-gray-50);
+    }
+
+    .htu-meta-chip i { font-size: 0.68rem; }
+
+    /* CTA row */
+    .htu-cta-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: htu-up 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.56s both;
+    }
+
+    .htu-cta-note {
+      font-size: 0.78rem;
+      color: var(--s-gray-400);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    /* ── Score Card Mockup ───────────────────────────────────────────── */
+
+    .htu-card-col {
+      opacity: 0;
+      animation: htu-card-reveal 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s both;
+    }
+
+    @keyframes htu-card-reveal {
+      from {
+        opacity: 0;
+        transform: translateX(48px) rotate(6deg);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0) rotate(-2.5deg);
+      }
+    }
+
+    /* The card itself has no rotation — the wrapper does.
+       This makes hover straighten it out naturally. */
+    .htu-score-card {
+      background: var(--s-white);
+      border-radius: 20px;
+      border: 1px solid var(--s-gray-200);
+      box-shadow:
+        0 2px 4px rgba(0,0,0,0.04),
+        0 12px 40px rgba(0, 102, 204, 0.1),
+        0 40px 80px rgba(0, 102, 204, 0.06);
+      overflow: hidden;
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  box-shadow 0.5s ease;
+    }
+
+    .htu-card-col:hover {
+      animation: none;
+      transform: rotate(0deg);
+    }
+
+    .htu-card-col:hover .htu-score-card {
+      box-shadow:
+        0 2px 4px rgba(0,0,0,0.04),
+        0 20px 60px rgba(0, 102, 204, 0.16),
+        0 60px 100px rgba(0, 102, 204, 0.08);
+    }
+
+    /* Card header bar */
+    .htu-sc-header {
+      background: linear-gradient(135deg, var(--s-gray-900) 0%, var(--s-gray-800) 100%);
+      padding: 1rem 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .htu-sc-header-label {
+      font-family: 'Science Gothic', sans-serif;
+      font-style: italic;
+      font-weight: var(--s-font-bold);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .htu-sc-header-brand {
+      font-family: 'Science Gothic', sans-serif;
+      font-style: italic;
+      font-weight: 900;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 0.06em;
+    }
+
+    .htu-sc-body {
+      padding: 1.5rem 1.4rem;
+    }
+
+    /* Score area: ring + level badge side by side */
+    .htu-sc-score-row {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--s-gray-100);
+    }
+
+    .htu-sc-ring-wrap {
+      position: relative;
+      width: 90px;
+      height: 90px;
+      flex-shrink: 0;
+    }
+
+    .htu-sc-ring {
+      transform: rotate(-90deg);
+      width: 90px;
+      height: 90px;
+    }
+
+    .htu-sc-ring-track {
+      fill: none;
+      stroke: var(--s-gray-100);
+      stroke-width: 7;
+    }
+
+    .htu-sc-ring-progress {
+      fill: none;
+      stroke: url(#scoreGrad);
+      stroke-width: 7;
+      stroke-linecap: round;
+      stroke-dasharray: 251.2; /* 2π × 40 */
+      stroke-dashoffset: 251.2;
+      transition: stroke-dashoffset 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .htu-sc-ring-progress.animated {
+      stroke-dashoffset: 55.3; /* 251.2 × (1 - 0.78) */
+    }
+
+    .htu-sc-ring-text {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .htu-sc-score-val {
+      font-family: 'Science Gothic', sans-serif;
+      font-style: italic;
+      font-weight: 900;
+      font-size: 1.6rem;
+      line-height: 1;
+      color: var(--s-gray-900);
+    }
+
+    .htu-sc-score-denom {
+      font-size: 0.6rem;
+      font-weight: 600;
+      color: var(--s-gray-400);
+      letter-spacing: 0.04em;
+    }
+
+    .htu-sc-level-area { flex: 1; }
+
+    .htu-sc-level-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--s-gray-400);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.4rem;
+    }
+
+    .htu-sc-level-val {
+      font-family: 'Science Gothic', sans-serif;
+      font-style: italic;
+      font-weight: 900;
+      font-size: 1.1rem;
+      color: var(--s-gray-900);
+      margin-bottom: 0.5rem;
+    }
+
+    .htu-sc-level-bar {
+      height: 4px;
+      background: var(--s-gray-100);
+      border-radius: 99px;
+      overflow: hidden;
+      margin-bottom: 0.5rem;
+    }
+
+    .htu-sc-level-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--s-gradient-primary);
+      border-radius: 99px;
+      transition: width 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+    }
+
+    .htu-sc-level-fill.animated { width: 78%; }
+
+    .htu-sc-level-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.6rem;
+      color: var(--s-gray-400);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+
+    /* Dimension bars */
+    .htu-sc-dims { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.25rem; }
+
+    .htu-sc-dim {}
+
+    .htu-sc-dim-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.3rem;
+    }
+
+    .htu-sc-dim-name {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--s-gray-600);
+      letter-spacing: 0.01em;
+    }
+
+    .htu-sc-dim-pct {
+      font-family: 'Science Gothic', sans-serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 0.72rem;
+      color: var(--s-gray-800);
+    }
+
+    .htu-sc-dim-track {
+      height: 5px;
+      background: var(--s-gray-100);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .htu-sc-dim-fill {
+      height: 100%;
+      border-radius: 99px;
+      width: 0%;
+      transition: width 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .htu-sc-dim-fill.animated { width: var(--dim-w); }
+
+    /* Dim fill colours */
+    .d-blue   { background: var(--s-gradient-primary); }
+    .d-teal   { background: var(--s-gradient-info-special); }
+    .d-amber  { background: var(--s-gradient-amber); }
+    .d-royal  { background: var(--s-gradient-royal); }
+    .d-green  { background: var(--s-gradient-success); }
+
+    /* Card footer */
+    .htu-sc-footer {
+      background: linear-gradient(135deg, rgba(0,102,204,0.04), rgba(51,153,255,0.02));
+      border-top: 1px solid var(--s-gray-100);
+      padding: 1rem 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .htu-sc-footer-note {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--s-gray-600);
+    }
+
+    .htu-sc-footer-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--s-success);
+      animation: htu-dot-blink 2s ease-in-out infinite 0.5s;
+    }
+
+    .htu-sc-cta-link {
+      font-family: 'Science Gothic', sans-serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: var(--s-primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      white-space: nowrap;
+      transition: gap 0.25s ease;
+    }
+
+    .htu-sc-cta-link:hover { gap: 0.55rem; color: var(--s-primary-dark); }
+
+    /* ── Shared entrance animation ──────────────────────────────────── */
+    @keyframes htu-up {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* scroll-revealed elements */
+    .htu-reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .htu-reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ── Section skeleton — shared ──────────────────────────────────── */
+
+    .htu-section {
+      padding: 96px 0;
+    }
+
+    .htu-section-alt {
+      background: var(--s-gray-50);
+    }
+
+    /* Editorial section header: number + rule + title */
+    .htu-section-head {
+      margin-bottom: 4rem;
+    }
+
+    .htu-section-num-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .htu-section-num {
+      font-family: 'Science Gothic', sans-serif;
+      font-style: italic;
+      font-weight: 900;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      color: var(--s-primary);
+      text-transform: uppercase;
+    }
+
+    .htu-section-rule {
+      flex: 1;
+      height: 1px;
+      background: var(--s-gray-200);
+      max-width: 80px;
+    }
+
+    .htu-section-title {
+      font-family: 'Science Gothic', sans-serif;
+      font-style: italic;
+      font-weight: 900;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      color: var(--s-gray-900);
+      margin: 0 0 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .htu-section-sub {
+      font-family: Verdana, sans-serif;
+      font-size: 0.96rem;
+      line-height: 1.7;
+      color: var(--s-gray-500);
+      max-width: 600px;
+      margin: 0;
+    }
+
+    /* ── Section 01 — Dimensions ────────────────────────────────────── */
+
+    /* Asymmetric grid: large card left, 2×2 right, then full-width summary */
+    .htu-dim-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 1.25rem;
+    }
+
+    .htu-dim-card {
+      background: var(--s-white);
+      border: 1px solid var(--s-gray-200);
+      border-radius: 16px;
+      padding: 1.75rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      position: relative;
+      overflow: hidden;
+      transition:
+        transform 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        border-color 0.28s ease,
+        box-shadow 0.38s ease;
+    }
+
+    /* Left accent line */
+    .htu-dim-card::before {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0; left: 0;
+      width: 3px;
+      border-radius: 3px 0 0 3px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .htu-dim-card:hover {
+      transform: translateY(-5px);
+      border-color: transparent;
+      box-shadow: 0 8px 32px rgba(0, 102, 204, 0.12), 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .htu-dim-card:hover::before { opacity: 1; }
+
+    /* Per-card accent */
+    .htu-dim-card.c1::before { background: var(--s-gradient-primary); }
+    .htu-dim-card.c2::before { background: var(--s-gradient-info-special); }
+    .htu-dim-card.c3::before { background: var(--s-gradient-amber); }
+    .htu-dim-card.c4::before { background: var(--s-gradient-royal); }
+    .htu-dim-card.c5::before { background: var(--s-gradient-success); }
+    .htu-dim-card.c6::before { background: var(--s-gradient-primary-dark); }
+
+    /* Lead card spans 2 rows */
+    .htu-dim-card.lead {
+      grid-row: span 2;
+      padding: 2.25rem 2rem;
+    }
+
+    .htu-dim-card.lead .htu-dim-icon {
+      width: 56px;
+      height: 56px;
+      font-size: 1.4rem;
+    }
+
+    .htu-dim-card.lead .htu-dim-title {
+      font-size: 1.35rem;
+    }
+
+    .htu-dim-card.lead .htu-dim-body {
+      font-size: 0.9rem;
+    }
+
+    /* Full-width summary card */
+    .htu-dim-card.full {
+      grid-column: span 3;
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+      padding: 1.5rem 2rem;
+      background: linear-gradient(135deg, var(--s-gray-900), var(--s-gray-800));
+      border-color: transparent;
+    }
+
+    .htu-dim-card.full .htu-dim-icon {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.15);
+      color: var(--s-white);
+    }
+
+    .htu-dim-card.full .htu-dim-title { color: var(--s-white); }
+    .htu-dim-card.full .htu-dim-body  { color: rgba(255,255,255,0.65); margin-bottom: 0; }
+
+    .htu-dim-card.full:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+      border-color: transparent;
+    }
+
+    .htu-dim-card.full::before { display: none; }
+
+    .htu-dim-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--s-white);
+      flex-shrink: 0;
+      transition: transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .htu-dim-card:hover .htu-dim-icon { transform: scale(1.1) rotate(8deg); }
+
+    .htu-dim-card.c1 .htu-dim-icon { background: var(--s-gradient-primary); }
+    .htu-dim-card.c2 .htu-dim-icon { background: var(--s-gradient-info-special); }
+    .htu-dim-card.c3 .htu-dim-icon { background: var(--s-gradient-amber); }
+    .htu-dim-card.c4 .htu-dim-icon { background: var(--s-gradient-royal); }
+    .htu-dim-card.c5 .htu-dim-icon { background: var(--s-gradient-success); }
+
+    .htu-dim-title {
+      font-family: 'Science Gothic', sans-serif;
+      font-style: italic;
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--s-gray-900);
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .htu-dim-body {
+      font-family: Verdana, sans-serif;
+      font-size: 0.8rem;
+      line-height: 1.68;
+      color: var(--s-gray-500);
+      margin: 0;
+    }
+
+    /* ── Section 02 — Process steps ─────────────────────────────────── */
+
+    .htu-process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    /* Connector line between steps */
+    .htu-process-grid::before {
+      content: '';
+      position: absolute;
+      top: 44px;
+      left: calc(100% / 6);
+      right: calc(100% / 6);
+      height: 1px;
+      background: linear-gradient(90deg,
+        rgba(0,102,204,0) 0%,
+        rgba(0,102,204,0.2) 20%,
+        rgba(0,102,204,0.2) 80%,
+        rgba(0,102,204,0) 100%
+      );
+      z-index: 0;
+    }
+
+    .htu-process-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Large decorative step number behind content */
+    .htu-process-step::before {
+      content: attr(data-num);
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Science Gothic', sans-serif;
+      font-style: italic;
+      font-weight: 900;
+      font-size: 9rem;
+      line-height: 1;
+      color: var(--s-gray-900);
+      opacity: 0.03;
+      z-index: -1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .htu-process-icon-wrap {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: var(--s-white);
+      border: 1px solid var(--s-gray-200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.75rem;
+      position: relative;
+      transition: transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  border-color 0.28s ease,
+                  box-shadow 0.38s ease;
+    }
+
+    .htu-process-step:nth-child(1) .htu-process-icon-wrap { background: var(--s-primary); border-color: transparent; box-shadow: 0 8px 28px rgba(0,102,204,0.3); }
+    .htu-process-step:nth-child(2) .htu-process-icon-wrap { background: var(--s-gradient-info-special); border-color: transparent; box-shadow: 0 8px 28px rgba(13,148,136,0.3); }
+    .htu-process-step:nth-child(3) .htu-process-icon-wrap { background: var(--s-gradient-success); border-color: transparent; box-shadow: 0 8px 28px rgba(22,163,74,0.3); }
+
+    .htu-process-icon-wrap i {
+      font-size: 1.75rem;
+      color: var(--s-white);
+    }
+
+    .htu-process-step:hover .htu-process-icon-wrap {
+      transform: scale(1.1);
+    }
+
+    .htu-process-step:nth-child(1):hover .htu-process-icon-wrap { box-shadow: 0 14px 44px rgba(0,102,204,0.45); }
+    .htu-process-step:nth-child(2):hover .htu-process-icon-wrap { box-shadow: 0 14px 44px rgba(13,148,136,0.45); }
+    .htu-process-step:nth-child(3):hover .htu-process-icon-wrap { box-shadow: 0 14px 44px rgba(22,163,74,0.45); }
+
+    .htu-process-label {
+      font-family: 'Science Gothic', sans-serif;
+      font-style: italic;
+      font-weight: 900;
+      font-size: 1.25rem;
+      color: var(--s-gray-900);
+      margin: 0 0 0.75rem;
+    }
+
+    .htu-process-body {
+      font-family: Verdana, sans-serif;
+      font-size: 0.82rem;
+      line-height: 1.7;
+      color: var(--s-gray-500);
+      margin: 0;
+      max-width: 240px;
+    }
+
+    /* ── Section 03 — Benefits ──────────────────────────────────────── */
+
+    .htu-benefit-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .htu-benefit-row {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 1.5rem;
+      align-items: start;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--s-gray-100);
+      transition: background 0.25s ease;
+      border-radius: var(--s-radius-md);
+      padding-left: 1rem;
+      padding-right: 1rem;
+      margin-left: -1rem;
+      margin-right: -1rem;
+    }
+
+    .htu-benefit-row:first-child { border-top: 1px solid var(--s-gray-100); }
+
+    .htu-benefit-row:hover {
+      background: rgba(0, 102, 204, 0.02);
+    }
+
+    .htu-benefit-num {
+      font-family: 'Science Gothic', sans-serif;
+      font-style: italic;
+      font-weight: 900;
+      font-size: 2.6rem;
+      line-height: 1;
+      color: var(--s-gray-900);
+      opacity: 0.07;
+      padding-top: 0.15rem;
+      user-select: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .htu-benefit-row:hover .htu-benefit-num { opacity: 0.14; }
+
+    .htu-benefit-content {}
+
+    .htu-benefit-title {
+      font-family: 'Science Gothic', sans-serif;
+      font-style: italic;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--s-gray-900);
+      margin: 0 0 0.5rem;
+      transition: color 0.25s ease;
+    }
+
+    .htu-benefit-row:hover .htu-benefit-title { color: var(--s-primary); }
+
+    .htu-benefit-body {
+      font-family: Verdana, sans-serif;
+      font-size: 0.84rem;
+      line-height: 1.68;
+      color: var(--s-gray-500);
+      margin: 0;
+      max-width: 520px;
+    }
+
+    /* ── CTA section ──────────────────────────────────────────────────── */
+
+    .htu-cta-section {
+      padding: 0;
+    }
+
+    .htu-cta-inner {
+      position: relative;
+      background: linear-gradient(135deg, var(--s-gray-900) 0%, #0a1628 100%);
+      padding: 100px 0;
+      overflow: hidden;
+    }
+
+    /* Subtle grid pattern */
+    .htu-cta-inner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,102,204,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,102,204,0.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    /* Blue glow focal point */
+    .htu-cta-inner::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(0,102,204,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .htu-cta-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .htu-cta-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Science Gothic', sans-serif;
+      font-style: italic;
+      font-weight: var(--s-font-bold);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 0.38rem 1rem;
+      border-radius: var(--s-radius-full);
+      margin-bottom: 2rem;
+    }
+
+    .htu-cta-title {
+      font-family: 'Science Gothic', sans-serif;
+      font-style: italic;
+      font-weight: 900;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      line-height: 1.05;
+      color: var(--s-white);
+      margin: 0 0 1.25rem;
+    }
+
+    .htu-cta-title span {
+      background: var(--s-gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      padding-right: 0.05em;
+    }
+
+    .htu-cta-sub {
+      font-family: Verdana, sans-serif;
+      font-size: 0.96rem;
+      line-height: 1.72;
+      color: rgba(255,255,255,0.55);
+      max-width: 520px;
+      margin: 0 auto 3rem;
+    }
+
+    .htu-cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* White button on dark bg */
+    .s-btn-on-dark {
+      background: var(--s-white) !important;
+      color: var(--s-gray-900) !important;
+      border: none !important;
+    }
+
+    .s-btn-on-dark:hover {
+      background: var(--s-gray-100) !important;
+      color: var(--s-gray-900) !important;
+    }
+
+    .s-btn-ghost-light {
+      background: rgba(255,255,255,0.08) !important;
+      color: rgba(255,255,255,0.8) !important;
+      border: 1px solid rgba(255,255,255,0.15) !important;
+    }
+
+    .s-btn-ghost-light:hover {
+      background: rgba(255,255,255,0.14) !important;
+      color: var(--s-white) !important;
+      border-color: rgba(255,255,255,0.25) !important;
+    }
+
+    /* ── Stagger delays for scroll reveal groups ──────────────────── */
+    .htu-reveal-d1 { transition-delay: 0.0s; }
+    .htu-reveal-d2 { transition-delay: 0.08s; }
+    .htu-reveal-d3 { transition-delay: 0.16s; }
+    .htu-reveal-d4 { transition-delay: 0.24s; }
+    .htu-reveal-d5 { transition-delay: 0.32s; }
+    .htu-reveal-d6 { transition-delay: 0.40s; }
+
+    /* ── Responsive ───────────────────────────────────────────────── */
+    @media (max-width: 1199px) {
+      .htu-hero-grid { grid-template-columns: 1fr 380px; gap: 3rem; }
+    }
+
+    @media (max-width: 991px) {
+      .htu-hero-grid { grid-template-columns: 1fr; }
+      .htu-card-col  { display: none; }
+      .htu-dim-grid  { grid-template-columns: 1fr 1fr; }
+      .htu-dim-card.lead { grid-row: span 1; }
+      .htu-dim-card.full { grid-column: span 2; }
+      .htu-process-grid::before { display: none; }
+    }
+
+    @media (max-width: 767px) {
+      .htu-hero    { padding-top: 100px; padding-bottom: 64px; }
+      .htu-section { padding: 64px 0; }
+      .htu-section-title { font-size: clamp(1.8rem, 7vw, 2.6rem); }
+      .htu-dim-grid    { grid-template-columns: 1fr; }
+      .htu-dim-card.full { grid-column: span 1; flex-direction: column; }
+      .htu-process-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .htu-process-step { padding: 0; }
+      .htu-process-step::before { opacity: 0.04; }
+      .htu-benefit-row { grid-template-columns: 40px 1fr; gap: 1rem; }
+      .htu-benefit-num { font-size: 1.8rem; }
+      .htu-cta-inner { padding: 72px 0; }
+    }
+
+    @media (max-width: 479px) {
+      .htu-headline { font-size: clamp(2.2rem, 9vw, 3rem); }
+      .htu-cta-title { font-size: clamp(2rem, 9vw, 2.6rem); }
+      .htu-meta { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       NAVIGATION — SCORP Standard
+       ═══════════════════════════════════════════════════════════════ -->
+  <nav class="s-navbar navbar navbar-expand-xl" id="mainNav" aria-label="Main navigation">
+    <div class="container-xxl s-navbar-container">
+
+      <a class="s-navbar-brand navbar-brand" href="index.html" aria-label="SCORP Home">
+        <div class="s-brand-logo">
+          <img src="assets/images/Scorp-Logo.png" alt="" width="26" height="26" loading="eager" style="object-fit:contain">
+        </div>
+        <span class="s-brand-text">SCORP</span>
+      </a>
+
+      <button class="navbar-toggler s-mobile-toggle border-0 shadow-none"
+              type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+              aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="s-hamburger-box"><span class="s-hamburger-inner"></span></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav s-nav-links ms-auto align-items-center">
+
+          <li class="nav-item">
+            <a class="s-nav-link" href="index.html">
+              <i class="fa-solid fa-house" aria-hidden="true"></i> Home
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="s-nav-link" href="sapphire.html">
+              <i class="fa-solid fa-gem" aria-hidden="true"></i> Sapphire
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="s-nav-link" href="contact.html">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i> Contact
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="s-nav-link" href="about.html">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> About
+            </a>
+          </li>
+
+          <li class="nav-item s-nav-dropdown-internal">
+            <button class="s-nav-link" id="navResBtn" type="button" aria-expanded="false" aria-haspopup="true">
+              <i class="fa-solid fa-book-open" aria-hidden="true"></i> Resources
+              <span class="s-active-badge" aria-hidden="true"></span>
+            </button>
+            <ul class="s-internal-dropdown-menu" id="navResMenu" role="menu">
+              <li role="none"><a class="s-internal-menu-item" href="faq.html" role="menuitem"><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
+              <li role="none"><a class="s-internal-menu-item" href="terms_of_use.html" role="menuitem"><i class="fa-solid fa-file-contract"></i> Terms of Use</a></li>
+              <li role="none"><a class="s-internal-menu-item" href="privacy_policy.html" role="menuitem"><i class="fa-solid fa-shield-halved"></i> Privacy Policy</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="book-demo-button" href="book-demo.html">
+              <i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Book Demo
+            </a>
+          </li>
+
+          <li class="nav-item s-sapphire-dropdown">
+            <button class="s-sapphire-trigger" id="navSapBtn" type="button" aria-expanded="false">
+              <span class="s-sapphire-logo">
+                <img src="assets/images/scorp-sapphire-cropped.png" alt="" width="28" height="28" style="object-fit:contain">
+              </span>
+              <strong>Sapphire</strong>
+            </button>
+            <ul class="s-sapphire-menu" id="navSapMenu" role="menu">
+              <li role="none"><a class="s-sapphire-menu-item" href="https://stage.scorptech.in/login" role="menuitem"><i class="fa-solid fa-right-to-bracket"></i> Log-in</a></li>
+              <li role="none"><a class="s-sapphire-menu-item" href="https://stage.scorptech.in/register" role="menuitem"><i class="fa-solid fa-user-plus"></i> Sign-up</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       MAIN
+       ═══════════════════════════════════════════════════════════════ -->
+  <main id="mainContent">
+
+    <!-- ── HERO ────────────────────────────────────────────────────── -->
+    <section class="htu-hero" aria-label="Assessment hero">
+      <div class="container-xl">
+        <div class="htu-hero-grid">
+
+          <!-- Text column -->
+          <div class="htu-hero-text">
+
+            <div class="htu-eyebrow">
+              <span class="htu-eyebrow-dot" aria-hidden="true"></span>
+              Free Assessment
+            </div>
+
+            <h1 class="htu-headline">
+              Know exactly<br>
+              <span class="htu-headline-accent">where you stand.</span>
+            </h1>
+
+            <p class="htu-subhead">
+              A structured 5-minute assessment across the five pillars of asset
+              management maturity. No consulting needed —
+              <strong>a clear score, a precise gap analysis, and a prioritised roadmap</strong>
+              delivered instantly.
+            </p>
+
+            <div class="htu-meta" aria-label="Assessment details">
+              <span class="htu-meta-chip">
+                <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                5 minutes
+              </span>
+              <span class="htu-meta-chip">
+                <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+                Instant results
+              </span>
+              <span class="htu-meta-chip">
+                <i class="fa-solid fa-unlock" aria-hidden="true"></i>
+                Free, no sign-up
+              </span>
+              <span class="htu-meta-chip">
+                <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+                Actionable roadmap
+              </span>
+            </div>
+
+            <div class="htu-cta-row">
+              <a class="s-btn-primary s-btn-md s-btn-rounded s-btn-glare" href="assessment.html">
+                <i class="fa-solid fa-play me-2" aria-hidden="true"></i>
+                Start Assessment
+              </a>
+              <a class="s-btn-primary-outline s-btn-md s-btn-rounded" href="book-demo.html">
+                <i class="fa-solid fa-calendar-check me-2" aria-hidden="true"></i>
+                Book a Demo
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Score card mockup -->
+          <div class="htu-card-col" aria-hidden="true">
+            <div class="htu-score-card">
+
+              <!-- SVG gradient definition -->
+              <svg width="0" height="0" style="position:absolute">
+                <defs>
+                  <linearGradient id="scoreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#0066cc"/>
+                    <stop offset="100%" stop-color="#3399ff"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+
+              <!-- Header bar -->
+              <div class="htu-sc-header">
+                <span class="htu-sc-header-label">Assessment Report</span>
+                <span class="htu-sc-header-brand">Sapphire</span>
+              </div>
+
+              <!-- Body -->
+              <div class="htu-sc-body">
+
+                <!-- Score ring + level -->
+                <div class="htu-sc-score-row">
+
+                  <div class="htu-sc-ring-wrap">
+                    <svg class="htu-sc-ring" viewBox="0 0 90 90">
+                      <circle class="htu-sc-ring-track" cx="45" cy="45" r="40"/>
+                      <circle class="htu-sc-ring-progress" id="scoreRingEl" cx="45" cy="45" r="40"/>
+                    </svg>
+                    <div class="htu-sc-ring-text">
+                      <span class="htu-sc-score-val" id="scoreNumEl">0</span>
+                      <span class="htu-sc-score-denom">/100</span>
+                    </div>
+                  </div>
+
+                  <div class="htu-sc-level-area">
+                    <div class="htu-sc-level-label">Maturity Level</div>
+                    <div class="htu-sc-level-val">Developing</div>
+                    <div class="htu-sc-level-bar">
+                      <div class="htu-sc-level-fill" id="levelFillEl"></div>
+                    </div>
+                    <div class="htu-sc-level-labels">
+                      <span>Basic</span>
+                      <span>Developing</span>
+                      <span>Advanced</span>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- Dimension bars -->
+                <div class="htu-sc-dims">
+                  <div class="htu-sc-dim">
+                    <div class="htu-sc-dim-header">
+                      <span class="htu-sc-dim-name">Procurement &amp; Tracking</span>
+                      <span class="htu-sc-dim-pct">82%</span>
+                    </div>
+                    <div class="htu-sc-dim-track">
+                      <div class="htu-sc-dim-fill d-blue" style="--dim-w:82%" id="db1"></div>
+                    </div>
+                  </div>
+                  <div class="htu-sc-dim">
+                    <div class="htu-sc-dim-header">
+                      <span class="htu-sc-dim-name">Inspection &amp; Documentation</span>
+                      <span class="htu-sc-dim-pct">71%</span>
+                    </div>
+                    <div class="htu-sc-dim-track">
+                      <div class="htu-sc-dim-fill d-teal" style="--dim-w:71%" id="db2"></div>
+                    </div>
+                  </div>
+                  <div class="htu-sc-dim">
+                    <div class="htu-sc-dim-header">
+                      <span class="htu-sc-dim-name">Maintenance &amp; OPEX</span>
+                      <span class="htu-sc-dim-pct">68%</span>
+                    </div>
+                    <div class="htu-sc-dim-track">
+                      <div class="htu-sc-dim-fill d-amber" style="--dim-w:68%" id="db3"></div>
+                    </div>
+                  </div>
+                  <div class="htu-sc-dim">
+                    <div class="htu-sc-dim-header">
+                      <span class="htu-sc-dim-name">Compliance &amp; Security</span>
+                      <span class="htu-sc-dim-pct">59%</span>
+                    </div>
+                    <div class="htu-sc-dim-track">
+                      <div class="htu-sc-dim-fill d-royal" style="--dim-w:59%" id="db4"></div>
+                    </div>
+                  </div>
+                  <div class="htu-sc-dim">
+                    <div class="htu-sc-dim-header">
+                      <span class="htu-sc-dim-name">Analytics &amp; Intelligence</span>
+                      <span class="htu-sc-dim-pct">90%</span>
+                    </div>
+                    <div class="htu-sc-dim-track">
+                      <div class="htu-sc-dim-fill d-green" style="--dim-w:90%" id="db5"></div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Footer -->
+              <div class="htu-sc-footer">
+                <span class="htu-sc-footer-note">
+                  <span class="htu-sc-footer-dot" aria-hidden="true"></span>
+                  3 high-impact improvements found
+                </span>
+                <a class="htu-sc-cta-link" href="assessment.html">
+                  Get your score
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── 01 — WHAT YOU'LL DISCOVER ──────────────────────────────── -->
+    <section class="htu-section htu-section-alt" aria-labelledby="dimTitle">
+      <div class="container-xl">
+
+        <div class="htu-section-head htu-reveal htu-reveal-d1">
+          <div class="htu-section-num-row">
+            <span class="htu-section-num">01</span>
+            <div class="htu-section-rule"></div>
+          </div>
+          <h2 class="htu-section-title" id="dimTitle">What you'll discover</h2>
+          <p class="htu-section-sub">
+            Six dimensions. One clear picture. Understand what's strong, what's exposed,
+            and what's costing you without you knowing it.
+          </p>
+        </div>
+
+        <div class="htu-dim-grid">
+
+          <!-- Lead card — Procurement -->
+          <div class="htu-dim-card lead c1 htu-reveal htu-reveal-d1">
+            <div class="htu-dim-icon" aria-hidden="true">
+              <i class="fa-solid fa-truck-fast"></i>
+            </div>
+            <h3 class="htu-dim-title">Procurement &amp; Tracking</h3>
+            <p class="htu-dim-body">
+              Your procurement structure, asset tagging discipline, location-level
+              visibility, and movement traceability — assessed against what a mature
+              operation actually looks like. Most organisations discover gaps they didn't
+              know they had between what they think they track and what's actually on record.
+            </p>
+          </div>
+
+          <!-- Grid cards right -->
+          <div class="htu-dim-card c2 htu-reveal htu-reveal-d2">
+            <div class="htu-dim-icon" aria-hidden="true">
+              <i class="fa-solid fa-clipboard-check"></i>
+            </div>
+            <h3 class="htu-dim-title">Inspection &amp; Documentation</h3>
+            <p class="htu-dim-body">
+              Inspect routines, evidence capture quality, and whether audit trails
+              are being maintained consistently or just opportunistically.
+            </p>
+          </div>
+
+          <div class="htu-dim-card c3 htu-reveal htu-reveal-d3">
+            <div class="htu-dim-icon" aria-hidden="true">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+            <h3 class="htu-dim-title">Maintenance &amp; OPEX</h3>
+            <p class="htu-dim-body">
+              Scheduling maturity, service logging quality, and cost capture
+              accuracy — the three levers of total ownership visibility.
+            </p>
+          </div>
+
+          <div class="htu-dim-card c4 htu-reveal htu-reveal-d4">
+            <div class="htu-dim-icon" aria-hidden="true">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3 class="htu-dim-title">Compliance &amp; Security</h3>
+            <p class="htu-dim-body">
+              Access control rigour, accountability frameworks, policy adherence,
+              and your real risk exposure in day-to-day operations.
+            </p>
+          </div>
+
+          <div class="htu-dim-card c5 htu-reveal htu-reveal-d5">
+            <div class="htu-dim-icon" aria-hidden="true">
+              <i class="fa-solid fa-chart-bar"></i>
+            </div>
+            <h3 class="htu-dim-title">Analytics &amp; Intelligence</h3>
+            <p class="htu-dim-body">
+              Whether your reporting is reactive or proactive, what KPIs are
+              actually in use, and how fast decisions get made from data.
+            </p>
+          </div>
+
+          <!-- Full-width summary card -->
+          <div class="htu-dim-card full c6 htu-reveal htu-reveal-d6">
+            <div class="htu-dim-icon" style="background:rgba(255,255,255,0.12)" aria-hidden="true">
+              <i class="fa-solid fa-star-half-stroke" style="color:var(--s-white)"></i>
+            </div>
+            <div>
+              <h3 class="htu-dim-title">Your Maturity Summary</h3>
+              <p class="htu-dim-body">
+                An overall score out of 100. Dimension-by-dimension breakdown. Maturity level classification.
+                Three prioritised improvements with clear rationale — ready to share with your leadership.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── 02 — HOW IT WORKS ──────────────────────────────────────── -->
+    <section class="htu-section" aria-labelledby="processTitle">
+      <div class="container-xl">
+
+        <div class="htu-section-head htu-reveal htu-reveal-d1">
+          <div class="htu-section-num-row">
+            <span class="htu-section-num">02</span>
+            <div class="htu-section-rule"></div>
+          </div>
+          <h2 class="htu-section-title" id="processTitle">How it works</h2>
+          <p class="htu-section-sub">
+            No setup. No sign-up required. No consultant needed to interpret the output.
+          </p>
+        </div>
+
+        <div class="htu-process-grid">
+
+          <div class="htu-process-step htu-reveal htu-reveal-d1" data-num="01">
+            <div class="htu-process-icon-wrap">
+              <i class="fa-solid fa-building" aria-hidden="true"></i>
+            </div>
+            <h3 class="htu-process-label">Basics</h3>
+            <p class="htu-process-body">
+              Provide minimal context — your industry, organisation size, and the tools
+              currently in use. Two minutes, no registration.
+            </p>
+          </div>
+
+          <div class="htu-process-step htu-reveal htu-reveal-d2" data-num="02">
+            <div class="htu-process-icon-wrap">
+              <i class="fa-solid fa-list-ul" aria-hidden="true"></i>
+            </div>
+            <h3 class="htu-process-label">Assessment</h3>
+            <p class="htu-process-body">
+              Answer structured questions across lifecycle practices, visibility controls,
+              and compliance maturity. Designed to be answered honestly, not optimistically.
+            </p>
+          </div>
+
+          <div class="htu-process-step htu-reveal htu-reveal-d3" data-num="03">
+            <div class="htu-process-icon-wrap">
+              <i class="fa-solid fa-chart-pie" aria-hidden="true"></i>
+            </div>
+            <h3 class="htu-process-label">Insights</h3>
+            <p class="htu-process-body">
+              Your maturity score, dimension breakdown, and three prioritised
+              improvements — ranked by impact, not complexity.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-5 pt-2 htu-reveal htu-reveal-d4">
+          <a class="s-btn-primary s-btn-md s-btn-rounded s-btn-glare" href="assessment.html">
+            <i class="fa-solid fa-play me-2" aria-hidden="true"></i>
+            Begin Assessment
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── 03 — WHY TAKE IT ───────────────────────────────────────── -->
+    <section class="htu-section htu-section-alt" aria-labelledby="whyTitle">
+      <div class="container-xl">
+
+        <div class="row g-5 align-items-start">
+
+          <!-- Left: section header -->
+          <div class="col-lg-4 htu-reveal htu-reveal-d1">
+            <div class="htu-section-num-row">
+              <span class="htu-section-num">03</span>
+              <div class="htu-section-rule"></div>
+            </div>
+            <h2 class="htu-section-title" id="whyTitle">
+              Clarity first.<br>Then improvements.
+            </h2>
+            <p class="htu-section-sub" style="max-width:100%">
+              Most improvement initiatives start without a baseline. This gives you one.
+            </p>
+          </div>
+
+          <!-- Right: benefit rows -->
+          <div class="col-lg-7 offset-lg-1 htu-reveal htu-reveal-d2">
+            <div class="htu-benefit-list">
+
+              <div class="htu-benefit-row">
+                <div class="htu-benefit-num" aria-hidden="true">01</div>
+                <div class="htu-benefit-content">
+                  <h3 class="htu-benefit-title">Identify gaps before they become expensive</h3>
+                  <p class="htu-benefit-body">
+                    See what's missing across processes, controls, and traceability.
+                    Most organisations only discover gaps reactively — during an audit,
+                    a breakdown, or a compliance incident.
+                  </p>
+                </div>
+              </div>
+
+              <div class="htu-benefit-row">
+                <div class="htu-benefit-num" aria-hidden="true">02</div>
+                <div class="htu-benefit-content">
+                  <h3 class="htu-benefit-title">Know your maturity level — not just your tools</h3>
+                  <p class="htu-benefit-body">
+                    Having software doesn't mean using it well. This assessment measures
+                    actual practice maturity, not what you own. The gap between the two
+                    is usually where the cost is hiding.
+                  </p>
+                </div>
+              </div>
+
+              <div class="htu-benefit-row">
+                <div class="htu-benefit-num" aria-hidden="true">03</div>
+                <div class="htu-benefit-content">
+                  <h3 class="htu-benefit-title">Prioritise by impact, not by effort</h3>
+                  <p class="htu-benefit-body">
+                    The roadmap doesn't just tell you what to fix — it tells you what to
+                    fix first, ranked by operational impact. High-effort low-impact work
+                    stays off the list.
+                  </p>
+                </div>
+              </div>
+
+              <div class="htu-benefit-row">
+                <div class="htu-benefit-num" aria-hidden="true">04</div>
+                <div class="htu-benefit-content">
+                  <h3 class="htu-benefit-title">A shared language for leadership conversations</h3>
+                  <p class="htu-benefit-body">
+                    A score out of 100 travels better than a qualitative opinion in a
+                    boardroom. The report gives asset management teams a credible,
+                    structured case for the investment they need.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── CLOSING CTA ────────────────────────────────────────────── -->
+    <section class="htu-cta-section" aria-label="Start assessment">
+      <div class="htu-cta-inner">
+        <div class="container-xl">
+          <div class="htu-cta-content htu-reveal">
+
+            <div class="htu-cta-eyebrow">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              Free &nbsp;·&nbsp; 5 Minutes &nbsp;·&nbsp; No Sign-Up
+            </div>
+
+            <h2 class="htu-cta-title">
+              Ready to discover<br>
+              <span>your score?</span>
+            </h2>
+
+            <p class="htu-cta-sub">
+              Replace guesswork with a precise baseline. Know where your organisation
+              sits today — and exactly what moves the needle next.
+            </p>
+
+            <div class="htu-cta-buttons">
+              <a class="s-btn-on-dark s-btn-md s-btn-rounded s-btn-glare" href="assessment.html">
+                <i class="fa-solid fa-play me-2" aria-hidden="true"></i>
+                Start Free Assessment
+              </a>
+              <a class="s-btn-ghost-light s-btn-md s-btn-rounded" href="contact.html">
+                <i class="fa-solid fa-phone me-2" aria-hidden="true"></i>
+                Talk to Our Team
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════════
+         BOTTOM COMPONENT GOES HERE — ALREADY BUILT
+         (CTA section + Dual-direction blog marquee +
+          Blog suggestions + Comprehensive footer)
+         ══════════════════════════════════════════════════════════════ -->
+
+  </main>
+
+
+  <!-- ── FAB ─────────────────────────────────────────────────────── -->
+  <div class="s-floating-button" id="fabRoot">
+    <button class="s-fab-trigger" id="fabBtn" type="button"
+            aria-label="Quick actions" aria-expanded="false" aria-controls="fabMenu">
+      <i class="fa-solid fa-bolt" id="fabIco" aria-hidden="true"></i>
+    </button>
+    <div class="s-fab-menu" id="fabMenu" role="dialog" aria-label="Quick actions">
+      <div class="s-fab-menu-header">
+        <p class="s-fab-menu-title">Quick Actions</p>
+      </div>
+      <div class="s-fab-menu-body">
+        <a class="s-fab-menu-item" href="assessment.html">
+          <span class="s-fab-menu-item-icon" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+          <span class="s-fab-menu-item-text">Start Assessment</span>
+        </a>
+        <a class="s-fab-menu-item" href="book-demo.html">
+          <span class="s-fab-menu-item-icon" aria-hidden="true"><i class="fa-solid fa-calendar-check"></i></span>
+          <span class="s-fab-menu-item-text">Book a Demo</span>
+        </a>
+        <a class="s-fab-menu-item" href="sapphire.html">
+          <span class="s-fab-menu-item-icon" aria-hidden="true"><i class="fa-solid fa-gem"></i></span>
+          <span class="s-fab-menu-item-text">Explore Sapphire</span>
+        </a>
+        <a class="s-fab-menu-item" href="contact.html">
+          <span class="s-fab-menu-item-icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></span>
+          <span class="s-fab-menu-item-text">Contact Us</span>
+        </a>
+      </div>
+      <div class="s-fab-menu-footer">
+        <a class="s-fab-cta-btn s-fab-cta-success" href="assessment.html">
+          <i class="fa-solid fa-play" aria-hidden="true"></i> Start
+        </a>
+        <a class="s-fab-cta-btn s-fab-cta-primary-soft" href="book-demo.html">
+          <i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Demo
+        </a>
+      </div>
+    </div>
+    <div class="s-fab-backdrop" id="fabBackdrop" aria-hidden="true"></div>
+  </div>
+
+
+  <!-- ── SCRIPTS ─────────────────────────────────────────────────── -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    'use strict';
+
+    /* ── 1. Navbar scroll ───────────────────────────────────────── */
+    var nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 16);
+    }, { passive: true });
+
+    /* ── 2. Dropdown bindings ───────────────────────────────────── */
+    function closeAllDropdowns() {
+      document.querySelectorAll('.s-internal-dropdown-menu.show, .s-sapphire-menu.show')
+        .forEach(function (m) { m.classList.remove('show'); });
+      document.querySelectorAll('[aria-expanded="true"]')
+        .forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
+    }
+
+    function bindDropdown(btnId, menuId) {
+      var btn  = document.getElementById(btnId);
+      var menu = document.getElementById(menuId);
+      if (!btn || !menu) return;
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var isOpen = menu.classList.contains('show');
+        closeAllDropdowns();
+        if (!isOpen) { menu.classList.add('show'); btn.setAttribute('aria-expanded', 'true'); }
+      });
+    }
+
+    document.addEventListener('click', closeAllDropdowns);
+    bindDropdown('navResBtn', 'navResMenu');
+    bindDropdown('navSapBtn', 'navSapMenu');
+
+    /* ── 3. FAB ─────────────────────────────────────────────────── */
+    (function () {
+      var btn = document.getElementById('fabBtn');
+      var menu = document.getElementById('fabMenu');
+      var bd   = document.getElementById('fabBackdrop');
+      var ico  = document.getElementById('fabIco');
+      if (!btn) return;
+
+      function openFab()  {
+        menu.classList.add('active');
+        bd.classList.add('active');
+        ico.className = 'fa-solid fa-xmark';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+      function closeFab() {
+        menu.classList.remove('active');
+        bd.classList.remove('active');
+        ico.className = 'fa-solid fa-bolt';
+        btn.setAttribute('aria-expanded', 'false');
+      }
+
+      btn.addEventListener('click', function () {
+        menu.classList.contains('active') ? closeFab() : openFab();
+      });
+      bd.addEventListener('click', closeFab);
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeFab(); });
+    }());
+
+    /* ── 4. Score card animation ────────────────────────────────── */
+    (function () {
+      var ring      = document.getElementById('scoreRingEl');
+      var numEl     = document.getElementById('scoreNumEl');
+      var levelFill = document.getElementById('levelFillEl');
+      var dimFills  = [
+        document.getElementById('db1'),
+        document.getElementById('db2'),
+        document.getElementById('db3'),
+        document.getElementById('db4'),
+        document.getElementById('db5')
+      ];
+
+      if (!ring || !numEl) return;
+
+      var animated  = false;
+      var TARGET    = 78;
+      var DURATION  = 1800; /* ms */
+
+      function easeOutCubic(t) {
+        return 1 - Math.pow(1 - t, 3);
+      }
+
+      function animateScore() {
+        if (animated) return;
+        animated = true;
+
+        var startTs  = null;
+
+        /* Ring fill */
+        ring.classList.add('animated');
+
+        /* Level bar */
+        levelFill.classList.add('animated');
+
+        /* Dimension bars — stagger each 150ms */
+        dimFills.forEach(function (el, i) {
+          if (!el) return;
+          setTimeout(function () {
+            el.classList.add('animated');
+          }, 400 + i * 150);
+        });
+
+        /* Counter */
+        function step(ts) {
+          if (!startTs) startTs = ts;
+          var progress = Math.min((ts - startTs) / DURATION, 1);
+          var eased    = easeOutCubic(progress);
+          numEl.textContent = Math.round(TARGET * eased);
+          if (progress < 1) requestAnimationFrame(step);
+          else numEl.textContent = TARGET;
+        }
+
+        /* Delay counter slightly so it starts with the ring */
+        setTimeout(function () {
+          requestAnimationFrame(step);
+        }, 300);
+      }
+
+      /* Trigger when card column enters viewport */
+      var cardCol = document.querySelector('.htu-card-col');
+      if (!cardCol) { animateScore(); return; }
+
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              /* Small delay after card reveal animation */
+              setTimeout(animateScore, 900);
+              io.disconnect();
+            }
+          });
+        }, { threshold: 0.3 });
+        io.observe(cardCol);
+      } else {
+        setTimeout(animateScore, 1200);
+      }
+    }());
+
+    /* ── 5. Scroll reveal ───────────────────────────────────────── */
+    (function () {
+      var els = document.querySelectorAll('.htu-reveal');
+      if (!els.length) return;
+
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('visible');
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        els.forEach(function (el) { io.observe(el); });
+      } else {
+        /* Fallback: show everything */
+        els.forEach(function (el) { el.classList.add('visible'); });
+      }
+    }());
+
+  </script>
+
+</body>
+</html>

@@ -79,12 +79,9 @@
     --s-warning-light: #fbbf24;
     --s-amber: #f59e0b;
     --s-amber-light: #fbbf24;
-    /* INFO = CYAN */
     --s-info: var(--s-cyan-600);
     --s-info-light: var(--s-cyan-500);
     --s-info-rgb: 2, 132, 199;
-
-    /* INFO SPECIAL = TEAL */
     --s-info-special: var(--s-teal-600);
     --s-info-special-light: var(--s-teal-500);
     --s-info-special-rgb: 13, 148, 136;
@@ -155,9 +152,20 @@
     --s-gradient-slate: linear-gradient(135deg, var(--s-gray-500), var(--s-gray-600));
     --s-gradient-neutral: linear-gradient(135deg, var(--s-neutral-200), var(--s-neutral-300));
     /*═══════════════════════════════════════════════════════════════════════════
-       GRADIENTS - FROSTED GLASS EFFECT
-       ═══════════════════════════════════════════════════════════════════════════ */
+        GRADIENTS - FROSTED GLASS EFFECT
+    ═══════════════════════════════════════════════════════════════════════════ */
     --s-gradient-frost: linear-gradient(135deg, var(--s-frost-light), var(--s-frost-dark));
+    /*═══════════════════════════════════════════════════════════════════════════
+        GRADIENTS - BRANDS
+    ═══════════════════════════════════════════════════════════════════════════ */
+    --s-bg-linkedin:   linear-gradient(135deg, #0077B5 0%, #00A0DC 100%);
+    --s-bg-youtube:    linear-gradient(135deg, #FF0000 0%, #C4302B 100%);
+    --s-bg-instagram:  linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d, #f56040, #f77737, #fcaf45, #ffdc80);
+    --s-bg-facebook:   linear-gradient(135deg, #1877F2 0%, #0856CC 100%);
+    --s-bg-x:          linear-gradient(135deg, #14171A 0%, #000000 100%);
+    --s-bg-discord:    linear-gradient(135deg, #5865F2 0%, #404EED 100%);
+    --s-bg-github:     linear-gradient(135deg, #24292E 0%, #040D21 100%);
+    --s-bg-whatsapp: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
 
     /* ═══════════════════════════════════════════════════════════════════════════════
    S-BG GRADIENT UTILITIES - ULTRA-CONSOLIDATED OOCSS
@@ -532,6 +540,8 @@ html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* overflow-y: scroll; */
+    scrollbar-gutter: stable;
 }
 
 body {
@@ -544,8 +554,7 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    /* opacity: 0;
-    animation: luxuryFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards; */
+    animation: luxuryFadeIn 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 

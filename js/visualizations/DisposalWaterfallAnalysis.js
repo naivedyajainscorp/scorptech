@@ -199,7 +199,7 @@ export class DisposalWaterfallAnalysis {
         <div class="mb-3">
           <div class="d-flex justify-content-between align-items-center mb-1">
             <div class="d-flex align-items-center gap-2">
-              <div class="s-icon s-icon-danger s-icon-xs">
+              <div class="s-icon s-icon-danger s-icon-md">
                 <i class="bi bi-bar-chart-fill" style="transform: scaleX(-1); display:inline-block;"></i>
               </div>
               <span class="s-text-gray-600 s-font-semibold s-text-sm">Accumulated Depreciation</span>
@@ -214,7 +214,7 @@ export class DisposalWaterfallAnalysis {
         <div class="mb-3">
           <div class="d-flex justify-content-between align-items-center mb-1">
             <div class="d-flex align-items-center gap-2">
-              <div class="s-icon s-icon-amber s-icon-xs">
+              <div class="s-icon s-icon-amber s-icon-md">
                 <i class="fas fa-book"></i>
               </div>
               <span class="s-text-gray-600 s-font-semibold s-text-sm">Book Value at Disposal</span>
@@ -229,7 +229,7 @@ export class DisposalWaterfallAnalysis {
         <div class="mb-4">
           <div class="d-flex justify-content-between align-items-center mb-1">
             <div class="d-flex align-items-center gap-2">
-              <div class="s-icon s-icon-green s-icon-xs">
+              <div class="s-icon s-icon-green s-icon-md">
                 <i class="fa-solid fa-file-invoice"></i>
               </div>
               <span class="s-text-gray-600 s-font-semibold s-text-sm">Amount Recovered</span>

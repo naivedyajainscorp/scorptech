@@ -10,7 +10,7 @@ export async function initIntelligencePage() {
   await Promise.all([
     document.fonts.load('900 16px "Font Awesome 7 Free"'),
     document.fonts.load('400 16px "Font Awesome 7 Brands"'),
-    document.fonts.load('400 16px "Bootstrap Icons"'),
+    document.fonts.load('400 16px "Bootstrap Icons"'),  
   ]).catch(() => {});
 
   /* ── UTILITIES ───────────────────────────────────────────────── */
@@ -93,28 +93,6 @@ export async function initIntelligencePage() {
     gray50: '#f8fafc',
   };
 
-  /* ═══════════════════════════════════════════════════════════════
-     UNIFIED 3D RING ENGINE
-     All rings — master and domain — use this single factory.
-     cfg shape:
-       canvasId     string  (required)
-       captionId    string  (optional, domain rings only)
-       hubLabel     string  hub top-line when hubFixed:true
-       hubFixed     bool    true  = always show hubLabel (master style)
-                            false = show nodes[active].center (domain style)
-       nodes        array   { label, icon, color, sub?, center?, caption?, lOff? }
-                            lOff: { r?: number, y?: number }
-                              r = radial offset px (+further out / -closer in)
-                              y = vertical shift px (-up / +down)
-       travelDur    number  seconds  default 0.7
-       dwellDur     number  seconds  default 2.5
-       particleSpeed number          default 0.14
-       particleCount number          default 3
-       maxW         number  max canvas width px  default 520
-       ringRadius   number  R as fraction of W   default 0.30
-       aspectRatio  number  H/W ratio            default 1.22
-                            (ignored if canvas has data-height attr)
-  ═══════════════════════════════════════════════════════════════ */
   function makeRing3D(cfg) {
     const canvas = qs(cfg.canvasId);
     if (!canvas) return;
@@ -133,6 +111,9 @@ export async function initIntelligencePage() {
     const MAX_W       = cfg.maxW         ?? 520;
     const RING_R_FRAC = cfg.ringRadius   ?? 0.30;
     const ASPECT      = cfg.aspectRatio  ?? 1.22;
+    const ICON_SCALE_ACTIVE = cfg.iconScaleActive ?? 0.052;
+    const ICON_SCALE_INACTIVE = cfg.iconScaleInactive ?? 0.043;
+    const ICON_SCALE_IDLE = cfg.iconScaleIdle ?? 0.044;
     const nodes       = cfg.nodes;
     const n           = nodes.length;
     const captionId   = cfg.captionId    ?? null;
@@ -151,12 +132,27 @@ export async function initIntelligencePage() {
 
     /* — GEOMETRY — */
     function resize() {
+      const dpr = window.devicePixelRatio || 1;
       const rect = canvas.parentElement.getBoundingClientRect();
-      W = canvas.width  = Math.min(MAX_W, rect.width || MAX_W);
-      H = canvas.height = canvas.hasAttribute('data-height')
+      const logicalW = Math.min(MAX_W, rect.width || MAX_W);
+      const logicalH = canvas.hasAttribute('data-height')
         ? parseInt(canvas.getAttribute('data-height'))
-        : Math.round(W * ASPECT);
-      canvas.style.height = H + 'px';
+        : Math.round(logicalW * ASPECT);
+      
+      // Set physical resolution (accounts for high-DPI)
+      canvas.width  = Math.round(logicalW * dpr);
+      canvas.height = Math.round(logicalH * dpr);
+      
+      // Set display size in CSS
+      canvas.style.width  = logicalW + 'px';
+      canvas.style.height = logicalH + 'px';
+      
+      // Scale canvas drawing context for high-DPI
+      ctx.scale(dpr, dpr);
+      
+      // Update working variables
+      W = logicalW;
+      H = logicalH;
       cx = W / 2;
       cy = H / 2;
       R  = W * RING_R_FRAC;
@@ -382,8 +378,8 @@ export async function initIntelligencePage() {
 
         /* Icon */
         const iSz = g > 0.08
-          ? Math.round(lerp(W * 0.052, W * 0.043, g) * ds)
-          : Math.round(W * 0.044 * ds);
+          ? Math.round(lerp(W * ICON_SCALE_ACTIVE, W * ICON_SCALE_INACTIVE, g) * ds)
+          : Math.round(W * ICON_SCALE_IDLE * ds);
         ctx.font         = `900 ${iSz}px "Font Awesome 7 Free"`;
         ctx.textAlign    = 'center';
         ctx.textBaseline = 'middle';
@@ -542,14 +538,14 @@ export async function initIntelligencePage() {
     ringRadius:  0.275,
     aspectRatio: 1.32,
     nodes: [
-      { label: 'Acquire',  icon: '\uf07a', color: COLORS.primary,    sub: 'Acquire',  lOff: { r:   0, y: 0 } }, // cart-shopping
-      { label: 'Organize', icon: '\uf46d', color: COLORS.teal,       sub: 'Organize', lOff: { r:   0, y: 0 } }, // layer-group
-      { label: 'Allocate', icon: '\uf0e8', color: COLORS.success,    sub: 'Allocate', lOff: { r: -4, y: 0 } }, // sitemap  ← pulled in
-      { label: 'Utilize',  icon: '\uf085', color: COLORS.amber,      sub: 'Utilize',  lOff: { r:   0, y: 0 } }, // gears
-      { label: 'Inspect',  icon: '\uf002', color: COLORS.attention,  sub: 'Inspect',  lOff: { r:   0, y: 0 } }, // magnifying-glass
-      { label: 'Maintain', icon: '\uf0ad', color: COLORS.info,       sub: 'Maintain', lOff: { r:   0, y: 0 } }, // wrench
-      { label: 'Monitor',  icon: '\uf200', color: COLORS.royal,      sub: 'Monitor',  lOff: { r: -4, y: 0 } }, // chart-line ← pulled in
-      { label: 'Dispose',  icon: '\uf328', color: COLORS.danger,     sub: 'Dispose',  lOff: { r:   0, y: 0 } }, // trash
+      { label: 'Acquire',  icon: '\uf472', color: COLORS.primary,    sub: 'Acquire',  lOff: { r:   0, y: 0 } },
+      { label: 'Organize', icon: '\uf1de', color: COLORS.teal,       sub: 'Organize', lOff: { r:   0, y: 0 } },
+      { label: 'Allocate', icon: '\uf1e0', color: COLORS.success,    sub: 'Allocate', lOff: { r: -4, y: 0 } },
+      { label: 'Utilize',  icon: '\ue05d', color: COLORS.amber,      sub: 'Utilize',  lOff: { r:   0, y: 0 } },
+      { label: 'Inspect',  icon: '\ue522', color: COLORS.attention,  sub: 'Inspect',  lOff: { r:   0, y: 0 } }, 
+      { label: 'Maintain', icon: '\uf085', color: COLORS.info,       sub: 'Maintain', lOff: { r:   0, y: 0 } },
+      { label: 'Monitor',  icon: '\ue0e3', color: COLORS.royal,      sub: 'Monitor',  lOff: { r: -4, y: 0 } },
+      { label: 'Dispose',  icon: '\uf2ed', color: COLORS.danger,     sub: 'Dispose',  lOff: { r:   0, y: 0 } },
     ],
   });
 
@@ -561,13 +557,16 @@ export async function initIntelligencePage() {
   makeRing3D({
     canvasId:  'cycleEnterprise',
     captionId: 'captionEnterprise',
+    iconScaleActive: 0.052,
+    iconScaleInactive: 0.043,
+    iconScaleIdle: 0.044, 
     hubFixed:  false,
     travelDur: 0.8,
     dwellDur:  2.2,
     maxW:      9999,
     ringRadius: 0.28,
     nodes: [
-      { icon: '\uf66f', label: 'Organisation', color: COLORS.primary,
+      { icon: '\ue4d5', label: 'Organisation', color: COLORS.primary,
         center: 'Organisation', sub: 'the flagship',
         caption: 'The Organisation is the root. All fiscal parameters, corporate identity, and global standards are set here — once.' },
       { icon: '\uf1ad', label: 'Workplace',    color: COLORS.primary,
@@ -576,13 +575,13 @@ export async function initIntelligencePage() {
       { icon: '\uf0c0', label: 'Teams',        color: COLORS.primary,
         center: 'Teams',        sub: 'departments',
         caption: 'Teams within each branch carry the operational context — department, designation, and reporting hierarchy all defined here.' },
-      { icon: '\uf084', label: 'Roles',        color: COLORS.primary,
+      { icon: '\uf507', label: 'Roles',        color: COLORS.primary,
         center: 'Roles',        sub: 'permissions',
         caption: 'Roles map precisely to what each person can see, request, approve, and report. Executive and clerical — or fully custom.' },
       { icon: '\uf0e7', label: 'Actions',      color: COLORS.primary,
         center: 'Actions',      sub: 'floor level',
         caption: 'Every action taken on the floor — an issue request, an inspection, a repair — is governed by the role above it and feeds data back up.' },
-      { icon: '\uf080', label: 'Intelligence', color: COLORS.primary,
+      { icon: '\uf2db', label: 'Intelligence', color: COLORS.primary,
         center: 'Intelligence', sub: 'feeds back',
         caption: 'Aggregated floor-level activity becomes the headquarters view — real-time across every branch, every role, every asset.' },
     ],
@@ -598,24 +597,24 @@ export async function initIntelligencePage() {
     maxW:      9999,
     ringRadius: 0.28,
     nodes: [
-      { icon: '\uf01c', label: 'Reserve', color: COLORS.amber,
+      { icon: '\uf466', label: 'Reserve', color: COLORS.amber,
         center: 'Reserve', sub: 'stored',
         caption: 'All assets not currently deployed. Fully catalogued with lifecycle context, condition, and maintenance history.' },
-      { icon: '\uf56d', label: 'Issue',   color: COLORS.amber,
-        center: 'Issue',   sub: 'request',
-        caption: 'A formal issue request is filed, routed for approval, and executed in one tap. Chain of custody created automatically.' },
-      { icon: '\uf013', label: 'Active',  color: COLORS.amber,
+      { icon: '\uf164', label: 'Active',  color: COLORS.amber,
         center: 'Active',  sub: 'in use',
         caption: 'The asset is live. Its location, assigned user, and usage state are tracked in real time across the operation.' },
-      { icon: '\uf002', label: 'Inspect', color: COLORS.amber,
+      { icon: '\ue552', label: 'Issue',   color: COLORS.amber,
+        center: 'Issue',   sub: 'request',
+        caption: 'A formal issue request is filed, routed for approval, and executed in one tap. Chain of custody created automatically.' },
+      { icon: '\ue522', label: 'Inspect', color: COLORS.amber,
         center: 'Inspect', sub: 'health check',
         caption: 'Scheduled inspection triggered automatically. Condition assessed, photos attached, digital signature collected.' },
-      { icon: '\uf0ad', label: 'Maintain',color: COLORS.amber,
-        center: 'Maintain',sub: 'service',
-        caption: 'Maintenance event logged with provider, parts, cost, and warranty claim. Service history permanently attached to the asset.' },
-      { icon: '\uf021', label: 'Return',  color: COLORS.amber,
+      { icon: '\ue551', label: 'Return',  color: COLORS.amber,
         center: 'Return',  sub: 'to reserve',
         caption: 'Asset returned with condition check. Returned to Reserve or flagged for disposal based on condition outcome.' },
+      { icon: '\uf085', label: 'Maintain',color: COLORS.amber,
+        center: 'Maintain',sub: 'service',
+        caption: 'Maintenance event logged with provider, parts, cost, and warranty claim. Service history permanently attached to the asset.' },
     ],
   });
 
@@ -687,6 +686,25 @@ export async function initIntelligencePage() {
   const sectionIds = ['section-enterprise','section-inventory','section-lifecycle','section-financial'];
   const navItems   = document.querySelectorAll('.intel-snav-item');
 
+  // ── SNAV SHOW / HIDE ─────────────────────────────────────────
+  const snav = document.querySelector('.intel-snav');
+  const snavStart = document.getElementById('section-enterprise');
+  const snavEnd = document.getElementById('section-financial');
+if (snav && snavStart && snavEnd) {
+  const enterpriseTop    = snavStart.offsetTop;
+  const financialBottom  = snavEnd.offsetTop + snavEnd.offsetHeight;
+
+  function checkSnavVisibility() {
+    const scrollY = window.scrollY;
+    snav.classList.toggle(
+      'snav-visible',
+      scrollY >= enterpriseTop && scrollY < financialBottom
+    );
+}
+  window.addEventListener('scroll', checkSnavVisibility, { passive: true });
+  checkSnavVisibility();
+}
+
   function scrollNavToActive() {
     const navInner   = document.querySelector('.intel-snav-inner');
     const activeItem = navInner?.querySelector('.intel-snav-item.active');
@@ -707,6 +725,8 @@ export async function initIntelligencePage() {
     navItems.forEach(item => item.classList.toggle('active', item.dataset.domain === current));
     scrollNavToActive();
   }
+
+  
 
   window.addEventListener('scroll', updateSectionNav, { passive: true });
   updateSectionNav();

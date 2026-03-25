@@ -37,42 +37,42 @@
         }
 
         /* Card Decoration & Alignment */
-        .s-cm-pic-card {
+        .s-pic-card {
             display: flex;
             flex-direction: column;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .s-cm-pic-card-content {
+        .s-pic-card-content {
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
-        .s-cm-pic-card-text {
+        .s-pic-card-text {
             flex-grow: 1;
         }
-        .s-cm-pic-card-action {
+        .s-pic-card-action {
             margin-top: auto;
             padding-top: 1.5rem;
         }
 
         /* Pill Badge Placement & Hover Fix */
-        .s-cm-pic-card-img {
+        .s-pic-card-img {
             position: relative;
         }
-        .s-cm-pic-card-img-badge {
+        .s-pic-card-img-badge {
             position: absolute;
             top: 1rem;
             left: 1rem;
             z-index: 10;
             pointer-events: none; /* Allows hover on card even if over badge */
         }
-        .s-cm-pic-card-img-badge .s-pill {
+        .s-pic-card-img-badge .s-pill {
             pointer-events: auto; /* Re-enable for the pill itself if needed */
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             backdrop-filter: blur(8px);
         }
         
-        .s-cm-pic-card:hover .s-cm-pic-card-img img {
+        .s-pic-card:hover .s-pic-card-img img {
             transform: scale(1.05);
         }
     </style>
@@ -278,7 +278,7 @@
 
     <script>
     const blogs = [
-        { id:1,  slug:"what-is-eam-enterprise-asset-management-guide",      title:"What is Enterprise Asset Management (EAM)? Complete Guide",          pillar:"Fundamentals",    excerpt:"EAM definition, evolution from CMMS, modern capabilities and why Indian enterprises can't ignore it.",           readMin:12, date:"2026-03-05", image:"../assets/images_industries/warehouse.jpeg" },
+        { id:1,  slug:"what-is-eam-enterprise-asset-management-guide",      title:"What is Enterprise Asset Management (EAM)? Complete Guide",          pillar:"Fundamentals",    excerpt:"EAM definition, evolution from CMMS, modern capabilities and why Indian enterprises can't ignore it.",           readMin:12, date:"2026-03-05", image:"../assets/images_blog/what_is_EAM_cover.png" },
         { id:2,  slug:"eam-vs-cmms-vs-erp-differences",                     title:"EAM vs CMMS vs ERP: The Real Differences",                           pillar:"Fundamentals",    excerpt:"Feature comparison matrix, overlap zones, and a decision tree for picking the right system.",                  readMin:10, date:"2026-03-06", image:"../assets/images_industries/warehouse.jpeg" },
         { id:3,  slug:"asset-lifecycle-management-guide",                    title:"Asset Lifecycle: From Procurement to Disposal",                      pillar:"Fundamentals",    excerpt:"The 5 phases of asset life, cost curves at each stage, and where most orgs leak money.",                      readMin:11, date:"2026-03-10", image:"../assets/images_industries/manufacturing_factory.jpeg" },
         { id:4,  slug:"preventive-predictive-reactive-maintenance",          title:"Preventive vs Predictive vs Reactive Maintenance",                   pillar:"Fundamentals",    excerpt:"Strategy comparison with real ROI data — when each maintenance mode actually makes financial sense.",          readMin:9,  date:"2026-03-13", image:"../assets/images_industries/manufacturing_factory.jpeg" },
@@ -349,20 +349,20 @@
             return `
             <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
                 <a href="${blog.slug}.html" class="text-decoration-none">
-                    <div class="s-cm-pic-card h-100">
-                        <div class="s-cm-pic-card-img">
+                    <div class="s-pic-card h-100">
+                        <div class="s-pic-card-img">
                             <img src="${blog.image}" alt="${blog.title}" loading="lazy">
-                            <div class="s-cm-pic-card-img-overlay"></div>
-                            <div class="s-cm-pic-card-img-badge">
+                            <div class="s-pic-card-img-overlay"></div>
+                            <div class="s-pic-card-img-badge">
                                 <span class="s-pill s-pill-${p.color} s-pill-sm">
                                     <i class="${p.icon} me-1"></i>${blog.pillar}
                                 </span>
                             </div>
                         </div>
-                        <div class="s-cm-pic-card-content p-4">
-                            <h5 class="s-cm-pic-card-title s-text-gradient-${p.color} mb-2">${blog.title}</h5>
-                            <p class="s-cm-pic-card-text s-text-gray-600 mb-3">${blog.excerpt}</p>
-                            <div class="s-cm-pic-card-action">
+                        <div class="s-pic-card-content p-4">
+                            <h5 class="s-pic-card-title s-text-gradient-${p.color} mb-2">${blog.title}</h5>
+                            <p class="s-pic-card-text s-text-gray-600 mb-3">${blog.excerpt}</p>
+                            <div class="s-pic-card-action">
                                 <span class="s-btn s-btn-${p.color} s-btn-sm">
                                     Read <i class="fas fa-arrow-right ms-1"></i>
                                 </span>

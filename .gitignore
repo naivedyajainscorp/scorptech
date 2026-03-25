@@ -17,7 +17,8 @@ scorp_misc.txt
 # DEVELOPMENT / EDITOR
 # ==================================================
 
-.vscode/
+.vscode/*
+!.vscode/settings.json
 .gemini/
 
 
@@ -58,3 +59,34 @@ __pycache__/
 
 .DS_Store
 Thumbs.db
+
+
+# ==================================================
+# NEW ADDITIONS (BASED ON CURRENT PROJECT STATE)
+# ==================================================
+
+# --- PowerShell scripts (all local tooling) ---
+*.ps1
+
+# --- Internal help / notes ---
+text help/
+
+# --- JS junk / test files ---
+js/pages/*.txt
+js/pages/*.html
+
+# --- Experimental / duplicate HTML (root) ---
+*1.html
+*2.html
+*-test.html
+*-mockup*.html
+*Copy.html
+syntaxopt.html
+navigator.html
+
+# --- Blog drafts / templates ---
+blog/*.txt
+blog/*.md
+blog/template_*.html
+blog/scorp_blog_template*
+blog/scorp_blog_layout*

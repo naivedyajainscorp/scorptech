@@ -150,32 +150,30 @@ export class SFloatingButton {
     }
   }
 
-  open() {
-    console.log('📂 Opening menu...');
-    this.isOpen = true;
-    this.button.classList.add('active');
-    this.menu.classList.add('active');
-    if (this.backdrop) {
-      this.backdrop.classList.add('active');
-    }
-    // Prevent body scroll when menu is open
-    this._bodyOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    document.addEventListener('keydown', this.handleEscapeKey, { passive: true });
-  }
+open() {
+  console.log('📂 Opening menu...');
+  this.isOpen = true;
+  this.button.classList.add('active');
+  this.menu.classList.add('active');
+  if (this.backdrop) this.backdrop.classList.add('active');
 
-  close() {
-    console.log('📁 Closing menu...');
-    this.isOpen = false;
-    this.button.classList.remove('active');
-    this.menu.classList.remove('active');
-    if (this.backdrop) {
-      this.backdrop.classList.remove('active');
-    }
-    // Restore body scroll when menu closes
-    document.body.style.overflow = this._bodyOverflow || '';
-    document.removeEventListener('keydown', this.handleEscapeKey);
-  }
+  document.body.style.overflow = 'hidden'; // lock scroll — no paddingRight needed
+
+  document.addEventListener('keydown', this.handleEscapeKey, { passive: true });
+}
+
+close() {
+  console.log('📁 Closing menu...');
+  this.isOpen = false;
+  this.button.classList.remove('active');
+  this.menu.classList.remove('active');
+  if (this.backdrop) this.backdrop.classList.remove('active');
+
+  document.body.style.overflow = ''; // restore — page position untouched
+
+  document.removeEventListener('keydown', this.handleEscapeKey);
+}
+
 
   destroy() {
     this.button.removeEventListener('click', this.handleButtonClick);

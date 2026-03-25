@@ -223,7 +223,7 @@ export class ProtectionTypeBreakdown {
             item.style.alignItems = "center";
             item.style.gap = "0.4rem";
             item.innerHTML = `
-                <div class="s-icon s-icon-xs ${it.class}">
+                <div class="s-icon s-icon-md ${it.class}">
                     <i class="fa-solid ${it.icon}"></i>
                 </div>
                 <span class="s-text-gray-600 s-font-semibold" style="font-size: 0.75rem;">${it.label}</span>

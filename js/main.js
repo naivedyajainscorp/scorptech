@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const pillRail = document.querySelector('.pill-rail');
   if (pillRail) {
     initInfiniteScroll('.pill-rail', {
-      speed: 1.5,
+      speed: 5.5,
       direction: 'left',
       pauseOnHover: true
     });

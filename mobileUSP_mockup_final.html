@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile-First ERP & EAM Software | Sapphire by SCORP</title>
+    <meta name="description" content="Sapphire ERP & EAM is built for mobile first. Perform inspections, approvals, and asset tracking from any smartphone. Industrial-grade mobile software for your workforce.">
+    <link rel="canonical" href="https://scorptech.in/mobileUSP.html">
+    <meta property="og:title" content="Mobile-First ERP & EAM Software | Sapphire by SCORP">
+    <meta property="og:description" content="Industrial-grade mobile ERP & EAM for your workforce. Inspections, approvals, and tracking on the go.">
+    <meta property="og:url" content="https://scorptech.in/mobileUSP.html">
+    <meta property="og:type" content="product">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="assets/images/scorp-sapphire-cropped.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<style>
+/* ═══════════════════════════
+   TOKENS
+═══════════════════════════ */
+:root{
+  --p:#0066cc; --pd:#0047b3; --pl:#e6f0ff; --pm:#4da3ff;
+  --ok:#16a34a; --wa:#d97706; --er:#dc2626;
+  --tx:#0f2034; --ts:#3d566b; --tm:#7a96ae;
+  --br:#dde4ed; --bg:#f4f7fb; --dk:#071e38; --dk2:#0b2d55;
+}
+
+/* ═══════════════════════════
+   PHONE SHELL  260 × 520
+═══════════════════════════ */
+.ph{
+  width:260px; flex-shrink:0;
+  background:#111c2d;
+  border-radius:40px;
+  padding:14px 10px 18px;
+  position:relative;
+  box-shadow:0 0 0 1.5px rgba(255,255,255,.08),0 0 0 3px #0a1422,0 28px 72px rgba(0,0,0,.5);
+}
+.ph::before{content:'';position:absolute;left:-3px;top:96px;width:3px;height:30px;background:rgba(255,255,255,.08);border-radius:2px 0 0 2px}
+.ph::after{content:'';position:absolute;right:-3px;top:80px;width:3px;height:56px;background:rgba(255,255,255,.08);border-radius:0 2px 2px 0}
+.ph-notch{width:68px;height:20px;background:#111c2d;border-radius:0 0 14px 14px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;gap:6px}
+.ph-cam{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.07)}
+.ph-spk{width:20px;height:3px;border-radius:2px;background:rgba(255,255,255,.07)}
+
+/* DISPLAY AREA 240 × 488 */
+.ph-scr{
+  width:240px; height:488px;
+  border-radius:26px; overflow:hidden;
+  background:#fff;
+  display:flex; flex-direction:column;
+  position:relative;
+}
+
+/* ═══════════════════════════
+   SCREEN PRIMITIVES
+   All sized for 240×488 canvas
+═══════════════════════════ */
+.s-bar{
+  height:26px; background:#fff; flex-shrink:0;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 14px;
+}
+.s-bar-t{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;color:var(--tx)}
+.s-bar-i{font-size:9px;color:var(--tm);display:flex;align-items:center;gap:3px}
+
+.s-ab{
+  height:40px; background:#fff; border-bottom:1px solid var(--br);
+  display:flex; align-items:center; padding:0 12px; gap:8px; flex-shrink:0;
+}
+.s-ab-bk{font-size:16px;color:var(--tm)}
+.s-ab-tt{font-size:13px;font-weight:600;color:var(--tx);flex:1}
+.s-ab-ac{font-size:11px;font-weight:700;color:var(--p)}
+.s-ab-bdg{font-size:9px;font-weight:700;padding:2px 6px;border-radius:10px;background:#fee2e2;color:var(--er)}
+
+.s-body{
+  flex:1; overflow:hidden; background:var(--bg);
+  padding:10px; display:flex; flex-direction:column; gap:8px;
+}
+
+.s-card{background:#fff;border:1px solid var(--br);border-radius:8px;padding:10px 11px;flex-shrink:0}
+.s-card-hd{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:4px}
+.s-card-tt{font-size:12px;font-weight:600;color:var(--tx);line-height:1.3}
+.s-card-sb{font-size:10px;color:var(--ts);line-height:1.5}
+
+.s-pill{font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;white-space:nowrap;flex-shrink:0}
+.pi-bl{background:var(--pl);color:var(--p)}
+.pi-gn{background:#dcfce7;color:var(--ok)}
+.pi-am{background:#fef3c7;color:var(--wa)}
+.pi-rd{background:#fee2e2;color:var(--er)}
+
+.s-lbl{font-size:9px;font-weight:700;color:var(--tm);letter-spacing:.08em;text-transform:uppercase;flex-shrink:0}
+
+.s-kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;flex-shrink:0}
+.s-kpi{background:#fff;border:1px solid var(--br);border-radius:7px;padding:9px 10px}
+.s-kpi-l{font-size:9px;text-transform:uppercase;letter-spacing:.07em;color:var(--tm);margin-bottom:2px}
+.s-kpi-v{font-size:18px;font-weight:700;color:var(--tx);font-family:'IBM Plex Mono',monospace;line-height:1}
+.s-kpi-d{font-size:9px;margin-top:2px}
+.d-up{color:var(--ok)} .d-dn{color:var(--er)}
+
+.s-field{
+  background:#fff;border:1px solid var(--br);
+  border-radius:6px;padding:6px 10px;flex-shrink:0;
+  transition:border-color .25s,box-shadow .25s;position:relative;
+}
+.s-field.on{border-color:var(--p);box-shadow:0 0 0 2.5px rgba(0,102,204,.12)}
+.s-field.done{border-color:var(--pm)}
+.s-fl{font-size:9px;text-transform:uppercase;letter-spacing:.07em;color:var(--tm);margin-bottom:2px}
+.s-fv{font-size:11px;color:var(--tx);font-family:'IBM Plex Mono',monospace;min-height:15px}
+.s-fv.cur::after{content:'|';animation:blink .6s step-end infinite;color:var(--p)}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.s-scan{position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--p),transparent);animation:scanmv .9s ease-in-out 3;top:50%;opacity:0}
+@keyframes scanmv{0%{top:15%;opacity:1}50%{top:85%;opacity:1}100%{top:15%;opacity:0}}
+
+.s-prog{height:4px;background:var(--br);border-radius:2px;flex-shrink:0;overflow:hidden}
+.s-prog-b{height:100%;background:var(--p);border-radius:2px;transition:width .4s ease}
+
+.s-chk{
+  display:flex;align-items:center;gap:8px;
+  background:#fff;border:1px solid var(--br);
+  border-radius:7px;padding:7px 10px;flex-shrink:0;transition:all .3s;
+}
+.s-chk.pass{background:#f0fdf4;border-color:#86efac}
+.s-chk.warn{background:#fffbeb;border-color:#fde68a}
+.s-chk.fail{background:#fef2f2;border-color:#fca5a5}
+.s-cb{width:16px;height:16px;border-radius:4px;border:1.5px solid var(--br);display:flex;align-items:center;justify-content:center;font-size:9px;flex-shrink:0;transition:all .25s}
+.s-chk.pass .s-cb{border-color:var(--ok);background:#dcfce7;color:var(--ok)}
+.s-chk.warn .s-cb{border-color:var(--wa);background:#fef3c7;color:var(--wa)}
+.s-chk.fail .s-cb{border-color:var(--er);background:#fee2e2;color:var(--er)}
+.s-chk-l{font-size:10.5px;color:var(--ts);flex:1;line-height:1.3}
+.s-chk-r{font-size:9px;font-weight:700;opacity:0;transition:opacity .3s;white-space:nowrap}
+.s-chk.pass .s-chk-r{color:var(--ok);opacity:1}
+.s-chk.warn .s-chk-r{color:var(--wa);opacity:1}
+.s-chk.fail .s-chk-r{color:var(--er);opacity:1}
+
+.s-act{
+  display:flex;align-items:center;gap:8px;
+  background:#fff;border:1px solid var(--br);
+  border-radius:7px;padding:7px 10px;flex-shrink:0;
+  opacity:0;transform:translateY(-5px);transition:all .3s;
+}
+.s-act.show{opacity:1;transform:none}
+.s-act-ico{width:24px;height:24px;border-radius:5px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:12px}
+.s-act-txt{font-size:10px;color:var(--ts);flex:1;line-height:1.4}
+.s-act-t{font-size:9px;color:var(--tm);font-family:'IBM Plex Mono',monospace}
+
+.s-tiles{display:grid;grid-template-columns:1fr 1fr;gap:7px;flex-shrink:0}
+.s-tile{
+  background:#fff;border:1px solid var(--br);border-radius:10px;
+  padding:12px 6px;display:flex;flex-direction:column;align-items:center;gap:5px;
+  cursor:pointer;transition:all .2s;position:relative;overflow:hidden;
+}
+.s-tile.tap{border-color:var(--p);background:var(--pl);transform:scale(.95)}
+.s-tile-ico{font-size:22px}
+.s-tile-l{font-size:10px;font-weight:600;color:var(--ts);text-align:center;line-height:1.2}
+
+.s-inv-strip{display:flex;gap:6px;flex-shrink:0}
+.s-inv-c{flex:1;background:#fff;border:1px solid var(--br);border-radius:7px;padding:7px 8px}
+.s-inv-n{font-size:16px;font-weight:700;color:var(--tx);font-family:'IBM Plex Mono',monospace;line-height:1}
+.s-inv-l{font-size:9px;color:var(--tm);margin-top:1px}
+
+.s-tabs{display:flex;border-bottom:1px solid var(--br);flex-shrink:0;background:#fff}
+.s-tab{flex:1;text-align:center;padding:7px 4px;font-size:10px;font-weight:600;color:var(--tm);border-bottom:2px solid transparent;cursor:pointer;transition:all .2s}
+.s-tab.on{color:var(--p);border-color:var(--p)}
+
+.s-item{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--br);border-radius:7px;padding:8px 10px;flex-shrink:0;transition:all .3s}
+.s-item.hi{border-color:var(--p);background:var(--pl)}
+.s-item.done{border-color:var(--ok);background:#f0fdf4}
+.s-item-ico{font-size:15px;flex-shrink:0}
+.s-item-n{font-size:11px;font-weight:600;color:var(--tx);line-height:1.2}
+.s-item-s{font-size:9px;color:var(--tm)}
+.s-item-btn{font-size:9px;font-weight:700;padding:4px 9px;background:var(--ok);color:#fff;border:none;border-radius:4px;cursor:pointer;flex-shrink:0}
+
+.s-tl{display:flex;flex-direction:column;flex-shrink:0}
+.s-tl-row{display:flex;align-items:flex-start;gap:9px;padding:4px 0;opacity:0;transition:opacity .3s}
+.s-tl-row.show{opacity:1}
+.s-tl-sp{display:flex;flex-direction:column;align-items:center}
+.s-tl-dot{width:9px;height:9px;border-radius:50%;background:var(--br);border:1.5px solid var(--tm);flex-shrink:0;margin-top:2px}
+.s-tl-dot.ok{background:var(--ok);border-color:var(--ok)}
+.s-tl-dot.ac{background:var(--p);border-color:var(--p)}
+.s-tl-ln{width:1px;height:16px;background:var(--br)}
+.s-tl-txt{font-size:10px;color:var(--ts);line-height:1.3}
+.s-tl-t{font-size:9px;color:var(--tm);font-family:'IBM Plex Mono',monospace;margin-top:1px}
+
+.s-btn{width:100%;background:var(--p);color:#fff;border:none;border-radius:8px;padding:10px;font-size:12px;font-weight:600;text-align:center;cursor:pointer;flex-shrink:0;font-family:'IBM Plex Sans',sans-serif;transition:background .15s}
+.s-btn.ok{background:var(--ok)}
+.s-btn:disabled{opacity:.4;cursor:default}
+
+.s-ov{position:absolute;inset:0;background:rgba(255,255,255,.96);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:20;opacity:0;pointer-events:none;transition:opacity .35s}
+.s-ov.show{opacity:1}
+.s-ov-c{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:10px}
+.s-ov-tt{font-size:14px;font-weight:700;color:var(--tx);margin-bottom:3px}
+.s-ov-rf{font-size:11px;font-family:'IBM Plex Mono',monospace;color:var(--ts);margin-bottom:2px}
+.s-ov-sb{font-size:10px;color:var(--tm);text-align:center;line-height:1.5}
+
+.s-toast{position:absolute;top:68px;left:10px;right:10px;background:var(--tx);color:#fff;border-radius:10px;padding:9px 12px;display:flex;align-items:center;gap:9px;z-index:30;opacity:0;transform:translateY(-8px);transition:all .35s;box-shadow:0 4px 18px rgba(0,0,0,.25)}
+.s-toast.show{opacity:1;transform:none}
+.s-toast-ico{font-size:15px;flex-shrink:0}
+.s-toast-txt{font-size:11px;line-height:1.4}
+
+.s-live{display:inline-block;width:6px;height:6px;border-radius:50%;background:#4ade80;box-shadow:0 0 5px #4ade80;animation:lpulse 1.8s ease-in-out infinite}
+@keyframes lpulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+.s-rip{position:absolute;border-radius:50%;background:rgba(0,102,204,.25);transform:scale(0);animation:rip .5s ease-out forwards;pointer-events:none}
+@keyframes rip{from{transform:scale(0);opacity:1}to{transform:scale(5);opacity:0}}
+
+/* ═══════════════════════════
+   PAGE SECTIONS
+═══════════════════════════ */
+.mu-hero{min-height:100vh;background:linear-gradient(150deg,var(--dk) 0%,var(--dk2) 55%,#103d75 100%);display:flex;flex-direction:column;position:relative;overflow:hidden}
+.mu-hero-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:54px 54px}
+.mu-hero-in{flex:1;display:flex;align-items:center;max-width:1240px;margin:0 auto;width:100%;padding:100px 48px 60px;gap:64px;position:relative;z-index:1}
+.mu-hl{flex:1;min-width:0}
+.mu-eyb{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);padding:5px 14px;border-radius:3px;margin-bottom:22px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.65)}
+.mu-ldot{width:6px;height:6px;border-radius:50%;background:#4ade80;box-shadow:0 0 6px #4ade80;animation:lpulse 2s ease-in-out infinite}
+.mu-h1{font-family:'IBM Plex Serif',serif;font-size:clamp(32px,4vw,54px);font-weight:500;line-height:1.12;color:#fff;letter-spacing:-.02em;margin-bottom:18px}
+.mu-h1 em{font-style:italic;color:rgba(255,255,255,.6)}
+.mu-desc{font-size:16px;font-weight:300;line-height:1.8;color:rgba(255,255,255,.6);max-width:440px;margin-bottom:32px}
+.mu-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px}
+.mu-bw{padding:12px 28px;font-size:15px;font-weight:600;background:#fff;color:var(--pd);border-radius:5px;text-decoration:none;display:inline-block;box-shadow:0 2px 14px rgba(0,0,0,.15);transition:all .18s}
+.mu-bw:hover{transform:translateY(-1px);color:var(--pd)}
+.mu-bg{padding:11px 26px;font-size:15px;font-weight:500;color:rgba(255,255,255,.75);border:1.5px solid rgba(255,255,255,.3);border-radius:5px;text-decoration:none;display:inline-block;transition:all .18s}
+.mu-bg:hover{background:rgba(255,255,255,.09);color:#fff}
+.mu-trust{display:flex;gap:18px;flex-wrap:wrap}
+.mu-ti{font-size:12.5px;font-weight:500;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:5px}
+.mu-ti::before{content:'✓';color:#4ade80;font-weight:700}
+
+.mu-hr{display:flex;align-items:center;gap:20px;flex-shrink:0}
+.mu-nc{display:flex;flex-direction:column;gap:10px;width:164px}
+.mu-notif{background:rgba(9,20,40,.92);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:10px 12px;backdrop-filter:blur(10px);box-shadow:0 8px 24px rgba(0,0,0,.35);opacity:0;transform:translateX(14px);transition:opacity .5s,transform .5s}
+.mu-nc.left .mu-notif{transform:translateX(-14px)}
+.mu-notif.show{opacity:1;transform:none}
+.mu-na{font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);margin-bottom:4px;display:flex;align-items:center;gap:5px}
+.mu-nd{width:13px;height:13px;border-radius:3px;background:var(--p);display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff}
+.mu-nt{font-size:11px;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:2px}
+.mu-nb{font-size:10px;color:rgba(255,255,255,.4);line-height:1.4}
+.mu-hph{transform:perspective(1200px) rotateY(-7deg) rotateX(2deg);transition:transform .5s}
+.mu-hph:hover{transform:perspective(1200px) rotateY(-2deg) rotateX(0)}
+.mu-scroll{text-align:center;padding:18px 0 26px;font-size:11px;color:rgba(255,255,255,.28);letter-spacing:.1em;text-transform:uppercase;position:relative;z-index:1}
+.mu-sa{display:block;font-size:18px;margin-top:4px;color:rgba(255,255,255,.2);animation:bnc 2s ease-in-out infinite}
+@keyframes bnc{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+
+.mu-punch{padding:72px 0;background:#fff;border-bottom:1px solid var(--br)}
+.mu-con{max-width:1200px;margin:0 auto;padding:0 48px}
+.mu-pg{display:grid;grid-template-columns:1fr auto;gap:60px;align-items:center;margin-bottom:40px}
+.mu-pl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--p);margin-bottom:10px}
+.mu-ph2{font-family:'IBM Plex Serif',serif;font-size:clamp(24px,2.8vw,38px);font-weight:500;color:var(--tx);line-height:1.15;letter-spacing:-.01em;margin-bottom:12px}
+.mu-pd{font-size:15px;font-weight:300;line-height:1.8;color:var(--ts);max-width:420px}
+.mu-stats{display:flex;gap:28px}
+.mu-sn{font-family:'IBM Plex Serif',serif;font-size:36px;font-weight:600;color:var(--tx);line-height:1;margin-bottom:4px}
+.mu-sl{font-size:12px;color:var(--tm);line-height:1.4}
+.mu-bdgs{display:flex;gap:8px;flex-wrap:wrap}
+.mu-bdg{display:flex;align-items:center;gap:6px;padding:8px 14px;border-radius:5px;background:var(--bg);border:1px solid var(--br);font-size:12.5px;font-weight:500;color:var(--ts)}
+
+.mu-feat{padding:88px 0}
+.mu-feat.alt{background:var(--bg)}
+.mu-feat.dark{background:var(--dk)}
+.mu-fg{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.mu-fg.flip{direction:rtl}
+.mu-fg.flip>*{direction:ltr}
+.mu-pc{display:flex;justify-content:center;align-items:center}
+.mu-fn{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--p);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.mu-fn::before{content:'';display:block;width:18px;height:2px;background:var(--p)}
+.mu-feat.dark .mu-fn{color:var(--pm)}
+.mu-feat.dark .mu-fn::before{background:var(--pm)}
+.mu-fh2{font-family:'IBM Plex Serif',serif;font-size:clamp(22px,2.4vw,34px);font-weight:500;color:var(--tx);line-height:1.2;letter-spacing:-.01em;margin-bottom:12px}
+.mu-feat.dark .mu-fh2{color:#fff}
+.mu-fd{font-size:15px;font-weight:300;line-height:1.8;color:var(--ts);margin-bottom:22px}
+.mu-feat.dark .mu-fd{color:rgba(255,255,255,.55)}
+.mu-fl{list-style:none;padding:0;margin-bottom:28px;display:flex;flex-direction:column;gap:9px}
+.mu-fl li{display:flex;align-items:flex-start;gap:9px;font-size:14px;color:var(--ts);line-height:1.6}
+.mu-feat.dark .mu-fl li{color:rgba(255,255,255,.5)}
+.mu-fl li::before{content:'';display:block;width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:3px;background:var(--pl) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M2 5l2.5 2.5L8 2.5' fill='none' stroke='%230066cc' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/10px no-repeat}
+.mu-feat.dark .mu-fl li::before{background-color:rgba(0,102,204,.22);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M2 5l2.5 2.5L8 2.5' fill='none' stroke='%234da3ff' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.mu-flk{font-size:14px;font-weight:600;color:var(--p);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:gap .18s}
+.mu-flk:hover{gap:9px;color:var(--pd)}
+.mu-feat.dark .mu-flk{color:var(--pm)}
+
+.mu-cta{padding:88px 0;text-align:center;background:linear-gradient(135deg,var(--dk2),var(--p));position:relative;overflow:hidden}
+.mu-cta::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:44px 44px}
+.mu-ci{position:relative;z-index:1}
+.mu-cta h2{font-family:'IBM Plex Serif',serif;font-size:clamp(24px,2.8vw,38px);font-weight:500;color:#fff;margin-bottom:12px;letter-spacing:-.01em}
+.mu-cta p{font-size:16px;font-weight:300;color:rgba(255,255,255,.6);margin-bottom:32px}
+.mu-cb{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+.mu-rv{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}
+.mu-rv.in{opacity:1;transform:none}
+.mu-d1{transition-delay:.1s} .mu-d2{transition-delay:.2s}
+
+@media(max-width:1100px){
+  .mu-hero-in{padding:88px 32px 48px;gap:40px}
+  .mu-nc{display:none}
+  .mu-fg{gap:48px}
+  .mu-con{padding:0 32px}
+}
+@media(max-width:900px){
+  .mu-hero-in{flex-direction:column;align-items:center;text-align:center;padding-top:96px}
+  .mu-desc,.mu-pd{max-width:100%}
+  .mu-ctas,.mu-trust,.mu-stats,.mu-bdgs{justify-content:center}
+  .mu-hph{transform:none!important}
+  .mu-pg{grid-template-columns:1fr;gap:32px;text-align:center}
+  .mu-fg,.mu-fg.flip{grid-template-columns:1fr;direction:ltr;gap:40px}
+  .mu-fg.flip .mu-pc{order:-1}
+}
+@media(max-width:640px){
+  .mu-con{padding:0 20px}
+  .mu-hero-in{padding:88px 20px 36px}
+  .mu-feat{padding:60px 0}
+  .mu-punch{padding:52px 0}
+  .mu-sn{font-size:28px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV — original untouched -->
+<nav class="navbar navbar-expand-xl s-navbar" id="scorpNavbar">
+    <a class="navbar-brand s-navbar-brand" href="index.html">
+    <div class="s-brand-logo"><img src="assets/images/Scorp-Logo.png" alt="Scorptech" width="24" height="24" style="filter: brightness(0) invert(1);"></div>
+    <span class="s-brand-text">SCORP</span>
+    </a>
+    <button class="navbar-toggler s-mobile-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="s-hamburger-box"><span class="s-hamburger-inner"></span></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+    <ul class="navbar-nav ms-auto s-nav-links">
+        <li class="nav-item"><a class="nav-link s-nav-link" href="index.html"><i class="fas fa-home-alt"></i><span>Home</span></a></li>
+        <li class="nav-item"><a class="nav-link s-nav-link" href="sapphire.html"><i class="fas fa-diamond"></i><span>Sapphire</span></a></li>
+        <li class="nav-item"><a class="nav-link s-nav-link" href="contact.html"><i class="bi bi-telephone-outbound-fill"></i><span>Contact</span></a></li>
+        <li class="nav-item"><a class="nav-link s-nav-link" href="about.html"><i class="fas fa-users-line"></i><span>About</span></a></li>
+        <li class="nav-item dropdown s-nav-dropdown-internal">
+        <a class="nav-link s-nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-dropdown-id="sapphire-smart">
+            <i class="fa-solid fa-lightbulb"></i><span>Sapphire Smart</span><span class="s-active-badge"></span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end s-internal-dropdown-menu">
+            <li><a class="dropdown-item s-internal-menu-item" href="analytics.html" data-page="analytics.html"><i class="fas fa-chart-line"></i><span>Smart Analytics</span></a></li>
+            <li><a class="dropdown-item s-internal-menu-item" href="intelligence.html" data-page="intelligence.html"><i class="fa-solid fa-microchip"></i><span>Intelligence</span></a></li>
+            <li><a class="dropdown-item s-internal-menu-item active" href="mobileUSP.html" data-page="mobileUSP.html"><i class="fas fa-mobile-screen"></i><span>Mobile Friendly</span></a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item s-internal-menu-item" href="how-do-I-use-sapphire.html" data-page="how-do-I-use-sapphire.html"><i class="fas fa-question-circle"></i><span>How to Use</span></a></li>
+        </ul>
+        </li>
+        <li class="nav-item dropdown s-nav-dropdown-internal">
+        <a class="nav-link s-nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-dropdown-id="resources">
+            <i class="bi bi-grid-3x3-gap-fill"></i><span>Resources</span><span class="s-active-badge"></span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end s-internal-dropdown-menu">
+            <li><a class="dropdown-item s-internal-menu-item" href="faq.html" data-page="faq.html"><i class="fas fa-circle-question"></i><span>FAQ</span></a></li>
+            <li><a class="dropdown-item s-internal-menu-item" href="terms_of_use.html" data-page="terms_of_use.html"><i class="fas fa-file-contract"></i><span>Terms of Use</span></a></li>
+            <li><a class="dropdown-item s-internal-menu-item" href="privacy_policy.html" data-page="privacy_policy.html"><i class="fas fa-file-shield"></i><span>Privacy Policy</span></a></li>
+        </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link s-nav-link s-nav-link-icon" href="announcement.html" title="Announcements"><i class="fa-solid fa-bullhorn fa-rotate-by" style="--fa-rotate-angle: 325deg;"></i></a></li>
+        <li class="nav-item"><a class="book-demo-button" href="book-demo.html"><i class="bi bi-calendar-check-fill"></i><span><strong>Book Demo</strong></span></a></li>
+        <li class="nav-item dropdown s-sapphire-dropdown">
+        <button class="btn s-sapphire-trigger dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            <span>go to</span>
+            <div class="s-sapphire-logo"><img src="assets/images/scorp-sapphire-cropped.png" alt="Sapphire" width="32" height="32" style="border-radius: 4px;"></div>
+            <span><strong>Sapphire</strong></span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end s-sapphire-menu">
+            <li><a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/login" target="_blank"><i class="bi bi-door-open-fill"></i><span>Log-in</span></a></li>
+            <li><a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/register" target="_blank"><i class="bi bi-person-plus-fill"></i><span>Sign-up</span></a></li>
+        </ul>
+        </li>
+    </ul>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="mu-hero" id="mu-hero">
+  <div class="mu-hero-grid"></div>
+  <div class="mu-hero-in">
+    <div class="mu-hl">
+      <div class="mu-eyb"><span class="mu-ldot"></span>Mobile-First Enterprise Operations</div>
+      <h1 class="mu-h1">Your entire operation.<br><em>In your pocket.</em></h1>
+      <p class="mu-desc">Sapphire gives every person in your workforce — plant manager, field technician, floor supervisor — a full operational command centre on the phone they already carry.</p>
+      <div class="mu-ctas">
+        <a href="book-demo.html" class="mu-bw">Book a Demo →</a>
+        <a href="sapphire.html" class="mu-bg">See all features</a>
+      </div>
+      <div class="mu-trust">
+        <span class="mu-ti">Works offline</span>
+        <span class="mu-ti">RBAC Security</span>
+        <span class="mu-ti">Zero paperwork</span>
+        <span class="mu-ti">Instant audit trail</span>
+      </div>
+    </div>
+    <div class="mu-hr">
+      <div class="mu-nc left" id="nl">
+        <div class="mu-notif" id="hn1"><div class="mu-na"><div class="mu-nd">S</div>Sapphire · Approvals</div><div class="mu-nt">✓ WO-0892 approved</div><div class="mu-nb">Priya Singh · 4 min ago</div></div>
+        <div class="mu-notif" id="hn2"><div class="mu-na"><div class="mu-nd">S</div>Sapphire · Inventory</div><div class="mu-nt">📦 Parts reserved</div><div class="mu-nb">Bearing + Seal · CNC-04</div></div>
+      </div>
+      <div class="ph mu-hph">
+        <div class="ph-notch"><div class="ph-cam"></div><div class="ph-spk"></div></div>
+        <div class="ph-scr" id="h0"></div>
+      </div>
+      <div class="mu-nc right" id="nr">
+        <div class="mu-notif" id="hn3"><div class="mu-na"><div class="mu-nd">S</div>Sapphire · Inspection</div><div class="mu-nt">🔍 CNC-04 due today</div><div class="mu-nb">14:00 · Bay 3 · Arjun</div></div>
+        <div class="mu-notif" id="hn4"><div class="mu-na"><div class="mu-nd">S</div>Sapphire · Alert</div><div class="mu-nt">⚡ Vibration anomaly</div><div class="mu-nb">Press-07 · Threshold exceeded</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="mu-scroll">Scroll to explore<span class="mu-sa">↓</span></div>
+</section>
+
+
+<!-- PUNCH -->
+<section class="mu-punch">
+  <div class="mu-con">
+    <div class="mu-pg mu-rv">
+      <div>
+        <div class="mu-pl">Why Mobile-First?</div>
+        <h2 class="mu-ph2">Enterprise power.<br>Mobile simplicity.</h2>
+        <p class="mu-pd">Your workforce doesn't sit at desks. Sapphire meets them exactly where the work happens — on the floor, in the field, behind the wheel.</p>
+      </div>
+      <div class="mu-stats">
+        <div><div class="mu-sn">6</div><div class="mu-sl">Core mobile<br>capabilities</div></div>
+        <div><div class="mu-sn">1-tap</div><div class="mu-sl">Work order<br>creation</div></div>
+        <div><div class="mu-sn">0</div><div class="mu-sl">Paper<br>required</div></div>
+      </div>
+    </div>
+    <div class="mu-bdgs mu-rv mu-d1">
+      <div class="mu-bdg">🔒 RBAC Security</div>
+      <div class="mu-bdg">📶 Offline Mode</div>
+      <div class="mu-bdg">⚡ Auto Audit Trail</div>
+      <div class="mu-bdg">📱 Browser-Based</div>
+      <div class="mu-bdg">🔄 Instant Sync</div>
+      <div class="mu-bdg">🖋️ Digital Signatures</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- F1 1-Touch -->
+<section class="mu-feat" id="f1s">
+  <div class="mu-con"><div class="mu-fg">
+    <div class="mu-pc mu-rv"><div class="ph"><div class="ph-notch"><div class="ph-cam"></div><div class="ph-spk"></div></div><div class="ph-scr" id="s1"></div></div></div>
+    <div class="mu-rv mu-d1">
+      <div class="mu-fn">01 · 1-Touch Operations</div>
+      <h2 class="mu-fh2">Complex workflows.<br>One tap.</h2>
+      <p class="mu-fd">Transform multi-step processes into single-touch actions. Issue assets, file work orders, start inspections — all from one screen without deep navigation.</p>
+      <ul class="mu-fl">
+        <li>Issue assets in one tap — chain-of-custody logged automatically</li>
+        <li>Work orders created and assigned without filling lengthy forms</li>
+        <li>Quick actions adapt to your role and current location</li>
+        <li>Complete audit trail generated silently in the background</li>
+      </ul>
+      <a href="sapphire.html" class="mu-flk">See all features →</a>
+    </div>
+  </div></div>
+</section>
+
+<!-- F2 Data Logging -->
+<section class="mu-feat alt" id="f2s">
+  <div class="mu-con"><div class="mu-fg flip">
+    <div class="mu-pc mu-rv"><div class="ph"><div class="ph-notch"><div class="ph-cam"></div><div class="ph-spk"></div></div><div class="ph-scr" id="s2"></div></div></div>
+    <div class="mu-rv mu-d1">
+      <div class="mu-fn">02 · Quick Data Logging</div>
+      <h2 class="mu-fh2">Capture data.<br>Instantly. Accurately.</h2>
+      <p class="mu-fd">Every maintenance event and cost transaction logged at the point of occurrence. Smart forms pre-fill from asset records so your team types as little as possible.</p>
+      <ul class="mu-fl">
+        <li>Asset data pre-fills from the registry — no retyping</li>
+        <li>Barcode scan fills the asset ID field in one tap</li>
+        <li>Maintenance logs capture parts, cost, provider, duration</li>
+        <li>All entries timestamped and user-attributed automatically</li>
+      </ul>
+      <a href="sapphire.html" class="mu-flk">See all features →</a>
+    </div>
+  </div></div>
+</section>
+
+<!-- F3 Inventories -->
+<section class="mu-feat" id="f3s">
+  <div class="mu-con"><div class="mu-fg">
+    <div class="mu-pc mu-rv"><div class="ph"><div class="ph-notch"><div class="ph-cam"></div><div class="ph-spk"></div></div><div class="ph-scr" id="s3"></div></div></div>
+    <div class="mu-rv mu-d1">
+      <div class="mu-fn">03 · Smart Inventories</div>
+      <h2 class="mu-fh2">Know where every<br>asset is. Always.</h2>
+      <p class="mu-fd">Sapphire tracks every item from storeroom entry to consumption or return — live count, no manual recount, every movement permanently logged.</p>
+      <ul class="mu-fl">
+        <li>Reserve, Active, Hand-Tools, Spare Parts — tracked separately</li>
+        <li>Issue requests filed and approved from the same screen</li>
+        <li>Counts update in real time across every device and location</li>
+        <li>Full movement history — every transaction logged automatically</li>
+      </ul>
+      <a href="sapphire.html" class="mu-flk">See all features →</a>
+    </div>
+  </div></div>
+</section>
+
+<!-- F4 Inspections -->
+<section class="mu-feat alt" id="f4s">
+  <div class="mu-con"><div class="mu-fg flip">
+    <div class="mu-pc mu-rv"><div class="ph"><div class="ph-notch"><div class="ph-cam"></div><div class="ph-spk"></div></div><div class="ph-scr" id="s4"></div></div></div>
+    <div class="mu-rv mu-d1">
+      <div class="mu-fn">04 · On-The-Go Inspections</div>
+      <h2 class="mu-fh2">Inspections that<br>actually get done.</h2>
+      <p class="mu-fd">Sapphire auto-schedules and pushes inspections to the technician's phone. Digital checklist, photo capture, GPS tag, digital signature — submitted from the field.</p>
+      <ul class="mu-fl">
+        <li>Auto-scheduled cycles pushed directly into field queues</li>
+        <li>Pass / warn / fail on every checkpoint with photo capture</li>
+        <li>Digital signature collected and attached to the record</li>
+        <li>Report generated automatically on submission</li>
+      </ul>
+      <a href="sapphire.html" class="mu-flk">See all features →</a>
+    </div>
+  </div></div>
+</section>
+
+<!-- F5 Approvals -->
+<section class="mu-feat" id="f5s">
+  <div class="mu-con"><div class="mu-fg">
+    <div class="mu-pc mu-rv"><div class="ph"><div class="ph-notch"><div class="ph-cam"></div><div class="ph-spk"></div></div><div class="ph-scr" id="s5"></div></div></div>
+    <div class="mu-rv mu-d1">
+      <div class="mu-fn">05 · Instant Approvals</div>
+      <h2 class="mu-fh2">Decisions that don't<br>wait for a desk.</h2>
+      <p class="mu-fd">Repair requests are routed to the right person's phone with full context — the approver has everything needed to decide right there in the notification.</p>
+      <ul class="mu-fl">
+        <li>Multi-level routing based on cost threshold and role</li>
+        <li>Full request context delivered with the notification</li>
+        <li>Digital signature captured at point of approval</li>
+        <li>Requester notified instantly when decision is made</li>
+      </ul>
+      <a href="sapphire.html" class="mu-flk">See all features →</a>
+    </div>
+  </div></div>
+</section>
+
+<!-- F6 Live Tracking -->
+<section class="mu-feat dark" id="f6s">
+  <div class="mu-con"><div class="mu-fg flip">
+    <div class="mu-pc mu-rv"><div class="ph"><div class="ph-notch"><div class="ph-cam"></div><div class="ph-spk"></div></div><div class="ph-scr" id="s6"></div></div></div>
+    <div class="mu-rv mu-d1">
+      <div class="mu-fn">06 · Live Tracking & Updates</div>
+      <h2 class="mu-fh2">Your operation,<br>live on your screen.</h2>
+      <p class="mu-fd">Real-time dashboard of open work orders, inspections, OPEX, and asset uptime — updating live as transactions happen on the floor across every location.</p>
+      <ul class="mu-fl">
+        <li>KPI dashboard updates as floor events happen</li>
+        <li>Live activity feed — every issue, inspection, repair in sequence</li>
+        <li>Proactive alerts for anomalies, overdue items, escalations</li>
+        <li>OPEX and uptime metrics always current, no manual refresh</li>
+      </ul>
+      <a href="analytics.html" class="mu-flk">See analytics →</a>
+    </div>
+  </div></div>
+</section>
+
+
+<!-- CTA -->
+<section class="mu-cta">
+  <div class="mu-con mu-ci">
+    <h2>See it working on your operation.</h2>
+    <p>A live demo on your assets, workflows, and locations — not a generic walkthrough.</p>
+    <div class="mu-cb">
+      <a href="book-demo.html" class="mu-bw">Book a Free Demo →</a>
+      <a href="contact.html" class="mu-bg">Talk to the team</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER — original untouched -->
+    <footer class="modern-footer mt-5">
+        <div class="footer-brand d-flex flex-column align-items-center mb-4">
+            <div class="footer-logo-wrapper justify-content-center">
+                <div class="footer-logo"><img src="assets/images/Scorp-Logo.png" alt="Scorptech" class="footer-brand-logo"></div>
+                <h5 class="footer-brand-name m-0">SCORP</h5>
+            </div>
+            <p class="footer-tagline text-center">In the business of<br> making yours simple</p>
+        </div>
+        <div class="row g-4 footer-columns-wrapper">
+            <div class="col-12 col-md-4"><div class="footer-section"><h6>Explore <i class="fas fa-chevron-down footer-collapse-icon"></i></h6><ul class="footer-links"><li><a href="index.html" class="footer-link"><i class="fas fa-home-alt"></i><span>Home</span></a></li><li><a href="about.html" class="footer-link"><i class="fas fa-users-line"></i><span>About</span></a></li><li><a href="sapphire.html" class="footer-link"><i class="fas fa-diamond"></i><span>Sapphire</span></a></li></ul></div></div>
+            <div class="col-12 col-md-4"><div class="footer-section"><h6>Resources <i class="fas fa-chevron-down footer-collapse-icon"></i></h6><ul class="footer-links"><li><a href="faq.html" class="footer-link"><i class="fas fa-person-circle-question"></i><span>FAQs</span></a></li><li><a href="privacy_policy.html" class="footer-link"><i class="fas fa-file-shield"></i><span>Privacy Policy</span></a></li><li><a href="terms_of_use.html" class="footer-link"><i class="fas fa-file-contract"></i><span>Terms of Use</span></a></li></ul></div></div>
+            <div class="col-12 col-md-4"><div class="footer-section"><h6>Get in Touch <i class="fas fa-chevron-down footer-collapse-icon"></i></h6><ul class="footer-links"><li><a href="tel:+919782383338" class="footer-link"><i class="fas fa-mobile"></i><span>+91-9782383338</span></a></li><li><a href="/cdn-cgi/l/email-protection#0d7e787d7d627f794d7e6e627f7d79686e65236463" class="footer-link"><i class="fas fa-envelope"></i><span><span class="__cf_email__" data-cfemail="fc8f898c8c938e88bc8f9f938e8c88999f94d29592">[email&#160;protected]</span></span></a></li><li><a href="contact.html" class="footer-link"><i class="fas fa-phone"></i><span>Contact</span></a></li></ul></div></div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-bottom flex-column align-items-center text-center">
+            <p class="footer-copyright mb-3">© 2026 SCORP - Scorptech Technologies Private Limited. All rights reserved.</p>
+            <div class="footer-social justify-content-center">
+                <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* ── utils ── */
+const $=id=>document.getElementById(id);
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+function sbar(t='09:14'){return`<div class="s-bar"><span class="s-bar-t">${t}</span><span class="s-bar-i">▲ ● ■</span></div>`;}
+function abar(title,back,action=''){return`<div class="s-ab">${back?'<span class="s-ab-bk">←</span>':''}<span class="s-ab-tt">${title}</span>${action?`<span class="s-ab-ac">${action}</span>`:''}</div>`;}
+async function type(el,text,ms=26){el.classList.add('cur');let s='';for(const c of text){s+=c;el.textContent=s;await sleep(ms+Math.random()*12);}el.classList.remove('cur');}
+function rip(el){const r=document.createElement('div');r.className='s-rip';const s=Math.min(el.offsetWidth,el.offsetHeight)*.9;Object.assign(r.style,{width:s+'px',height:s+'px',top:(el.offsetHeight/2-s/2)+'px',left:(el.offsetWidth/2-s/2)+'px'});el.appendChild(r);setTimeout(()=>r.remove(),600);}
+
+/* ── HERO — 4 screens cycling ── */
+async function heroLoop(){
+  const scr=$('h0');if(!scr)return;
+  while(true){
+    await hS1(scr);await sleep(200);
+    await hS2(scr);await sleep(200);
+    await hS3(scr);await sleep(200);
+    await hS4(scr);await sleep(200);
+  }
+}
+async function hS1(s){
+  s.innerHTML=sbar('09:14')+abar('My Workstation',false,'+ New')+`
+  <div class="s-body">
+    <div class="s-kpi-grid">
+      <div class="s-kpi"><div class="s-kpi-l">Open WOs</div><div class="s-kpi-v" id="hk1">64</div><div class="s-kpi-d d-up">▲ +3 today</div></div>
+      <div class="s-kpi"><div class="s-kpi-l">My Assets</div><div class="s-kpi-v">12</div><div class="s-kpi-d" style="color:var(--tm)">— steady</div></div>
+      <div class="s-kpi"><div class="s-kpi-l">Inspections</div><div class="s-kpi-v">3</div><div class="s-kpi-d d-dn">▼ 2 due today</div></div>
+      <div class="s-kpi"><div class="s-kpi-l">Uptime</div><div class="s-kpi-v">97%</div><div class="s-kpi-d d-up">▲ good</div></div>
+    </div>
+    <div class="s-lbl">Recent Activity</div>
+    <div class="s-act" id="ha1"><div class="s-act-ico" style="background:var(--pl);color:var(--p)">📋</div><div class="s-act-txt">WO-0892 created · CNC-04 bearing</div><div class="s-act-t">09:14</div></div>
+    <div class="s-act" id="ha2"><div class="s-act-ico" style="background:#dcfce7;color:var(--ok)">✓</div><div class="s-act-txt">Inspection INSP-0241 closed</div><div class="s-act-t">09:08</div></div>
+    <div class="s-act" id="ha3"><div class="s-act-ico" style="background:#fef3c7;color:var(--wa)">⚠</div><div class="s-act-txt">HVAC-12 maintenance overdue 3d</div><div class="s-act-t">08:55</div></div>
+    <div class="s-act" id="ha4"><div class="s-act-ico" style="background:var(--pl);color:var(--p)">📦</div><div class="s-act-txt">Bearing SKF-6205 issued</div><div class="s-act-t">08:40</div></div>
+  </div>`;
+  await sleep(300);
+  ['ha1','ha2','ha3','ha4'].forEach((id,i)=>setTimeout(()=>{const e=$(id);if(e)e.classList.add('show');},i*180));
+  await sleep(3800);
+}
+async function hS2(s){
+  s.innerHTML=sbar('09:16')+abar('Quick Issue',true)+`
+  <div class="s-body">
+    <div class="s-field" id="hf1"><div class="s-fl">Asset ID</div><div class="s-fv" id="hv1"></div></div>
+    <div class="s-field" id="hf2"><div class="s-fl">Category</div><div class="s-fv" id="hv2"></div></div>
+    <div class="s-field" id="hf3"><div class="s-fl">Issued To</div><div class="s-fv" id="hv3"></div></div>
+    <div class="s-field" id="hf4"><div class="s-fl">Purpose</div><div class="s-fv" id="hv4"></div></div>
+    <button class="s-btn" id="hfb" disabled>Issue Asset</button>
+    <div class="s-ov" id="hov"><div class="s-ov-c" style="background:#dcfce7">✓</div><div class="s-ov-tt">Asset Issued</div><div class="s-ov-rf">ISS-2026-0417</div><div class="s-ov-sb">CNC-04 → Arjun Mehta · Bay 3</div></div>
+  </div>`;
+  for(const[fi,vi,txt,scan] of [['hf1','hv1','CNC-04 · Bearing Assembly',true],['hf2','hv2','Machinery · High Value',false],['hf3','hv3','Arjun Mehta · Bay 3',false],['hf4','hv4','Pre-repair inspection',false]]){
+    const f=$(fi),v=$(vi);if(!f||!v)continue;
+    f.classList.add('on');
+    if(scan){const sl=document.createElement('div');sl.className='s-scan';f.appendChild(sl);await sleep(1000);}
+    await type(v,txt,24);
+    f.classList.remove('on');f.classList.add('done');await sleep(150);
+  }
+  const b=$('hfb');if(b){b.disabled=false;await sleep(500);rip(b);}
+  await sleep(400);
+  const ov=$('hov');if(ov)ov.classList.add('show');
+  await sleep(2400);
+}
+async function hS3(s){
+  const chks=[{l:'Power isolation confirmed',t:'pass',r:'✓ Pass'},{l:'Bearing wear measured',t:'warn',r:'⚠ 0.8mm'},{l:'Lubrication levels OK',t:'pass',r:'✓ Pass'},{l:'Shaft seal integrity',t:'fail',r:'✗ Replace'},{l:'Photos captured (4)',t:'pass',r:'✓ Done'}];
+  s.innerHTML=sbar('09:22')+abar('Inspection · CNC-04',true)+`
+  <div style="padding:6px 10px 4px;background:var(--bg);flex-shrink:0">
+    <div style="display:flex;justify-content:space-between;margin-bottom:4px"><span class="s-lbl" id="hl">0/${chks.length} checkpoints</span><span class="s-lbl">INSP-0241</span></div>
+    <div class="s-prog"><div class="s-prog-b" id="hp" style="width:0"></div></div>
+  </div>
+  <div class="s-body">
+    ${chks.map((_,i)=>`<div class="s-chk" id="hc${i}"><div class="s-cb" id="hcb${i}"></div><div class="s-chk-l">${chks[i].l}</div><div class="s-chk-r">${chks[i].r}</div></div>`).join('')}
+    <button class="s-btn ok" id="hsub" disabled>Submit Report</button>
+  </div>`;
+  await sleep(600);
+  for(let i=0;i<chks.length;i++){
+    const c=$('hc'+i),cb=$('hcb'+i),p=$('hp'),l=$('hl');
+    if(!c)continue;
+    c.classList.add(chks[i].t);
+    cb.textContent=chks[i].t==='pass'?'✓':chks[i].t==='fail'?'✗':'!';
+    if(p)p.style.width=((i+1)/chks.length*100)+'%';
+    if(l)l.textContent=`${i+1}/${chks.length} checkpoints`;
+    await sleep(560);
+  }
+  const sub=$('hsub');if(sub)sub.disabled=false;
+  await sleep(2000);
+}
+async function hS4(s){
+  s.innerHTML=sbar('09:28')+`
+  <div class="s-ab"><span class="s-ab-tt">Live Dashboard</span><span style="font-size:11px;font-weight:700;color:#4ade80;display:flex;align-items:center;gap:4px"><span class="s-live"></span>Live</span></div>
+  <div class="s-body">
+    <div class="s-kpi-grid">
+      <div class="s-kpi"><div class="s-kpi-l">Open WOs</div><div class="s-kpi-v" id="hd1">64</div><div class="s-kpi-d d-up">▲ +1</div></div>
+      <div class="s-kpi"><div class="s-kpi-l">OPEX Today</div><div class="s-kpi-v">₹48K</div><div class="s-kpi-d d-dn">+₹12K</div></div>
+      <div class="s-kpi"><div class="s-kpi-l">Inspections</div><div class="s-kpi-v">8</div><div class="s-kpi-d d-up">▲ +1</div></div>
+      <div class="s-kpi"><div class="s-kpi-l">Uptime</div><div class="s-kpi-v">97%</div><div class="s-kpi-d d-dn">▼ CNC-04</div></div>
+    </div>
+    <div class="s-lbl">Live Activity</div>
+    <div class="s-act" id="hd1a"><div class="s-act-ico" style="background:#dcfce7;color:var(--ok)">✓</div><div class="s-act-txt"><strong>INSP-0241 submitted</strong> · CNC-04</div><div class="s-act-t">09:22</div></div>
+    <div class="s-act" id="hd2a"><div class="s-act-ico" style="background:var(--pl);color:var(--p)">📦</div><div class="s-act-txt"><strong>Parts reserved</strong> · Seal × 2</div><div class="s-act-t">09:20</div></div>
+    <div class="s-act" id="hd3a"><div class="s-act-ico" style="background:#fef3c7;color:var(--wa)">⚠</div><div class="s-act-txt"><strong>Repair scheduled</strong> · CNC-04</div><div class="s-act-t">09:14</div></div>
+  </div>`;
+  await sleep(300);
+  ['hd1a','hd2a','hd3a'].forEach((id,i)=>setTimeout(()=>{const e=$(id);if(e)e.classList.add('show');},i*220));
+  await sleep(2000);
+  const v=$('hd1');if(v){v.style.color='var(--p)';v.textContent='65';setTimeout(()=>v&&(v.style.color=''),700);}
+  await sleep(2000);
+}
+
+/* ── F1: 1-Touch Tiles ── */
+async function f1Loop(scr){while(true){await f1(scr);await sleep(200);}}
+async function f1(s){
+  s.innerHTML=sbar('09:14')+abar('Quick Actions',false,'All')+`
+  <div class="s-body">
+    <div class="s-lbl">Good morning, Arjun · Bay 3</div>
+    <div class="s-tiles">
+      <div class="s-tile" id="t1"><div class="s-tile-ico">📤</div><div class="s-tile-l">Issue Asset</div></div>
+      <div class="s-tile" id="t2"><div class="s-tile-ico">📝</div><div class="s-tile-l">Log Entry</div></div>
+      <div class="s-tile" id="t3"><div class="s-tile-ico">🔍</div><div class="s-tile-l">Inspection</div></div>
+      <div class="s-tile" id="t4"><div class="s-tile-ico">📋</div><div class="s-tile-l">Work Order</div></div>
+    </div>
+    <div class="s-lbl">Today's Queue</div>
+    <div class="s-card"><div class="s-card-hd"><span class="s-card-tt">🔧 WO-0891 · HVAC-12</span><span class="s-pill pi-am">Due 14:00</span></div><div class="s-card-sb">Filter replacement · Bay 2</div></div>
+    <div class="s-card"><div class="s-card-hd"><span class="s-card-tt">🔍 INSP-0241 · CNC-04</span><span class="s-pill pi-rd">Overdue 1d</span></div><div class="s-card-sb">Pre-repair inspection</div></div>
+    <div class="s-ov" id="f1ov"><div class="s-ov-c" style="background:#dcfce7">✓</div><div class="s-ov-tt">Work Order Filed</div><div class="s-ov-rf">WO-2026-0892</div><div class="s-ov-sb">CNC-04 · Arjun Mehta<br>Assigned instantly</div></div>
+  </div>`;
+  await sleep(1800);
+  const t1=$('t1');if(t1){t1.classList.add('tap');rip(t1);}
+  await sleep(700);
+  const ov=$('f1ov');if(ov)ov.classList.add('show');
+  await sleep(2600);
+  if(ov)ov.classList.remove('show');
+  if(t1)t1.classList.remove('tap');
+  await sleep(400);
+}
+
+/* ── F2: Data Logging ── */
+async function f2Loop(scr){while(true){await f2(scr);await sleep(200);}}
+async function f2(s){
+  s.innerHTML=sbar('09:16')+abar('Log Entry · Maintenance',true)+`
+  <div class="s-body">
+    <div class="s-field" id="f2a" style="position:relative"><div class="s-fl">Asset ID <span style="color:var(--p);font-size:9px;font-weight:700">● SCAN</span></div><div class="s-fv" id="f2va"></div></div>
+    <div class="s-field" id="f2b"><div class="s-fl">Work Type</div><div class="s-fv" id="f2vb"></div></div>
+    <div class="s-field" id="f2c"><div class="s-fl">Parts Used</div><div class="s-fv" id="f2vc"></div></div>
+    <div class="s-field" id="f2d"><div class="s-fl">Cost (₹)</div><div class="s-fv" id="f2vd"></div></div>
+    <div class="s-field" id="f2e"><div class="s-fl">Technician</div><div class="s-fv" id="f2ve"></div></div>
+    <button class="s-btn" id="f2btn" disabled>Log Entry</button>
+    <div class="s-ov" id="f2ov"><div class="s-ov-c" style="background:#dcfce7">📝</div><div class="s-ov-tt">Entry Logged</div><div class="s-ov-rf">LOG-2026-1142</div><div class="s-ov-sb">09:16:42 · Synced to cloud</div></div>
+  </div>`;
+  await sleep(400);
+  const fa=$('f2a'),va=$('f2va');
+  if(fa&&va){fa.classList.add('on');const sl=document.createElement('div');sl.className='s-scan';fa.appendChild(sl);await sleep(1000);await type(va,'CNC-04 · Bearing Assembly',22);fa.classList.remove('on');fa.classList.add('done');}
+  for(const[fi,vi,txt] of [['f2b','f2vb','Corrective Repair'],['f2c','f2vc','SKF-6205×1, Seal×2'],['f2d','f2vd','12,400'],['f2e','f2ve','Arjun Mehta · Bay 3']]){
+    const f=$(fi),v=$(vi);if(!f||!v)continue;
+    f.classList.add('on');await type(v,txt,20);f.classList.remove('on');f.classList.add('done');await sleep(120);
+  }
+  const btn=$('f2btn');if(btn){btn.disabled=false;await sleep(600);rip(btn);}
+  await sleep(400);
+  const ov=$('f2ov');if(ov)ov.classList.add('show');
+  await sleep(2200);
+  if(ov)ov.classList.remove('show');
+  ['f2a','f2b','f2c','f2d','f2e'].forEach(id=>{const f=$(id);if(f){f.classList.remove('done','on');}});
+  ['f2va','f2vb','f2vc','f2vd','f2ve'].forEach(id=>{const v=$(id);if(v)v.textContent='';});
+  if(btn)btn.disabled=true;
+  await sleep(400);
+}
+
+/* ── F3: Smart Inventories ── */
+async function f3Loop(scr){while(true){await f3(scr);await sleep(200);}}
+async function f3(s){
+  let res=124,act=67;
+  s.innerHTML=sbar('09:18')+abar('Smart Inventories',false,'Filter')+`
+  <div style="padding:8px 10px 0;background:var(--bg);flex-shrink:0">
+    <div class="s-inv-strip">
+      <div class="s-inv-c" style="border:1px solid var(--p)"><div class="s-inv-n" id="f3r">${res}</div><div class="s-inv-l">Reserve</div></div>
+      <div class="s-inv-c"><div class="s-inv-n" id="f3a">${act}</div><div class="s-inv-l">Active</div></div>
+      <div class="s-inv-c"><div class="s-inv-n">12</div><div class="s-inv-l">Issued</div></div>
+    </div>
+  </div>
+  <div class="s-tabs"><div class="s-tab on">Reserve</div><div class="s-tab">Active</div><div class="s-tab">Issued</div></div>
+  <div class="s-body">
+    <div class="s-item" id="f3i1"><div class="s-item-ico">🔧</div><div style="flex:1"><div class="s-item-n">Bearing SKF-6205</div><div class="s-item-s">Qty: 4 · Bay Store A</div></div><button class="s-item-btn" id="f3b1">Issue</button></div>
+    <div class="s-item"><div class="s-item-ico">🔩</div><div style="flex:1"><div class="s-item-n">Shaft Seal 40×56×8</div><div class="s-item-s">Qty: 8 · Bay Store A</div></div><button class="s-item-btn">Issue</button></div>
+    <div class="s-item"><div class="s-item-ico">🧴</div><div style="flex:1"><div class="s-item-n">Hydraulic Oil SAE-46</div><div class="s-item-s">Qty: 12L · Chemicals</div></div><button class="s-item-btn">Issue</button></div>
+    <div class="s-ov" id="f3ov"><div class="s-ov-c" style="background:#dcfce7">📦</div><div class="s-ov-tt">Item Issued</div><div class="s-ov-rf">ISS-2026-0418</div><div class="s-ov-sb">Bearing SKF-6205<br>→ Arjun Mehta · Bay 3</div></div>
+  </div>`;
+  await sleep(2000);
+  const i1=$('f3i1'),b1=$('f3b1');
+  if(i1)i1.classList.add('hi');
+  await sleep(500);
+  if(b1)rip(b1);
+  await sleep(500);
+  if(i1){i1.classList.remove('hi');i1.classList.add('done');}
+  res--;act++;
+  const rv=$('f3r'),av=$('f3a');
+  if(rv){rv.style.color='var(--er)';rv.textContent=res;setTimeout(()=>rv&&(rv.style.color=''),800);}
+  if(av){av.style.color='var(--ok)';av.textContent=act;setTimeout(()=>av&&(av.style.color=''),800);}
+  const ov=$('f3ov');if(ov)ov.classList.add('show');
+  await sleep(2400);
+  if(ov)ov.classList.remove('show');
+  if(i1)i1.classList.remove('done');
+  await sleep(400);
+}
+
+/* ── F4: Inspections ── */
+async function f4Loop(scr){while(true){await f4(scr);await sleep(200);}}
+async function f4(s){
+  const items=[{l:'Power isolation confirmed',t:'pass',r:'✓ Pass'},{l:'Bearing wear measured',t:'warn',r:'⚠ 0.8mm'},{l:'Lubrication levels checked',t:'pass',r:'✓ OK'},{l:'Shaft seal integrity',t:'fail',r:'✗ Replace'},{l:'Photos captured (4)',t:'pass',r:'✓ Done'},{l:'Digital signature',t:'pass',r:'✓ Signed'}];
+  s.innerHTML=sbar('09:22')+abar('Inspection · CNC-04',true)+`
+  <div style="padding:6px 10px 4px;background:var(--bg);flex-shrink:0">
+    <div style="display:flex;justify-content:space-between;margin-bottom:4px"><span class="s-lbl" id="f4l">0/${items.length} checkpoints</span><span class="s-lbl">INSP-0241</span></div>
+    <div class="s-prog"><div class="s-prog-b" id="f4p" style="width:0"></div></div>
+  </div>
+  <div class="s-body">
+    ${items.map((_,i)=>`<div class="s-chk" id="f4c${i}"><div class="s-cb" id="f4b${i}"></div><div class="s-chk-l">${items[i].l}</div><div class="s-chk-r">${items[i].r}</div></div>`).join('')}
+    <button class="s-btn ok" id="f4sub" disabled>Submit Report</button>
+    <div class="s-ov" id="f4ov">
+      <div class="s-ov-c" style="background:#dcfce7">✅</div>
+      <div class="s-ov-tt">Report Submitted</div>
+      <div class="s-ov-rf">INSP-0241 · CNC-04</div>
+      <div class="s-ov-sb">6/6 checkpoints · 2 flags<br>Arjun Mehta · 09:22:47</div>
+    </div>
+  </div>`;
+  await sleep(600);
+  for(let i=0;i<items.length;i++){
+    const c=$('f4c'+i),cb=$('f4b'+i),p=$('f4p'),l=$('f4l');
+    if(!c)continue;
+    c.classList.add(items[i].t);
+    cb.textContent=items[i].t==='pass'?'✓':items[i].t==='fail'?'✗':'!';
+    if(p)p.style.width=((i+1)/items.length*100)+'%';
+    if(l)l.textContent=`${i+1}/${items.length} checkpoints`;
+    await sleep(560);
+  }
+  const sub=$('f4sub');if(sub){sub.disabled=false;await sleep(700);rip(sub);}
+  await sleep(400);
+  const ov=$('f4ov');if(ov)ov.classList.add('show');
+  await sleep(2400);
+  if(ov)ov.classList.remove('show');
+  await sleep(400);
+}
+
+/* ── F5: Approvals ── */
+async function f5Loop(scr){while(true){await f5(scr);await sleep(200);}}
+async function f5(s){
+  s.innerHTML=sbar('09:26')+`
+  <div class="s-ab"><span class="s-ab-tt">Pending Approvals</span><span class="s-ab-bdg" id="f5bd">2</span></div>
+  <div class="s-body">
+    <div class="s-card" id="f5cd" style="border-color:var(--wa)">
+      <div class="s-card-hd"><span class="s-card-tt">REQ-2026-0341</span><span class="s-pill pi-am" id="f5st">PENDING</span></div>
+      <div class="s-card-sb">CNC-04 · Bearing + Seal<br>Est. cost: <strong>₹12,400</strong> · Parts reserved</div>
+      <div style="display:flex;gap:7px;margin-top:9px" id="f5bts">
+        <button style="flex:1;background:#fee2e2;color:var(--er);border:none;border-radius:5px;font-size:10px;font-weight:700;padding:7px;cursor:pointer">✕ Reject</button>
+        <button style="flex:1;background:var(--ok);color:#fff;border:none;border-radius:5px;font-size:10px;font-weight:700;padding:7px;cursor:pointer" id="f5ap">✓ Approve</button>
+      </div>
+    </div>
+    <div class="s-card"><div class="s-card-hd"><span class="s-card-tt">REQ-2026-0340</span><span class="s-pill pi-am">PENDING</span></div><div class="s-card-sb">HVAC-12 · Filter set · ₹3,200</div></div>
+    <div class="s-lbl">Approval Timeline</div>
+    <div class="s-tl">
+      <div class="s-tl-row show"><div class="s-tl-sp"><div class="s-tl-dot ok"></div><div class="s-tl-ln"></div></div><div><div class="s-tl-txt">Submitted by Arjun Mehta</div><div class="s-tl-t">09:26:14</div></div></div>
+      <div class="s-tl-row show"><div class="s-tl-sp"><div class="s-tl-dot ok"></div><div class="s-tl-ln"></div></div><div><div class="s-tl-txt">Routed to Priya Singh</div><div class="s-tl-t">09:26:15</div></div></div>
+      <div class="s-tl-row" id="f5tl3"><div class="s-tl-sp"><div class="s-tl-dot ac" id="f5dt3"></div></div><div><div class="s-tl-txt" id="f5tx3">Awaiting decision…</div><div class="s-tl-t" id="f5tm3">—</div></div></div>
+    </div>
+    <div class="s-toast" id="f5ts"><div class="s-toast-ico">🔔</div><div class="s-toast-txt">Priya Singh approved<br><strong>REQ-2026-0341</strong></div></div>
+  </div>`;
+  await sleep(2200);
+  const ab=$('f5ap');if(ab)rip(ab);
+  await sleep(500);
+  const cd=$('f5cd'),st=$('f5st'),bts=$('f5bts');
+  if(cd){cd.style.borderColor='var(--ok)';cd.style.background='#f0fdf4';}
+  if(st){st.textContent='APPROVED';st.className='s-pill pi-gn';}
+  if(bts)bts.style.display='none';
+  const tl3=$('f5tl3'),dt3=$('f5dt3'),tx3=$('f5tx3'),tm3=$('f5tm3');
+  if(tl3)tl3.classList.add('show');
+  if(dt3)dt3.className='s-tl-dot ok';
+  if(tx3)tx3.textContent='Approved · Priya Singh';
+  if(tm3)tm3.textContent='09:30:22';
+  const ts=$('f5ts');if(ts)ts.classList.add('show');
+  const bd=$('f5bd');if(bd)bd.textContent='1';
+  await sleep(2600);
+  if(ts)ts.classList.remove('show');
+  await sleep(600);
+  if(cd){cd.style.borderColor='';cd.style.background='';}
+  if(st){st.textContent='PENDING';st.className='s-pill pi-am';}
+  if(bts)bts.style.display='flex';
+  if(tl3)tl3.classList.remove('show');
+  if(dt3)dt3.className='s-tl-dot ac';
+  if(tx3)tx3.textContent='Awaiting decision…';
+  if(tm3)tm3.textContent='—';
+  if(bd)bd.textContent='2';
+  await sleep(400);
+}
+
+/* ── F6: Live Tracking (continuous) ── */
+const lv=[
+  {ico:'📋',ib:'var(--pl)',ic:'var(--p)',tx:'WO-0892 created · CNC-04',t:'09:14'},
+  {ico:'✓',ib:'#dcfce7',ic:'var(--ok)',tx:'Inspection INSP-0241 submitted',t:'09:22'},
+  {ico:'📦',ib:'var(--pl)',ic:'var(--p)',tx:'Parts reserved · Bearing + Seal',t:'09:20'},
+  {ico:'⚠',ib:'#fef3c7',ic:'var(--wa)',tx:'HVAC-12 maintenance overdue',t:'09:05'},
+  {ico:'✓',ib:'#dcfce7',ic:'var(--ok)',tx:'REQ-0341 approved · ₹12,400',t:'09:30'},
+  {ico:'🔧',ib:'var(--pl)',ic:'var(--p)',tx:'Repair scheduled · CNC-04',t:'09:31'},
+];
+let lvIdx=0;
+async function f6Loop(scr){
+  let wo=64,opex=48;
+  scr.innerHTML=sbar('09:30')+`
+  <div class="s-ab"><span class="s-ab-tt">Live Dashboard</span><span style="font-size:11px;font-weight:700;color:#4ade80;display:flex;align-items:center;gap:4px"><span class="s-live"></span>Live</span></div>
+  <div class="s-body">
+    <div class="s-kpi-grid">
+      <div class="s-kpi"><div class="s-kpi-l">Open WOs</div><div class="s-kpi-v" id="f6wo">${wo}</div><div class="s-kpi-d d-up">▲ +3</div></div>
+      <div class="s-kpi"><div class="s-kpi-l">OPEX Today</div><div class="s-kpi-v" id="f6op">₹${opex}K</div><div class="s-kpi-d d-dn">▲ running</div></div>
+      <div class="s-kpi"><div class="s-kpi-l">Inspections</div><div class="s-kpi-v">8</div><div class="s-kpi-d d-up">▲ +1</div></div>
+      <div class="s-kpi"><div class="s-kpi-l">Uptime</div><div class="s-kpi-v">97%</div><div class="s-kpi-d d-dn">▼ CNC-04</div></div>
+    </div>
+    <div class="s-lbl" style="display:flex;align-items:center;gap:5px">Live Activity <span class="s-live" style="box-shadow:none;margin:0"></span></div>
+    <div id="f6fd" style="display:flex;flex-direction:column;gap:7px;overflow:hidden"></div>
+  </div>`;
+  const feed=$('f6fd');
+  for(let i=0;i<2;i++){const d=lv[lvIdx%lv.length];lvIdx++;if(feed)addLv(feed,d,true);}
+  while(scr.isConnected){
+    await sleep(1900);
+    if(!$('f6wo'))break;
+    if(Math.random()>.5){wo++;const e=$('f6wo');if(e){e.style.color='var(--p)';e.textContent=wo;setTimeout(()=>{if(e)e.style.color='';},600);}}
+    else{opex+=2;const e=$('f6op');if(e){e.style.color='var(--er)';e.textContent='₹'+opex+'K';setTimeout(()=>{if(e)e.style.color='';},600);}}
+    const d=lv[lvIdx%lv.length];lvIdx++;
+    if(feed&&feed.isConnected){addLv(feed,d,false);while(feed.children.length>4)feed.removeChild(feed.lastChild);}
+  }
+}
+function addLv(feed,d,instant){
+  const row=document.createElement('div');
+  row.className='s-act'+(instant?' show':'');
+  row.innerHTML=`<div class="s-act-ico" style="background:${d.ib};color:${d.ic}">${d.ico}</div><div class="s-act-txt">${d.tx}</div><div class="s-act-t">${d.t}</div>`;
+  feed.insertBefore(row,feed.firstChild);
+  if(!instant)requestAnimationFrame(()=>row.classList.add('show'));
+}
+
+/* ── lazy start via IntersectionObserver ── */
+const started=new Set();
+function watchSection(secId,scrId,fn){
+  const sec=$(secId);if(!sec)return;
+  const obs=new IntersectionObserver(entries=>{
+    if(entries[0].isIntersecting&&!started.has(scrId)){
+      started.add(scrId);fn($(scrId));obs.disconnect();
+    }
+  },{threshold:0.2});
+  obs.observe(sec);
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  heroLoop();
+  setTimeout(()=>{const e=$('hn1');if(e)e.classList.add('show');},700);
+  setTimeout(()=>{const e=$('hn2');if(e)e.classList.add('show');},1200);
+  setTimeout(()=>{const e=$('hn3');if(e)e.classList.add('show');},1000);
+  setTimeout(()=>{const e=$('hn4');if(e)e.classList.add('show');},1700);
+
+  watchSection('f1s','s1',f1Loop);
+  watchSection('f2s','s2',f2Loop);
+  watchSection('f3s','s3',f3Loop);
+  watchSection('f4s','s4',f4Loop);
+  watchSection('f5s','s5',f5Loop);
+  watchSection('f6s','s6',f6Loop);
+
+  const rv=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');rv.unobserve(e.target);}});},{threshold:0.08});
+  document.querySelectorAll('.mu-rv').forEach(el=>rv.observe(el));
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

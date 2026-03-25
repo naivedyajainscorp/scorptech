@@ -394,7 +394,7 @@
                                 </header>
                                 <hr style="border: none; border-bottom: 2px solid var(--s-primary); margin: 0.5rem 0;">
                                 <div class="row">
-                                    <div class="col-12 col-md-4 mb-3">
+                                    <div class="col-12 col-md-6 mb-3">
                                         <label for="name-demo" class="form-label s-text-primary">
                                             <div class="s-icon-sm s-icon-blue-3 text-light"><i class="bi bi-person-fill"></i></div>
                                             Full Name
@@ -405,7 +405,7 @@
                                         
                                         <div class="invalid-feedback">Please enter your full name</div>
                                     </div>
-                                    <div class="col-12 col-md-4 mb-3">
+                                    <div class="col-12 col-md-6 mb-3">
                                         <label for="phone-demo" class="form-label s-text-primary">
                                             <div class="s-icon-sm s-icon-blue-3 text-light"><i class="fas fa-mobile-alt"></i></div>
                                             Phone Number
@@ -416,7 +416,7 @@
 
                                         <div class="text-danger phone-error d-none">Please enter a valid phone number</div>
                                     </div>
-                                    <div class="col-12 col-md-8 mb-3">
+                                    <div class="col-12 mb-3">
                                         <label for="email-demo" class="form-label s-text-primary">
                                             <div class="s-icon-sm s-icon-blue-3 text-light"><i class="bi bi-envelope-at-fill"></i></div>
                                             Email Address
@@ -1076,88 +1076,500 @@
                 </div>
             </div>
         </section>
-        <!-- Footer -->
-    <!-- FOOTER -->
-    <!-- FOOTER -->
-    <footer class="modern-footer mt-5">
+        <!-- ════════════════════════════════════════════════════════════
+     SECTION 1 — CTA
+     ════════════════════════════════════════════════════════════ -->
+<section class="s-cta">
 
-        <!-- BRANDING (ALWAYS CENTERED) -->
-        <div class="footer-brand d-flex flex-column align-items-center mb-4">
-            <div class="footer-logo-wrapper justify-content-center">
-                <div class="footer-logo">
-                    <img src="assets/images/Scorp-Logo.png"
-                         alt="Scorptech"
-                         class="footer-brand-logo">
-                </div>
-                <h5 class="footer-brand-name m-0">SCORP</h5>
-            </div>
-            <p class="footer-tagline text-center">
-                In the business of<br> making yours simple
-            </p>
+  <svg class="s-cta__accent s-cta__accent--tl" width="80" height="80" viewBox="0 0 80 80" fill="none">
+    <path d="M1 79 L1 1 L79 1" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+    <rect x="1" y="1" width="10" height="10" fill="rgba(255,255,255,0.12)"/>
+  </svg>
+  <svg class="s-cta__accent s-cta__accent--br" width="80" height="80" viewBox="0 0 80 80" fill="none">
+    <path d="M1 79 L1 1 L79 1" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+    <rect x="1" y="1" width="10" height="10" fill="rgba(255,255,255,0.12)"/>
+  </svg>
+
+  <div class="s-cta__inner">
+    <p class="s-eyebrow">Came this far... to manage chaos?</p>
+    <h2 class="s-cta__headline">
+      CHAOS ENDS<br>
+      <span>CONTROL BEGINS</span><br>HERE!
+    </h2>
+    <p class="s-cta__sub">
+      Sapphire adapts to your workflows — not the other way around.
+      Real operations. Real deadlines. Real accountability.
+    </p>
+    <div class="s-cta__actions">
+                <a href="book-demo.html" class="s-btn s-btn-success s-btn-glare s-full-width-btn">
+                    <i class="bi bi-collection-play-fill me-2"></i>
+                    <span>Book a Demo</span>
+                </a>
+                
+                <a href="contact.html" class="s-btn s-btn-secondary s-btn-glare s-full-width-btn">
+                    <i class="bi bi-telephone-outbound-fill me-2"></i>
+                    <span>Talk to Our Team</span>
+                </a>
+    </div>
+    <div class="s-cta__pills">
+      <a href="/sapphire.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">Sapphire</a>
+      <a href="/intelligence.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">Intelligence</a>
+      <a href="/analytics.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">Analytics</a>
+      <a href="/blog/index.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">Knowledge Hub</a>
+      <a href="/about.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">About</a>
+      <a href="/faq.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">FAQs</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     SECTION 2 — FEATURED BLOG CARDS
+     ════════════════════════════════════════════════════════════ -->
+<section class="s-blogs-featured">
+  <div class="s-wrap">
+    <div class="s-section-intro">
+      <div class="s-section-intro__text">
+        <p class="s-eyebrow">From the Knowledge Hub</p>
+        <h2>EAM intelligence. <em>All of it.</em></h2>
+      </div>
+      <a href="/blog/index.html" class="s-view-all">
+        View all 42 articles
+        <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+<div class="s-blog-grid">
+
+  <!-- Card 1 — Hero -->
+  <a href="/blog/what-is-eam.html" class="s-full-pic-card">
+    <img src="assets/images_industries/manufacturing_factory.jpeg" alt="EAM Fundamentals" class="s-full-pic-card__img">
+    <div class="s-full-pic-card__content">
+      <div class="s-full-pic-card__meta">
+        <span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm">
+          <i class="fa-solid fa-book-open me-1"></i>Fundamentals
+        </span>
+        <p class="s-full-pic-card__title">What Is Enterprise Asset Management? A Complete Guide</p>
+      </div>
+      <div class="s-full-pic-card__bar">
+        <span class="s-full-pic-card__read">8 min read</span>
+        <span class="s-full-pic-card__cta">
+          Read article 
+          <svg viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </a>
+
+  <!-- Card 2 -->
+  <a href="/blog/sapphire-work-order-management.html" class="s-full-pic-card">
+    <img src="assets/images_industries/Corporate_Offices.jpeg" alt="Sapphire Modules" class="s-full-pic-card__img">
+    <div class="s-full-pic-card__content">
+      <div class="s-full-pic-card__meta">
+        <span class="s-pill s-pill-sm s-pill-info s-pill-round-sm">
+          <i class="bi bi-window-stack me-1"></i>Modules
+        </span>
+        <p class="s-full-pic-card__title">Sapphire Work Order Management: A Complete Deep Dive</p>
+      </div>
+      <div class="s-full-pic-card__bar">
+        <span class="s-full-pic-card__read">12 min read</span>
+        <span class="s-full-pic-card__cta">
+          Read article 
+          <svg viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </a>
+
+  <!-- Card 3 -->
+  <a href="/blog/eam-for-manufacturing.html" class="s-full-pic-card">
+    <img src="assets/images_industries/automotive_service_station.jpeg" alt="EAM Industries" class="s-full-pic-card__img">
+    <div class="s-full-pic-card__content">
+      <div class="s-full-pic-card__meta">
+        <span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm">
+          <i class="fa-solid fa-industry me-1"></i>Industries
+        </span>
+        <p class="s-full-pic-card__title">EAM for Manufacturing: Keep the Line Running</p>
+      </div>
+      <div class="s-full-pic-card__bar">
+        <span class="s-full-pic-card__read">10 min read</span>
+        <span class="s-full-pic-card__cta">
+          Read article 
+          <svg viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </a>
+
+  <!-- Card 4 -->
+  <a href="/blog/real-time-asset-analytics.html" class="s-full-pic-card">
+    <img src="assets/images_industries/warehouse.jpeg" alt="Asset Analytics" class="s-full-pic-card__img">
+    <div class="s-full-pic-card__content">
+      <div class="s-full-pic-card__meta">
+        <span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm">
+          <i class="fa-solid fa-chart-line me-1"></i>Analytics
+        </span>
+        <p class="s-full-pic-card__title">Real-Time Asset Analytics: From Data to Decision</p>
+      </div>
+      <div class="s-full-pic-card__bar">
+        <span class="s-full-pic-card__read">7 min read</span>
+        <span class="s-full-pic-card__cta">
+          Read article 
+          <svg viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </a>
+
+  <!-- Card 5 -->
+  <a href="/blog/roi-of-eam-software.html" class="s-full-pic-card">
+    <img src="assets/images_industries/hospital.jpeg" alt="Business Value" class="s-full-pic-card__img">
+    <div class="s-full-pic-card__content">
+      <div class="s-full-pic-card__meta">
+        <span class="s-pill s-pill-sm s-pill-success s-pill-round-sm">
+          <i class="fa-solid fa-money-bill-wave me-1"></i>Business Value
+        </span>
+        <p class="s-full-pic-card__title">ROI of EAM Software: A Practical Calculation Guide</p>
+      </div>
+      <div class="s-full-pic-card__bar">
+        <span class="s-full-pic-card__read">9 min read</span>
+        <span class="s-full-pic-card__cta">
+          Read article 
+          <svg viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </a>
+
+</div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     SECTION 3 — MARQUEE BLOGS
+     ════════════════════════════════════════════════════════════ -->
+<section class="s-marquee-section">
+
+  <div class="s-marquee-rule"><hr></div>
+
+  <div class="s-marquee-top">
+    <p><strong>42</strong> deep-dive articles across <strong>6</strong> pillars — no filler, ever.</p>
+    <a href="/blog/index.html" class="s-view-all">
+      Browse the full Knowledge Hub
+      <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+
+  <div class="s-marquee-wrap">
+
+    <!-- ROW 1 forward -->
+    <div class="s-mq-row s-mq-row--fwd">
+      <a href="/blog/what-is-eam.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/manufacturing_factory.jpeg" alt="What Is Enterprise Asset Management? A Complete Guide"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">What Is Enterprise Asset Management? A Complete Guide</p></div></a>
+      <a href="/blog/eam-vs-erp.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/automotive_service_station.jpeg" alt="EAM vs ERP: The Key Difference Explained"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">EAM vs ERP: The Key Difference Explained</p></div></a>
+      <a href="/blog/asset-lifecycle-management.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/construction.jpeg" alt="Asset Lifecycle Management: From Acquisition to Disposal"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Asset Lifecycle Management: From Acquisition to Disposal</p></div></a>
+      <a href="/blog/preventive-vs-predictive.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/warehouse.jpeg" alt="Preventive vs Predictive Maintenance: Which Is Right?"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Preventive vs Predictive Maintenance: Which Is Right?</p></div></a>
+      <a href="/blog/maintenance-strategy.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/hospital.jpeg" alt="Building a Maintenance Strategy from Zero"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Building a Maintenance Strategy from Zero</p></div></a>
+      <a href="/blog/cost-of-downtime.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/diagnostic_center.jpeg" alt="The True Cost of Asset Downtime"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">The True Cost of Asset Downtime</p></div></a>
+      <a href="/blog/iso-55000.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/research_test_laoratories.jpeg" alt="ISO 55000: The Global Standard for Asset Management"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">ISO 55000: The Global Standard for Asset Management</p></div></a>
+      <a href="/blog/sapphire-work-order-management.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Corporate_Offices.jpeg" alt="Sapphire Work Order Management: A Complete Deep Dive"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack me-1"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Sapphire Work Order Management: A Complete Deep Dive</p></div></a>
+      <a href="/blog/inventory-control-sapphire.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/coworkingITpark.png" alt="Inventory Control in Sapphire: Zero Dead Stock"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack me-1"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Inventory Control in Sapphire: Zero Dead Stock</p></div></a>
+      <a href="/blog/sapphire-purchase-module.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Retail_Chains_&_Shopping_malls.jpeg" alt="Sapphire Purchase Module: From PO to Payment"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack me-1"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Sapphire Purchase Module: From PO to Payment</p></div></a>
+      <a href="/blog/asset-tracking-sapphire.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Real_Estate_Developors.jpeg" alt="Asset Tracking with Sapphire: Real-Time Visibility"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack me-1"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Asset Tracking with Sapphire: Real-Time Visibility</p></div></a>
+      <a href="/blog/sapphire-dashboard.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/schools_universites.jpeg" alt="Sapphire Dashboard Intelligence: Metrics That Matter"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack me-1"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Sapphire Dashboard Intelligence: Metrics That Matter</p></div></a>
+      <a href="/blog/pm-scheduling-sapphire.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Hotels_Guest_Houses.jpeg" alt="Preventive Maintenance Scheduling in Sapphire EAM"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack me-1"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Preventive Maintenance Scheduling in Sapphire EAM</p></div></a>
+      <a href="/blog/document-management-sapphire.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/co-working_&_IT_Park_2.jpeg" alt="Document Management Inside Sapphire EAM"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack me-1"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Document Management Inside Sapphire EAM</p></div></a>
+      <a href="/blog/eam-for-manufacturing.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Fitness_Centers_&_Gym.jpeg" alt="EAM for Manufacturing: Keep the Line Running"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">EAM for Manufacturing: Keep the Line Running</p></div></a>
+      <a href="/blog/facility-management.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/muncipal_departments.png" alt="Facility Management with Sapphire"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Facility Management with Sapphire</p></div></a>
+      <a href="/blog/healthcare-asset-management.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/hospital.jpeg" alt="Healthcare Asset Management: Compliance Meets Efficiency"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Healthcare Asset Management: Compliance Meets Efficiency</p></div></a>
+      <a href="/blog/power-utilities-eam.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/power_generation_unit.png" alt="Power & Utilities: EAM at Enterprise Scale"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Power & Utilities: EAM at Enterprise Scale</p></div></a>
+      <a href="/blog/oil-gas-maintenance.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Transmission_Network.png" alt="Oil & Gas Maintenance Operations and EAM"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Oil & Gas Maintenance Operations and EAM</p></div></a>
+      <a href="/blog/real-estate-eam.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/A_wide_horizontal_is.jpeg" alt="EAM for Real Estate Portfolios"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">EAM for Real Estate Portfolios</p></div></a>
+      <a href="/blog/airport-asset-management.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Airport_Hangars.jpeg" alt="Airport Asset Management: Zero Tolerance for Failure"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Airport Asset Management: Zero Tolerance for Failure</p></div></a>
+    </div>
+
+    <!-- ROW 2 reverse -->
+    <div class="s-mq-row s-mq-row--rev">
+      <a href="/blog/real-time-asset-analytics.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/state-workshops.png" alt="Real-Time Asset Analytics: From Data to Decision"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Real-Time Asset Analytics: From Data to Decision</p></div></a>
+      <a href="/blog/predictive-maintenance-analytics.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Farm_Equipment_Warehouse.png" alt="Predictive Maintenance Analytics with Sapphire Smart"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Predictive Maintenance Analytics with Sapphire Smart</p></div></a>
+      <a href="/blog/oee-tracking.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Cargo_Terminals.jpeg" alt="OEE Tracking: Beyond the Dashboard Number"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">OEE Tracking: Beyond the Dashboard Number</p></div></a>
+      <a href="/blog/kpi-design-eam.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Concert_Hall.jpeg" alt="KPI Design for EAM Programs"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">KPI Design for EAM Programs</p></div></a>
+      <a href="/blog/mtbf.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Logistics_&_Fleet_Operations.png" alt="MTBF: Calculating and Reducing Mean Time Between Failure"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">MTBF: Calculating and Reducing Mean Time Between Failure</p></div></a>
+      <a href="/blog/maintenance-cost-benchmarking.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Water_Supply_Infrastructure.png" alt="Maintenance Cost Benchmarking: Industry Standards"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Maintenance Cost Benchmarking: Industry Standards</p></div></a>
+      <a href="/blog/asset-health-scoring.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Agro_Processing_Unit.jpeg" alt="Asset Health Scoring: A New Framework"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Asset Health Scoring: A New Framework</p></div></a>
+      <a href="/blog/roi-of-eam-software.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Amusement_Parks.jpeg" alt="ROI of EAM Software: A Practical Calculation Guide"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">ROI of EAM Software: A Practical Calculation Guide</p></div></a>
+      <a href="/blog/spreadsheet-maintenance-cost.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Movie_Theaters.jpeg" alt="The Hidden Cost of Spreadsheet-Based Maintenance"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">The Hidden Cost of Spreadsheet-Based Maintenance</p></div></a>
+      <a href="/blog/eam-implementation-failure.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Training_&_Vocational_centers.jpeg" alt="EAM Implementation: Why Most Fail and How Yours Won't"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">EAM Implementation: Why Most Fail and How Yours Won't</p></div></a>
+      <a href="/blog/justifying-eam-csuite.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Clubs_&_Leisure_Facilities.jpeg" alt="Justifying EAM Investment to the C-Suite"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Justifying EAM Investment to the C-Suite</p></div></a>
+      <a href="/blog/maintenance-maturity-model.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Rail Maintenance Units.png" alt="From Reactive to Proactive: The Maintenance Maturity Model"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">From Reactive to Proactive: The Maintenance Maturity Model</p></div></a>
+      <a href="/blog/eam-esg.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Fertilizer_&_Irrigation_depots.png" alt="EAM and ESG: Sustainability Through Asset Intelligence"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">EAM and ESG: Sustainability Through Asset Intelligence</p></div></a>
+      <a href="/blog/eam-vendor-guide.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Disaster_Response_Storage.png" alt="How to Choose Your EAM Vendor: A Buyer's Guide"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">How to Choose Your EAM Vendor: A Buyer's Guide</p></div></a>
+      <a href="/blog/sapphire-2025.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Shipping_Ports_&_Dock.jpeg" alt="Sapphire 2025: What's New and What's Next"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Sapphire 2025: What's New and What's Next</p></div></a>
+      <a href="/blog/scorptech-story.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Restaurants_&_Cafes.jpeg" alt="Built in Jaipur: The Scorptech Story"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Built in Jaipur: The Scorptech Story</p></div></a>
+      <a href="/blog/eam-india-market.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/transporation_agency.jpeg" alt="EAM in India: A Massive Market Coming of Age"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">EAM in India: A Massive Market Coming of Age</p></div></a>
+      <a href="/blog/sapphire-vs-sap-pm.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Relief_Logistics.png" alt="Sapphire vs SAP PM: An Honest Side-by-Side"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Sapphire vs SAP PM: An Honest Side-by-Side</p></div></a>
+      <a href="/blog/ai-in-asset-management.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Ground_support_bays.jpeg" alt="AI in Asset Management: What's Real, What's Hype"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">AI in Asset Management: What's Real, What's Hype</p></div></a>
+      <a href="/blog/customer-spotlight.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Public_Utility_Board.jpeg" alt="Customer Spotlight: Sapphire Deployed in 90 Days"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Customer Spotlight: Sapphire Deployed in 90 Days</p></div></a>
+      <a href="/blog/eam-glossary.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Rescue_Equipment_Depots.png" alt="EAM Glossary: 60 Terms Every Maintenance Manager Must Know"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">EAM Glossary: 60 Terms Every Maintenance Manager Must Know</p></div></a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     SECTION 4 — FOOTER
+     ════════════════════════════════════════════════════════════ -->
+<footer class="s-footer">
+
+  <div class="s-footer__top-strip">
+    <div class="s-footer__status">
+      <span class="s-status-dot"></span>
+      Sapphire is live — all systems operational
+    </div>
+    <div class="s-footer__top-cta">
+      <a href="/contact.html" class="s-btn-sm s-btn-primary s-btn-glare">
+        <i class="fas fa-comments me-1"></i>
+        Talk to our team
+      </a>
+      <a href="/book-demo.html" class="s-btn-sm s-btn-success s-btn-glare">
+        <i class="fas fa-calendar-alt me-1"></i>
+        Book a Demo
+      </a>
+    </div>
+  </div>
+
+  <div class="s-footer__body">
+
+    <div class="s-footer__brand">
+      <a href="/index.html" class="s-footer__logo" style="text-decoration: none;">
+        <div class="s-footer__logomark">
+          <img src="assets/images/Scorp-Logo.png" alt="Scorptech" width="22" height="22" style="filter: brightness(0) invert(1);">
         </div>
+        <span class="s-footer__logoname">SCORP</span>
+      </a>
+      <p class="s-footer__tagline">In the business of making<br><em>yours simple.</em></p>
+      <div class="s-footer__contact">
+        <a href="tel:+919782383338" class="s-footer__contact-item">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 3.5C3 3.224 3.224 3 3.5 3h2.379c.246 0 .46.163.523.402l.754 2.64a.542.542 0 01-.167.567L5.586 7.414c.981 2.016 2.56 3.595 4.576 4.576l.805-.903a.542.542 0 01.567-.167l2.64.754c.239.063.402.277.402.523V14.5c0 .276-.224.5-.5.5C6.044 15 1 9.956 1 3.5z" stroke="currentColor" stroke-width="1.2"/></svg>
+          +91 97823 83338
+        </a>
+        <a href="mailto:support@scorptech.in" class="s-footer__contact-item">
+          <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M1 5l7 5 7-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          support@scorptech.in
+        </a>
+        <a href="/contact.html" class="s-footer__contact-item">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.375 4.5 8.5 4.5 8.5S12.5 9.375 12.5 6c0-2.485-2.015-4.5-4.5-4.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" stroke="currentColor" stroke-width="1.2"/></svg>
+          Jaipur, Rajasthan
+        </a>
+      </div>
+      <span class="s-footer__location">
+        <svg viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1"/><path d="M1.5 6h9M6 1.5a7 7 0 000 9M6 1.5a7 7 0 010 9" stroke="currentColor" stroke-width="0.8"/></svg>
+        Jaipur-built · Deployed globally
+      </span>
+    </div>
 
-        <!-- 3-COLUMN LAYOUT (Desktop) / STACK (Mobile) -->
-        <div class="row g-4 footer-columns-wrapper">
-            
-            <!-- EXPLORE -->
-            <div class="col-12 col-md-4">
-                <div class="footer-section">
-                    <h6>
-                        Explore <i class="fas fa-chevron-down footer-collapse-icon"></i>
-                    </h6>
-                    <ul class="footer-links">
-                        <li><a href="index.html" class="footer-link"><i class="fas fa-home-alt"></i><span>Home</span></a></li>
-                        <li><a href="about.html" class="footer-link"><i class="fas fa-users-line"></i><span>About</span></a></li>
-                        <li><a href="sapphire.html" class="footer-link"><i class="fas fa-diamond"></i><span>Sapphire</span></a></li>
-                    </ul>
-                </div>
-            </div>
+    <div class="s-footer__links">
 
-            <!-- RESOURCES -->
-            <div class="col-12 col-md-4">
-                <div class="footer-section">
-                    <h6>
-                        Resources <i class="fas fa-chevron-down footer-collapse-icon"></i>
-                    </h6>
-                    <ul class="footer-links">
-                        <li><a href="faq.html" class="footer-link"><i class="fas fa-person-circle-question"></i><span>FAQs</span></a></li>
-                        <li><a href="privacy_policy.html" class="footer-link"><i class="fas fa-file-shield"></i><span>Privacy Policy</span></a></li>
-                        <li><a href="terms_of_use.html" class="footer-link"><i class="fas fa-file-contract"></i><span>Terms of Use</span></a></li>
-                    </ul>
-                </div>
-            </div>
+      <div>
+        <span class="s-footer__col-title">Explore</span>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About Scorptech</a></li>
+          <li><a href="/sapphire.html">Sapphire EAM</a></li>
+          <li><a href="/analytics.html">Sapphire Analytics</a></li>
+          <li><a href="/intelligence.html">Sapphire Intelligence</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/book-demo.html">Book a Demo</a></li>
+        </ul>
+      </div>
 
-            <!-- CONTACT -->
-            <div class="col-12 col-md-4">
-                <div class="footer-section">
-                    <h6>
-                        Get in Touch <i class="fas fa-chevron-down footer-collapse-icon"></i>
-                    </h6>
-                    <ul class="footer-links">
-                        <li><a href="tel:+91XXXXXXXXXX" class="footer-link"><i class="fas fa-mobile"></i><span>Phone: +91-9782383338</span></a></li>
-                        <li><a href="mailto:support@scorptech.in" class="footer-link"><i class="fas fa-envelope"></i><span>support@scorptech.in</span></a></li>
-                        <li><a href="contact.html" class="footer-link"><i class="fas fa-phone"></i><span>Contact</span></a></li>
-                    </ul>
-                </div>
+      <div>
+        <span class="s-footer__col-title">Platform</span>
+        <ul>
+          <li><a href="/sapphire.html#work-orders">Work Order Management</a></li>
+          <li><a href="/sapphire.html#inventory">Inventory Control</a></li>
+          <li><a href="/sapphire.html#purchase">Purchase Management</a></li>
+          <li><a href="/sapphire.html#asset-tracking">Asset Tracking</a></li>
+          <li><a href="/sapphire.html#pm-scheduling">PM Scheduling</a></li>
+          <li><a href="/sapphire.html#documents">Document Management</a></li>
+          <li><a href="https://stage.scorptech.in/login" target="_blank" rel="noopener">Log In to Sapphire ↗</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <span class="s-footer__col-title">Resources</span>
+        <ul>
+          <li><a href="/blog/index.html">Knowledge Hub</a></li>
+          <li><a href="/faq.html">FAQs</a></li>
+          <li><a href="/privacy_policy.html">Privacy Policy</a></li>
+          <li><a href="/terms_of_use.html">Terms of Use</a></li>
+          <li><a href="mailto:support@scorptech.in">Support</a></li>
+        </ul>
+      </div>
+
+      <div class="s-footer__blog-section">
+        <div class="s-footer__blog-header">
+          <span class="s-footer__col-title" style="margin-bottom:0;">Knowledge Hub — 42 Articles</span>
+          <a href="/blog/index.html" class="s-view-all" style="font-size:0.72rem;">
+            View all
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <div class="s-blog-categories">
+
+          <details class="s-acc">
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-fundamentals"></span>Fundamentals<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="s-acc__body">
+              <a href="/blog/what-is-eam.html">What Is Enterprise Asset Management?</a>
+              <a href="/blog/eam-vs-erp.html">EAM vs ERP: The Key Difference</a>
+              <a href="/blog/asset-lifecycle-management.html">Asset Lifecycle Management</a>
+              <a href="/blog/preventive-vs-predictive.html">Preventive vs Predictive Maintenance</a>
+              <a href="/blog/maintenance-strategy.html">Building a Maintenance Strategy</a>
+              <a href="/blog/cost-of-downtime.html">The True Cost of Asset Downtime</a>
+              <a href="/blog/iso-55000.html">ISO 55000: The Global Standard</a>
             </div>
+          </details>
+
+          <details class="s-acc">
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-modules"></span>Sapphire Modules<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="s-acc__body">
+              <a href="/blog/sapphire-work-order-management.html">Work Order Management</a>
+              <a href="/blog/inventory-control-sapphire.html">Inventory Control</a>
+              <a href="/blog/sapphire-purchase-module.html">Purchase Module: PO to Payment</a>
+              <a href="/blog/asset-tracking-sapphire.html">Asset Tracking</a>
+              <a href="/blog/sapphire-dashboard.html">Dashboard Intelligence</a>
+              <a href="/blog/pm-scheduling-sapphire.html">PM Scheduling</a>
+              <a href="/blog/document-management-sapphire.html">Document Management</a>
+            </div>
+          </details>
+
+          <details class="s-acc">
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-industries"></span>Industries<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="s-acc__body">
+              <a href="/blog/eam-for-manufacturing.html">Manufacturing</a>
+              <a href="/blog/facility-management.html">Facility Management</a>
+              <a href="/blog/healthcare-asset-management.html">Healthcare</a>
+              <a href="/blog/power-utilities-eam.html">Power & Utilities</a>
+              <a href="/blog/oil-gas-maintenance.html">Oil & Gas</a>
+              <a href="/blog/real-estate-eam.html">Real Estate</a>
+              <a href="/blog/airport-asset-management.html">Aviation & Airports</a>
+            </div>
+          </details>
+
+          <details class="s-acc">
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-analytics"></span>Analytics<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="s-acc__body">
+              <a href="/blog/real-time-asset-analytics.html">Real-Time Asset Analytics</a>
+              <a href="/blog/predictive-maintenance-analytics.html">Predictive Maintenance Analytics</a>
+              <a href="/blog/oee-tracking.html">OEE Tracking</a>
+              <a href="/blog/kpi-design-eam.html">KPI Design for EAM</a>
+              <a href="/blog/mtbf.html">MTBF: Calculating & Reducing</a>
+              <a href="/blog/maintenance-cost-benchmarking.html">Maintenance Cost Benchmarking</a>
+              <a href="/blog/asset-health-scoring.html">Asset Health Scoring</a>
+            </div>
+          </details>
+
+          <details class="s-acc">
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-business"></span>Business Value<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="s-acc__body">
+              <a href="/blog/roi-of-eam-software.html">ROI of EAM Software</a>
+              <a href="/blog/spreadsheet-maintenance-cost.html">The Spreadsheet Trap</a>
+              <a href="/blog/eam-implementation-failure.html">Why EAM Implementations Fail</a>
+              <a href="/blog/justifying-eam-csuite.html">Justifying EAM to the C-Suite</a>
+              <a href="/blog/maintenance-maturity-model.html">Maintenance Maturity Model</a>
+              <a href="/blog/eam-esg.html">EAM and ESG</a>
+              <a href="/blog/eam-vendor-guide.html">EAM Vendor Buyer's Guide</a>
+            </div>
+          </details>
+
+          <details class="s-acc">
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-special"></span>Special Editions<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="s-acc__body">
+              <a href="/blog/sapphire-2025.html">Sapphire 2025: What's New</a>
+              <a href="/blog/scorptech-story.html">Built in Jaipur: Our Story</a>
+              <a href="/blog/eam-india-market.html">EAM in India</a>
+              <a href="/blog/sapphire-vs-sap-pm.html">Sapphire vs SAP PM</a>
+              <a href="/blog/ai-in-asset-management.html">AI in Asset Management</a>
+              <a href="/blog/customer-spotlight.html">Customer Spotlight</a>
+              <a href="/blog/eam-glossary.html">EAM Glossary: 60 Terms</a>
+            </div>
+          </details>
 
         </div>
+      </div>
 
-        <div class="footer-divider"></div>
-
-        <!-- BOTTOM -->
-        <div class="footer-bottom flex-column align-items-center text-center">
-            <p class="footer-copyright mb-3">
-                © 2026 SCORP - Scorptech Technologies Private Limited. All rights reserved.
-            </p>
-            <div class="footer-social justify-content-center">
-                <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="#" class="social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
-            </div>
+    </div>
+  </div>
+<div class="s-footer__social">
+    <div class="row justify-content-center g-3 mb-3">
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-whatsapp" data-coming-soon="WhatsApp" aria-label="WhatsApp" style="text-decoration: none;">
+                <i class="fab fa-whatsapp"></i>
+            </a>
         </div>
-    </footer>
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-linkedin" data-coming-soon="LinkedIn" aria-label="LinkedIn" style="text-decoration: none;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-youtube" data-coming-soon="YouTube" aria-label="YouTube" style="text-decoration: none;">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-instagram" data-coming-soon="Instagram" aria-label="Instagram" style="text-decoration: none;">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+    <div class="row justify-content-center g-3">
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-facebook" data-coming-soon="Facebook" aria-label="Facebook" style="text-decoration: none;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-x" data-coming-soon="X (formerly Twitter)" aria-label="X" style="text-decoration: none;">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-discord" data-coming-soon="Discord" aria-label="Discord" style="text-decoration: none;">
+                <i class="fab fa-discord"></i>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-github" data-coming-soon="GitHub" aria-label="GitHub" style="text-decoration: none;">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </div>
+</div>
+  <div class="s-footer__bottom">
+    <p class="s-footer__copy">© 2026 SCORP — Scorptech Technologies Private Limited. All rights reserved.</p>
+    <div class="s-footer__legal">
+      <a href="/privacy_policy.html">Privacy Policy</a>
+      <a href="/terms_of_use.html">Terms of Use</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div class="s-footer__made">
+      <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.375 4.5 8.5 4.5 8.5S12.5 9.375 12.5 6c0-2.485-2.015-4.5-4.5-4.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" stroke="rgba(143,169,196,0.7)"/></svg>
+      Made with intent in Jaipur
+    </div>
+  </div>
+
+</footer>
 
         <script type="module" src="js/main.js"></script>
         <script type="module" src="js/pages/book-demo.js"></script>

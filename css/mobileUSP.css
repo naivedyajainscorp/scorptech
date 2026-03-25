@@ -1,12 +1,12 @@
 /* ═══════════════════════════════════════════════════════════════
-   MOBILE USP SECTION - EXACT FROM OLD FILE
+   MOBILE USP SECTION - CLEANED & FIXED LINTER ERRORS
    ═══════════════════════════════════════════════════════════════ */
 
+/* Phone Frame Base */
 .phonev2-mockup {
   width: auto;
 }
 
-/* outer phone frame wrapper */
 .phonev2-frame {
   position: relative;
   width: 22.5rem;
@@ -17,7 +17,6 @@
 
 .mobile-usp-section {
   padding: 5rem 0;
-  /* background: linear-gradient(135deg, #f8fafc 0%, #e8f4fd 50%, #dbeafe 100%); */
   min-height: 90vh;
   position: relative;
   overflow: hidden;
@@ -49,7 +48,6 @@
   from {
     transform: translateX(0) translateY(0);
   }
-
   to {
     transform: translateX(-200px) translateY(-150px);
   }
@@ -86,13 +84,6 @@
   color: #1e293b;
   text-shadow: 0 2px 10px rgba(0, 102, 204, 0.1);
 }
-
-
-/* ═══════════════════════════════════════════════════════════════
-   SLIDER COMPONENT (s-slider-) - DEPRECATED
-   REPLACED BY .s-word-rotator (JS-driven)
-   ═══════════════════════════════════════════════════════════════ */
-
 
 .main-subtitle {
   font-size: 1.25rem;
@@ -153,20 +144,15 @@
 }
 
 @keyframes waveMotion {
-
-  0%,
-  100% {
+  0%, 100% {
     transform: translateX(0) translateY(0) rotate(0deg);
   }
-
   25% {
     transform: translateX(8px) translateY(-4px) rotate(0.5deg);
   }
-
   50% {
     transform: translateX(-4px) translateY(8px) rotate(-0.3deg);
   }
-
   75% {
     transform: translateX(-8px) translateY(-8px) rotate(0.3deg);
   }
@@ -429,23 +415,18 @@
 }
 
 @keyframes cardWave {
-
-  0%,
-  100% {
+  0%, 100% {
     transform: translateX(0) translateY(0) rotate(0deg);
     opacity: 0.7;
   }
-
   25% {
     transform: translateX(3px) translateY(-2px) rotate(0.3deg);
     opacity: 1;
   }
-
   50% {
     transform: translateX(-2px) translateY(3px) rotate(-0.2deg);
     opacity: 0.8;
   }
-
   75% {
     transform: translateX(-3px) translateY(-3px) rotate(0.2deg);
     opacity: 1;
@@ -506,4 +487,59 @@
 .mobile-explore-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(0, 102, 204, 0.4);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   UNIFIED MOBILE PHONE TITLE - FIXED LINTER
+   ═══════════════════════════════════════════════════════════════ */
+
+.mobile-phone-title {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(0,102,204,0.9));
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 12px;
+  padding: 0.8rem 1.5rem;
+  color: white;
+  font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+  font-weight: 800;
+  text-align: center;
+  white-space: nowrap;
+  min-width: 80%;
+  max-width: 95%;
+  box-shadow: 0 10px 30px rgba(0,102,204,0.5);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.phonev2-screen:hover .mobile-phone-title,
+.phone-parallax-container.active .mobile-phone-title {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-2px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0,102,204,0.7);
+}
+
+.mobile-phone-title.glow {
+  animation: titleGlow 2s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+  0%, 100% { box-shadow: 0 10px 30px rgba(0,102,204,0.5); }
+  50% { box-shadow: 0 15px 40px rgba(0,102,204,0.8); }
+}
+
+@media (max-width: 768px) {
+  .mobile-phone-title {
+    bottom: 10%;
+    padding: 0.7rem 1.2rem;
+    font-size: clamp(1rem, 4vw, 1.3rem);
+  }
 }

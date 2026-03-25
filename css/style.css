@@ -1816,67 +1816,6 @@
 
 
 
-/* ════════════════════════════════════════════════════════════════════
-   RESPONSIVE DESIGN
-   ════════════════════════════════════════════════════════════════════ */
-
-@media (max-width: 768px) {
-  .s-floating-button {
-    bottom: 1.25rem !important;
-    right: 1.25rem !important;
-  }
-
-  .s-fab-trigger {
-    width: 56px !important;
-    height: 56px !important;
-    font-size: 1.25rem !important;
-  }
-
-  .s-fab-menu {
-    width: calc(100vw - 2.5rem) !important;
-    right: -0.625rem !important;
-  }
-
-  .s-fab-menu-body {
-    max-height: 300px !important;
-  }
-
-  /* ✅ Reduce shadow on mobile */
-  .s-fab-trigger {
-    box-shadow: 0 4px 16px rgba(0, 102, 204, 0.25) !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .s-fab-cta-btn {
-    font-size: 0.75rem !important;
-    padding: 0.5rem !important;
-  }
-
-  .s-fab-cta-btn i {
-    font-size: 1rem !important;
-  }
-
-  /* ✅ Reduce menu width on small screens */
-  .s-fab-menu {
-    width: calc(100vw - 2.5rem) !important;
-  }
-}
-
-/* ════════════════════════════════════════════════════════════════════
-   HIGH-DPI DISPLAYS
-   ════════════════════════════════════════════════════════════════════ */
-
-@media (-webkit-min-device-pixel-ratio: 2),
-(min-resolution: 192dpi) {
-
-  .s-fab-trigger,
-  .s-fab-menu,
-  .s-fab-cta-btn {
-    -webkit-font-smoothing: antialiased !important;
-    -moz-osx-font-smoothing: grayscale !important;
-  }
-}
 
 /* ════════════════════════════════════════════════════════════════════
    ANIMATION PERFORMANCE - Reduce during page scroll
@@ -2588,3 +2527,7 @@ select:focus {
     font-size: 1.25rem;
   }
 }
+
+
+
+
