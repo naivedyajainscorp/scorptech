@@ -2210,6 +2210,15 @@ COUNTRY DROPDOWN LIST (Popup Mode)
   margin: 2rem 0;
 }
 
+/* Pill Rail - Used in Analytics page (without s- prefix for direct targeting) */
+.pill-rail {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 2rem 0;
+  margin: 2rem 0;
+}
+
 .s-pill-track {
   display: flex;
   gap: 1.5rem;
@@ -2218,6 +2227,17 @@ COUNTRY DROPDOWN LIST (Popup Mode)
   align-items: center;
   will-change: transform;
 }
+
+/* Pill Track - Used in Analytics page (without s- prefix for direct targeting) */
+.pill-track {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: nowrap;
+  align-items: center;
+  will-change: transform;
+}
+
+
 
 /* Fade gradients */
 .s-rail-gradient-left,
@@ -2341,6 +2361,13 @@ select:focus {
 /* Adjustment for textareas if needed */
 .s-valid-wrapper:has(textarea.is-valid)::after {
   top: 1.5rem;
+}
+
+/* Special handling for dynamic input fields with remove button */
+.dynamic-input-field:has(.form-control.is-valid)::after {
+  right: auto;
+  left: var(--checkmark-left-pos, 50%);
+  /* Position calculated dynamically by JavaScript */
 }
 
 /* Invalid State */

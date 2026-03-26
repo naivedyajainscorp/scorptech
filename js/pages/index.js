@@ -4,8 +4,26 @@
 
 // ── Import only what this page needs ──
 import { initSmoothScroll } from '../components/NavigationManager.js';
+import { initNetBackgroundWithVideoHide } from '../components/net_bg.js';
 
 console.log('🏠 Index page initialization started');
+
+// ── Initialize Vanta Net Background on Hero Section ──
+initNetBackgroundWithVideoHide('#homeHero', '.hero-video-bg', {
+  color: 0x0066cc,
+  backgroundColor: 0x000000,
+  points: 15,
+  maxDistance: 20,
+  spacing: 15
+}).then(effect => {
+  if (effect) {
+    console.log('✅ Vanta Net background initialized on hero section');
+  } else {
+    console.warn('⚠️ Vanta Net background initialization failed, falling back to video');
+  }
+}).catch(error => {
+  console.error('❌ Error initializing Vanta Net background:', error);
+});
 
 // ── Conditional carousel initialization ──
 // Only loads the carousel module if carousels exist in the HTML

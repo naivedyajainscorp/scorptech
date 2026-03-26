@@ -113,6 +113,31 @@
     --s-bg-medium: var(--s-gray-100);
 
     /* ═══════════════════════════════════════════════════════════════════════════
+       BLOG-SPECIFIC COLORS
+       ═══════════════════════════════════════════════════════════════════════════ */
+    /* Primary accent colors for blog - aligned with core */
+    --s-blog-accent: var(--s-primary);
+    --s-blog-accent-dark: var(--s-primary-dark);
+    
+    /* Custom blog-exclusive colors (no direct core.css match) */
+    --s-blog-accent-pale: #e8f2ff;
+    --s-blog-footer-dark: #0a1628;
+    --s-blog-footer-text: #8898aa;
+    --s-blog-callout-text: #0a2d5c;
+    --s-blog-callout-strong: #003080;
+    --s-blog-gradient-dark: #003d7a;
+    --s-blog-body-text-primary: #303030;
+    --s-blog-body-text-secondary: #2e2e2e;
+    
+    /* Text color aliases - map to closest gray variables */
+    --s-blog-text-1: var(--s-gray-900);
+    --s-blog-text-2: var(--s-gray-600);
+    --s-blog-text-3: var(--s-gray-500);
+    --s-blog-bg: var(--s-white);
+    --s-blog-bg-alt: var(--s-gray-50);
+    --s-blog-border: var(--s-gray-200);
+
+    /* ═══════════════════════════════════════════════════════════════════════════
        GRADIENTS - PRIMARY
        ═══════════════════════════════════════════════════════════════════════════ */
     --s-gradient-primary: linear-gradient(135deg, #0066cc, #3399ff);

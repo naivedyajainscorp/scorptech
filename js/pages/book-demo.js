@@ -4,7 +4,7 @@ document.getElementById("addOtherIndustry").addEventListener("click", function (
   const div = document.createElement("div");
   div.className = "other-industry-row mb-2";
   div.innerHTML = `
-  <div class="d-flex input-group s-valid-wrapper" style="flex-flow:row;">
+  <div class="d-flex input-group s-valid-wrapper dynamic-input-field" style="flex-flow:row;">
     <input type="text" class="form-control text-capitalize otherIndustry" name="otherIndustry[]" placeholder="Specify other industry">
     <button type="button" class="s-btn s-btn-xs s-btn-danger remove-field" title="Remove"><i class="fas fa-times"></i></button>
   </div>
@@ -19,7 +19,7 @@ document.getElementById("addFranchise").addEventListener("click", function () {
   const div = document.createElement("div");
   div.className = "franchise-row mb-2";
   div.innerHTML = `
-  <div class="d-flex input-group s-valid-wrapper" style="flex-flow:row;">
+  <div class="d-flex input-group s-valid-wrapper dynamic-input-field" style="flex-flow:row;">
     <input type="text" class="form-control text-capitalize franchiseBrand" name="franchiseBrand[]" placeholder="Enter brand name">
     <button type="button" class="s-btn s-btn-xs s-btn-danger remove-field" title="Remove"><i class="fas fa-times"></i></button>
   </div>
@@ -445,12 +445,31 @@ function toggleError(field, errorEl, show, fieldKey) {
 
   // Auto-discovery of error element if not provided
   if (!errorEl) {
-    errorEl = field.nextElementSibling;
-    if (!errorEl && field.parentElement.classList.contains('s-valid-wrapper')) {
-      errorEl = field.parentElement.nextElementSibling;
-    }
+    // First, check if there's a special case (phone)
     if (field.id === 'phone-demo') {
       errorEl = document.querySelector(".phone-error");
+      console.log("Phone field - error element:", errorEl ? "found" : "NOT FOUND");
+    } else {
+      // Check if field is inside s-valid-wrapper
+      const wrapper = field.closest(".s-valid-wrapper");
+      if (wrapper) {
+        // Error should be next sibling of the wrapper
+        errorEl = wrapper.nextElementSibling;
+        console.log(`Field ${field.id} wrapper found, error sibling:`, errorEl ? errorEl.className : "NOT FOUND");
+      } else {
+        // Fallback: try the next sibling directly
+        errorEl = field.nextElementSibling;
+        console.log(`No wrapper for ${field.id}, trying next sibling:`, errorEl ? errorEl.className : "NOT FOUND");
+      }
+      
+      // If still not found, search for error messages with common classes
+      if (!errorEl) {
+        const parentContainer = field.closest(".mb-3") || field.closest(".form-group");
+        if (parentContainer) {
+          errorEl = parentContainer.querySelector(".invalid-feedback, .custom-error-message, .phone-error");
+          console.log(`${field.id} - searching parent container:`, errorEl ? "found" : "NOT FOUND");
+        }
+      }
     }
   }
 
@@ -463,10 +482,13 @@ function toggleError(field, errorEl, show, fieldKey) {
       itiContainer.classList.add("is-invalid");
       itiContainer.classList.remove("is-valid");
     }
-    if (errorEl && (errorEl.classList.contains('invalid-feedback') || errorEl.classList.contains('phone-error') || errorEl.classList.contains('custom-error-message'))) {
+    if (errorEl) {
       errorEl.classList.remove("d-none");
       errorEl.style.display = "block";
       errorEl.classList.add("active-error");
+      console.log(`✅ Error shown for ${field.id}:`, errorEl.textContent.substring(0, 50));
+    } else {
+      console.log(`⚠️ ERROR: No error element found for ${field.id}`);
     }
 
     if (fieldKey && !hasShaken[fieldKey]) {
@@ -481,14 +503,54 @@ function toggleError(field, errorEl, show, fieldKey) {
       itiContainer.classList.remove("is-invalid");
       itiContainer.classList.add("is-valid");
     }
-    if (errorEl && (errorEl.classList.contains('invalid-feedback') || errorEl.classList.contains('phone-error') || errorEl.classList.contains('custom-error-message'))) {
+    if (errorEl) {
       errorEl.classList.add("d-none");
       errorEl.style.display = "none";
       errorEl.classList.remove("active-error");
     }
     if (fieldKey) hasShaken[fieldKey] = false;
   }
+  
+  // For dynamic fields, calculate checkmark position based on actual dimensions
+  if (field.classList.contains('otherIndustry') || field.classList.contains('franchiseBrand')) {
+    setTimeout(() => {
+      const wrapper = field.closest('.dynamic-input-field');
+      if (wrapper) {
+        calculateCheckmarkPosition(wrapper);
+      }
+    }, 0);
+  }
 }
+
+// ********************************************
+// 📍 Dynamic Checkmark Position Calculator    *
+// ********************************************
+function calculateCheckmarkPosition(wrapper) {
+  const input = wrapper.querySelector('.form-control');
+  const button = wrapper.querySelector('.s-btn');
+  
+  if (!input || !button) return;
+  
+  const inputRect = input.getBoundingClientRect();
+  const buttonRect = button.getBoundingClientRect();
+  const wrapperRect = wrapper.getBoundingClientRect();
+  
+  // Calculate the center point between the end of input and start of button
+  const inputEnd = inputRect.right - wrapperRect.left;
+  const buttonStart = buttonRect.left - wrapperRect.left;
+  const centerPos = (inputEnd + buttonStart) / 2;
+  
+  // Set CSS variable for checkmark position with checkmark width offset
+  const checkmarkLeftPos = `calc(${centerPos}px - 1.5rem)`;
+  wrapper.style.setProperty('--checkmark-left-pos', checkmarkLeftPos);
+}
+
+// Recalculate on window resize for responsiveness
+window.addEventListener('resize', () => {
+  document.querySelectorAll('.dynamic-input-field:has(.form-control.is-valid)').forEach(wrapper => {
+    calculateCheckmarkPosition(wrapper);
+  });
+});
 
 // ********************************************
 //     REAL-TIME VALIDATION FOR BASIC FIELDS  *
@@ -727,14 +789,15 @@ if (demoForm) {
     if (isSubmitting) return;
 
     let valid = true;
-
+    console.log("🔥 Form submission started, validating...");
 
     // 🧪 Name
     const nameField = document.getElementById("name-demo");
     const namePattern = /^[A-Za-zÀ-ÿ'.\-\s]{3,}$/;
     if (nameField) {
       if (!namePattern.test(nameField.value.trim())) {
-        toggleError(nameField, nameField.nextElementSibling.classList.contains('invalid-feedback') ? nameField.nextElementSibling : nameField.parentElement.nextElementSibling, true, 'name');
+        console.log("❌ Name validation failed:", nameField.value);
+        toggleError(nameField, null, true, 'name');
         valid = false;
       } else {
         toggleError(nameField, null, false, 'name');
@@ -746,7 +809,7 @@ if (demoForm) {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (emailField) {
       if (!emailPattern.test(emailField.value.trim())) {
-        toggleError(emailField, emailField.nextElementSibling.classList.contains('invalid-feedback') ? emailField.nextElementSibling : emailField.parentElement.nextElementSibling, true, 'email');
+        toggleError(emailField, null, true, 'email');
         valid = false;
       } else {
         toggleError(emailField, null, false, 'email');
@@ -758,7 +821,7 @@ if (demoForm) {
     const phonePattern = /^[6-9]\d{9}$/;
     if (phoneField) {
       if (!phonePattern.test(phoneField.value.trim())) {
-        toggleError(phoneField, document.querySelector(".phone-error"), true, 'phone');
+        toggleError(phoneField, null, true, 'phone');
         valid = false;
       } else {
         toggleError(phoneField, null, false, 'phone');
@@ -769,7 +832,7 @@ if (demoForm) {
     const orgField = document.getElementById("organization-demo");
     if (orgField) {
       if (!namePattern.test(orgField.value.trim())) {
-        toggleError(orgField, orgField.nextElementSibling.classList.contains('invalid-feedback') ? orgField.nextElementSibling : orgField.parentElement.nextElementSibling, true, 'organization');
+        toggleError(orgField, null, true, 'organization');
         valid = false;
       } else {
         toggleError(orgField, null, false, 'organization');
@@ -781,7 +844,7 @@ if (demoForm) {
     if (messageField) {
       const wordCount = messageField.value.trim().split(/\s+/).filter(w => w.length > 0).length;
       if (wordCount > 0 && wordCount < 3) {
-        toggleError(messageField, messageField.nextElementSibling.classList.contains('invalid-feedback') ? messageField.nextElementSibling : messageField.parentElement.nextElementSibling, true, 'message');
+        toggleError(messageField, null, true, 'message');
         valid = false;
       } else if (wordCount >= 3) {
         toggleError(messageField, null, false, 'message');
@@ -794,7 +857,7 @@ if (demoForm) {
       const field = document.getElementById(id);
       if (field) {
         if (!field.value.trim()) {
-          toggleError(field, field.nextElementSibling.classList.contains('invalid-feedback') ? field.nextElementSibling : field.parentElement.nextElementSibling, true, id);
+          toggleError(field, null, true, id);
           valid = false;
         } else {
           toggleError(field, null, false, id);
@@ -893,16 +956,52 @@ if (demoForm) {
     }
 
     if (!valid) {
+      console.log("❌ Form has validation errors. Invalid elements:", document.querySelectorAll(".is-invalid").length);
+      
+      // Force a browser reflow to ensure all DOM changes are rendered
+      document.body.offsetHeight;
+      
+      // Small delay to ensure all error classes have been applied
       setTimeout(() => {
-        const firstErrorInput = [...document.querySelectorAll(".is-invalid")]
-          .find(el => el.offsetParent !== null);
-        if (firstErrorInput) {
-          const scrollTarget = firstErrorInput.closest(".other-industry-row, .franchise-row") || firstErrorInput;
-          scrollTarget.scrollIntoView({ behavior: "smooth", block: "center" });
-          const focusInput = scrollTarget.querySelector("input, textarea, select") || firstErrorInput;
-          focusInput?.focus();
+        // Find ALL elements with is-invalid class
+        const allInvalidElements = Array.from(document.querySelectorAll(".is-invalid"));
+        console.log("📍 Found invalid elements:", allInvalidElements.length);
+        
+        if (allInvalidElements.length > 0) {
+          // Get first visible invalid input/field
+          let firstErrorElement = null;
+          for (let el of allInvalidElements) {
+            console.log("Checking element:", el.id || el.className, "visible:", el.offsetParent !== null);
+            if (el.offsetParent !== null) { // Check if element is visible
+              firstErrorElement = el;
+              break;
+            }
+          }
+          
+          if (firstErrorElement) {
+            console.log("🎯 Scrolling to:", firstErrorElement.id);
+            // Scroll to the input field's parent wrapper or the error element above
+            const wrapper = firstErrorElement.closest(".demo-form-card") || firstErrorElement.closest(".mb-3") || firstErrorElement.parentElement;
+            
+            if (wrapper) {
+              wrapper.scrollIntoView({ behavior: "smooth", block: "start" });
+            } else {
+              firstErrorElement.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+            
+            // Try to focus on the input
+            if (firstErrorElement.tagName === "INPUT" || firstErrorElement.tagName === "TEXTAREA" || firstErrorElement.tagName === "SELECT") {
+              setTimeout(() => {
+                firstErrorElement.focus();
+                console.log("✅ Focused on:", firstErrorElement.id);
+              }, 300);
+            }
+          } else {
+            console.log("⚠️ No visible invalid elements found");
+          }
         }
-      }, 100);
+      }, 0);
+      
       return;
     }
 

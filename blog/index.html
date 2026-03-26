@@ -13,69 +13,6 @@
     <link rel="stylesheet" href="../css/components.css">
     <link rel="stylesheet" href="../css/utilities.css">
     <link rel="stylesheet" href="../style.css">
-    <style>
-        /* Blog Index Custom Styles */
-        .s-hero-blog {
-            position: relative;
-            background: url('../assets/images/mesh-hero-bg-3.jpg') no-repeat center center;
-            background-size: cover;
-            min-height: 500px;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-        }
-        .s-hero-blog::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.7));
-            z-index: 1;
-        }
-        .s-hero-blog .container {
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Card Decoration & Alignment */
-        .s-pic-card {
-            display: flex;
-            flex-direction: column;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .s-pic-card-content {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .s-pic-card-text {
-            flex-grow: 1;
-        }
-        .s-pic-card-action {
-            margin-top: auto;
-            padding-top: 1.5rem;
-        }
-
-        /* Pill Badge Placement & Hover Fix */
-        .s-pic-card-img {
-            position: relative;
-        }
-        .s-pic-card-img-badge {
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-            z-index: 10;
-            pointer-events: none; /* Allows hover on card even if over badge */
-        }
-        .s-pic-card-img-badge .s-pill {
-            pointer-events: auto; /* Re-enable for the pill itself if needed */
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            backdrop-filter: blur(8px);
-        }
-        
-        .s-pic-card:hover .s-pic-card-img img {
-            transform: scale(1.05);
-        }
-    </style>
 </head>
 <body data-theme="light">
 
