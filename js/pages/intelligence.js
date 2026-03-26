@@ -741,5 +741,43 @@ if (snav && snavStart && snavEnd) {
   }, { threshold: 0.07 });
   document.querySelectorAll('.intel-reveal').forEach(el => revealObs.observe(el));
 
+  /* ═══════════════════════════════════════════════════════════════
+     AUTO-CALIBRATE CAPTION HEIGHT — Uniform across all rings
+  ═══════════════════════════════════════════════════════════════ */
+  function autoCalibreateCaptionHeight() {
+    const captions = document.querySelectorAll('.intel-anim-caption');
+    if (!captions.length) return;
+
+    let maxHeight = 0;
+
+    // Measure all captions to find the tallest one
+    captions.forEach(cap => {
+      // Temporarily set min-height to auto to get natural height
+      const savedMinHeight = cap.style.minHeight;
+      cap.style.minHeight = 'auto';
+      const naturalHeight = cap.offsetHeight;
+      maxHeight = Math.max(maxHeight, naturalHeight);
+      cap.style.minHeight = savedMinHeight;
+    });
+
+    // Add 10px buffer to ensure content never clips
+    const finalHeight = maxHeight + 10;
+
+    // Apply uniform height to all captions
+    captions.forEach(cap => {
+      cap.style.minHeight = finalHeight + 'px';
+    });
+
+    console.log(`[Scorptech] Caption height auto-calibrated to ${finalHeight}px`);
+  }
+
+  // Run calibration after a short delay to ensure DOM is fully rendered
+  setTimeout(autoCalibreateCaptionHeight, 200);
+
+  // Re-calibrate on window resize in case layout changes
+  window.addEventListener('resize', () => {
+    setTimeout(autoCalibreateCaptionHeight, 100);
+  }, { passive: true });
+
   console.log('[Scorptech] Intelligence page ready — v3.0');
 }

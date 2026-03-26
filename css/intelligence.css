@@ -316,9 +316,13 @@
     font-size: 0.82rem;
     color: var(--s-gray-600);
     line-height: 1.55;
-    min-height: 60px;
+    min-height: 110px;
     transition: opacity 0.3s ease;
     font-family: Verdana, sans-serif;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    text-align: justify;
 }
 
 
