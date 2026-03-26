@@ -20,818 +20,1587 @@
   <meta name="robots" content="index, follow">
   <meta name="author" content="Scorptech Technologies Private Limited">
   <link rel="icon" type="image/png" href="assets/images/scorp-logo-favicon.png">
+
+  <!-- CSS Dependencies -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://cdn.lordicon.com/lordicon.js"></script>
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ================================================================
+       INDEX PAGE — LAYOUT STYLES  (ix- prefix = index-exclusive)
+       ALL color / spacing / radius values use SCORP design tokens.
+       Zero overrides of existing classes.
+       ================================================================ */
+
+    /* ── HERO ─────────────────────────────────────────────────────── */
+    .ix-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--s-gray-50);
+    }
+
+    #ix-vanta {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    /* Directional scrim: text side is opaque, canvas side breathes */
+    .ix-hero-scrim {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(
+        105deg,
+        rgba(248, 250, 252, 0.93) 0%,
+        rgba(255, 255, 255, 0.78) 42%,
+        rgba(240, 249, 255, 0.30) 70%,
+        transparent 100%
+      );
+      pointer-events: none;
+    }
+
+    .ix-hero-inner {
+      position: relative;
+      z-index: 2;
+      padding-top: 7.5rem;
+      padding-bottom: 5rem;
+      width: 100%;
+    }
+
+    .ix-headline {
+      font-family: 'Science Gothic', sans-serif;
+      font-size: clamp(3rem, 6.5vw, 6.8rem);
+      font-weight: 900;
+      font-style: italic;
+      line-height: 0.88;
+      letter-spacing: -0.025em;
+      color: var(--s-gray-900);
+      margin: 0 0 var(--s-space-6) 0;
+    }
+
+    .ix-hl-block {
+      display: block;
+      overflow: hidden;
+    }
+
+    .ix-hl-gradient {
+      display: block;
+      background: var(--s-gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      padding-right: 0.15em;
+      margin-right: -0.15em;
+    }
+
+    .ix-hero-lead {
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
+      color: var(--s-gray-600);
+      max-width: 520px;
+      line-height: var(--s-leading-relaxed);
+      margin-bottom: var(--s-space-8);
+    }
+
+    .ix-hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: var(--s-space-8);
+    }
+
+    .ix-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.38rem;
+      padding: 0.3rem 0.8rem;
+      background: rgba(0, 102, 204, 0.07);
+      color: var(--s-primary);
+      border: 1px solid rgba(0, 102, 204, 0.16);
+      border-radius: var(--s-radius-full);
+      font-size: var(--s-text-xs);
+      font-weight: var(--s-font-semibold);
+      letter-spacing: 0.02em;
+      transition: var(--s-transition-fast);
+    }
+
+    .ix-chip:hover {
+      background: rgba(0, 102, 204, 0.14);
+      border-color: var(--s-primary);
+    }
+
+    .ix-scroll-cue {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--s-gray-400);
+      font-size: var(--s-text-sm);
+      margin-top: var(--s-space-10);
+    }
+
+    .ix-scroll-cue-arrow {
+      display: flex;
+      width: 28px;
+      height: 28px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--s-gray-300);
+      border-radius: 50%;
+      animation: ix-cue-bounce 2.4s ease-in-out infinite;
+    }
+
+    @keyframes ix-cue-bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(5px); }
+    }
+
+    /* ── MANIFESTO ───────────────────────────────────────────────── */
+    /* Height set by JS: numStatements * 100vh */
+    .ix-manifesto {
+      position: relative;
+    }
+
+    .ix-manifesto-sticky {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--s-gray-900);
+      isolation: isolate;
+    }
+
+    .ix-mf-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      background-size: 72px 72px;
+      pointer-events: none;
+    }
+
+    .ix-mf-glow {
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 102, 204, 0.16) 0%, transparent 65%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    /* Each statement is absolute, centered by GSAP */
+    .ix-statement {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      /* GSAP sets: xPercent:-50, yPercent:-50, opacity:0, y:40 */
+      width: calc(100% - 4rem);
+      max-width: 880px;
+      text-align: center;
+      will-change: transform, opacity;
+    }
+
+    .ix-stmt-num {
+      display: block;
+      font-family: 'Science Gothic', sans-serif;
+      font-size: clamp(0.75rem, 1.5vw, 1rem);
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--s-primary);
+      margin-bottom: 2rem;
+      opacity: 0.65;
+    }
+
+    .ix-stmt-line {
+      display: block;
+      font-family: 'Science Gothic', sans-serif;
+      font-size: clamp(2rem, 5vw, 4.8rem);
+      font-weight: 900;
+      font-style: italic;
+      line-height: 1.02;
+      color: var(--s-white);
+      margin-bottom: 0.08em;
+    }
+
+    .ix-stmt-line.muted {
+      color: rgba(255, 255, 255, 0.42);
+      font-size: clamp(1.5rem, 3.5vw, 3.4rem);
+    }
+
+    .ix-stmt-sub {
+      display: block;
+      font-size: var(--s-text-sm);
+      color: rgba(255, 255, 255, 0.35);
+      margin-top: 2rem;
+      letter-spacing: 0.08em;
+      font-weight: var(--s-font-medium);
+    }
+
+    /* Progress dots */
+    .ix-mf-dots {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.55rem;
+      z-index: 3;
+    }
+
+    .ix-mfdot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.18);
+      transition: all 0.35s ease;
+    }
+
+    .ix-mfdot.active {
+      background: var(--s-primary);
+      width: 22px;
+      border-radius: 3px;
+    }
+
+    /* Slide counter */
+    .ix-mf-counter {
+      position: absolute;
+      bottom: 2.4rem;
+      right: 3rem;
+      font-size: var(--s-text-xs);
+      color: rgba(255, 255, 255, 0.25);
+      font-family: 'Science Gothic', sans-serif;
+      font-style: italic;
+      z-index: 3;
+    }
+
+    /* ── PILLARS ─────────────────────────────────────────────────── */
+    .ix-pillars {
+      padding: 7rem 0;
+      background: var(--s-white);
+      overflow: hidden;
+    }
+
+    .ix-pillar-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── TRUST BAR ───────────────────────────────────────────────── */
+    .ix-trust {
+      padding: 2rem 0;
+      background: var(--s-gray-50);
+      border-top: 1px solid var(--s-gray-200);
+      border-bottom: 1px solid var(--s-gray-200);
+      overflow: hidden;
+    }
+
+    .ix-trust-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: var(--s-text-xs);
+      font-weight: var(--s-font-semibold);
+      color: var(--s-gray-600);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      padding: 0 2.5rem;
+    }
+
+    .ix-trust-sep {
+      display: inline-block;
+      width: 1px;
+      height: 14px;
+      background: var(--s-gray-300);
+      flex-shrink: 0;
+    }
+
+    /* ── INDUSTRY TICKER ─────────────────────────────────────────── */
+    .ix-ticker-section {
+      padding: 5rem 0 6rem;
+      background: var(--s-gray-50);
+    }
+
+    .ix-ticker-label {
+      text-align: center;
+      font-size: var(--s-text-xs);
+      font-weight: var(--s-font-bold);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--s-gray-400);
+      margin-bottom: 2rem;
+    }
+
+    .ix-industry-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.55rem 1.1rem;
+      background: var(--s-white);
+      border: 1px solid var(--s-gray-200);
+      border-radius: var(--s-radius-full);
+      font-size: var(--s-text-sm);
+      font-weight: var(--s-font-semibold);
+      color: var(--s-gray-700);
+      white-space: nowrap;
+      box-shadow: var(--s-shadow-xs);
+      flex-shrink: 0;
+    }
+
+    /* ── SAPPHIRE TEASER ─────────────────────────────────────────── */
+    .ix-teaser {
+      padding: 7rem 0;
+      background: var(--s-white);
+    }
+
+    .ix-teaser-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    /* Dark mock UI window */
+    .ix-mock-ui {
+      position: relative;
+      background: linear-gradient(148deg, #0f172a 0%, #1e293b 100%);
+      border-radius: var(--s-radius-2xl);
+      padding: 1.75rem;
+      box-shadow:
+        0 60px 120px rgba(0, 0, 0, 0.35),
+        0 20px 40px rgba(0, 0, 0, 0.20),
+        0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+      overflow: hidden;
+    }
+
+    /* Ambient glow inside the mock */
+    .ix-mock-ui::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(0, 102, 204, 0.28) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    /* Window chrome (traffic lights) */
+    .ix-mock-chrome {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .ix-mock-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .ix-mock-dot:nth-child(1) { background: #ff5f57; }
+    .ix-mock-dot:nth-child(2) { background: #febc2e; }
+    .ix-mock-dot:nth-child(3) { background: #28c840; }
+
+    .ix-mock-url-bar {
+      flex: 1;
+      height: 7px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      margin-left: 0.75rem;
+    }
+
+    /* Main dashboard body */
+    .ix-mock-body {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: var(--s-radius-lg);
+      padding: 1.25rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .ix-mock-kpis {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.65rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .ix-kpi-card {
+      background: rgba(0, 102, 204, 0.13);
+      border: 1px solid rgba(0, 102, 204, 0.22);
+      border-radius: var(--s-radius-md);
+      padding: 0.85rem 0.65rem;
+      text-align: center;
+    }
+
+    .ix-kpi-val {
+      font-family: 'Science Gothic', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 900;
+      font-style: italic;
+      color: var(--s-primary-light);
+      line-height: 1;
+      display: block;
+    }
+
+    .ix-kpi-lbl {
+      font-size: 0.58rem;
+      color: rgba(255, 255, 255, 0.38);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.25rem;
+      display: block;
+    }
+
+    .ix-mock-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      margin-bottom: 1rem;
+    }
+
+    .ix-mock-row {
+      height: 9px;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .ix-mock-row.accent {
+      background: linear-gradient(90deg, rgba(0, 102, 204, 0.55) 0%, rgba(0, 102, 204, 0.08) 100%);
+    }
+
+    .ix-mock-row.w80 { width: 80%; }
+    .ix-mock-row.w65 { width: 65%; }
+    .ix-mock-row.w48 { width: 48%; }
+
+    /* Animated bar chart */
+    .ix-mock-chart {
+      display: flex;
+      align-items: flex-end;
+      gap: 0.35rem;
+      height: 52px;
+      padding-top: 0.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .ix-mock-bar {
+      flex: 1;
+      border-radius: 3px 3px 0 0;
+      background: rgba(0, 102, 204, 0.22);
+      animation: ix-bar-pulse 3s ease-in-out infinite;
+    }
+
+    .ix-mock-bar:nth-child(2) { background: rgba(0, 102, 204, 0.38); animation-delay: 0.4s; }
+    .ix-mock-bar:nth-child(3) { background: rgba(0, 102, 204, 0.28); animation-delay: 0.8s; }
+    .ix-mock-bar:nth-child(4) { background: rgba(0, 102, 204, 0.48); animation-delay: 0.2s; }
+    .ix-mock-bar:nth-child(5) { background: rgba(0, 102, 204, 0.32); animation-delay: 1.0s; }
+    .ix-mock-bar:nth-child(6) { background: rgba(0, 102, 204, 0.18); animation-delay: 0.6s; }
+    .ix-mock-bar:nth-child(7) { background: rgba(0, 102, 204, 0.44); animation-delay: 0.3s; }
+
+    @keyframes ix-bar-pulse {
+      0%, 100% { opacity: 0.7; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.08); transform-origin: bottom; }
+    }
+
+    /* Floating badge on mock UI */
+    .ix-mock-badge {
+      position: absolute;
+      bottom: -1rem;
+      left: -1rem;
+      background: var(--s-white);
+      border-radius: var(--s-radius-lg);
+      padding: 0.75rem 1.1rem;
+      box-shadow: var(--s-shadow-xl);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border: 1px solid var(--s-gray-200);
+      z-index: 5;
+      animation: ix-badge-float 4s ease-in-out infinite;
+    }
+
+    @keyframes ix-badge-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .ix-badge-stat {
+      font-family: 'Science Gothic', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 900;
+      font-style: italic;
+      color: var(--s-success);
+      line-height: 1;
+    }
+
+    .ix-badge-lbl {
+      font-size: var(--s-text-xs);
+      color: var(--s-gray-500);
+      font-weight: var(--s-font-medium);
+      line-height: 1.3;
+    }
+
+    /* ── STATS ───────────────────────────────────────────────────── */
+    .ix-stats {
+      padding: 6rem 0;
+      background: var(--s-gray-900);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ix-stats::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0, 102, 204, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 204, 0.07) 1px, transparent 1px);
+      background-size: 64px 64px;
+      pointer-events: none;
+    }
+
+    .ix-stats-glow {
+      position: absolute;
+      width: 900px;
+      height: 500px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(ellipse, rgba(0, 102, 204, 0.22) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .ix-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      position: relative;
+      z-index: 1;
+    }
+
+    .ix-stat-item {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      border-right: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .ix-stat-item:last-child { border-right: none; }
+
+    .ix-stat-number {
+      font-family: 'Science Gothic', sans-serif;
+      font-size: clamp(3rem, 5.5vw, 5.5rem);
+      font-weight: 900;
+      font-style: italic;
+      color: var(--s-white);
+      line-height: 1;
+      display: block;
+    }
+
+    .ix-stat-suffix {
+      color: var(--s-primary-light);
+    }
+
+    .ix-stat-label {
+      font-size: var(--s-text-xs);
+      color: rgba(255, 255, 255, 0.42);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: var(--s-font-semibold);
+      margin-top: 0.6rem;
+      display: block;
+    }
+
+    /* ── SECTION SPACER OVERRIDES ────────────────────────────────── */
+    .ix-section-header { margin-bottom: 4rem; }
+
+    /* ── RESPONSIVE ──────────────────────────────────────────────── */
+    @media (max-width: 1200px) {
+      .ix-teaser-grid { gap: 3.5rem; }
+    }
+
+    @media (max-width: 992px) {
+      .ix-teaser-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .ix-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .ix-stat-item:nth-child(2) { border-right: none; }
+      .ix-stat-item:nth-child(3) {
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+        border-right: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .ix-stat-item:nth-child(4) { border-top: 1px solid rgba(255, 255, 255, 0.07); }
+    }
+
+    @media (max-width: 768px) {
+      .ix-hero-inner { padding-top: 6.5rem; }
+
+      .ix-headline {
+        font-size: clamp(2.6rem, 10vw, 4.5rem);
+        line-height: 0.92;
+      }
+
+      .ix-stmt-line { font-size: clamp(1.7rem, 7vw, 3.2rem); }
+      .ix-stmt-line.muted { font-size: clamp(1.3rem, 5.5vw, 2.4rem); }
+
+      .ix-mock-kpis { gap: 0.5rem; }
+
+      .ix-mf-counter { display: none; }
+    }
+
+    @media (max-width: 576px) {
+      .ix-stats-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .ix-stat-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        padding: 2rem 1rem;
+      }
+
+      .ix-stat-item:last-child { border-bottom: none; }
+
+      .ix-mock-badge { display: none; }
+    }
+  </style>
 </head>
 <body>
-  
-<!-- ═══════════════════════════════════════════════════════════════
-     SCORP NAVIGATION 
-     ═══════════════════════════════════════════════════════════════ -->
+
+<!-- ════════════════════════════════════════════════════════════════
+     NAVIGATION — EXACT, UNCHANGED
+     ════════════════════════════════════════════════════════════════ -->
 <nav class="navbar navbar-expand-xl s-navbar" id="scorpNavbar">
-    
-    <!-- Brand -->
-    <a class="navbar-brand s-navbar-brand" href="index.html">
-      <div class="s-brand-logo">
-        <img src="assets/images/Scorp-Logo.png" alt="Scorptech" width="24" height="24" style="filter: brightness(0) invert(1);">
-      </div>
-      <span class="s-brand-text">SCORP</span>
-    </a>
-
-    <!-- Animated Hamburger Toggle -->
-    <button class="navbar-toggler s-mobile-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="s-hamburger-box">
-        <span class="s-hamburger-inner"></span>
-      </span>
-    </button>
-
-    <!-- Collapsible Content -->
-    <div class="collapse navbar-collapse" id="navbarContent">
-      <ul class="navbar-nav ms-auto s-nav-links">
-        
-        <!-- Home -->
-        <li class="nav-item">
-          <a class="nav-link s-nav-link" href="index.html">
-            <i class="fas fa-home-alt"></i>
-            <span>Home</span>
-          </a>
-        </li>
-
-        <!-- Sapphire -->
-        <li class="nav-item">
-          <a class="nav-link s-nav-link" href="sapphire.html">
-            <i class="fas fa-diamond"></i>
-            <span>Sapphire</span>
-          </a>
-        </li>
-
-        <!-- Contact -->
-        <li class="nav-item">
-          <a class="nav-link s-nav-link" href="contact.html">
-            <i class="bi bi-telephone-outbound-fill"></i>
-            <span>Contact</span>
-          </a>
-        </li>
-
-        <!-- About -->
-        <li class="nav-item">
-          <a class="nav-link s-nav-link" href="about.html">
-            <i class="fas fa-users-line"></i>
-            <span>About</span>
-          </a>
-        </li>
-
-
-
-        <!-- Resources Dropdown (Internal Pages) -->
-        <li class="nav-item dropdown s-nav-dropdown-internal">
-          <a class="nav-link s-nav-link dropdown-toggle" 
-             href="#" 
-             role="button" 
-             data-bs-toggle="dropdown" 
-             aria-expanded="false"
-             data-dropdown-id="resources">
-            <i class="bi bi-grid-3x3-gap-fill"></i>
-            <span>Resources</span>
-            <!-- Active Indicator Badge -->
-            <span class="s-active-badge"></span>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end s-internal-dropdown-menu">
-            <li>
-              <a class="dropdown-item s-internal-menu-item" href="faq.html" data-page="faq.html">
-                <i class="fas fa-circle-question"></i>
-                <span>FAQ</span>
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item s-internal-menu-item" href="terms_of_use.html" data-page="terms_of_use.html">
-                <i class="fas fa-file-contract"></i>
-                <span>Terms of Use</span>
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item s-internal-menu-item" href="privacy_policy.html" data-page="privacy_policy.html">
-                <i class="fas fa-file-shield"></i>
-                <span>Privacy Policy</span>
-              </a>
-            </li>
-          </ul>
-        </li>
-
-        <!-- Announcement Icon -->
-        <li class="nav-item">
-          <a class="nav-link s-nav-link s-nav-link-icon" href="announcement.html" title="Announcements">
-            <i class="fa-solid fa-bullhorn fa-rotate-by" style="--fa-rotate-angle: 325deg;"></i>
-          </a>
-        </li>
-
-        <!-- Book Demo Button (Green Styled) -->
-<li class="nav-item">
-  <a class="book-demo-button" href="book-demo.html">
-    <i class="bi bi-calendar-check-fill"></i>
-    <span><strong>Book Demo</strong></span>
-  </a>
-</li>
-
-
-        <!-- Go to Sapphire Dropdown (External Links - Blue Styled) -->
-        <li class="nav-item dropdown s-sapphire-dropdown">
-          <button class="btn s-sapphire-trigger dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-            <span>go to</span>
-            <div class="s-sapphire-logo">
-              <img src="assets/images/scorp-sapphire-cropped.png" alt="Sapphire" width="32" height="32" style="border-radius: 4px;">
-            </div>
-            <span><strong>Sapphire</strong></span>
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end s-sapphire-menu">
-            <li>
-              <a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/login" target="_blank">
-                <i class="bi bi-door-open-fill"></i>
-                <span>Log-in</span>
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/register" target="_blank">
-                <i class="bi bi-person-plus-fill"></i>
-                <span>Sign-up</span>
-              </a>
-            </li>
-          </ul>
-        </li>
-
-      </ul>
+  <a class="navbar-brand s-navbar-brand" href="index.html">
+    <div class="s-brand-logo">
+      <img src="assets/images/Scorp-Logo.png" alt="Scorptech" width="24" height="24" style="filter: brightness(0) invert(1);">
     </div>
+    <span class="s-brand-text">SCORP</span>
+  </a>
+
+  <button class="navbar-toggler s-mobile-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="s-hamburger-box">
+      <span class="s-hamburger-inner"></span>
+    </span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarContent">
+    <ul class="navbar-nav ms-auto s-nav-links">
+
+      <li class="nav-item">
+        <a class="nav-link s-nav-link active" href="index.html">
+          <i class="fas fa-home-alt"></i>
+          <span>Home</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link s-nav-link" href="sapphire.html">
+          <i class="fas fa-diamond"></i>
+          <span>Sapphire</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link s-nav-link" href="contact.html">
+          <i class="bi bi-telephone-outbound-fill"></i>
+          <span>Contact</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link s-nav-link" href="about.html">
+          <i class="fas fa-users-line"></i>
+          <span>About</span>
+        </a>
+      </li>
+
+      <li class="nav-item dropdown s-nav-dropdown-internal">
+        <a class="nav-link s-nav-link dropdown-toggle" href="#" role="button"
+           data-bs-toggle="dropdown" aria-expanded="false" data-dropdown-id="resources">
+          <i class="bi bi-grid-3x3-gap-fill"></i>
+          <span>Resources</span>
+          <span class="s-active-badge"></span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end s-internal-dropdown-menu">
+          <li>
+            <a class="dropdown-item s-internal-menu-item" href="faq.html" data-page="faq.html">
+              <i class="fas fa-circle-question"></i>
+              <span>FAQ</span>
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item s-internal-menu-item" href="terms_of_use.html" data-page="terms_of_use.html">
+              <i class="fas fa-file-contract"></i>
+              <span>Terms of Use</span>
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item s-internal-menu-item" href="privacy_policy.html" data-page="privacy_policy.html">
+              <i class="fas fa-file-shield"></i>
+              <span>Privacy Policy</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link s-nav-link s-nav-link-icon" href="announcement.html" title="Announcements">
+          <i class="fa-solid fa-bullhorn fa-rotate-by" style="--fa-rotate-angle: 325deg;"></i>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="book-demo-button" href="book-demo.html">
+          <i class="bi bi-calendar-check-fill"></i>
+          <span><strong>Book Demo</strong></span>
+        </a>
+      </li>
+
+      <li class="nav-item dropdown s-sapphire-dropdown">
+        <button class="btn s-sapphire-trigger dropdown-toggle" type="button"
+                data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+          <span>go to</span>
+          <div class="s-sapphire-logo">
+            <img src="assets/images/scorp-sapphire-cropped.png" alt="Sapphire" width="32" height="32" style="border-radius: 4px;">
+          </div>
+          <span><strong>Sapphire</strong></span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end s-sapphire-menu">
+          <li>
+            <a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/login" target="_blank">
+              <i class="bi bi-door-open-fill"></i>
+              <span>Log-in</span>
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/register" target="_blank">
+              <i class="bi bi-person-plus-fill"></i>
+              <span>Sign-up</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+  </div>
 </nav>
 
-  <!-- SECTION 2: HERO -->
-  <section id="hero" class="hero">
-    <div class="hero-content">
-      <div class="hero-eyebrow">Enterprise Asset Management</div>
-      <h1 class="hero-headline">In the business of making yours <span class="accent">SIMPLE</span></h1>
-      <p class="hero-lead">At SCORP, we design enterprise applications to simplify business operations. Our flagship ERP solution, Sapphire, adapts to your workflows—so your teams can focus on what matters most.</p>
-      <div class="hero-ctas">
-        <a href="#cta" class="cta-primary">Book a Demo</a>
-        <a href="sapphire.html" class="cta-secondary">Explore Sapphire</a>
-      </div>
-      <div class="scroll-indicator">↓ Scroll to discover</div>
-    </div>
-  </section>
 
-  <!-- SECTION 3: MANIFESTO (Pinned Bold Statements) -->
-  <section class="manifesto">
-    <div class="manifesto-container">
-      <div class="statement active" data-statement="1">
-        <span class="statement-number">01</span>
-        <div class="statement-line">Spreadsheets don't run factories.</div>
-        <div class="statement-line">People do.</div>
-      </div>
-      <div class="statement" data-statement="2">
-        <span class="statement-number">02</span>
-        <div class="statement-line">Your data lives in 14 tabs.</div>
-        <div class="statement-line">That's not control.</div>
-      </div>
-      <div class="statement" data-statement="3">
-        <span class="statement-number">03</span>
-        <div class="statement-line">Technology should elevate</div>
-        <div class="statement-line">operations — not complicate them.</div>
-      </div>
-      <!-- Add 7 more statements here once you provide them -->
-      <div class="statement" data-statement="4">
-        <span class="statement-number">04</span>
-        <div class="statement-line">Most systems are built to impress.</div>
-        <div class="statement-line">We built ours to endure.</div>
-      </div>
-      <!-- ... up to 10 total -->
-    </div>
-  </section>
+<!-- ════════════════════════════════════════════════════════════════
+     HERO — Vanta NET background
+     ════════════════════════════════════════════════════════════════ -->
+<section class="ix-hero" id="ix-hero-section">
+  <div id="ix-vanta"></div>
+  <div class="ix-hero-scrim"></div>
 
-  <!-- SECTION 4: FOUR PILLARS -->
-  <section class="pillars">
-    <div class="container">
-      <h2>Why SCORP?</h2>
-      <p class="section-lead">The SCORP Belief: Technology should elevate operations — not complicate them. That belief shapes everything we build.</p>
-      <div class="pillars-grid">
-        <div class="pillar-card">
-          <div class="pillar-icon">🎯</div>
-          <h3>Effortless to Use</h3>
-          <p>Good software doesn't explain itself. It makes sense instantly.</p>
+  <div class="ix-hero-inner container">
+    <div class="row">
+      <div class="col-lg-7 col-xl-6">
+
+        <!-- Badge -->
+        <div class="mb-4" id="ix-badge">
+          <span class="s-hero-badge">
+            <i class="fas fa-award me-2"></i>
+            DPIIT Recognised &nbsp;·&nbsp; EAM Software, India
+          </span>
         </div>
-        <div class="pillar-card">
-          <div class="pillar-icon">⚡</div>
-          <h3>Quick to Implement</h3>
-          <p>We don't bend your business into a rigid template. We study it. Respect it. Then build around it.</p>
+
+        <!-- Headline -->
+        <h1 class="ix-headline" id="ix-headline">
+          <span class="ix-hl-block">Built to make</span>
+          <span class="ix-hl-block">enterprise</span>
+          <span class="ix-hl-gradient">simple.</span>
+        </h1>
+
+        <!-- Lead -->
+        <p class="ix-hero-lead" id="ix-lead">
+          At SCORP, we design enterprise applications that respect how your operations actually work.
+          Sapphire — our flagship EAM — adapts to your workflows so your teams can focus on what matters.
+        </p>
+
+        <!-- Feature chips -->
+        <div class="ix-hero-chips" id="ix-chips">
+          <span class="ix-chip"><i class="fas fa-bolt"></i> Fast Implementation</span>
+          <span class="ix-chip"><i class="fas fa-cloud"></i> 100% Cloud</span>
+          <span class="ix-chip"><i class="fas fa-headset"></i> 24/7 Support</span>
+          <span class="ix-chip"><i class="fas fa-layer-group"></i> 9 Core Modules</span>
+          <span class="ix-chip"><i class="fas fa-industry"></i> 20+ Industries</span>
+          <span class="ix-chip"><i class="fas fa-shield-halved"></i> DPIIT Recognised</span>
         </div>
-        <div class="pillar-card">
-          <div class="pillar-icon">📈</div>
-          <h3>Continuously Evolving</h3>
-          <p>Stagnant software ages fast. We listen. We refine. We sharpen.</p>
+
+        <!-- CTAs -->
+        <div class="s-hero-actions" id="ix-ctas" style="justify-content: flex-start;">
+          <a href="book-demo.html" class="s-btn s-btn-success s-btn-glare">
+            <i class="bi bi-calendar-check-fill me-2"></i>
+            Book a Demo
+          </a>
+          <a href="sapphire.html" class="s-btn s-btn-primary-soft">
+            <i class="fas fa-diamond me-2"></i>
+            Explore Sapphire
+          </a>
         </div>
-        <div class="pillar-card">
-          <div class="pillar-icon">🏭</div>
-          <h3>Built for the Real World</h3>
-          <p>Sapphire is engineered for real deadlines, real pressure, real accountability.</p>
+
+        <!-- Scroll cue -->
+        <div class="ix-scroll-cue mt-5" id="ix-scroll-cue">
+          <span class="ix-scroll-cue-arrow"><i class="fas fa-arrow-down" style="font-size: 0.7rem;"></i></span>
+          <span>Scroll to discover</span>
         </div>
+
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- SECTION 5: INDUSTRY TICKER + SAPPHIRE TEASER -->
-  <section class="industry-teaser">
-    <div class="container">
-      <!-- Industry Ticker -->
-      <div class="industry-ticker">
-        <span>Aviation</span>
-        <span>Healthcare</span>
-        <span>Ports</span>
-        <span>Pharma</span>
-        <span>Logistics</span>
-        <span>Government</span>
-        <span>BFSI</span>
-        <span>Agriculture</span>
-        <span>Hospitality</span>
-        <span>Power</span>
-        <!-- Loop these infinitely -->
-      </div>
-      
-      <!-- Sapphire Teaser -->
-      <div class="sapphire-teaser">
-        <div class="teaser-content">
-          <h2>Sapphire</h2>
-          <p>One platform. Every asset. Zero chaos. Built to adapt to your workflows, not the other way around.</p>
-          <a href="sapphire.html" class="cta-secondary">Explore Sapphire →</a>
-        </div>
-        <div class="teaser-visual">
-          <!-- Placeholder for product screenshot/UI mockup -->
-          <div class="mock-dashboard">Sapphire Dashboard Preview</div>
-        </div>
-      </div>
+
+<!-- ════════════════════════════════════════════════════════════════
+     TRUST BAR — social proof strip
+     ════════════════════════════════════════════════════════════════ -->
+<div class="ix-trust">
+  <div data-infinite-scroll="left" data-speed="slow" style="overflow: hidden;">
+    <div data-infinite-track style="display: flex; align-items: center; width: max-content;">
+      <!-- Set 1 -->
+      <span class="ix-trust-item"><i class="fas fa-award" style="color: var(--s-amber-500);"></i> DPIIT Recognised Startup</span>
+      <span class="ix-trust-sep"></span>
+      <span class="ix-trust-item"><i class="fas fa-cloud-check" style="color: var(--s-primary);"></i> 100% Cloud Native</span>
+      <span class="ix-trust-sep"></span>
+      <span class="ix-trust-item"><i class="fas fa-headset" style="color: var(--s-success);"></i> 24/7 Dedicated Support</span>
+      <span class="ix-trust-sep"></span>
+      <span class="ix-trust-item"><i class="fas fa-shield-check" style="color: var(--s-royal);"></i> Enterprise Grade Security</span>
+      <span class="ix-trust-sep"></span>
+      <span class="ix-trust-item"><i class="fas fa-bolt" style="color: var(--s-amber-500);"></i> Go Live in Days</span>
+      <span class="ix-trust-sep"></span>
+      <span class="ix-trust-item"><i class="fas fa-map-marker-alt" style="color: var(--s-attention);"></i> Made in Jaipur, India</span>
+      <span class="ix-trust-sep"></span>
+      <span class="ix-trust-item"><i class="fas fa-layer-group" style="color: var(--s-primary);"></i> 9 Core Modules</span>
+      <span class="ix-trust-sep"></span>
+      <!-- Set 2 (duplicate for seamless loop) -->
+      <span class="ix-trust-item"><i class="fas fa-award" style="color: var(--s-amber-500);"></i> DPIIT Recognised Startup</span>
+      <span class="ix-trust-sep"></span>
+      <span class="ix-trust-item"><i class="fas fa-cloud-check" style="color: var(--s-primary);"></i> 100% Cloud Native</span>
+      <span class="ix-trust-sep"></span>
+      <span class="ix-trust-item"><i class="fas fa-headset" style="color: var(--s-success);"></i> 24/7 Dedicated Support</span>
+      <span class="ix-trust-sep"></span>
+      <span class="ix-trust-item"><i class="fas fa-shield-check" style="color: var(--s-royal);"></i> Enterprise Grade Security</span>
+      <span class="ix-trust-sep"></span>
+      <span class="ix-trust-item"><i class="fas fa-bolt" style="color: var(--s-amber-500);"></i> Go Live in Days</span>
+      <span class="ix-trust-sep"></span>
+      <span class="ix-trust-item"><i class="fas fa-map-marker-alt" style="color: var(--s-attention);"></i> Made in Jaipur, India</span>
+      <span class="ix-trust-sep"></span>
+      <span class="ix-trust-item"><i class="fas fa-layer-group" style="color: var(--s-primary);"></i> 9 Core Modules</span>
+      <span class="ix-trust-sep"></span>
     </div>
-  </section>
+  </div>
+</div>
 
-  <!-- SECTION 6: STATS BAR -->
-  <section class="stats">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat">
-          <div class="stat-number" data-target="20">0</div>
-          <div class="stat-label">+ Industries</div>
-        </div>
-        <div class="stat">
-          <div class="stat-number" data-target="8">0</div>
-          <div class="stat-label">Core Modules</div>
-        </div>
-        <div class="stat">
-          <div class="stat-number" data-target="100">0</div>
-          <div class="stat-label">% Cloud SLA</div>
-        </div>
-        <div class="stat">
-          <div class="stat-number" data-target="24">0</div>
-          <div class="stat-label">/7 Support</div>
-        </div>
-      </div>
+
+<!-- ════════════════════════════════════════════════════════════════
+     MANIFESTO — pinned scroll, 5 bold statements
+     ════════════════════════════════════════════════════════════════ -->
+<section class="ix-manifesto" id="ix-manifesto">
+  <div class="ix-manifesto-sticky">
+    <div class="ix-mf-grid"></div>
+    <div class="ix-mf-glow"></div>
+
+    <!-- Statements — GSAP will position + animate these -->
+    <div class="ix-statement" data-index="0">
+      <span class="ix-stmt-num">— 01 / 05 —</span>
+      <span class="ix-stmt-line">Spreadsheets</span>
+      <span class="ix-stmt-line">don't run factories.</span>
+      <span class="ix-stmt-line muted">People do.</span>
     </div>
-  </section>
 
-  <!-- ════════════════════════════════════════════════════════════
-       SECTION 1 — CTA
-       ════════════════════════════════════════════════════════════ -->
-  <section class="s-cta">
+    <div class="ix-statement" data-index="1">
+      <span class="ix-stmt-num">— 02 / 05 —</span>
+      <span class="ix-stmt-line">Your data lives in 14 tabs.</span>
+      <span class="ix-stmt-line muted">That's not control — that's chaos.</span>
+    </div>
 
-    <svg class="s-cta__accent s-cta__accent--tl" width="80" height="80" viewBox="0 0 80 80" fill="none">
-      <path d="M1 79 L1 1 L79 1" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
-      <rect x="1" y="1" width="10" height="10" fill="rgba(255,255,255,0.12)"/>
-    </svg>
-    <svg class="s-cta__accent s-cta__accent--br" width="80" height="80" viewBox="0 0 80 80" fill="none">
-      <path d="M1 79 L1 1 L79 1" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
-      <rect x="1" y="1" width="10" height="10" fill="rgba(255,255,255,0.12)"/>
-    </svg>
+    <div class="ix-statement" data-index="2">
+      <span class="ix-stmt-num">— 03 / 05 —</span>
+      <span class="ix-stmt-line">Technology should simplify</span>
+      <span class="ix-stmt-line">your operations.</span>
+      <span class="ix-stmt-line muted">Not replace your judgment.</span>
+    </div>
 
-    <div class="s-cta__inner">
-      <p class="s-eyebrow">Came this far... to manage chaos?</p>
-      <h2 class="s-cta__headline">
-        CHAOS ENDS<br>
-        <span>CONTROL BEGINS</span><br>HERE!
+    <div class="ix-statement" data-index="3">
+      <span class="ix-stmt-num">— 04 / 05 —</span>
+      <span class="ix-stmt-line">Most systems are built</span>
+      <span class="ix-stmt-line muted">to impress.</span>
+      <span class="ix-stmt-line">Ours is built to endure.</span>
+    </div>
+
+    <div class="ix-statement" data-index="4">
+      <span class="ix-stmt-num">— 05 / 05 —</span>
+      <span class="ix-stmt-line">One platform.</span>
+      <span class="ix-stmt-line">Every asset.</span>
+      <span class="ix-stmt-line muted">Zero chaos.</span>
+      <span class="ix-stmt-sub">That's Sapphire by SCORP.</span>
+    </div>
+
+    <!-- Progress dots -->
+    <div class="ix-mf-dots" id="ix-mf-dots">
+      <span class="ix-mfdot active"></span>
+      <span class="ix-mfdot"></span>
+      <span class="ix-mfdot"></span>
+      <span class="ix-mfdot"></span>
+      <span class="ix-mfdot"></span>
+    </div>
+
+    <!-- Slide counter -->
+    <div class="ix-mf-counter" id="ix-mf-counter">01 / 05</div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════════
+     PILLARS — Why SCORP?
+     ════════════════════════════════════════════════════════════════ -->
+<section class="ix-pillars">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="s-section-header ix-section-header" id="ix-pillars-header">
+      <span class="s-section-badge">The SCORP Belief</span>
+      <h2 class="s-section-title">
+        Why SCORP?
       </h2>
-      <p class="s-cta__sub">
-        Sapphire adapts to your workflows — not the other way around.
-        Real operations. Real deadlines. Real accountability.
+      <p class="s-section-subtitle">
+        Technology should elevate operations — not complicate them.
+        That belief shapes every line of code we write.
       </p>
-      <div class="s-cta__actions">
-        <a href="book-demo.html" class="s-btn s-btn-success s-btn-glare s-full-width-btn">
-          <i class="bi bi-collection-play-fill me-2"></i>
-          <span>Book a Demo</span>
-        </a>
-        
-        <a href="contact.html" class="s-btn s-btn-secondary s-btn-glare s-full-width-btn">
-          <i class="bi bi-telephone-outbound-fill me-2"></i>
-          <span>Talk to Our Team</span>
-        </a>
-      </div>
-      <div class="s-cta__pills">
-        <a href="/sapphire.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">Sapphire</a>
-        <a href="/intelligence.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">Intelligence</a>
-        <a href="/analytics.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">Analytics</a>
-        <a href="/blog/index.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">Knowledge Hub</a>
-        <a href="/about.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">About</a>
-        <a href="/faq.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">FAQs</a>
-      </div>
     </div>
-  </section>
 
-  <!-- ════════════════════════════════════════════════════════════
-       SECTION 2 — FEATURED BLOG CARDS
-       ════════════════════════════════════════════════════════════ -->
-  <section class="s-blogs-featured">
-    <div class="s-wrap">
-      <div class="s-section-intro">
-        <div class="s-section-intro__text">
-          <p class="s-eyebrow">From the Knowledge Hub</p>
-          <h2>EAM intelligence. <em>All of it.</em></h2>
+    <div class="row g-4">
+
+      <div class="col-sm-6 col-lg-3 ix-pillar-col">
+        <div class="s-card ix-pillar-card p-4">
+          <div class="s-card-header justify-content-center mb-4">
+            <div class="s-icon s-icon-lg s-icon-primary">
+              <i class="fas fa-wand-magic-sparkles"></i>
+            </div>
+          </div>
+          <div class="s-card-body text-center">
+            <h5 class="s-card-title">Effortless to Use</h5>
+            <p class="mb-0">Good software doesn't explain itself. It makes sense instantly — from the shop floor to the boardroom.</p>
+          </div>
         </div>
-        <a href="/blog/index.html" class="s-view-all">
-          View all 42 articles
-          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
       </div>
 
-  <div class="s-blog-grid">
-
-    <!-- Card 1 — Hero -->
-    <a href="/blog/what-is-eam.html" class="s-full-pic-card">
-      <img src="assets/images_industries/manufacturing_factory.jpeg" alt="EAM Fundamentals" class="s-full-pic-card__img">
-      <div class="s-full-pic-card__content">
-        <div class="s-full-pic-card__meta">
-          <span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm">
-            <i class="fa-solid fa-book-open me-1"></i>Fundamentals
-          </span>
-          <p class="s-full-pic-card__title">What Is Enterprise Asset Management? A Complete Guide</p>
-        </div>
-        <div class="s-full-pic-card__bar">
-          <span class="s-full-pic-card__read">8 min read</span>
-          <span class="s-full-pic-card__cta">
-            Read article 
-            <svg viewBox="0 0 16 16" fill="none">
-              <path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
+      <div class="col-sm-6 col-lg-3 ix-pillar-col">
+        <div class="s-card ix-pillar-card p-4">
+          <div class="s-card-header justify-content-center mb-4">
+            <div class="s-icon s-icon-lg s-icon-amber">
+              <i class="fas fa-bolt"></i>
+            </div>
+          </div>
+          <div class="s-card-body text-center">
+            <h5 class="s-card-title">Quick to Implement</h5>
+            <p class="mb-0">We don't bend your business into a rigid template. We study it, respect it, then build around it.</p>
+          </div>
         </div>
       </div>
-    </a>
 
-    <!-- Card 2 -->
-    <a href="/blog/sapphire-work-order-management.html" class="s-full-pic-card">
-      <img src="assets/images_industries/Corporate_Offices.jpeg" alt="Sapphire Modules" class="s-full-pic-card__img">
-      <div class="s-full-pic-card__content">
-        <div class="s-full-pic-card__meta">
-          <span class="s-pill s-pill-sm s-pill-info s-pill-round-sm">
-            <i class="bi bi-window-stack me-1"></i>Modules
-          </span>
-          <p class="s-full-pic-card__title">Sapphire Work Order Management: A Complete Deep Dive</p>
-        </div>
-        <div class="s-full-pic-card__bar">
-          <span class="s-full-pic-card__read">12 min read</span>
-          <span class="s-full-pic-card__cta">
-            Read article 
-            <svg viewBox="0 0 16 16" fill="none">
-              <path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
+      <div class="col-sm-6 col-lg-3 ix-pillar-col">
+        <div class="s-card ix-pillar-card p-4">
+          <div class="s-card-header justify-content-center mb-4">
+            <div class="s-icon s-icon-lg s-icon-success">
+              <i class="fas fa-arrow-trend-up"></i>
+            </div>
+          </div>
+          <div class="s-card-body text-center">
+            <h5 class="s-card-title">Continuously Evolving</h5>
+            <p class="mb-0">Stagnant software ages fast. We listen to real operators, refine continuously, and sharpen over time.</p>
+          </div>
         </div>
       </div>
-    </a>
 
-    <!-- Card 3 -->
-    <a href="/blog/eam-for-manufacturing.html" class="s-full-pic-card">
-      <img src="assets/images_industries/automotive_service_station.jpeg" alt="EAM Industries" class="s-full-pic-card__img">
-      <div class="s-full-pic-card__content">
-        <div class="s-full-pic-card__meta">
-          <span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm">
-            <i class="fa-solid fa-industry me-1"></i>Industries
-          </span>
-          <p class="s-full-pic-card__title">EAM for Manufacturing: Keep the Line Running</p>
-        </div>
-        <div class="s-full-pic-card__bar">
-          <span class="s-full-pic-card__read">10 min read</span>
-          <span class="s-full-pic-card__cta">
-            Read article 
-            <svg viewBox="0 0 16 16" fill="none">
-              <path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
+      <div class="col-sm-6 col-lg-3 ix-pillar-col">
+        <div class="s-card ix-pillar-card p-4">
+          <div class="s-card-header justify-content-center mb-4">
+            <div class="s-icon s-icon-lg s-icon-royal">
+              <i class="fas fa-industry"></i>
+            </div>
+          </div>
+          <div class="s-card-body text-center">
+            <h5 class="s-card-title">Built for Real World</h5>
+            <p class="mb-0">Sapphire is engineered for real deadlines, real pressure, and real accountability — not demo environments.</p>
+          </div>
         </div>
       </div>
-    </a>
 
-    <!-- Card 4 -->
-    <a href="/blog/real-time-asset-analytics.html" class="s-full-pic-card">
-      <img src="assets/images_industries/warehouse.jpeg" alt="Asset Analytics" class="s-full-pic-card__img">
-      <div class="s-full-pic-card__content">
-        <div class="s-full-pic-card__meta">
-          <span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm">
-            <i class="fa-solid fa-chart-line me-1"></i>Analytics
-          </span>
-          <p class="s-full-pic-card__title">Real-Time Asset Analytics: From Data to Decision</p>
-        </div>
-        <div class="s-full-pic-card__bar">
-          <span class="s-full-pic-card__read">7 min read</span>
-          <span class="s-full-pic-card__cta">
-            Read article 
-            <svg viewBox="0 0 16 16" fill="none">
-              <path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-        </div>
-      </div>
-    </a>
+    </div>
+  </div>
+</section>
 
-    <!-- Card 5 -->
-    <a href="/blog/roi-of-eam-software.html" class="s-full-pic-card">
-      <img src="assets/images_industries/hospital.jpeg" alt="Business Value" class="s-full-pic-card__img">
-      <div class="s-full-pic-card__content">
-        <div class="s-full-pic-card__meta">
-          <span class="s-pill s-pill-sm s-pill-success s-pill-round-sm">
-            <i class="fa-solid fa-money-bill-wave me-1"></i>Business Value
-          </span>
-          <p class="s-full-pic-card__title">ROI of EAM Software: A Practical Calculation Guide</p>
-        </div>
-        <div class="s-full-pic-card__bar">
-          <span class="s-full-pic-card__read">9 min read</span>
-          <span class="s-full-pic-card__cta">
-            Read article 
-            <svg viewBox="0 0 16 16" fill="none">
-              <path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-        </div>
-      </div>
-    </a>
 
+<!-- ════════════════════════════════════════════════════════════════
+     INDUSTRY TICKER — infinite marquee
+     ════════════════════════════════════════════════════════════════ -->
+<section class="ix-ticker-section">
+  <div class="container">
+    <div class="s-section-header ix-section-header mb-0" id="ix-ticker-header">
+      <span class="s-section-badge">20+ Verticals</span>
+      <h2 class="s-section-title">Industries We Serve</h2>
+      <p class="s-section-subtitle mb-4">
+        From aviation to agri, Sapphire adapts to the complexity of your sector — not the other way around.
+      </p>
+    </div>
   </div>
 
+  <!-- Row 1 — left -->
+  <div data-infinite-scroll="left" data-speed="normal" style="overflow: hidden; margin-bottom: 0.85rem;">
+    <div data-infinite-track style="display: flex; gap: 0.85rem; width: max-content; padding: 0.25rem 0;">
+      <span class="ix-industry-item"><i class="fas fa-plane" style="color: var(--s-primary);"></i> Aviation</span>
+      <span class="ix-industry-item"><i class="fas fa-hospital" style="color: var(--s-danger);"></i> Healthcare</span>
+      <span class="ix-industry-item"><i class="fas fa-ship" style="color: var(--s-info);"></i> Ports &amp; Logistics</span>
+      <span class="ix-industry-item"><i class="fas fa-flask" style="color: var(--s-success);"></i> Pharma</span>
+      <span class="ix-industry-item"><i class="fas fa-landmark" style="color: var(--s-amber-600);"></i> Government</span>
+      <span class="ix-industry-item"><i class="fas fa-university" style="color: var(--s-royal);"></i> BFSI</span>
+      <span class="ix-industry-item"><i class="fas fa-tractor" style="color: var(--s-success);"></i> Agriculture</span>
+      <span class="ix-industry-item"><i class="fas fa-bed" style="color: var(--s-pop);"></i> Hospitality</span>
+      <span class="ix-industry-item"><i class="fas fa-bolt" style="color: var(--s-amber-500);"></i> Power &amp; Utilities</span>
+      <span class="ix-industry-item"><i class="fas fa-truck" style="color: var(--s-attention);"></i> Transport</span>
+      <!-- Duplicate -->
+      <span class="ix-industry-item"><i class="fas fa-plane" style="color: var(--s-primary);"></i> Aviation</span>
+      <span class="ix-industry-item"><i class="fas fa-hospital" style="color: var(--s-danger);"></i> Healthcare</span>
+      <span class="ix-industry-item"><i class="fas fa-ship" style="color: var(--s-info);"></i> Ports &amp; Logistics</span>
+      <span class="ix-industry-item"><i class="fas fa-flask" style="color: var(--s-success);"></i> Pharma</span>
+      <span class="ix-industry-item"><i class="fas fa-landmark" style="color: var(--s-amber-600);"></i> Government</span>
+      <span class="ix-industry-item"><i class="fas fa-university" style="color: var(--s-royal);"></i> BFSI</span>
+      <span class="ix-industry-item"><i class="fas fa-tractor" style="color: var(--s-success);"></i> Agriculture</span>
+      <span class="ix-industry-item"><i class="fas fa-bed" style="color: var(--s-pop);"></i> Hospitality</span>
+      <span class="ix-industry-item"><i class="fas fa-bolt" style="color: var(--s-amber-500);"></i> Power &amp; Utilities</span>
+      <span class="ix-industry-item"><i class="fas fa-truck" style="color: var(--s-attention);"></i> Transport</span>
     </div>
-  </section>
+  </div>
 
-
-  <!-- ════════════════════════════════════════════════════════════
-       SECTION 3 — MARQUEE BLOGS
-       ════════════════════════════════════════════════════════════ -->
-  <section class="s-marquee-section">
-
-    <div class="s-marquee-rule"><hr></div>
-
-    <div class="s-marquee-top">
-      <p><strong>42</strong> deep-dive articles across <strong>6</strong> pillars — no filler, ever.</p>
-      <a href="/blog/index.html" class="s-view-all">
-        Browse the full Knowledge Hub
-        <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
+  <!-- Row 2 — right (reverse) -->
+  <div data-infinite-scroll="right" data-speed="normal" style="overflow: hidden;">
+    <div data-infinite-track style="display: flex; gap: 0.85rem; width: max-content; padding: 0.25rem 0;">
+      <span class="ix-industry-item"><i class="fas fa-cog" style="color: var(--s-gray-600);"></i> Manufacturing</span>
+      <span class="ix-industry-item"><i class="fas fa-oil-can" style="color: var(--s-amber-700);"></i> Oil &amp; Gas</span>
+      <span class="ix-industry-item"><i class="fas fa-building" style="color: var(--s-primary);"></i> Real Estate</span>
+      <span class="ix-industry-item"><i class="fas fa-graduation-cap" style="color: var(--s-royal);"></i> Education</span>
+      <span class="ix-industry-item"><i class="fas fa-satellite" style="color: var(--s-info);"></i> Telecom</span>
+      <span class="ix-industry-item"><i class="fas fa-hard-hat" style="color: var(--s-amber-500);"></i> Construction</span>
+      <span class="ix-industry-item"><i class="fas fa-shopping-cart" style="color: var(--s-success);"></i> Retail</span>
+      <span class="ix-industry-item"><i class="fas fa-recycle" style="color: var(--s-teal-600);"></i> Waste Management</span>
+      <span class="ix-industry-item"><i class="fas fa-water" style="color: var(--s-info);"></i> Water &amp; Sanitation</span>
+      <span class="ix-industry-item"><i class="fas fa-shield-alt" style="color: var(--s-danger);"></i> Defence</span>
+      <!-- Duplicate -->
+      <span class="ix-industry-item"><i class="fas fa-cog" style="color: var(--s-gray-600);"></i> Manufacturing</span>
+      <span class="ix-industry-item"><i class="fas fa-oil-can" style="color: var(--s-amber-700);"></i> Oil &amp; Gas</span>
+      <span class="ix-industry-item"><i class="fas fa-building" style="color: var(--s-primary);"></i> Real Estate</span>
+      <span class="ix-industry-item"><i class="fas fa-graduation-cap" style="color: var(--s-royal);"></i> Education</span>
+      <span class="ix-industry-item"><i class="fas fa-satellite" style="color: var(--s-info);"></i> Telecom</span>
+      <span class="ix-industry-item"><i class="fas fa-hard-hat" style="color: var(--s-amber-500);"></i> Construction</span>
+      <span class="ix-industry-item"><i class="fas fa-shopping-cart" style="color: var(--s-success);"></i> Retail</span>
+      <span class="ix-industry-item"><i class="fas fa-recycle" style="color: var(--s-teal-600);"></i> Waste Management</span>
+      <span class="ix-industry-item"><i class="fas fa-water" style="color: var(--s-info);"></i> Water &amp; Sanitation</span>
+      <span class="ix-industry-item"><i class="fas fa-shield-alt" style="color: var(--s-danger);"></i> Defence</span>
     </div>
+  </div>
+</section>
 
-    <div class="s-marquee-wrap">
 
-      <!-- ROW 1 forward -->
-      <div class="s-mq-row s-mq-row--fwd">
-        <a href="/blog/what-is-eam.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/manufacturing_factory.jpeg" alt="What Is Enterprise Asset Management? A Complete Guide"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">What Is Enterprise Asset Management? A Complete Guide</p></div></a>
-        <a href="/blog/eam-vs-erp.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/automotive_service_station.jpeg" alt="EAM vs ERP: The Key Difference Explained"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">EAM vs ERP: The Key Difference Explained</p></div></a>
-        <a href="/blog/asset-lifecycle-management.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/construction.jpeg" alt="Asset Lifecycle Management: From Acquisition to Disposal"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Asset Lifecycle Management: From Acquisition to Disposal</p></div></a>
-        <a href="/blog/preventive-vs-predictive.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/warehouse.jpeg" alt="Preventive vs Predictive Maintenance: Which Is Right?"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Preventive vs Predictive Maintenance: Which Is Right?</p></div></a>
-        <a href="/blog/maintenance-strategy.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/hospital.jpeg" alt="Building a Maintenance Strategy from Zero"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Building a Maintenance Strategy from Zero</p></div></a>
-        <a href="/blog/cost-of-downtime.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/diagnostic_center.jpeg" alt="The True Cost of Asset Downtime"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">The True Cost of Asset Downtime</p></div></a>
-        <a href="/blog/iso-55000.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/research_test_laoratories.jpeg" alt="ISO 55000: The Global Standard for Asset Management"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">ISO 55000: The Global Standard for Asset Management</p></div></a>
-        <a href="/blog/sapphire-work-order-management.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Corporate_Offices.jpeg" alt="Sapphire Work Order Management: A Complete Deep Dive"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack me-1"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Sapphire Work Order Management: A Complete Deep Dive</p></div></a>
-        <a href="/blog/inventory-control-sapphire.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/coworkingITpark.png" alt="Inventory Control in Sapphire: Zero Dead Stock"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack me-1"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Inventory Control in Sapphire: Zero Dead Stock</p></div></a>
-        <a href="/blog/sapphire-purchase-module.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Retail_Chains_&_Shopping_malls.jpeg" alt="Sapphire Purchase Module: From PO to Payment"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack me-1"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Sapphire Purchase Module: From PO to Payment</p></div></a>
-        <a href="/blog/asset-tracking-sapphire.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Real_Estate_Developors.jpeg" alt="Asset Tracking with Sapphire: Real-Time Visibility"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack me-1"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Asset Tracking with Sapphire: Real-Time Visibility</p></div></a>
-        <a href="/blog/sapphire-dashboard.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/schools_universites.jpeg" alt="Sapphire Dashboard Intelligence: Metrics That Matter"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack me-1"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Sapphire Dashboard Intelligence: Metrics That Matter</p></div></a>
-        <a href="/blog/pm-scheduling-sapphire.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Hotels_Guest_Houses.jpeg" alt="Preventive Maintenance Scheduling in Sapphire EAM"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack me-1"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Preventive Maintenance Scheduling in Sapphire EAM</p></div></a>
-        <a href="/blog/document-management-sapphire.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/co-working_&_IT_Park_2.jpeg" alt="Document Management Inside Sapphire EAM"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack me-1"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Document Management Inside Sapphire EAM</p></div></a>
-        <a href="/blog/eam-for-manufacturing.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Fitness_Centers_&_Gym.jpeg" alt="EAM for Manufacturing: Keep the Line Running"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">EAM for Manufacturing: Keep the Line Running</p></div></a>
-        <a href="/blog/facility-management.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/muncipal_departments.png" alt="Facility Management with Sapphire"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Facility Management with Sapphire</p></div></a>
-        <a href="/blog/healthcare-asset-management.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/hospital.jpeg" alt="Healthcare Asset Management: Compliance Meets Efficiency"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Healthcare Asset Management: Compliance Meets Efficiency</p></div></a>
-        <a href="/blog/power-utilities-eam.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/power_generation_unit.png" alt="Power & Utilities: EAM at Enterprise Scale"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Power & Utilities: EAM at Enterprise Scale</p></div></a>
-        <a href="/blog/oil-gas-maintenance.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Transmission_Network.png" alt="Oil & Gas Maintenance Operations and EAM"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Oil & Gas Maintenance Operations and EAM</p></div></a>
-        <a href="/blog/real-estate-eam.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/A_wide_horizontal_is.jpeg" alt="EAM for Real Estate Portfolios"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">EAM for Real Estate Portfolios</p></div></a>
-        <a href="/blog/airport-asset-management.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Airport_Hangars.jpeg" alt="Airport Asset Management: Zero Tolerance for Failure"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Airport Asset Management: Zero Tolerance for Failure</p></div></a>
-      </div>
+<!-- ════════════════════════════════════════════════════════════════
+     SAPPHIRE TEASER
+     ════════════════════════════════════════════════════════════════ -->
+<section class="ix-teaser">
+  <div class="container">
+    <div class="ix-teaser-grid">
 
-      <!-- ROW 2 reverse -->
-      <div class="s-mq-row s-mq-row--rev">
-        <a href="/blog/real-time-asset-analytics.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/state-workshops.png" alt="Real-Time Asset Analytics: From Data to Decision"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Real-Time Asset Analytics: From Data to Decision</p></div></a>
-        <a href="/blog/predictive-maintenance-analytics.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Farm_Equipment_Warehouse.png" alt="Predictive Maintenance Analytics with Sapphire Smart"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Predictive Maintenance Analytics with Sapphire Smart</p></div></a>
-        <a href="/blog/oee-tracking.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Cargo_Terminals.jpeg" alt="OEE Tracking: Beyond the Dashboard Number"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">OEE Tracking: Beyond the Dashboard Number</p></div></a>
-        <a href="/blog/kpi-design-eam.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Concert_Hall.jpeg" alt="KPI Design for EAM Programs"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">KPI Design for EAM Programs</p></div></a>
-        <a href="/blog/mtbf.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Logistics_&_Fleet_Operations.png" alt="MTBF: Calculating and Reducing Mean Time Between Failure"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">MTBF: Calculating and Reducing Mean Time Between Failure</p></div></a>
-        <a href="/blog/maintenance-cost-benchmarking.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Water_Supply_Infrastructure.png" alt="Maintenance Cost Benchmarking: Industry Standards"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Maintenance Cost Benchmarking: Industry Standards</p></div></a>
-        <a href="/blog/asset-health-scoring.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Agro_Processing_Unit.jpeg" alt="Asset Health Scoring: A New Framework"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Asset Health Scoring: A New Framework</p></div></a>
-        <a href="/blog/roi-of-eam-software.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Amusement_Parks.jpeg" alt="ROI of EAM Software: A Practical Calculation Guide"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">ROI of EAM Software: A Practical Calculation Guide</p></div></a>
-        <a href="/blog/spreadsheet-maintenance-cost.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Movie_Theaters.jpeg" alt="The Hidden Cost of Spreadsheet-Based Maintenance"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">The Hidden Cost of Spreadsheet-Based Maintenance</p></div></a>
-        <a href="/blog/eam-implementation-failure.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Training_&_Vocational_centers.jpeg" alt="EAM Implementation: Why Most Fail and How Yours Won't"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">EAM Implementation: Why Most Fail and How Yours Won't</p></div></a>
-        <a href="/blog/justifying-eam-csuite.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Clubs_&_Leisure_Facilities.jpeg" alt="Justifying EAM Investment to the C-Suite"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Justifying EAM Investment to the C-Suite</p></div></a>
-        <a href="/blog/maintenance-maturity-model.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Rail Maintenance Units.png" alt="From Reactive to Proactive: The Maintenance Maturity Model"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">From Reactive to Proactive: The Maintenance Maturity Model</p></div></a>
-        <a href="/blog/eam-esg.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Fertilizer_&_Irrigation_depots.png" alt="EAM and ESG: Sustainability Through Asset Intelligence"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">EAM and ESG: Sustainability Through Asset Intelligence</p></div></a>
-        <a href="/blog/eam-vendor-guide.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Disaster_Response_Storage.png" alt="How to Choose Your EAM Vendor: A Buyer's Guide"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">How to Choose Your EAM Vendor: A Buyer's Guide</p></div></a>
-        <a href="/blog/sapphire-2025.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Shipping_Ports_&_Dock.jpeg" alt="Sapphire 2025: What's New and What's Next"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Sapphire 2025: What's New and What's Next</p></div></a>
-        <a href="/blog/scorptech-story.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Restaurants_&_Cafes.jpeg" alt="Built in Jaipur: The Scorptech Story"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Built in Jaipur: The Scorptech Story</p></div></a>
-        <a href="/blog/eam-india-market.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/transporation_agency.jpeg" alt="EAM in India: A Massive Market Coming of Age"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">EAM in India: A Massive Market Coming of Age</p></div></a>
-        <a href="/blog/sapphire-vs-sap-pm.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Relief_Logistics.png" alt="Sapphire vs SAP PM: An Honest Side-by-Side"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Sapphire vs SAP PM: An Honest Side-by-Side</p></div></a>
-        <a href="/blog/ai-in-asset-management.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Ground_support_bays.jpeg" alt="AI in Asset Management: What's Real, What's Hype"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">AI in Asset Management: What's Real, What's Hype</p></div></a>
-        <a href="/blog/customer-spotlight.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Public_Utility_Board.jpeg" alt="Customer Spotlight: Sapphire Deployed in 90 Days"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Customer Spotlight: Sapphire Deployed in 90 Days</p></div></a>
-        <a href="/blog/eam-glossary.html" class="s-mini-card"><div class="s-mini-card__img"><img src="assets/images_industries/Rescue_Equipment_Depots.png" alt="EAM Glossary: 60 Terms Every Maintenance Manager Must Know"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">EAM Glossary: 60 Terms Every Maintenance Manager Must Know</p></div></a>
-      </div>
+      <!-- Left: Text -->
+      <div class="ix-teaser-text">
+        <span class="s-section-badge mb-4 d-inline-block">Flagship Product</span>
 
-    </div>
-  </section>
+        <h2 class="s-section-title text-start mb-3" style="justify-content: flex-start;">
+          <span class="s-gradient-text-primary">Sapphire</span>
+        </h2>
 
-  <!-- ════════════════════════════════════════════════════════════
-       SECTION 4 — FOOTER
-       ════════════════════════════════════════════════════════════ -->
-  <footer class="s-footer">
+        <p class="s-section-subtitle text-start mb-4" style="max-width: 480px; margin: 0 0 2rem 0;">
+          One platform. Every asset. Zero chaos.<br>
+          Built to adapt to your workflows — not the other way around.
+        </p>
 
-    <div class="s-footer__top-strip">
-      <div class="s-footer__status">
-        <span class="s-status-dot"></span>
-        Sapphire is live — all systems operational
-      </div>
-      <div class="s-footer__top-cta">
-        <a href="/contact.html" class="s-btn-sm s-btn-primary s-btn-glare">
-          <i class="fas fa-comments me-1"></i>
-          Talk to our team
-        </a>
-        <a href="/book-demo.html" class="s-btn-sm s-btn-success s-btn-glare">
-          <i class="fas fa-calendar-alt me-1"></i>
-          Book a Demo
-        </a>
-      </div>
-    </div>
+        <!-- Module chips -->
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          <span class="s-label s-label-primary-soft s-label-sm">Work Orders</span>
+          <span class="s-label s-label-primary-soft s-label-sm">Asset Registry</span>
+          <span class="s-label s-label-primary-soft s-label-sm">Preventive Maintenance</span>
+          <span class="s-label s-label-primary-soft s-label-sm">Inventory</span>
+          <span class="s-label s-label-primary-soft s-label-sm">Procurement</span>
+          <span class="s-label s-label-primary-soft s-label-sm">AMC Contracts</span>
+          <span class="s-label s-label-primary-soft s-label-sm">Analytics</span>
+          <span class="s-label s-label-primary-soft s-label-sm">Intelligence</span>
+          <span class="s-label s-label-primary-soft s-label-sm">Mobile App</span>
+        </div>
 
-    <div class="s-footer__body">
-
-      <div class="s-footer__brand">
-        <a href="/index.html" class="s-footer__logo" style="text-decoration: none;">
-          <div class="s-footer__logomark">
-            <img src="assets/images/Scorp-Logo.png" alt="Scorptech" width="22" height="22" style="filter: brightness(0) invert(1);">
-          </div>
-          <span class="s-footer__logoname">SCORP</span>
-        </a>
-        <p class="s-footer__tagline">In the business of making<br><em>yours simple.</em></p>
-        <div class="s-footer__contact">
-          <a href="tel:+919782383338" class="s-footer__contact-item">
-            <svg viewBox="0 0 16 16" fill="none"><path d="M3 3.5C3 3.224 3.224 3 3.5 3h2.379c.246 0 .46.163.523.402l.754 2.64a.542.542 0 01-.167.567L5.586 7.414c.981 2.016 2.56 3.595 4.576 4.576l.805-.903a.542.542 0 01.567-.167l2.64.754c.239.063.402.277.402.523V14.5c0 .276-.224.5-.5.5C6.044 15 1 9.956 1 3.5z" stroke="currentColor" stroke-width="1.2"/></svg>
-            +91 97823 83338
+        <div class="s-hero-actions" style="justify-content: flex-start;">
+          <a href="sapphire.html" class="s-btn s-btn-primary s-btn-glare">
+            <i class="fas fa-diamond me-2"></i>
+            Explore Sapphire
           </a>
-          <a href="mailto:support@scorptech.in" class="s-footer__contact-item">
-            <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M1 5l7 5 7-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-            support@scorptech.in
-          </a>
-          <a href="/contact.html" class="s-footer__contact-item">
-            <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.375 4.5 8.5 4.5 8.5S12.5 9.375 12.5 6c0-2.485-2.015-4.5-4.5-4.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" stroke="currentColor" stroke-width="1.2"/></svg>
-            Jaipur, Rajasthan
+          <a href="book-demo.html" class="s-btn s-btn-success-outline">
+            <i class="bi bi-calendar-check-fill me-2"></i>
+            Book a Demo
           </a>
         </div>
-        <span class="s-footer__location">
-          <svg viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1"/><path d="M1.5 6h9M6 1.5a7 7 0 000 9M6 1.5a7 7 0 010 9" stroke="currentColor" stroke-width="0.8"/></svg>
-          Jaipur-built · Deployed globally
+      </div>
+
+      <!-- Right: Mock UI -->
+      <div class="ix-teaser-visual position-relative">
+        <div class="ix-mock-ui ix-mock-visual">
+
+          <!-- Window chrome -->
+          <div class="ix-mock-chrome">
+            <span class="ix-mock-dot"></span>
+            <span class="ix-mock-dot"></span>
+            <span class="ix-mock-dot"></span>
+            <div class="ix-mock-url-bar"></div>
+          </div>
+
+          <!-- Dashboard body -->
+          <div class="ix-mock-body">
+
+            <!-- KPI Cards -->
+            <div class="ix-mock-kpis mb-3">
+              <div class="ix-kpi-card">
+                <span class="ix-kpi-val">98<span style="font-size: 1rem;">%</span></span>
+                <span class="ix-kpi-lbl">Uptime</span>
+              </div>
+              <div class="ix-kpi-card">
+                <span class="ix-kpi-val">247</span>
+                <span class="ix-kpi-lbl">Active WOs</span>
+              </div>
+              <div class="ix-kpi-card">
+                <span class="ix-kpi-val">4.2<span style="font-size: 1rem;">d</span></span>
+                <span class="ix-kpi-lbl">Avg. Resolve</span>
+              </div>
+            </div>
+
+            <!-- Data rows -->
+            <div class="ix-mock-rows mb-3">
+              <div class="ix-mock-row accent"></div>
+              <div class="ix-mock-row w80"></div>
+              <div class="ix-mock-row accent w65"></div>
+              <div class="ix-mock-row w48"></div>
+            </div>
+
+            <!-- Chart -->
+            <div class="ix-mock-chart">
+              <div class="ix-mock-bar" style="height: 55%;"></div>
+              <div class="ix-mock-bar" style="height: 72%;"></div>
+              <div class="ix-mock-bar" style="height: 45%;"></div>
+              <div class="ix-mock-bar" style="height: 88%;"></div>
+              <div class="ix-mock-bar" style="height: 62%;"></div>
+              <div class="ix-mock-bar" style="height: 95%;"></div>
+              <div class="ix-mock-bar" style="height: 78%;"></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Floating badge -->
+        <div class="ix-mock-badge">
+          <div class="s-icon s-icon-sm s-icon-success">
+            <i class="fas fa-arrow-trend-up"></i>
+          </div>
+          <div>
+            <div class="ix-badge-stat">+34%</div>
+            <div class="ix-badge-lbl">Asset uptime<br>improvement</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════════
+     STATS — animated counters
+     ════════════════════════════════════════════════════════════════ -->
+<section class="ix-stats" id="ix-stats">
+  <div class="ix-stats-glow"></div>
+
+  <!-- Section label -->
+  <div class="text-center mb-5" style="position: relative; z-index: 1;">
+    <span class="s-pill s-pill-sm s-pill-frost s-pill-round">
+      <i class="fas fa-chart-line me-2"></i>
+      By the Numbers
+    </span>
+  </div>
+
+  <div class="container">
+    <div class="ix-stats-grid">
+
+      <div class="ix-stat-item">
+        <span class="ix-stat-number" data-target="20" data-suffix="+">
+          <span class="ix-counter-val">0</span><span class="ix-stat-suffix">+</span>
         </span>
+        <span class="ix-stat-label">Industries Served</span>
       </div>
 
-      <div class="s-footer__links">
-
-        <div>
-          <span class="s-footer__col-title">Explore</span>
-          <ul>
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/about.html">About Scorptech</a></li>
-            <li><a href="/sapphire.html">Sapphire EAM</a></li>
-            <li><a href="/analytics.html">Sapphire Analytics</a></li>
-            <li><a href="/intelligence.html">Sapphire Intelligence</a></li>
-            <li><a href="/contact.html">Contact Us</a></li>
-            <li><a href="/book-demo.html">Book a Demo</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <span class="s-footer__col-title">Platform</span>
-          <ul>
-            <li><a href="/sapphire.html#work-orders">Work Order Management</a></li>
-            <li><a href="/sapphire.html#inventory">Inventory Control</a></li>
-            <li><a href="/sapphire.html#purchase">Purchase Management</a></li>
-            <li><a href="/sapphire.html#asset-tracking">Asset Tracking</a></li>
-            <li><a href="/sapphire.html#pm-scheduling">PM Scheduling</a></li>
-            <li><a href="/sapphire.html#documents">Document Management</a></li>
-            <li><a href="https://stage.scorptech.in/login" target="_blank" rel="noopener">Log In to Sapphire ↗</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <span class="s-footer__col-title">Resources</span>
-          <ul>
-            <li><a href="/blog/index.html">Knowledge Hub</a></li>
-            <li><a href="/faq.html">FAQs</a></li>
-            <li><a href="/privacy_policy.html">Privacy Policy</a></li>
-            <li><a href="/terms_of_use.html">Terms of Use</a></li>
-            <li><a href="mailto:support@scorptech.in">Support</a></li>
-          </ul>
-        </div>
-
-        <div class="s-footer__blog-section">
-          <div class="s-footer__blog-header">
-            <span class="s-footer__col-title" style="margin-bottom:0;">Knowledge Hub — 42 Articles</span>
-            <a href="/blog/index.html" class="s-view-all" style="font-size:0.72rem;">
-              View all
-              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-          <div class="s-blog-categories">
-
-            <details class="s-acc">
-              <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-fundamentals"></span>Fundamentals<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-              <div class="s-acc__body">
-                <a href="/blog/what-is-eam.html">What Is Enterprise Asset Management?</a>
-                <a href="/blog/eam-vs-erp.html">EAM vs ERP: The Key Difference</a>
-                <a href="/blog/asset-lifecycle-management.html">Asset Lifecycle Management</a>
-                <a href="/blog/preventive-vs-predictive.html">Preventive vs Predictive Maintenance</a>
-                <a href="/blog/maintenance-strategy.html">Building a Maintenance Strategy</a>
-                <a href="/blog/cost-of-downtime.html">The True Cost of Asset Downtime</a>
-                <a href="/blog/iso-55000.html">ISO 55000: The Global Standard</a>
-              </div>
-            </details>
-
-            <details class="s-acc">
-              <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-modules"></span>Sapphire Modules<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-              <div class="s-acc__body">
-                <a href="/blog/sapphire-work-order-management.html">Work Order Management</a>
-                <a href="/blog/inventory-control-sapphire.html">Inventory Control</a>
-                <a href="/blog/sapphire-purchase-module.html">Purchase Module: PO to Payment</a>
-                <a href="/blog/asset-tracking-sapphire.html">Asset Tracking</a>
-                <a href="/blog/sapphire-dashboard.html">Dashboard Intelligence</a>
-                <a href="/blog/pm-scheduling-sapphire.html">PM Scheduling</a>
-                <a href="/blog/document-management-sapphire.html">Document Management</a>
-              </div>
-            </details>
-
-            <details class="s-acc">
-              <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-industries"></span>Industries<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-              <div class="s-acc__body">
-                <a href="/blog/eam-for-manufacturing.html">Manufacturing</a>
-                <a href="/blog/facility-management.html">Facility Management</a>
-                <a href="/blog/healthcare-asset-management.html">Healthcare</a>
-                <a href="/blog/power-utilities-eam.html">Power & Utilities</a>
-                <a href="/blog/oil-gas-maintenance.html">Oil & Gas</a>
-                <a href="/blog/real-estate-eam.html">Real Estate</a>
-                <a href="/blog/airport-asset-management.html">Aviation & Airports</a>
-              </div>
-            </details>
-
-            <details class="s-acc">
-              <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-analytics"></span>Analytics<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-              <div class="s-acc__body">
-                <a href="/blog/real-time-asset-analytics.html">Real-Time Asset Analytics</a>
-                <a href="/blog/predictive-maintenance-analytics.html">Predictive Maintenance Analytics</a>
-                <a href="/blog/oee-tracking.html">OEE Tracking</a>
-                <a href="/blog/kpi-design-eam.html">KPI Design for EAM</a>
-                <a href="/blog/mtbf.html">MTBF: Calculating & Reducing</a>
-                <a href="/blog/maintenance-cost-benchmarking.html">Maintenance Cost Benchmarking</a>
-                <a href="/blog/asset-health-scoring.html">Asset Health Scoring</a>
-              </div>
-            </details>
-
-            <details class="s-acc">
-              <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-business"></span>Business Value<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-              <div class="s-acc__body">
-                <a href="/blog/roi-of-eam-software.html">ROI of EAM Software</a>
-                <a href="/blog/spreadsheet-maintenance-cost.html">The Spreadsheet Trap</a>
-                <a href="/blog/eam-implementation-failure.html">Why EAM Implementations Fail</a>
-                <a href="/blog/justifying-eam-csuite.html">Justifying EAM to the C-Suite</a>
-                <a href="/blog/maintenance-maturity-model.html">Maintenance Maturity Model</a>
-                <a href="/blog/eam-esg.html">EAM and ESG</a>
-                <a href="/blog/eam-vendor-guide.html">EAM Vendor Buyer's Guide</a>
-              </div>
-            </details>
-
-            <details class="s-acc">
-              <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-special"></span>Special Editions<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-              <div class="s-acc__body">
-                <a href="/blog/sapphire-2025.html">Sapphire 2025: What's New</a>
-                <a href="/blog/scorptech-story.html">Built in Jaipur: Our Story</a>
-                <a href="/blog/eam-india-market.html">EAM in India</a>
-                <a href="/blog/sapphire-vs-sap-pm.html">Sapphire vs SAP PM</a>
-                <a href="/blog/ai-in-asset-management.html">AI in Asset Management</a>
-                <a href="/blog/customer-spotlight.html">Customer Spotlight</a>
-                <a href="/blog/eam-glossary.html">EAM Glossary: 60 Terms</a>
-              </div>
-            </details>
-
-          </div>
-        </div>
-
+      <div class="ix-stat-item">
+        <span class="ix-stat-number" data-target="9" data-suffix="">
+          <span class="ix-counter-val">0</span>
+        </span>
+        <span class="ix-stat-label">Core Modules</span>
       </div>
+
+      <div class="ix-stat-item">
+        <span class="ix-stat-number" data-target="100" data-suffix="%">
+          <span class="ix-counter-val">0</span><span class="ix-stat-suffix">%</span>
+        </span>
+        <span class="ix-stat-label">Cloud SLA</span>
+      </div>
+
+      <div class="ix-stat-item">
+        <span class="ix-stat-number" data-target="24" data-suffix="/7">
+          <span class="ix-counter-val">0</span><span class="ix-stat-suffix">/7</span>
+        </span>
+        <span class="ix-stat-label">Support Coverage</span>
+      </div>
+
     </div>
-  <div class="s-footer__social">
-      <div class="row justify-content-center g-3 mb-3">
-          <div class="col-auto">
-              <a href="#" class="s-icon s-icon-md s-icon-whatsapp" data-coming-soon="WhatsApp" aria-label="WhatsApp" style="text-decoration: none;">
-                  <i class="fab fa-whatsapp"></i>
-              </a>
-          </div>
-          <div class="col-auto">
-              <a href="#" class="s-icon s-icon-md s-icon-linkedin" data-coming-soon="LinkedIn" aria-label="LinkedIn" style="text-decoration: none;">
-                  <i class="fab fa-linkedin-in"></i>
-              </a>
-          </div>
-          <div class="col-auto">
-              <a href="#" class="s-icon s-icon-md s-icon-youtube" data-coming-soon="YouTube" aria-label="YouTube" style="text-decoration: none;">
-                  <i class="fab fa-youtube"></i>
-              </a>
-          </div>
-          <div class="col-auto">
-              <a href="#" class="s-icon s-icon-md s-icon-instagram" data-coming-soon="Instagram" aria-label="Instagram" style="text-decoration: none;">
-                  <i class="fab fa-instagram"></i>
-              </a>
-          </div>
-      </div>
-      <div class="row justify-content-center g-3">
-          <div class="col-auto">
-              <a href="#" class="s-icon s-icon-md s-icon-facebook" data-coming-soon="Facebook" aria-label="Facebook" style="text-decoration: none;">
-                  <i class="fab fa-facebook-f"></i>
-              </a>
-          </div>
-          <div class="col-auto">
-              <a href="#" class="s-icon s-icon-md s-icon-x" data-coming-soon="X (formerly Twitter)" aria-label="X" style="text-decoration: none;">
-                  <i class="fab fa-x-twitter"></i>
-              </a>
-          </div>
-          <div class="col-auto">
-              <a href="#" class="s-icon s-icon-md s-icon-discord" data-coming-soon="Discord" aria-label="Discord" style="text-decoration: none;">
-                  <i class="fab fa-discord"></i>
-              </a>
-          </div>
-          <div class="col-auto">
-              <a href="#" class="s-icon s-icon-md s-icon-github" data-coming-soon="GitHub" aria-label="GitHub" style="text-decoration: none;">
-                  <i class="fab fa-github"></i>
-              </a>
-          </div>
-      </div>
   </div>
-    <div class="s-footer__bottom">
-      <p class="s-footer__copy">© 2026 SCORP — Scorptech Technologies Private Limited. All rights reserved.</p>
-      <div class="s-footer__legal">
-        <a href="/privacy_policy.html">Privacy Policy</a>
-        <a href="/terms_of_use.html">Terms of Use</a>
-        <a href="/contact.html">Contact</a>
-      </div>
-      <div class="s-footer__made">
-        <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.375 4.5 8.5 4.5 8.5S12.5 9.375 12.5 6c0-2.485-2.015-4.5-4.5-4.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" stroke="rgba(143,169,196,0.7)"/></svg>
-        Made with intent in Jaipur
-      </div>
-    </div>
+</section>
 
-  </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script type="module" src="js/main.js"></script>
-  <script type="module" src="js/pages/index.js"></script>
-  <!-- <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./service-worker.js')
-          .then(reg => console.log('✅ Service Worker registered:', reg.scope))
-          .catch(err => console.error('❌ Service Worker registration failed:', err));
+<!-- ════════════════════════════════════════════════════════════════
+     [PASTE YOUR CTA → BLOGS → MARQUEE → FOOTER SECTION HERE]
+     ════════════════════════════════════════════════════════════════ -->
+
+
+<!-- ════════════════════════════════════════════════════════════════
+     SCRIPTS
+     ════════════════════════════════════════════════════════════════ -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Vanta dependencies -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@0.5.25/dist/vanta.net.min.js"></script>
+
+<!-- GSAP free tier: core + ScrollTrigger + SplitText (free since 3.12) -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/SplitText.min.js"></script>
+
+<!-- Anime.js for counter animation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+
+<!-- Site JS modules -->
+<script type="module" src="js/main.js"></script>
+<script type="module" src="js/pages/index.js"></script>
+
+<!-- ═══════════════════════════════════════════════════════
+     PAGE ANIMATIONS — single self-contained IIFE
+     ═══════════════════════════════════════════════════════ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ─── 1. VANTA NET ────────────────────────────────────────────── */
+  let vantaEffect = null;
+
+  function initVanta() {
+    if (typeof VANTA === 'undefined' || typeof THREE === 'undefined') return;
+    if (document.getElementById('ix-vanta') === null) return;
+
+    vantaEffect = VANTA.NET({
+      el: '#ix-vanta',
+      THREE: THREE,
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200,
+      minWidth: 200,
+      scale: 1.0,
+      scaleMobile: 0.85,
+      color: 0x0066cc,           /* primary blue */
+      backgroundColor: 0xf8fafc, /* --s-gray-50  */
+      points: 14,
+      maxDistance: 22,
+      spacing: 17,
+      showDots: true
+    });
+  }
+
+  /* ─── 2. GSAP + SCROLL ANIMATIONS ────────────────────────────── */
+  function initGSAP() {
+    if (typeof gsap === 'undefined') return;
+
+    gsap.registerPlugin(ScrollTrigger);
+    if (typeof SplitText !== 'undefined') {
+      gsap.registerPlugin(SplitText);
+    }
+
+    /* ── 2a. Hero entrance timeline ───────────────────────────── */
+    const heroTL = gsap.timeline({ delay: 0.15 });
+
+    /* Badge */
+    heroTL.from('#ix-badge', {
+      opacity: 0, y: 22, duration: 0.55, ease: 'power2.out'
+    });
+
+    /* Headline: each .ix-hl-block slides up from clipped overflow */
+    heroTL.from('.ix-headline .ix-hl-block', {
+      opacity: 0, y: 70, duration: 0.75, stagger: 0.1, ease: 'power3.out'
+    }, '-=0.15');
+
+    /* Gradient text: wipe reveal left → right */
+    heroTL.fromTo('.ix-hl-gradient',
+      { clipPath: 'inset(0 100% 0 0)' },
+      { clipPath: 'inset(0 0% 0 0)', duration: 1.0, ease: 'power2.inOut' },
+      '-=0.55'
+    );
+
+    /* Lead text */
+    heroTL.from('#ix-lead', {
+      opacity: 0, y: 28, duration: 0.5, ease: 'power2.out'
+    }, '-=0.45');
+
+    /* Chips stagger */
+    heroTL.from('.ix-chip', {
+      opacity: 0, y: 16, scale: 0.9, duration: 0.4,
+      stagger: 0.06, ease: 'back.out(2)'
+    }, '-=0.25');
+
+    /* CTA buttons */
+    heroTL.from('#ix-ctas a', {
+      opacity: 0, y: 18, scale: 0.94, duration: 0.45,
+      stagger: 0.1, ease: 'back.out(1.5)'
+    }, '-=0.2');
+
+    /* Scroll cue */
+    heroTL.from('#ix-scroll-cue', {
+      opacity: 0, y: 10, duration: 0.4
+    }, '-=0.1');
+
+    /* ── 2b. Hero parallax on scroll ─────────────────────────── */
+    gsap.to('#ix-hero-section .ix-hero-inner', {
+      scrollTrigger: {
+        trigger: '#ix-hero-section',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1.2
+      },
+      y: 80,
+      opacity: 0.4,
+      ease: 'none'
+    });
+
+    /* ── 2c. Manifesto — pinned scroll ────────────────────────── */
+    const manifesto   = document.getElementById('ix-manifesto');
+    const stmts       = gsap.utils.toArray('.ix-statement');
+    const dots        = document.querySelectorAll('.ix-mfdot');
+    const counterEl   = document.getElementById('ix-mf-counter');
+
+    if (manifesto && stmts.length) {
+      /* Scroll height: 1 viewport per statement + 0.5 for entry/exit */
+      manifesto.style.height = (stmts.length + 0.5) * 100 + 'vh';
+
+      /* Initial GSAP state: all hidden, centred via xPercent/yPercent */
+      gsap.set(stmts, {
+        xPercent: -50, yPercent: -50,
+        opacity: 0, y: 50
+      });
+
+      /* Show first statement */
+      gsap.set(stmts[0], { opacity: 1, y: 0 });
+
+      ScrollTrigger.create({
+        trigger: '#ix-manifesto',
+        start: 'top top',
+        end: 'bottom bottom',
+        onUpdate: function (self) {
+          const n   = stmts.length;
+          const idx = Math.min(Math.floor(self.progress * n), n - 1);
+
+          stmts.forEach(function (s, i) {
+            if (i === idx) {
+              gsap.to(s, { opacity: 1, y: 0, duration: 0.38, overwrite: 'auto' });
+            } else {
+              gsap.to(s, {
+                opacity: 0,
+                y: i < idx ? -55 : 55,
+                duration: 0.38,
+                overwrite: 'auto'
+              });
+            }
+          });
+
+          /* Update dots */
+          dots.forEach(function (d, i) {
+            d.classList.toggle('active', i === idx);
+          });
+
+          /* Update slide counter */
+          if (counterEl) {
+            counterEl.textContent = String(idx + 1).padStart(2, '0') + ' / 0' + n;
+          }
+        }
       });
     }
-  </script> -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": ["Organization", "LocalBusiness"],
-    "name": "Scorptech Technologies Private Limited",
-    "alternateName": "SCORP",
-    "url": "https://scorptech.in",
-    "logo": "https://scorptech.in/assets/images/Scorp-Logo.png",
-    "image": "https://scorptech.in/assets/images/ScorpHero.png",
-    "description": "SCORP builds enterprise ERP and EAM software for industrial shop floors. Sapphire is our flagship Enterprise Asset Management platform — lean, intuitive, and built for real-world operations.",
-    "foundingDate": "2020",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Jaipur",
-      "addressRegion": "Rajasthan",
-      "postalCode": "302018",
-      "addressCountry": "IN"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "Sales",
-      "email": "support@scorptech.in",
-      "url": "https://scorptech.in/contact.html"
-    },
-    "areaServed": "IN",
-    "serviceType": ["ERP Software", "EAM Software", "Enterprise Asset Management", "Industrial Operations Software"]
+
+    /* ── 2d. Pillars stagger reveal ───────────────────────────── */
+    gsap.from('#ix-pillars-header', {
+      scrollTrigger: { trigger: '.ix-pillars', start: 'top 82%' },
+      opacity: 0, y: 35, duration: 0.6, ease: 'power2.out'
+    });
+
+    gsap.from('.ix-pillar-col', {
+      scrollTrigger: { trigger: '.ix-pillars', start: 'top 78%' },
+      opacity: 0, y: 65, duration: 0.7,
+      stagger: 0.12, ease: 'power3.out',
+      delay: 0.1
+    });
+
+    /* ── 2e. Trust bar reveal ─────────────────────────────────── */
+    gsap.from('.ix-trust', {
+      scrollTrigger: { trigger: '.ix-trust', start: 'top 90%' },
+      opacity: 0, duration: 0.5
+    });
+
+    /* ── 2f. Ticker section ───────────────────────────────────── */
+    gsap.from('#ix-ticker-header', {
+      scrollTrigger: { trigger: '.ix-ticker-section', start: 'top 82%' },
+      opacity: 0, y: 30, duration: 0.6
+    });
+
+    /* ── 2g. Sapphire teaser ─────────────────────────────────── */
+    gsap.from('.ix-teaser-text', {
+      scrollTrigger: { trigger: '.ix-teaser', start: 'top 80%' },
+      opacity: 0, x: -55, duration: 0.85, ease: 'power3.out'
+    });
+
+    gsap.from('.ix-mock-visual', {
+      scrollTrigger: { trigger: '.ix-teaser', start: 'top 80%' },
+      opacity: 0, x: 55, duration: 0.85, ease: 'power3.out', delay: 0.12
+    });
+
+    gsap.from('.ix-mock-badge', {
+      scrollTrigger: { trigger: '.ix-teaser', start: 'top 70%' },
+      opacity: 0, scale: 0.75, duration: 0.6, ease: 'back.out(2)', delay: 0.5
+    });
+
+    /* ── 2h. Stats section reveal ─────────────────────────────── */
+    gsap.from('.ix-stat-item', {
+      scrollTrigger: { trigger: '#ix-stats', start: 'top 82%' },
+      opacity: 0, y: 40, duration: 0.65,
+      stagger: 0.1, ease: 'power3.out'
+    });
   }
-  </script>
+
+  /* ─── 3. ANIME.JS STATS COUNTER ──────────────────────────────── */
+  function initCounters() {
+    if (typeof anime === 'undefined') return;
+
+    const statsSection = document.getElementById('ix-stats');
+    if (!statsSection) return;
+
+    let fired = false;
+
+    const observer = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting && !fired) {
+        fired = true;
+        observer.disconnect();
+
+        document.querySelectorAll('.ix-stat-number[data-target]').forEach(function (el) {
+          const target = parseInt(el.dataset.target, 10);
+          const valEl  = el.querySelector('.ix-counter-val');
+          if (!valEl) return;
+
+          const obj = { n: 0 };
+          anime({
+            targets: obj,
+            n: target,
+            round: 1,
+            duration: 2200,
+            easing: 'easeInOutExpo',
+            update: function () {
+              valEl.textContent = obj.n;
+            },
+            complete: function () {
+              valEl.textContent = target;
+            }
+          });
+        });
+      }
+    }, { threshold: 0.35 });
+
+    observer.observe(statsSection);
+  }
+
+  /* ─── 4. INIT ALL ─────────────────────────────────────────────── */
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () {
+      initVanta();
+      initGSAP();
+      initCounters();
+    });
+  } else {
+    /* DOM already ready */
+    initVanta();
+    initGSAP();
+    initCounters();
+  }
+
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["Organization", "LocalBusiness"],
+  "name": "Scorptech Technologies Private Limited",
+  "alternateName": "SCORP",
+  "url": "https://scorptech.in",
+  "logo": "https://scorptech.in/assets/images/Scorp-Logo.png",
+  "image": "https://scorptech.in/assets/images/ScorpHero.png",
+  "description": "SCORP builds enterprise ERP and EAM software for industrial shop floors. Sapphire is our flagship Enterprise Asset Management platform — lean, intuitive, and built for real-world operations.",
+  "foundingDate": "2020",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Jaipur",
+    "addressRegion": "Rajasthan",
+    "postalCode": "302018",
+    "addressCountry": "IN"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Sales",
+    "email": "support@scorptech.in",
+    "url": "https://scorptech.in/contact.html"
+  },
+  "areaServed": "IN",
+  "serviceType": ["ERP Software", "EAM Software", "Enterprise Asset Management", "Industrial Operations Software"]
+}
+</script>
 
 </body>
-
 </html>
