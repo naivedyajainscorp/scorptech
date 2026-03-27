@@ -72,18 +72,9 @@
   z-index: 1;
 }
 
-.intelligence-hero .s-hero-subtitle {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.25rem;
-  margin-bottom: 0;
-  position: relative;
-  z-index: 1;
-}
 
-.intelligence-hero .s-hero-actions {
-  position: relative;
-  z-index: 1;
-}
+
+
 
 /* Section Spacing */
 .intelligence-section {
@@ -368,12 +359,6 @@
     font-size: var(--s-text-lg);
   }
 
-  /* Components - Hero */
-  .s-hero {
-    min-height: 50vh;
-    padding: var(--s-space-16) var(--s-space-4);
-  }
-
   .s-hero-features {
     gap: var(--s-space-4);
     justify-content: space-around;
@@ -507,11 +492,6 @@
     padding: 0 0.5rem;
   }
 
-  /* Components - Hero */
-  .s-hero {
-    min-height: 45vh;
-    padding: var(--s-space-12) var(--s-space-4);
-  }
 
   .s-hero-features {
     display: flex;
@@ -524,16 +504,15 @@
   .s-hero-actions {
     flex-direction: column;
     align-items: center;
+    min-width: 100%;
   }
 
   .s-hero-actions .s-btn {
     width: 100%;
-    max-width: 280px;
     justify-content: center;
   }
 
   .s-hero-description {
-    font-size: var(--s-text-base);
     margin-bottom: var(--s-space-6);
   }
 
@@ -1768,51 +1747,7 @@
 }
     
 
-/* ========================================
-   INTELLIGENCE PAGE STYLES
-   ======================================== */
 
-@media (max-width: 768px) {
-  /*  INTELLIGENCE PAGE STYLES Responsive */
-
-  .intelligence-hero {
-    padding: 4rem 0 3rem;
-  }
-
-  .intelligence-hero .s-hero-title {
-    font-size: 1.75rem;
-  }
-
-  .intelligence-hero .s-hero-subtitle {
-    font-size: 1rem;
-  }
-
-  .intelligence-content-wrapper {
-    padding: 2rem 1.5rem;
-  }
-
-  .intelligence-section-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .intelligence-section-title {
-    font-size: 1.5rem;
-  }
-
-  .intelligence-content-title {
-    font-size: 1.25rem;
-  }
-
-  .intelligence-content {
-    margin-bottom: 2.5rem;
-  }
-
-  .intelligence-content-text {
-    padding: 1.25rem;
-  }
-}
 
 
 

@@ -1560,7 +1560,7 @@
 
 .s-hero {
   position: relative;
-  min-height: 60vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1626,28 +1626,20 @@
 /* Title Highlight */
 .s-hero-title-highlight {
   display: block;
-  background: var(--s-gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  /* background: var(--s-gradient-primary); */
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+  /* background-clip: text; */
   position: relative;
-  text-shadow: 0 4px 4px rgba(255, 255, 255, 0.9), 
-              0 2px 4px rgb(245, 220, 220);
+  letter-spacing: 0.2rem;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.9), 0 2px 4px rgba(0, 0, 0, 1);
 }
 
-.s-hero-gradient .s-hero-title-highlight,
-.s-hero-sapphire .s-hero-title-highlight,
-.s-hero-diamonds .s-hero-title-highlight {
-  background: linear-gradient(135deg, #ffffff 0%, #e0f2fe 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
 
 /* Hero Description */
 .s-hero-description {
   font-size: clamp(1rem, 2vw, 1.25rem);
-  color: var(--s-gray-600);
+  color: var(--s-white);
   line-height: var(--s-leading-relaxed);
   margin-bottom: var(--s-space-8);
   max-width: 800px;
@@ -1655,11 +1647,6 @@
   margin-right: auto;
 }
 
-.s-hero-gradient .s-hero-description,
-.s-hero-sapphire .s-hero-description,
-.s-hero-diamonds .s-hero-description {
-  color: rgba(255, 255, 255, 0.9);
-}
 
 /* Brand Highlight */
 .s-hero-brand-highlight {
@@ -1753,7 +1740,7 @@
   display: flex;
   justify-content: center;
   gap: var(--s-space-4);
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 
@@ -2189,18 +2176,8 @@
 
 
 
-/* Global Hero Padding for Fixed Navbar */
-.s-hero {
-  padding-top: 120px !important;
-}
 
-@media (max-width: 768px) {
-  .s-hero {
-    padding-top: 100px !important;
-  }
-}
 
-/* Duplicate mobile responsive block removed — nav rules consolidated in @media (max-width: 1200px) above */
 
 
 @media (max-width: 768px) {
@@ -2227,6 +2204,7 @@
 
 
 @media(max-wdith: 576px) {
+  
 
   .s-section-header {
     margin-bottom: var(--s-space-xl, 2rem);
@@ -2240,11 +2218,6 @@
   .s-section-badge {
     font-size: 0.75rem;
     padding: 0.4rem 1rem;
-  }
-
-  /* Components - Hero */
-  .s-hero {
-    min-height: 40vh;
   }
 
   .s-hero-badge {

@@ -1,172 +1,205 @@
 /**
  * Vanta.js Net Background Component
- * Reusable component for applying interactive net background effects
- * Dynamically loads required CDN libraries (Three.js and Vanta.js)
- * 
- * Usage:
- *   import { initNetBackground } from './components/net_bg.js';
- *   
- *   // Initialize on an element
- *   initNetBackground('#heroSection', {
- *     color: 0x0066cc,
- *     backgroundColor: 0x000000
- *   });
+ * Axes: BANDWIDTH + PATTERN + HARMONY (+ optional SPEED)
  */
 
-/**
- * Load external scripts dynamically from CDN
- * @param {string} src - Script URL
- * @param {object} attributes - Optional attributes for the script tag
- * @returns {Promise} Resolves when script loads
- */
+// ── CDN Loader ───────────────────────────────────────────────
 function loadScript(src, attributes = {}) {
   return new Promise((resolve, reject) => {
-    // Check if script is already loaded
-    if (document.querySelector(`script[src="${src}"]`)) {
-      resolve();
-      return;
-    }
-
+    if (document.querySelector(`script[src="${src}"]`)) { resolve(); return; }
     const script = document.createElement('script');
     script.src = src;
-    
-    // Apply additional attributes
-    Object.keys(attributes).forEach(key => {
-      script.setAttribute(key, attributes[key]);
-    });
-
+    Object.keys(attributes).forEach(k => script.setAttribute(k, attributes[k]));
     script.onload = resolve;
     script.onerror = () => reject(new Error(`Failed to load ${src}`));
     document.head.appendChild(script);
   });
 }
 
-/**
- * Initialize Vanta Net background effect on specified element
- * Automatically loads Three.js and Vanta.js if not already present
- * 
- * @param {string|HTMLElement} selector - CSS selector or DOM element
- * @param {object} options - Vanta configuration options
- * @param {number} options.color - Net color (hex: 0x0066cc)
- * @param {number} options.backgroundColor - Background color (hex: 0x000000)
- * @param {number} options.points - Number of points (default: 15)
- * @param {number} options.maxDistance - Max connection distance (default: 20)
- * @param {number} options.spacing - Point spacing (default: 15)
- * @param {boolean} options.mouseControls - Enable mouse interaction (default: true)
- * @param {boolean} options.touchControls - Enable touch interaction (default: true)
- * @param {boolean} options.gyroControls - Enable gyro interaction (default: false)
- * @returns {Promise} Resolves when effect is initialized
- */
+// ── Color Math ───────────────────────────────────────────────
+function hslToHex(h, s, l) {
+  s /= 100; l /= 100;
+  const a = s * Math.min(l, 1 - l);
+  const f = n => {
+    const k = (n + h / 30) % 12;
+    const c = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+    return Math.round(255 * c);
+  };
+  return (f(0) << 16) | (f(8) << 8) | f(4);
+}
+
+// ── Responsive Density ───────────────────────────────────────
+function lerp(minW, maxW, minVal, maxVal) {
+  const t = Math.min(1, Math.max(0, (window.innerWidth - minW) / (maxW - minW)));
+  return minVal + (maxVal - minVal) * t;
+}
+
+function getNetConfig(hue, harmonyFn) {
+  const spacing = Math.round(lerp(320, 1920, 20, 15));
+  const netHue = harmonyFn ? harmonyFn(hue) : (hue + 30) % 360;
+
+  return {
+    points:          Math.round(lerp(320, 1920, 12, 15)),
+    spacing:         spacing,
+    maxDistance:     20,
+    color:           hslToHex(netHue, 100, 55),
+    backgroundColor: hslToHex(hue, 60, 8),
+  };
+}
+
+// ── AXIS 1: BANDWIDTH ────────────────────────────────────────
+export const BANDWIDTH = {
+  ALL:    { startHue: 0,   endHue: 360 },
+  COLD:   { startHue: 180, endHue: 240 },
+  OCEAN:  { startHue: 185, endHue: 220 },
+  ICE:    { startHue: 190, endHue: 210 },
+  WARM:   { startHue: 0,   endHue: 60 },
+  EMBER:  { startHue: 0,   endHue: 30 },
+  AMBER:  { startHue: 30,  endHue: 60 },
+  FOREST: { startHue: 100, endHue: 150 },
+  PURPLE: { startHue: 240, endHue: 300 },
+  NEBULA: { startHue: 260, endHue: 320 },
+};
+
+// ── AXIS 2: PATTERN ──────────────────────────────────────────
+export const PATTERN = {
+  LOOP:        'LOOP',
+  OSCILLATE:   'OSCILLATE',
+  BOUNCE_EASE: 'BOUNCE_EASE',
+};
+
+// ── AXIS 3: HARMONY ──────────────────────────────────────────
+export const HARMONY = {
+  ANALOGOUS:      (h) => (h + 30) % 360,
+  ANALOGOUS_SOFT: (h) => (h + 20) % 360,
+  COMPLEMENTARY:  (h) => (h + 180) % 360,
+  SPLIT:          (h) => (h + 150) % 360,
+  TRIADIC:        (h) => (h + 120) % 360,
+  MONO:           (h) => h,
+};
+
+// ── Optional SPEED ───────────────────────────────────────────
+export const SPEED = {
+  VERY_SLOW: 2,
+  SLOW:      3,
+  MEDIUM:    5,
+  FAST:      8,
+};
+
+// ── Core Init ────────────────────────────────────────────────
 export async function initNetBackground(selector, options = {}) {
   try {
-    // Get target element
-    const element = typeof selector === 'string' 
-      ? document.querySelector(selector) 
+    const element = typeof selector === 'string'
+      ? document.querySelector(selector)
       : selector;
 
-    if (!element) {
-      console.warn(`[VantaNet] Element not found: ${selector}`);
-      return;
-    }
+    if (!element) return null;
 
-    // Default options
     const config = {
       el: element,
       mouseControls: true,
       touchControls: true,
       gyroControls: false,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      scale: 1.00,
-      scaleMobile: 1.00,
-      color: 0x0066cc,
-      backgroundColor: 0x000000,
-      points: 15.00,
-      maxDistance: 20.00,
-      spacing: 15.00,
-      ...options // Override with user options
+      minHeight: 200,
+      minWidth: 200,
+      ...options
     };
 
-    // Check if Vanta is already loaded
     if (typeof window.VANTA === 'undefined') {
-      console.info('[VantaNet] Loading Three.js and Vanta.js libraries...');
-      
-      // Load Three.js first (required by Vanta)
       await loadScript('https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js');
-      
-      // Then load Vanta.js Net effect
       await loadScript('https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js');
-      
-      console.info('[VantaNet] Libraries loaded successfully');
     }
 
-    // Initialize Vanta effect
     if (window.VANTA && window.VANTA.NET) {
-      const effect = window.VANTA.NET(config);
-      console.info('[VantaNet] Effect initialized on', selector);
-      return effect;
-    } else {
-      console.error('[VantaNet] VANTA.NET not available');
-      return null;
+      return window.VANTA.NET(config);
     }
+
+    return null;
 
   } catch (error) {
-    console.error('[VantaNet] Initialization failed:', error);
+    console.error('[VantaNet] Init failed:', error);
     return null;
   }
 }
 
-/**
- * Hide video/image background and initialize net effect
- * Useful for replacing existing background media with Vanta
- * 
- * @param {string|HTMLElement} selector - Element selector or DOM node
- * @param {string} videoSelector - Selector for video element to hide
- * @param {object} options - Vanta configuration options
- * @returns {Promise} Resolves when setup complete
- */
-export async function initNetBackgroundWithVideoHide(selector, videoSelector, options = {}) {
-  // Hide the video/image background
-  const videoElement = document.querySelector(videoSelector);
-  if (videoElement) {
-    videoElement.style.display = 'none';
-    console.info('[VantaNet] Hidden background element:', videoSelector);
+// ── Hero Engine ──────────────────────────────────────────────
+export async function initHeroNet(selector, config = {}) {
+
+  const bandwidth = config.bandwidth || BANDWIDTH.ALL;
+  const pattern   = config.pattern   || PATTERN.OSCILLATE;
+  const harmony   = config.harmony   || HARMONY.ANALOGOUS;
+  const speed     = config.speed     || SPEED.MEDIUM;
+
+  const startHue = bandwidth.startHue;
+  const endHue   = bandwidth.endHue;
+  const range    = endHue - startHue;
+
+  let currentHue = startHue;
+  let direction  = 1;
+  let phase      = 0;
+  let lastTime   = null;
+
+  let vantaEffect = await initNetBackground(selector, getNetConfig(currentHue, harmony));
+  if (!vantaEffect) return null;
+
+  function tick(timestamp) {
+    if (!vantaEffect) return;
+
+    if (!lastTime) lastTime = timestamp;
+    const delta = Math.min((timestamp - lastTime) / 1000, 0.1);
+    lastTime = timestamp;
+
+    switch (pattern) {
+
+      case 'LOOP':
+        currentHue += speed * delta;
+        if (currentHue >= endHue) currentHue = startHue;
+        break;
+
+      case 'OSCILLATE':
+        currentHue += speed * delta * direction;
+        if (currentHue >= endHue) { currentHue = endHue; direction = -1; }
+        if (currentHue <= startHue) { currentHue = startHue; direction = 1; }
+        break;
+
+      case 'BOUNCE_EASE':
+        phase += (speed * Math.PI / range) * delta;
+        currentHue = startHue + range * (0.5 - 0.5 * Math.cos(phase));
+        break;
+    }
+
+    vantaEffect.setOptions(getNetConfig(currentHue, harmony));
+
+    requestAnimationFrame(tick);
   }
 
-  // Initialize Vanta effect
-  return initNetBackground(selector, options);
+  requestAnimationFrame(tick);
+
+  // ── Resize ───────────────────────────────────────────────
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      if (vantaEffect) {
+        vantaEffect.setOptions(getNetConfig(currentHue, harmony));
+      }
+    }, 300);
+  });
+
+  return vantaEffect;
 }
 
-/**
- * Destroy Vanta effect instance
- * Useful for cleaning up before page navigation or re-initialization
- * 
- * @param {object} vantaInstance - The Vanta effect instance to destroy
- */
+// ── Utilities ────────────────────────────────────────────────
 export function destroyNetBackground(vantaInstance) {
-  if (vantaInstance && typeof vantaInstance.destroy === 'function') {
-    vantaInstance.destroy();
-    console.info('[VantaNet] Effect destroyed');
-  }
-}
-
-/**
- * Reinitialize Vanta effect with new options
- * Useful for responsive design or theme switching
- * 
- * @param {object} vantaInstance - Existing Vanta instance to destroy
- * @param {string|HTMLElement} selector - Element for new effect
- * @param {object} newOptions - New configuration options
- * @returns {Promise} Resolves with new effect instance
- */
-export async function reinitNetBackground(vantaInstance, selector, newOptions = {}) {
-  destroyNetBackground(vantaInstance);
-  return initNetBackground(selector, newOptions);
+  if (vantaInstance?.destroy) vantaInstance.destroy();
 }
 
 export default {
+  initHeroNet,
   initNetBackground,
-  initNetBackgroundWithVideoHide,
   destroyNetBackground,
-  reinitNetBackground
+  BANDWIDTH,
+  PATTERN,
+  HARMONY,
+  SPEED
 };

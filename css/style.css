@@ -73,7 +73,7 @@
 }
 
 .intelligence-hero .s-hero-subtitle {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--s-white);
   font-size: 1.25rem;
   margin-bottom: 0;
   position: relative;
@@ -223,7 +223,7 @@
 
 
 /* Video background styling - UNIVERSAL (All screen sizes) */
-.hero-video-bg {
+/* .hero-video-bg {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -235,7 +235,7 @@
   z-index: 1;
   object-fit: cover;
   pointer-events: none;
-}
+} */
 
 /* Overlay for text readability */
 .s-hero-overlay {
@@ -378,12 +378,6 @@
     font-size: var(--s-text-lg);
   }
 
-  /* Components - Hero */
-  .s-hero {
-    min-height: 50vh;
-    padding: var(--s-space-16) var(--s-space-4);
-  }
-
   .s-hero-features {
     gap: var(--s-space-4);
     justify-content: space-around;
@@ -517,12 +511,6 @@
     padding: 0 0.5rem;
   }
 
-  /* Components - Hero */
-  .s-hero {
-    min-height: 45vh;
-    padding: var(--s-space-12) var(--s-space-4);
-  }
-
   .s-hero-features {
     display: flex;
     /* flex-direction: column; */
@@ -532,18 +520,17 @@
   }
 
   .s-hero-actions {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
 
   .s-hero-actions .s-btn {
     width: 100%;
-    max-width: 280px;
-    justify-content: center;
+    max-width: 50%;
+    justify-content: space-around;
   }
 
   .s-hero-description {
-    font-size: var(--s-text-base);
     margin-bottom: var(--s-space-6);
   }
 
