@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PM Scheduling: Time-Based vs Usage-Based Automation — SCORP Blog</title>
+<title>Preventive Maintenance Scheduling: Time-Based vs Usage-Based Automation | Sapphire EAM Blog</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="icon" type="image/png" href="../assets/images/scorp-logo-favicon.png">
 <link rel="stylesheet" href="../style.css">
 
 </head>
@@ -28,12 +27,7 @@
       <li class="nav-item"><a class="nav-link s-nav-link" href="index.html"><i class="fas fa-blog"></i><span>Blog</span></a></li>
       <li class="nav-item"><a class="nav-link s-nav-link" href="../sapphire.html"><i class="fas fa-diamond"></i><span>Sapphire</span></a></li>
       <li class="nav-item dropdown s-nav-dropdown-internal">
-        <a class="nav-link s-nav-link dropdown-toggle" 
-          href="#" 
-          role="button" 
-          data-bs-toggle="dropdown" 
-          aria-expanded="false"
-          data-dropdown-id="sapphire-smart">
+        <a class="nav-link s-nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-dropdown-id="sapphire-smart">
           <i class="fa-solid fa-lightbulb"></i>
           <span>Sapphire Smart</span>
           <!-- Active Indicator Badge -->
@@ -76,7 +70,7 @@
 <!-- ══ HERO ══ -->
 <div class="s-blog-hero-zone">
   <div class="s-blog-hero-ph">
-    <img src="../assets/images_blog/preventive-maintenan.jpg" alt="PM Scheduling: Time-Based vs Usage-Based Automation"> <!-- Swap with: <img src="../assets/images_blog/{{IMAGE_FILE}}" alt=""> -->
+    <img src="../assets/images_blog/preventive-maintenance-scheduling-hero.jpg" alt="Preventive Maintenance Scheduling: Time-Based vs Usage-Based Automation and How to Choose the Right Trigger for Every Asset"> <!-- Swap with: <img src="../assets/images_blog/{{IMAGE_FILE}}" alt=""> -->
   </div>
   <div class="s-blog-hero-overlay" aria-hidden="true"></div>
   <div class="s-blog-hero-content">
@@ -84,14 +78,14 @@
       <div class="row">
         <div class="col-12 col-lg-10 col-xl-8">
           <div class="s-blog-hero-tag">Featured · Guide</div>
-          <h1 class="s-blog-article-h1">PM Scheduling: Time-Based vs Usage-Based Automation</h1>
+          <h1 class="s-blog-article-h1">Preventive Maintenance Scheduling: Time-Based vs Usage-Based Automation and How to Choose the Right Trigger for Every Asset</h1>
           <div class="s-blog-meta-row">
-            <span>March 03, 2026</span>
-            <span class="s-blog-meta-sep">·</span>
-            <span class="s-blog-read-badge">⏱&nbsp;9 min read</span>
-            <span class="s-blog-meta-sep">·</span>
-            <span>SCORP Editorial</span>
-          </div>
+      <span>April 3, 2026</span>
+      <span class="s-blog-meta-sep">·</span>
+      <span class="s-blog-read-badge">⏱&nbsp;9 min read</span>
+      <span class="s-blog-meta-sep">·</span>
+      <span>SCORP Editorial</span>
+    </div>
         </div>
       </div>
     </div>
@@ -116,10 +110,48 @@
     <div class="s-blog-toc" style="margin-bottom:16px;">
       <div class="s-blog-toc-label">In This Article</div>
       <ul id="sBlogTocMobile">
-        <li class="is-active"><a href="#sec-1" class="s-drawer-link">Overview</a></li>
-<li><a href="#sec-2" class="s-drawer-link">Key Concepts</a></li>
-<li><a href="#sec-3" class="s-drawer-link">Implementation</a></li>
-      </ul>
+    <li class="is-active">
+      <a href="#sec-what-is-pm-scheduling" class="s-drawer-link">
+        What is PM Scheduling?
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-time-based-pm" class="s-drawer-link">
+        Time-Based PM
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-usage-based-pm" class="s-drawer-link">
+        Usage-Based PM
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-choosing-the-right-trigger" class="s-drawer-link">
+        Decision Framework
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-multi-trigger-pm" class="s-drawer-link">
+        Multi-Trigger PM
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-automation-removes-memory-dependency" class="s-drawer-link">
+        Automation Value
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-pm-scheduling-in-sapphire" class="s-drawer-link">
+        PM in Sapphire
+      </a>
+    </li>
+  </ul>
     </div>
     <div class="s-blog-sb-card">
       <div class="s-blog-sb-card-label">Related Articles</div>
@@ -158,41 +190,98 @@
     <div class="s-blog-layout">
       <!-- MAIN CONTENT -->
       <main>
-        <div class="s-blog-sections-wrap">
-
-          <!-- INTRO SECTION -->
-          <div class="s-blog-article-intro">
-            <p>Calendar PMs vs meter-based triggers, auto-scheduling logic, PM compliance rate tracking.</p>
-          </div>
-          <div class="s-blog-intro-divider" aria-hidden="true">· · ·</div>
-
-          <div class="s-blog-section" id="sec-1">
-  <div class="s-blog-sec-hdr">
-    <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#0a1628 0%,#003d7a 50%,#0066cc 100%)">
-      Section Image · 16 : 9
-    </div>
-    <div class="s-blog-sec-hdr-overlay"></div>
-    <h2>Overview</h2>
-  </div>
-  <div class="s-blog-body-text">
-    <p>Detailed content to be added here.</p>
-  </div>
-</div>
-
-<div class="s-blog-section" id="sec-2">
-  <div class="s-blog-sec-hdr">
-    <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#1a0533 0%,#3b0764 50%,#6d28d9 100%)">
-      Section Image · 16 : 9
-    </div>
-    <div class="s-blog-sec-hdr-overlay"></div>
-    <h2>Key Concepts</h2>
-  </div>
-  <div class="s-blog-body-text">
-    <p>Detailed content to be added here.</p>
-  </div>
-</div>
-
+        <div class="s-blog-sections-wrap"><div class="s-blog-article-intro"><p>A PM schedule that exists on paper but is not followed is not a PM program. It is a document. An alarming proportion of Indian industrial facilities have exactly this: a printed maintenance schedule, usually created at the time of equipment commissioning using the manufacturer's recommendations, pinned to a noticeboard or filed in a folder, and consistently ignored under the pressure of daily production demands. The schedule exists. The maintenance does not happen. And every missed PM is a small withdrawal from an account whose balance is asset reliability. The overdraft arrives as a breakdown, always at the worst possible time.</p><p>Automated PM scheduling is the function that converts a maintenance calendar from a document into a live operational system. This article covers the two fundamental PM scheduling approaches — time-based and usage-based — how each works, when each is the right choice, how automation removes the dependency on human memory and calendar discipline, and how a properly configured PM schedule in an EAM system becomes the foundation of a proactive maintenance culture.</p></div><div class="s-blog-intro-divider" aria-hidden="true">· · ·</div>
+      <div class="s-blog-section" id="sec-what-is-pm-scheduling">
+        <div class="s-blog-sec-hdr">
+          <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#0a1628 0%,#003d7a 50%,#0066cc 100%)">
+           Section Image &nbsp;·&nbsp; What is Preventive Maintenance Scheduling? &nbsp;·&nbsp; 16 : 9
+         </div>
+          <div class="s-blog-sec-hdr-overlay"></div>
+          <h2>What is Preventive Maintenance Scheduling?</h2>
         </div>
+        <div class="s-blog-body-text">
+          <p>PM scheduling is the systematic process of planning and triggering maintenance activities for physical assets before failure occurs, based on predetermined intervals of either elapsed time or accumulated usage. It answers three questions for every asset in the maintenance program: what maintenance is required, when is it due, and who is responsible for performing it.</p><p>The key word is predetermined. PM scheduling is the antithesis of reactive maintenance — it is the organisational commitment that maintenance will happen on a defined cadence regardless of whether the asset appears to need it. The value is not just in the maintenance tasks themselves. It is in the certainty they provide. An organisation with a running PM program knows which assets are due for maintenance in the next 30 days. It can plan labour, pre-kit parts, schedule production around maintenance windows and avoid the chaos of unplanned breakdowns. An organisation without a PM program knows only what broke last night.</p>
+        </div>
+      </div>
+    
+      <div class="s-blog-section" id="sec-time-based-pm">
+        <div class="s-blog-sec-hdr">
+          <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#0a1628 0%,#003d7a 50%,#0066cc 100%)">
+           Section Image &nbsp;·&nbsp; Time-Based PM Scheduling: How It Works &nbsp;·&nbsp; 16 : 9
+         </div>
+          <div class="s-blog-sec-hdr-overlay"></div>
+          <h2>Time-Based PM Scheduling: How It Works</h2>
+        </div>
+        <div class="s-blog-body-text">
+          <p>Time-based PM scheduling triggers maintenance based on the passage of calendar time regardless of how much the asset was actually used during that period. Examples: oil change every 3 months, filter replacement every 6 weeks, annual statutory inspection on a fixed calendar date.</p><p>The EAM holds the last completion date for each PM task and the defined interval. It calculates the next due date automatically and generates a work order when the due date arrives or approaches within a configurable lead time window.</p><p><strong>Advantages:</strong></p><ul><li>Simple to set up and manage — no usage tracking infrastructure required</li><li>Direct alignment with statutory and regulatory inspections which are always calendar-mandated</li><li>Suitable for assets whose degradation is primarily time-driven: rubber seals, lubricants, calibration-sensitive instruments, safety equipment, outdoor structures</li></ul><p><strong>Limitations:</strong></p><ul><li>Can lead to over-maintenance of low-utilization assets — a machine running 2 hours per day receives the same PM frequency as one running 20 hours per day, which is both financially inefficient and technically inaccurate</li><li>For high-utilization assets, time-based PM may lead to under-maintenance if the asset accumulates usage faster than the calendar interval assumes</li></ul>
+        </div>
+      </div>
+    
+      <div class="s-blog-section" id="sec-usage-based-pm">
+        <div class="s-blog-sec-hdr">
+          <div class="s-blog-sec-img-ph">
+           <img src="../assets/images_blog/pm-trigger-comparison-engineer.jpg" alt="Usage-Based PM Scheduling: How It Works" loading="lazy">
+         </div>
+          <div class="s-blog-sec-hdr-overlay"></div>
+          <h2>Usage-Based PM Scheduling: How It Works</h2>
+        </div>
+        <div class="s-blog-body-text">
+          <p>Usage-based PM scheduling triggers maintenance when an asset reaches a defined threshold of accumulated usage — measured in runtime hours, production cycles, kilometers driven, operating pressure cycles or any other quantifiable usage metric relevant to the asset class. Examples: bearing replacement every 8,000 runtime hours, vehicle service every 10,000 kilometers, pump seal inspection every 5,000 operating cycles.</p><p>The EAM tracks the current usage reading against the PM trigger threshold. When the reading approaches the threshold within a configurable alert margin the system generates an upcoming PM notification. When the threshold is reached a work order is automatically raised.</p><p><strong>Advantages:</strong></p><ul><li>Technically more accurate than time-based for most mechanical and rotating equipment — wear and degradation correlate with usage, not calendar time</li><li>Eliminates over-maintenance of low-utilization assets and under-maintenance of high-utilization assets simultaneously</li></ul><p><strong>Requirements and limitations:</strong></p><ul><li>Requires a reliable mechanism for capturing usage readings — manual meter entry, connected hour meters or IoT sensors</li><li>Accuracy is entirely dependent on the frequency and reliability of usage data collection — an organisation logging runtime hours monthly will have PM triggers accurate to within one month; connected hour meters are accurate to the minute</li><li>If reliable usage data cannot be collected, the theoretical advantage of usage-based PM collapses</li></ul>
+        </div>
+      </div>
+    
+      <div class="s-blog-section" id="sec-choosing-the-right-trigger">
+        <div class="s-blog-sec-hdr">
+          <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#0a1628 0%,#003d7a 50%,#0066cc 100%)">
+           Section Image &nbsp;·&nbsp; Choosing the Right Trigger: A Decision Framework &nbsp;·&nbsp; 16 : 9
+         </div>
+          <div class="s-blog-sec-hdr-overlay"></div>
+          <h2>Choosing the Right Trigger: A Decision Framework</h2>
+        </div>
+        <div class="s-blog-body-text">
+          <div class="s-blog-callout"><strong>Three-Question PM Trigger Decision Framework</strong><br><br><strong>Q1 — Does the asset degrade more with time or with use?</strong><br>→ Time-driven degradation (oxidation, corrosion, UV exposure, biological contamination, sitting unused): use <strong>time-based</strong> scheduling<br>→ Usage-driven degradation (mechanical wear, friction, fatigue cycles, thermal stress): use <strong>usage-based</strong> scheduling<br><br><strong>Q2 — Is there a statutory or regulatory requirement mandating a calendar interval?</strong><br>→ Yes (boiler inspections, electrical safety certifications, fire equipment, medical device calibration): <strong>time-based is mandatory</strong> regardless of technical preference<br>→ No: proceed to Q3<br><br><strong>Q3 — Can reliable usage data be collected for this asset?</strong><br>→ Yes (connected hour meter, operator meter readings, production system integration): use <strong>usage-based</strong> scheduling<br>→ No: use <strong>time-based</strong> scheduling — a well-executed time-based PM is always better than a theoretically superior usage-based PM running on inaccurate data</div>
+        </div>
+      </div>
+    
+      <div class="s-blog-section" id="sec-multi-trigger-pm">
+        <div class="s-blog-sec-hdr">
+          <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#0a1628 0%,#003d7a 50%,#0066cc 100%)">
+           Section Image &nbsp;·&nbsp; Multi-Trigger PM: Using Both Together &nbsp;·&nbsp; 16 : 9
+         </div>
+          <div class="s-blog-sec-hdr-overlay"></div>
+          <h2>Multi-Trigger PM: Using Both Together</h2>
+        </div>
+        <div class="s-blog-body-text">
+          <p>Multi-trigger PM scheduling is the most accurate approach for critical assets. A multi-trigger PM fires on whichever threshold is reached first — either the time interval or the usage threshold.</p><p>Example: a vehicle service scheduled for every 6 months OR every 10,000 kilometers whichever comes first. If the vehicle covers 10,000 kilometers in 3 months the service is triggered at 3 months. If the vehicle covers only 4,000 kilometers in 6 months the service is triggered at the 6-month mark. Neither time-driven nor usage-driven degradation is left unaddressed regardless of how the asset is operated in any given period.</p><p>Multi-trigger PM is the standard approach for:</p><ul><li>Vehicles and mobile equipment</li><li>Generators and standby power systems</li><li>Compressors and pneumatic systems</li><li>Any asset with both time-sensitive components (seals, lubricants) and usage-sensitive components (bearings, wear surfaces)</li></ul><p>In Sapphire, multi-trigger PM schedules are configured with both a time interval and a usage threshold. The system monitors both simultaneously and raises the work order when either is reached first — no manual calculation or cross-checking required.</p>
+        </div>
+      </div>
+    
+      <div class="s-blog-section" id="sec-automation-removes-memory-dependency">
+        <div class="s-blog-sec-hdr">
+          <div class="s-blog-sec-img-ph">
+           <img src="../assets/images_blog/pm-manual-vs-automated-dashboard.jpg" alt="How Automation Removes the Human Memory Dependency" loading="lazy">
+         </div>
+          <div class="s-blog-sec-hdr-overlay"></div>
+          <h2>How Automation Removes the Human Memory Dependency</h2>
+        </div>
+        <div class="s-blog-body-text">
+          <p>In a manual PM system the maintenance manager remembers which machines are due, calculates dates in his head or on a spreadsheet, calls the technician when he remembers and logs completion on a clipboard if it happens at all. This system works only as well as the individual and fails completely when that person is absent, distracted or overloaded with reactive work.</p><p>Automated PM scheduling in an EAM eliminates every human memory dependency in the PM process:</p><ul><li>The system knows every PM schedule for every asset and calculates due dates and usage thresholds continuously</li><li>Work orders are generated automatically when triggers are reached</li><li>The assigned technician receives the job instantly on their mobile device</li><li>The supervisor is escalated to automatically if the work order is not accepted within the defined response window</li><li>On completion, the next due date is recalculated automatically — no human calculation required</li></ul><p>The maintenance manager's role shifts from remembering and chasing to reviewing compliance and resolving exceptions. <strong>PM compliance rate</strong> — the percentage of scheduled PM work orders completed on time within the defined window — becomes a measurable, manageable metric. A facility with manual PM typically has no idea what its PM compliance rate is. A facility with automated EAM scheduling knows it precisely and holds it above 85 percent as the operational target.</p>
+        </div>
+      </div>
+    
+      <div class="s-blog-section" id="sec-pm-scheduling-in-sapphire">
+        <div class="s-blog-sec-hdr">
+          <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#0a1628 0%,#003d7a 50%,#0066cc 100%)">
+           Section Image &nbsp;·&nbsp; Setting Up PM Schedules in Sapphire: What Good Looks Like &nbsp;·&nbsp; 16 : 9
+         </div>
+          <div class="s-blog-sec-hdr-overlay"></div>
+          <h2>Setting Up PM Schedules in Sapphire: What Good Looks Like</h2>
+        </div>
+        <div class="s-blog-body-text">
+          <p>A well-configured PM schedule in Sapphire for a typical Indian manufacturing asset works like this:</p><ul><li>Asset is registered with its unique ID, manufacturer, model and commissioning date</li><li>PM tasks are defined from manufacturer recommendations and historical maintenance data — each task specifying the activity, skill required, estimated duration and parts required</li><li>Each task is assigned a time interval, a usage threshold or both</li><li>The system begins tracking from the commissioning date or last completion date, whichever is more recent</li><li>Upcoming PM work orders appear in the maintenance calendar with configurable advance notice — typically 3 to 7 days — allowing parts to be pre-kitted and labour to be scheduled</li><li>On trigger, the work order is automatically raised, assigned to the designated technician and the parts list is generated</li><li>The technician receives the job on their mobile app and can log execution, parts consumed and completion from the shop floor</li><li>On close, the PM history is updated against the asset and the next due date is recalculated automatically</li></ul><p>At no point does a human need to remember a date, calculate an interval or chase a technician manually. The process runs itself. The manager manages exceptions. This is what it means to move from a maintenance culture that reacts to one that plans. The PM schedule is the plan. The automation is what makes it happen every single time without fail.</p>
+        </div>
+      </div>
+    </div>
       </main>
 
       <!-- DESKTOP SIDEBAR TOC -->
@@ -200,10 +289,48 @@
         <nav class="s-blog-toc">
           <div class="s-blog-toc-label">In This Article</div>
           <ul id="sBlogTocDesktop">
-            <li class="is-active"><a href="#sec-1" class="s-drawer-link">Overview</a></li>
-<li><a href="#sec-2" class="s-drawer-link">Key Concepts</a></li>
-<li><a href="#sec-3" class="s-drawer-link">Implementation</a></li>
-          </ul>
+    <li class="is-active">
+      <a href="#sec-what-is-pm-scheduling" class="s-drawer-link">
+        What is PM Scheduling?
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-time-based-pm" class="s-drawer-link">
+        Time-Based PM
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-usage-based-pm" class="s-drawer-link">
+        Usage-Based PM
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-choosing-the-right-trigger" class="s-drawer-link">
+        Decision Framework
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-multi-trigger-pm" class="s-drawer-link">
+        Multi-Trigger PM
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-automation-removes-memory-dependency" class="s-drawer-link">
+        Automation Value
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-pm-scheduling-in-sapphire" class="s-drawer-link">
+        PM in Sapphire
+      </a>
+    </li>
+  </ul>
         </nav>
         <div class="s-blog-sb-card">
           <div class="s-blog-sb-card-label">Related Articles</div>
@@ -242,18 +369,250 @@
   </div>
 </section>
 
-<!-- ══ FOOTER ══ -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
-      <div class="footer-brand">SCORP<em>·</em>tech</div>
-      <p>© 2026 Scorptech Technologies Pvt. Ltd. · Jaipur, Rajasthan, India</p>
+<footer class="s-footer">
+
+  <div class="s-footer__top-strip">
+    <div class="s-footer__status">
+      <span class="s-status-dot"></span>
+      Sapphire is live — all systems operational
+    </div>
+    <div class="s-footer__top-cta">
+      <a href="/contact.html" class="s-btn-sm s-btn-primary s-btn-glare">
+        <i class="fas fa-comments me-1"></i>
+        Talk to our team
+      </a>
+      <a href="/book-demo.html" class="s-btn-sm s-btn-success s-btn-glare">
+        <i class="fas fa-calendar-alt me-1"></i>
+        Book a Demo
+      </a>
     </div>
   </div>
+
+  <div class="s-footer__body">
+
+    <div class="s-footer__brand">
+      <a href="/index.html" class="s-footer__logo" style="text-decoration: none;">
+        <div class="s-footer__logomark">
+          <img src="../assets/images/Scorp-Logo.png" alt="Scorptech" width="22" height="22" style="filter: brightness(0) invert(1);">
+        </div>
+        <span class="s-footer__logoname">SCORP</span>
+      </a>
+      <p class="s-footer__tagline">In the business of making<br><em>yours simple.</em></p>
+      <div class="s-footer__contact">
+        <a href="tel:+919782383338" class="s-footer__contact-item">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 3.5C3 3.224 3.224 3 3.5 3h2.379c.246 0 .46.163.523.402l.754 2.64a.542.542 0 01-.167.567L5.586 7.414c.981 2.016 2.56 3.595 4.576 4.576l.805-.903a.542.542 0 01.567-.167l2.64.754c.239.063.402.277.402.523V14.5c0 .276-.224.5-.5.5C6.044 15 1 9.956 1 3.5z" stroke="currentColor" stroke-width="1.2"/></svg>
+          +91 97823 83338
+        </a>
+        <a href="mailto:support@scorptech.in" class="s-footer__contact-item">
+          <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M1 5l7 5 7-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          support@scorptech.in
+        </a>
+        <a href="/contact.html" class="s-footer__contact-item">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.375 4.5 8.5 4.5 8.5S12.5 9.375 12.5 6c0-2.485-2.015-4.5-4.5-4.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" stroke="currentColor" stroke-width="1.2"/></svg>
+          Jaipur, Rajasthan
+        </a>
+      </div>
+      <span class="s-footer__location">
+        <svg viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1"/><path d="M1.5 6h9M6 1.5a7 7 0 000 9M6 1.5a7 7 0 010 9" stroke="currentColor" stroke-width="0.8"/></svg>
+        Jaipur-built · Deployed globally
+      </span>
+    </div>
+
+    <div class="s-footer__links">
+
+      <div>
+        <span class="s-footer__col-title">Explore</span>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About Scorptech</a></li>
+          <li><a href="/sapphire.html">Sapphire EAM</a></li>
+          <li><a href="/analytics.html">Sapphire Analytics</a></li>
+          <li><a href="/intelligence.html">Sapphire Intelligence</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/book-demo.html">Book a Demo</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <span class="s-footer__col-title">Platform</span>
+        <ul>
+          <li><a href="/sapphire.html#work-orders">Work Order Management</a></li>
+          <li><a href="/sapphire.html#inventory">Inventory Control</a></li>
+          <li><a href="/sapphire.html#purchase">Purchase Management</a></li>
+          <li><a href="/sapphire.html#asset-tracking">Asset Tracking</a></li>
+          <li><a href="/sapphire.html#pm-scheduling">PM Scheduling</a></li>
+          <li><a href="/sapphire.html#documents">Document Management</a></li>
+          <li><a href="https://stage.scorptech.in/login" target="_blank" rel="noopener">Log In to Sapphire ↗</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <span class="s-footer__col-title">Resources</span>
+        <ul>
+          <li><a href="/blog/index.html">Knowledge Hub</a></li>
+          <li><a href="/faq.html">FAQs</a></li>
+          <li><a href="/privacy_policy.html">Privacy Policy</a></li>
+          <li><a href="/terms_of_use.html">Terms of Use</a></li>
+          <li><a href="mailto:support@scorptech.in">Support</a></li>
+        </ul>
+      </div>
+
+      <div class="s-footer__blog-section">
+        <div class="s-footer__blog-header">
+          <span class="s-footer__col-title" style="margin-bottom:0;">Knowledge Hub — 42 Articles</span>
+          <a href="/blog/index.html" class="s-view-all" style="font-size:0.72rem;">
+            View all
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <div class="s-blog-categories">
+
+          <details class="s-acc">
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-fundamentals"></span>Fundamentals<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="s-acc__body">
+              <a href="/blog/what-is-eam-enterprise-asset-management-guide.html">What Is Enterprise Asset Management?</a>
+              <a href="/blog/eam-vs-cmms-vs-erp-differences.html">EAM vs ERP: The Key Difference</a>
+              <a href="/blog/asset-lifecycle-management-guide.html">Asset Lifecycle Management</a>
+              <a href="/blog/preventive-predictive-reactive-maintenance.html">Preventive vs Predictive Maintenance</a>
+              <a href="/blog/maintenance-kpis-that-actually-matter.html">Building a Maintenance Strategy</a>
+              <a href="/blog/manufacturing-equipment-downtime-eam.html">The True Cost of Asset Downtime</a>
+              <a href="/blog/compliance-audit-trails-eam.html">ISO 55000: The Global Standard</a>
+            </div>
+          </details>
+
+          <details class="s-acc">
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-modules"></span>Sapphire Modules<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="s-acc__body">
+              <a href="/blog/work-order-management-backbone-operations.html">Work Order Management</a>
+              <a href="/blog/spare-parts-inventory-management-eam.html">Inventory Control</a>
+              <a href="/blog/vendor-contractor-management-eam.html">Purchase Module: PO to Payment</a>
+              <a href="/blog/construction-infrastructure-site-asset-tracking.html">Asset Tracking</a>
+              <a href="/blog/asset-performance-dashboards-what-to-track.html">Dashboard Intelligence</a>
+              <a href="/blog/preventive-maintenance-scheduling-automation.html">PM Scheduling</a>
+              <a href="/blog/asset-register-single-source-of-truth.html">Document Management</a>
+            </div>
+          </details>
+
+          <details class="s-acc">
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-industries"></span>Industries<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="s-acc__body">
+              <a href="/blog/manufacturing-equipment-downtime-eam.html">Manufacturing</a>
+              <a href="/blog/real-estate-facilities-management-eam.html">Facility Management</a>
+              <a href="/blog/healthcare-medical-equipment-compliance.html">Healthcare</a>
+              <a href="/blog/energy-utilities-grid-asset-management.html">Power & Utilities</a>
+              <a href="/blog/land-air-water-vehicles-eam.html">Oil & Gas</a>
+              <a href="/blog/it-parks-commercial-real-estate-eam.html">Real Estate</a>
+              <a href="/blog/logistics-warehousing-fleet-facility-management.html">Aviation & Airports</a>
+            </div>
+          </details>
+
+          <details class="s-acc">
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-analytics"></span>Analytics<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 16 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="s-acc__body">
+              <a href="/blog/energy-monitoring-sustainability-analytics-eam.html">Real-Time Asset Analytics</a>
+              <a href="/blog/predictive-analytics-asset-failure-prevention.html">Predictive Maintenance Analytics</a>
+              <a href="/blog/oee-overall-equipment-effectiveness-guide.html">OEE Tracking</a>
+              <a href="/blog/maintenance-kpis-that-actually-matter.html">KPI Design for EAM</a>
+              <a href="/blog/mtbf-mttr-reliability-numbers-guide.html">MTBF: Calculating & Reducing</a>
+              <a href="/blog/cost-analytics-maintenance-budget-savings.html">Maintenance Cost Benchmarking</a>
+              <a href="/blog/digital-twins-and-eam-next-frontier.html">Asset Health Scoring</a>
+            </div>
+          </details>
+
+          <details class="s-acc">
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-business"></span>Business Value<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="s-acc__body">
+              <a href="/blog/roi-of-eam-implementation-real-numbers.html">ROI of EAM Software</a>
+              <a href="/blog/total-cost-of-ownership-asset-management.html">The Spreadsheet Trap</a>
+              <a href="/blog/eam-implementation-roadmap-indian-enterprises.html">Why EAM Implementations Fail</a>
+              <a href="/blog/making-business-case-for-eam-investment.html">Justifying EAM to the C-Suite</a>
+              <a href="/blog/maintenance-kpis-that-actually-matter.html">Maintenance Maturity Model</a>
+              <a href="/blog/eam-for-cfos-how-finance-reads-asset-data.html">EAM and ESG</a>
+              <a href="/blog/vendor-contractor-management-eam.html">EAM Vendor Buyer's Guide</a>
+            </div>
+          </details>
+
+          <details class="s-acc">
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-special"></span>Special Editions<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="s-acc__body">
+              <a href="/blog/sapphire-eam-for-indian-msmes.html">Sapphire 2025: What's New</a>
+              <a href="/blog/scorp-story-jaipur-honest-industrial-software.html">Built in Jaipur: Our Story</a>
+              <a href="/blog/eam-implementation-roadmap-indian-enterprises.html">EAM in India</a>
+              <a href="/blog/sapphire-vs-sap-pm.html">Sapphire vs SAP PM</a>
+              <a href="/blog/iot-integration-with-eam-sensors-to-work-orders.html">AI in Asset Management</a>
+              <a href="/blog/education-campus-infrastructure-management.html">Customer Spotlight</a>
+              <a href="/blog/what-is-eam-enterprise-asset-management-guide.html">EAM Glossary: 60 Terms</a>
+            </div>
+          </details>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+<div class="s-footer__social container mb-2">
+    <div class="row justify-content-center g-3 mb-3">
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-whatsapp" data-coming-soon="WhatsApp" aria-label="WhatsApp" style="text-decoration: none;">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-linkedin" data-coming-soon="LinkedIn" aria-label="LinkedIn" style="text-decoration: none;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-youtube" data-coming-soon="YouTube" aria-label="YouTube" style="text-decoration: none;">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-instagram" data-coming-soon="Instagram" aria-label="Instagram" style="text-decoration: none;">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+    <div class="row justify-content-center g-3">
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-facebook" data-coming-soon="Facebook" aria-label="Facebook" style="text-decoration: none;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-x" data-coming-soon="X (formerly Twitter)" aria-label="X" style="text-decoration: none;">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-discord" data-coming-soon="Discord" aria-label="Discord" style="text-decoration: none;">
+                <i class="fab fa-discord"></i>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-github" data-coming-soon="GitHub" aria-label="GitHub" style="text-decoration: none;">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </div>
+</div>
+  <div class="s-footer__bottom">
+    <p class="s-footer__copy">© 2026 SCORP — Scorptech Technologies Private Limited. All rights reserved.</p>
+    <div class="s-footer__legal">
+      <a href="/privacy_policy.html">Privacy Policy</a>
+      <a href="/terms_of_use.html">Terms of Use</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div class="s-footer__made">
+      <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.375 4.5 8.5 4.5 8.5S12.5 9.375 12.5 6c0-2.485-2.015-4.5-4.5-4.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" stroke="rgba(143,169,196,0.7)"/></svg>
+      Made with intent in Jaipur
+    </div>
+  </div>
+
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../main.js" type="module"></script>
+<script src="../js/main.js" type="module"></script>
 <script>
   /* IntersectionObserver — syncs active TOC item as you scroll */
 (function () {
@@ -343,7 +702,8 @@
   });
 })();
 </script>
-</body>
-</html>
 
 
+
+
+</body></html>

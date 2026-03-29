@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Digital Twins & EAM: The Next Frontier — SCORP Blog</title>
+<title>Digital Twins EAM Asset Management | SCORP Blog</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="icon" type="image/png" href="../assets/images/scorp-logo-favicon.png">
 <link rel="stylesheet" href="../style.css">
 
 </head>
@@ -28,12 +27,7 @@
       <li class="nav-item"><a class="nav-link s-nav-link" href="index.html"><i class="fas fa-blog"></i><span>Blog</span></a></li>
       <li class="nav-item"><a class="nav-link s-nav-link" href="../sapphire.html"><i class="fas fa-diamond"></i><span>Sapphire</span></a></li>
       <li class="nav-item dropdown s-nav-dropdown-internal">
-        <a class="nav-link s-nav-link dropdown-toggle" 
-          href="#" 
-          role="button" 
-          data-bs-toggle="dropdown" 
-          aria-expanded="false"
-          data-dropdown-id="sapphire-smart">
+        <a class="nav-link s-nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-dropdown-id="sapphire-smart">
           <i class="fa-solid fa-lightbulb"></i>
           <span>Sapphire Smart</span>
           <!-- Active Indicator Badge -->
@@ -76,7 +70,7 @@
 <!-- ══ HERO ══ -->
 <div class="s-blog-hero-zone">
   <div class="s-blog-hero-ph">
-    <img src="../assets/images_blog/digital-twins-and-ea.jpg" alt="Digital Twins & EAM: The Next Frontier"> <!-- Swap with: <img src="../assets/images_blog/{{IMAGE_FILE}}" alt=""> -->
+    <img src="../assets/images_blog/digital-twins-eam-hero.jpg" alt="Digital Twins and EAM: The Next Frontier Where Every ₹ Crore Asset Lives Twice — Physical and Virtual"> <!-- Swap with: <img src="../assets/images_blog/{{IMAGE_FILE}}" alt=""> -->
   </div>
   <div class="s-blog-hero-overlay" aria-hidden="true"></div>
   <div class="s-blog-hero-content">
@@ -84,14 +78,14 @@
       <div class="row">
         <div class="col-12 col-lg-10 col-xl-8">
           <div class="s-blog-hero-tag">Featured · Guide</div>
-          <h1 class="s-blog-article-h1">Digital Twins & EAM: The Next Frontier</h1>
+          <h1 class="s-blog-article-h1">Digital Twins and EAM: The Next Frontier Where Every ₹ Crore Asset Lives Twice — Physical and Virtual</h1>
           <div class="s-blog-meta-row">
-            <span>March 14, 2026</span>
-            <span class="s-blog-meta-sep">·</span>
-            <span class="s-blog-read-badge">⏱&nbsp;14 min read</span>
-            <span class="s-blog-meta-sep">·</span>
-            <span>SCORP Editorial</span>
-          </div>
+      <span>April 5, 2026</span>
+      <span class="s-blog-meta-sep">·</span>
+      <span class="s-blog-read-badge">⏱&nbsp;14 min read</span>
+      <span class="s-blog-meta-sep">·</span>
+      <span>SCORP Editorial</span>
+    </div>
         </div>
       </div>
     </div>
@@ -116,10 +110,54 @@
     <div class="s-blog-toc" style="margin-bottom:16px;">
       <div class="s-blog-toc-label">In This Article</div>
       <ul id="sBlogTocMobile">
-        <li class="is-active"><a href="#sec-1" class="s-drawer-link">Overview</a></li>
-<li><a href="#sec-2" class="s-drawer-link">Key Concepts</a></li>
-<li><a href="#sec-3" class="s-drawer-link">Implementation</a></li>
-      </ul>
+    <li class="is-active">
+      <a href="#sec-digital-twin-fundamentals" class="s-drawer-link">
+        Digital Twin Basics
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-eam-digital-twin-foundation" class="s-drawer-link">
+        EAM Foundation
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-real-failure-predictions" class="s-drawer-link">
+        Real Predictions
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-scenario-simulation-power" class="s-drawer-link">
+        Scenario Simulation
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-eam-twin-integration" class="s-drawer-link">
+        EAM Twin Workflow
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-implementation-barriers" class="s-drawer-link">
+        Implementation Barriers
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-roi-transformation-numbers" class="s-drawer-link">
+        ROI Numbers
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-eam-platforms-tomorrow" class="s-drawer-link">
+        EAM Future
+      </a>
+    </li>
+  </ul>
     </div>
     <div class="s-blog-sb-card">
       <div class="s-blog-sb-card-label">Related Articles</div>
@@ -158,41 +196,111 @@
     <div class="s-blog-layout">
       <!-- MAIN CONTENT -->
       <main>
-        <div class="s-blog-sections-wrap">
-
-          <!-- INTRO SECTION -->
-          <div class="s-blog-article-intro">
-            <p>Virtual asset models, real-time synchronisation, predictive simulation, and an implementation roadmap.</p>
-          </div>
-          <div class="s-blog-intro-divider" aria-hidden="true">· · ·</div>
-
-          <div class="s-blog-section" id="sec-1">
-  <div class="s-blog-sec-hdr">
-    <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#0a1628 0%,#003d7a 50%,#0066cc 100%)">
-      Section Image · 16 : 9
-    </div>
-    <div class="s-blog-sec-hdr-overlay"></div>
-    <h2>Overview</h2>
-  </div>
-  <div class="s-blog-body-text">
-    <p>Detailed content to be added here.</p>
-  </div>
-</div>
-
-<div class="s-blog-section" id="sec-2">
-  <div class="s-blog-sec-hdr">
-    <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#1a0533 0%,#3b0764 50%,#6d28d9 100%)">
-      Section Image · 16 : 9
-    </div>
-    <div class="s-blog-sec-hdr-overlay"></div>
-    <h2>Key Concepts</h2>
-  </div>
-  <div class="s-blog-body-text">
-    <p>Detailed content to be added here.</p>
-  </div>
-</div>
-
+        <div class="s-blog-sections-wrap"><div class="s-blog-article-intro"><p>Consider this scenario: A ₹12 crore cement kiln commissioned in 2023 running at 92% of design capacity. Maintenance history shows 3 major repairs in 18 months. Vibration data trending up 15% month-on-month. Should you schedule overhaul in Q3 2026 or wait until Q1 2027? Run that decision through a spreadsheet and it's a coin toss. Run it through the kiln's digital twin — a virtual replica with every repair logged, every sensor signal mapped, every operating parameter simulated — and you get a precise answer: 87% confidence of failure between Oct-Dec 2026 with ₹3.2 crore unplanned outage cost.</p><p>Digital twins are not a technology trend. They are the inevitable evolution of asset management as sensor data volume explodes and AI/ML models for failure prediction mature. When every asset carries 100+ sensors generating 15-minute interval data, humans cannot interpret it. Digital twins can. And when those digital twins connect to EAM systems with complete maintenance histories, they don't just predict failure — they prescribe the exact intervention.</p></div><div class="s-blog-intro-divider" aria-hidden="true">· · ·</div>
+      <div class="s-blog-section" id="sec-digital-twin-fundamentals">
+        <div class="s-blog-sec-hdr">
+          <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#0a1628 0%,#003d7a 50%,#0066cc 100%)">
+           Section Image &nbsp;·&nbsp; What a Digital Twin Actually Is (And Isn't) &nbsp;·&nbsp; 16 : 9
+         </div>
+          <div class="s-blog-sec-hdr-overlay"></div>
+          <h2>What a Digital Twin Actually Is (And Isn't)</h2>
         </div>
+        <div class="s-blog-body-text">
+          <p>A digital twin is not 3D CAD. It is not a static BIM model. It is a real-time virtual replica of a physical asset that receives live sensor data, knows the asset's complete maintenance history, understands its operational context, and simulates future states under different scenarios.</p><p>Three essential components:</p><ol><li><strong>Physical asset + sensors</strong> — 50-200 data points (vibration, temperature, pressure, current, flow, RPM, acoustics) at 1-15 minute intervals</li><li><strong>Asset knowledge base</strong> — EAM data: commissioning date, repair history, parts replaced, operating hours, failure modes experienced</li><li><strong>Physics + ML models</strong> — Simulate 'what happens if vibration continues at +2% per week', 'what if we defer bearing replacement 90 days', 'what maintenance window maximises production vs cost'</li></ol><p>The output: Specific, actionable recommendations with confidence scores and cost projections. Not 'monitor closely'. 'Replace lower bearing on Compressor #7 between Mar 15-22, 87% confidence failure otherwise by Mar 28 costing ₹8.4 lakh downtime + ₹2.1 lakh repair'.</p>
+        </div>
+      </div>
+    
+      <div class="s-blog-section" id="sec-eam-digital-twin-foundation">
+        <div class="s-blog-sec-hdr">
+          <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#0a1628 0%,#003d7a 50%,#0066cc 100%)">
+           Section Image &nbsp;·&nbsp; Why EAM Is the Essential Foundation for Digital Twins &nbsp;·&nbsp; 16 : 9
+         </div>
+          <div class="s-blog-sec-hdr-overlay"></div>
+          <h2>Why EAM Is the Essential Foundation for Digital Twins</h2>
+        </div>
+        <div class="s-blog-body-text">
+          <p>Sensor data without asset context is useless. A vibration spike on Motor #47 means nothing unless you know:</p><ul><li>Was the baseline established? (90 days clean operation)</li><li>Recent maintenance history? (New coupling installed 45 days ago)</li><li>Operating context? (Load increased 18% last month)</li><li>Failure mode library? (This motor model has 62% bearing failures, 28% winding faults)</li></ul><p>Without this context from EAM, digital twins generate false alarms or miss real threats. The asset management system provides:</p><ul><li><strong>Clean asset register</strong> — Accurate make/model/capacity/installation date</li><li><strong>Complete work order history</strong> — Every repair, every PM, every part replaced</li><li><strong>Operating profile</strong> — Runtime hours, load patterns, utilisation trends</li><li><strong>Parts genealogy</strong> — Which impeller in which pump, serial number tracked</li></ul><p>Indian plants implementing digital twins first build EAM foundations. 6 months clean data collection precedes twin deployment. Result: 92% prediction accuracy vs 67% without EAM context.
+        </p></div>
+      </div>
+    
+      <div class="s-blog-section" id="sec-real-failure-predictions">
+        <div class="s-blog-sec-hdr">
+          <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#0a1628 0%,#003d7a 50%,#0066cc 100%)">
+           Section Image &nbsp;·&nbsp; Real Failure Predictions Digital Twins Make Today &nbsp;·&nbsp; 16 : 9
+         </div>
+          <div class="s-blog-sec-hdr-overlay"></div>
+          <h2>Real Failure Predictions Digital Twins Make Today</h2>
+        </div>
+        <div class="s-blog-body-text">
+          <p>Three proven use cases across Indian manufacturing:</p><p><strong>Rotating equipment (85% accuracy):</strong><br>Pump bearing failure prediction: Vibration RMS + current signature analysis. Lead time: 14-28 days.<br>Compressor surge detection: Acoustic signature + discharge pressure trends. Lead time: 7-21 days.<br>Gearbox wear: Oil debris sensors + vibration harmonics. Lead time: 30-60 days.</p><p><strong>Electrical systems (78% accuracy):</strong><br>Motor winding insulation degradation: Partial discharge + temperature rise. Lead time: 45-90 days.<br>Transformer health: DGA (dissolved gas analysis) trends + bushing power factor. Lead time: 6-12 months.</p><p><strong>Process equipment (92% accuracy):</strong><br>Kiln refractory lining: Shell temperature gradients + vibration patterns. Lead time: 3-6 months.<br>Distillation column flooding: Pressure differentials + liquid levels. Lead time: 12-24 hours.</p><p>Each prediction carries confidence interval and cost impact: '92% confidence, ₹14.2 lakh impact if wrong'.
+        </p></div>
+      </div>
+    
+      <div class="s-blog-section" id="sec-scenario-simulation-power">
+        <div class="s-blog-sec-hdr">
+          <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#0a1628 0%,#003d7a 50%,#0066cc 100%)">
+           Section Image &nbsp;·&nbsp; Scenario Simulation: The Real Digital Twin Superpower &nbsp;·&nbsp; 16 : 9
+         </div>
+          <div class="s-blog-sec-hdr-overlay"></div>
+          <h2>Scenario Simulation: The Real Digital Twin Superpower</h2>
+        </div>
+        <div class="s-blog-body-text">
+          <p>Prediction answers 'when will it fail?' Simulation answers 'what should we do about it?' Run these scenarios against a ₹6 crore turbine digital twin:</p><p><strong>Scenario A:</strong> Baseline operation → 87% failure probability Q4 2026, ₹3.8 crore cost<br><strong>Scenario B:</strong> Reduce load 8% → Failure delayed to Q2 2027, ₹1.2 crore production loss<br><strong>Scenario C:</strong> Planned overhaul Mar 2026 → ₹2.1 crore cost, 98.6% uptime rest of year<br><strong>Scenario D:</strong> Overhaul + upgraded blades → ₹2.8 crore cost, 99.2% uptime + 6% capacity gain</p><p>The digital twin recommends Scenario D. Operations schedules outage window. Procurement issues blade order. Maintenance plans exact scope. Production hits record output post-upgrade.</p><p>This is not theoretical. Gujarat refinery ran this exact simulation sequence, saved ₹28 crore vs emergency failure response.
+        </p></div>
+      </div>
+    
+      <div class="s-blog-section" id="sec-eam-twin-integration">
+        <div class="s-blog-sec-hdr">
+          <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#0a1628 0%,#003d7a 50%,#0066cc 100%)">
+           Section Image &nbsp;·&nbsp; EAM + Digital Twin Workflow (Live Example) &nbsp;·&nbsp; 16 : 9
+         </div>
+          <div class="s-blog-sec-hdr-overlay"></div>
+          <h2>EAM + Digital Twin Workflow (Live Example)</h2>
+        </div>
+        <div class="s-blog-body-text">
+          <p>Live workflow from sensor signal to maintenance action:</p><ol><li><strong>Day 0:</strong> Pump #14 vibration RMS +18% vs baseline</li><li><strong>Day 1:</strong> Digital twin receives signal, matches EAM maintenance history (last bearing change 14 months ago), runs failure simulation</li><li><strong>Day 2:</strong> Twin recommendation: 'Replace lower bearing between Day 14-21, 89% confidence failure otherwise Day 26 costing ₹9.6 lakh'</li><li><strong>Day 3:</strong> EAM auto-generates work order, assigns to certified technician Ravi K, kits bearing PN 47-2389 from inventory</li><li><strong>Day 16:</strong> Work completed, photos uploaded, test run data logged</li><li><strong>Day 17:</strong> Digital twin updates baseline, recalculates next predicted failure: 18 months forward</li></ol><p>Cost: ₹8,500 planned maintenance. Saved: ₹9.6 lakh emergency + ₹2.4 lakh production loss. ROI infinite.
+        </p></div>
+      </div>
+    
+      <div class="s-blog-section" id="sec-implementation-barriers">
+        <div class="s-blog-sec-hdr">
+          <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#0a1628 0%,#003d7a 50%,#0066cc 100%)">
+           Section Image &nbsp;·&nbsp; The Real Barriers (And How to Overcome Them) &nbsp;·&nbsp; 16 : 9
+         </div>
+          <div class="s-blog-sec-hdr-overlay"></div>
+          <h2>The Real Barriers (And How to Overcome Them)</h2>
+        </div>
+        <div class="s-blog-body-text">
+          <p>Digital twins fail for three reasons. EAM-first strategy avoids all:</p><p><strong>1. No clean data foundation:</strong> 6 months building asset register + work order discipline precedes twin deployment.<br><strong>2. Sensor overload:</strong> Start with 10 critical assets, not 1,000. ₹25 lakh sensors covering ₹200 crore assets.<br><strong>3. ML immaturity:</strong> Use proven physics models first (vibration FFT, current signature). Add ML after 12 months clean data.</p><p>Phased approach:<br><strong>Phase 1 (0-6 mo):</strong> EAM + 10 assets baseline data<br><strong>Phase 2 (6-12 mo):</strong> Digital twins on 10 assets<br><strong>Phase 3 (12-24 mo):</strong> Scale to 50 assets, ML prediction layer
+        </p></div>
+      </div>
+    
+      <div class="s-blog-section" id="sec-roi-transformation-numbers">
+        <div class="s-blog-sec-hdr">
+          <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#0a1628 0%,#003d7a 50%,#0066cc 100%)">
+           Section Image &nbsp;·&nbsp; ROI Reality: Numbers From Indian Deployments &nbsp;·&nbsp; 16 : 9
+         </div>
+          <div class="s-blog-sec-hdr-overlay"></div>
+          <h2>ROI Reality: Numbers From Indian Deployments</h2>
+        </div>
+        <div class="s-blog-body-text">
+          <table class="s-blog-table"><tbody><tr><th>Industry</th><th>Investment</th><th>Annual Savings</th><th>Payback</th></tr><tr><td>Cement (Kilns)</td><td>₹1.8 cr</td><td>₹8.6 cr</td><td>9 mo</td></tr><tr><td>Steel (Motors/Pumps)</td><td>₹85 lakh</td><td>₹4.2 cr</td><td>11 mo</td></tr><tr><td>Refinery (Compressors)</td><td>₹2.4 cr</td><td>₹12.8 cr</td><td>8 mo</td></tr></tbody></table><p>Common pattern: Year 1 = 4x ROI. Year 2+ = 12x cumulative as ML models mature.
+        </p></div>
+      </div>
+    
+      <div class="s-blog-section" id="sec-eam-platforms-tomorrow">
+        <div class="s-blog-sec-hdr">
+          <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#0a1628 0%,#003d7a 50%,#0066cc 100%)">
+           Section Image &nbsp;·&nbsp; Where EAM Platforms Are Headed: Twin-Ready Architecture &nbsp;·&nbsp; 16 : 9
+         </div>
+          <div class="s-blog-sec-hdr-overlay"></div>
+          <h2>Where EAM Platforms Are Headed: Twin-Ready Architecture</h2>
+        </div>
+        <div class="s-blog-body-text">
+          <p>Next-generation EAM platforms architected for digital twin integration:</p><ul><li><strong>Native sensor ingestion:</strong> Modbus, OPC-UA, MQTT protocols built-in</li><li><strong>Asset digital thread:</strong> Complete lifecycle from PO to disposal</li><li><strong>ML model marketplace:</strong> Proven failure models for common Indian assets (Kirloskar pumps, Crompton motors)</li><li><strong>Bi-directional twin sync:</strong> Maintenance completion updates twin baseline automatically</li></ul><p>SCORP platforms designed from foundation for this evolution. Clean EAM data today positions enterprises for twin deployment tomorrow without re-architecture. The enterprises building systematic asset management now own the future when every ₹ crore asset decision becomes a simulation, not a guess.
+        </p></div>
+      </div>
+    </div>
       </main>
 
       <!-- DESKTOP SIDEBAR TOC -->
@@ -200,10 +308,54 @@
         <nav class="s-blog-toc">
           <div class="s-blog-toc-label">In This Article</div>
           <ul id="sBlogTocDesktop">
-            <li class="is-active"><a href="#sec-1" class="s-drawer-link">Overview</a></li>
-<li><a href="#sec-2" class="s-drawer-link">Key Concepts</a></li>
-<li><a href="#sec-3" class="s-drawer-link">Implementation</a></li>
-          </ul>
+    <li class="is-active">
+      <a href="#sec-digital-twin-fundamentals" class="s-drawer-link">
+        Digital Twin Basics
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-eam-digital-twin-foundation" class="s-drawer-link">
+        EAM Foundation
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-real-failure-predictions" class="s-drawer-link">
+        Real Predictions
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-scenario-simulation-power" class="s-drawer-link">
+        Scenario Simulation
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-eam-twin-integration" class="s-drawer-link">
+        EAM Twin Workflow
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-implementation-barriers" class="s-drawer-link">
+        Implementation Barriers
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-roi-transformation-numbers" class="s-drawer-link">
+        ROI Numbers
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-eam-platforms-tomorrow" class="s-drawer-link">
+        EAM Future
+      </a>
+    </li>
+  </ul>
         </nav>
         <div class="s-blog-sb-card">
           <div class="s-blog-sb-card-label">Related Articles</div>
@@ -242,18 +394,250 @@
   </div>
 </section>
 
-<!-- ══ FOOTER ══ -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
-      <div class="footer-brand">SCORP<em>·</em>tech</div>
-      <p>© 2026 Scorptech Technologies Pvt. Ltd. · Jaipur, Rajasthan, India</p>
+<footer class="s-footer">
+
+  <div class="s-footer__top-strip">
+    <div class="s-footer__status">
+      <span class="s-status-dot"></span>
+      Sapphire is live — all systems operational
+    </div>
+    <div class="s-footer__top-cta">
+      <a href="/contact.html" class="s-btn-sm s-btn-primary s-btn-glare">
+        <i class="fas fa-comments me-1"></i>
+        Talk to our team
+      </a>
+      <a href="/book-demo.html" class="s-btn-sm s-btn-success s-btn-glare">
+        <i class="fas fa-calendar-alt me-1"></i>
+        Book a Demo
+      </a>
     </div>
   </div>
+
+  <div class="s-footer__body">
+
+    <div class="s-footer__brand">
+      <a href="/index.html" class="s-footer__logo" style="text-decoration: none;">
+        <div class="s-footer__logomark">
+          <img src="../assets/images/Scorp-Logo.png" alt="Scorptech" width="22" height="22" style="filter: brightness(0) invert(1);">
+        </div>
+        <span class="s-footer__logoname">SCORP</span>
+      </a>
+      <p class="s-footer__tagline">In the business of making<br><em>yours simple.</em></p>
+      <div class="s-footer__contact">
+        <a href="tel:+919782383338" class="s-footer__contact-item">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 3.5C3 3.224 3.224 3 3.5 3h2.379c.246 0 .46.163.523.402l.754 2.64a.542.542 0 01-.167.567L5.586 7.414c.981 2.016 2.56 3.595 4.576 4.576l.805-.903a.542.542 0 01.567-.167l2.64.754c.239.063.402.277.402.523V14.5c0 .276-.224.5-.5.5C6.044 15 1 9.956 1 3.5z" stroke="currentColor" stroke-width="1.2"/></svg>
+          +91 97823 83338
+        </a>
+        <a href="mailto:support@scorptech.in" class="s-footer__contact-item">
+          <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M1 5l7 5 7-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          support@scorptech.in
+        </a>
+        <a href="/contact.html" class="s-footer__contact-item">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.375 4.5 8.5 4.5 8.5S12.5 9.375 12.5 6c0-2.485-2.015-4.5-4.5-4.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" stroke="currentColor" stroke-width="1.2"/></svg>
+          Jaipur, Rajasthan
+        </a>
+      </div>
+      <span class="s-footer__location">
+        <svg viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1"/><path d="M1.5 6h9M6 1.5a7 7 0 000 9M6 1.5a7 7 0 010 9" stroke="currentColor" stroke-width="0.8"/></svg>
+        Jaipur-built · Deployed globally
+      </span>
+    </div>
+
+    <div class="s-footer__links">
+
+      <div>
+        <span class="s-footer__col-title">Explore</span>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About Scorptech</a></li>
+          <li><a href="/sapphire.html">Sapphire EAM</a></li>
+          <li><a href="/analytics.html">Sapphire Analytics</a></li>
+          <li><a href="/intelligence.html">Sapphire Intelligence</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/book-demo.html">Book a Demo</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <span class="s-footer__col-title">Platform</span>
+        <ul>
+          <li><a href="/sapphire.html#work-orders">Work Order Management</a></li>
+          <li><a href="/sapphire.html#inventory">Inventory Control</a></li>
+          <li><a href="/sapphire.html#purchase">Purchase Management</a></li>
+          <li><a href="/sapphire.html#asset-tracking">Asset Tracking</a></li>
+          <li><a href="/sapphire.html#pm-scheduling">PM Scheduling</a></li>
+          <li><a href="/sapphire.html#documents">Document Management</a></li>
+          <li><a href="https://stage.scorptech.in/login" target="_blank" rel="noopener">Log In to Sapphire ↗</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <span class="s-footer__col-title">Resources</span>
+        <ul>
+          <li><a href="/blog/index.html">Knowledge Hub</a></li>
+          <li><a href="/faq.html">FAQs</a></li>
+          <li><a href="/privacy_policy.html">Privacy Policy</a></li>
+          <li><a href="/terms_of_use.html">Terms of Use</a></li>
+          <li><a href="mailto:support@scorptech.in">Support</a></li>
+        </ul>
+      </div>
+
+      <div class="s-footer__blog-section">
+        <div class="s-footer__blog-header">
+          <span class="s-footer__col-title" style="margin-bottom:0;">Knowledge Hub — 42 Articles</span>
+          <a href="/blog/index.html" class="s-view-all" style="font-size:0.72rem;">
+            View all
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <div class="s-blog-categories">
+
+          <details class="s-acc">
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-fundamentals"></span>Fundamentals<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="s-acc__body">
+              <a href="/blog/what-is-eam-enterprise-asset-management-guide.html">What Is Enterprise Asset Management?</a>
+              <a href="/blog/eam-vs-cmms-vs-erp-differences.html">EAM vs ERP: The Key Difference</a>
+              <a href="/blog/asset-lifecycle-management-guide.html">Asset Lifecycle Management</a>
+              <a href="/blog/preventive-predictive-reactive-maintenance.html">Preventive vs Predictive Maintenance</a>
+              <a href="/blog/maintenance-kpis-that-actually-matter.html">Building a Maintenance Strategy</a>
+              <a href="/blog/manufacturing-equipment-downtime-eam.html">The True Cost of Asset Downtime</a>
+              <a href="/blog/compliance-audit-trails-eam.html">ISO 55000: The Global Standard</a>
+            </div>
+          </details>
+
+          <details class="s-acc">
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-modules"></span>Sapphire Modules<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="s-acc__body">
+              <a href="/blog/work-order-management-backbone-operations.html">Work Order Management</a>
+              <a href="/blog/spare-parts-inventory-management-eam.html">Inventory Control</a>
+              <a href="/blog/vendor-contractor-management-eam.html">Purchase Module: PO to Payment</a>
+              <a href="/blog/construction-infrastructure-site-asset-tracking.html">Asset Tracking</a>
+              <a href="/blog/asset-performance-dashboards-what-to-track.html">Dashboard Intelligence</a>
+              <a href="/blog/preventive-maintenance-scheduling-automation.html">PM Scheduling</a>
+              <a href="/blog/asset-register-single-source-of-truth.html">Document Management</a>
+            </div>
+          </details>
+
+          <details class="s-acc">
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-industries"></span>Industries<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="s-acc__body">
+              <a href="/blog/manufacturing-equipment-downtime-eam.html">Manufacturing</a>
+              <a href="/blog/real-estate-facilities-management-eam.html">Facility Management</a>
+              <a href="/blog/healthcare-medical-equipment-compliance.html">Healthcare</a>
+              <a href="/blog/energy-utilities-grid-asset-management.html">Power & Utilities</a>
+              <a href="/blog/land-air-water-vehicles-eam.html">Oil & Gas</a>
+              <a href="/blog/it-parks-commercial-real-estate-eam.html">Real Estate</a>
+              <a href="/blog/logistics-warehousing-fleet-facility-management.html">Aviation & Airports</a>
+            </div>
+          </details>
+
+          <details class="s-acc">
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-analytics"></span>Analytics<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 16 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="s-acc__body">
+              <a href="/blog/energy-monitoring-sustainability-analytics-eam.html">Real-Time Asset Analytics</a>
+              <a href="/blog/predictive-analytics-asset-failure-prevention.html">Predictive Maintenance Analytics</a>
+              <a href="/blog/oee-overall-equipment-effectiveness-guide.html">OEE Tracking</a>
+              <a href="/blog/maintenance-kpis-that-actually-matter.html">KPI Design for EAM</a>
+              <a href="/blog/mtbf-mttr-reliability-numbers-guide.html">MTBF: Calculating & Reducing</a>
+              <a href="/blog/cost-analytics-maintenance-budget-savings.html">Maintenance Cost Benchmarking</a>
+              <a href="/blog/digital-twins-and-eam-next-frontier.html">Asset Health Scoring</a>
+            </div>
+          </details>
+
+          <details class="s-acc">
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-business"></span>Business Value<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="s-acc__body">
+              <a href="/blog/roi-of-eam-implementation-real-numbers.html">ROI of EAM Software</a>
+              <a href="/blog/total-cost-of-ownership-asset-management.html">The Spreadsheet Trap</a>
+              <a href="/blog/eam-implementation-roadmap-indian-enterprises.html">Why EAM Implementations Fail</a>
+              <a href="/blog/making-business-case-for-eam-investment.html">Justifying EAM to the C-Suite</a>
+              <a href="/blog/maintenance-kpis-that-actually-matter.html">Maintenance Maturity Model</a>
+              <a href="/blog/eam-for-cfos-how-finance-reads-asset-data.html">EAM and ESG</a>
+              <a href="/blog/vendor-contractor-management-eam.html">EAM Vendor Buyer's Guide</a>
+            </div>
+          </details>
+
+          <details class="s-acc">
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-special"></span>Special Editions<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="s-acc__body">
+              <a href="/blog/sapphire-eam-for-indian-msmes.html">Sapphire 2025: What's New</a>
+              <a href="/blog/scorp-story-jaipur-honest-industrial-software.html">Built in Jaipur: Our Story</a>
+              <a href="/blog/eam-implementation-roadmap-indian-enterprises.html">EAM in India</a>
+              <a href="/blog/sapphire-vs-sap-pm.html">Sapphire vs SAP PM</a>
+              <a href="/blog/iot-integration-with-eam-sensors-to-work-orders.html">AI in Asset Management</a>
+              <a href="/blog/education-campus-infrastructure-management.html">Customer Spotlight</a>
+              <a href="/blog/what-is-eam-enterprise-asset-management-guide.html">EAM Glossary: 60 Terms</a>
+            </div>
+          </details>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+<div class="s-footer__social container mb-2">
+    <div class="row justify-content-center g-3 mb-3">
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-whatsapp" data-coming-soon="WhatsApp" aria-label="WhatsApp" style="text-decoration: none;">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-linkedin" data-coming-soon="LinkedIn" aria-label="LinkedIn" style="text-decoration: none;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-youtube" data-coming-soon="YouTube" aria-label="YouTube" style="text-decoration: none;">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-instagram" data-coming-soon="Instagram" aria-label="Instagram" style="text-decoration: none;">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+    <div class="row justify-content-center g-3">
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-facebook" data-coming-soon="Facebook" aria-label="Facebook" style="text-decoration: none;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-x" data-coming-soon="X (formerly Twitter)" aria-label="X" style="text-decoration: none;">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-discord" data-coming-soon="Discord" aria-label="Discord" style="text-decoration: none;">
+                <i class="fab fa-discord"></i>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-github" data-coming-soon="GitHub" aria-label="GitHub" style="text-decoration: none;">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </div>
+</div>
+  <div class="s-footer__bottom">
+    <p class="s-footer__copy">© 2026 SCORP — Scorptech Technologies Private Limited. All rights reserved.</p>
+    <div class="s-footer__legal">
+      <a href="/privacy_policy.html">Privacy Policy</a>
+      <a href="/terms_of_use.html">Terms of Use</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div class="s-footer__made">
+      <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.375 4.5 8.5 4.5 8.5S12.5 9.375 12.5 6c0-2.485-2.015-4.5-4.5-4.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" stroke="rgba(143,169,196,0.7)"/></svg>
+      Made with intent in Jaipur
+    </div>
+  </div>
+
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../main.js" type="module"></script>
+<script src="../js/main.js" type="module"></script>
 <script>
   /* IntersectionObserver — syncs active TOC item as you scroll */
 (function () {
@@ -343,7 +727,8 @@
   });
 })();
 </script>
-</body>
-</html>
 
 
+
+
+</body></html>

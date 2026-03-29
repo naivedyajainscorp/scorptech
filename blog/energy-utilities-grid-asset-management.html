@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Energy & Utilities: Managing Grid Assets at Scale — SCORP Blog</title>
+<title>Energy Utilities Grid Asset Management with EAM | SCORP Blog</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="icon" type="image/png" href="../assets/images/scorp-logo-favicon.png">
 <link rel="stylesheet" href="../style.css">
 
 </head>
@@ -28,12 +27,7 @@
       <li class="nav-item"><a class="nav-link s-nav-link" href="index.html"><i class="fas fa-blog"></i><span>Blog</span></a></li>
       <li class="nav-item"><a class="nav-link s-nav-link" href="../sapphire.html"><i class="fas fa-diamond"></i><span>Sapphire</span></a></li>
       <li class="nav-item dropdown s-nav-dropdown-internal">
-        <a class="nav-link s-nav-link dropdown-toggle" 
-          href="#" 
-          role="button" 
-          data-bs-toggle="dropdown" 
-          aria-expanded="false"
-          data-dropdown-id="sapphire-smart">
+        <a class="nav-link s-nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-dropdown-id="sapphire-smart">
           <i class="fa-solid fa-lightbulb"></i>
           <span>Sapphire Smart</span>
           <!-- Active Indicator Badge -->
@@ -76,7 +70,7 @@
 <!-- ══ HERO ══ -->
 <div class="s-blog-hero-zone">
   <div class="s-blog-hero-ph">
-    <img src="../assets/images_blog/energy-utilities-gri.jpg" alt="Energy & Utilities: Managing Grid Assets at Scale"> <!-- Swap with: <img src="../assets/images_blog/{{IMAGE_FILE}}" alt=""> -->
+    <img src="../assets/images_blog/energy-utilities-grid-hero.jpg" alt="Energy &amp; Utilities: Grid Asset Management in India — Why Transmission Failures Are the Silent Killer of Power Supply Reliability"> <!-- Swap with: <img src="../assets/images_blog/{{IMAGE_FILE}}" alt=""> -->
   </div>
   <div class="s-blog-hero-overlay" aria-hidden="true"></div>
   <div class="s-blog-hero-content">
@@ -84,14 +78,14 @@
       <div class="row">
         <div class="col-12 col-lg-10 col-xl-8">
           <div class="s-blog-hero-tag">Featured · Guide</div>
-          <h1 class="s-blog-article-h1">Energy & Utilities: Managing Grid Assets at Scale</h1>
+          <h1 class="s-blog-article-h1">Energy &amp; Utilities: Grid Asset Management in India — Why Transmission Failures Are the Silent Killer of Power Supply Reliability</h1>
           <div class="s-blog-meta-row">
-            <span>March 08, 2026</span>
-            <span class="s-blog-meta-sep">·</span>
-            <span class="s-blog-read-badge">⏱&nbsp;13 min read</span>
-            <span class="s-blog-meta-sep">·</span>
-            <span>SCORP Editorial</span>
-          </div>
+      <span>March 15, 2026</span>
+      <span class="s-blog-meta-sep">·</span>
+      <span class="s-blog-read-badge">⏱&nbsp;11 min read</span>
+      <span class="s-blog-meta-sep">·</span>
+      <span>SCORP Editorial</span>
+    </div>
         </div>
       </div>
     </div>
@@ -116,10 +110,48 @@
     <div class="s-blog-toc" style="margin-bottom:16px;">
       <div class="s-blog-toc-label">In This Article</div>
       <ul id="sBlogTocMobile">
-        <li class="is-active"><a href="#sec-1" class="s-drawer-link">Overview</a></li>
-<li><a href="#sec-2" class="s-drawer-link">Key Concepts</a></li>
-<li><a href="#sec-3" class="s-drawer-link">Implementation</a></li>
-      </ul>
+    <li class="is-active">
+      <a href="#sec-assets-under-pressure" class="s-drawer-link">
+        Assets Under Pressure
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-failure-cascades-grid" class="s-drawer-link">
+        Failure Cascades
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-the-maintenance-gap" class="s-drawer-link">
+        Maintenance Gap
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-eam-grid-operations" class="s-drawer-link">
+        EAM in Grid Ops
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-reliability-meets-roi" class="s-drawer-link">
+        Reliability and ROI
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-renewables-grid-challenge" class="s-drawer-link">
+        Renewables Assets
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-implementation-path-utilities" class="s-drawer-link">
+        Implementation Path
+      </a>
+    </li>
+  </ul>
     </div>
     <div class="s-blog-sb-card">
       <div class="s-blog-sb-card-label">Related Articles</div>
@@ -158,41 +190,98 @@
     <div class="s-blog-layout">
       <!-- MAIN CONTENT -->
       <main>
-        <div class="s-blog-sections-wrap">
-
-          <!-- INTRO SECTION -->
-          <div class="s-blog-article-intro">
-            <p>Transformers, substations, transmission lines — predictive maintenance for critical infrastructure.</p>
-          </div>
-          <div class="s-blog-intro-divider" aria-hidden="true">· · ·</div>
-
-          <div class="s-blog-section" id="sec-1">
-  <div class="s-blog-sec-hdr">
-    <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#0a1628 0%,#003d7a 50%,#0066cc 100%)">
-      Section Image · 16 : 9
-    </div>
-    <div class="s-blog-sec-hdr-overlay"></div>
-    <h2>Overview</h2>
-  </div>
-  <div class="s-blog-body-text">
-    <p>Detailed content to be added here.</p>
-  </div>
-</div>
-
-<div class="s-blog-section" id="sec-2">
-  <div class="s-blog-sec-hdr">
-    <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#1a0533 0%,#3b0764 50%,#6d28d9 100%)">
-      Section Image · 16 : 9
-    </div>
-    <div class="s-blog-sec-hdr-overlay"></div>
-    <h2>Key Concepts</h2>
-  </div>
-  <div class="s-blog-body-text">
-    <p>Detailed content to be added here.</p>
-  </div>
-</div>
-
+        <div class="s-blog-sections-wrap"><div class="s-blog-article-intro"><p>India's power sector is at an inflection point. Installed capacity crossed 450 GW in 2025. Renewable energy is targeting 500 GW by 2030. Peak demand is projected to hit 300 GW this summer alone. The visible progress — solar parks, wind farms, hydro projects — overshadows the invisible backbone: transmission and distribution assets that carry every megawatt from source to consumer. Transformers, transmission towers, circuit breakers, insulators, substations, capacitor banks, reactors and overhead lines. When they fail, the lights go out. And in India's power sector, they are failing more than they should.</p><p>The problem is not a lack of investment. CEA data shows ₹1.5 lakh crore invested in transmission infrastructure over the last five years. The problem is asset management. Without systematic tracking of maintenance history, condition monitoring data, spare parts availability and end-of-life projections, even new assets degrade into liabilities. This article breaks down what goes wrong in grid asset management and how EAM provides the operational discipline that turns reactive breakdowns into planned reliability.</p></div><div class="s-blog-intro-divider" aria-hidden="true">· · ·</div>
+      <div class="s-blog-section" id="sec-assets-under-pressure">
+        <div class="s-blog-sec-hdr">
+          <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#0a1628 0%,#003d7a 50%,#0066cc 100%)">
+           Section Image &nbsp;·&nbsp; The Assets Under Constant Pressure &nbsp;·&nbsp; 16 : 9
+         </div>
+          <div class="s-blog-sec-hdr-overlay"></div>
+          <h2>The Assets Under Constant Pressure</h2>
         </div>
+        <div class="s-blog-body-text">
+          <p>India's transmission grid spans 4.5 lakh circuit km, carrying 1.3 million GWh annually across diverse geographies — deserts, mountains, coastal zones, urban corridors and rural feeders. The assets are exposed to accelerated degradation:</p><ul><li><strong>Transformers and reactors</strong> — oil degradation, bushing failures, OLTC contact wear, partial discharge in windings</li><li><strong>Circuit breakers</strong> — SF6 gas leaks, interrupter wear, operating mechanism failures under high short-circuit currents</li><li><strong>Transmission towers and lines</strong> — conductor sagging, insulator pollution flashover, corona discharge erosion, foundation scour in flood-prone areas</li><li><strong>Substation equipment</strong> — CT/PT failures, busbar joints overheating, control relay obsolescence</li><li><strong>Capacitor/reactor banks</strong> — harmonic distortion failures, bushing cracks from thermal cycling</li></ul><p>These assets are mission-critical. A transformer failure at a 220 kV substation takes down multiple feeders serving lakhs of consumers. A line outage during peak demand triggers load shedding across states. Without predictive visibility into asset condition, utilities react to failures rather than preventing them.</p>
+        </div>
+      </div>
+    
+      <div class="s-blog-section" id="sec-failure-cascades-grid">
+        <div class="s-blog-sec-hdr">
+          <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#0a1628 0%,#003d7a 50%,#0066cc 100%)">
+           Section Image &nbsp;·&nbsp; Failure Cascades: How One Asset Breakdown Triggers Blackouts &nbsp;·&nbsp; 16 : 9
+         </div>
+          <div class="s-blog-sec-hdr-overlay"></div>
+          <h2>Failure Cascades: How One Asset Breakdown Triggers Blackouts</h2>
+        </div>
+        <div class="s-blog-body-text">
+          <p>Grid asset failures rarely happen in isolation. They cascade because of interdependencies. A polluted insulator string causes a line trip. That trip overloads parallel lines, accelerating conductor annealing and sagging. The next storm brings them into clearance violation with ground. A single event becomes multi-point damage.</p><p>Transformers are particularly vulnerable. Oil temperature excursions from poor cooling or overloading degrade paper insulation irreversibly. Partial discharge starts silently, accelerates under voltage stress, and culminates in catastrophic winding failure. CEA reports show 15-20% of major grid disturbances trace back to transformer failures that were preventable with dissolved gas analysis (DGA) and timely maintenance.</p><p>In renewable-heavy grids, variable generation adds stress. Solar inverters create harmonics that overheat capacitor banks. Wind farm step-up transformers see frequent voltage fluctuations. Without condition-based maintenance data, utilities cannot distinguish normal wear from accelerated degradation caused by renewables integration.</p>
+        </div>
+      </div>
+    
+      <div class="s-blog-section" id="sec-the-maintenance-gap">
+        <div class="s-blog-sec-hdr">
+          <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#0a1628 0%,#003d7a 50%,#0066cc 100%)">
+           Section Image &nbsp;·&nbsp; The Maintenance Management Gap in Utilities &nbsp;·&nbsp; 16 : 9
+         </div>
+          <div class="s-blog-sec-hdr-overlay"></div>
+          <h2>The Maintenance Management Gap in Utilities</h2>
+        </div>
+        <div class="s-blog-body-text">
+          <p>Indian utilities manage assets through siloed processes. Sub-transmission divisions handle 132/33 kV assets. O&amp;M teams maintain substations. Protection relays are calibrated by separate relay testing crews. Spares procurement sits in materials management. No single team owns the full asset lifecycle from commissioning to disposal.</p><p>Preventive maintenance exists but is calendar-based, not condition-based. Breakers are serviced every 5 years regardless of interrupter duty cycles. Transformers get oil tests annually even if DGA shows no issues. This inefficient scheduling leaves critical assets under-serviced while tying up crews on low-risk work.</p><p>Paper-based or Excel logbooks compound the problem. A field crew completes PM on a remote line tower but the record never reaches headquarters. During CERC compliance audits or tariff petitions, utilities struggle to demonstrate maintenance diligence. Regulatory penalties follow, eroding allowed RoE.</p>
+        </div>
+      </div>
+    
+      <div class="s-blog-section" id="sec-eam-grid-operations">
+        <div class="s-blog-sec-hdr">
+          <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#0a1628 0%,#003d7a 50%,#0066cc 100%)">
+           Section Image &nbsp;·&nbsp; How EAM Transforms Grid Asset Operations &nbsp;·&nbsp; 16 : 9
+         </div>
+          <div class="s-blog-sec-hdr-overlay"></div>
+          <h2>How EAM Transforms Grid Asset Operations</h2>
+        </div>
+        <div class="s-blog-body-text">
+          <p>EAM centralises asset data into a digital lifecycle record. Every tower, breaker, transformer and insulator gets a unique ID with commissioning date, test history, maintenance records, condition metrics and projected replacement date. Field crews access this via mobile apps, close work orders digitally with photos and test results.</p><p>Key EAM capabilities for utilities:</p><ul><li><strong>Condition-based PM</strong> — DGA trends, partial discharge levels, bushing power factor trigger maintenance before calendar dates</li><li><strong>Work order orchestration</strong> — Assign substation outages, line patrols and breaker testing to crews with skill matching and GPS routing</li><li><strong>Spares optimisation</strong> — Track critical spares (bushings, OLTC contacts) against failure history; set min-max levels per substation</li><li><strong>Compliance reporting</strong> — Generate CERC-mandated maintenance certificates with one click</li><li><strong>End-of-life planning</strong> — Flag assets hitting 80% of design life for capex budgeting</li></ul><p>Integration with SCADA/EMS pulls real-time telemetry — load currents, temperatures, fault records — into asset health scores.</p>
+        </div>
+      </div>
+    
+      <div class="s-blog-section" id="sec-reliability-meets-roi">
+        <div class="s-blog-sec-hdr">
+          <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#0a1628 0%,#003d7a 50%,#0066cc 100%)">
+           Section Image &nbsp;·&nbsp; Reliability Meets Financial ROI &nbsp;·&nbsp; 16 : 9
+         </div>
+          <div class="s-blog-sec-hdr-overlay"></div>
+          <h2>Reliability Meets Financial ROI</h2>
+        </div>
+        <div class="s-blog-body-text">
+          <p>Asset management directly impacts regulated returns. CERC penalises availability below 98% with RoE cuts. SAIDI/SAIFI metrics determine consumer tariffs. Utilities that systematically manage assets defend higher tariffs through demonstrated reliability.</p><p>EAM delivers quantifiable ROI: 20-30% reduction in unplanned outages, 15-25% spares inventory optimisation, 40% faster outage response through digital work assignment. PGCIL's asset management initiatives show transformer failure rates dropping 35% post-EAM implementation.</p>
+        </div>
+      </div>
+    
+      <div class="s-blog-section" id="sec-renewables-grid-challenge">
+        <div class="s-blog-sec-hdr">
+          <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#0a1628 0%,#003d7a 50%,#0066cc 100%)">
+           Section Image &nbsp;·&nbsp; Managing Renewables Integration Assets &nbsp;·&nbsp; 16 : 9
+         </div>
+          <div class="s-blog-sec-hdr-overlay"></div>
+          <h2>Managing Renewables Integration Assets</h2>
+        </div>
+        <div class="s-blog-body-text">
+          <p>Green Energy Corridors add 2 lakh ckm transmission for 500 GW RE. HVDC lines, STATCOMs, SVCs, battery ESS — new asset classes with different failure modes. EAM scales to track harmonic filters degrading under inverter pollution, HVDC converter valves needing pulse monitoring.</p>
+        </div>
+      </div>
+    
+      <div class="s-blog-section" id="sec-implementation-path-utilities">
+        <div class="s-blog-sec-hdr">
+          <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#0a1628 0%,#003d7a 50%,#0066cc 100%)">
+           Section Image &nbsp;·&nbsp; Implementation Roadmap for Utilities &nbsp;·&nbsp; 16 : 9
+         </div>
+          <div class="s-blog-sec-hdr-overlay"></div>
+          <h2>Implementation Roadmap for Utilities</h2>
+        </div>
+        <div class="s-blog-body-text">
+          <p>Start with critical 220 kV+ assets. Digitise existing records into EAM. Train field crews on mobile work orders. Integrate with GIS for asset location intelligence. Scale to distribution transformers once transmission proves ROI.</p>
+        </div>
+      </div>
+    </div>
       </main>
 
       <!-- DESKTOP SIDEBAR TOC -->
@@ -200,10 +289,48 @@
         <nav class="s-blog-toc">
           <div class="s-blog-toc-label">In This Article</div>
           <ul id="sBlogTocDesktop">
-            <li class="is-active"><a href="#sec-1" class="s-drawer-link">Overview</a></li>
-<li><a href="#sec-2" class="s-drawer-link">Key Concepts</a></li>
-<li><a href="#sec-3" class="s-drawer-link">Implementation</a></li>
-          </ul>
+    <li class="is-active">
+      <a href="#sec-assets-under-pressure" class="s-drawer-link">
+        Assets Under Pressure
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-failure-cascades-grid" class="s-drawer-link">
+        Failure Cascades
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-the-maintenance-gap" class="s-drawer-link">
+        Maintenance Gap
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-eam-grid-operations" class="s-drawer-link">
+        EAM in Grid Ops
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-reliability-meets-roi" class="s-drawer-link">
+        Reliability and ROI
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-renewables-grid-challenge" class="s-drawer-link">
+        Renewables Assets
+      </a>
+    </li>
+  
+    <li>
+      <a href="#sec-implementation-path-utilities" class="s-drawer-link">
+        Implementation Path
+      </a>
+    </li>
+  </ul>
         </nav>
         <div class="s-blog-sb-card">
           <div class="s-blog-sb-card-label">Related Articles</div>
@@ -242,18 +369,250 @@
   </div>
 </section>
 
-<!-- ══ FOOTER ══ -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
-      <div class="footer-brand">SCORP<em>·</em>tech</div>
-      <p>© 2026 Scorptech Technologies Pvt. Ltd. · Jaipur, Rajasthan, India</p>
+<footer class="s-footer">
+
+  <div class="s-footer__top-strip">
+    <div class="s-footer__status">
+      <span class="s-status-dot"></span>
+      Sapphire is live — all systems operational
+    </div>
+    <div class="s-footer__top-cta">
+      <a href="/contact.html" class="s-btn-sm s-btn-primary s-btn-glare">
+        <i class="fas fa-comments me-1"></i>
+        Talk to our team
+      </a>
+      <a href="/book-demo.html" class="s-btn-sm s-btn-success s-btn-glare">
+        <i class="fas fa-calendar-alt me-1"></i>
+        Book a Demo
+      </a>
     </div>
   </div>
+
+  <div class="s-footer__body">
+
+    <div class="s-footer__brand">
+      <a href="/index.html" class="s-footer__logo" style="text-decoration: none;">
+        <div class="s-footer__logomark">
+          <img src="../assets/images/Scorp-Logo.png" alt="Scorptech" width="22" height="22" style="filter: brightness(0) invert(1);">
+        </div>
+        <span class="s-footer__logoname">SCORP</span>
+      </a>
+      <p class="s-footer__tagline">In the business of making<br><em>yours simple.</em></p>
+      <div class="s-footer__contact">
+        <a href="tel:+919782383338" class="s-footer__contact-item">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 3.5C3 3.224 3.224 3 3.5 3h2.379c.246 0 .46.163.523.402l.754 2.64a.542.542 0 01-.167.567L5.586 7.414c.981 2.016 2.56 3.595 4.576 4.576l.805-.903a.542.542 0 01.567-.167l2.64.754c.239.063.402.277.402.523V14.5c0 .276-.224.5-.5.5C6.044 15 1 9.956 1 3.5z" stroke="currentColor" stroke-width="1.2"/></svg>
+          +91 97823 83338
+        </a>
+        <a href="mailto:support@scorptech.in" class="s-footer__contact-item">
+          <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M1 5l7 5 7-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          support@scorptech.in
+        </a>
+        <a href="/contact.html" class="s-footer__contact-item">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.375 4.5 8.5 4.5 8.5S12.5 9.375 12.5 6c0-2.485-2.015-4.5-4.5-4.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" stroke="currentColor" stroke-width="1.2"/></svg>
+          Jaipur, Rajasthan
+        </a>
+      </div>
+      <span class="s-footer__location">
+        <svg viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1"/><path d="M1.5 6h9M6 1.5a7 7 0 000 9M6 1.5a7 7 0 010 9" stroke="currentColor" stroke-width="0.8"/></svg>
+        Jaipur-built · Deployed globally
+      </span>
+    </div>
+
+    <div class="s-footer__links">
+
+      <div>
+        <span class="s-footer__col-title">Explore</span>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About Scorptech</a></li>
+          <li><a href="/sapphire.html">Sapphire EAM</a></li>
+          <li><a href="/analytics.html">Sapphire Analytics</a></li>
+          <li><a href="/intelligence.html">Sapphire Intelligence</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/book-demo.html">Book a Demo</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <span class="s-footer__col-title">Platform</span>
+        <ul>
+          <li><a href="/sapphire.html#work-orders">Work Order Management</a></li>
+          <li><a href="/sapphire.html#inventory">Inventory Control</a></li>
+          <li><a href="/sapphire.html#purchase">Purchase Management</a></li>
+          <li><a href="/sapphire.html#asset-tracking">Asset Tracking</a></li>
+          <li><a href="/sapphire.html#pm-scheduling">PM Scheduling</a></li>
+          <li><a href="/sapphire.html#documents">Document Management</a></li>
+          <li><a href="https://stage.scorptech.in/login" target="_blank" rel="noopener">Log In to Sapphire ↗</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <span class="s-footer__col-title">Resources</span>
+        <ul>
+          <li><a href="/blog/index.html">Knowledge Hub</a></li>
+          <li><a href="/faq.html">FAQs</a></li>
+          <li><a href="/privacy_policy.html">Privacy Policy</a></li>
+          <li><a href="/terms_of_use.html">Terms of Use</a></li>
+          <li><a href="mailto:support@scorptech.in">Support</a></li>
+        </ul>
+      </div>
+
+      <div class="s-footer__blog-section">
+        <div class="s-footer__blog-header">
+          <span class="s-footer__col-title" style="margin-bottom:0;">Knowledge Hub — 42 Articles</span>
+          <a href="/blog/index.html" class="s-view-all" style="font-size:0.72rem;">
+            View all
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <div class="s-blog-categories">
+
+          <details class="s-acc">
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-fundamentals"></span>Fundamentals<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="s-acc__body">
+              <a href="/blog/what-is-eam-enterprise-asset-management-guide.html">What Is Enterprise Asset Management?</a>
+              <a href="/blog/eam-vs-cmms-vs-erp-differences.html">EAM vs ERP: The Key Difference</a>
+              <a href="/blog/asset-lifecycle-management-guide.html">Asset Lifecycle Management</a>
+              <a href="/blog/preventive-predictive-reactive-maintenance.html">Preventive vs Predictive Maintenance</a>
+              <a href="/blog/maintenance-kpis-that-actually-matter.html">Building a Maintenance Strategy</a>
+              <a href="/blog/manufacturing-equipment-downtime-eam.html">The True Cost of Asset Downtime</a>
+              <a href="/blog/compliance-audit-trails-eam.html">ISO 55000: The Global Standard</a>
+            </div>
+          </details>
+
+          <details class="s-acc">
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-modules"></span>Sapphire Modules<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="s-acc__body">
+              <a href="/blog/work-order-management-backbone-operations.html">Work Order Management</a>
+              <a href="/blog/spare-parts-inventory-management-eam.html">Inventory Control</a>
+              <a href="/blog/vendor-contractor-management-eam.html">Purchase Module: PO to Payment</a>
+              <a href="/blog/construction-infrastructure-site-asset-tracking.html">Asset Tracking</a>
+              <a href="/blog/asset-performance-dashboards-what-to-track.html">Dashboard Intelligence</a>
+              <a href="/blog/preventive-maintenance-scheduling-automation.html">PM Scheduling</a>
+              <a href="/blog/asset-register-single-source-of-truth.html">Document Management</a>
+            </div>
+          </details>
+
+          <details class="s-acc">
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-industries"></span>Industries<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="s-acc__body">
+              <a href="/blog/manufacturing-equipment-downtime-eam.html">Manufacturing</a>
+              <a href="/blog/real-estate-facilities-management-eam.html">Facility Management</a>
+              <a href="/blog/healthcare-medical-equipment-compliance.html">Healthcare</a>
+              <a href="/blog/energy-utilities-grid-asset-management.html">Power & Utilities</a>
+              <a href="/blog/land-air-water-vehicles-eam.html">Oil & Gas</a>
+              <a href="/blog/it-parks-commercial-real-estate-eam.html">Real Estate</a>
+              <a href="/blog/logistics-warehousing-fleet-facility-management.html">Aviation & Airports</a>
+            </div>
+          </details>
+
+          <details class="s-acc">
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-analytics"></span>Analytics<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 16 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="s-acc__body">
+              <a href="/blog/energy-monitoring-sustainability-analytics-eam.html">Real-Time Asset Analytics</a>
+              <a href="/blog/predictive-analytics-asset-failure-prevention.html">Predictive Maintenance Analytics</a>
+              <a href="/blog/oee-overall-equipment-effectiveness-guide.html">OEE Tracking</a>
+              <a href="/blog/maintenance-kpis-that-actually-matter.html">KPI Design for EAM</a>
+              <a href="/blog/mtbf-mttr-reliability-numbers-guide.html">MTBF: Calculating & Reducing</a>
+              <a href="/blog/cost-analytics-maintenance-budget-savings.html">Maintenance Cost Benchmarking</a>
+              <a href="/blog/digital-twins-and-eam-next-frontier.html">Asset Health Scoring</a>
+            </div>
+          </details>
+
+          <details class="s-acc">
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-business"></span>Business Value<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="s-acc__body">
+              <a href="/blog/roi-of-eam-implementation-real-numbers.html">ROI of EAM Software</a>
+              <a href="/blog/total-cost-of-ownership-asset-management.html">The Spreadsheet Trap</a>
+              <a href="/blog/eam-implementation-roadmap-indian-enterprises.html">Why EAM Implementations Fail</a>
+              <a href="/blog/making-business-case-for-eam-investment.html">Justifying EAM to the C-Suite</a>
+              <a href="/blog/maintenance-kpis-that-actually-matter.html">Maintenance Maturity Model</a>
+              <a href="/blog/eam-for-cfos-how-finance-reads-asset-data.html">EAM and ESG</a>
+              <a href="/blog/vendor-contractor-management-eam.html">EAM Vendor Buyer's Guide</a>
+            </div>
+          </details>
+
+          <details class="s-acc">
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-special"></span>Special Editions<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="s-acc__body">
+              <a href="/blog/sapphire-eam-for-indian-msmes.html">Sapphire 2025: What's New</a>
+              <a href="/blog/scorp-story-jaipur-honest-industrial-software.html">Built in Jaipur: Our Story</a>
+              <a href="/blog/eam-implementation-roadmap-indian-enterprises.html">EAM in India</a>
+              <a href="/blog/sapphire-vs-sap-pm.html">Sapphire vs SAP PM</a>
+              <a href="/blog/iot-integration-with-eam-sensors-to-work-orders.html">AI in Asset Management</a>
+              <a href="/blog/education-campus-infrastructure-management.html">Customer Spotlight</a>
+              <a href="/blog/what-is-eam-enterprise-asset-management-guide.html">EAM Glossary: 60 Terms</a>
+            </div>
+          </details>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+<div class="s-footer__social container mb-2">
+    <div class="row justify-content-center g-3 mb-3">
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-whatsapp" data-coming-soon="WhatsApp" aria-label="WhatsApp" style="text-decoration: none;">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-linkedin" data-coming-soon="LinkedIn" aria-label="LinkedIn" style="text-decoration: none;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-youtube" data-coming-soon="YouTube" aria-label="YouTube" style="text-decoration: none;">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-instagram" data-coming-soon="Instagram" aria-label="Instagram" style="text-decoration: none;">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+    <div class="row justify-content-center g-3">
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-facebook" data-coming-soon="Facebook" aria-label="Facebook" style="text-decoration: none;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-x" data-coming-soon="X (formerly Twitter)" aria-label="X" style="text-decoration: none;">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-discord" data-coming-soon="Discord" aria-label="Discord" style="text-decoration: none;">
+                <i class="fab fa-discord"></i>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="#" class="s-icon s-icon-md s-icon-github" data-coming-soon="GitHub" aria-label="GitHub" style="text-decoration: none;">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </div>
+</div>
+  <div class="s-footer__bottom">
+    <p class="s-footer__copy">© 2026 SCORP — Scorptech Technologies Private Limited. All rights reserved.</p>
+    <div class="s-footer__legal">
+      <a href="/privacy_policy.html">Privacy Policy</a>
+      <a href="/terms_of_use.html">Terms of Use</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div class="s-footer__made">
+      <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.375 4.5 8.5 4.5 8.5S12.5 9.375 12.5 6c0-2.485-2.015-4.5-4.5-4.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" stroke="rgba(143,169,196,0.7)"/></svg>
+      Made with intent in Jaipur
+    </div>
+  </div>
+
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../main.js" type="module"></script>
+<script src="../js/main.js" type="module"></script>
 <script>
   /* IntersectionObserver — syncs active TOC item as you scroll */
 (function () {
@@ -343,7 +702,8 @@
   });
 })();
 </script>
-</body>
-</html>
 
 
+
+
+</body></html>

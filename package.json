@@ -1,0 +1,24 @@
+{
+  "name": "scorp-webfront-structured",
+  "version": "1.0.0",
+  "description": "",
+  "main": "injectBlogs.js",
+  "type": "module",
+  "scripts": {
+    "inject": "node injectBlogs.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://naivedyajainscorp@github.com/naivedyajainscorp/scorptech.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naivedyajainscorp/scorptech/issues"
+  },
+  "homepage": "https://github.com/naivedyajainscorp/scorptech#readme",
+  "dependencies": {
+    "jsdom": "^29.0.1"
+  }
+}
