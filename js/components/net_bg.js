@@ -34,16 +34,20 @@ function lerp(minW, maxW, minVal, maxVal) {
   return minVal + (maxVal - minVal) * t;
 }
 
-function getNetConfig(hue, harmonyFn) {
+function getNetConfig(hue, harmonyFn, style = {}) {
   const spacing = Math.round(lerp(320, 1920, 20, 15));
   const netHue = harmonyFn ? harmonyFn(hue) : (hue + 30) % 360;
+  const netSat  = style.netSat  ?? 100;
+  const netLit  = style.netLit  ?? 55;
+  const bgSat   = style.bgSat   ?? 60;
+  const bgLit   = style.bgLit   ?? 8;
 
   return {
     points:          Math.round(lerp(320, 1920, 12, 15)),
     spacing:         spacing,
     maxDistance:     20,
-    color:           hslToHex(netHue, 100, 55),
-    backgroundColor: hslToHex(hue, 60, 8),
+    color:           hslToHex(netHue, netSat, netLit),
+    backgroundColor: hslToHex(hue, bgSat, bgLit),
   };
 }
 
@@ -78,6 +82,41 @@ export const HARMONY = {
   MONO:           (h) => h,
 };
 
+// ── AXIS 4: STYLE (net brightness + background lightness) ────
+export const STYLE = {
+  // ── Existing ──────────────────────────────────────────────
+  DEFAULT:          { netSat: 100, netLit: 55,  bgSat: 60,  bgLit: 8  },
+  WHITE_ON_BLUE:    { netSat: 0,   netLit: 92,  bgSat: 75,  bgLit: 32 },
+  WHITE_ON_COBALT:  { netSat: 5,   netLit: 90,  bgSat: 80,  bgLit: 28 },
+  WHITE_ON_ROYAL:   { netSat: 0,   netLit: 95,  bgSat: 70,  bgLit: 36 },
+  WHITE_ON_TEAL:    { netSat: 5,   netLit: 88,  bgSat: 65,  bgLit: 30 },
+  SILVER_ON_BLUE:   { netSat: 20,  netLit: 82,  bgSat: 72,  bgLit: 30 },
+
+  // ── Blue nets on dark bg ──────────────────────────────────
+  BRILLIANT_BLUE:   { netSat: 100, netLit: 60,  bgSat: 80,  bgLit: 5  },  // electric pure blue net
+  SAPPHIRE:         { netSat: 95,  netLit: 45,  bgSat: 70,  bgLit: 6  },  // #0066cc range, rich deep
+  DEEP_BLUE:        { netSat: 90,  netLit: 35,  bgSat: 75,  bgLit: 4  },  // near-navy net, very dark
+  COBALT_NET:       { netSat: 100, netLit: 50,  bgSat: 85,  bgLit: 7  },  // strong cobalt
+  ROYAL_NET:        { netSat: 88,  netLit: 55,  bgSat: 72,  bgLit: 8  },  // royal blue, slightly purple
+  ICE_BLUE:         { netSat: 70,  netLit: 72,  bgSat: 60,  bgLit: 6  },  // pale icy blue net
+  NEON_BLUE:        { netSat: 100, netLit: 65,  bgSat: 90,  bgLit: 4  },  // almost glowing blue
+  STEEL_BLUE:       { netSat: 50,  netLit: 48,  bgSat: 40,  bgLit: 8  },  // muted steel blue net
+
+  // ── Colored nets on soft white bg ────────────────────────
+  BLUE_ON_WHITE:    { netSat: 100, netLit: 45,  bgSat: 20,  bgLit: 88 },  // rich blue net, off-white bg
+  COBALT_ON_WHITE:  { netSat: 95,  netLit: 40,  bgSat: 15,  bgLit: 90 },  // cobalt net, warm white bg
+  SAPPHIRE_ON_WHITE:{ netSat: 90,  netLit: 38,  bgSat: 25,  bgLit: 86 },  // sapphire net, cool white bg
+  ROYAL_ON_WHITE:   { netSat: 85,  netLit: 50,  bgSat: 18,  bgLit: 88 },  // royal blue net, neutral white
+  TEAL_ON_WHITE:    { netSat: 80,  netLit: 42,  bgSat: 20,  bgLit: 87 },  // teal net, soft white bg
+  VIOLET_ON_WHITE:  { netSat: 85,  netLit: 50,  bgSat: 15,  bgLit: 89 },  // violet net, bright white bg
+  NAVY_ON_WHITE:    { netSat: 90,  netLit: 30,  bgSat: 10,  bgLit: 91 },  // dark navy net, very soft white
+
+  // ── Legacy aliases ────────────────────────────────────────
+  DIM:              { netSat: 60,  netLit: 40,  bgSat: 50,  bgLit: 6  },   // Moody, subtle
+  VIVID:            { netSat: 100, netLit: 60,  bgSat: 80,  bgLit: 10 },   // Bright, punchy
+  GLOW:             { netSat: 95,  netLit: 70,  bgSat: 70,  bgLit: 5  },   // Near-neon intensity
+};
+
 // ── Optional SPEED ───────────────────────────────────────────
 export const SPEED = {
   VERY_SLOW: 2,
@@ -106,12 +145,15 @@ export async function initNetBackground(selector, options = {}) {
     };
 
     if (typeof window.VANTA === 'undefined') {
-      await loadScript('https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js');
+      await loadScript('https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js');
       await loadScript('https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js');
     }
 
     if (window.VANTA && window.VANTA.NET) {
-      return window.VANTA.NET(config);
+      const effect = window.VANTA.NET(config);
+      // Store on element for diagnostic access (Vanta 0.5.x doesn't do this automatically)
+      element.__vantaEffect = effect;
+      return effect;
     }
 
     return null;
@@ -129,6 +171,7 @@ export async function initHeroNet(selector, config = {}) {
   const pattern   = config.pattern   || PATTERN.OSCILLATE;
   const harmony   = config.harmony   || HARMONY.ANALOGOUS;
   const speed     = config.speed     || SPEED.MEDIUM;
+  const style     = config.style     || STYLE.DEFAULT;
 
   const startHue = bandwidth.startHue;
   const endHue   = bandwidth.endHue;
@@ -139,7 +182,7 @@ export async function initHeroNet(selector, config = {}) {
   let phase      = 0;
   let lastTime   = null;
 
-  let vantaEffect = await initNetBackground(selector, getNetConfig(currentHue, harmony));
+  let vantaEffect = await initNetBackground(selector, getNetConfig(currentHue, harmony, style));
   if (!vantaEffect) return null;
 
   function tick(timestamp) {
@@ -168,7 +211,7 @@ export async function initHeroNet(selector, config = {}) {
         break;
     }
 
-    vantaEffect.setOptions(getNetConfig(currentHue, harmony));
+    vantaEffect.setOptions(getNetConfig(currentHue, harmony, style));
 
     requestAnimationFrame(tick);
   }
@@ -181,7 +224,7 @@ export async function initHeroNet(selector, config = {}) {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
       if (vantaEffect) {
-        vantaEffect.setOptions(getNetConfig(currentHue, harmony));
+        vantaEffect.setOptions(getNetConfig(currentHue, harmony, style));
       }
     }, 300);
   });
@@ -201,5 +244,6 @@ export default {
   BANDWIDTH,
   PATTERN,
   HARMONY,
+  STYLE,
   SPEED
 };

@@ -2543,9 +2543,9 @@ select:focus {
   }
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 576px) {
   .s-showcase-nav {
-    top: 56px;
+    top: 5rem;
   }
   .s-showcase-title {
     font-size: 1.25rem;

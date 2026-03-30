@@ -21,7 +21,7 @@ html {
   }
 body { 
   font-family: 'verdana', sans-serif; 
-  color: var(--text-1); background: var(--bg); 
+  /* color: var(--text-1); background: var(--bg);  */
   -webkit-font-smoothing: antialiased;
 }
 

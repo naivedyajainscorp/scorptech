@@ -1258,9 +1258,9 @@ li {
     }
 
     /* Professional document margins */
-    .page-content {
-        /* padding: 18mm 16mm 16mm 16mm; */
-    }
+    /* .page-content {
+        padding: 18mm 16mm 16mm 16mm;
+    } */
 
     /* Hide UI elements during print */
     .s-fab-wrapper,

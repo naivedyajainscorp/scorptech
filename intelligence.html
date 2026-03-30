@@ -1340,5 +1340,71 @@
 <script type="module" src="/js/pages/intelligence.js"></script>
 <script type="module" src="/js/main.js"></script>
 
+<!-- Diagnostic Helper -->
+<script type="module">
+  // Run diagnostic after page load
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      const el = document.querySelector('#intel-hero');
+      const effect = el?.__ringsEffect;
+
+      console.group('💍 Rings Diagnostic');
+      console.log('1. Element:', el);
+      console.log('2. Effect:', effect);
+      console.log('3. Effect keys:', effect ? Object.keys(effect) : 'none');
+      console.log('4. Effect.scene:', effect?.scene);
+      console.log('5. Effect.scene?.children:', effect?.scene?.children);
+      console.log('6. Effect.camera:', effect?.camera);
+      console.log('7. Effect.renderer:', effect?.renderer);
+      
+      // Deep search for mesh
+      if (effect?.scene) {
+        console.log('8. Scene children count:', effect.scene.children?.length);
+        effect.scene.children?.forEach((child, idx) => {
+          console.log(`   Child ${idx}:`, {
+            type: child.type,
+            isMesh: child.isMesh,
+            name: child.name,
+            material: child.material?.type,
+            color: child.material?.color?.getHexString()
+          });
+          
+          // Check nested children
+          if (child.children?.length > 0) {
+            child.children.forEach((grandchild, gidx) => {
+              console.log(`      Grandchild ${gidx}:`, {
+                type: grandchild.type,
+                isMesh: grandchild.isMesh,
+                name: grandchild.name,
+                material: grandchild.material?.type,
+                color: grandchild.material?.color?.getHexString()
+              });
+            });
+          }
+        });
+      }
+
+      // Test color change via all possible paths
+      if (effect) {
+        console.log('9. Testing color changes...');
+        
+        // Try setOptions
+        console.log('   Trying setOptions...');
+        effect.setOptions({ color: 0xff0000 });
+        
+        // Try scene children
+        effect.scene?.children?.forEach(child => {
+          if (child.material?.color) {
+            console.log('   Found material on child:', child.type);
+            child.material.color.setHex(0xff0000);
+            child.material.needsUpdate = true;
+          }
+        });
+      }
+      console.groupEnd();
+    }, 2000);
+  });
+</script>
+
 </body>
 </html>

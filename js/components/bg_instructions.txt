@@ -1,0 +1,153 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                           NetBG Preset Combinations                          ║
+║              STYLE × BANDWIDTH × PATTERN × HARMONY × COLOR VALUES            ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+│ DARK BACKGROUND PRESETS (net on dark)
+├─────────────────┬─────────────────────────────────┬──────────────┬───────────────┬──────────────────┬────────────────────────────────┬─────────────────────────────
+│ Style           │ STYLE Values                    │ Bandwidth    │ Pattern       │ Harmony          │ Net Color                      │ Use Case
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ DEFAULT         │ netSat:100 netLit:55 bgSat:60  │ OCEAN        │ OSCILLATE     │ ANALOGOUS        │ Saturated blue (#0088ff)       │ General purpose, versatile
+│                 │ bgLit:8                         │              │               │                  │ on Dark blue (#0f1a33)         │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ BRILLIANT_BLUE  │ netSat:100 netLit:60 bgSat:80  │ ICE          │ OSCILLATE     │ MONO             │ Electric blue (#00aaff)        │ High-energy hero
+│                 │ bgLit:5                         │              │               │                  │ on Near-black (#0a1420)        │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ SAPPHIRE        │ netSat:95  netLit:45 bgSat:70  │ ICE          │ OSCILLATE     │ ANALOGOUS_SOFT   │ Sapphire (#0066cc)             │ Premium sapphire brand
+│                 │ bgLit:6                         │              │               │                  │ on Dark blue (#0f1a33)         │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ DEEP_BLUE       │ netSat:90  netLit:35 bgSat:75  │ COLD         │ BOUNCE_EASE   │ MONO             │ Navy (#002288)                 │ Cinematic dark theme
+│                 │ bgLit:4                         │              │               │                  │ on Almost black (#080f1a)      │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ COBALT_NET      │ netSat:100 netLit:50 bgSat:85  │ COLD         │ OSCILLATE     │ MONO             │ Cobalt (#0044bb)               │ Corporate cobalt
+│                 │ bgLit:7                         │              │               │                  │ on Dark navy (#0a1425)         │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ ROYAL_NET       │ netSat:88  netLit:55 bgSat:72  │ COLD         │ OSCILLATE     │ ANALOGOUS_SOFT   │ Royal blue (#0044aa)           │ Regal purple-tinted blue
+│                 │ bgLit:8                         │              │               │                  │ on Dark blue (#0f1b33)         │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ ICE_BLUE        │ netSat:70  netLit:72 bgSat:60  │ ICE          │ LOOP          │ MONO             │ Pale icy blue (#66bbff)        │ Cool icy theme
+│                 │ bgLit:6                         │              │               │                  │ on Dark cyan (#0a1f33)         │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ NEON_BLUE       │ netSat:100 netLit:65 bgSat:90  │ OCEAN        │ FAST          │ COMPLEMENTARY    │ Glowing cyan (#00bbff)         │ Nightclub neon
+│                 │ bgLit:4                         │              │               │                  │ on Dark cyan (#0a2233)         │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ STEEL_BLUE      │ netSat:50  netLit:48 bgSat:40  │ COLD         │ OSCILLATE     │ MONO             │ Steel blue (#4477aa)           │ Industrial steel
+│                 │ bgLit:8                         │              │               │                  │ on Medium dark (#1a2a44)       │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ DIM             │ netSat:60  netLit:40 bgSat:50  │ COLD         │ OSCILLATE     │ MONO             │ Muted blue (#447788)           │ Background subtlety
+│                 │ bgLit:6                         │              │               │                  │ on Medium dark (#1a2a44)       │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ VIVID           │ netSat:100 netLit:60 bgSat:80  │ OCEAN        │ OSCILLATE     │ ANALOGOUS        │ Bright blue (#00aaff)          │ Attention-grabbing
+│                 │ bgLit:10                        │              │               │                  │ on Dark blue (#0f1a33)         │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ GLOW            │ netSat:95  netLit:70 bgSat:70  │ ICE          │ FAST          │ COMPLEMENTARY    │ Near-neon (#44aaff)            │ Glowing effect
+│                 │ bgLit:5                         │              │               │                  │ on Dark blue (#0a1a33)         │
+└─────────────────┴─────────────────────────────────┴──────────────┴───────────────┴──────────────────┴────────────────────────────────┴─────────────────────────────
+
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+│ WHITE BACKGROUND PRESETS (net on light/white)
+├─────────────────┬─────────────────────────────────┬──────────────┬───────────────┬──────────────────┬────────────────────────────────┬─────────────────────────────
+│ Style           │ STYLE Values                    │ Bandwidth    │ Pattern       │ Harmony          │ Net Color                      │ Use Case
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ WHITE_ON_BLUE   │ netSat:0   netLit:92 bgSat:75  │ ICE          │ OSCILLATE     │ MONO             │ Pure white                     │ Hero with white text
+│                 │ bgLit:32                        │              │               │                  │ on Light cyan (#cceeff)        │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ WHITE_ON_COBALT │ netSat:5   netLit:90 bgSat:80  │ COLD         │ OSCILLATE     │ MONO             │ Pure white                     │ Professional white text
+│                 │ bgLit:28                        │              │               │                  │ on Cobalt blue (#bbddff)       │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ WHITE_ON_ROYAL  │ netSat:0   netLit:95 bgSat:70  │ COLD         │ BOUNCE_EASE   │ MONO             │ Bright white                   │ Elegant white text
+│                 │ bgLit:36                        │              │               │                  │ on Royal blue (#c8e0ff)        │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ WHITE_ON_TEAL   │ netSat:5   netLit:88 bgSat:65  │ OCEAN        │ LOOP          │ MONO             │ Pure white                     │ Fresh white text
+│                 │ bgLit:30                        │              │               │                  │ on Teal (#b8d8ff)              │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ SILVER_ON_BLUE  │ netSat:20  netLit:82 bgSat:72  │ ICE          │ OSCILLATE     │ ANALOGOUS_SOFT   │ Silver gray                    │ Subtle metallic net
+│                 │ bgLit:30                        │              │               │                  │ on Light blue (#d0e8ff)        │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ BLUE_ON_WHITE   │ netSat:100 netLit:45 bgSat:20  │ ICE          │ OSCILLATE     │ MONO             │ Vivid blue (#0088ff)           │ Blue links/icons on white
+│                 │ bgLit:88                        │              │               │                  │ on Off-white (#e8f0ff)         │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ COBALT_ON_WHITE │ netSat:95  netLit:40 bgSat:15  │ COLD         │ OSCILLATE     │ MONO             │ Cobalt (#0066dd)               │ Blue buttons on white
+│                 │ bgLit:90                        │              │               │                  │ on Warm white (#f0f4ff)        │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ SAPPHIRE_ON_WHT │ netSat:90  netLit:38 bgSat:25  │ ICE          │ OSCILLATE     │ MONO             │ Sapphire (#0066cc)             │ Brand sapphire on white
+│                 │ bgLit:86                        │              │               │                  │ on Cool white (#e6eeff)        │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ ROYAL_ON_WHITE  │ netSat:85  netLit:50 bgSat:18  │ COLD         │ BOUNCE_EASE   │ ANALOGOUS_SOFT   │ Royal blue (#0044aa)           │ Purple-blue accents
+│                 │ bgLit:88                        │              │               │                  │ on Neutral white (#ebf2ff)     │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ TEAL_ON_WHITE   │ netSat:80  netLit:42 bgSat:20  │ OCEAN        │ LOOP          │ MONO             │ Teal (#0088bb)                 │ Eco teal theme
+│                 │ bgLit:87                        │              │               │                  │ on Soft white (#e8f0ff)        │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ VIOLET_ON_WHITE │ netSat:85  netLit:50 bgSat:15  │ PURPLE       │ OSCILLATE     │ MONO             │ Violet (#7744dd)               │ Creative violet
+│                 │ bgLit:89                        │              │               │                  │ on Bright white (#f2f6ff)      │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ NAVY_ON_WHITE   │ netSat:90  netLit:30 bgSat:10  │ COLD         │ BOUNCE_EASE   │ MONO             │ Dark navy (#002277)            │ Subtle navy links
+│                 │ bgLit:91                        │              │               │                  │ on Very soft white (#f4f8ff)   │
+└─────────────────┴─────────────────────────────────┴──────────────┴───────────────┴──────────────────┴────────────────────────────────┴─────────────────────────────
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    Colored Net on White Background Combinations              ║
+║              STYLE × BANDWIDTH × PATTERN × HARMONY × COLOR VALUES            ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+┌─────────────────┬─────────────────────────────────┬──────────────┬───────────────┬──────────────────┬────────────────────────────────┬─────────────────────────────
+│ Style           │ STYLE Values                    │ Bandwidth    │ Pattern       │ Harmony          │ Net Color                      │ Use Case
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ BLUE_ON_WHITE   │ netSat:100 netLit:45 bgSat:20  │ ICE          │ OSCILLATE     │ MONO             │ Vivid blue (#0088ff)           │ Blue links/icons on white
+│                 │ bgLit:88                        │              │               │                  │ on Off-white (#e8f0ff)         │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ COBALT_ON_WHITE │ netSat:95  netLit:40 bgSat:15  │ COLD         │ OSCILLATE     │ MONO             │ Cobalt (#0066dd)               │ Blue buttons on white
+│                 │ bgLit:90                        │              │               │                  │ on Warm white (#f0f4ff)        │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ SAPPHIRE_ON_WHT │ netSat:90  netLit:38 bgSat:25  │ ICE          │ OSCILLATE     │ MONO             │ Sapphire (#0066cc)             │ Brand sapphire on white
+│                 │ bgLit:86                        │              │               │                  │ on Cool white (#e6eeff)        │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ ROYAL_ON_WHITE  │ netSat:85  netLit:50 bgSat:18  │ COLD         │ BOUNCE_EASE   │ ANALOGOUS_SOFT   │ Royal blue (#0044aa)           │ Purple-blue accents
+│                 │ bgLit:88                        │              │               │                  │ on Neutral white (#ebf2ff)     │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ TEAL_ON_WHITE   │ netSat:80  netLit:42 bgSat:20  │ OCEAN        │ LOOP          │ MONO             │ Teal (#0088bb)                 │ Eco teal theme
+│                 │ bgLit:87                        │              │               │                  │ on Soft white (#e8f0ff)        │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ VIOLET_ON_WHITE │ netSat:85  netLit:50 bgSat:15  │ PURPLE       │ OSCILLATE     │ MONO             │ Violet (#7744dd)               │ Creative violet
+│                 │ bgLit:89                        │              │               │                  │ on Bright white (#f2f6ff)      │
+├─────────────────┼─────────────────────────────────┼──────────────┼───────────────┼──────────────────┼────────────────────────────────┼─────────────────────────────
+│ NAVY_ON_WHITE   │ netSat:90  netLit:30 bgSat:10  │ COLD         │ BOUNCE_EASE   │ MONO             │ Dark navy (#002277)            │ Subtle navy links
+│                 │ bgLit:91                        │              │               │                  │ on Very soft white (#f4f8ff)   │
+└─────────────────┴─────────────────────────────────┴──────────────┴───────────────┴──────────────────┴────────────────────────────────┴─────────────────────────────
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                         Quick Reference - Code Usage                         ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+BLUE_ON_WHITE:     BANDWIDTH.ICE,    PATTERN.OSCILLATE, HARMONY.MONO
+COBALT_ON_WHITE:   BANDWIDTH.COLD,   PATTERN.OSCILLATE, HARMONY.MONO
+SAPPHIRE_ON_WHITE: BANDWIDTH.ICE,    PATTERN.OSCILLATE, HARMONY.MONO
+ROYAL_ON_WHITE:    BANDWIDTH.COLD,   PATTERN.OSCILLATE, HARMONY.ANALOGOUS_SOFT
+TEAL_ON_WHITE:     BANDWIDTH.OCEAN,  PATTERN.LOOP,      HARMONY.MONO
+VIOLET_ON_WHITE:   BANDWIDTH.PURPLE, PATTERN.OSCILLATE, HARMONY.MONO
+NAVY_ON_WHITE:     BANDWIDTH.COLD,   PATTERN.BOUNCE_EASE, HARMONY.MONO"" 
+
+
+// Static fog
+initBackground('#homeHero', 'fog', {
+  tone: 'BLUE',
+  mood: 'SAPPHIRE',
+  blur: 0.65,
+  pace: 0.7,
+  zoom: 1.2
+});
+
+// Showcase mode
+initBackground('#homeHero', 'fog', {
+  tone: 'BLUE',
+  mood: 'SAPPHIRE',
+  blur: 0.65,
+  pace: 0.7,
+  zoom: 1.2,
+  showcase: true,           // Enable cycling
+  showcaseDuration: 4000,
+});

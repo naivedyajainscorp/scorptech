@@ -4,6 +4,25 @@
 
 console.log('💎 Sapphire page initialization started');
 
+/* ════════════════════════════════════════════════════════════════════════════
+   Fog Background Initialization
+   ═════════════════════════════════════════════════════════════════════════════ */
+
+import { initBackground } from '../components/fog_bg.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Showcase WHITE tone moods only for Sapphire hero
+  initBackground('#sapphireHero', 'fog', {
+    tone: 'MIXED',
+    mood: 'AURORA',
+    blur: 0.65,
+    pace: 0.7,
+    zoom: 0.85,
+    showcase: true,
+    showcaseTone: 'MIXED',  // Only cycle WHITE moods
+  });
+});
+
 // ─────────────────────────────────────────────────────────────────────────────
 // 1. AOS (Animate On Scroll) Initialization
 // ─────────────────────────────────────────────────────────────────────────────
@@ -13,13 +32,13 @@ function initAOS() {
     console.warn('⚠️ AOS library not loaded');
     return;
   }
-  
+
   AOS.init({
     duration: 300,
     once: true,
     offset: 50
   });
-  
+
   console.log('✅ AOS initialized');
 }
 
@@ -39,7 +58,7 @@ function initializeSapphireHeroGrid() {
   // Calculate grid size based on screen size
   let gridCols = 10;
   let gridRows = 10;
-  
+
   if (window.innerWidth < 576) {
     gridCols = 5;
     gridRows = 6;
@@ -77,11 +96,6 @@ function initializeSapphireHeroGrid() {
 // ─────────────────────────────────────────────────────────────────────────────
 // 3. Module Showcase — Tab + Panel System
 // ─────────────────────────────────────────────────────────────────────────────
-
-/* ══════════════════════════════════════════════════════
-   MODULE SHOWCASE — Tab + Panel System
-   Replaces all fullscreen core-module modal behaviour.
-   ══════════════════════════════════════════════════════ */
 
 function initModuleShowcase() {
   const tabs      = document.querySelectorAll('.s-showcase-tab');
@@ -133,6 +147,7 @@ function initModuleShowcase() {
 // ─────────────────────────────────────────────────────────────────────────────
 
 document.addEventListener('DOMContentLoaded', () => {
+  initSapphireHero();
   initAOS();
   initializeSapphireHeroGrid();
   initModuleShowcase();
