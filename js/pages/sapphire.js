@@ -12,15 +12,18 @@ import { initBackground } from '../components/fog_bg.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Showcase WHITE tone moods only for Sapphire hero
-  initBackground('#sapphireHero', 'fog', {
-    tone: 'MIXED',
-    mood: 'AURORA',
-    blur: 0.65,
-    pace: 0.7,
-    zoom: 0.85,
-    showcase: true,
-    showcaseTone: 'MIXED',  // Only cycle WHITE moods
-  });
+  const sapphireHero = document.querySelector('#sapphireHero');
+  if (sapphireHero) {
+    initBackground('#sapphireHero', 'fog', {
+      tone: 'BLUE',
+      mood: 'SAPPHIRE',
+      blur: 0.65,
+      pace: 0.7,
+      zoom: 0.85,
+      showcase: true,
+      showcaseTone: 'BLUE',
+    });
+  }
 });
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -147,7 +150,6 @@ function initModuleShowcase() {
 // ─────────────────────────────────────────────────────────────────────────────
 
 document.addEventListener('DOMContentLoaded', () => {
-  initSapphireHero();
   initAOS();
   initializeSapphireHeroGrid();
   initModuleShowcase();

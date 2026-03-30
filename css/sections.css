@@ -879,9 +879,9 @@
 }
 
 
-/* Pill position inside card image */
+/* Pill position inside card image - ONLY for s-full-pic-card variant */
 .s-pic-card-img { position: relative; }
-.s-pic-card-img .s-pill { position: absolute; bottom: 10px; left: 10px; z-index: 2; }
+.s-full-pic-card .s-pic-card-img .s-pill { position: absolute; bottom: 10px; left: 10px; z-index: 2; }
 /* ═══════════════════════════════════════════════════════════════
    SECTION 2 — FEATURED BLOGS
    ═══════════════════════════════════════════════════════════════ */
@@ -1899,6 +1899,18 @@
   text-transform: uppercase;
   margin-bottom: 1rem;
   border: 1px solid rgba(0, 102, 204, 0.15);
+}
+
+/* Section Label - For Industry Category Headers */
+.s-section-label {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 700;
+  color: var(--s-gray-800, #1e293b);
+  margin-bottom: var(--s-space-4, 1.5rem);
+  margin-top: var(--s-space-4, 1.5rem);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .s-section-title.gradient {

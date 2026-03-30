@@ -179,7 +179,7 @@ export async function initFog(selector, tone = TONE.BLUE, mood = MOOD.COBALT, op
     : selector;
 
   if (!element) {
-    console.error('[Fog] Element not found:', selector);
+    console.warn('[Fog] Element not found:', selector);
     return null;
   }
 

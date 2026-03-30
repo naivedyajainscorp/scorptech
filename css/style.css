@@ -1631,6 +1631,7 @@
   border: none;
   box-shadow: none;
   background: transparent;
+  padding: var(--s-space-6);
 }
 
 .s-pic-card .s-cm-feature:hover {

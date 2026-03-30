@@ -591,10 +591,10 @@ body {
     position: relative;
 }
 .s-pic-card-img-badge {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    z-index: 10;
+    position: absolute !important;
+    top: 1rem !important;
+    left: 1rem !important;
+    z-index: 10 !important;
     pointer-events: none; /* Allows hover on card even if over badge */
 }
 .s-pic-card-img-badge .s-pill {
