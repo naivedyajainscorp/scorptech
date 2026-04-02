@@ -98,6 +98,7 @@
     color: rgba(255,255,255,0.32);
     margin-bottom: 0.65rem;
 }
+
 .intel-hero-pills {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -150,7 +151,7 @@
 /* ── HERO RING CANVAS ───────────────────────────────────────── */
 .intel-ring-wrap {
     width: 100%;
-    max-width: 620px;
+    max-width: 680px;
     overflow: visible;
 }
 .intel-ring-wrap canvas {
@@ -515,7 +516,7 @@
 
 @media (max-width: 767px) {
     .intel-snav      { top: 9vh; }
-    .intel-ring-wrap { max-width: 320px; }
+    .intel-ring-wrap { max-width: 480px; }
     .intel-cat-grid  { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -523,6 +524,6 @@
     .intel-hero-inner { padding: 0 1rem; }
     .intel-hero-pills { grid-template-columns: 1fr; }
     .intel-hero-ring  { width: 100%; }
-    .intel-ring-wrap  { max-width: 340px; margin: 0 auto; }
+    .intel-ring-wrap  { max-width: 380px; margin: 0 auto; }
     .intel-cat-grid   { grid-template-columns: repeat(2, 1fr); }
 }

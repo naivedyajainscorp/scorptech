@@ -14,7 +14,7 @@
   font-style: italic;
   cursor: pointer;
   overflow: hidden;
-  transition: transform var(--s-transition-smooth, 0.3s ease), 
+  transition: transform var(--s-transition-smooth, 0.3s ease),
               box-shadow var(--s-transition-smooth, 0.3s ease),
               background-color var(--s-transition-smooth, 0.3s ease),
               color var(--s-transition-smooth, 0.3s ease);
@@ -24,8 +24,8 @@
   justify-content: center;
   min-width: 140px;
   line-height: var(--s-leading-normal);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6), 
-               0 3px 6px rgba(0, 0, 0, 0.25);
+  text-shadow: var(--s-text-shadow);
+  pointer-events: auto;
 }
 
 [class*="s-btn"]:hover {
@@ -50,8 +50,7 @@
   font-size: var(--s-text-xs);
   min-width: 80px;
   /* Very tight pop for tiny text */
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4), 
-               0 1px 3px rgba(0, 0, 0, 0.15);
+  text-shadow: var(--s-text-shadow-xs);
 }
 
 [class*="s-btn-sm"] {
@@ -59,8 +58,7 @@
   font-size: var(--s-text-sm);
   min-width: 110px;
   /* Subtle depth for small text */
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 
-               0 2px 5px rgba(0, 0, 0, 0.2);
+  text-shadow: var(--s-text-shadow);
 }
 
 [class*="s-btn-md"] {
@@ -68,8 +66,7 @@
   font-size: var(--s-text-lg);
   min-width: 160px;
   /* Stronger depth for text-lg */
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65), 
-               0 3px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: var(--s-text-shadow-md);
 }
 
 [class*="s-btn-lg"] {
@@ -77,8 +74,7 @@
   font-size: var(--s-text-xl);
   min-width: 180px;
   /* Pronounced 3D pop for text-xl */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7), 
-               0 4px 10px rgba(0, 0, 0, 0.35);
+  text-shadow: var(--s-text-shadow-lg);
 }
 
 [class*="s-btn-xl"] {
@@ -86,8 +82,7 @@
   font-size: var(--s-text-2xl);
   min-width: 200px;
   /* Aggressive pop for text-2xl */
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.75), 
-               0 5px 14px rgba(0, 0, 0, 0.4);
+  text-shadow: var(--s-text-shadow-xl);
 }
 
 [class*="s-btn-xxl"] {
@@ -95,8 +90,7 @@
   font-size: var(--s-text-2xl);
   min-width: 240px;
   /* Matches XL font-size, keeping the same maximum shadow */
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.75), 
-               0 5px 14px rgba(0, 0, 0, 0.4);
+  text-shadow: var(--s-text-shadow-xl);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════════
@@ -1681,8 +1675,7 @@
   color: var(--s-white);
   font-size: var(--icon-fs);
   box-shadow: var(--s-shadow-md);
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7),
-               0 3px 10px rgba(0, 0, 0, 0.4);
+  text-shadow: var(--s-text-shadow-icon-md);
   /* Explicit properties to avoid the “overridden by animation/transition” noise */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* [web:5][web:9] */
   flex-shrink: 0;
@@ -1710,8 +1703,7 @@
   min-width: var(--s-icon-size-sm);
   min-height: var(--s-icon-size-sm);
   border-radius: var(--s-radius-sm);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6),
-               0 2px 6px rgba(0, 0, 0, 0.3);
+  text-shadow: var(--s-text-shadow-icon-sm);
 }
 
 [class*="s-icon-md"] {
@@ -1719,8 +1711,7 @@
   min-width: var(--s-icon-size-md);
   min-height: var(--s-icon-size-md);
   border-radius: var(--s-radius-md);
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7),
-               0 3px 10px rgba(0, 0, 0, 0.4);
+  text-shadow: var(--s-text-shadow-icon-md);
 }
 
 [class*="s-icon-lg"] {
@@ -1728,8 +1719,7 @@
   min-width: var(--s-icon-size-lg);
   min-height: var(--s-icon-size-lg);
   border-radius: var(--s-radius-md);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.75),
-               0 4px 14px rgba(0, 0, 0, 0.45);
+  text-shadow: var(--s-text-shadow-icon-lg);
 }
 
 [class*="s-icon-xl"] {
@@ -1737,8 +1727,7 @@
   min-width: var(--s-icon-size-xl);
   min-height: var(--s-icon-size-xl);
   border-radius: var(--s-radius-md);
-  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.8),
-               0 6px 20px rgba(0, 0, 0, 0.5);
+  text-shadow: var(--s-text-shadow-icon-xl);
 }
 
 
@@ -2723,17 +2712,15 @@
   font-size: var(--s-text-xs);
   gap: 0.25rem;
   /* Extremely tight, subtle pop for tiny text */
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4), 
-               0 1px 3px rgba(0, 0, 0, 0.15);
+  text-shadow: var(--s-text-shadow-xs);
 }
 
-[class*="s-pill-s"]:not([class*="s-pill-xs"]) {
+[class*="s-pill-sm"]:not([class*="s-pill-xs"]) {
   padding: 0.375rem 0.75rem;
   font-size: var(--s-text-xs);
   gap: 0.35rem;
   /* Same font size as xs, slightly more spread for the wider pill */
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4), 
-               0 2px 4px rgba(0, 0, 0, 0.15);
+  text-shadow: var(--s-text-shadow-xs);
 }
 
 [class*="s-pill-md"] {
@@ -2741,8 +2728,7 @@
   font-size: var(--s-text-sm);
   gap: 0.5rem;
   /* Standard 3D pop for base pill text */
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 
-               0 2px 5px rgba(0, 0, 0, 0.2);
+  text-shadow: var(--s-text-shadow);
 }
 
 [class*="s-pill-lg"] {
@@ -2750,8 +2736,7 @@
   font-size: var(--s-text-base);
   gap: 0.5rem;
   /* Slightly deeper shadow as text gets to base size */
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6), 
-               0 3px 6px rgba(0, 0, 0, 0.25);
+  text-shadow: var(--s-text-shadow);
 }
 
 [class*="s-pill-xl"]:not([class*="s-pill-xxl"]) {
@@ -2759,8 +2744,7 @@
   font-size: var(--s-text-lg);
   gap: 0.625rem;
   /* More pronounced depth for large text */
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65), 
-               0 3px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: var(--s-text-shadow-md);
 }
 
 [class*="s-pill-xxl"] {
@@ -2768,8 +2752,7 @@
   font-size: var(--s-text-xl);
   gap: 0.75rem;
   /* Strongest pop for the largest pill */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7), 
-               0 4px 10px rgba(0, 0, 0, 0.35);
+  text-shadow: var(--s-text-shadow-lg);
 }
 
 
@@ -2952,31 +2935,31 @@
 }
 
 .s-pill-round-xs {
-  --_pill-radius: var(--s-radius-xs)
+  --_pill-radius: var(--s-radius-xs) !important
 }
 
 .s-pill-round-sm {
-  --_pill-radius: var(--s-radius-sm)
+  --_pill-radius: var(--s-radius-sm) !important
 }
 
 .s-pill-round-md {
-  --_pill-radius: var(--s-radius-md)
+  --_pill-radius: var(--s-radius-md) !important
 }
 
 .s-pill-round-lg {
-  --_pill-radius: var(--s-radius-lg)
+  --_pill-radius: var(--s-radius-lg) !important
 }
 
 .s-pill-round-xl {
-  --_pill-radius: var(--s-radius-xl)
+  --_pill-radius: var(--s-radius-xl) !important
 }
 
 .s-pill-round-xxl {
-  --_pill-radius: var(--s-radius-2xl)
+  --_pill-radius: var(--s-radius-2xl) !important
 }
 
 .s-pill-round {
-  --_pill-radius: var(--s-radius-full)
+  --_pill-radius: var(--s-radius-full) !important
 }
 
 /* ───────────────────────────────────────────────────────────────────────────
@@ -5793,17 +5776,19 @@ body.modal-open .s-floating-button {
 
 
 
-/* Pincode loader spinner */
+/* Pincode loader spinner - positioned to align with validation checkmark */
 .pincode-loader {
   position: absolute;
-  right: 1rem;
-  top: 3.5rem;
+  right: 1.25rem; /* Same as checkmark */
+  top: 50%; /* Center vertically like checkmark */
+  transform: translateY(-50%); /* Center vertically like checkmark */
   color: var(--s-primary);
   font-size: 1.1rem;
   opacity: 0;
   visibility: hidden;
   transition: var(--s-transition-fast);
   pointer-events: none;
+  z-index: 5; /* Same as checkmark */
 }
 
 .pincode-loader.active {
@@ -5851,6 +5836,14 @@ body.modal-open .s-floating-button {
   .s-full-width-btn {
     width: 100% !important;
     min-width: unset !important;
+  }
+  
+  /* Override for buttons that must stay side by side */
+  .flex-nowrap .s-btn,
+  .d-flex.gap-2 .s-btn {
+    width: auto !important;
+    min-width: unset !important;
+    flex-shrink: 0;
   }
 }
 
@@ -6343,4 +6336,220 @@ body.modal-open .s-floating-button {
   font-size: 0.825rem;
   margin-top: 0.4rem;
   color: var(--s-danger) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   S-BTN EXTENDED VARIANTS — Capabilities Card Palette
+   These 4 variants follow the existing s-btn-* OOCSS modifier pattern.
+   Colour tokens referenced from core.css :root additions (refactor task).
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.s-btn-cobalt {
+  background: linear-gradient(135deg, var(--s-primary-940), var(--s-primary-800));
+  color: var(--s-white);
+  border: none;
+}
+.s-btn-cobalt:hover,
+.s-btn-cobalt:focus-visible {
+  background: linear-gradient(135deg, var(--s-primary-800), var(--s-primary-600));
+  color: var(--s-white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(var(--s-primary-800-rgb), 0.45);
+}
+.s-btn-cobalt:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.s-btn-electric {
+  background: linear-gradient(135deg, var(--s-cyan-400), var(--s-sky-500));
+  color: var(--s-white);
+  border: none;
+}
+.s-btn-electric:hover,
+.s-btn-electric:focus-visible {
+  background: linear-gradient(135deg, var(--s-cyan-200), var(--s-sky-300));
+  color: var(--s-white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(var(--s-cyan-400-rgb), 0.45);
+}
+.s-btn-electric:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.s-btn-arctic {
+  background: linear-gradient(135deg, var(--s-primary-800), var(--s-sky-500));
+  color: var(--s-white);
+  border: none;
+}
+.s-btn-arctic:hover,
+.s-btn-arctic:focus-visible {
+  background: linear-gradient(135deg, var(--s-primary-600), var(--s-sky-300));
+  color: var(--s-white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(var(--s-primary-600-rgb), 0.45);
+}
+.s-btn-arctic:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.s-btn-ember {
+  background: linear-gradient(135deg, var(--s-attention), var(--s-attention-400));
+  color: var(--s-white);
+  border: none;
+}
+.s-btn-ember:hover,
+.s-btn-ember:focus-visible {
+  background: linear-gradient(135deg, var(--s-attention-light), var(--s-attention));
+  color: var(--s-white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(var(--s-attention-light-rgb), 0.45);
+}
+.s-btn-ember:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   S-PILL-V2 SYSTEM — Frosted Glass Tag Pills
+   Follows the existing s-pill-* OOCSS modifier pattern.
+   s-pill-round-sm is an existing border-radius utility — call it, don't define it.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+[class*="s-pill-v2"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 4px 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: var(--_pill-radius, var(--s-radius-full));
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--s-white);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  white-space: nowrap;
+  user-select: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  text-decoration: none;
+}
+
+[class*="s-pill-v2"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   S-PILL-V2 SIZE MODIFIERS (Attribute Scoped)
+   Mirrors the s-pill size system exactly
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+[class*="s-pill-v2-xs"] {
+  padding: 0.25rem 0.5rem;
+  font-size: var(--s-text-xs);
+  gap: 0.25rem;
+  text-shadow: var(--s-text-shadow-xs);
+}
+
+[class*="s-pill-v2-sm"]:not([class*="s-pill-v2-xs"]) {
+  padding: 0.375rem 0.75rem;
+  font-size: var(--s-text-xs);
+  gap: 0.35rem;
+  text-shadow: var(--s-text-shadow-xs);
+}
+
+[class*="s-pill-v2-md"] {
+  padding: 0.5rem 1rem;
+  font-size: var(--s-text-sm);
+  gap: 0.5rem;
+  text-shadow: var(--s-text-shadow);
+}
+
+[class*="s-pill-v2-lg"] {
+  padding: 0.625rem 1.25rem;
+  font-size: var(--s-text-base);
+  gap: 0.5rem;
+  text-shadow: var(--s-text-shadow);
+}
+
+[class*="s-pill-v2-xl"]:not([class*="s-pill-v2-xxl"]) {
+  padding: 0.75rem 1.5rem;
+  font-size: var(--s-text-lg);
+  gap: 0.625rem;
+  text-shadow: var(--s-text-shadow-md);
+}
+
+[class*="s-pill-v2-xxl"] {
+  padding: 1rem 2rem;
+  font-size: var(--s-text-xl);
+  gap: 0.75rem;
+  text-shadow: var(--s-text-shadow-lg);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   S-PILL-V2 RADIUS MODIFIERS (Attribute Scoped)
+   Uses same --_pill-radius variable pattern as s-pill system
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+[class*="s-pill-v2-round-"] {
+  border-radius: var(--_pill-radius)
+}
+
+.s-pill-v2-round-xs {
+  --_pill-radius: var(--s-radius-xs) !important
+}
+
+.s-pill-v2-round-sm {
+  --_pill-radius: var(--s-radius-sm) !important
+}
+
+.s-pill-v2-round-md {
+  --_pill-radius: var(--s-radius-md) !important
+}
+
+.s-pill-v2-round-lg {
+  --_pill-radius: var(--s-radius-lg) !important
+}
+
+.s-pill-v2-round-xl {
+  --_pill-radius: var(--s-radius-xl) !important
+}
+
+.s-pill-v2-round-xxl {
+  --_pill-radius: var(--s-radius-2xl) !important
+}
+
+.s-pill-v2-round {
+  --_pill-radius: var(--s-radius-full) !important
+}
+
+/* Color Variants */
+.s-pill-v2-cyan {
+  background: rgba(var(--s-cyan-400-rgb), 0.3);
+  color: var(--s-cyan-100);
+}
+.s-pill-v2-cyan:hover {
+  background: rgba(var(--s-cyan-400-rgb), 0.45);
+}
+
+.s-pill-v2-orange {
+  background: rgba(var(--s-attention-light-rgb), 0.3);
+  color: var(--s-attention-100);
+}
+.s-pill-v2-orange:hover {
+  background: rgba(var(--s-attention-light-rgb), 0.45);
+}
+
+.s-pill-v2-purple {
+  background: rgba(var(--s-royal-400-rgb), 0.3);
+  color: var(--s-royal-lighter);
+}
+.s-pill-v2-purple:hover {
+  background: rgba(var(--s-royal-400-rgb), 0.45);
 }

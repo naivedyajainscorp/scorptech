@@ -1,0 +1,92 @@
+(async function autoFillAssessment() {
+    console.log("🚀 Auto-fill started...");
+
+    const wait = (ms) => new Promise(r => setTimeout(r, ms));
+
+    function randomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function randomPick(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function fillTextInputs() {
+        document.querySelectorAll('input[type="text"]').forEach(input => {
+            input.value = "Test_" + Math.random().toString(36).substring(2, 8);
+            input.dispatchEvent(new Event('input', { bubbles: true }));
+        });
+    }
+
+    function fillSelects() {
+        document.querySelectorAll('select').forEach(select => {
+            if (select.options.length > 1) {
+                const idx = randomInt(1, select.options.length - 1);
+                select.selectedIndex = idx;
+                select.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+        });
+    }
+
+    function fillRadios() {
+        const groups = [...new Set(
+            Array.from(document.querySelectorAll('input[type="radio"]'))
+            .map(r => r.name)
+        )];
+
+        groups.forEach(name => {
+            const radios = document.querySelectorAll(`input[name="${name}"]`);
+            if (radios.length > 0) {
+                randomPick(radios).click();
+            }
+        });
+    }
+
+    function fillCheckboxes() {
+        const groups = [...new Set(
+            Array.from(document.querySelectorAll('input[type="checkbox"]'))
+            .map(c => c.name)
+        )];
+
+        groups.forEach(name => {
+            const checkboxes = Array.from(document.querySelectorAll(`input[name="${name}"]`));
+            if (checkboxes.length > 0) {
+                const count = randomInt(1, checkboxes.length); // 1 to N
+                const shuffled = checkboxes.sort(() => 0.5 - Math.random());
+                shuffled.slice(0, count).forEach(cb => cb.click());
+            }
+        });
+    }
+
+    async function clickNext() {
+        const btn = document.getElementById("next-btn");
+        if (btn && !btn.disabled) {
+            btn.click();
+            await wait(300);
+            return true;
+        }
+        return false;
+    }
+
+    while (true) {
+
+        // Profile + Org
+        fillTextInputs();
+        fillSelects();
+        fillRadios();
+        fillCheckboxes();
+
+        await wait(200);
+
+        const progressed = await clickNext();
+
+        if (!progressed) {
+            console.log("🏁 Likely reached completion.");
+            break;
+        }
+
+        await wait(400);
+    }
+
+    console.log("✅ Auto-fill finished.");
+})();

@@ -573,6 +573,24 @@
   background: var(--s-gradient-amber);
 }
 
+/* Progress Bar Percentage Text */
+.ipc-progress-percent,
+.progress-percent {
+  font-family: 'Science Gothic', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 0.85rem;
+  color: white;
+  filter: var(--s-text-shadow);
+  white-space: nowrap;
+}
+
+/* Progress Percent in Metrics (larger sizes) */
+.s-ncr-metric-value.progress-percent,
+[class*="retention-value"].progress-percent {
+  font-size: 1.1rem;
+  filter: var(--s-text-shadow);
+}
+
 
 
 /* Protection Details */

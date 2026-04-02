@@ -129,13 +129,13 @@ this.container.innerHTML = `
     <!-- Progress Bar -->
     <div class="s-rounded-md s-shadow-sm" style="width: 100%; height: 40px; overflow: hidden; display: flex; margin-bottom: 2rem;">
       <div id="progress-labor" class="s-bg-gradient-primary" style="width: 0%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; font-family: 'Science Gothic', sans-serif; transition: width 1.2s ease-in-out;">
-        <span id="percent-labor">0%</span>
+        <span id="percent-labor" class="progress-percent">0%</span>
       </div>
       <div id="progress-parts" class="s-bg-gradient-success" style="width: 0%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; font-family: 'Science Gothic', sans-serif; transition: width 1.2s ease-in-out;">
-        <span id="percent-parts">0%</span>
+        <span id="percent-parts" class="progress-percent">0%</span>
       </div>
       <div id="progress-misc" class="s-bg-gradient-amber" style="width: 0%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; font-family: 'Science Gothic', sans-serif; transition: width 1.2s ease-in-out;">
-        <span id="percent-misc">0%</span>
+        <span id="percent-misc" class="progress-percent">0%</span>
       </div>
     </div>
 

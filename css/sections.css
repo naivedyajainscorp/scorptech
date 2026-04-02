@@ -610,10 +610,10 @@
 
 /* ═══════════════════════════════════════════════════════════════
    MOBILE RESPONSIVE - TR-3, TR-5 Fixed
-   1200px breakpoint retained (prevents overflow)
+   Uses Bootstrap navbar-expand-xxl (1400px breakpoint)
    White background ONLY when .show class active
    ═══════════════════════════════════════════════════════════════ */
-@media (max-width: 1412px) {
+@media (max-width: 1399.98px) {
   .s-navbar {
     margin: 1rem;
   }
@@ -627,7 +627,7 @@
 
   /* ── Expanded menu container ── */
   .navbar-collapse.show {
-    display: block;
+    display: block !important;
     margin-top: 1rem;
     padding: 1rem;
     background: transparent !important;
@@ -1226,7 +1226,12 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+}
+
+.s-footer__top-cta .s-btn-sm {
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 
@@ -1611,11 +1616,6 @@
               0 2px 4px rgba(0, 0, 0, 1);
 }
 
-.s-hero-gradient .s-hero-title,
-.s-hero-sapphire .s-hero-title,
-.s-hero-diamonds .s-hero-title {
-  color: var(--s-white);
-}
 
 /* Title Line */
 .s-hero-title-line {

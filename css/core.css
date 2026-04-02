@@ -15,6 +15,7 @@
        BRAND COLORS (SCORP Primary Identity)
        ═══════════════════════════════════════════════════════════════════════════ */
     --s-primary: #0066cc;
+    --s-primary-rgb: 0, 102, 204;
     --s-primary-vibrant: #0099ff;
     --s-primary-dark: #004d99;
     --s-primary-light: #3399ff;
@@ -22,6 +23,19 @@
     --s-primary-500: #3490fa;
     --s-primary-600: #2563eb;
     --s-primary-700: #1747a6;
+
+    /* Dark Primary Backgrounds — deep section/card/component backgrounds */
+    --s-primary-800: #0c4a6e;   /* medium ocean blue */
+    --s-primary-900: #001f3f;   /* deep section bg navy */
+    --s-primary-920: #0a2540;   /* card bg variation */
+    --s-primary-940: #061c2e;   /* deep card bg */
+    --s-primary-950: #061525;   /* phone/component bg */
+    --s-primary-960: #0a1e35;   /* phone frame bg */
+    --s-primary-970: #051828;   /* phone screen deep */
+    --s-primary-980: #030c18;   /* card intelligence bg */
+    --s-primary-990: #020f1e;   /* ultra-dark screen bg */
+    --s-primary-900-rgb: 0, 31, 63;
+    --s-primary-800-rgb: 12, 74, 110;
 
     /* ═══════════════════════════════════════════════════════════════════════════
        NEUTRAL PALETTE (Slate/Gray Scale - 11 Shades)
@@ -46,19 +60,39 @@
     --s-neutral-700: #374151;
     --s-neutral-800: #1f2937;
 
+    --s-neutral-850: #16213e;   /* deep slate-navy */
+    --s-neutral-900: #1a1a2e;   /* dark desaturated navy-purple */
+    --s-neutral-900-rgb: 26, 26, 46;
+    --s-neutral-50:  #f0f4ff;   /* pale blue-tinted surface */
+
     /* ═══════════════════════════════════════════════════════════════════════════
        EXTENDED COLOR PALETTE
        ═══════════════════════════════════════════════════════════════════════════ */
     --s-cyan-500: #06b6d4;
     --s-cyan-600: #0891b2;
+
+    --s-cyan-400: #22d3ee;   /* vivid bright cyan — Tailwind cyan-400 */
+    --s-cyan-400-rgb: 34, 211, 238;
+    --s-cyan-200: #67e8f9;   /* pale bright cyan — Tailwind cyan-200 */
+    --s-cyan-200-rgb: 103, 232, 249;
+    --s-cyan-100: #a5f3fc;   /* very pale cyan — Tailwind cyan-100 */
+    --s-sky-500:  #0ea5e9;   /* sky-blue — Tailwind sky-500 */
+    --s-sky-500-rgb: 14, 165, 233;
+    --s-sky-300:  #38bdf8;   /* light sky-blue — Tailwind sky-300 */
+
     --s-green-500: #22c55e;
     --s-green-600: #16a34a;
     --s-green-700: #15803d;
     --s-amber-500: #f59e0b;
     --s-amber-600: #d97706;
     --s-amber-700: #b45309;
+
+    --s-attention-800: #7c2d12;   /* dark burnt orange / rust */
+    --s-attention-100: #fed7aa;   /* pale peach tint */
+
     --s-purple-500: #8b5cf6;
     --s-purple-600: #6d28d9;
+
     --s-indigo-500: #6366f1;
     --s-indigo-600: #4f46e5;
     --s-teal-500: #14b8a6;
@@ -87,7 +121,12 @@
     --s-info-special-rgb: 13, 148, 136;
     --s-attention: #ea580c;
     --s-attention-light: #f97316;
+    --s-attention-light-rgb: 249, 115, 22;
+    --s-attention-400: #fb923c;   /* light orange — Tailwind orange-400 */
+    --s-attention-400-rgb: 251, 146, 60;
     --s-royal: #7c3aed;
+    --s-royal-400: #9c6eff;   /* bright saturated purple */
+    --s-royal-400-rgb: 156, 110, 255;
     --s-royal-light: #a78bfa;
     --s-royal-lighter: #c4b5fd;
     --s-pop: #ec4899;
@@ -148,6 +187,12 @@
     --s-gradient-light-bg: linear-gradient(135deg, #ffffff, #f1f5f9);
     --s-gradient-dark: linear-gradient(135deg, #334155, #475569);
     --s-gradient-black: linear-gradient(135deg, #000000, #1e293b);
+
+    /* Capabilities page gradients */
+    --s-gradient-cpblts-hero:      linear-gradient(135deg, var(--s-primary-900) 0%, var(--s-neutral-900) 50%, var(--s-neutral-850) 100%);
+    --s-gradient-cpblts-highlight: linear-gradient(135deg, var(--s-primary-900) 0%, var(--s-neutral-900) 100%);
+    --s-gradient-cpblts-cta:       linear-gradient(135deg, #00c6ff 0%, var(--s-primary) 50%, var(--s-royal) 100%);
+    --s-gradient-cpblts-section:   linear-gradient(180deg, var(--s-white) 0%, var(--s-neutral-50) 100%);
 
     /* ═══════════════════════════════════════════════════════════════════════════
        GRADIENTS - SEMANTIC STATES
@@ -411,6 +456,45 @@
     0 2px 8px rgba(0, 102, 204, 0.08);
     --s-shadow-dropdown: 0 12px 40px rgba(0, 102, 204, 0.2);
     --s-shadow-modal: 0 20px 60px rgba(0, 0, 0, 0.3);
+        /* ═══════════════════════════════════════════════════════════════════════════
+       SHADOWS - TEXT SHADOWS
+       Scale: xs → sm → md → lg → xl  |  icon: sm → md → lg → xl
+       ═══════════════════════════════════════════════════════════════════════════ */
+
+    /* Filter drop-shadow for gradient / transparent text */
+    --s-text-drop-shadow: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.225))
+                        drop-shadow(0 1px 1px rgba(0, 0, 0, 0.15))
+                        drop-shadow(0 1px 1px rgba(0, 0, 0, 0.15));
+
+    /* ── BUTTON + PILL SCALE ──────────────────────────────────────────────── */
+    --s-text-shadow-xs:      0 1px 1px rgba(0, 0, 0, 0.40),
+                             0 1px 3px rgba(0, 0, 0, 0.15);
+
+    --s-text-shadow:         0 1px 2px rgba(0, 0, 0, 0.60),
+                             0 3px 6px rgba(0, 0, 0, 0.25);
+
+    --s-text-shadow-md:      0 1px 3px rgba(0, 0, 0, 0.65),
+                             0 3px 8px rgba(0, 0, 0, 0.30);
+
+    --s-text-shadow-lg:      0 2px 4px rgba(0, 0, 0, 0.70),
+                             0 4px 10px rgba(0, 0, 0, 0.35);
+
+    --s-text-shadow-xl:      0 2px 5px rgba(0, 0, 0, 0.75),
+                             0 5px 14px rgba(0, 0, 0, 0.40);
+
+    /* ── ICON SCALE (elevated intensity) ─────────────────────────────────── */
+    --s-text-shadow-icon-sm: 0 1px 2px rgba(0, 0, 0, 0.60),
+                             0 2px 6px rgba(0, 0, 0, 0.30);
+
+    --s-text-shadow-icon-md: 0 1px 3px rgba(0, 0, 0, 0.70),
+                             0 3px 10px rgba(0, 0, 0, 0.40);
+
+    --s-text-shadow-icon-lg: 0 2px 4px rgba(0, 0, 0, 0.75),
+                             0 4px 14px rgba(0, 0, 0, 0.45);
+
+    --s-text-shadow-icon-xl: 0 3px 6px rgba(0, 0, 0, 0.80),
+                             0 6px 20px rgba(0, 0, 0, 0.50);
+        
 
     /* ═══════════════════════════════════════════════════════════════════════════
        TRANSITIONS (Easing Functions)

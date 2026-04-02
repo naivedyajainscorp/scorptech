@@ -216,6 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // ********************************************
 
 const pincodeInput = document.getElementById("pincode");
+let pincodeVerified = false; // Track if pincode has been successfully verified
 
 // Debounce function to avoid too many API calls
 let debounceTimer;
@@ -230,11 +231,20 @@ if (pincodeInput) {
     const state = document.getElementById("state");
     const country = document.getElementById("country");
 
-    // Clear previous validation
-    toggleError(this, null, false, 'pincode');
-    toggleError(district, null, false, 'district');
-    toggleError(state, null, false, 'state');
-    toggleError(country, null, false, 'country');
+    // Reset verification flag if pincode is being edited
+    if (pin.length !== 6) {
+      pincodeVerified = false;
+      // Clear fields if pincode is incomplete
+      district.value = "";
+      state.value = "";
+      country.value = "";
+      // Remove any validation state (no tick, no error - just idle)
+      this.classList.remove("is-valid", "is-invalid");
+      district.classList.remove("is-valid", "is-invalid");
+      state.classList.remove("is-valid", "is-invalid");
+      country.classList.remove("is-valid", "is-invalid");
+      return;
+    }
 
     // Only fetch when we have exactly 6 digits
     if (pin.length === 6) {
@@ -245,11 +255,6 @@ if (pincodeInput) {
       debounceTimer = setTimeout(() => {
         fetchPincodeData(pin, district, state, country, this);
       }, 500);
-    } else {
-      // Clear fields if pincode is incomplete
-      district.value = "";
-      state.value = "";
-      country.value = "";
     }
   });
 
@@ -259,9 +264,11 @@ if (pincodeInput) {
     const state = document.getElementById("state");
     const country = document.getElementById("country");
 
-    if (pin.length !== 6 || !district.value) {
+    // Only show error if pincode is not 6 digits OR if it's 6 digits but not verified
+    if (pin.length !== 6 || (pin.length === 6 && !pincodeVerified)) {
       toggleError(this, null, true, 'pincode');
-      if (!district.value && pin.length === 6) {
+      if (pin.length === 6 && !pincodeVerified) {
+        // Also mark dependent fields as invalid
         toggleError(district, null, true, 'district');
         toggleError(state, null, true, 'state');
         toggleError(country, null, true, 'country');
@@ -275,9 +282,9 @@ async function fetchPincodeData(pincode, districtEl, stateEl, countryEl, pincode
   const loader = document.getElementById("pincode-loader");
 
   try {
-    // ✅ Show loader
+    // ✅ Show loader - it will appear in the same space as the checkmark
     if (loader) loader.classList.add("active");
-    pincodeEl.style.paddingRight = "3rem"; // Make space for spinner
+    // No need to adjust padding - loader and checkmark occupy same space
 
     const response = await fetch(`https://api.postalpincode.in/pincode/${pincode}`);
     const data = await response.json();
@@ -290,12 +297,17 @@ async function fetchPincodeData(pincode, districtEl, stateEl, countryEl, pincode
       stateEl.value = postOffice.State || "";
       countryEl.value = postOffice.Country || "India";
 
+      // ✅ Mark as verified - tick will appear after loader hides
+      pincodeVerified = true;
+      
+      // Show valid state (green tick will appear automatically via toggleError)
       toggleError(pincodeEl, null, false, 'pincode');
       toggleError(districtEl, null, false, 'district');
       toggleError(stateEl, null, false, 'state');
       toggleError(countryEl, null, false, 'country');
     } else {
       // Invalid pincode
+      pincodeVerified = false;
       districtEl.value = "";
       stateEl.value = "";
       countryEl.value = "";
@@ -306,15 +318,16 @@ async function fetchPincodeData(pincode, districtEl, stateEl, countryEl, pincode
     }
   } catch (error) {
     console.error("Pincode API Error:", error);
+    pincodeVerified = false;
     // On error, mark as invalid
     districtEl.value = "";
     stateEl.value = "";
     countryEl.value = "";
     toggleError(pincodeEl, null, true, 'pincode');
   } finally {
-    // ✅ Hide loader
+    // ✅ Hide loader - tick will appear here if valid
     if (loader) loader.classList.remove("active");
-    pincodeEl.style.paddingRight = "1.5rem"; // Reset padding
+    // No padding reset needed - checkmark takes same space
   }
 }
 

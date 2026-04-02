@@ -132,7 +132,7 @@ export class InspectionCorrelationViz {
                             </div>
                             <div style="display: flex; flex-direction: column;">
                                 <span class="s-text-gray-700 s-font-bold s-text-sm">Inspections</span>
-                                <span id="viz-inspection-percentage" class="s-text-info-special s-font-black s-text-xs" style="font-family: 'Science Gothic', sans-serif; letter-spacing: 0.02em;">
+                                <span id="viz-inspection-percentage" class="s-text-info-special s-font-black s-text-xs progress-percent" style="font-family: 'Science Gothic', sans-serif; letter-spacing: 0.02em;">
                                     ${data.inspections.percentage}% of total
                                 </span>
                             </div>
@@ -156,7 +156,7 @@ export class InspectionCorrelationViz {
                             </div>
                             <div style="display: flex; flex-direction: column;">
                                 <span class="s-text-gray-700 s-font-bold s-text-sm">Reports</span>
-                                <span id="viz-report-percentage" class="s-text-attention s-font-black s-text-xs" style="font-family: 'Science Gothic', sans-serif; letter-spacing: 0.02em;">
+                                <span id="viz-report-percentage" class="s-text-attention s-font-black s-text-xs progress-percent" style="font-family: 'Science Gothic', sans-serif; letter-spacing: 0.02em;">
                                     ${data.reports.percentage}% of total
                                 </span>
                             </div>

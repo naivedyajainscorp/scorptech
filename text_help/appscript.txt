@@ -1,0 +1,532 @@
+// ─────────────────────────────────────────────
+// 📩 Unified doPost Handler for Contact & Demo Forms
+function doPost(e) {
+  const formType = e.parameter.formType;
+  if (formType === "contact") {
+    handleContactMessage(e);
+  } else if (formType === "demo") {
+    handleDemoRequest(e); // Placeholder if needed
+  } else {
+    console.log("⚠️ Unknown formType submitted.");
+  }
+}
+
+// ─────────────────────────────────────────────
+// 📨 Contact Form Handler
+function handleContactMessage(e) {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  let sheet = ss.getSheetByName("ContactMessages");
+
+  if (!sheet) {
+    sheet = ss.insertSheet("ContactMessages");
+    setupContactMessageSheet();
+  }
+
+  const now = new Date();
+  const date = Utilities.formatDate(now, Session.getScriptTimeZone(), "dd/MM/yyyy");
+  const time = Utilities.formatDate(now, Session.getScriptTimeZone(), "HH:mm:ss");
+
+  const row = [
+    e.parameter.name || "",
+    e.parameter.email || "",
+    e.parameter.phone || "",
+    e.parameter.message || "",
+    date,
+    time,
+    "Call Pending",
+    "Waiting...",
+    "", "",  // Remarks, Company Name
+    "", "", "",  // Company Details, Address, City
+    "", "",       // State, Country
+    "Pending" //demo status
+  ];
+
+  sheet.insertRowsBefore(3, 1);
+  sheet.getRange(3, 1, 1, row.length).setValues([row]);
+
+  const statusRule = SpreadsheetApp.newDataValidation()
+    .requireValueInList(["Call Pending", "Call Completed", "Rescheduled", "Spam"])
+    .setAllowInvalid(true)
+    .build();
+  const responseTypeRule = SpreadsheetApp.newDataValidation()
+    .requireValueInList(["Waiting...", "Positive", "Negative", "Maybe"])
+    .setAllowInvalid(true)
+    .build();
+
+  const DemoTypeRule = SpreadsheetApp.newDataValidation()
+    .requireValueInList(["Pending", "Scheduled", "Completed"])
+    .setAllowInvalid(true)
+    .build();
+
+  sheet.getRange(3, 7).setDataValidation(statusRule).setFontWeight("bold").setFontWeight("bold");
+  sheet.getRange(3, 8).setDataValidation(responseTypeRule).setFontWeight("bold");
+  sheet.getRange(3, 16).setDataValidation(DemoTypeRule).setFontWeight("bold");
+}
+
+// ─────────────────────────────────────────────
+// 📋 Sheet Setup for Contact Form
+function setupContactMessageSheet() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  let sheet = ss.getSheetByName("ContactMessages");
+  let existingData = [];
+
+  if (sheet) {
+    const lastRow = sheet.getLastRow();
+    const lastCol = sheet.getLastColumn();
+    if (lastRow > 2) {
+      existingData = sheet.getRange(3, 1, lastRow - 2, lastCol).getValues();
+    }
+    sheet.clear();
+  } else {
+    sheet = ss.insertSheet("ContactMessages");
+  }
+
+  const headers = [
+    "Name", "Email", "Phone", "Message", "Date", "Time",
+    "Call Status", "Response Type", "Remarks",
+    "Company Name", "Company Details",
+    "Address", "Country", "State", "City", "Demo Status"
+  ];
+
+  sheet.getRange("A1").setValue("Contact Us - Send Us a Message Responses – Scorptech Technologies Private Limited")
+    .setFontSize(16).setFontWeight("bold").setHorizontalAlignment("center");
+  sheet.getRange(1, 1, 1, headers.length).mergeAcross().setBackground("#0066cc").setFontColor("white");
+  sheet.getRange(2, 1, 1, headers.length).setValues([headers])
+    .setFontWeight("bold").setFontSize(12).setBackground("#0066cc").setFontColor("white");
+
+  if (existingData.length > 0) {
+    sheet.getRange(3, 1, existingData.length, headers.length).setValues(existingData);
+  }
+   const demoStatusRule = SpreadsheetApp.newDataValidation()
+  .requireValueInList(["Scheduled", "Completed", "Cancelled", "Rescheduled", "Pending"])
+  .setAllowInvalid(true)
+  .build();
+  sheet.getRange(3, 16, sheet.getLastRow() - 2).setDataValidation(demoStatusRule); // 🔥 Add validation to the full column starting from row 3
+}
+
+// ─────────────────────────────────────────────
+// 🎨 Table Formatting & Borders
+function formatTables() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const sheetNames = ["ContactMessages", "DemoRequests"];
+
+  sheetNames.forEach(name => {
+    const sheet = ss.getSheetByName(name);
+    if (!sheet) return;
+
+    const lastRow = sheet.getLastRow();
+    const lastCol = sheet.getLastColumn();
+
+    if (lastRow > 2) {
+      sheet.getRange(3, 1, lastRow - 2, lastCol)
+           .setFontSize(12)
+           .setFontColor("#000000")
+           .setFontFamily("Gothic A1");
+    }
+  });
+
+  const borderColor = { red: 0, green: 0.4, blue: 0.8 }; // #0066cc
+  const requests = [];
+
+  sheetNames.forEach(name => {
+    const sheet = ss.getSheetByName(name);
+    const sheetId = sheet.getSheetId();
+    const lastRow = sheet.getLastRow();
+    const lastCol = sheet.getLastColumn();
+
+    if (lastRow <= 2) return;
+
+      for (let row = 2; row < lastRow; row++) {
+      for (let col = 0; col < lastCol; col++) {
+        requests.push({
+          updateBorders: {
+            range: {
+              sheetId: sheetId,
+              startRowIndex: row,
+              endRowIndex: row + 1,
+              startColumnIndex: col,
+              endColumnIndex: col + 1
+            },
+            top:    { style: "SOLID", width: 1, color: borderColor },
+            bottom: { style: "SOLID", width: 1, color: borderColor },
+            left:   { style: "SOLID", width: 1, color: borderColor },
+            right:  { style: "SOLID", width: 1, color: borderColor }
+          }
+        });
+      }
+    }
+  });
+
+  Sheets.Spreadsheets.batchUpdate({ requests }, ss.getId());
+}
+
+
+// ─────────────────────────────────────────────
+// 📦 Smart Sidebar UI for Location Picker
+function onOpen() {
+  SpreadsheetApp.getUi()
+    .createMenu("SCORP Tools")
+    .addItem("📍 Select Location", "showLocationSidebar")
+    .addItem("📋 Demo Request Records", "showDemoSearchSidebar")
+    .addToUi();
+}
+
+function showLocationSidebar() {
+  const html = HtmlService.createHtmlOutputFromFile("Smart Sidebar Location")
+    .setTitle("Select Location")
+    .setWidth(300);
+  SpreadsheetApp.getUi().showSidebar(html);
+}
+
+function insertLocationToSelectedRow(country, state, city) {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("ContactMessages");
+  const cell = sheet.getActiveCell();
+  const row = cell.getRow();
+  sheet.getRange(row, 13).setValue(country);
+  sheet.getRange(row, 14).setValue(state);
+  sheet.getRange(row, 15).setValue(city);
+}
+
+// ─────────────────────────────────────────────
+// 📂 JSON Loader from Google Drive
+function getJsonFromDrive(fileId) {
+  try {
+    const file = DriveApp.getFileById(fileId);
+    return file.getBlob().getDataAsString();
+  } catch (err) {
+    Logger.log("❌ Error reading JSON from Drive: " + err.message);
+    return "{}";
+  }
+}
+
+// **********************
+// * Demo Requests Page *
+// * function code      *
+// **********************
+
+
+// 🛠 Setup Sheet for Demo Requests
+  function setupDemoRequestSheet() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  let sheet = ss.getSheetByName("DemoRequests");
+  let existingData = [];
+
+  if (sheet) {
+    const lastRow = sheet.getLastRow();
+    const lastCol = sheet.getLastColumn();
+    if (lastRow > 2) {
+      existingData = sheet.getRange(3, 1, lastRow - 2, lastCol).getValues();
+    }
+    sheet.clear();
+  } else {
+    sheet = ss.insertSheet("DemoRequests");
+  }
+
+  const headers = [
+    "Entry Date", "Entry Time", "Name", "Phone Number", "Email Address", "Organization Name",
+    "Message", "Plot Number", "Road / Locality", "Landmark", "Pincode / Zipcode",
+    "District / City", "State", "Country", "Full Address", "Latitude", "Longitude",
+    "Location", "Organization Type",
+    "Manufacturing", "Healthcare", "Corporate", "Education", "Hospitality", "Transport",
+    "Entertainment", "Aviation", "Government", "Energy", "Agriculture", "Field Response",
+    "Other Industries", "Franchise Brands", "Asset Quantity", "Asset Cost",
+    "Management Framework", "Demo Date", "Demo Time", "Demo Status","Approval"
+  ];
+
+  sheet.getRange("A1").setValue("Demo Requests Form Submissions – Scorptech Technologies Private Limited")
+  .setFontSize(16).setFontWeight("bold").setHorizontalAlignment("center");
+  sheet.getRange(1, 1, 1, headers.length).mergeAcross().setBackground("#0066cc").setFontColor("white");
+  sheet.getRange(2, 1, 1, headers.length).setValues([headers])
+  .setFontWeight("bold").setFontSize(12).setBackground("#0066cc").setFontColor("white");
+
+  if (existingData.length > 0) {
+    sheet.getRange(3, 1, existingData.length, headers.length).setValues(existingData);
+  }
+}
+
+// 🧾 Handle Demo Form Submission
+function handleDemoRequest(e) {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  let sheet = ss.getSheetByName("DemoRequests");
+  if (!sheet) {
+    setupDemoRequestSheet();
+    sheet = ss.getSheetByName("DemoRequests");
+  }
+
+  const now = new Date();
+  const date = Utilities.formatDate(now, Session.getScriptTimeZone(), "dd/MM/yyyy");
+  const time = Utilities.formatDate(now, Session.getScriptTimeZone(), "HH:mm:ss");
+
+  const lat = e.parameter.latDemo || "";
+  const lng = e.parameter.lngDemo || "";
+  const mapLink = lat && lng ? `https://www.google.com/maps?q=${lat},${lng}` : "";
+
+  const fullAddress = [
+      e.parameter.plotDemo,
+      e.parameter.roadDemo,
+      e.parameter.landmarkDemo,
+      e.parameter.pincodeDemo,
+      e.parameter.districtDemo,
+      e.parameter.stateDemo,
+      e.parameter.countryDemo
+    ].filter(v => v && v.trim()).join(", ");
+
+  // ✅ Corrected Industry Category Handler
+  const getSelectedIndustryValues = (e) => {
+  const categories = [
+    "manufacturing", "healthcare", "corporate", "education", "hospitality",
+    "transport", "entertainment", "aviation", "government", "energy",
+    "agriculture", "fieldresponse"
+    ];
+
+    return categories.map(cat => {
+      const key = `industry_${cat}[]`;
+      const raw = e.parameters[key];
+
+      if (Array.isArray(raw)) return raw.join(", ");
+      if (typeof raw === "string") return raw;
+      return "";
+    });
+  };
+
+  const row = [
+    date, time,
+    e.parameter.nameDemo || "", 
+    e.parameter.phoneDemo || "", 
+    e.parameter.emailDemo || "", 
+    e.parameter.organizationDemo || "",
+    e.parameter.messageDemo || "", 
+    e.parameter.plotDemo || "", 
+    e.parameter.roadDemo || "", 
+    e.parameter.landmarkDemo || "", 
+    e.parameter.pincodeDemo || "",
+    e.parameter.districtDemo || "",
+    e.parameter.stateDemo || "", 
+    e.parameter.countryDemo || "", 
+    fullAddress,
+    lat, lng, mapLink,
+    e.parameter.orgType || "",
+    ...getSelectedIndustryValues(e),
+    (e.parameters["otherIndustry[]"] || []).join(", "),
+    (e.parameters["franchiseBrand[]"] || []).join(", "),
+    e.parameter.assetquantity || "", 
+    e.parameter.asset_cost || "",
+    e.parameter.asset_software === "Other" ? (e.parameter.frameworkOtherText || "Other") : (e.parameter.asset_software || ""),
+    "",// Demo Date 
+    "",// Demo Time
+    "",// Demo Status
+    "" // Demo Approval
+  ];
+
+  sheet.insertRowsBefore(3, 1);
+  sheet.getRange(3, 1, 1, row.length).setValues([row]);
+}  
+
+//**********************
+//* Demo Search Sidebar*
+//**********************
+
+// ────────────────────────────────
+// 🔍 INITIATE SEARCH SIDEBAR
+function showDemoSearchSidebar() {
+  const html = HtmlService.createHtmlOutputFromFile("Demo Search Sidebar")
+    .setTitle("Search Demo Request")
+    .setWidth(350);
+  SpreadsheetApp.getUi().showSidebar(html);
+}
+
+// ────────────────────────────────
+// 🔍 SEARCH ENTRY BY NAME, PHONE, OR ORG
+function searchDemoRequest(term) {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("DemoRequests");
+  if (!sheet) return [];
+
+  const data = sheet.getRange(3, 1, sheet.getLastRow() - 2, sheet.getLastColumn()).getValues();
+  const termLC = term.toString().toLowerCase();
+  const matches = [];
+
+  for (let i = 0; i < data.length; i++) {
+    const row = data[i];
+    const name = row[2]?.toString().toLowerCase() || "";
+    const phone = row[3]?.toString().toLowerCase() || "";
+    const organization = row[5]?.toString().toLowerCase() || "";
+
+    if (name.includes(termLC) || phone.includes(termLC) || organization.includes(termLC)) {
+      matches.push({
+        name: row[2] || "",
+        phone: row[3] || "",
+        organization: row[5] || "",
+        address: `${row[7] || ""} ${row[8] || ""}`.trim(),
+        map: row[17] || "#",
+        date: row[28] || "",
+        time: row[29] || "",
+        status: row[30] || "",
+        rowIndex: i + 3, // rows start at row 3 due to header
+      });
+    }
+  }
+
+  return matches;
+}
+
+
+
+//HIGHLIGHT SELECTED RECORD ROW
+// 🟡 Global array to keep track of highlighted rows (optional - not yet used for unhighlighting)
+let highlightedRows = [];
+function highlightSearchResults(rows, currentRow) {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("DemoRequests");
+  if (!sheet) return;
+  // 🧼 Clear any previous highlights before applying new ones
+  clearAllDemoHighlights();
+  rows.forEach(row => {
+    const bgColor = (row === currentRow) ? "#ffe599" : "#dedede"; // Gold for selected, grey for others
+    sheet.getRange(row, 1, 1, sheet.getLastColumn()).setBackground(bgColor);
+    highlightedRows.push(row);
+  });
+}
+
+function clearAllDemoHighlights() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("DemoRequests");
+  if (!sheet) return;
+
+  const lastRow = sheet.getLastRow();
+  if (lastRow <= 2) return;
+
+  sheet.getRange(3, 1, lastRow - 2, sheet.getLastColumn()).setBackground(null);
+}
+
+
+// ────────────────────────────────
+// 👁️‍🗨️ OPEN VIEWER SIDEBAR
+function openDemoRequestSidebar(rowNumber) {
+  const html = HtmlService.createHtmlOutputFromFile('viewDemoSidebar')
+    .setTitle("Demo Request Viewer");
+  SpreadsheetApp.getUi().showSidebar(html);
+
+  PropertiesService.getScriptProperties().setProperty('activeRow', rowNumber.toString());
+}
+
+// ────────────────────────────────
+// 📄 GET ENTRY DATA FOR SIDEBAR
+function getDemoRequest() {
+  const matchedRows = JSON.parse(PropertiesService.getScriptProperties().getProperty('matchedRows') || '[]');
+  let index = Number(PropertiesService.getScriptProperties().getProperty('activeIndex') || 0);
+
+  if (matchedRows.length === 0 || index >= matchedRows.length) return null;
+
+  const row = matchedRows[index];
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("DemoRequests");
+
+  highlightSearchResults([row], row); // Highlight current
+
+  const data = sheet.getRange(row, 1, 1, sheet.getLastColumn()).getValues()[0];
+  const headers = sheet.getRange(2, 1, 1, sheet.getLastColumn()).getValues()[0];
+
+  const mapped = {};
+  headers.forEach((h, i) => mapped[h] = data[i]);
+
+  return {
+    rowNumber: row,
+    index: index,
+    total: matchedRows.length,
+    data: mapped
+  };
+}
+
+// Demo request sidbar navigation (next and previous)
+function nextDemoResult() {
+  const matchedRows = JSON.parse(PropertiesService.getScriptProperties().getProperty('matchedRows') || '[]');
+  let index = Number(PropertiesService.getScriptProperties().getProperty('activeIndex') || 0);
+  if (index < matchedRows.length - 1) {
+    index++;
+    PropertiesService.getScriptProperties().setProperty('activeIndex', index.toString());
+    highlightSearchResults([matchedRows[index]], matchedRows[index]);
+  }
+}
+
+function previousDemoResult() {
+  const matchedRows = JSON.parse(PropertiesService.getScriptProperties().getProperty('matchedRows') || '[]');
+  let index = Number(PropertiesService.getScriptProperties().getProperty('activeIndex') || 0);
+  if (index > 0) {
+    index--;
+    PropertiesService.getScriptProperties().setProperty('activeIndex', index.toString());
+    highlightSearchResults([matchedRows[index]], matchedRows[index]);
+  }
+}
+
+// 🗑️ DELETE ENTRY BY ROW
+function deleteDemoRequest(rowNumber) {
+  const sheet = SpreadsheetApp.getActive().getSheetByName("DemoRequests");
+  const actualRow = Number(rowNumber);
+  if (actualRow > 2) {
+    sheet.deleteRow(actualRow);
+  } else {
+    throw new Error("Invalid row number. Cannot delete header or first rows.");
+  }
+}
+
+
+
+
+
+//*****************
+//* for debugging *
+//***************** 
+
+function testDemoHandler() {
+  const fakeEvent = {
+    parameter: {
+      formType: "demo",
+      latDemo: "26.9124",
+      lngDemo: "75.7873",
+      nameDemo: "John Doe",
+      phoneDemo: "9876543210",
+      emailDemo: "john@example.com",
+      organizationDemo: "Test Organization Pvt Ltd",
+      message: "This is a complete test run.",
+      plotDemo: "A-1",
+      roadDemo: "Sapphire Avenue",
+      landmark: "Near Metro Station",
+      pincode: "302001",
+      district: "Jaipur",
+      state: "Rajasthan",
+      country: "India",
+      location: "A-1, Sapphire Avenue, Jaipur, Rajasthan",
+      orgType: "Non-Government",
+      assetquantity: "100 to 300",
+      asset_cost: "₹30 to ₹50 Lakhs",
+      asset_software: "Oracle",
+      frameworkOtherText: "",
+      industry_manufacturing: "on",
+      industry_healthcare: "on",
+      industry_corporate: "on",
+      industry_education: "on",
+      industry_hospitality: "on",
+      industry_transport: "on",
+      industry_entertainment: "on",
+      industry_aviation: "on",
+      industry_government: "on",
+      industry_energy: "on",
+      industry_agriculture: "on",
+      industry_fieldresponse: "on",
+      otherIndustry: "Other Industry 1, Other Industry 2",
+      franchiseBrand: "Franchise A, Franchise B",
+      latDemo: "26.9124",
+      lngDemo: "75.7873",
+    }
+  };
+
+  // Log to debug sheet
+  const debugSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Debug") 
+    || SpreadsheetApp.getActiveSpreadsheet().insertSheet("Debug");
+  const paramKeys = Object.keys(fakeEvent.parameter);
+  const paramValues = paramKeys.map(k => fakeEvent.parameter[k]);
+
+  debugSheet.insertRowBefore(1);
+  debugSheet.getRange(1, 1, 1, paramKeys.length).setValues([paramValues]);
+  debugSheet.getRange(2, 1, 1, paramKeys.length).setValues([paramKeys]);
+
+  // Submit to main handler
+  handleDemoRequest(fakeEvent);
+}

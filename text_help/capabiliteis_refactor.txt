@@ -1,0 +1,288 @@
+Here's the full color/gradient inventory extracted exclusively from `capabilities-2.html`, grouped by category. **97 unique color values total.**
+
+***
+
+## Solid Hex Colors (31)
+
+| Color Value | Occurrences | Used In |
+|---|---|---|
+| `#001f3f` | 3 | Hero bg gradient, Highlight section bg gradient, Table thead gradient |
+| `#1a1a2e` | 5 | Hero bg gradient, Card 4 bg, Highlight bg, Table thead, Phone notch |
+| `#16213e` | 1 | Hero bg gradient (100% stop) |
+| `#00c6ff` | 2 | Hero "Capabilities" gradient text, CTA section bg gradient |
+| `#0072ff` | 4 | Hero gradient text, CTA bg gradient, Table row hover, Card hover shadow |
+| `#7b4397` | 2 | Hero "Capabilities" gradient text, CTA section bg gradient |
+| `#f0f4ff` | 1 | Enhanced capabilities section bg (gradient 100% stop) |
+| `#061c2e` | 3 | Card 1 (Mobile USP) bg, Phone screen bg |
+| `#0a2540` | 1 | Card 1 (Mobile USP) bg gradient (45% stop) |
+| `#030c18` | 2 | Card 2 (Intelligence) bg gradient stops |
+| `#061525` | 2 | Card 2 (Intelligence) bg gradient, Phone frame bg |
+| `#0c4a6e` | 1 | Card 3 (Analytics) bg gradient (0% stop) |
+| `#0f172a` | 1 | Card 3 (Analytics) bg gradient (100% stop) |
+| `#7c2d12` | 1 | Card 4 (Guides) bg gradient (0% stop) |
+| `#f8f9fa` | 1 | Comparison section background |
+| `#e9ecef` | 1 | Table cell bottom border |
+| `#0a1e35` | 1 | Phone frame bg gradient (0% stop) |
+| `#020f1e` | 1 | Phone screen bg gradient (0% stop) |
+| `#051828` | 1 | Phone screen bg gradient (55% stop) |
+| `#67e8f9` | 2 | Chip icon gradient (0% stop), Photon trace stroke |
+| `#22d3ee` | 3 | Chip icon gradient (35% stop), floating numbers, UI base (via rgba) |
+| `#0ea5e9` | 3 | Chip icon gradient (70% stop), plasma glow, chipGlow animation |
+| `#38bdf8` | 1 | Chip icon gradient (100% stop) |
+| `#f97316` | 2 | Play button gradient (0% stop), learn floating icon color |
+| `#ea580c` | 1 | Play button gradient (100% stop) |
+| `#fa709a` | 1 | Learning progress bar gradient (0% stop) |
+| `#fee140` | 1 | Learning progress bar gradient (100% stop) |
+| `#d4b8ff` | 1 | `.tag-purple` text color |
+| `#a5f3fc` | 1 | `.tag-cyan` text color |
+| `#fed7aa` | 1 | `.tag-orange` text color |
+| `#ffffff` | 3 | Scroll wheel, progress dot, play icon color |
+
+***
+
+## RGBA – Cyan `rgb(34,211,238)` = `#22d3ee` — 19 Variants
+
+| Alpha | Occurrences | Used In |
+|---|---|---|
+| `0.06` | 1 | Ring-4 outermost orbit border (Card 2) |
+| `0.07` | 1 | Hex grid SVG path strokes background (Card 1) |
+| `0.08` | 1 | Chip core inner box-shadow ring |
+| `0.12` | 2 | Location bar background, Plasma glow-3 radial center |
+| `0.13` | 1 | Ring-3 orbit border color (Card 2) |
+| `0.16` | 1 | Plasma glow-1 radial gradient center (Card 2) |
+| `0.22` | 1 | Base circuit trace stroke `.ct` (Card 2) |
+| `0.28` | 2 | Location bar border, Ring-2 orbit border |
+| `0.30` | 2 | `.tag-cyan` background, Phone frame glow ring shadow |
+| `0.35` | 2 | `.chip-gps` border-color, circuit junction nodes (r2) |
+| `0.45` | 1 | Circuit junction nodes secondary (r2.5) |
+| `0.50` | 2 | Ring-1 orbit border, circuit junction nodes primary (r2.5) |
+| `0.55` | 1 | Chip core border-color (IC package) |
+| `0.60` | 2 | Circuit junction nodes large (r3), GPS ring borders |
+| `0.65` | 1 | Chip pin bar backgrounds |
+| `0.70` | 2 | GPS ping ring animation borders, chipGlow drop-shadow |
+| `0.80` | 3 | Analytics SVG line stroke, Pie segment 1 stroke, Bar chart gradient (0% stop) |
+| `0.90` | 2 | Signal bars, location bar icon color |
+| `1.00` | 3 | Orbit particle dots, SVG data point fills, Floating analytics numbers |
+
+***
+
+## RGBA – White `rgb(255,255,255)` — 13 Variants
+
+| Alpha | Occurrences | Used In |
+|---|---|---|
+| `0.03` | 1 | Hero grid pattern overlay lines |
+| `0.05` | 4 | 4× stat card backgrounds |
+| `0.08` | 4 | Status chips bg (GPS/WO/Sync), book page bg (Card 4) |
+| `0.10` | 6 | Stat card hover, CTA decorative circles, step inactive bg |
+| `0.12` | 1 | Tutorial card frosted glass background |
+| `0.15` | 2 | Default capability tag bg, status chip border |
+| `0.20` | 2 | Step inactive border, progress bar track bg |
+| `0.22` | 3 | Work order line bars, tutorial card border |
+| `0.30` | 3 | Book page line shimmer bars, mobile loc-text bg |
+| `0.45` | 1 | Mobile app header title bar |
+| `0.50` | 1 | Scroll indicator mouse border |
+| `0.88` | 1 | Status chip text color |
+| `0.90` | 2 | Active step label, tutorial title text |
+
+***
+
+## RGBA – Black, Orange, Blue & Others
+
+| Value | Occurrences | Used In |
+|---|---|---|
+| `rgba(0,0,0,0.05)` | 1 | Comparison table box-shadow |
+| `rgba(0,0,0,0.15)` | 3 | Cards 1, 3, 4 box-shadow |
+| `rgba(0,0,0,0.20)` | 1 | Tutorial card box-shadow |
+| `rgba(0,0,0,0.30)` | 1 | Card 2 Intelligence box-shadow |
+| `rgba(0,0,0,0.40)` | 1 | Phone frame deep shadow |
+| `rgba(0,0,0,0.88)` | 1 | Card 1 content overlay gradient (bottom stop) |
+| `rgba(0,0,0,0.90)` | 3 | Cards 2, 3, 4 content overlay gradient (bottom stop) |
+| `rgba(0,114,255,0.03)` | 1 | Table row hover background |
+| `rgba(0,114,255,0.25)` | 1 | Card hover box-shadow glow |
+| `rgba(249,115,22,0.30)` | 1 | `.tag-orange` background |
+| `rgba(249,115,22,0.40)` | 1 | Play button circle box-shadow |
+| `rgba(249,115,22,0.50)` | 1 | Play ripple ring border |
+| `rgba(249,115,22,0.60)` | 1 | Floating learn icons color |
+| `rgba(249,115,22,0.80)` | 1 | Active step circle background |
+| `rgba(249,115,22,1.00)` | 1 | Active step circle border-color |
+| `rgba(251,146,60,0.35)` | 1 | `.chip-wo` border-color |
+| `rgba(251,146,60,0.90)` | 1 | `.chip-wo` icon color |
+| `rgba(250,112,154,0.60)` | 1 | Tutorial thumbnail background |
+| `rgba(103,232,249,1.00)` | 1 | Photon trace animated stroke `.photon` |
+| `rgba(14,165,233,0.12)` | 1 | Plasma glow-2 radial center |
+| `rgba(14,165,233,0.60)` | 1 | chipGlow animation drop-shadow |
+| `rgba(59,130,246,0.80)` | 1 | Pie chart segment 2 stroke (Analytics) |
+| `rgba(139,92,246,0.80)` | 1 | Pie chart segment 3 stroke (Analytics) |
+| `rgba(102,126,234,0.05)` | 1 | Enhanced section grid lines |
+| `rgba(102,126,234,0.10)` | 1 | Enhanced bg radial gradient (top-right) |
+| `rgba(156,110,255,0.10)` | 1 | Enhanced bg radial gradient (bottom-left) |
+| `rgba(156,110,255,0.30)` | 1 | `.tag-purple` background |
+
+***
+
+## Bootstrap Utility Classes (indirect colors)
+
+| Class | ~Occurrences | Used In |
+|---|---|---|
+| `text-white` | 15× | All section headings, stat numbers, card titles |
+| `text-white-50` | 12× | Body/description text on dark sections |
+| `text-success` | 8× | Comparison table check icons ✓ |
+| `text-primary` | 4× | CTA trust pill badge text |
+| `text-info` | 3× | "Why Choose Sapphire" eyebrow, feature list icons |
+| `text-muted` | 4× | Section subheadlines, comparison minus icon |
+| `bg-white` | 5× | CTA trust pill badge bg, comparison table bg |
+
+***
+
+The full data is also saved as a downloadable CSV.
+
+
+
+
+Here's the full mapping. **45 entries across 7 families — 8 exact matches, 13 near matches, 24 brand new shades.**
+
+***
+
+## Primary / Blue Family
+
+| core.css Token | core.css Value | capabilities.html Value | Type | Match Status | Usage in capabilities.html |
+|---|---|---|---|---|---|
+| `--s-primary` | `#0066cc` | `#0072ff` | Solid | **Near Match** – brighter, no exact token | Hero text gradient, CTA bg, card hover shadow |
+| `--s-primary-vibrant` | `#0099ff` | `#00c6ff` | Solid | **Near Match** – lighter/more cyan | Hero gradient text stop 0%, CTA section bg |
+| `--s-primary-500` | `#3490fa` | `rgba(59,130,246)` | RGBA | **Near Match** – ≈ primary-500 | Pie chart segment 2 stroke |
+| — | — | `#001f3f` | Solid | 🆕 NEW – darkest navy, deeper than `--s-primary-dark` | Hero bg, Highlight section bg, Table thead |
+| — | — | `#061c2e` | Solid | 🆕 NEW – deep ocean navy | Card 1 (Mobile USP) bg, Phone screen bg |
+| — | — | `#0a2540` | Solid | 🆕 NEW – dark ocean blue | Card 1 bg gradient 45% stop |
+| — | — | `#030c18` | Solid | 🆕 NEW – near-black deep blue | Card 2 (Intelligence) bg |
+| — | — | `#061525` | Solid | 🆕 NEW – midnight navy | Card 2 bg, Phone frame bg |
+| — | — | `#0a1e35` | Solid | 🆕 NEW – deep navy (phone component) | Phone frame gradient stop 0% |
+| — | — | `#020f1e` | Solid | 🆕 NEW – ultra-dark navy | Phone screen bg stop 0% |
+| — | — | `#051828` | Solid | 🆕 NEW – very dark blue | Phone screen bg stop 55% |
+| — | — | `#0c4a6e` | Solid | 🆕 NEW – medium ocean blue | Card 3 (Analytics) bg stop 0% |
+
+***
+
+## Info / Cyan Family
+
+| core.css Token | core.css Value | capabilities.html Value | Type | Match Status | Usage in capabilities.html |
+|---|---|---|---|---|---|
+| `--s-cyan-500` / `--s-info-light` | `#06b6d4` | `#22d3ee` + 19 alpha variants | Solid + RGBA | **Near Match** – one step lighter/brighter | Circuit traces, GPS rings, chip glow, data points, tags, analytics |
+| `--s-cyan-500` | `#06b6d4` | `rgba(103,232,249,1)` = `#67e8f9` | RGBA | **Near Match** – even lighter cyan | Photon animated circuit trace stroke |
+| — | — | `#67e8f9` | Solid | 🆕 NEW – pale bright cyan | Chip icon gradient stop 0% |
+| — | — | `#0ea5e9` | Solid + RGBA×2 | 🆕 NEW – sky-blue (between cyan & primary) | Chip icon gradient, plasma glow, chipGlow animation |
+| — | — | `#38bdf8` | Solid | 🆕 NEW – light sky blue | Chip icon gradient stop 100% |
+| — | — | `#a5f3fc` | Solid | 🆕 NEW – very pale cyan (tag text) | `.tag-cyan` text color |
+| — | — | `rgba(34,211,238,0.8)` | RGBA | 🆕 NEW shade – analytics accent | Analytics SVG line, pie segment 1, bar chart |
+| — | — | `rgba(34,211,238,0.12–0.16)` | RGBA | 🆕 NEW – plasma glow decoration | Plasma glow blobs 1 & 3 (Card 2) |
+| — | — | `rgba(14,165,233,0.12)` | RGBA | 🆕 NEW – sky-blue plasma glow | Plasma glow blob 2 (Card 2) |
+
+***
+
+## Attention / Orange Family
+
+| core.css Token | core.css Value | capabilities.html Value | Type | Match Status | Usage in capabilities.html |
+|---|---|---|---|---|---|
+| `--s-attention` | `#ea580c` | `#ea580c` | Solid | ✅ **EXACT MATCH** | Play button gradient stop 100% (Card 4) |
+| `--s-attention-light` | `#f97316` | `#f97316` | Solid | ✅ **EXACT MATCH** | Play button gradient stop 0% (Card 4) |
+| `--s-attention-light` | `#f97316` | `rgba(249,115,22,x)` × 6 | RGBA | ✅ **EXACT base** – 6 alpha levels | Step active bg/border, play ripple, learn icons, `.tag-orange` bg |
+| — | — | `rgba(251,146,60)` = `#fb923c` | RGBA×2 | 🆕 NEW – lighter orange shade | `.chip-wo` border & icon color (Card 1) |
+| — | — | `#7c2d12` | Solid | 🆕 NEW – very dark burnt orange/rust | Card 4 (Guides) bg gradient stop 0% |
+| — | — | `#fed7aa` | Solid | 🆕 NEW – pale peach tint (tag text) | `.tag-orange` text color |
+
+***
+
+## Warning / Yellow Family
+
+| core.css Token | core.css Value | capabilities.html Value | Type | Match Status | Usage in capabilities.html |
+|---|---|---|---|---|---|
+| `--s-warning-light` | `#fbbf24` | `#fee140` | Solid | **Near Match** – brighter, lemony yellow | Learning progress fill bar gradient stop 100% (Card 4) |
+
+***
+
+## Royal / Purple Family
+
+| core.css Token | core.css Value | capabilities.html Value | Type | Match Status | Usage in capabilities.html |
+|---|---|---|---|---|---|
+| `--s-royal` | `#7c3aed` | `#7b4397` | Solid | **Near Match** – muted vintage purple-magenta | Hero title text gradient stop 100%, CTA bg gradient |
+| `--s-royal-lighter` | `#c4b5fd` | `#d4b8ff` | Solid | **Near Match** – slightly lighter lavender | `.tag-purple` text color |
+| `--s-purple-500` | `#8b5cf6` | `rgba(139,92,246,0.8)` | RGBA | ✅ **EXACT base MATCH** | Pie chart segment 3 stroke (Analytics) |
+| — | — | `rgba(156,110,255,x)` = `#9c6eff` × 2 | RGBA | 🆕 NEW – bright saturated purple | Enhanced bg radial gradient, `.tag-purple` bg |
+
+***
+
+## Indigo Family
+
+| core.css Token | core.css Value | capabilities.html Value | Type | Match Status | Usage in capabilities.html |
+|---|---|---|---|---|---|
+| `--s-indigo-500` | `#6366f1` | `rgba(102,126,234,x)` × 2 | RGBA | **Near Match** – slightly more violet/purple indigo | Enhanced bg radial gradient, enhanced section grid lines |
+
+***
+
+## Pop / Pink Family
+
+| core.css Token | core.css Value | capabilities.html Value | Type | Match Status | Usage in capabilities.html |
+|---|---|---|---|---|---|
+| `--s-pop` | `#ec4899` | `#fa709a` | Solid | **Near Match** – lighter, more salmon pink | Learning progress fill bar gradient stop 0% (Card 4) |
+| `--s-pop-light` | `#f472b6` | `rgba(250,112,154,0.6)` | RGBA | **Near Match** – same family at 0.6 alpha | Tutorial badge thumbnail bg (Card 4) |
+
+***
+
+## Neutral / Gray Family
+
+| core.css Token | core.css Value | capabilities.html Value | Type | Match Status | Usage in capabilities.html |
+|---|---|---|---|---|---|
+| `--s-gray-900` | `#0f172a` | `#0f172a` | Solid | ✅ **EXACT MATCH** | Card 3 (Analytics) bg gradient stop 100% |
+| `--s-gray-50` | `#f8fafc` | `#f8f9fa` | Solid | **Near Match** – 1 digit off, visually identical | Comparison section background |
+| `--s-neutral-200` | `#e9eef6` | `#e9ecef` | Solid | **Near Match** – 2 digits off, visually identical | Table cell bottom border |
+| `--s-white` | `#ffffff` | `#ffffff` | Solid | ✅ **EXACT MATCH** | Scroll wheel, progress dot, play icon |
+| `--s-black` | `#000000` | `rgba(0,0,0,x)` × 7 | RGBA | ✅ **EXACT base** – 7 alpha levels | Card shadows (0.15–0.4), content overlays (0.88, 0.9) |
+| `--s-white` | `#ffffff` | `rgba(255,255,255,x)` × 13 | RGBA | ✅ **EXACT base** – 13 alpha levels | Stat card bg, chips, step circles, grid overlays |
+| — | — | `#1a1a2e` | Solid | 🆕 NEW – dark desaturated navy-purple | Hero bg, Card 4 bg, Highlight section, Table thead |
+| — | — | `#16213e` | Solid | 🆕 NEW – deep slate-navy | Hero bg gradient stop 100% |
+| — | — | `#f0f4ff` | Solid | 🆕 NEW – pale blue-tinted surface | Enhanced capabilities section bg |
+
+***
+
+## Summary Scorecard
+
+| Match Type | Count | Meaning |
+|---|---|---|
+| ✅ Exact Match | **8** | Identical to a core.css token (reusing correctly) |
+| ⚠️ Near Match | **13** | Same family, slightly different shade — could be tokenized |
+| 🆕 New / Distinct | **24** | No equivalent in core.css — capabilities-specific palette |
+
+The full table is also saved as a downloadable CSV . The biggest observation: the **cyan world (`#22d3ee` and its 19 alpha variants) is entirely new** and dominates the file — it's a brighter Tailwind `cyan-400` that sits one notch above `--s-cyan-500`. The **dark navy backgrounds** (`#001f3f`, `#030c18`, `#061c2e`, etc.) are a completely absent family in core.css, used exclusively for deep dark section atmospheres.
+
+Here are all **21 unique new shades** (deduplicated, all in hex) that exist in `capabilities-2.html` but have no equivalent in `core.css`, mapped to their closest semantic family: 
+
+***
+
+## New Shades Not in `core.css`
+
+| # | Hex | Description | core.css Family |
+|---|---|---|---|
+| 1 | `#020f1e` | Ultra-dark blue-black | **Primary** |
+| 2 | `#030c18` | Near-black deep blue | **Primary** |
+| 3 | `#051828` | Very dark navy | **Primary** |
+| 4 | `#061525` | Midnight navy | **Primary** |
+| 5 | `#061c2e` | Deep ocean navy | **Primary** |
+| 6 | `#0a1e35` | Deep navy (phone frame bg) | **Primary** |
+| 7 | `#0a2540` | Dark ocean blue | **Primary** |
+| 8 | `#001f3f` | Darkest navy (deepest in the file) | **Primary** |
+| 9 | `#0c4a6e` | Medium ocean blue | **Primary** |
+| 10 | `#1a1a2e` | Dark desaturated navy-purple | **Neutral** |
+| 11 | `#16213e` | Deep slate-navy | **Neutral** |
+| 12 | `#f0f4ff` | Pale blue-tinted surface | **Neutral** |
+| 13 | `#22d3ee` | Vivid bright cyan — Tailwind `cyan-400` | **Info / Cyan** |
+| 14 | `#0ea5e9` | Sky-blue — Tailwind `sky-500` | **Info / Cyan** |
+| 15 | `#38bdf8` | Light sky-blue — Tailwind `sky-300` | **Info / Cyan** |
+| 16 | `#67e8f9` | Pale bright cyan — Tailwind `cyan-200` | **Info / Cyan** |
+| 17 | `#a5f3fc` | Very pale cyan — Tailwind `cyan-100` | **Info / Cyan** |
+| 18 | `#7c2d12` | Dark burnt orange / rust | **Attention / Orange** |
+| 19 | `#fb923c` | Light orange — Tailwind `orange-400` | **Attention / Orange** |
+| 20 | `#fed7aa` | Pale peach tint (tag text) | **Attention / Orange** |
+| 21 | `#9c6eff` | Bright saturated purple | **Royal / Purple** |
+
+***
+
+**Note on the count:** The original analysis flagged 24 rows, but after deduplication — `#0c4a6e` was double-counted across two family rows, and 3 `rgba(34,211,238,x)` entries resolved to the same base hex `#22d3ee` — the **true unique new hex count is 21**. These are the real distinct values to potentially tokenize into `core.css`.

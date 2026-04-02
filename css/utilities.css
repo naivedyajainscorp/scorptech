@@ -2,6 +2,8 @@
    S-TEXT UTILITIES (Nuclear Consolidation - FIXED + AMBER)
    ════════════════════════════════════════════════════════════════════════════════ */
 
+/* GRADIENT TEXT SHADOW VARIABLE */
+
 /* UNIVERSAL COLOR TRANSITIONS */
 [class^="s-text-"]:not([class*="gradient"]):not([class*="opacity"]) {
    transition: color 0.2s ease !important;
@@ -347,7 +349,7 @@
 .s-text-gradient-info-special,
 .s-text-gradient-attention,
 .s-text-gradient-royal,
-.s-text-gradient-royal-light,
+.s-text-gradient-royal-light, 
 .s-text-gradient-pop,
 .s-text-gradient-dark,
 .s-text-gradient-black,
@@ -366,12 +368,14 @@
    background-clip: text !important;
    -webkit-background-clip: text !important;
    -webkit-text-fill-color: transparent !important;
-   color: transparent !important;
+   /* color: transparent !important; */
    background-size: 200% 200% !important;
    background-position: 0% 50% !important;
    transition: background-position 0.5s ease, filter 0.3s ease !important;
    padding-right: 0.15em;
    margin-right: -0.15em;
+   filter: var(--s-text-drop-shadow);
+   /* text-shadow: var(--s-text-shadow); */
 }
 
 /* Hover animation - ALL gradients */
@@ -412,7 +416,7 @@
 }
 
 .s-text-gradient-primary:hover {
-   filter: brightness(1.08) !important;
+   filter: var(--s-text-drop-shadow) brightness(1.08) !important;
 }
 
 .s-text-gradient-primary-dark {
@@ -420,7 +424,7 @@
 }
 
 .s-text-gradient-primary-dark:hover {
-   filter: brightness(1.12) !important;
+   filter: var(--s-text-drop-shadow) brightness(1.12) !important;
 }
 
 .s-text-gradient-secondary {
@@ -428,7 +432,7 @@
 }
 
 .s-text-gradient-secondary:hover {
-   filter: contrast(1.15) !important;
+   filter: var(--s-text-drop-shadow) contrast(1.15) !important;
 }
 
 .s-text-gradient-success {
@@ -436,7 +440,7 @@
 }
 
 .s-text-gradient-success:hover {
-   filter: saturate(1.2) !important;
+   filter: var(--s-text-drop-shadow) saturate(1.2) !important;
 }
 
 .s-text-gradient-success-soft {
@@ -444,7 +448,7 @@
 }
 
 .s-text-gradient-success-soft:hover {
-   filter: saturate(1.15) !important;
+   filter: var(--s-text-drop-shadow) saturate(1.15) !important;
 }
 
 .s-text-gradient-danger {
@@ -452,7 +456,7 @@
 }
 
 .s-text-gradient-danger:hover {
-   filter: brightness(1.08) saturate(1.1) !important;
+   filter: var(--s-text-drop-shadow) brightness(1.08) saturate(1.1) !important;
 }
 
 .s-text-gradient-warning {
@@ -460,7 +464,7 @@
 }
 
 .s-text-gradient-warning:hover {
-   filter: saturate(1.1) !important;
+   filter: var(--s-text-drop-shadow) saturate(1.1) !important;
 }
 
 .s-text-gradient-amber {
@@ -468,7 +472,7 @@
 }
 
 .s-text-gradient-amber:hover {
-   filter: brightness(1.08) saturate(1.12) !important;
+   filter: var(--s-text-drop-shadow) brightness(1.08) saturate(1.12) !important;
 }
 
 .s-text-gradient-info {
@@ -476,7 +480,7 @@
 }
 
 .s-text-gradient-info:hover {
-   filter: saturate(1.15) !important;
+   filter: var(--s-text-drop-shadow) saturate(1.15) !important;
 }
 
 .s-text-gradient-info-special {
@@ -484,7 +488,7 @@
 }
 
 .s-text-gradient-info-special:hover {
-   filter: brightness(1.08) !important;
+   filter: var(--s-text-drop-shadow) brightness(1.08) !important;
 }
 
 .s-text-gradient-attention {
@@ -492,7 +496,7 @@
 }
 
 .s-text-gradient-attention:hover {
-   filter: brightness(1.1) saturate(1.08) !important;
+   filter: var(--s-text-drop-shadow) brightness(1.1) saturate(1.08) !important;
 }
 
 .s-text-gradient-royal {
@@ -500,7 +504,7 @@
 }
 
 .s-text-gradient-royal:hover {
-   filter: brightness(1.01) !important;
+   filter: var(--s-text-drop-shadow) brightness(1.01) !important;
 }
 
 .s-text-gradient-royal-light {
@@ -508,7 +512,7 @@
 }
 
 .s-text-gradient-royal-light:hover {
-   filter: brightness(1.05) !important;
+   filter: var(--s-text-drop-shadow) brightness(1.05) !important;
 }
 
 .s-text-gradient-pop {
@@ -516,7 +520,7 @@
 }
 
 .s-text-gradient-pop:hover {
-   filter: saturate(1.2) brightness(1.05) !important;
+   filter: var(--s-text-drop-shadow) saturate(1.2) brightness(1.05) !important;
 }
 
 
@@ -526,7 +530,7 @@
 }
 
 .s-text-gradient-green:hover {
-   filter: saturate(1.2) brightness(1.05) !important;
+   filter: var(--s-text-drop-shadow) saturate(1.2) brightness(1.05) !important;
 }
 
 .s-text-gradient-purple {
@@ -534,7 +538,7 @@
 }
 
 .s-text-gradient-purple:hover {
-   filter: brightness(1.1) !important;
+   filter: var(--s-text-drop-shadow) brightness(1.1) !important;
 }
 
 .s-text-gradient-indigo {
@@ -542,7 +546,7 @@
 }
 
 .s-text-gradient-indigo:hover {
-   filter: saturate(1.15) !important;
+   filter: var(--s-text-drop-shadow) saturate(1.15) !important;
 }
 
 
@@ -552,7 +556,7 @@
 }
 
 .s-text-gradient-red:hover {
-   filter: brightness(1.1) saturate(1.12) !important;
+   filter: var(--s-text-drop-shadow) brightness(1.1) saturate(1.12) !important;
 }
 
 .s-text-gradient-slate {
@@ -560,7 +564,7 @@
 }
 
 .s-text-gradient-slate:hover {
-   filter: brightness(1.12) !important;
+   filter: var(--s-text-drop-shadow) brightness(1.12) !important;
 }
 
 .s-text-gradient-dark {
@@ -568,7 +572,7 @@
 }
 
 .s-text-gradient-dark:hover {
-   filter: brightness(1.2) !important;
+   filter: var(--s-text-drop-shadow) brightness(1.2) !important;
 }
 
 .s-text-gradient-black {
@@ -576,7 +580,7 @@
 }
 
 .s-text-gradient-black:hover {
-   filter: brightness(1.35) !important;
+   filter: var(--s-text-drop-shadow) brightness(1.35) !important;
 }
 
 .s-text-gradient-white {
@@ -584,7 +588,7 @@
 }
 
 .s-text-gradient-white:hover {
-   filter: contrast(1.1) !important;
+   filter: var(--s-text-drop-shadow) contrast(1.1) !important;
 }
 
 .s-text-gradient-neutral {
@@ -592,7 +596,7 @@
 }
 
 .s-text-gradient-neutral:hover {
-   filter: brightness(1.1) !important;
+   filter: var(--s-text-drop-shadow) brightness(1.1) !important;
 }
 
 /* SPECIAL EFFECT GRADIENTS */
@@ -601,7 +605,7 @@
 }
 
 .s-text-gradient-light:hover {
-   filter: brightness(1.15) saturate(1.1) !important;
+   filter: var(--s-text-drop-shadow) brightness(1.15) saturate(1.1) !important;
 }
 
 .s-text-gradient-subtle {
@@ -609,7 +613,7 @@
 }
 
 .s-text-gradient-subtle:hover {
-   filter: contrast(1.5) !important;
+   filter: var(--s-text-drop-shadow) contrast(1.5) !important;
 }
 
 .s-text-gradient-overlay {
@@ -617,7 +621,7 @@
 }
 
 .s-text-gradient-overlay:hover {
-   filter: brightness(1.3) !important;
+   filter: var(--s-text-drop-shadow) brightness(1.3) !important;
 }
 
 

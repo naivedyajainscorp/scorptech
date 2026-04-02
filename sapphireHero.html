@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sapphire Hero - Terminal Concept</title>
+  <style>
+    /* ========================================
+       RESET & BASE
+       ======================================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Verdana', system-ui, -apple-system, sans-serif;
+      background: #ffffff;
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: #0f172a;
+    }
+
+    /* ========================================
+       NAVBAR STYLES (Matching Project)
+       ======================================== */
+    .s-navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 102, 204, 0.1);
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(0, 102, 204, 0.06);
+    }
+
+    .s-navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: #0f172a;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .s-navbar-brand img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .s-nav-links {
+      display: flex;
+      gap: 0.5rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .s-nav-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      color: #475569;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .s-nav-link:hover {
+      background: rgba(0, 102, 204, 0.06);
+      color: #0066cc;
+    }
+
+    .s-nav-link i {
+      font-size: 1rem;
+      color: #0066cc;
+    }
+
+    .book-demo-button {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.625rem 1.25rem;
+      background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);
+      color: #ffffff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.875rem;
+      box-shadow: 0 2px 8px rgba(22, 163, 74, 0.25);
+      transition: all 0.2s ease;
+    }
+
+    .book-demo-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(22, 163, 74, 0.35);
+    }
+
+    .s-mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    @media (max-width: 1024px) {
+      .s-navbar {
+        padding: 1rem;
+      }
+
+      .s-nav-links {
+        display: none;
+      }
+
+      .s-mobile-toggle {
+        display: block;
+      }
+
+      .book-demo-button span {
+        display: none;
+      }
+    }
+
+    /* ========================================
+       HERO CONTAINER
+       ======================================== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      padding-top: 80px; /* Navbar offset */
+      background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+      overflow: hidden;
+    }
+
+    /* ========================================
+       CANVAS BACKGROUND
+       ======================================== */
+    .hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      opacity: 0.6;
+    }
+
+    /* ========================================
+       HERO CONTENT WRAPPER
+       ======================================== */
+    .hero-content-wrapper {
+      position: relative;
+      z-index: 10;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    /* ========================================
+       BRAND PILL
+       ======================================== */
+    .hero-brand-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(0, 102, 204, 0.08);
+      border: 1px solid rgba(0, 102, 204, 0.2);
+      border-radius: 6px;
+      font-family: 'Courier New', 'Consolas', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #0066cc;
+      margin-bottom: 1.5rem;
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    .hero-brand-pill .pulse-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #16a34a;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+
+    /* ========================================
+       MAIN HEADLINE
+       ======================================== */
+    .hero-headline {
+      margin-bottom: 1.5rem;
+      animation: fadeInUp 0.8s ease-out forwards;
+      animation-delay: 0.2s;
+      opacity: 0;
+    }
+
+    .hero-title {
+      font-family: 'Science Gothic', 'Noto Sans Devanagari', sans-serif;
+      font-weight: 800;
+      font-style: italic;
+      font-size: clamp(2.5rem, 8vw, 5.5rem);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: #0f172a;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title-accent {
+      background: linear-gradient(135deg, #0066cc 0%, #004d99 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      line-height: 1.6;
+      color: #475569;
+      max-width: 650px;
+    }
+
+    /* ========================================
+       CTA BUTTONS
+       ======================================== */
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.8s ease-out forwards;
+      animation-delay: 0.4s;
+      opacity: 0;
+    }
+
+    .s-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.875rem 2rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      letter-spacing: 0.01em;
+    }
+
+    .s-btn--primary {
+      background: linear-gradient(135deg, #0066cc 0%, #004d99 100%);
+      color: #ffffff;
+      border: none;
+      box-shadow: 0 2px 8px rgba(0, 102, 204, 0.25);
+    }
+
+    .s-btn--primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(0, 102, 204, 0.35);
+    }
+
+    .s-btn--secondary {
+      background: #ffffff;
+      color: #0066cc;
+      border: 1.5px solid rgba(0, 102, 204, 0.4);
+    }
+
+    .s-btn--secondary:hover {
+      background: rgba(0, 102, 204, 0.04);
+      border-color: #0066cc;
+    }
+
+    /* ========================================
+       DATA STREAM CONTAINERS
+       ======================================== */
+    .data-streams-container {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      animation: fadeInUp 0.8s ease-out forwards;
+      animation-delay: 0.6s;
+      opacity: 0;
+    }
+
+    /* Stream Header */
+    .stream-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+      background: rgba(0, 102, 204, 0.04);
+      border: 1px solid rgba(0, 102, 204, 0.12);
+      border-radius: 6px;
+      font-family: 'Courier New', 'Consolas', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #64748b;
+    }
+
+    .stream-status {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .stream-status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #16a34a;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    /* Infinite Scroll Track */
+    .infinite-scroll-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      padding: 1rem 0;
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(0, 102, 204, 0.15);
+      border-radius: 8px;
+    }
+
+    .infinite-track {
+      display: flex;
+      gap: 1rem;
+      animation: scrollLeft var(--scroll-duration, 60s) linear infinite;
+      will-change: transform;
+    }
+
+    @keyframes scrollLeft {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* Data Card */
+    .data-card {
+      flex-shrink: 0;
+      min-width: 280px;
+      padding: 1rem 1.25rem;
+      background: #ffffff;
+      border: 1px solid rgba(0, 102, 204, 0.12);
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0, 102, 204, 0.06);
+      transition: all 0.2s ease;
+    }
+
+    .data-card:hover {
+      border-color: #0066cc;
+      box-shadow: 0 4px 16px rgba(0, 102, 204, 0.12);
+      transform: translateY(-2px);
+    }
+
+    .data-card-label {
+      font-family: 'Courier New', 'Consolas', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #64748b;
+      margin-bottom: 0.5rem;
+    }
+
+    .data-card-value {
+      font-family: 'Science Gothic', 'Noto Sans Devanagari', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #0f172a;
+      display: flex;
+      align-items: baseline;
+      gap: 0.25rem;
+    }
+
+    .data-card-suffix {
+      font-size: 0.875rem;
+      color: #64748b;
+      font-weight: 400;
+    }
+
+    .data-card-change {
+      font-family: 'Courier New', 'Consolas', monospace;
+      font-size: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      margin-top: 0.5rem;
+    }
+
+    .data-card-change.positive {
+      color: #16a34a;
+    }
+
+    .data-card-change.negative {
+      color: #dc2626;
+    }
+
+    /* ========================================
+       METRICS GRID
+       ======================================== */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+      animation: fadeInUp 0.8s ease-out forwards;
+      animation-delay: 0.8s;
+      opacity: 0;
+    }
+
+    .metric-box {
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(0, 102, 204, 0.15);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 102, 204, 0.08);
+      transition: all 0.2s ease;
+    }
+
+    .metric-box:hover {
+      border-color: #0066cc;
+      box-shadow: 0 4px 16px rgba(0, 102, 204, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .metric-box-label {
+      font-family: 'Courier New', 'Consolas', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #64748b;
+      margin-bottom: 0.75rem;
+    }
+
+    .metric-box-value {
+      font-family: 'Science Gothic', 'Noto Sans Devanagari', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
+      color: #0f172a;
+      display: flex;
+      align-items: baseline;
+      gap: 0.25rem;
+    }
+
+    .metric-box-suffix {
+      font-size: 0.875rem;
+      color: #64748b;
+      font-weight: 400;
+    }
+
+    .metric-box-sub {
+      font-family: 'Courier New', 'Consolas', monospace;
+      font-size: 0.7rem;
+      color: #16a34a;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      margin-top: 0.5rem;
+    }
+
+    .metric-box-sub.negative {
+      color: #dc2626;
+    }
+
+    /* ========================================
+       ANIMATIONS
+       ======================================== */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ========================================
+       RESPONSIVE DESIGN
+       ======================================== */
+    @media (max-width: 1024px) {
+      .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .data-card {
+        min-width: 240px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-content-wrapper {
+        padding: 2rem 1rem;
+      }
+
+      .metrics-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+      }
+
+      .s-btn {
+        width: 100%;
+      }
+
+      .data-card {
+        min-width: 200px;
+        padding: 0.875rem 1rem;
+      }
+
+      .infinite-scroll-container {
+        padding: 0.75rem 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .data-card {
+        min-width: 180px;
+      }
+
+      .metric-box-value {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* ========================================
+       ACCESSIBILITY
+       ======================================== */
+    @media (prefers-reduced-motion: reduce) {
+      .infinite-track,
+      .hero-brand-pill,
+      .hero-headline,
+      .hero-ctas,
+      .data-streams-container,
+      .metrics-grid,
+      .pulse-dot,
+      .stream-status-dot {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="s-navbar">
+    <a href="#" class="s-navbar-brand">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,5 90,25 90,75 50,95 10,75 10,25' fill='%230066cc'/%3E%3C/svg%3E" alt="SCORP">
+      <span>SCORP</span>
+    </a>
+
+    <button class="s-mobile-toggle" aria-label="Toggle menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 12h18M3 6h18M3 18h18"/>
+      </svg>
+    </button>
+
+    <ul class="s-nav-links">
+      <li><a href="#" class="s-nav-link"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#" class="s-nav-link"><i class="fas fa-diamond"></i> Sapphire</a></li>
+      <li><a href="#" class="s-nav-link"><i class="fas fa-chart-line"></i> Analytics</a></li>
+      <li><a href="#" class="s-nav-link"><i class="fas fa-users"></i> About</a></li>
+      <li><a href="#" class="s-nav-link"><i class="fas fa-phone"></i> Contact</a></li>
+    </ul>
+
+    <a href="#" class="book-demo-button">
+      <i class="fas fa-calendar-check"></i>
+      <span>Book Demo</span>
+    </a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <!-- Canvas Background -->
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+
+    <!-- Content Wrapper -->
+    <div class="hero-content-wrapper">
+      <!-- Brand Pill -->
+      <div class="hero-brand-pill">
+        <span class="pulse-dot"></span>
+        <span>Asset Intelligence Platform</span>
+      </div>
+
+      <!-- Headline -->
+      <div class="hero-headline">
+        <h1 class="hero-title">
+          <span class="hero-title-accent">SAPPHIRE</span>
+        </h1>
+        <p class="hero-subtitle">
+          Planning, Handling, Inspection & Reliability — unified in one intelligent system 
+          built for industrial-scale asset management.
+        </p>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="hero-ctas">
+        <a href="#" class="s-btn s-btn--primary">
+          <i class="fas fa-calendar-check me-1" style="margin-right: 0.5rem;"></i>
+          Request a Demo
+        </a>
+        <a href="#" class="s-btn s-btn--secondary">
+          <i class="fas fa-play-circle me-1" style="margin-right: 0.5rem;"></i>
+          Explore Features
+        </a>
+      </div>
+
+      <!-- Live Metrics Grid -->
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <div class="metric-box-label">Assets Tracked</div>
+          <div class="metric-box-value">
+            <span id="metric-assets">12,847</span>
+          </div>
+          <div class="metric-box-sub">
+            <span>↑</span>
+            <span id="metric-assets-change">+127 today</span>
+          </div>
+        </div>
+
+        <div class="metric-box">
+          <div class="metric-box-label">Cycles Logged</div>
+          <div class="metric-box-value">
+            <span id="metric-cycles">2.4</span>
+            <span class="metric-box-suffix">M</span>
+          </div>
+          <div class="metric-box-sub">
+            <span>↑</span>
+            <span id="metric-cycles-change">+8.2%</span>
+          </div>
+        </div>
+
+        <div class="metric-box">
+          <div class="metric-box-label">Failures Prevented</div>
+          <div class="metric-box-value">
+            <span id="metric-failures">847</span>
+          </div>
+          <div class="metric-box-sub negative">
+            <span>↓</span>
+            <span id="metric-failures-change">-23% risk</span>
+          </div>
+        </div>
+
+        <div class="metric-box">
+          <div class="metric-box-label">Active Sites</div>
+          <div class="metric-box-value">
+            <span id="metric-sites">156</span>
+          </div>
+          <div class="metric-box-sub">
+            <span>↑</span>
+            <span id="metric-sites-change">+12 this month</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data Streams -->
+      <div class="data-streams-container">
+        <!-- Stream 1: Asset Activity -->
+        <div class="stream-section">
+          <div class="stream-header">
+            <span>Live Asset Activity</span>
+            <div class="stream-status">
+              <span class="stream-status-dot"></span>
+              <span>Streaming</span>
+            </div>
+          </div>
+          <div class="infinite-scroll-container">
+            <div class="infinite-track" id="stream-assets">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Stream 2: Inspection Feed -->
+        <div class="stream-section">
+          <div class="stream-header">
+            <span>Inspection Feed</span>
+            <div class="stream-status">
+              <span class="stream-status-dot"></span>
+              <span>Real-time</span>
+            </div>
+          </div>
+          <div class="infinite-scroll-container">
+            <div class="infinite-track" id="stream-inspections">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Stream 3: Cost Analytics -->
+        <div class="stream-section">
+          <div class="stream-header">
+            <span>Cost Analytics</span>
+            <div class="stream-status">
+              <span class="stream-status-dot"></span>
+              <span>Updated</span>
+            </div>
+          </div>
+          <div class="infinite-scroll-container">
+            <div class="infinite-track" id="stream-costs">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    /* ========================================
+       CANVAS ANIMATION (Like analytics.html)
+       ======================================== */
+    class HeroCanvasAnimation {
+      constructor(canvasId) {
+        this.canvas = document.getElementById(canvasId);
+        if (!this.canvas) return;
+
+        this.ctx = this.canvas.getContext('2d');
+        this.animationId = null;
+        this.time = 0;
+
+        // SCORP Brand Colors
+        this.lineColors = [
+          'rgba(0, 102, 204, 0.6)',
+          'rgba(0, 153, 255, 0.5)',
+          'rgba(52, 144, 250, 0.5)',
+          'rgba(6, 182, 212, 0.5)',
+          'rgba(20, 184, 166, 0.5)',
+        ];
+
+        this.barColors = [
+          'rgba(0, 102, 204, 0.5)',
+          'rgba(34, 197, 94, 0.5)',
+          'rgba(249, 115, 22, 0.5)',
+          'rgba(139, 92, 246, 0.5)',
+          'rgba(234, 179, 8, 0.5)',
+        ];
+      }
+
+      init() {
+        if (!this.canvas) return;
+
+        this.resizeCanvas();
+        this.createLines();
+        this.createBarRail();
+        this.animate();
+
+        window.addEventListener('resize', () => {
+          this.resizeCanvas();
+          this.createLines();
+          this.createBarRail();
+        }, { passive: true });
+      }
+
+      resizeCanvas() {
+        this.canvas.width = this.canvas.offsetWidth;
+        this.canvas.height = this.canvas.offsetHeight;
+        this.width = this.canvas.width;
+        this.height = this.canvas.height;
+      }
+
+      createLines() {
+        this.lines = [];
+        for (let i = 0; i < 5; i++) {
+          const line = {
+            points: [],
+            color: this.lineColors[i % this.lineColors.length],
+            speed: Math.random() * 0.5 + 0.3,
+            amplitude: Math.random() * 30 + 20,
+            frequency: Math.random() * 0.01 + 0.005,
+            yOffset: this.height * 0.2 + Math.random() * this.height * 0.6,
+            phase: Math.random() * Math.PI * 2
+          };
+
+          for (let x = 0; x < this.width; x += 12) {
+            line.points.push({ x, y: 0 });
+          }
+          this.lines.push(line);
+        }
+      }
+
+      createBarRail() {
+        this.barRail = {
+          bars: [],
+          barWidth: 24,
+          barGap: 4,
+          speed: 0.3
+        };
+
+        const numBars = Math.ceil(this.width / (this.barRail.barWidth + this.barRail.barGap)) + 15;
+        for (let i = 0; i < numBars; i++) {
+          this.barRail.bars.push({
+            x: i * (this.barRail.barWidth + this.barRail.barGap),
+            height: Math.random() * 80 + 40,
+            targetHeight: Math.random() * 80 + 40,
+            animationSpeed: Math.random() * 0.03 + 0.02,
+            color: this.barColors[Math.floor(Math.random() * this.barColors.length)]
+          });
+        }
+      }
+
+      updateLines() {
+        this.lines.forEach(line => {
+          for (let i = 0; i < line.points.length; i++) {
+            const x = line.points[i].x;
+            line.points[i].y = line.yOffset + 
+              Math.sin(x * line.frequency + this.time * line.speed + line.phase) * line.amplitude;
+          }
+        });
+      }
+
+      drawLines() {
+        this.lines.forEach(line => {
+          this.ctx.beginPath();
+          this.ctx.strokeStyle = line.color;
+          this.ctx.lineWidth = 2;
+          this.ctx.moveTo(line.points[0].x, line.points[0].y);
+          for (let i = 1; i < line.points.length; i++) {
+            this.ctx.lineTo(line.points[i].x, line.points[i].y);
+          }
+          this.ctx.stroke();
+        });
+      }
+
+      updateBarRail() {
+        this.barRail.bars.forEach(bar => {
+          bar.x -= this.barRail.speed;
+          if (Math.abs(bar.height - bar.targetHeight) < 2) {
+            bar.targetHeight = Math.random() * 80 + 40;
+          }
+          bar.height += (bar.targetHeight - bar.height) * bar.animationSpeed;
+        });
+
+        this.barRail.bars = this.barRail.bars.filter(bar => bar.x > -50);
+
+        const lastBar = this.barRail.bars[this.barRail.bars.length - 1];
+        if (lastBar && lastBar.x < this.width + 50) {
+          this.barRail.bars.push({
+            x: lastBar.x + this.barRail.barWidth + this.barRail.barGap,
+            height: Math.random() * 80 + 40,
+            targetHeight: Math.random() * 80 + 40,
+            animationSpeed: Math.random() * 0.03 + 0.02,
+            color: this.barColors[Math.floor(Math.random() * this.barColors.length)]
+          });
+        }
+      }
+
+      drawBarRail() {
+        this.barRail.bars.forEach(bar => {
+          const y = this.height - bar.height;
+          this.ctx.fillStyle = bar.color;
+          this.ctx.fillRect(bar.x, y, this.barRail.barWidth, bar.height);
+        });
+      }
+
+      animate() {
+        this.ctx.clearRect(0, 0, this.width, this.height);
+        this.updateLines();
+        this.drawLines();
+        this.updateBarRail();
+        this.drawBarRail();
+        this.time += 0.02;
+        this.animationId = requestAnimationFrame(() => this.animate());
+      }
+    }
+
+    /* ========================================
+       INFINITE SCROLL DATA STREAMS
+       ======================================== */
+    function createDataCard(label, value, suffix, change, changeType) {
+      const card = document.createElement('div');
+      card.className = 'data-card';
+      card.innerHTML = `
+        <div class="data-card-label">${label}</div>
+        <div class="data-card-value">
+          <span>${value}</span>
+          <span class="data-card-suffix">${suffix}</span>
+        </div>
+        <div class="data-card-change ${changeType}">
+          <span>${changeType === 'positive' ? '↑' : '↓'}</span>
+          <span>${change}</span>
+        </div>
+      `;
+      return card;
+    }
+
+    function populateStream(streamId, dataGenerator, count = 15) {
+      const track = document.getElementById(streamId);
+      if (!track) return;
+
+      // Create initial set
+      for (let i = 0; i < count; i++) {
+        track.appendChild(createDataCard(...dataGenerator()));
+      }
+
+      // Clone for seamless loop
+      const originalChildren = Array.from(track.children);
+      originalChildren.forEach(child => {
+        track.appendChild(child.cloneNode(true));
+      });
+    }
+
+    // Data Generators
+    const assetLabels = ['CNC-001', 'PRESS-042', 'CONV-118', 'ROBOT-007', 'PUMP-234', 'MOTOR-089', 'VALVE-156', 'COMPRESSOR-023'];
+    const assetTypes = ['Active', 'Idle', 'Maintenance', 'Optimal', 'Warning'];
+    
+    function generateAssetData() {
+      const label = assetLabels[Math.floor(Math.random() * assetLabels.length)];
+      const value = Math.floor(Math.random() * 100);
+      const change = (Math.random() * 15).toFixed(1) + '%';
+      const type = Math.random() > 0.3 ? 'positive' : 'negative';
+      return [`Asset ${label} Status`, value, '%', change, type];
+    }
+
+    const inspectionTypes = ['Scheduled', 'Completed', 'Pending', 'Overdue', 'Passed'];
+    const locations = ['Plant A', 'Plant B', 'Unit 1', 'Unit 2', 'Line 3', 'Bay 5'];
+    
+    function generateInspectionData() {
+      const type = inspectionTypes[Math.floor(Math.random() * inspectionTypes.length)];
+      const value = Math.floor(Math.random() * 50) + 10;
+      const location = locations[Math.floor(Math.random() * locations.length)];
+      const change = (Math.random() * 10).toFixed(0) + ' items';
+      return [`${location} - ${type}`, value, '', change, 'positive'];
+    }
+
+    const costCategories = ['Labor', 'Parts', 'Materials', 'Energy', 'Overhead'];
+    
+    function generateCostData() {
+      const category = costCategories[Math.floor(Math.random() * costCategories.length)];
+      const value = (Math.random() * 100 + 20).toFixed(1);
+      const change = (Math.random() * 8).toFixed(1) + '%';
+      const type = Math.random() > 0.4 ? 'negative' : 'positive';
+      return [`${category} Cost (₹K)`, value, 'K', change, type];
+    }
+
+    /* ========================================
+       METRIC ANIMATIONS
+       ======================================== */
+    function animateValue(elementId, start, end, duration) {
+      const element = document.getElementById(elementId);
+      if (!element) return;
+
+      const range = end - start;
+      const startTime = performance.now();
+
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 4);
+        const current = Math.floor(start + (range * eased));
+
+        if (elementId === 'metric-cycles') {
+          element.textContent = (current / 10).toFixed(1);
+        } else {
+          element.textContent = current.toLocaleString();
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        }
+      }
+
+      requestAnimationFrame(update);
+    }
+
+    function simulateLiveData() {
+      // Randomly update metrics
+      if (Math.random() > 0.7) {
+        const assetsEl = document.getElementById('metric-assets');
+        const current = parseInt(assetsEl.textContent.replace(/,/g, ''));
+        assetsEl.textContent = (current + Math.floor(Math.random() * 3) + 1).toLocaleString();
+      }
+
+      if (Math.random() > 0.8) {
+        const cyclesEl = document.getElementById('metric-cycles');
+        const current = parseFloat(cyclesEl.textContent);
+        cyclesEl.textContent = (current + 0.01).toFixed(2);
+      }
+    }
+
+    /* ========================================
+       INITIALIZATION
+       ======================================== */
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize Canvas
+      const canvasAnim = new HeroCanvasAnimation('heroCanvas');
+      canvasAnim.init();
+
+      // Populate Streams
+      populateStream('stream-assets', generateAssetData, 12);
+      populateStream('stream-inspections', generateInspectionData, 10);
+      populateStream('stream-costs', generateCostData, 10);
+
+      // Animate Metrics
+      setTimeout(() => {
+        animateValue('metric-assets', 12500, 12847, 2000);
+        animateValue('metric-cycles', 20, 24, 2000);
+        animateValue('metric-failures', 700, 847, 2000);
+        animateValue('metric-sites', 140, 156, 2000);
+      }, 500);
+
+      // Live Data Simulation
+      setInterval(simulateLiveData, 3000);
+    });
+  </script>
+</body>
+</html>

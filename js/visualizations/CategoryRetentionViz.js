@@ -157,7 +157,7 @@ render() {
           </div>
           <span class="s-text-primary s-font-semibold s-text-sm">${cat.name}</span>
         </div>
-        <div class="s-text-primary s-font-black s-text-lg" id="retention-value-${index}" style="font-family: 'Science Gothic', sans-serif; font-style: italic;">
+        <div class="s-text-primary s-font-black s-text-lg progress-percent" id="retention-value-${index}" style="font-family: 'Science Gothic', sans-serif; font-style: italic;">
           ${cat.current}%
         </div>
       </div>

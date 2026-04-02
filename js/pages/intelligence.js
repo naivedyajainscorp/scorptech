@@ -553,8 +553,8 @@ export async function initIntelligencePage() {
     hubFixed:    true,
     travelDur:   0.7,
     dwellDur:    2.5,
-    maxW:        620,
-    ringRadius:  0.275,
+    maxW:        680,
+    ringRadius:  0.285,
     aspectRatio: 1.32,
     nodes: [
       { label: 'Acquire',  icon: '\uf472', color: COLORS.primary,    sub: 'Acquire',  lOff: { r:   0, y: 0 } },
@@ -576,9 +576,9 @@ export async function initIntelligencePage() {
   makeRing3D({
     canvasId:  'cycleEnterprise',
     captionId: 'captionEnterprise',
-    iconScaleActive: 0.052,
-    iconScaleInactive: 0.043,
-    iconScaleIdle: 0.044, 
+    iconScaleActive: 0.085,
+    iconScaleInactive: 0.048,
+    iconScaleIdle: 0.042,
     hubFixed:  false,
     travelDur: 0.8,
     dwellDur:  2.2,

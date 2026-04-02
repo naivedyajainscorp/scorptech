@@ -207,7 +207,7 @@ export class ProtectionTypeBreakdown {
     createLegend() {
         const legendDiv = document.createElement("div");
         legendDiv.style.display = "flex";
-        legendDiv.style.justifyContent = "flex-end";
+        legendDiv.style.justifyContent = "space-around";
         legendDiv.style.gap = "1rem";
         legendDiv.style.marginBottom = "0.5rem";
 
@@ -268,13 +268,13 @@ export class ProtectionTypeBreakdown {
                 <!-- Stacked Segments -->
                 <div class="ptb-bar-container" style="display: flex; height: 100%; width: ${totalPctOfContainer}%; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);">
                     <div class="ptb-segment" style="width: ${data.warrantyPct}%; background: var(--s-gradient-info); display: flex; align-items: center; justify-content: center; color: white; font-size: 0.7rem; font-weight: 800; transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);">
-                        <span class="ptb-segment-text">${data.warrantyPct}%</span>
+                        <span class="ptb-segment-text progress-percent">${data.warrantyPct}%</span>
                     </div>
                     <div class="ptb-segment" style="width: ${data.insurancePct}%; background: var(--s-gradient-green); display: flex; align-items: center; justify-content: center; color: white; font-size: 0.7rem; font-weight: 800; transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);">
-                        <span class="ptb-segment-text">${data.insurancePct}%</span>
+                        <span class="ptb-segment-text progress-percent">${data.insurancePct}%</span>
                     </div>
                     <div class="ptb-segment" style="width: ${data.maintenancePct}%; background: var(--s-gradient-amber); display: flex; align-items: center; justify-content: center; color: white; font-size: 0.7rem; font-weight: 800; transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);">
-                        <span class="ptb-segment-text">${data.maintenancePct}%</span>
+                        <span class="ptb-segment-text progress-percent">${data.maintenancePct}%</span>
                     </div>
                 </div>
 
@@ -285,16 +285,16 @@ export class ProtectionTypeBreakdown {
             </div>
             
             <!-- Cost Breakdown Below Bar -->
-            <div style="display: flex; gap: 1rem; font-size: 0.75rem; margin-top: 0.25rem;">
-                <span class="s-text-info s-font-bold">
+            <div style="display: flex; gap: 0; justify-content: space-between; width: 100%; font-size: 0.75rem; margin-top: 0.25rem;">
+                <span class="s-text-info s-font-bold" style="flex: 1; text-align: center;">
                     <i class="fa-solid fa-shield-halved" style="font-size: 0.7rem; opacity: 0.7;"></i>
                     <span class="ptb-cost">${this.formatIndianCurrency(data.warrantyCost)}</span>
                 </span>
-                <span class="s-text-success s-font-bold">
+                <span class="s-text-success s-font-bold" style="flex: 1; text-align: center;">
                     <i class="fas fa-file-shield" style="font-size: 0.7rem; opacity: 0.7;"></i>
                     <span class="ptb-cost">${this.formatIndianCurrency(data.insuranceCost)}</span>
                 </span>
-                <span class="s-text-amber s-font-bold">
+                <span class="s-text-amber s-font-bold" style="flex: 1; text-align: center;">
                     <i class="fas fa-screwdriver-wrench" style="font-size: 0.7rem; opacity: 0.7;"></i>
                     <span class="ptb-cost">${this.formatIndianCurrency(data.maintenanceCost)}</span>
                 </span>

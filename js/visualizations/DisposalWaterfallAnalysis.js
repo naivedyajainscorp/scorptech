@@ -259,7 +259,7 @@ export class DisposalWaterfallAnalysis {
             </div>
             <div class="flex-grow-1">
               <div class="s-text-xs s-font-semibold opacity-75">Recovery Rate</div>
-              <div class="s-text-sm s-font-bold" id="val-recovery-rate">${this.current.recoveryRate}%</div>
+              <div class="s-text-sm s-font-bold progress-percent" id="val-recovery-rate">${this.current.recoveryRate}%</div>
             </div>
           </div>
         </div>

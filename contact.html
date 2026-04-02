@@ -25,7 +25,7 @@
 <!-- ═══════════════════════════════════════════════════════════════
      SCORP NAVIGATION 
      ═══════════════════════════════════════════════════════════════ -->
-<nav class="navbar navbar-expand-xl s-navbar" id="scorpNavbar">
+<nav class="navbar navbar-expand-xxl s-navbar" id="scorpNavbar">
     
     <!-- Brand -->
     <a class="navbar-brand s-navbar-brand" href="index.html">
@@ -181,11 +181,11 @@
       
       <div class="s-hero-actions">
         <a href="book-demo.html" class="s-btn-success s-btn-glare">
-          <i class="fas fa-calendar-days"></i>
+          <i class="fas fa-calendar-days me-1"></i>
           Book Sapphire Demo
         </a>
-        <a href="#ContactFormSection" class="s-btn-white s-btn-glare">
-          <i class="fas fa-paper-plane"></i>
+        <a href="#ContactFormSection" class="s-btn-primary s-btn-glare">
+          <i class="fas fa-paper-plane me-1"></i>
           Send Enquiry
         </a>
       </div>
@@ -273,7 +273,7 @@
         <!-- ⏱️ Response Badge -->
         <div class="mt-auto text-center pt-3">
             <div class="d-inline-flex align-items-center px-4 py-2" style="background: linear-gradient(135deg, rgba(0, 102, 204, 0.1), rgba(51, 153, 255, 0.08)); border-radius: var(--s-radius-full); border: 1.5px solid rgba(0, 102, 204, 0.2);">
-                <i class="fas fa-clock me-2" style="color: var(--s-primary); font-size: 1rem;"></i>
+                <i class="fas fa-clock" style="color: var(--s-primary); font-size: 1rem;"></i>
                 <small style="color: var(--s-gray-700); font-weight: 500;">
                     We respond within <strong style="color: var(--s-primary);">24 hours</strong>
                 </small>
@@ -308,57 +308,65 @@
             
             <!-- Name Input -->
             <div class="form-group">
-                <label for="nameContact" class="form-label">
-                    <i class="fas fa-user-tie"></i>
+                <label for="nameContact" class="form-label d-flex align-items-center gap-2" style="font-family: 'Science Gothic', sans-serif; font-style: italic; font-weight: 600;">
+                    <div class="s-icon s-icon-sm s-icon-primary">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
                     Full Name
                 </label>
                 <div class="s-valid-wrapper">
                     <input type="text" class="form-control" id="nameContact" name="nameContact" placeholder="Enter your full name" required>
                 </div>
-                
+
                 <div id="name-error-contact" class="form-text text-danger d-none">Please enter a valid name.</div>
             </div>
 
             <!-- Email Input -->
             <div class="form-group">
-                <label for="emailContact" class="form-label">
-                    <i class="bi bi-envelope-at-fill"></i>
+                <label for="emailContact" class="form-label d-flex align-items-center gap-2" style="font-family: 'Science Gothic', sans-serif; font-style: italic; font-weight: 600;">
+                    <div class="s-icon s-icon-sm s-icon-primary">
+                        <i class="bi bi-envelope-at-fill"></i>
+                    </div>
                     Email Address
                 </label>
                 <div class="s-valid-wrapper">
                     <input type="email" class="form-control" id="emailContact" name="emailContact" placeholder="Enter your email" required>
                 </div>
-                
+
                 <div id="email-error-contact" class="form-text text-danger d-none">Please enter a valid email.</div>
             </div>
 
             <!-- Phone Input -->
             <div class="form-group">
-                <label for="phoneContact" class="form-label">
-                    <i class="fas fa-mobile-screen-button"></i>
+                <label for="phoneContact" class="form-label d-flex align-items-center gap-2" style="font-family: 'Science Gothic', sans-serif; font-style: italic; font-weight: 600;">
+                    <div class="s-icon s-icon-sm s-icon-primary">
+                        <i class="fas fa-mobile-screen-button"></i>
+                    </div>
                     Phone Number
                 </label>
                 <input type="tel" class="form-control" id="phoneContact" name="phoneContact" placeholder="Enter contact number" inputmode="numeric" required>
-                
+
                 <div id="phone-error-contact" class="form-text text-danger d-none">Please enter a valid contact number</div>
             </div>
 
             <!-- Message Input -->
             <div class="form-group">
-                <label for="messageContact" class="form-label">
-                    <i class="fas fa-comment-dots"></i>
+                <label for="messageContact" class="form-label d-flex align-items-center gap-2" style="font-family: 'Science Gothic', sans-serif; font-style: italic; font-weight: 600;">
+                    <div class="s-icon s-icon-sm s-icon-primary">
+                        <i class="fas fa-comment-dots"></i>
+                    </div>
                     Message/Enquiry
                 </label>
                 <div class="s-valid-wrapper">
                     <textarea class="form-control" id="messageContact" name="messageContact" rows="5" placeholder="Your message here..." required></textarea>
                 </div>
-                
+
                 <div id="message-error-contact" class="form-text text-danger d-none">Message too short. Please enter at least 10 words.</div>
             </div>
             
             <div class="text-end">
                 <button type="submit" id="submit-contact-form" class="s-btn s-btn-md s-btn-success s-full-width-btn">
-                    <i class="bi bi-send-fill"></i> Send Message
+                    <i class="bi bi-send-fill me-1"></i> Send Message
                 </button>
             </div>
         </form>
@@ -489,12 +497,12 @@
     </p>
     <div class="s-cta__actions">
                 <a href="book-demo.html" class="s-btn s-btn-success s-btn-glare s-full-width-btn">
-                    <i class="bi bi-collection-play-fill me-2"></i>
+                    <i class="bi bi-collection-play-fill me-1"></i>
                     <span>Book a Demo</span>
                 </a>
                 
                 <a href="contact.html" class="s-btn s-btn-secondary s-btn-glare s-full-width-btn">
-                    <i class="bi bi-telephone-outbound-fill me-2"></i>
+                    <i class="bi bi-telephone-outbound-fill me-1"></i>
                     <span>Talk to Our Team</span>
                 </a>
     </div>
@@ -555,7 +563,7 @@
     <div class="s-full-pic-card__content">
       <div class="s-full-pic-card__meta">
         <span class="s-pill s-pill-sm s-pill-info s-pill-round-sm">
-          <i class="bi bi-window-stack me-1"></i>Modules
+          <i class="bi bi-window-stack"></i>Modules
         </span>
         <p class="s-full-pic-card__title">Sapphire Work Order Management: A Complete Deep Dive</p>
       </div>
@@ -669,13 +677,13 @@
       <a href="/blog/preventive-maintenance-scheduling-automation.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/hospital.jpeg" alt="Preventive Maintenance Scheduling Automation"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Preventive Maintenance Scheduling Automation</p></div></a>
       <a href="/blog/total-cost-of-ownership-asset-management.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/diagnostic_center.jpeg" alt="Total Cost of Ownership Asset Management"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Total Cost of Ownership Asset Management</p></div></a>
       <a href="/blog/compliance-audit-trails-eam.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/research_test_laoratories.jpeg" alt="Compliance Audit Trails EAM"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Compliance Audit Trails EAM</p></div></a>
-      <a href="/blog/work-order-management-backbone-operations.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Corporate_Offices.jpeg" alt="Sapphire Work Order Management: A Complete Deep Dive"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack me-1"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Sapphire Work Order Management: A Complete Deep Dive</p></div></a>
-      <a href="/blog/spare-parts-inventory-management-eam.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/coworkingITpark.png" alt="Inventory Control in Sapphire: Zero Dead Stock"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack me-1"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Inventory Control in Sapphire: Zero Dead Stock</p></div></a>
-      <a href="/blog/vendor-contractor-management-eam.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Retail_Chains_&_Shopping_malls.jpeg" alt="Vendor Contractor Management EAM"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack me-1"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Vendor Contractor Management EAM</p></div></a>
-      <a href="/blog/asset-register-single-source-of-truth.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Real_Estate_Developors.jpeg" alt="Asset Register Single Source of Truth"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack me-1"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Asset Register Single Source of Truth</p></div></a>
-      <a href="/blog/asset-performance-dashboards-what-to-track.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/schools_universites.jpeg" alt="Sapphire Dashboard Intelligence: Metrics That Matter"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack me-1"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Sapphire Dashboard Intelligence: Metrics That Matter</p></div></a>
-      <a href="/blog/preventive-maintenance-scheduling-automation.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Hotels_Guest_Houses.jpeg" alt="Preventive Maintenance Scheduling in Sapphire EAM"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack me-1"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Preventive Maintenance Scheduling in Sapphire EAM</p></div></a>
-      <a href="/blog/iot-integration-with-eam-sensors-to-work-orders.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/co-working_&_IT_Park_2.jpeg" alt="IoT Integration With EAM Sensors to Work Orders"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack me-1"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">IoT Integration With EAM Sensors to Work Orders</p></div></a>
+      <a href="/blog/work-order-management-backbone-operations.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Corporate_Offices.jpeg" alt="Sapphire Work Order Management: A Complete Deep Dive"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Sapphire Work Order Management: A Complete Deep Dive</p></div></a>
+      <a href="/blog/spare-parts-inventory-management-eam.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/coworkingITpark.png" alt="Inventory Control in Sapphire: Zero Dead Stock"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Inventory Control in Sapphire: Zero Dead Stock</p></div></a>
+      <a href="/blog/vendor-contractor-management-eam.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Retail_Chains_&_Shopping_malls.jpeg" alt="Vendor Contractor Management EAM"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Vendor Contractor Management EAM</p></div></a>
+      <a href="/blog/asset-register-single-source-of-truth.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Real_Estate_Developors.jpeg" alt="Asset Register Single Source of Truth"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Asset Register Single Source of Truth</p></div></a>
+      <a href="/blog/asset-performance-dashboards-what-to-track.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/schools_universites.jpeg" alt="Sapphire Dashboard Intelligence: Metrics That Matter"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Sapphire Dashboard Intelligence: Metrics That Matter</p></div></a>
+      <a href="/blog/preventive-maintenance-scheduling-automation.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Hotels_Guest_Houses.jpeg" alt="Preventive Maintenance Scheduling in Sapphire EAM"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Preventive Maintenance Scheduling in Sapphire EAM</p></div></a>
+      <a href="/blog/iot-integration-with-eam-sensors-to-work-orders.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/co-working_&_IT_Park_2.jpeg" alt="IoT Integration With EAM Sensors to Work Orders"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">IoT Integration With EAM Sensors to Work Orders</p></div></a>
       <a href="/blog/manufacturing-equipment-downtime-eam.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Fitness_Centers_&_Gym.jpeg" alt="Manufacturing Equipment Downtime EAM"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Manufacturing Equipment Downtime EAM</p></div></a>
       <a href="/blog/hospitality-hotels-resorts-facility-eam.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/muncipal_departments.png" alt="Hospitality Hotels Resorts Facility EAM"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Hospitality Hotels Resorts Facility EAM</p></div></a>
       <a href="/blog/healthcare-medical-equipment-compliance.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/hospital.jpeg" alt="Healthcare Medical Equipment Compliance"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Healthcare Medical Equipment Compliance</p></div></a>
@@ -979,18 +987,18 @@
                         <p class="success-message">Thank you for your response. Our team will reach out to you shortly.</p>
                         <div class="success-details">
                             <div class="detail-item">
-                                <i class="fas fa-clock me-2"></i>
+                                <i class="fas fa-clock"></i>
                                 <span>Response within 24 hours</span>
                             </div>
                             <div class="detail-item">
-                                <i class="fas fa-envelope me-2"></i>
+                                <i class="fas fa-envelope"></i>
                                 <span>Check your email for updates</span>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer success-modal-footer">
                         <button type="button" class="s-btn-success" data-bs-dismiss="modal">
-                        <i class="fas fa-thumbs-up me-2"></i>Got It!
+                        <i class="fas fa-thumbs-up me-1"></i>Got It!
                         </button>
                     </div>
                 </div>

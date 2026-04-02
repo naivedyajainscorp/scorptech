@@ -1,0 +1,38 @@
+general laws
+- stay in the project's theme, the section backgorund must be light, keep the body backgorund
+
+
+
+capabiliteis cards
+
+card 1 - mobile USP card
+
+1. show the actual notifications in the mobile mockup inside the card, plan which must includ∈ a statement and a timestamp between 12 PM to 6PM random in a uniform format either 12 hr format or 24hr format and date in dd/mm/yyyy make sure if th e date changes it the date must be greater than the previous. and maybe you can just manually list all the notifications with these constraints so there are no calculation coding required, just create a simple list of all the notifications. 
+    list of notifications   
+        Asset AST-4382 assigned to Manoj Kumar
+        Asset VEH-2291 marked inactive
+        Asset MCH-8821 ownership location transferred
+        Diksha Soni updated asset location
+        Spanner (ST/OD/U24) assigned to Mahesh Kumar
+        Material (STM/CC/B14) requested 4 liters
+        Extended warranty activated for MCH-2210
+        Insurance expiring in 10 days (VEH-5521)
+        AMC renewal due for Generator Unit
+        Asset MCH-8821 marked End-of-Life
+        Asset VEH-2210 sold for ₹85,000
+        Scrap record created for Tool Batch TL-882
+        Asset discarded due to critical failure
+        Hammer (ST/BPH?U78) reported missing - Aditya Sharma
+        Ratchet Set (ST/TK/24RTST/U2) reported incomplete - Ram Swami
+        Shiner Polish 3M (ST/MAT31/B4) marked expired - 84 Liters (system action)
+        Car Wash Liquid (ST/MAT42/B76) 22 liters reported Unfit - Mukesh Arora
+        _______________________________________________________________________
+and increase the size of the mobile mockup as it is the center of attraction of the card
+2. use the icons already used in the core modules suite of the sapphire.html, use those same icons floating around the mockup
+3. The title of the card will be "Mobile Friendly" instead of "mobile USP"
+4. in the pills under the title, wirte "Feather Light" , "Intuituve", "Real Time"
+5. make sure to use the project theme colors and style
+6. no need of that center badge, remove it completely
+7. make sure to use text shadow for all the texts so that the readability of the text is not affected by the graphics running behind it, or manage it your way
+8. use the css elements like buttons from the projects css ssystems, project components, ther a button of every color, and size
+

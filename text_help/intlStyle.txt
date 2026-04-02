@@ -1,0 +1,188 @@
+/* ===================================================================
+Intl-Tel-Input — Popup-Optimized with SCORP Variables
+=================================================================== */
+
+/* ─────────────────────────────────────────────────────────────────
+BASE CONTAINER
+───────────────────────────────────────────────────────────────── */
+.iti {
+width: 100%;
+position: relative;
+display: inline-block;
+z-index: 1;
+}
+
+.iti--allow-dropdown {
+overflow: visible !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+INPUT FIELD
+───────────────────────────────────────────────────────────────── */
+.iti input,
+.iti input[type="tel"] {
+width: 100%;
+border-radius: var(--s-radius-md) !important;
+position: relative;
+z-index: 1;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+FLAG CONTAINER & SELECTED FLAG
+───────────────────────────────────────────────────────────────── */
+.iti__flag-container {
+position: absolute;
+top: 2px;
+bottom: 2px;
+left: 2px;
+padding: 0;
+display: flex;
+align-items: center;
+border-radius: 0;
+background: transparent;
+z-index: 2;
+}
+
+.iti--allow-dropdown .iti__selected-flag,
+.iti--separate-dial-code .iti__selected-flag {
+height: 100%;
+/* display: flex; */
+align-items: center;
+padding: 0 10px;
+border-radius: 0;
+background: transparent;
+z-index: 3;
+cursor: pointer;
+transition: var(--s-transition-fast);
+}
+
+.iti--allow-dropdown .iti__selected-flag:hover {
+background: rgba(0, 102, 204, 0.05);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+SEPARATE DIAL CODE MODE
+───────────────────────────────────────────────────────────────── */
+.iti--separate-dial-code input {
+border-left: initial;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+COUNTRY DROPDOWN LIST (Popup Mode)
+───────────────────────────────────────────────────────────────── */
+.iti__country-list {
+z-index: 9999 !important;
+position: absolute !important;
+box-shadow: 0 10px 40px rgba(0, 102, 204, 0.15);
+background: var(--s-white);
+max-height: 400px;
+margin-top: 4px;
+opacity: 1;
+}
+
+/* Inline dropdown variant (if used) */
+.iti--inline-dropdown .iti__country-list {
+/* max-height: 185px; */
+width: 100% !important;
+}
+
+.iti--inline-dropdown .iti__dropdown-content {
+/* bottom: 10rem; */
+border: 1px solid var(--s-gray-200);
+border-radius: var(--s-radius-md);
+width: 100%;
+max-width: 400px;
+}
+
+/* Override for specific border needs */
+.iti__flag-container,
+.iti--separate-dial-code .iti__flag-container {
+border-right: 2px solid var(--s-gray-800);
+}
+
+.iti__divider {
+border-bottom: 1px solid var(--s-gray-200);
+margin: 0.25rem 0;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────
+SEARCH INPUT (KEPT INDIVIDUAL)
+───────────────────────────────────────────────────────────────── */
+.iti__search-input {
+border: 1px solid var(--s-gray-300);
+border-radius: var(--s-radius-md);
+padding: 0.65rem 1rem;
+font-size: var(--s-text-sm);
+width: 100%;
+box-sizing: border-box;
+transition: var(--s-transition-fast);
+}
+
+.iti__search-input:focus {
+outline: none;
+border-color: var(--s-primary);
+box-shadow: var(--s-shadow-lg);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+COUNTRY ITEMS
+───────────────────────────────────────────────────────────────── */
+.iti__country {
+padding: 0.5rem 1rem;
+transition: var(--s-transition-fast);
+}
+
+.iti__country:hover,
+.iti__country.iti__highlight {
+background: rgba(0, 102, 204, 0.08);
+}
+
+.iti__country.iti__active {
+background: rgba(0, 102, 204, 0.12);
+font-weight: var(--s-font-medium);
+}
+
+.iti__dial-code {
+color: var(--s-gray-800);
+}
+
+.iti__selected-country-primary{
+border-radius: var(--s-radius-md) 0 0 var(--s-radius-md);
+border: none;
+background: var(--s-gray-200);
+height: 96%;
+margin-left: 1px;
+background: var(--s-neutral-100);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+FOCUS & ERROR STATES
+───────────────────────────────────────────────────────────────── */
+.iti:has(input:focus) .iti__flag-container {
+border-right-color: var(--s-primary);
+}
+
+.iti:has(input.is-invalid) .iti__flag-container {
+border-right-color: var(--s-danger);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   MOBILE OPTIMIZATION
+   ───────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .iti__country-list {
+    max-height: 70vh;
+    border-radius: var(--s-radius-sm);
+    box-shadow: var(--s-shadow-lg);
+  }
+  
+  .iti__search-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  .iti--inline-dropdown .iti__dropdown-content {
+    bottom: 0;
+    width: 100%;
+  }
+}

@@ -131,7 +131,7 @@ class NetCostRecovery {
                         </div>
                         <div class="s-ncr-metric-content">
                             <span class="s-ncr-metric-label s-text-gradient-primary">Recovery Rate</span>
-                            <span class="s-ncr-metric-value" data-metric="recoveryRate">${totals.recoveryRate}%</span>
+                            <span class="s-ncr-metric-value progress-percent" data-metric="recoveryRate">${totals.recoveryRate}%</span>
                         </div>
                     </div>
                     <div class="s-ncr-metric ${isGain ? 's-label-success-soft' : 's-label-danger-soft'}" data-metric-state="${isGain ? 'gain' : 'loss'}">

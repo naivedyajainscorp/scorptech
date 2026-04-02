@@ -5,6 +5,7 @@
 @import url('css/utilities.css');
 /* pages */
 @import url('css/mobileUSP.css');
+@import url('css/sapphire.css');
 @import url('css/about.css');
 @import url('css/book-demo.css');
 @import url('css/contact.css');
@@ -1701,8 +1702,7 @@
   color: #ffffff;
   margin: 0;
   font-family: 'Science Gothic', sans-serif;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4), 
-              0 1px 3px rgba(0, 0, 0, 0.15);
+  text-shadow: var(--s-text-shadow-xs);
 }
 
 /* ── Read time ── */
