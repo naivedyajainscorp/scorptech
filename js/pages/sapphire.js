@@ -2,6 +2,9 @@
    SAPPHIRE PAGE INITIALIZATION
    ════════════════════════════════════════════════════════════════════════════ */
 
+import { initInfiniteScroll } from '../components/InfiniteScroll.js';
+import { initBackground } from '../components/fog_bg.js';
+
 console.log('💎 Sapphire page initialization started');
 
 /* ════════════════════════════════════════════════════════════════════════════
@@ -284,8 +287,6 @@ function initSapphireCapabilityCards() {
    Fog Background Initialization
    ═════════════════════════════════════════════════════════════════════════════ */
 
-import { initBackground } from '../components/fog_bg.js';
-
 document.addEventListener('DOMContentLoaded', () => {
   // Showcase WHITE tone moods only for Sapphire hero
   const sapphireHero = document.querySelector('#sapphireHero');
@@ -422,6 +423,31 @@ function initModuleShowcase() {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
+// 4. Industry Card Pill Rails — Infinite Scroll
+// ─────────────────────────────────────────────────────────────────────────────
+
+function initIndustryPillRails() {
+  const rails = document.querySelectorAll('.s-cm-feature-subrail');
+  if (!rails.length) {
+    console.log('ℹ️ Industry pill rail containers not found');
+    return;
+  }
+
+  let count = 0;
+  rails.forEach((rail, i) => {
+    rail.id = `industry-pill-rail-${i}`;
+    const result = initInfiniteScroll(`#${rail.id}`, {
+      direction: 'left',
+      speed: 'normal',
+      cloneMultiplier: 2
+    });
+    if (result) count++;
+  });
+
+  console.log(`✅ Industry pill rails initialized: ${count}/${rails.length}`);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 // INITIALIZATION
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -430,6 +456,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeSapphireHeroGrid();
   initModuleShowcase();
   initSapphireCapabilityCards();
+  initIndustryPillRails();
 
   // Reinitialize grid on window resize (debounced)
   let resizeTimeout;

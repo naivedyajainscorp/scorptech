@@ -3,7 +3,13 @@
     "allow": [
       "Bash(powershell *)",
       "Bash(python *)",
-      "Bash(del *)"
+      "Bash(del *)",
+      "Bash(start *)",
+      "Bash(type *)",
+      "Bash(node *)",
+      "Bash(sapphire.html *)",
+      "Bash(ren *)",
+      "Bash(move *)"
     ]
   },
   "$version": 3

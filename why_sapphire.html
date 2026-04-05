@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why SCORP Sapphire | SCORP</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" href="assets/images/scorp-logo-favicon.png" type="image/png">
+    <link rel="icon" type="image/svg+xml" href="assets/images/scorp-logo-favicon.png">
+    <link rel="apple-touch-icon" href="assets/images/scorp-logo-favicon.png">
+    <link rel="shortcut icon" href="assets/images/scorp-logo-favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- VanillaTilt -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
+    <style>
+        /* ═══════════════════════════════════════════════════════════════
+           ROOT & BASE - LIGHT THEME
+           ═══════════════════════════════════════════════════════════════ */
+        :root {
+            --primary: #1565c0;
+            --primary-dark: #0d47a1;
+            --primary-light: #42a5f5;
+            --primary-pale: #e3f2fd;
+            --accent: #00bcd4;
+            --dark: #1e293b;
+            --text: #334155;
+            --text-muted: #64748b;
+            --text-light: #94a3b8;
+            --white: #ffffff;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --gradient: linear-gradient(135deg, #1565c0 0%, #42a5f5 100%);
+            --gradient-text: linear-gradient(135deg, #1565c0 0%, #00bcd4 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           BACKGROUND
+           ═══════════════════════════════════════════════════════════════ */
+        .why-page {
+            position: relative;
+            background: 
+                radial-gradient(ellipse at 50% 0%, rgba(21, 101, 192, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 30%, rgba(0, 188, 212, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 20% 70%, rgba(21, 101, 192, 0.05) 0%, transparent 50%),
+                var(--bg);
+            min-height: 100vh;
+        }
+
+        .why-page::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(21, 101, 192, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(21, 101, 192, 0.04) 1px, transparent 1px);
+            background-size: 80px 80px;
+            pointer-events: none;
+            z-index: 0;
+            mask-image: radial-gradient(ellipse at center, black 0%, transparent 80%);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           HERO SECTION
+           ═══════════════════════════════════════════════════════════════ */
+        .why-hero {
+            position: relative;
+            padding: 7rem 1.5rem 5rem;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .why-hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.5rem;
+            background: var(--white);
+            border: 2px solid rgba(21, 101, 192, 0.2);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 20px rgba(21, 101, 192, 0.1);
+        }
+
+        .why-hero__badge i {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.2); }
+        }
+
+        .why-hero__title {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .why-hero__title .highlight {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+            position: relative;
+        }
+
+        .why-hero__title .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-text);
+            border-radius: 2px;
+        }
+
+        .why-hero__subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           SECTION HEADER
+           ═══════════════════════════════════════════════════════════════ */
+        .why-section {
+            position: relative;
+            padding: 5rem 0;
+            z-index: 1;
+        }
+
+        .why-section .s-section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 0 1.5rem;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           QUOTE CARDS GRID - FULL WIDTH LAYOUT
+           ═══════════════════════════════════════════════════════════════ */
+        .quote-showcase {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            padding: 0 1.5rem;
+        }
+
+        /* Full width card wrappers */
+        .quote-card-wrapper {
+            position: relative;
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            opacity: 1;
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            width: 100%;
+        }
+
+        .quote-card-wrapper.is-visible {
+            opacity: 1;
+            transform: perspective(1000px) translateY(0);
+        }
+
+        /* Full width card container */
+        .quote-card-wrapper .s-feature-card {
+            height: 100%;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: row;
+            gap: 0;
+            background: var(--white);
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 30px rgba(21, 101, 192, 0.08);
+            border: 1px solid rgba(21, 101, 192, 0.06);
+            overflow: hidden;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           FLOATING ICON ON LEFT SIDE (NO BACKGROUND, NO SHADOW)
+           ═══════════════════════════════════════════════════════════════ */
+        .quote-card-wrapper .s-icon-box-glass {
+            position: sticky;
+            left: 0;
+            width: 220px;
+            min-height: 200px;
+            flex-shrink: 0;
+            margin: 0;
+            top: auto;
+            transform: translateZ(0) !important;
+            box-shadow: none;
+            border: none;
+            border-radius: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            overflow: visible;
+        }
+
+        .quote-card-wrapper .s-icon-box-glass img {
+            width: 10rem;
+            height: 10rem;
+            object-fit: contain;
+            filter: drop-shadow(0 8px 16px rgba(21, 101, 192, 0.15));
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           CARD CONTENT (RIGHT SIDE)
+           ═══════════════════════════════════════════════════════════════ */
+        .quote-card-wrapper .s-feature-content {
+            flex: 1;
+            padding: 2.5rem 2.5rem 2.5rem 2rem;
+            margin: 0;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background: transparent;
+            border-radius: 0;
+            box-shadow: none;
+            border: none;
+            overflow: hidden;
+        }
+
+        /* Decorative card number */
+        .quote-card-wrapper .s-feature-content::before {
+            content: attr(data-card-num);
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            font-size: 6rem;
+            font-weight: 900;
+            color: rgba(21, 101, 192, 0.04);
+            line-height: 1;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .quote-card-wrapper .s-feature-content h5 {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--primary);
+            background: rgba(21, 101, 192, 0.08);
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1.25rem;
+            align-self: flex-start;
+        }
+
+        .quote-card-wrapper .s-feature-content .quote-text {
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+            color: var(--dark);
+            margin-bottom: 1.25rem;
+        }
+
+        .quote-card-wrapper .s-feature-content .quote-text .highlight {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline;
+        }
+
+        .quote-card-wrapper .s-feature-content .desc-text {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        /* CLICKBAIT BUTTON - Bottom Right */
+        .quote-card-wrapper .s-feature-content .quote-action {
+            margin-top: auto;
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 1rem;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           FLOATING MINI CARDS
+           ═══════════════════════════════════════════════════════════════ */
+        .floating-cards {
+            position: absolute;
+            inset: -20px;
+            pointer-events: none;
+            z-index: 10;
+            overflow: visible;
+        }
+
+        .float-card {
+            position: absolute;
+            background: var(--white);
+            border-radius: 0.75rem;
+            padding: 0.75rem 1rem;
+            box-shadow: 0 4px 20px rgba(21, 101, 192, 0.12);
+            border: 1px solid rgba(21, 101, 192, 0.1);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text);
+            white-space: nowrap;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: floatCardIn 0.6s ease forwards;
+        }
+
+        .float-card i {
+            color: var(--primary);
+            margin-right: 0.4rem;
+            font-size: 0.85rem;
+        }
+
+        @keyframes floatCardIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Position variations */
+        .float-card--top-right {
+            top: -15px;
+            right: -20px;
+            animation-delay: 0.2s;
+        }
+
+        .float-card--bottom-left {
+            bottom: 40px;
+            left: -25px;
+            animation-delay: 0.4s;
+        }
+
+        .float-card--mid-right {
+            top: 50%;
+            right: -30px;
+            transform: translateY(-50%);
+            animation-delay: 0.6s;
+        }
+
+        .float-card--top-left {
+            top: -10px;
+            left: -15px;
+            animation-delay: 0.3s;
+        }
+
+        .float-card--bottom-right {
+            bottom: 30px;
+            right: -20px;
+            animation-delay: 0.5s;
+        }
+
+        .float-card--mid-left {
+            top: 40%;
+            left: -25px;
+            animation-delay: 0.7s;
+        }
+
+        /* Hover animation */
+        .quote-card-wrapper:hover .float-card {
+            animation: floatHover 2s ease-in-out infinite;
+        }
+
+        @keyframes floatHover {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-8px) rotate(2deg); }
+            75% { transform: translateY(4px) rotate(-1deg); }
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           DIVIDER
+           ═══════════════════════════════════════════════════════════════ */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(21, 101, 192, 0.15), transparent);
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .section-divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 6px;
+            height: 6px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(21, 101, 192, 0.4);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           CTA SECTION
+           ═══════════════════════════════════════════════════════════════ */
+        .why-cta-wrapper {
+            padding: 0 1.5rem;
+            margin-top: 3rem;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           RESPONSIVE
+           ═══════════════════════════════════════════════════════════════ */
+        @media (max-width: 992px) {
+            .quote-showcase {
+                gap: 2.5rem;
+            }
+
+            /* Stack icon on top, content below - same as original */
+            .quote-card-wrapper .s-feature-card {
+                flex-direction: column;
+            }
+
+            .quote-card-wrapper .s-icon-box-glass {
+                width: 100%;
+                min-height: auto;
+                padding: 1.5rem 0 1rem;
+            }
+
+            .quote-card-wrapper .s-icon-box-glass img {
+                width: 8rem;
+                height: 8rem;
+            }
+
+            .quote-card-wrapper .s-feature-content {
+                padding: 0 1.5rem 2rem;
+            }
+
+            /* Hide floating cards on smaller screens */
+            .floating-cards {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .why-hero {
+                padding: 5rem 1rem 4rem;
+            }
+
+            .why-section {
+                padding: 3rem 0;
+            }
+
+            .quote-showcase {
+                padding: 0 1rem;
+            }
+
+            .quote-card-wrapper .s-feature-content {
+                padding: 0 1.25rem 1.5rem;
+            }
+
+            .quote-card-wrapper .s-feature-content .quote-text {
+                font-size: clamp(1.5rem, 6vw, 2rem);
+            }
+
+            .quote-card-wrapper .s-icon-box-glass {
+                padding: 1rem 0 0.75rem;
+            }
+
+            .quote-card-wrapper .s-icon-box-glass img {
+                width: 7rem;
+                height: 7rem;
+            }
+
+            .why-cta-wrapper {
+                padding: 0 1rem;
+            }
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           SCROLL PROGRESS
+           ═══════════════════════════════════════════════════════════════ */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(21, 101, 192, 0.1);
+            z-index: 1000;
+        }
+
+        .scroll-progress__bar {
+            height: 100%;
+            background: var(--gradient);
+            width: 0%;
+            box-shadow: 0 0 20px rgba(21, 101, 192, 0.4);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           FLAME BUTTON - GAME UI STYLE
+           ═══════════════════════════════════════════════════════════════ */
+        
+        /* Flame Button - Base */
+        .flame-btn {
+            /* Idle state - Realistic blue flame (gas flame colors) */
+            --flame-primary: #1d4ed8;
+            --flame-secondary: #3b82f6;
+            --flame-bright: #60a5fa;
+            --flame-dark: #1e3a8a;
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.9em 2em;
+            border: none;
+            border-radius: 0.5em;
+            background: linear-gradient(135deg, var(--flame-primary) 0%, var(--flame-secondary) 50%, var(--flame-primary) 100%);
+            background-size: 200% 200%;
+            cursor: pointer;
+            overflow: visible;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 
+                0 4px 15px rgba(29, 78, 216, 0.4),
+                0 0 30px rgba(59, 130, 246, 0.2),
+                inset 0 2px 10px rgba(96, 165, 250, 0.25);
+            min-width: 180px;
+            width: auto;
+        }
+
+        /* Animated flame gradient - Deep blue with subtle indigo hints */
+        .flame-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                135deg,
+                #1e3a8a 0%,
+                #1d4ed8 25%,
+                #3b82f6 50%,
+                #6366f1 75%,
+                #1e3a8a 100%
+            );
+            background-size: 300% 300%;
+            border-radius: inherit;
+            opacity: 0.5;
+            animation: flameFlow 3s ease infinite;
+            z-index: 1;
+            transition: all 0.5s ease;
+        }
+
+        /* Inner flame shimmer - Blue only */
+        .flame-btn::after {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background: linear-gradient(
+                180deg,
+                transparent 0%,
+                rgba(96, 165, 250, 0.2) 30%,
+                rgba(59, 130, 246, 0.1) 60%,
+                transparent 100%
+            );
+            border-radius: inherit;
+            animation: flameShimmer 2.5s ease-in-out infinite;
+            z-index: 2;
+            transition: all 0.5s ease;
+        }
+
+        @keyframes flameFlow {
+            0%, 100% { background-position: 0% 50%; }
+            25% { background-position: 50% 100%; }
+            50% { background-position: 100% 50%; }
+            75% { background-position: 50% 0%; }
+        }
+
+        @keyframes flameShimmer {
+            0%, 100% { opacity: 0.4; transform: translateY(0); }
+            50% { opacity: 0.7; transform: translateY(-3px); }
+        }
+
+        /* Text always above flame */
+        .flame-btn__text {
+            position: relative;
+            z-index: 10;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 0.05em;
+            text-shadow: var(--s-text-shadow);
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        /* Hover state - FIRE! Orange/Yellow */
+        .flame-btn:hover,
+        .flame-btn:focus-visible,
+        .flame-btn.is-fired {
+            --flame-primary: #ff6b00;
+            --flame-secondary: #ff8c00;
+            --flame-bright: #ffaa00;
+            --flame-dark: #cc4400;
+            transform: scale(1.05);
+            box-shadow: 
+                0 6px 25px rgba(255, 107, 0, 0.6),
+                0 0 50px rgba(255, 140, 0, 0.4),
+                inset 0 2px 10px rgba(255, 220, 150, 0.5);
+        }
+
+        .flame-btn:hover::before,
+        .flame-btn.is-fired::before {
+            background: linear-gradient(
+                135deg,
+                #cc4400 0%,
+                #ff6b00 25%,
+                #ffaa00 50%,
+                #ff8c00 75%,
+                #cc4400 100%
+            );
+            background-size: 300% 300%;
+            animation-duration: 1.5s;
+            opacity: 0.8;
+        }
+
+        .flame-btn:hover::after,
+        .flame-btn.is-fired::after {
+            background: linear-gradient(
+                180deg,
+                transparent 0%,
+                rgba(255, 200, 100, 0.3) 30%,
+                rgba(255, 150, 50, 0.2) 60%,
+                transparent 100%
+            );
+            animation-duration: 1s;
+            opacity: 0.9;
+        }
+
+        /* Eyebrow fire colors when expanded */
+        .flame-btn:hover .flame-eyebrow,
+        .flame-btn.is-fired .flame-eyebrow {
+            transform: translate(-6px, -8px) rotate(-8deg);
+            border-top-color: #ffaa00;
+            border-left-color: #ff6b00;
+            width: 22px;
+            height: 22px;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           EYEBROW CORNER - TOP-LEFT OUTSIDE BRACKET
+           ═══════════════════════════════════════════════════════════════ */
+        .flame-eyebrow {
+            position: absolute;
+            top: -14px;
+            left: -30px;
+            width: 18px;
+            height: 18px;
+            pointer-events: none;
+            z-index: 11;
+            /* Blue flame colors at rest */
+            border-top: 2.5px solid #3b82f6;
+            border-left: 2.5px solid #1d4ed8;
+            border-radius: 10px 0 0 0;
+            transform: translate(0, 0) rotate(0);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* On hover — transitions to orange/yellow fire + raises UP and OUT */
+        .flame-btn:hover .flame-eyebrow,
+        .flame-btn:focus-visible .flame-eyebrow {
+            transform: translate(-6px, -8px) rotate(-8deg);
+            border-top-color: #ffaa00;
+            border-left-color: #ff6b00;
+            width: 22px;
+            height: 22px;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           FLAME BUTTON - SMALL VARIANT (for cards)
+           ═══════════════════════════════════════════════════════════════ */
+        .flame-btn--sm {
+            --flame-primary: #1d4ed8;
+            --flame-secondary: #3b82f6;
+            --flame-bright: #60a5fa;
+            --flame-dark: #1e3a8a;
+            padding: 0.6em 1.4em;
+            min-width: 120px;
+            font-size: 0.8rem;
+            border-radius: 0.4em;
+            box-shadow: 
+                0 3px 10px rgba(29, 78, 216, 0.3),
+                0 0 20px rgba(59, 130, 246, 0.15),
+                inset 0 1px 6px rgba(96, 165, 250, 0.2);
+        }
+
+        .flame-btn--sm::before {
+            opacity: 0.4;
+        }
+
+        .flame-btn--sm::after {
+            opacity: 0.3;
+        }
+
+        .flame-btn--sm:hover,
+        .flame-btn--sm.is-fired {
+            --flame-primary: #ff6b00;
+            --flame-secondary: #ff8c00;
+            --flame-bright: #ffaa00;
+            --flame-dark: #cc4400;
+            transform: scale(1.06);
+            box-shadow: 
+                0 4px 18px rgba(255, 107, 0, 0.5),
+                0 0 35px rgba(255, 140, 0, 0.3),
+                inset 0 1px 8px rgba(255, 220, 150, 0.4);
+        }
+
+        .flame-btn--sm:hover::before,
+        .flame-btn--sm.is-fired::before {
+            opacity: 0.7;
+            animation-duration: 1.2s;
+        }
+
+        .flame-btn--sm:hover::after,
+        .flame-btn--sm.is-fired::after {
+            opacity: 0.6;
+            animation-duration: 0.8s;
+        }
+
+        /* Small eyebrow */
+        .flame-btn--sm .flame-eyebrow {
+            top: -10px;
+            left: -20px;
+            width: 18px;
+            height: 18px;
+            border-top-width: 2px;
+            border-left-width: 2px;
+        }
+
+        .flame-btn--sm:hover .flame-eyebrow {
+            transform: translate(-5px, -6px) rotate(-6deg);
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           FEELING FIESTY QUOTE CARD
+           ═══════════════════════════════════════════════════════════════ */
+        .fq-wrap {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+            position: relative;
+        }
+
+        .fq-label-idle,
+        .fq-label-hover {
+            display: inline-block;
+            transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            white-space: nowrap;
+            vertical-align: middle;
+        }
+
+        .fq-label-idle {
+            opacity: 1;
+            max-width: 200px;
+        }
+
+        .fq-label-hover {
+            opacity: 0;
+            max-width: 0;
+        }
+
+        /* On hover — idle collapses, hover expands, button resizes with it */
+        .flame-btn:hover .fq-label-idle,
+        .flame-btn:hover .fq-label-idle,
+        .fq-trigger[aria-expanded="true"] .fq-label-idle {
+            opacity: 0;
+            max-width: 0;
+        }
+
+        .flame-btn:hover .fq-label-hover,
+        .flame-btn:hover .fq-label-hover,
+        .fq-trigger[aria-expanded="true"] .fq-label-hover {
+            opacity: 1;
+            max-width: 400px;
+        }
+
+        /* Expandable Content */
+        .fq-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            max-width: 500px;
+            overflow: hidden;
+            margin-top: 0;
+        }
+
+        .fq-content.is-open {
+            grid-template-rows: 1fr;
+        }
+
+        .fq-content__inner {
+            overflow: hidden;
+            min-height: 0;
+            padding: 0;
+            opacity: 0;
+            transition: all 0.4s ease;
+            background: #fff;
+            border-radius: 0 0 1rem 1rem;
+            border: 1px solid rgba(255, 107, 0, 0.2);
+            border-top: none;
+            box-shadow: 0 10px 40px rgba(255, 107, 0, 0.15);
+        }
+
+        .fq-content.is-open .fq-content__inner {
+            padding: 2rem 2rem 1.5rem;
+            opacity: 1;
+        }
+
+        .fq-content__heading {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1a0a00;
+            margin: 0 0 1rem;
+            line-height: 1.3;
+        }
+
+        .fq-content__body {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #334155;
+            margin: 0 0 1rem;
+        }
+
+        .fq-collapse-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.5em 1.25em;
+            border: 2px solid rgba(255, 107, 0, 0.4);
+            border-radius: 0.4em;
+            background: transparent;
+            color: #ff6b00;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .fq-collapse-btn:hover {
+            background: rgba(255, 107, 0, 0.1);
+            color: #cc4400;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress">
+        <div class="scroll-progress__bar"></div>
+    </div>
+
+    <div class="why-page">
+
+        <!-- HERO -->
+        <section class="why-hero">
+            <div class="why-hero__badge">
+                <i class="fas fa-bolt"></i>
+                <span>No Fluff. Just What Works.</span>
+            </div>
+            <h1 class="why-hero__title">
+                Others sell <span class="highlight">dreams.</span><br>
+                We ship <span class="highlight">weapons.</span>
+            </h1>
+            <p class="why-hero__subtitle">
+                While competitors polish pitch decks, we build software that survives 
+                the chaos of real manufacturing. No corporate speak. No fake promises. 
+                Just what actually works.
+            </p>
+        </section>
+
+        <!-- WHY SCORP -->
+        <section class="why-section" id="why-scorp">
+            <div class="s-section-header">
+                <h2 class="s-section-title gradient">Why Scorp?</h2>
+                <p class="s-section-subtitle">
+                    Because "good enough" software is costing you more than you think.
+                </p>
+            </div>
+
+            <div class="quote-showcase" id="scorp-showcase">
+                <!-- Card 01: Effortless to Use -->
+                <div class="quote-card-wrapper" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare="false">
+                    <div class="floating-cards">
+                        <div class="float-card float-card--top-right">
+                            <i class="bi bi-lightning-charge-fill"></i> Instant Setup
+                        </div>
+                        <div class="float-card float-card--1bottom-left">
+                            <i class="bi bi-check-circle-fill"></i> Zero Training
+                        </div>
+                        <div class="float-card float-card--mid-right">
+                            <i class="bi bi-speedometer2"></i> Day 1 Productivity
+                        </div>
+                    </div>
+                    <div class="s-feature-card">
+                        <div class="s-icon-box-glass">
+                            <img src="assets/images/effortless_to_use.png" style="height: 15rem; width: 20rem;" alt="Effortless to Use">
+                        </div>
+                        <div class="s-feature-content" data-card-num="01">
+                            <h5>Effortless to Use</h5>
+                            <blockquote class="quote-text">
+                                Good software doesn't explain itself. <span class="highlight">It makes sense instantly.</span>
+                            </blockquote>
+                            <p class="desc-text">
+                                If your ERP needs a training manual, it's already failed. Your team should be productive on day one — not week six.
+                            </p>
+                            <div class="quote-action">
+                                <div class="fq-wrap">
+                                    <button class="flame-btn flame-btn--sm fq-trigger" aria-expanded="false" data-flame-fq="">
+                                        <span class="flame-btn__text">
+                                            <span class="flame-eyebrow" aria-hidden="true"></span>
+                                            <span class="fq-label-idle">Feeling Fiesty?</span>
+                                            <span class="fq-label-hover">Feeling Fiesty? — Yes!! You are</span>
+                                        </span>
+                                    </button>
+                                    <div class="fq-content" id="fq" role="region" aria-hidden="true">
+                                        <div class="fq-content__inner">
+                                            <h3 class="fq-content__heading">Good. That's exactly who we built this for.</h3>
+                                            <p class="fq-content__body">
+                                                If your ERP needs a training manual, it's already failed. Your team should be productive on day one — not week six.
+                                            </p>
+                                            <button class="fq-collapse-btn" data-flame-fq="">
+                                                <span>Close</span>
+                                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                                                    <path d="M2 10L7 5L12 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 02: Quick to Implement -->
+                <div class="quote-card-wrapper" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare="false">
+                    <div class="floating-cards">
+                        <div class="float-card float-card--top-left">
+                            <i class="bi bi-clock-history"></i> 2-Week Launch
+                        </div>
+                        <div class="float-card float-card--bottom-right">
+                            <i class="bi bi-graph-up-arrow"></i> Fast ROI
+                        </div>
+                        <div class="float-card float-card--mid-left">
+                            <i class="bi bi-puzzle-fill"></i> Custom Fit
+                        </div>
+                    </div>
+                    <div class="s-feature-card">
+                        <div class="s-icon-box-glass">
+                            <img src="assets/images/quick_to_implement.png" style="height: 15rem; width: 20rem;" alt="Quick to Implement">
+                        </div>
+                        <div class="s-feature-content" data-card-num="02">
+                            <h5>Quick to Implement</h5>
+                            <blockquote class="quote-text">
+                                We don't bend your business into a template. <span class="highlight">We study it. Respect it. Build around it.</span>
+                            </blockquote>
+                            <p class="desc-text">
+                                Implementation shouldn't feel like surgery. It should feel like evolution. We adapt to you — not the other way around.
+                            </p>
+                            <div class="quote-action">
+                                <div class="fq-wrap">
+                                    <button class="flame-btn flame-btn--sm fq-trigger" aria-expanded="false" data-flame-fq="">
+                                        <span class="flame-btn__text">
+                                            <span class="flame-eyebrow" aria-hidden="true"></span>
+                                            <span class="fq-label-idle">Feeling Fiesty?</span>
+                                            <span class="fq-label-hover">Feeling Fiesty? — Yes!! You are</span>
+                                        </span>
+                                    </button>
+                                    <div class="fq-content" id="fq" role="region" aria-hidden="true">
+                                        <div class="fq-content__inner">
+                                            <h3 class="fq-content__heading">Good. That's exactly who we built this for.</h3>
+                                            <p class="fq-content__body">
+                                                If your ERP needs a training manual, it's already failed. Your team should be productive on day one — not week six.
+                                            </p>
+                                            <button class="fq-collapse-btn" data-flame-fq="">
+                                                <span>Close</span>
+                                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                                                    <path d="M2 10L7 5L12 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 03: Continuously Evolving -->
+                <div class="quote-card-wrapper" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare="false">
+                    <div class="floating-cards">
+                        <div class="float-card float-card--top-right">
+                            <i class="bi bi-arrow-repeat"></i> Auto Updates
+                        </div>
+                        <div class="float-card float-card--bottom-left">
+                            <i class="bi bi-stars"></i> Always Fresh
+                        </div>
+                    </div>
+                    <div class="s-feature-card">
+                        <div class="s-icon-box-glass">
+                            <img src="assets/images/continuously_evolving.png" style="height: 15rem; width: 22rem;" alt="Continuously Evolving">
+                        </div>
+                        <div class="s-feature-content" data-card-num="03">
+                            <h5>Continuously Evolving</h5>
+                            <blockquote class="quote-text">
+                                Stagnant software ages fast. <span class="highlight">We listen. We refine. We sharpen.</span>
+                            </blockquote>
+                            <p class="desc-text">
+                                Sapphire grows with your ambition — not behind it. While competitors sell yesterday's features, we're building tomorrow's.
+                            </p>
+                            <div class="quote-action">
+                                <div class="fq-wrap">
+                                    <button class="flame-btn flame-btn--sm fq-trigger" aria-expanded="false" data-flame-fq="">
+                                        <span class="flame-btn__text">
+                                            <span class="flame-eyebrow" aria-hidden="true"></span>
+                                            <span class="fq-label-idle">Feeling Fiesty?</span>
+                                            <span class="fq-label-hover">Feeling Fiesty? — Yes!! You are</span>
+                                        </span>
+                                    </button>
+                                    <div class="fq-content" id="fq" role="region" aria-hidden="true">
+                                        <div class="fq-content__inner">
+                                            <h3 class="fq-content__heading">Good. That's exactly who we built this for.</h3>
+                                            <p class="fq-content__body">
+                                                If your ERP needs a training manual, it's already failed. Your team should be productive on day one — not week six.
+                                            </p>
+                                            <button class="fq-collapse-btn" data-flame-fq="">
+                                                <span>Close</span>
+                                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                                                    <path d="M2 10L7 5L12 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 04: Built for Reality -->
+                <div class="quote-card-wrapper" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare="false">
+                    <div class="floating-cards">
+                        <div class="float-card float-card--top-left">
+                            <i class="bi bi-buildings-fill"></i> Shop Floor Ready
+                        </div>
+                        <div class="float-card float-card--bottom-right">
+                            <i class="bi bi-shield-check"></i> Battle Tested
+                        </div>
+                        <div class="float-card float-card--mid-right">
+                            <i class="bi bi-people-fill"></i> Real Teams
+                        </div>
+                    </div>
+                    <div class="s-feature-card">
+                        <div class="s-icon-box-glass">
+                            <img src="assets/images/built_for_the_real_world.png" style="height: 15rem; width: 22rem;" alt="Built for the Real World">
+                        </div>
+                        <div class="s-feature-content" data-card-num="04">
+                            <h5>Built for Reality</h5>
+                            <blockquote class="quote-text">
+                                Spreadsheets don't run factories. <span class="highlight">People do.</span>
+                            </blockquote>
+                            <p class="desc-text">
+                                Real deadlines. Real pressure. Real accountability. Sapphire is engineered for the shop floor — not the boardroom.
+                            </p>
+                            <div class="quote-action">
+                                <div class="fq-wrap">
+                                    <button class="flame-btn flame-btn--sm fq-trigger" aria-expanded="false" data-flame-fq="">
+                                        <span class="flame-btn__text">
+                                            <span class="flame-eyebrow" aria-hidden="true"></span>
+                                            <span class="fq-label-idle">Feeling Fiesty?</span>
+                                            <span class="fq-label-hover">Feeling Fiesty? — Yes!! You are</span>
+                                        </span>
+                                    </button>
+                                    <div class="fq-content" id="fq" role="region" aria-hidden="true">
+                                        <div class="fq-content__inner">
+                                            <h3 class="fq-content__heading">Good. That's exactly who we built this for.</h3>
+                                            <p class="fq-content__body">
+                                                If your ERP needs a training manual, it's already failed. Your team should be productive on day one — not week six.
+                                            </p>
+                                            <button class="fq-collapse-btn" data-flame-fq="">
+                                                <span>Close</span>
+                                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                                                    <path d="M2 10L7 5L12 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- WHY SAPPHIRE -->
+        <section class="why-section" id="why-sapphire">
+            <div class="s-section-header">
+                <h2 class="s-section-title gradient">Why Sapphire?</h2>
+                <p class="s-section-subtitle">
+                    Because your competition is still using Excel. Time to bring a knife to a gunfight.
+                </p>
+            </div>
+
+            <div class="quote-showcase" id="sapphire-showcase">
+                <!-- Card 05: Low Initial Investment -->
+                <div class="quote-card-wrapper" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare="false">
+                    <div class="floating-cards">
+                        <div class="float-card float-card--top-right">
+                            <i class="bi bi-piggy-bank-fill"></i> 40% Less Cost
+                        </div>
+                        <div class="float-card float-card--bottom-left">
+                            <i class="bi bi-wallet2"></i> Smart Spend
+                        </div>
+                    </div>
+                    <div class="s-feature-card">
+                        <div class="s-icon-box-glass">
+                            <img src="assets/images/low_initial_investment.png" style="height: 15rem; width: 22rem;" alt="Low Initial Investment">
+                        </div>
+                        <div class="s-feature-content" data-card-num="05">
+                            <h5>Low Investment</h5>
+                            <blockquote class="quote-text">
+                                Strong foundations don't need reckless spending. <span class="highlight">They need disciplined architecture.</span>
+                            </blockquote>
+                            <p class="desc-text">
+                                Enterprise power without enterprise pricing. Start lean. Scale smart. See ROI before your competitors finish their demo calls.
+                            </p>
+                            <div class="quote-action">
+                                <div class="fq-wrap">
+                                    <button class="flame-btn flame-btn--sm fq-trigger" aria-expanded="false" data-flame-fq="">
+                                        <span class="flame-btn__text">
+                                            <span class="flame-eyebrow" aria-hidden="true"></span>
+                                            <span class="fq-label-idle">Feeling Fiesty?</span>
+                                            <span class="fq-label-hover">Feeling Fiesty? — Yes!! You are</span>
+                                        </span>
+                                    </button>
+                                    <div class="fq-content" id="fq" role="region" aria-hidden="true">
+                                        <div class="fq-content__inner">
+                                            <h3 class="fq-content__heading">Good. That's exactly who we built this for.</h3>
+                                            <p class="fq-content__body">
+                                                If your ERP needs a training manual, it's already failed. Your team should be productive on day one — not week six.
+                                            </p>
+                                            <button class="fq-collapse-btn" data-flame-fq="">
+                                                <span>Close</span>
+                                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                                                    <path d="M2 10L7 5L12 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 06: Complete Software Ecosystem -->
+                <div class="quote-card-wrapper" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare="false">
+                    <div class="floating-cards">
+                        <div class="float-card float-card--top-left">
+                            <i class="bi bi-layers-fill"></i> All-in-One
+                        </div>
+                        <div class="float-card float-card--bottom-right">
+                            <i class="bi bi-diagram-3-fill"></i> Unified Data
+                        </div>
+                        <div class="float-card float-card--mid-right">
+                            <i class="bi bi-hub"></i> Single Source
+                        </div>
+                    </div>
+                    <div class="s-feature-card">
+                        <div class="s-icon-box-glass">
+                            <img src="assets/images/complete_software_ecosystem.png" style="height: 15rem; width: 22rem;" alt="Complete Software Ecosystem">
+                        </div>
+                        <div class="s-feature-content" data-card-num="06">
+                            <h5>Complete Ecosystem</h5>
+                            <blockquote class="quote-text">
+                                Fragmented tools create <span class="highlight">fractured decisions.</span>
+                            </blockquote>
+                            <p class="desc-text">
+                                One platform. Every function. Zero fragmentation. While others juggle five tools, you run everything from one command center.
+                            </p>
+                            <div class="quote-action">
+                                <div class="fq-wrap">
+                                    <button class="flame-btn flame-btn--sm fq-trigger" aria-expanded="false" data-flame-fq="">
+                                        <span class="flame-btn__text">
+                                            <span class="flame-eyebrow" aria-hidden="true"></span>
+                                            <span class="fq-label-idle">Feeling Fiesty?</span>
+                                            <span class="fq-label-hover">Feeling Fiesty? — Yes!! You are</span>
+                                        </span>
+                                    </button>
+                                    <div class="fq-content" id="fq" role="region" aria-hidden="true">
+                                        <div class="fq-content__inner">
+                                            <h3 class="fq-content__heading">Good. That's exactly who we built this for.</h3>
+                                            <p class="fq-content__body">
+                                                If your ERP needs a training manual, it's already failed. Your team should be productive on day one — not week six.
+                                            </p>
+                                            <button class="fq-collapse-btn" data-flame-fq="">
+                                                <span>Close</span>
+                                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                                                    <path d="M2 10L7 5L12 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 07: No Specialized Skills -->
+                <div class="quote-card-wrapper" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare="false">
+                    <div class="floating-cards">
+                        <div class="float-card float-card--top-right">
+                            <i class="bi bi-person-check-fill"></i> Anyone Can Use
+                        </div>
+                        <div class="float-card float-card--bottom-left">
+                            <i class="bi bi-book-half"></i> No Training
+                        </div>
+                    </div>
+                    <div class="s-feature-card">
+                        <div class="s-icon-box-glass">
+                            <img src="assets/images/no_skills.png" style="height: 15rem; width: 22rem;" alt="No Specialized Skills">
+                        </div>
+                        <div class="s-feature-content" data-card-num="07">
+                            <h5>No Specialists Needed</h5>
+                            <blockquote class="quote-text">
+                                Power shouldn't be locked <span class="highlight">behind specialists.</span>
+                            </blockquote>
+                            <p class="desc-text">
+                                Your team shouldn't need a PhD to run their own business. Sapphire is intuitive enough for everyone, powerful enough for leadership.
+                            </p>
+                            <div class="quote-action">
+                                <div class="fq-wrap">
+                                    <button class="flame-btn flame-btn--sm fq-trigger" aria-expanded="false" data-flame-fq="">
+                                        <span class="flame-btn__text">
+                                            <span class="flame-eyebrow" aria-hidden="true"></span>
+                                            <span class="fq-label-idle">Feeling Fiesty?</span>
+                                            <span class="fq-label-hover">Feeling Fiesty? — Yes!! You are</span>
+                                        </span>
+                                    </button>
+                                    <div class="fq-content" id="fq" role="region" aria-hidden="true">
+                                        <div class="fq-content__inner">
+                                            <h3 class="fq-content__heading">Good. That's exactly who we built this for.</h3>
+                                            <p class="fq-content__body">
+                                                If your ERP needs a training manual, it's already failed. Your team should be productive on day one — not week six.
+                                            </p>
+                                            <button class="fq-collapse-btn" data-flame-fq="">
+                                                <span>Close</span>
+                                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                                                    <path d="M2 10L7 5L12 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 08: Zero Operational Complexity -->
+                <div class="quote-card-wrapper" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare="false">
+                    <div class="floating-cards">
+                        <div class="float-card float-card--top-left">
+                            <i class="bi bi-x-octagon-fill"></i> No Bloat
+                        </div>
+                        <div class="float-card float-card--bottom-right">
+                            <i class="bi bi-arrow-down-right"></i> Simple Flow
+                        </div>
+                        <div class="float-card float-card--mid-left">
+                            <i class="bi bi-lightning-fill"></i> Frictionless
+                        </div>
+                    </div>
+                    <div class="s-feature-card">
+                        <div class="s-icon-box-glass">
+                            <img src="assets/images/zero_operational_Complexity.png" style="height: 15rem; width: 22rem;" alt="Zero Operational Complexity">
+                        </div>
+                        <div class="s-feature-content" data-card-num="08">
+                            <h5>Zero Complexity</h5>
+                            <blockquote class="quote-text">
+                                Overengineering is insecurity. <span class="highlight">We built clarity instead.</span>
+                            </blockquote>
+                            <p class="desc-text">
+                                Smooth workflows that move without resistance. Simple on the inside. Devastating on the outside.
+                            </p>
+                            <div class="quote-action">
+                                <div class="fq-wrap">
+                                    <button class="flame-btn flame-btn--sm fq-trigger" aria-expanded="false" data-flame-fq="">
+                                        <span class="flame-btn__text">
+                                            <span class="flame-eyebrow" aria-hidden="true"></span>
+                                            <span class="fq-label-idle">Feeling Fiesty?</span>
+                                            <span class="fq-label-hover">Feeling Fiesty? — Yes!! You are</span>
+                                        </span>
+                                    </button>
+                                    <div class="fq-content" id="fq" role="region" aria-hidden="true">
+                                        <div class="fq-content__inner">
+                                            <h3 class="fq-content__heading">Good. That's exactly who we built this for.</h3>
+                                            <p class="fq-content__body">
+                                                If your ERP needs a training manual, it's already failed. Your team should be productive on day one — not week six.
+                                            </p>
+                                            <button class="fq-collapse-btn" data-flame-fq="">
+                                                <span>Close</span>
+                                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                                                    <path d="M2 10L7 5L12 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 09: MSME Ready -->
+                <div class="quote-card-wrapper" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare="false">
+                    <div class="floating-cards">
+                        <div class="float-card float-card--top-right">
+                            <i class="bi bi-arrow-up-right"></i> Scales With You
+                        </div>
+                        <div class="float-card float-card--bottom-left">
+                            <i class="bi bi-building"></i> 5 to 500 Users
+                        </div>
+                    </div>
+                    <div class="s-feature-card">
+                        <div class="s-icon-box-glass">
+                            <img src="assets/images/msme_ready.png" style="height: 15rem; width: 22rem;" alt="MSME Ready">
+                        </div>
+                        <div class="s-feature-content" data-card-num="09">
+                            <h5>MSME Ready</h5>
+                            <blockquote class="quote-text">
+                                Small teams don't need smaller ambition. <span class="highlight">They need sharper tools.</span>
+                            </blockquote>
+                            <p class="desc-text">
+                                Sapphire fits the five-person firm today — and scales effortlessly when you become fifty. Built for growth, priced for reality.
+                            </p>
+                            <div class="quote-action">
+                                <div class="fq-wrap">
+                                    <button class="flame-btn flame-btn--sm fq-trigger" aria-expanded="false" data-flame-fq="">
+                                        <span class="flame-btn__text">
+                                            <span class="flame-eyebrow" aria-hidden="true"></span>
+                                            <span class="fq-label-idle">Feeling Fiesty?</span>
+                                            <span class="fq-label-hover">Feeling Fiesty? — Yes!! You are</span>
+                                        </span>
+                                    </button>
+                                    <div class="fq-content" id="fq" role="region" aria-hidden="true">
+                                        <div class="fq-content__inner">
+                                            <h3 class="fq-content__heading">Good. That's exactly who we built this for.</h3>
+                                            <p class="fq-content__body">
+                                                If your ERP needs a training manual, it's already failed. Your team should be productive on day one — not week six.
+                                            </p>
+                                            <button class="fq-collapse-btn" data-flame-fq="">
+                                                <span>Close</span>
+                                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                                                    <path d="M2 10L7 5L12 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 10: Evolving Sustainability -->
+                <div class="quote-card-wrapper" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare="false">
+                    <div class="floating-cards">
+                        <div class="float-card float-card--top-left">
+                            <i class="bi bi-recycle"></i> Future-Proof
+                        </div>
+                        <div class="float-card float-card--bottom-right">
+                            <i class="bi bi-infinity"></i> Never Obsolete
+                        </div>
+                        <div class="float-card float-card--mid-right">
+                            <i class="bi bi-trending-up"></i> Grows With You
+                        </div>
+                    </div>
+                    <div class="s-feature-card">
+                        <div class="s-icon-box-glass">
+                            <img src="assets/images/sustainable_growth.png" style="height: 15rem; width: 22rem;" alt="Evolving Sustainability">
+                        </div>
+                        <div class="s-feature-content" data-card-num="10">
+                            <h5>Built to Last</h5>
+                            <blockquote class="quote-text">
+                                Sustainable systems don't collapse under growth. <span class="highlight">They adapt.</span>
+                            </blockquote>
+                            <p class="desc-text">
+                                No noise. No friction. No drama. Sapphire evolves in place so your growth never feels disruptive. Just inevitable.
+                            </p>
+                            <div class="quote-action">
+                                <div class="fq-wrap">
+                                    <button class="flame-btn flame-btn--sm fq-trigger" aria-expanded="false" data-flame-fq="">
+                                        <span class="flame-btn__text">
+                                            <span class="flame-eyebrow" aria-hidden="true"></span>
+                                            <span class="fq-label-idle">Feeling Fiesty?</span>
+                                            <span class="fq-label-hover">Feeling Fiesty? — Yes!! You are</span>
+                                        </span>
+                                    </button>
+                                    <div class="fq-content" id="fq" role="region" aria-hidden="true">
+                                        <div class="fq-content__inner">
+                                            <h3 class="fq-content__heading">Good. That's exactly who we built this for.</h3>
+                                            <p class="fq-content__body">
+                                                If your ERP needs a training manual, it's already failed. Your team should be productive on day one — not week six.
+                                            </p>
+                                            <button class="fq-collapse-btn" data-flame-fq="">
+                                                <span>Close</span>
+                                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                                                    <path d="M2 10L7 5L12 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- FEELING FIESTY QUOTE CARD SECTION -->
+        <section class="why-section" id="fqsection">
+            <div class="s-section-header">
+                <h2 class="s-section-title gradient">One More Thing...</h2>
+                <p class="s-section-subtitle">
+                    We saved the most interesting part for last.
+                </p>
+            </div>
+
+            <div style="text-align: center; padding: 2rem 0;">
+                <!-- Feeling Fiesty Quote Card -->
+                <div class="fq-wrap" id="fqquote-wrap">
+                    <!-- The Flame Button -->
+                    <button class="flame-btn fq-trigger" aria-expanded="false" aria-controls="fq-content">
+                        <span class="flame-btn__text">
+                            <span class="flame-eyebrow" aria-hidden="true"></span>
+                            <span class="fq-label-idle">Feeling Fiesty?</span>
+                            <span class="fq-label-hover">Feeling Fiesty? — Yes!! You are</span>
+                        </span>
+                    </button>
+
+                    <!-- Expandable Card Content -->
+                    <div class="fq-content" id="fq-content" role="region" aria-hidden="true">
+                        <div class="fq-content__inner">
+                            <h3 class="fq-content__heading">Good. That's exactly who we built this for.</h3>
+                            <p class="fq-content__body">
+                                You're not here because you want "good enough." You're here because you want
+                                something that works — something that doesn't need hand-holding, endless training,
+                                or a dedicated IT team to keep it running.
+                            </p>
+                            <p class="fq-content__body">
+                                Sapphire was built for teams who are tired of excuses. Tired of software that
+                                promises the world and delivers spreadsheets with extra steps. Tired of vendors
+                                who disappear after the sale.
+                            </p>
+                            <p class="fq-content__body">
+                                If you're still reading, you already know. The question isn't whether you need this.
+                                The question is: how much longer will you wait?
+                            </p>
+                            <!-- Collapse Button -->
+                            <button class="fq-collapse-btn" aria-controls="fq-content">
+                                <span>Close</span>
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                                    <path d="M2 10L7 5L12 10" stroke="currentColor" stroke-width="2"
+                                          stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- CTA -->
+        <div class="why-cta-wrapper">
+            <section class="s-cta">
+                <svg class="s-cta__accent s-cta__accent--tl" width="80" height="80" viewBox="0 0 80 80" fill="none">
+                    <path d="M1 79 L1 1 L79 1" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+                    <rect x="1" y="1" width="10" height="10" fill="rgba(255,255,255,0.12)"/>
+                </svg>
+                <svg class="s-cta__accent s-cta__accent--br" width="80" height="80" viewBox="0 0 80 80" fill="none">
+                    <path d="M1 79 L1 1 L79 1" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+                    <rect x="1" y="1" width="10" height="10" fill="rgba(255,255,255,0.12)"/>
+                </svg>
+
+                <div class="s-cta__inner">
+                    <p class="s-eyebrow">Still reading? That tells us something.</p>
+                    <h2 class="s-cta__headline">
+                        YOU'RE SERIOUS.<br>
+                        <span>SO ARE WE.</span><br>
+                        LET'S TALK.
+                    </h2>
+                    <p class="s-cta__sub">
+                        You've made it this far. That means you're ready to fix what's broken.
+                        See what Sapphire can do for your operation.
+                    </p>
+                    <div class="s-cta__actions">
+                        <a href="book-demo.html" class="s-btn s-btn-success s-btn-glare">
+                            <i class="bi bi-rocket-takeoff"></i>
+                            <span>Book a Demo</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+    <!-- GSAP Animations -->
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Scroll Progress Bar
+        gsap.to(".scroll-progress__bar", {
+            width: "100%",
+            scrollTrigger: {
+                trigger: document.body,
+                start: "top top",
+                end: "bottom bottom",
+                scrub: true
+            }
+        });
+
+        // Hero Animations
+        gsap.from(".why-hero__badge", {
+            opacity: 0,
+            y: 30,
+            duration: 1,
+            ease: "power3.out"
+        });
+
+        gsap.from(".why-hero__title", {
+            opacity: 0,
+            y: 50,
+            duration: 1.2,
+            delay: 0.2,
+            ease: "power3.out"
+        });
+
+        gsap.from(".why-hero__subtitle", {
+            opacity: 0,
+            y: 30,
+            duration: 1,
+            delay: 0.4,
+            ease: "power3.out"
+        });
+
+        // Section Headers
+        document.querySelectorAll(".s-section-header").forEach(header => {
+            gsap.from(header.children, {
+                opacity: 0,
+                y: 40,
+                duration: 1,
+                stagger: 0.15,
+                scrollTrigger: {
+                    trigger: header,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            });
+        });
+
+        // Quote Cards Animation - stagger per section
+        document.querySelectorAll(".quote-showcase").forEach(showcase => {
+            const cards = showcase.querySelectorAll(".quote-card-wrapper");
+            cards.forEach((card, index) => {
+                gsap.from(card, {
+                    opacity: 0,
+                    y: 100,
+                    rotateX: -5,
+                    duration: 1,
+                    delay: index * 0.15,
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 85%",
+                        toggleActions: "play none none none"
+                    }
+                });
+
+                // Subtle parallax on scroll
+                gsap.to(card, {
+                    y: -15,
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: 1.5
+                    }
+                });
+            });
+        });
+
+        // Icon float animation
+        document.querySelectorAll(".s-icon-box-glass img").forEach(icon => {
+            gsap.to(icon, {
+                y: -6,
+                duration: 2,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
+            });
+        });
+
+        // Floating child cards - gentle orbit animation
+        document.querySelectorAll(".float-card").forEach((floatCard, index) => {
+            gsap.to(floatCard, {
+                y: "random(-6, 6)",
+                x: "random(-4, 4)",
+                rotation: "random(-2, 2)",
+                duration: "random(2, 3)",
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+                delay: index * 0.1
+            });
+        });
+
+        // CTA Animation
+        gsap.from(".s-cta", {
+            opacity: 0,
+            y: 60,
+            duration: 1.2,
+            scrollTrigger: {
+                trigger: ".s-cta",
+                start: "top 75%",
+                toggleActions: "play none none none"
+            }
+        });
+
+        // Button magnetic effect enhancement
+        document.querySelectorAll(".quote-btn-wrap").forEach(btnWrap => {
+            const btn = btnWrap.querySelector(".quote-btn");
+            
+            btnWrap.addEventListener("mousemove", (e) => {
+                const rect = btnWrap.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                gsap.to(btn, {
+                    x: x * 0.3,
+                    y: y * 0.3,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            });
+            
+            btnWrap.addEventListener("mouseleave", () => {
+                gsap.to(btn, {
+                    x: 0,
+                    y: 0,
+                    duration: 0.5,
+                    ease: "elastic.out(1, 0.5)"
+                });
+            });
+        });
+    </script>
+
+    <!-- Flame Button & Quote Card JS -->
+    <script>
+        // DOM-based - no IDs needed. Each button finds its own content sibling.
+        document.querySelectorAll(".fq-trigger").forEach(trigger => {
+            const wrap = trigger.closest(".fq-wrap");
+            const content = wrap ? wrap.querySelector(".fq-content") : null;
+            if (!content) return;
+
+            trigger.addEventListener("click", () => {
+                const isOpen = content.classList.contains("is-open");
+                if (isOpen) {
+                    content.classList.remove("is-open");
+                    trigger.classList.remove("is-fired");
+                    trigger.setAttribute("aria-expanded", "false");
+                    content.setAttribute("aria-hidden", "true");
+                } else {
+                    content.classList.add("is-open");
+                    trigger.classList.add("is-fired");
+                    trigger.setAttribute("aria-expanded", "true");
+                    content.setAttribute("aria-hidden", "false");
+                }
+            });
+        });
+
+        document.querySelectorAll(".fq-collapse-btn").forEach(btn => {
+            const wrap = btn.closest(".fq-wrap");
+            const content = wrap ? wrap.querySelector(".fq-content") : null;
+            const trigger = wrap ? wrap.querySelector(".fq-trigger") : null;
+            if (!content) return;
+
+            btn.addEventListener("click", () => {
+                content.classList.remove("is-open");
+                if (trigger) {
+                    trigger.classList.remove("is-fired");
+                    trigger.setAttribute("aria-expanded", "false");
+                }
+                content.setAttribute("aria-hidden", "true");
+            });
+        });
+
+        // Card entry animation - IntersectionObserver
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('is-visible');
+                    }, index * 100);
+                    cardObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.quote-card-wrapper').forEach(card => {
+            cardObserver.observe(card);
+        });
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -172,11 +172,11 @@ export class InspectionCorrelationViz {
                 </div>
                 
                 <!-- RATIO INTERPRETATION -->
-                <div style="width: 100%; background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(52, 152, 219, 0.05)); border: 1px solid var(--s-info-light); border-radius: 0.5rem; padding: 0.75rem; text-align: center;">
-                    <div class="s-text-info s-font-bold s-text-sm" style="margin-bottom: 0.25rem;">
+                <div class="s-label-info-special-soft s-label-lg" style="width: 100%; text-align: center; flex-direction: column; gap: 0.5rem;">
+                    <div class="s-font-bold" style="font-size: var(--s-text-sm);">
                         <i class="fas fa-chart-line"></i> Inspection-to-Report Ratio: <span id="viz-ratio-text" style="font-family: 'Science Gothic', sans-serif;">${data.ratio}:1</span>
                     </div>
-                    <div id="viz-interpretation-text" class="s-text-info s-font-semibold s-text-xs">
+                    <div id="viz-interpretation-text" class="s-font-semibold s-text-xs">
                         ${data.interpretation}
                     </div>
                 </div>

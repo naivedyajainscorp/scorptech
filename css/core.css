@@ -467,11 +467,11 @@
                         drop-shadow(0 1px 1px rgba(0, 0, 0, 0.15));
 
     /* ── BUTTON + PILL SCALE ──────────────────────────────────────────────── */
-    --s-text-shadow-xs:      0 1px 1px rgba(0, 0, 0, 0.40),
-                             0 1px 3px rgba(0, 0, 0, 0.15);
-
     --s-text-shadow:         0 1px 2px rgba(0, 0, 0, 0.60),
                              0 3px 6px rgba(0, 0, 0, 0.25);
+
+    --s-text-shadow-xs:      0 1px 1px rgba(0, 0, 0, 0.40),
+                             0 1px 3px rgba(0, 0, 0, 0.15);
 
     --s-text-shadow-md:      0 1px 3px rgba(0, 0, 0, 0.65),
                              0 3px 8px rgba(0, 0, 0, 0.30);
