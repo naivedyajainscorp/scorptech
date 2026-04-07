@@ -41,3 +41,404 @@ Rescue Equipment Depots
 Restaurants & Cafes
 Agricultural Facilities
 ___________________________________________
+
+Got it. This is a big structured task. Let me give you the full elaborated hierarchy:
+
+***
+
+## 1. Manufacturing Plants & Factories
+- **Metal-based** — Steel plants, Aluminium smelters, Copper & brass units, Forging & casting units, Sheet metal fabrication [bharat-mobility](https://www.bharat-mobility.com/img/pdf/IBEF-Manufacturing-Sector-Overview.pdf)
+- **Plastic & Polymer-based** — Injection moulding, Blow moulding, PVC pipe manufacturing, Plastic packaging units
+- **Chemical & Petrochemical** — Bulk chemical plants, Specialty chemicals, Paint & coatings, Adhesives, Fertilizer manufacturing [bajajfinserv](https://www.bajajfinserv.in/manufacturing-industries)
+- **Textile & Apparel** — Spinning mills, Weaving units, Garment factories, Dyeing & printing units, Technical textiles [bharat-mobility](https://www.bharat-mobility.com/img/pdf/IBEF-Manufacturing-Sector-Overview.pdf)
+- **Food & Beverage Processing** — Packaged food units, Beverage bottling, Dairy processing, Confectionery, Bakery units [bajajfinserv](https://www.bajajfinserv.in/manufacturing-industries)
+- **Pharmaceutical Manufacturing** — API (Active Pharmaceutical Ingredient) plants, Formulation units, Nutraceutical manufacturing
+- **Electronics & Semiconductor** — PCB assembly, Consumer electronics, Component manufacturing, EV component units [bharat-mobility](https://www.bharat-mobility.com/img/pdf/IBEF-Manufacturing-Sector-Overview.pdf)
+- **Rubber & Composites** — Tyre manufacturing, Industrial rubber goods, FRP/GRP composites
+- **Glass & Ceramics** — Flat glass, Container glass, Ceramic tiles, Sanitary ware
+- **Paper & Packaging** — Paper mills, Corrugated box units, Flexible packaging
+- **Wood & Furniture** — Plywood units, MDF manufacturing, Furniture factories
+- **Automobile Manufacturing** — Vehicle assembly plants, Auto component manufacturers, OEM tier-1/tier-2 suppliers [marketsandmarkets](https://www.marketsandmarkets.com/Market-Reports/enterprise-asset-management-market-54576143.html)
+
+***
+
+## 2. Corporate Offices
+- **IT & Software Companies** — Product companies, IT services firms, BPO/KPO centres
+- **BFSI** — Bank headquarters & branches, Insurance companies, NBFCs, Stock broking firms [omrglobal](https://www.omrglobal.com/industry-reports/indian-enterprise-asset-management-market)
+- **Telecom Companies** — Network operations centres, Regional offices
+- **FMCG & Retail HQs** — Brand offices, Regional distribution offices
+- **Consulting & Professional Services** — Management consulting, Legal firms, Audit firms
+- **Media & Advertising** — Production houses, Agency offices, Broadcasting companies
+
+***
+
+## 3. Automotive Service Stations
+- **2-Wheeler** — Motorcycles, Scooters, Electric 2-wheelers
+- **3-Wheeler** — Auto-rickshaws (petrol/CNG/electric), Cargo 3-wheelers
+- **4-Wheeler (Passenger)** — Private cars, Taxis & cab fleets, Electric cars
+- **Light Commercial Vehicles (LCV)** — Delivery vans, Mini trucks, Small pickup trucks
+- **Heavy Commercial Vehicles (HCV)** — Trucks, Trailers, Multi-axle vehicles, Buses
+- **Earth Moving & Construction Equipment** — Excavators, JCBs, Cranes, Graders
+- **Agricultural Vehicles** — Tractors, Harvesters, Power tillers, Agri implements
+- **Authorised Dealership Service Centres** — OEM-certified workshops
+- **Independent Multi-brand Workshops** — General repair, Denting & painting, Tyre shops
+
+***
+
+## 4. Warehouse & Distribution Centers
+- **Cold Storage Warehouses** — Pharma cold chain, Food & dairy, Frozen goods
+- **Dry Goods Warehouses** — FMCG, E-commerce, Industrial goods
+- **E-commerce Fulfilment Centres** — Sorting hubs, Last-mile hubs
+- **Pharmaceutical Warehouses** — Temperature-controlled, GDP-compliant storage
+- **Chemical & Hazardous Storage** — Bonded warehouses, Flammable goods depots
+- **Bulk Commodity Storage** — Grain silos, Cement godowns, Steel yards
+
+***
+
+## 5. Hospitals & Healthcare Facilities
+- **Multi-specialty Hospitals** — Large private chains (Apollo, Fortis), Government hospitals
+- **Single-specialty Hospitals** — Cardiac, Orthopaedic, Maternity, Eye, Dental
+- **Nursing Homes & Clinics** — Small private hospitals, Polyclinics
+- **Ayurveda, Homeopathy & Wellness Centres** — AYUSH facilities, Naturopathy centres
+- **Mental Health Facilities** — Psychiatric hospitals, Rehabilitation centres
+- **Blood Banks & Transfusion Centres**
+
+***
+
+## 6. Construction Sites & Infrastructure
+- **Residential Construction** — Apartment complexes, Housing colonies, Villas
+- **Commercial Construction** — Office buildings, Malls, Hotels under construction
+- **Industrial Construction** — Factory sheds, Warehouses, Power plants under construction
+- **Road & Highway Projects** — NHAI, State highway contractors, Urban road projects
+- **Bridge, Flyover & Tunnel Projects**
+- **Dam, Canal & Irrigation Projects**
+- **Smart City & Urban Infrastructure Projects**
+
+***
+
+## 7. Schools & Universities
+- **Primary & Secondary Schools** — Government, Private, CBSE/ICSE/State board
+- **Senior Secondary & Junior Colleges**
+- **Engineering Colleges** — Private & deemed universities, NITs, IITs
+- **Medical & Pharmacy Colleges**
+- **Arts, Science & Commerce Colleges**
+- **Polytechnic & Diploma Institutes**
+- **International & IB Schools**
+- **Online Education Platforms with Physical Infrastructure** — Coaching institutes (Allen, Resonance etc. — very relevant for Jaipur)
+
+***
+
+## 8. Hotels & Guest Houses
+- **Luxury / 5-Star Hotels**
+- **Business Hotels (3-4 Star)**
+- **Budget Hotels & Lodges**
+- **Heritage & Palace Hotels** ← very relevant for Rajasthan [assetinfinity](https://www.assetinfinity.com/blog/types-of-assets-managed-by-enterprise-asset-management)
+- **Resorts & Spa Retreats**
+- **Boutique Hotels**
+- **Serviced Apartments & Extended Stay**
+- **Dharamshalas & Pilgrim Accommodations**
+- **Motels & Highway Stays**
+
+***
+
+## 9. Co-working Spaces & IT Parks
+- **Managed Co-working Spaces** — WeWork, 91Springboard type
+- **SEZs (Special Economic Zones)**
+- **IT/ITES Parks** — Dedicated tech campuses
+- **STPI Registered Units**
+- **Innovation Hubs & Startup Incubators**
+- **BPO/Call Centre Campuses**
+
+***
+
+## 10. Diagnostic Centers & Laboratories
+- **Pathology & Clinical Labs** — Dr. Lal PathLabs, SRL type chains & standalone labs
+- **Radiology & Imaging Centres** — X-ray, MRI, CT scan, Ultrasound
+- **Molecular Diagnostics** — PCR, Genomics, NABL accredited labs
+- **Environmental Testing Labs** — Air, water, soil testing
+- **Food & Drug Testing Labs** — FSSAI approved, BIS testing
+- **Forensic Labs**
+- **Metrology & Calibration Labs**
+
+***
+
+## 11. Retail Chains & Shopping Malls
+- **Hypermarkets & Supermarkets** — D-Mart, Big Bazaar type
+- **Fashion & Apparel Retail** — Brand showrooms, Multi-brand outlets
+- **Electronics Retail** — Croma, Reliance Digital type
+- **Pharmacy Retail Chains** — MedPlus, Apollo Pharmacy
+- **Jewellery & Lifestyle Retail**
+- **QSR Chains in Malls** — Food courts
+- **Shopping Malls** — Mixed-use, High street retail
+- **Petrol Pump Retail Annexes** — Convenience stores at fuel stations
+
+***
+
+## 12. Real Estate Developments
+- **Residential Complexes & Housing Societies**
+- **Commercial Office Complexes**
+- **Industrial Estates & MIDC/RIICO Zones** ← very relevant for Rajasthan
+- **Gated Communities & Townships**
+- **Mixed-use Developments**
+- **Affordable Housing Projects (PMAY)**
+
+***
+
+## 13. Research & Testing Laboratories
+- **Corporate R&D Centres** — In-house labs of large manufacturers
+- **Government Research Institutions** — CSIR, DRDO, ISRO, ICAR labs
+- **University Research Centres**
+- **Product Certification & Testing Labs** — BIS, TÜV, SGS, Intertek
+- **Automotive Testing Facilities** — ARAI, NATRIP
+
+***
+
+## 14. Fitness Centers & Gyms
+- **Commercial Gym Chains** — Cult.fit, Gold's Gym, Anytime Fitness
+- **Standalone Independent Gyms**
+- **Sports Complexes & Stadiums** — SAI centres, State sports authorities
+- **Yoga, Zumba & Wellness Studios**
+- **Swimming Pools & Aquatic Centres**
+- **Martial Arts & Combat Sports Academies**
+
+***
+
+## 15. Power Generation Units
+- **Thermal Power Plants** — Coal, Gas, Oil-fired [omrglobal](https://www.omrglobal.com/industry-reports/indian-enterprise-asset-management-market)
+- **Hydroelectric Power Plants**
+- **Nuclear Power Plants**
+- **Solar Power Farms** — Utility scale & rooftop
+- **Wind Energy Farms** — Onshore & offshore
+- **Biomass & Biogas Plants**
+- **Captive Power Plants** — Industrial self-generation units
+
+***
+
+## 16. Transmission Networks
+- **High Voltage Transmission Lines & Towers**
+- **Substations & Switchyards** — EHV, HV, MV
+- **Distribution Networks** — Urban & rural
+- **Smart Grid Infrastructure**
+- **Telecom Towers & Networks** — Tower companies (Indus, ATC)
+
+***
+
+## 17. Municipal Departments
+- **Water Supply & Sewerage Boards**
+- **Solid Waste Management** — Collection vehicles, processing plants
+- **Street Lighting Maintenance**
+- **Public Parks, Gardens & Open Spaces**
+- **Municipal Vehicle Fleet**
+- **Public Sanitation Infrastructure** — Community toilets, drainage
+
+***
+
+## 18. State Workshops
+- **Government Vehicle Workshops** — PWD, irrigation, forest dept
+- **State Road Transport Corporation Workshops** — RSRTC etc.
+- **Police & Paramilitary Vehicle Maintenance**
+- **Fire Department Equipment Maintenance**
+- **Defence Ordnance Workshops** — Civilian support facilities
+
+***
+
+## 19. Farm Equipment Warehouses
+- **Tractor & Implement Storage Depots**
+- **Custom Hiring Centres (CHCs)** — Government-run shared equipment pools
+- **Agricultural Machinery Dealership Workshops**
+- **Seed & Agri-input Storage**
+
+***
+
+## 20. Fertilizer & Irrigation Depots
+- **Fertilizer Distribution Centres & Warehouses**
+- **Drip & Sprinkler Irrigation Equipment Suppliers**
+- **Cooperative Society Agri-input Stores**
+- **Pesticide & Agrochemical Storage**
+
+***
+
+## 21. Agro Processing Units
+- **Rice Mills & Flour Mills**
+- **Oil Extraction Units** — Mustard, Groundnut, Soybean
+- **Fruit & Vegetable Processing** — Pulps, juices, frozen
+- **Dairy Processing Plants** — Pasteurisation, butter, cheese
+- **Sugar Mills & Distilleries**
+- **Cotton Ginning & Pressing**
+- **Spice Processing Units** — Grinding, blending, packaging
+- **Cold Chain Processing & Pack Houses**
+
+***
+
+## 22. Amusement Parks
+- **Theme Parks**
+- **Water Parks**
+- **Children's Indoor Entertainment Centres**
+- **Gaming Arcades & Virtual Reality Centres**
+- **Adventure Parks** — Zip line, bungee, trekking parks
+
+***
+
+## 23. Movie Theaters
+- **Multiplex Chains** — PVR INOX, Cinepolis
+- **Single-screen Standalone Theatres**
+- **IMAX & Premium Large Format (PLF) Screens**
+- **Drive-in Theatres**
+
+***
+
+## 24. Concert Halls
+- **Auditoriums & Cultural Centres**
+- **Convention & Exhibition Centres** — JECC type (Jaipur)
+- **Open-air Amphitheatres**
+- **Stadium & Arena Venues**
+
+***
+
+## 25. Clubs & Leisure Facilities
+- **Private Members Clubs** — City clubs, Gymkhanas
+- **Sports Clubs** — Cricket, Football, Tennis academies
+- **Golf Courses & Country Clubs**
+- **Night Clubs & Lounges**
+- **Community & Social Clubs**
+
+***
+
+## 26. Training & Vocational Centers
+- **ITIs (Industrial Training Institutes)**
+- **NSDC Skill Development Centres**
+- **Corporate Training Campuses** — In-house training facilities
+- **Driving Training Schools**
+- **Aviation & Hospitality Training Institutes**
+
+***
+
+## 27. Logistics & Fleet Operations
+- **Road Freight — FTL/LTL Operators**
+- **Last-mile Delivery Fleets** — E-commerce, courier
+- **Tanker Fleets** — Fuel, water, milk, chemicals
+- **Refrigerated (Reefer) Transport**
+- **Courier & Express Logistics** — BlueDart, DTDC type
+
+***
+
+## 28. Cargo Terminals
+- **Inland Container Depots (ICDs)**
+- **Container Freight Stations (CFS)**
+- **Multi-modal Logistics Parks** — MMLP hubs
+- **Air Cargo Terminals**
+- **Customs Bonded Warehouses**
+
+***
+
+## 29. Shipping Ports & Docks
+- **Major Ports** — JNPT, Mundra, Kandla, Chennai [marketsandmarkets](https://www.marketsandmarkets.com/Market-Reports/enterprise-asset-management-market-54576143.html)
+- **Minor & Intermediate Ports**
+- **Private Jetties & Terminals**
+- **Shipbuilding & Repair Yards**
+- **Fishing Harbours & Jetties**
+
+***
+
+## 30. Airport Hangars
+- **Commercial Airline Maintenance Hangars**
+- **Private & Charter Aircraft Hangars**
+- **Helicopter Maintenance Bases**
+- **MRO (Maintenance, Repair & Overhaul) Facilities** [marketsandmarkets](https://www.marketsandmarkets.com/Market-Reports/enterprise-asset-management-market-54576143.html)
+
+***
+
+## 31. Ground Support Bays
+- **Airport Ground Handling Equipment Depots**
+- **Baggage Handling Systems**
+- **Aircraft Fuelling Stations**
+- **Catering & Inflight Services Units at Airports**
+
+***
+
+## 32. Rail Maintenance Units
+- **Loco Sheds** — Locomotive maintenance depots [marketsandmarkets](https://www.marketsandmarkets.com/Market-Reports/enterprise-asset-management-market-54576143.html)
+- **Carriage & Wagon Workshops**
+- **Track Maintenance Depots & Gangs**
+- **Railway Station Asset Maintenance**
+- **Metro Rail Maintenance Depots** — JMRC, DMRC type
+
+***
+
+## 33. Water Supply Infrastructure
+- **Water Treatment Plants (WTPs)**
+- **Sewage Treatment Plants (STPs)**
+- **Pumping Stations**
+- **Overhead Tanks & Reservoir Maintenance**
+- **Pipeline Networks & Distribution Mains**
+
+***
+
+## 34. Public Utility Boards
+- **Electricity Distribution Companies (DISCOMs)**
+- **Piped Natural Gas Distribution** — IGL, MGL type
+- **Telecom Infrastructure Boards** — BSNL, state entities
+- **Cable & Broadband Network Operators**
+
+***
+
+## 35. Transportation Agencies
+- **State Road Transport Corporations** — RSRTC etc.
+- **City Bus Services** — BRTS, City buses, Mini-buses
+- **Metro Rail Corporations**
+- **Cab & Taxi Fleet Operators** — Ola/Uber fleet owners
+- **Auto-rickshaw Cooperative Fleets**
+
+***
+
+## 36. Disaster Response Storage
+- **NDRF & SDRF Equipment Depots**
+- **Civil Defence Stores**
+- **Flood Control Equipment Depots**
+- **Earthquake & Search-Rescue Equipment Stores**
+
+***
+
+## 37. Relief Logistics Centers
+- **Government Relief Distribution Centres** — DM dept
+- **NGO & Humanitarian Logistics Hubs** — Red Cross, CRS
+- **Food Grain Emergency Stockpiles** — FCI warehouses
+- **Medical Relief Supply Chains**
+
+***
+
+## 38. Rescue Equipment Depots
+- **Fire Station Equipment Stores & Depots**
+- **Ambulance & Emergency Medical Fleet Centres**
+- **Coast Guard & Marine Rescue Depots**
+- **Mountain & Terrain Rescue Equipment Stores**
+
+***
+
+## 39. Restaurants & Cafes
+- **Fine Dining Restaurants**
+- **Quick Service Restaurants (QSR) Chains** — McDonald's, Domino's type
+- **Cloud Kitchens & Dark Kitchens**
+- **Institutional Cafeterias** — Hospital, factory, college canteens
+- **Bakeries & Patisseries**
+- **Dhaba Chains & Highway Eateries**
+- **Bar & Grill / Pub Establishments**
+- **Food Truck Operations**
+
+***
+
+## 40. Agricultural Facilities
+- **Crop Farms** — Cereal, vegetable, fruit, oilseed
+- **Dairy Farms** — Small, medium & large scale
+- **Poultry Farms** — Broiler & layer operations
+- **Aquaculture & Fisheries** — Ponds, hatcheries, processing
+- **Greenhouse & Polyhouse Farms**
+- **Organic Farms** — NPOP certified
+- **Floriculture Farms** — Cut flowers, nurseries
+- **Sericulture (Silk) Farms**
+
+***
+
+That's the full elaborated hierarchy. **203 sub-categories across 40 umbrella industries.** Every single one of them needs an EAM solution — and now we have the language to speak to each.
+
+Ready for the module list whenever you are
