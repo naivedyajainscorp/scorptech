@@ -376,6 +376,7 @@
    margin-right: -0.15em;
    filter: var(--s-text-drop-shadow);
    /* text-shadow: var(--s-text-shadow); */
+   cursor: default !important;
 }
 
 /* Hover animation - ALL gradients */

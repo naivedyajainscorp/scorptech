@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Block Layers Infographic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(ellipse at 50% 40%, #dde6f5 0%, #c8d5ec 100%);
+      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    }
+
+    .infographic {
+      text-align: center;
+      padding: 50px 30px;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: 900;
+      color: #1e293b;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: #7a8fad;
+      font-style: italic;
+      letter-spacing: 2px;
+      margin-bottom: 52px;
+    }
+
+    /* Stack */
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .layer-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Callout lines */
+    .callout {
+      width: 65px;
+      display: flex;
+      align-items: center;
+    }
+
+    .callout-bracket {
+      width: 14px;
+      height: 36px;
+      flex-shrink: 0;
+    }
+
+    .callout-bracket.left {
+      border-top: 2px solid #8fa3c0;
+      border-left: 2px solid #8fa3c0;
+      border-bottom: 2px solid #8fa3c0;
+      border-radius: 2px 0 0 2px;
+    }
+
+    .callout-bracket.right {
+      border-top: 2px solid #8fa3c0;
+      border-right: 2px solid #8fa3c0;
+      border-bottom: 2px solid #8fa3c0;
+      border-radius: 0 2px 2px 0;
+    }
+
+    .callout-line {
+      flex: 1;
+      height: 2px;
+      background: #8fa3c0;
+    }
+
+    .spacer { width: 65px; }
+
+    /*
+      3D Block Geometry:
+      D  = 22px  (depth offset)
+      W  = 330px (front face width)
+      H  = 60px  (front face height)
+      Total box: (W+D) x (H+D) = 352 x 82
+    */
+
+    .block {
+      position: relative;
+      width: 352px;
+      height: 82px;
+      cursor: pointer;
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  filter  0.35s ease;
+      filter: drop-shadow(0 8px 20px rgba(0,0,0,0.20));
+    }
+
+    .block:hover {
+      transform: translate(9px, -9px);
+      filter: drop-shadow(0 18px 32px rgba(0,0,0,0.26));
+    }
+
+    /* Front face: left=0, top=22, 330×60 */
+    .face-front {
+      position: absolute;
+      left: 0;
+      top: 22px;
+      width: 330px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      gap: 18px;
+      z-index: 3;
+      border-radius: 4px 0 0 4px;
+    }
+
+    /* Top face parallelogram: (22,0)→(352,0)→(330,22)→(0,22) */
+    .face-top {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 352px;
+      height: 22px;
+      clip-path: polygon(22px 0px, 352px 0px, 330px 22px, 0px 22px);
+      z-index: 2;
+    }
+
+    /* Right side parallelogram: (0,22)→(22,0)→(22,60)→(0,82) */
+    .face-side {
+      position: absolute;
+      left: 330px;
+      top: 0;
+      width: 22px;
+      height: 82px;
+      clip-path: polygon(0px 22px, 22px 0px, 22px 60px, 0px 82px);
+      z-index: 1;
+    }
+
+    .num {
+      font-size: 22px;
+      font-weight: 900;
+      color: rgba(255,255,255,0.96);
+      text-shadow: 0 2px 8px rgba(0,0,0,0.28);
+      letter-spacing: 1px;
+      flex-shrink: 0;
+      min-width: 38px;
+    }
+
+    .label {
+      font-size: 15px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.95);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      text-shadow: 0 1px 5px rgba(0,0,0,0.22);
+    }
+
+    /* ── Layer 1 · Pink / Magenta ── */
+    .l1 .face-front {
+      background: linear-gradient(90deg, #b5125a 0%, #e91e8c 55%, #f472b6 100%);
+    }
+    .l1 .face-top {
+      background: linear-gradient(90deg, #f43fa0 0%, #f9a8d4 100%);
+      filter: brightness(1.18);
+    }
+    .l1 .face-side {
+      background: linear-gradient(180deg, #7c0d3e 0%, #c2185b 100%);
+    }
+
+    /* ── Layer 2 · Orange ── */
+    .l2 .face-front {
+      background: linear-gradient(90deg, #c43e00 0%, #ff6d00 55%, #ffab40 100%);
+    }
+    .l2 .face-top {
+      background: linear-gradient(90deg, #ff9100 0%, #ffd740 100%);
+      filter: brightness(1.12);
+    }
+    .l2 .face-side {
+      background: linear-gradient(180deg, #8a2b00 0%, #c43e00 100%);
+    }
+
+    /* ── Layer 3 · Teal / Cyan ── */
+    .l3 .face-front {
+      background: linear-gradient(90deg, #005662 0%, #00acc1 55%, #4dd0e1 100%);
+    }
+    .l3 .face-top {
+      background: linear-gradient(90deg, #00bcd4 0%, #84ffff 100%);
+      filter: brightness(1.1);
+    }
+    .l3 .face-side {
+      background: linear-gradient(180deg, #003640 0%, #006978 100%);
+    }
+
+    /* ── Layer 4 · Blue ── */
+    .l4 .face-front {
+      background: linear-gradient(90deg, #0a2e7a 0%, #1565c0 55%, #5c9fec 100%);
+    }
+    .l4 .face-top {
+      background: linear-gradient(90deg, #1e88e5 0%, #82b1ff 100%);
+      filter: brightness(1.15);
+    }
+    .l4 .face-side {
+      background: linear-gradient(180deg, #071e52 0%, #0d47a1 100%);
+    }
+
+    /* ── Layer 5 · Purple / Violet ── */
+    .l5 .face-front {
+      background: linear-gradient(90deg, #4a0082 0%, #8e24aa 55%, #ce93d8 100%);
+    }
+    .l5 .face-top {
+      background: linear-gradient(90deg, #ab47bc 0%, #ea80fc 100%);
+      filter: brightness(1.15);
+    }
+    .l5 .face-side {
+      background: linear-gradient(180deg, #2e0054 0%, #6a1b9a 100%);
+    }
+  </style>
+</head>
+<body>
+
+<div class="infographic">
+  <div class="title">3D Block Layers</div>
+  <div class="subtitle">infographic</div>
+  <div class="stack" id="stack"></div>
+</div>
+
+<script>
+  const layers = [
+    { num: '01', label: 'Lorem Ipsum', cls: 'l1', side: 'left'  },
+    { num: '02', label: 'Lorem Ipsum', cls: 'l2', side: 'right' },
+    { num: '03', label: 'Lorem Ipsum', cls: 'l3', side: 'left'  },
+    { num: '04', label: 'Lorem Ipsum', cls: 'l4', side: 'right' },
+    { num: '05', label: 'Lorem Ipsum', cls: 'l5', side: 'left'  },
+  ];
+
+  const stack = document.getElementById('stack');
+
+  layers.forEach(({ num, label, cls, side }) => {
+    const leftHTML = side === 'left'
+      ? `<div class="callout">
+           <div class="callout-bracket left"></div>
+           <div class="callout-line"></div>
+         </div>`
+      : `<div class="spacer"></div>`;
+
+    const rightHTML = side === 'right'
+      ? `<div class="callout">
+           <div class="callout-line"></div>
+           <div class="callout-bracket right"></div>
+         </div>`
+      : `<div class="spacer"></div>`;
+
+    const row = document.createElement('div');
+    row.className = 'layer-row';
+    row.innerHTML = `
+      ${leftHTML}
+      <div class="block ${cls}">
+        <div class="face-top"></div>
+        <div class="face-front">
+          <span class="num">${num}</span>
+          <span class="label">${label}</span>
+        </div>
+        <div class="face-side"></div>
+      </div>
+      ${rightHTML}
+    `;
+    stack.appendChild(row);
+  });
+</script>
+
+</body>
+</html>
