@@ -156,6 +156,21 @@
   outline-offset: 2px
 }
 
+.s-btn-green{
+  background: var(--s-gradient-green);
+  color: var(--s-white);
+  box-shadow: var(--s-shadow-btn-green)
+}
+
+.s-btn-green:hover {
+  box-shadow: var(--s-shadow-btn-green-hover)
+}
+
+.s-btn-green:focus {
+  outline: 2px solid var(--s-green-soft);
+  outline-offset: 2px
+}
+
 .s-btn-danger {
   background: var(--s-gradient-danger);
   color: var(--s-white);
@@ -258,6 +273,21 @@
 
 .s-btn-royal:focus {
   outline: 2px solid var(--s-royal-soft);
+  outline-offset: 2px
+}
+
+.s-btn-indigo{
+  background: var(--s-gradient-indigo);
+  color: var(--s-white);
+  box-shadow: var(--s-shadow-btn-indigo)
+}
+
+.s-btn-indigo:hover {
+  box-shadow: var(--s-shadow-btn-indigo-hover)
+}
+
+.s-btn-indigo:focus {
+  outline: 2px solid var(--s-indigo-soft);
   outline-offset: 2px
 }
 
@@ -6014,7 +6044,7 @@ body.modal-open .s-floating-button {
 }
 
 
-
+/* 
 .hero-word-slider .word-slider-container {
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
@@ -6030,7 +6060,7 @@ body.modal-open .s-floating-button {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
+} */
 
 /* ═══════════════════════════════════════════════════════
    WORD ROTATOR - JARVIS-STYLE (Design System Integrated)
@@ -6091,10 +6121,13 @@ body.modal-open .s-floating-button {
   white-space: nowrap;
 
   /* Gradient text using design system */
-  background: var(--s-gradient-primary);
+  background: var(--s-gradient-light-bg);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+      --s-text-shadow: 0 1px 2px rgba(0, 0, 0, 0.60),
+                        0 3px 6px rgba(0, 0, 0, 0.25);
+
 }
 
 /* Active Word */
@@ -6137,7 +6170,6 @@ body.modal-open .s-floating-button {
 
   .s-word-rotator {
     font-size: clamp(1.8rem, 5vw, 2rem);
-    /* JS will recalculate width on resize if needed, otherwise it stays fixed */
   }
 }
 
@@ -6146,10 +6178,6 @@ body.modal-open .s-floating-button {
     font-size: clamp(1.5rem, 4vw, 1.8rem);
   }
 
-}
-
-.s-word-rotator-static {
-  font-size: 1.1rem;
 }
 
 /* ════════════════════════════════════════════════════════════════════════════

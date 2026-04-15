@@ -53,31 +53,33 @@ class NetCostRecovery {
                 <!-- Gross Burden -->
                 <div class="s-ncr-section s-border-xs s-border-attention s-bg-gradient-attention">
                     <div class="s-ncr-header">
-                        <i class="fas fa-coins"></i>
-                        <span class="s-ncr-title">Gross Operational Cost</span>
-                        <strong class="s-ncr-total" data-total="gross">${this.formatINR(totals.grossTotal)}</strong>
+                        <div class="s-icon s-icon-frost">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <span class="s-ncr-title s-text-gradient-white">Gross Operational Cost</span>
+                        <strong class="s-ncr-total s-text-gradient-white" data-total="gross">${this.formatINR(totals.grossTotal)}</strong>
                     </div>
                     <div class="s-ncr-items">
                         <div class="s-ncr-item">
                             <div class="s-icon s-icon-sm s-icon-primary">
                                 <i class="fa-solid fa-file-invoice"></i>
                             </div>                        
-                            <span class="s-text-gradient-primary s-ncr-label">Purchase Cost</span>
-                            <span class="s-ncr-value s-static s-text-gradient-primary" data-field="purchaseCost">${this.formatINR(this.data.purchaseCost)}</span>
+                            <span class="s-text-primary s-ncr-label">Purchase Cost</span>
+                            <span class="s-ncr-value s-static s-text-primary" data-field="purchaseCost">${this.formatINR(this.data.purchaseCost)}</span>
                         </div>
                         <div class="s-ncr-item">
                             <div class="s-icon s-icon-sm s-icon-green">
                                 <i class="fas fa-shield-alt"></i>
                             </div>
-                            <span class="s-text-gradient-green s-ncr-label">Protection Premiums</span>
-                            <span class="s-ncr-value s-live s-text-gradient-green" data-field="protectionPremiums">${this.formatINR(this.data.protectionPremiums)}</span>
+                            <span class="s-text-green s-ncr-label">Protection Premiums</span>
+                            <span class="s-ncr-value s-live s-text-green" data-field="protectionPremiums">${this.formatINR(this.data.protectionPremiums)}</span>
                         </div>
                         <div class="s-ncr-item">
                             <div class="s-icon s-icon-sm s-icon-amber">
                                 <i class="fas fa-wrench"></i>
                             </div>
-                            <span class="s-text-gradient-amber s-ncr-label">Service & Operations</span>
-                            <span class="s-ncr-value s-live s-text-gradient-amber" data-field="serviceOperations">${this.formatINR(this.data.serviceOperations)}</span>
+                            <span class="s-text-amber s-ncr-label">Service & Operations</span>
+                            <span class="s-ncr-value s-live s-text-amber" data-field="serviceOperations">${this.formatINR(this.data.serviceOperations)}</span>
                         </div>
                     </div>
                 </div>
@@ -85,31 +87,33 @@ class NetCostRecovery {
                 <!-- Recoveries -->
                 <div class="s-ncr-section s-border-xs s-border-success s-bg-gradient-success">
                     <div class="s-ncr-header">
+                    <div class="s-icon s-icon-frost">
                         <i class="fa-solid fa-file-invoice"></i>
-                        <span class="s-ncr-title">Total Recoveries</span>
-                        <strong class="s-ncr-total" data-total="recoveries">${this.formatINR(totals.recoveriesTotal)}</strong>
+                    </div>
+                        <span class="s-ncr-title s-text-gradient-white">Total Recoveries</span>
+                        <strong class="s-ncr-total s-text-gradient-white" data-total="recoveries">${this.formatINR(totals.recoveriesTotal)}</strong>
                     </div>
                     <div class="s-ncr-items">
                         <div class="s-ncr-item">
                             <div class="s-icon s-icon-sm s-icon-success">
                                 <i class="fa-solid fa-file-circle-check"></i>
                             </div>
-                            <span class="s-text-gradient-success s-ncr-label">Insurance Claims</span>
-                            <span class="s-ncr-value s-text-gradient-success s-live" data-field="insuranceClaims">${this.formatINR(this.data.insuranceClaims)}</span>
+                            <span class="s-text-success s-ncr-label">Insurance Claims</span>
+                            <span class="s-ncr-value s-text-success s-live" data-field="insuranceClaims">${this.formatINR(this.data.insuranceClaims)}</span>
                         </div>
                         <div class="s-ncr-item">
                             <div class="s-icon s-icon-sm s-icon-success">
                                 <i class="fa-solid fa-file-circle-check"></i>
                             </div>
-                            <span class="s-text-gradient-success s-ncr-label">Extended Warranty</span>
-                            <span class="s-ncr-value s-text-gradient-success s-live" data-field="extendedWarrantyClaims">${this.formatINR(this.data.extendedWarrantyClaims)}</span>
+                            <span class="s-text-success s-ncr-label">Extended Warranty</span>
+                            <span class="s-ncr-value s-text-success s-live" data-field="extendedWarrantyClaims">${this.formatINR(this.data.extendedWarrantyClaims)}</span>
                         </div>
                         <div class="s-ncr-item">
                             <div class="s-icon s-icon-sm s-icon-success">
                                 <i class="fa-solid fa-file-circle-check"></i>
                             </div>
-                            <span class="s-text-gradient-success s-ncr-label">Maintenance Contract</span>
-                            <span class="s-ncr-value s-text-gradient-success s-live" data-field="maintenanceContractClaims">${this.formatINR(this.data.maintenanceContractClaims)}</span>
+                            <span class="s-text-success s-ncr-label">Maintenance Contract</span>
+                            <span class="s-ncr-value s-text-success s-live" data-field="maintenanceContractClaims">${this.formatINR(this.data.maintenanceContractClaims)}</span>
                         </div>
                     </div>
                 </div>
@@ -117,9 +121,11 @@ class NetCostRecovery {
                 <!-- Net Result -->
                 <div class="s-ncr-section s-bg-gradient-primary">
                     <div class="s-ncr-header s-ncr-net">
+                    <div class="s-icon s-icon-frost">
                         <i class="fa-solid fa-money-bills"></i>
-                        <span class="s-ncr-title">Net Operational Expense</span>
-                        <strong class="s-ncr-total s-ncr-total-large" data-total="net">${this.formatINR(totals.netTotal)}</strong>
+                    </div>
+                        <span class="s-ncr-title s-text-gradient-white">Net Operational Expense</span>
+                        <strong class="s-ncr-total s-ncr-total-large s-text-gradient-white" data-total="net">${this.formatINR(totals.netTotal)}</strong>
                     </div>
                 </div>
 
@@ -130,7 +136,7 @@ class NetCostRecovery {
                             <i class="bi bi-graph-up"></i>
                         </div>
                         <div class="s-ncr-metric-content">
-                            <span class="s-ncr-metric-label s-text-gradient-primary">Recovery Rate</span>
+                            <span class="s-ncr-metric-label s-text-primary">Recovery Rate</span>
                             <span class="s-ncr-metric-value progress-percent" data-metric="recoveryRate">${totals.recoveryRate}%</span>
                         </div>
                     </div>
@@ -139,7 +145,7 @@ class NetCostRecovery {
                             <i class="${isGain ? 'bi bi-piggy-bank-fill' : 'bi bi-exclamation-triangle-fill'}"></i>
                         </div>
                         <div class="s-ncr-metric-content">
-                            <span class="s-ncr-metric-label ${isGain ? 's-text-gradient-success' : 's-text-gradient-danger'}">${isGain ? 'Net Savings' : 'Net Loss'}</span>
+                            <span class="s-ncr-metric-label ${isGain ? 's-text-success' : 's-text-danger'}">${isGain ? 'Net Savings' : 'Net Loss'}</span>
                             <span class="s-ncr-metric-value" data-metric="netSavings">${this.formatINR(Math.abs(totals.netSavings))}</span>
                         </div>
                     </div>
@@ -231,8 +237,8 @@ class NetCostRecovery {
                 const labelElement = metricElement.querySelector('.s-ncr-metric-label');
                 if (labelElement) {
                     labelElement.textContent = isGain ? 'Net Savings' : 'Net Loss';
-                    labelElement.classList.remove('s-text-gradient-success', 's-text-gradient-danger');
-                    labelElement.classList.add(isGain ? 's-text-gradient-success' : 's-text-gradient-danger');
+                    labelElement.classList.remove('s-text-success', 's-text-danger');
+                    labelElement.classList.add(isGain ? 's-text-success' : 's-text-danger');
                 }
             }
         }

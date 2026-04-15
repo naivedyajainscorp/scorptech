@@ -185,84 +185,48 @@
       <!-- MAIN CONTENT -->
       <main>
         <div class="s-blog-sections-wrap"><div class="s-blog-article-intro"><p>Ask any maintenance manager in any Indian industrial facility what their biggest operational frustration is and the answer will come in one of three forms. Jobs that fall through the cracks because nobody formally raised them. Jobs that were raised but never assigned because the right person was not available and nobody followed up. Jobs that were done but never documented because the technician finished the work and moved on without logging it. All three of these frustrations have exactly one cause — the absence of a structured work order management system. And all three disappear the day one is properly implemented.</p><p>The work order is the fundamental unit of maintenance management. Every maintenance activity, from a 10-minute lubrication check to a 3-day planned overhaul, should be initiated, tracked and closed through a work order. This article covers what a work order management system actually does, what the complete work order lifecycle looks like, how it connects to every other function in an EAM platform and why getting work order management right is the single highest impact starting point for any Indian enterprise beginning its EAM journey.</p></div><div class="s-blog-intro-divider" aria-hidden="true">· · ·</div>
-      <div class="s-blog-section" id="sec-what-is-a-work-order">
-        <div class="s-blog-sec-hdr">
-          <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#0a1628 0%,#003d7a 50%,#0066cc 100%)">
-           Section Image &nbsp;·&nbsp; What is a Work Order? &nbsp;·&nbsp; 16 : 9
-         </div>
-          <div class="s-blog-sec-hdr-overlay"></div>
-          <h2>What is a Work Order?</h2>
-        </div>
-        <div class="s-blog-body-text">
-          <p>A work order is a formal documented instruction to perform a specific maintenance or operational task on a specific asset at a specific time by a specific person or team. It is not a verbal request. It is not a WhatsApp message. It is not a sticky note on the machine. It is a structured record that captures the request, the approval, the assignment, the execution and the outcome of a maintenance activity in a single traceable document.</p><p>Six essential fields every work order must contain:</p><ul><li><strong>Asset ID</strong> — the specific asset on which work is to be performed</li><li><strong>Work description</strong> — precise enough for the assigned technician to execute without clarification</li><li><strong>Priority level</strong> — determines response urgency and scheduling</li><li><strong>Assigned person or team</strong> — who is accountable for execution</li><li><strong>Required completion date or time window</strong> — the execution deadline</li><li><strong>Spare parts and tools required</strong> — enables pre-kitting and avoids mid-job delays</li></ul><p>These six fields are not bureaucratic overhead. They are the minimum data set that transforms a request into an executable job. Without any one of them the work order is incomplete and the job is at risk.</p>
-        </div>
-      </div>
-    
-      <div class="s-blog-section" id="sec-work-order-lifecycle">
-        <div class="s-blog-sec-hdr">
-          <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#0a1628 0%,#003d7a 50%,#0066cc 100%)">
-           Section Image &nbsp;·&nbsp; The Work Order Lifecycle: From Raise to Close &nbsp;·&nbsp; 16 : 9
-         </div>
-          <div class="s-blog-sec-hdr-overlay"></div>
-          <h2>The Work Order Lifecycle: From Raise to Close</h2>
-        </div>
-        <div class="s-blog-body-text">
-          <div class="s-blog-callout"><strong>Stage 1 — Raise</strong><br>Work order created by an operator, engineer, or automatically from a triggered PM schedule or sensor alert. Mandatory fields populated. Unique ID assigned. Enters the queue.</div><div class="s-blog-callout"><strong>Stage 2 — Review and Approve</strong><br>Jobs above a defined cost or priority threshold require authorization before actioning. Prevents unauthorized spend, ensures correct priority, creates accountability record. Routine low-cost jobs can be configured to auto-approve.</div><div class="s-blog-callout"><strong>Stage 3 — Assign</strong><br>Work order assigned to a specific technician or team based on skill match, availability and workload. Mobile EAM sends an instant notification to the assignee's device. Eliminates the ambiguity of verbal delegation.</div><div class="s-blog-callout"><strong>Stage 4 — Execute</strong><br>Technician performs the work and logs in real time: actual time spent, spare parts consumed (deducted from inventory), additional defects observed, safety observations and permit-to-work compliance notes where required.</div><div class="s-blog-callout"><strong>Stage 5 — Review and Close</strong><br>Supervisor verifies job completion and asset return to service. Closing the work order updates the asset's maintenance history, deducts parts from inventory, updates next PM due date and feeds cost analytics with actual labour and parts cost.</div><div class="s-blog-callout"><strong>Stage 6 — Analysis</strong><br>Closed work orders are the raw material for maintenance analytics. Patterns reveal which assets consume disproportionate maintenance, which failure types recur, which technicians resolve fastest and which locations have highest maintenance intensity.</div>
-        </div>
-      </div>
-    
-      <div class="s-blog-section" id="sec-types-of-work-orders">
-        <div class="s-blog-sec-hdr">
-          <div class="s-blog-sec-img-ph">
-           <img src="../assets/images_blog/work-order-mobile-close.jpg" alt="Types of Work Orders: Knowing the Difference Matters" loading="lazy">
-         </div>
-          <div class="s-blog-sec-hdr-overlay"></div>
-          <h2>Types of Work Orders: Knowing the Difference Matters</h2>
-        </div>
-        <div class="s-blog-body-text">
-          <table class="s-blog-table"><tbody><tr><th>Type</th><th>Trigger</th><th>Nature</th><th>Primary Use</th></tr><tr><td><strong>Corrective</strong></td><td>Asset failure or reported defect</td><td>Unplanned, often urgent</td><td>Reactive breakdown response; frequency per asset indicates health</td></tr><tr><td><strong>Preventive</strong></td><td>Auto-generated by PM schedule</td><td>Planned, scheduled in advance</td><td>Converts PM calendar entries into executable jobs with assigned technicians and pre-kitted parts</td></tr><tr><td><strong>Inspection</strong></td><td>Compliance schedule or condition assessment</td><td>Formal, documented</td><td>Produces signed timestamped records for regulatory audit trails in pharma, food, healthcare</td></tr><tr><td><strong>Project</strong></td><td>Planned overhaul or capital improvement</td><td>Multi-technician, extended timeline</td><td>Large planned activities requiring detailed approval workflow and significant material cost tracking</td></tr></tbody></table><p>A system that treats all four types identically is not well configured. Each type has different priority logic, different approval requirements and different data captured at close. The corrective work order tells you what broke. The preventive work order tells you what was protected. The inspection work order tells the regulator what was verified. The project work order tells finance what was invested.</p>
-        </div>
-      </div>
-    
-      <div class="s-blog-section" id="sec-work-orders-and-eam-integration">
-        <div class="s-blog-sec-hdr">
-          <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#0a1628 0%,#003d7a 50%,#0066cc 100%)">
-           Section Image &nbsp;·&nbsp; Work Orders and the Rest of the EAM: How It All Connects &nbsp;·&nbsp; 16 : 9
-         </div>
-          <div class="s-blog-sec-hdr-overlay"></div>
-          <h2>Work Orders and the Rest of the EAM: How It All Connects</h2>
-        </div>
-        <div class="s-blog-body-text">
-          <p>Work order management is the connective tissue of the entire EAM platform. It does not operate in isolation.</p><ul><li><strong>Asset Register:</strong> every work order links to an asset ID — every closed work order becomes part of that asset's permanent maintenance history recording what was done, when, by whom and at what cost</li><li><strong>PM Scheduling:</strong> PM schedules generate planned work orders automatically — without work order management, PM schedules are calendar reminders; with it they are executable jobs with assigned technicians and tracked completion</li><li><strong>Spare Parts Inventory:</strong> parts logged on a work order trigger real-time inventory deductions — when stock of a critical spare drops below its reorder point the system raises a replenishment alert automatically</li><li><strong>Compliance:</strong> every inspection work order produces a signed, timestamped digital record — the audit trail a regulator requests is the cumulative history of closed inspection work orders, no separate compliance register needed</li><li><strong>Analytics:</strong> MTBF, MTTR, maintenance cost per asset, technician productivity and PM compliance rate are all calculated directly from closed work order data</li></ul><p>A work order system without an asset register is a task list. An asset register without a work order system is a spreadsheet. Together they are the operational core of a real EAM.</p>
-        </div>
-      </div>
-    
-      <div class="s-blog-section" id="sec-why-whatsapp-fails">
-        <div class="s-blog-sec-hdr">
-          <div class="s-blog-sec-img-ph">
-           <img src="../assets/images_blog/whatsapp-vs-work-order-dashboard.jpg" alt="Why Indian Enterprises Still Manage Work Orders on WhatsApp" loading="lazy">
-         </div>
-          <div class="s-blog-sec-hdr-overlay"></div>
-          <h2>Why Indian Enterprises Still Manage Work Orders on WhatsApp</h2>
-        </div>
-        <div class="s-blog-body-text">
-          <p>WhatsApp-based maintenance coordination is the de facto work order system in the majority of Indian industrial facilities in 2026. It is used not because people do not know better — but because it is fast, familiar and requires zero setup. The problems it creates need to be named precisely:</p><ul><li><strong>No formal job record</strong> — no maintenance history, no traceability, no compliance audit trail</li><li><strong>No priority system</strong> — urgent jobs compete with routine ones in the same message thread</li><li><strong>No assignment accountability</strong> — completed jobs are self-reported with no verification</li><li><strong>No parts logging</strong> — inventory is invisible and untracked</li><li><strong>No analytics</strong> — failure patterns are invisible because no structured data is being captured</li><li><strong>Organisational knowledge held by one person</strong> — when the maintenance manager leaves the organisation, the entire operational history leaves with him in his WhatsApp archive and his memory</li></ul><p>A work order management system is not a replacement for human expertise. It is the infrastructure that makes human expertise organisational rather than individual. The day you move from WhatsApp to a work order system is the day your maintenance operation stops being dependent on specific people and starts being run by a process.</p>
-        </div>
-      </div>
-    
-      <div class="s-blog-section" id="sec-getting-work-orders-right">
-        <div class="s-blog-sec-hdr">
-          <div class="s-blog-sec-img-ph" style="background:linear-gradient(140deg,#0a1628 0%,#003d7a 50%,#0066cc 100%)">
-           Section Image &nbsp;·&nbsp; Getting Work Order Management Right from Day One &nbsp;·&nbsp; 16 : 9
-         </div>
-          <div class="s-blog-sec-hdr-overlay"></div>
-          <h2>Getting Work Order Management Right from Day One</h2>
-        </div>
-        <div class="s-blog-body-text">
-          <p>Five decisions that determine whether a work order system delivers lasting value or becomes another unused tool:</p><ul><li><strong>Decision 1 — Define workflows before going live.</strong> Map how jobs are currently initiated, who approves what, who assigns to whom and what must be logged at close before touching the system. Do not configure a generic workflow and expect it to fit your operation.</li><li><strong>Decision 2 — Set mandatory fields and enforce them.</strong> A work order that can be closed without logging parts consumed or actual time spent is a partial record. Define the minimum data set and configure the system to enforce it — this is the foundation of your maintenance analytics.</li><li><strong>Decision 3 — Make mobile the primary interface.</strong> If technicians cannot raise and close work orders from their phones on the shop floor the system will revert to paper the moment the desktop is inconvenient. Mobile is not optional — it is the primary interface for anyone doing physical work.</li><li><strong>Decision 4 — Implement a clear priority framework.</strong> Four levels work for most Indian facilities: <strong>Critical</strong> (production stopped or safety risk, respond within 1 hour), <strong>High</strong> (degraded performance, respond within 4 hours), <strong>Medium</strong> (non-urgent repair, respond within 24 hours), <strong>Routine</strong> (scheduled maintenance, flexible timing). Every person raising a work order must understand and apply these consistently.</li><li><strong>Decision 5 — Review the work order queue daily.</strong> The dashboard is the maintenance manager's morning briefing. Overdue work orders, unassigned jobs and recurring failures on the same asset are all visible in a 10-minute daily review. This habit, sustained consistently, is what keeps the work order system as a live operational tool rather than a filing cabinet.</li></ul>
-        </div>
-      </div>
+  <div class="s-blog-section" id="sec-what-is-a-work-order">
+    <h2 class="s-text-primary">What is a Work Order?</h2>
+    <div class="s-blog-body-text">
+      <p>A work order is a formal documented instruction to perform a specific maintenance or operational task on a specific asset at a specific time by a specific person or team. It is not a verbal request. It is not a WhatsApp message. It is not a sticky note on the machine. It is a structured record that captures the request, the approval, the assignment, the execution and the outcome of a maintenance activity in a single traceable document.</p><p>Six essential fields every work order must contain:</p><ul><li><strong>Asset ID</strong> — the specific asset on which work is to be performed</li><li><strong>Work description</strong> — precise enough for the assigned technician to execute without clarification</li><li><strong>Priority level</strong> — determines response urgency and scheduling</li><li><strong>Assigned person or team</strong> — who is accountable for execution</li><li><strong>Required completion date or time window</strong> — the execution deadline</li><li><strong>Spare parts and tools required</strong> — enables pre-kitting and avoids mid-job delays</li></ul><p>These six fields are not bureaucratic overhead. They are the minimum data set that transforms a request into an executable job. Without any one of them the work order is incomplete and the job is at risk.</p>
     </div>
+  </div>
+
+  <div class="s-blog-section" id="sec-work-order-lifecycle">
+    <h2 class="s-text-primary">The Work Order Lifecycle: From Raise to Close</h2>
+    <div class="s-blog-body-text">
+      <div class="s-blog-callout"><strong>Stage 1 — Raise</strong><br>Work order created by an operator, engineer, or automatically from a triggered PM schedule or sensor alert. Mandatory fields populated. Unique ID assigned. Enters the queue.</div><div class="s-blog-callout"><strong>Stage 2 — Review and Approve</strong><br>Jobs above a defined cost or priority threshold require authorization before actioning. Prevents unauthorized spend, ensures correct priority, creates accountability record. Routine low-cost jobs can be configured to auto-approve.</div><div class="s-blog-callout"><strong>Stage 3 — Assign</strong><br>Work order assigned to a specific technician or team based on skill match, availability and workload. Mobile EAM sends an instant notification to the assignee's device. Eliminates the ambiguity of verbal delegation.</div><div class="s-blog-callout"><strong>Stage 4 — Execute</strong><br>Technician performs the work and logs in real time: actual time spent, spare parts consumed (deducted from inventory), additional defects observed, safety observations and permit-to-work compliance notes where required.</div><div class="s-blog-callout"><strong>Stage 5 — Review and Close</strong><br>Supervisor verifies job completion and asset return to service. Closing the work order updates the asset's maintenance history, deducts parts from inventory, updates next PM due date and feeds cost analytics with actual labour and parts cost.</div><div class="s-blog-callout"><strong>Stage 6 — Analysis</strong><br>Closed work orders are the raw material for maintenance analytics. Patterns reveal which assets consume disproportionate maintenance, which failure types recur, which technicians resolve fastest and which locations have highest maintenance intensity.</div>
+    </div>
+  </div>
+
+  <div class="s-blog-section" id="sec-types-of-work-orders">
+    <h2 class="s-text-primary">Types of Work Orders: Knowing the Difference Matters</h2>
+    <div class="s-blog-body-text">
+      <table class="s-blog-table"><thead><tr><th>Type</th><th>Trigger</th><th>Nature</th><th>Primary Use</th></tr></thead><tbody><tr><td data-label="Type"><strong>Corrective</strong></td><td data-label="Trigger">Asset failure or reported defect</td><td data-label="Nature">Unplanned, often urgent</td><td data-label="Primary Use">Reactive breakdown response; frequency per asset indicates health</td></tr><tr><td data-label="Type"><strong>Preventive</strong></td><td data-label="Trigger">Auto-generated by PM schedule</td><td data-label="Nature">Planned, scheduled in advance</td><td data-label="Primary Use">Converts PM calendar entries into executable jobs with assigned technicians and pre-kitted parts</td></tr><tr><td data-label="Type"><strong>Inspection</strong></td><td data-label="Trigger">Compliance schedule or condition assessment</td><td data-label="Nature">Formal, documented</td><td data-label="Primary Use">Produces signed timestamped records for regulatory audit trails in pharma, food, healthcare</td></tr><tr><td data-label="Type"><strong>Project</strong></td><td data-label="Trigger">Planned overhaul or capital improvement</td><td data-label="Nature">Multi-technician, extended timeline</td><td data-label="Primary Use">Large planned activities requiring detailed approval workflow and significant material cost tracking</td></tr></tbody><tbody></tbody></table><p>A system that treats all four types identically is not well configured. Each type has different priority logic, different approval requirements and different data captured at close. The corrective work order tells you what broke. The preventive work order tells you what was protected. The inspection work order tells the regulator what was verified. The project work order tells finance what was invested.</p>
+    </div>
+  </div>
+
+  <div class="s-blog-section" id="sec-work-orders-and-eam-integration">
+    <h2 class="s-text-primary">Work Orders and the Rest of the EAM: How It All Connects</h2>
+    <div class="s-blog-body-text">
+      <p>Work order management is the connective tissue of the entire EAM platform. It does not operate in isolation.</p><ul><li><strong>Asset Register:</strong> every work order links to an asset ID — every closed work order becomes part of that asset's permanent maintenance history recording what was done, when, by whom and at what cost</li><li><strong>PM Scheduling:</strong> PM schedules generate planned work orders automatically — without work order management, PM schedules are calendar reminders; with it they are executable jobs with assigned technicians and tracked completion</li><li><strong>Spare Parts Inventory:</strong> parts logged on a work order trigger real-time inventory deductions — when stock of a critical spare drops below its reorder point the system raises a replenishment alert automatically</li><li><strong>Compliance:</strong> every inspection work order produces a signed, timestamped digital record — the audit trail a regulator requests is the cumulative history of closed inspection work orders, no separate compliance register needed</li><li><strong>Analytics:</strong> MTBF, MTTR, maintenance cost per asset, technician productivity and PM compliance rate are all calculated directly from closed work order data</li></ul><p>A work order system without an asset register is a task list. An asset register without a work order system is a spreadsheet. Together they are the operational core of a real EAM.</p>
+    </div>
+  </div>
+
+  <div class="s-blog-section" id="sec-why-whatsapp-fails">
+    <h2 class="s-text-primary">Why Indian Enterprises Still Manage Work Orders on WhatsApp</h2>
+    <div class="s-blog-body-text">
+      <p>WhatsApp-based maintenance coordination is the de facto work order system in the majority of Indian industrial facilities in 2026. It is used not because people do not know better — but because it is fast, familiar and requires zero setup. The problems it creates need to be named precisely:</p><ul><li><strong>No formal job record</strong> — no maintenance history, no traceability, no compliance audit trail</li><li><strong>No priority system</strong> — urgent jobs compete with routine ones in the same message thread</li><li><strong>No assignment accountability</strong> — completed jobs are self-reported with no verification</li><li><strong>No parts logging</strong> — inventory is invisible and untracked</li><li><strong>No analytics</strong> — failure patterns are invisible because no structured data is being captured</li><li><strong>Organisational knowledge held by one person</strong> — when the maintenance manager leaves the organisation, the entire operational history leaves with him in his WhatsApp archive and his memory</li></ul><p>A work order management system is not a replacement for human expertise. It is the infrastructure that makes human expertise organisational rather than individual. The day you move from WhatsApp to a work order system is the day your maintenance operation stops being dependent on specific people and starts being run by a process.</p>
+    </div>
+  </div>
+
+  <div class="s-blog-section" id="sec-getting-work-orders-right">
+    <h2 class="s-text-primary">Getting Work Order Management Right from Day One</h2>
+    <div class="s-blog-body-text">
+      <p>Five decisions that determine whether a work order system delivers lasting value or becomes another unused tool:</p><ul><li><strong>Decision 1 — Define workflows before going live.</strong> Map how jobs are currently initiated, who approves what, who assigns to whom and what must be logged at close before touching the system. Do not configure a generic workflow and expect it to fit your operation.</li><li><strong>Decision 2 — Set mandatory fields and enforce them.</strong> A work order that can be closed without logging parts consumed or actual time spent is a partial record. Define the minimum data set and configure the system to enforce it — this is the foundation of your maintenance analytics.</li><li><strong>Decision 3 — Make mobile the primary interface.</strong> If technicians cannot raise and close work orders from their phones on the shop floor the system will revert to paper the moment the desktop is inconvenient. Mobile is not optional — it is the primary interface for anyone doing physical work.</li><li><strong>Decision 4 — Implement a clear priority framework.</strong> Four levels work for most Indian facilities: <strong>Critical</strong> (production stopped or safety risk, respond within 1 hour), <strong>High</strong> (degraded performance, respond within 4 hours), <strong>Medium</strong> (non-urgent repair, respond within 24 hours), <strong>Routine</strong> (scheduled maintenance, flexible timing). Every person raising a work order must understand and apply these consistently.</li><li><strong>Decision 5 — Review the work order queue daily.</strong> The dashboard is the maintenance manager's morning briefing. Overdue work orders, unassigned jobs and recurring failures on the same asset are all visible in a 10-minute daily review. This habit, sustained consistently, is what keeps the work order system as a live operational tool rather than a filing cabinet.</li></ul>
+    </div>
+  </div>
+</div>
       </main>
 
       <!-- DESKTOP SIDEBAR TOC -->
@@ -375,20 +339,20 @@
       <p class="s-footer__tagline">In the business of making<br><em>yours simple.</em></p>
       <div class="s-footer__contact">
         <a href="tel:+919782383338" class="s-footer__contact-item">
-          <svg viewBox="0 0 16 16" fill="none"><path d="M3 3.5C3 3.224 3.224 3 3.5 3h2.379c.246 0 .46.163.523.402l.754 2.64a.542.542 0 01-.167.567L5.586 7.414c.981 2.016 2.56 3.595 4.576 4.576l.805-.903a.542.542 0 01.567-.167l2.64.754c.239.063.402.277.402.523V14.5c0 .276-.224.5-.5.5C6.044 15 1 9.956 1 3.5z" stroke="currentColor" stroke-width="1.2"/></svg>
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 3.5C3 3.224 3.224 3 3.5 3h2.379c.246 0 .46.163.523.402l.754 2.64a.542.542 0 01-.167.567L5.586 7.414c.981 2.016 2.56 3.595 4.576 4.576l.805-.903a.542.542 0 01.567-.167l2.64.754c.239.063.402.277.402.523V14.5c0 .276-.224.5-.5.5C6.044 15 1 9.956 1 3.5z" stroke="currentColor" stroke-width="1.2"></path></svg>
           +91 97823 83338
         </a>
         <a href="mailto:support@scorptech.in" class="s-footer__contact-item">
-          <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M1 5l7 5 7-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.2"></rect><path d="M1 5l7 5 7-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"></path></svg>
           support@scorptech.in
         </a>
         <a href="/contact.html" class="s-footer__contact-item">
-          <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.375 4.5 8.5 4.5 8.5S12.5 9.375 12.5 6c0-2.485-2.015-4.5-4.5-4.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" stroke="currentColor" stroke-width="1.2"/></svg>
+          <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.375 4.5 8.5 4.5 8.5S12.5 9.375 12.5 6c0-2.485-2.015-4.5-4.5-4.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" stroke="currentColor" stroke-width="1.2"></path></svg>
           Jaipur, Rajasthan
         </a>
       </div>
       <span class="s-footer__location">
-        <svg viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1"/><path d="M1.5 6h9M6 1.5a7 7 0 000 9M6 1.5a7 7 0 010 9" stroke="currentColor" stroke-width="0.8"/></svg>
+        <svg viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1"></circle><path d="M1.5 6h9M6 1.5a7 7 0 000 9M6 1.5a7 7 0 010 9" stroke="currentColor" stroke-width="0.8"></path></svg>
         Jaipur-built · Deployed globally
       </span>
     </div>
@@ -437,13 +401,13 @@
           <span class="s-footer__col-title" style="margin-bottom:0;">Knowledge Hub — 42 Articles</span>
           <a href="/blog/index.html" class="s-view-all" style="font-size:0.72rem;">
             View all
-            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           </a>
         </div>
         <div class="s-blog-categories">
 
           <details class="s-acc">
-            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-fundamentals"></span>Fundamentals<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-fundamentals"></span>Fundamentals<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></summary>
             <div class="s-acc__body">
               <a href="/blog/what-is-eam-enterprise-asset-management-guide.html">What Is Enterprise Asset Management?</a>
               <a href="/blog/eam-vs-cmms-vs-erp-differences.html">EAM vs ERP: The Key Difference</a>
@@ -456,7 +420,7 @@
           </details>
 
           <details class="s-acc">
-            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-modules"></span>Sapphire Modules<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-modules"></span>Sapphire Modules<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></summary>
             <div class="s-acc__body">
               <a href="/blog/work-order-management-backbone-operations.html">Work Order Management</a>
               <a href="/blog/spare-parts-inventory-management-eam.html">Inventory Control</a>
@@ -469,33 +433,33 @@
           </details>
 
           <details class="s-acc">
-            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-industries"></span>Industries<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-industries"></span>Industries<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></summary>
             <div class="s-acc__body">
               <a href="/blog/manufacturing-equipment-downtime-eam.html">Manufacturing</a>
               <a href="/blog/real-estate-facilities-management-eam.html">Facility Management</a>
               <a href="/blog/healthcare-medical-equipment-compliance.html">Healthcare</a>
-              <a href="/blog/energy-utilities-grid-asset-management.html">Power & Utilities</a>
-              <a href="/blog/land-air-water-vehicles-eam.html">Oil & Gas</a>
+              <a href="/blog/energy-utilities-grid-asset-management.html">Power &amp; Utilities</a>
+              <a href="/blog/land-air-water-vehicles-eam.html">Oil &amp; Gas</a>
               <a href="/blog/it-parks-commercial-real-estate-eam.html">Real Estate</a>
-              <a href="/blog/logistics-warehousing-fleet-facility-management.html">Aviation & Airports</a>
+              <a href="/blog/logistics-warehousing-fleet-facility-management.html">Aviation &amp; Airports</a>
             </div>
           </details>
 
           <details class="s-acc">
-            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-analytics"></span>Analytics<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 16 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-analytics"></span>Analytics<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 16 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></summary>
             <div class="s-acc__body">
               <a href="/blog/energy-monitoring-sustainability-analytics-eam.html">Real-Time Asset Analytics</a>
               <a href="/blog/predictive-analytics-asset-failure-prevention.html">Predictive Maintenance Analytics</a>
               <a href="/blog/oee-overall-equipment-effectiveness-guide.html">OEE Tracking</a>
               <a href="/blog/maintenance-kpis-that-actually-matter.html">KPI Design for EAM</a>
-              <a href="/blog/mtbf-mttr-reliability-numbers-guide.html">MTBF: Calculating & Reducing</a>
+              <a href="/blog/mtbf-mttr-reliability-numbers-guide.html">MTBF: Calculating &amp; Reducing</a>
               <a href="/blog/cost-analytics-maintenance-budget-savings.html">Maintenance Cost Benchmarking</a>
               <a href="/blog/digital-twins-and-eam-next-frontier.html">Asset Health Scoring</a>
             </div>
           </details>
 
           <details class="s-acc">
-            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-business"></span>Business Value<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-business"></span>Business Value<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></summary>
             <div class="s-acc__body">
               <a href="/blog/roi-of-eam-implementation-real-numbers.html">ROI of EAM Software</a>
               <a href="/blog/total-cost-of-ownership-asset-management.html">The Spreadsheet Trap</a>
@@ -508,7 +472,7 @@
           </details>
 
           <details class="s-acc">
-            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-special"></span>Special Editions<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-special"></span>Special Editions<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></summary>
             <div class="s-acc__body">
               <a href="/blog/sapphire-eam-for-indian-msmes.html">Sapphire 2025: What's New</a>
               <a href="/blog/scorp-story-jaipur-honest-industrial-software.html">Built in Jaipur: Our Story</a>
@@ -579,7 +543,7 @@
       <a href="/contact.html">Contact</a>
     </div>
     <div class="s-footer__made">
-      <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.375 4.5 8.5 4.5 8.5S12.5 9.375 12.5 6c0-2.485-2.015-4.5-4.5-4.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" stroke="rgba(143,169,196,0.7)"/></svg>
+      <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.375 4.5 8.5 4.5 8.5S12.5 9.375 12.5 6c0-2.485-2.015-4.5-4.5-4.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" stroke="rgba(143,169,196,0.7)"></path></svg>
       Made with intent in Jaipur
     </div>
   </div>
@@ -588,95 +552,8 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../js/main.js" type="module"></script>
-<script>
-  /* IntersectionObserver — syncs active TOC item as you scroll */
-(function () {
-  const sections     = Array.from(document.querySelectorAll('.s-blog-section[id]'));
-  const desktopItems = document.querySelectorAll('#sBlogTocDesktop li');
-  const mobileItems  = document.querySelectorAll('#sBlogTocMobile  li');
-  if (!sections.length) return;
+<script src="../js/blog.js" type="module"></script>
 
-  function setActive(idx) {
-    [desktopItems, mobileItems].forEach(list =>
-      list.forEach((li, i) => li.classList.toggle('is-active', i === idx))
-    );
-  }
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const idx = sections.indexOf(entry.target);
-        if (idx !== -1) setActive(idx);
-      }
-    });
-  }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
-
-  sections.forEach(sec => observer.observe(sec));
-})();
-
-/* ══ CUSTOM TOC DRAWER CONTROLLER ══ */
-(function () {
-  const fab       = document.getElementById('sBlogTocFab');
-  const drawer    = document.getElementById('sBlogTocDrawer');
-  const backdrop  = document.getElementById('sBlogDrawerBackdrop');
-  const closeBtn  = document.getElementById('sBlogDrawerClose');
-  const closeBtn2 = document.getElementById('sBlogDrawerClose2');
-  const navbar    = document.getElementById('scorpNavbar');
-  const links     = drawer.querySelectorAll('.s-drawer-link');
-  if (!fab || !drawer) return;
-
-  const isMobile = () => window.innerWidth < 992;
-
-  function openDrawer() {
-    drawer.classList.add('is-open');
-    backdrop.classList.add('is-open');
-    fab.setAttribute('aria-expanded', 'true');
-    drawer._bodyOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    navHide();
-  }
-
-  function closeDrawer() {
-    drawer.classList.remove('is-open');
-    backdrop.classList.remove('is-open');
-    fab.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = drawer._bodyOverflow || '';
-    navShow();
-  }
-
-  function navHide() {
-    if (!isMobile()) return;
-    navbar.classList.remove('s-nav-showing', 's-nav-hidden');
-    navbar.classList.add('s-nav-hiding');
-    navbar.addEventListener('animationend', function h(e) {
-      if (e.animationName !== 's-nav-hide') return;
-      navbar.removeEventListener('animationend', h);
-      navbar.classList.remove('s-nav-hiding');
-      navbar.classList.add('s-nav-hidden');
-    });
-  }
-
-  function navShow() {
-    if (!isMobile()) return;
-    navbar.classList.remove('s-nav-hiding', 's-nav-hidden');
-    navbar.classList.add('s-nav-showing');
-    navbar.addEventListener('animationend', function s(e) {
-      if (e.animationName !== 's-nav-show') return;
-      navbar.removeEventListener('animationend', s);
-      navbar.classList.remove('s-nav-showing');
-    });
-  }
-
-  fab.addEventListener('click', openDrawer);
-  backdrop.addEventListener('click', closeDrawer);
-  closeBtn.addEventListener('click', closeDrawer);
-  closeBtn2.addEventListener('click', closeDrawer);
-  links.forEach(link => link.addEventListener('click', () => closeDrawer()));
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && drawer.classList.contains('is-open')) closeDrawer();
-  });
-})();
-</script>
 
 
 

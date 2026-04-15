@@ -19,6 +19,23 @@ import { initIntelligencePage } from './pages/intelligence.js';
 console.log('🔵 Main.js loaded - waiting for DOM...');
 
 
+// ─────────────────────────────────────────────────────────────────────────────
+// SCROLLBAR EDGE-HOVER REVEAL (Universal - all pages)
+// ─────────────────────────────────────────────────────────────────────────────
+
+const SCROLLBAR_EDGE_THRESHOLD = 40;
+
+document.addEventListener('mousemove', (e) => {
+  const nearEdge = e.clientX >= window.innerWidth - SCROLLBAR_EDGE_THRESHOLD;
+  document.documentElement.classList.toggle('scrollbar-visible', nearEdge);
+});
+
+document.addEventListener('mouseleave', () => {
+  document.documentElement.classList.remove('scrollbar-visible');
+});
+
+
+
 // ═════════════════════════════════════════════════════════════════════════════
 // ✅ SINGLE DOMContentLoaded INITIALIZATION
 // ═════════════════════════════════════════════════════════════════════════════
