@@ -53,7 +53,7 @@
             border: 1px solid var(--s-gray-200);
         }
 
-        /* SVG connectors */
+        /* SVG connectors — elbow paths with draw-in animation */
         .scm-spoke-svg {
             position: absolute;
             inset: 0;
@@ -69,12 +69,9 @@
             stroke-linejoin: round;
             opacity: 1;
         }
-
-        /* ---- Main org layer ---- */
-        .scm-main-org-layer {
-            position: absolute;
-            inset: 0;
-            z-index: 4;
+        .scm-connector.hl {
+            stroke-width: 2;
+            opacity: 1;
         }
 
         /* Workplace nodes layer */
@@ -153,19 +150,6 @@
             gap: 4px;
         }
 
-        /* Workplace nodes */
-        .scm-nodes-layer {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            z-index: 5;
-        }
-        .scm-wp-node {
-            position: absolute;
-            transform: translate(-50%, -50%) scale(0);
-            opacity: 0;
-        }
-
         /* Node card */
         .scm-wp-card {
             background: var(--s-white);
@@ -233,17 +217,6 @@
         }
         .scm-wp-chip .scm-pin-icon { color: #ef4444; font-size: clamp(0.32rem, 0.5vw, 0.48rem); }
         .scm-wp-chip .scm-ind-icon { color: var(--s-primary-500); font-size: clamp(0.32rem, 0.5vw, 0.48rem); }
-
-        /* Dot packets */
-        .scm-dot-packet {
-            position: absolute;
-            width: 5px; height: 5px;
-            border-radius: 50%;
-            background: var(--s-primary-400);
-            box-shadow: 0 0 5px rgba(var(--s-primary-rgb), 0.45);
-            pointer-events: none;
-            z-index: 7;
-        }
 
         /* Ghost orgs */
         .scm-ghost-layer {
@@ -389,7 +362,6 @@
                 text-overflow: ellipsis;
             }
             .scm-wp-chips { flex-direction: row; flex-wrap: wrap; gap: 2px; justify-content: center; }
-            .scm-dot-packet { width: 4px; height: 4px; }
         }
         
         /* ---- MODULE 2 USER MGMT VIZ ---- */
@@ -2136,28 +2108,23 @@
                         <!-- Ghost orgs layer (behind everything) -->
                         <div class="scm-ghost-layer" id="scmGhostLayer"></div>
 
-                        <!-- Main org viz (SVG lines + DOM nodes) -->
-                        <div class="scm-main-org-layer" id="scmMainOrgLayer">
+                        <!-- SVG for connector lines -->
+                        <svg class="scm-spoke-svg" id="scmSpokeSvg" xmlns="http://www.w3.org/2000/svg"></svg>
 
-                            <!-- SVG for spoke lines and dot packets -->
-                            <svg class="scm-spoke-svg" id="scmSpokeSvg" xmlns="http://www.w3.org/2000/svg"></svg>
-
-                            <!-- Org hub (center) -->
-                            <div class="scm-org-hub" id="scmOrgHub">
-                                <div class="scm-hub-ring scm-hub-ring-1"></div>
-                                <div class="scm-hub-ring scm-hub-ring-2"></div>
-                                <div class="scm-hub-inner">
-                                    <div class="scm-hub-icon"><i class="fas fa-building"></i></div>
-                                    <div class="scm-hub-label">ORGANISATION</div>
-                                    <div class="scm-hub-name">Precision Auto Works</div>
-                                    <div class="scm-hub-industry"><i class="fas fa-wrench"></i> Automotive Service</div>
-                                </div>
+                        <!-- Org hub (center) — positioned by JS -->
+                        <div class="scm-org-hub" id="scmOrgHub">
+                            <div class="scm-hub-ring scm-hub-ring-1"></div>
+                            <div class="scm-hub-ring scm-hub-ring-2"></div>
+                            <div class="scm-hub-inner">
+                                <div class="scm-hub-icon"><i class="fas fa-building"></i></div>
+                                <div class="scm-hub-label">ORGANISATION</div>
+                                <div class="scm-hub-name">Precision Auto Works</div>
+                                <div class="scm-hub-industry"><i class="fas fa-wrench"></i> Automotive Service</div>
                             </div>
-
-                            <!-- Workplace nodes — JS renders these -->
-                            <div class="scm-nodes-layer" id="scmNodesLayer"></div>
-
                         </div>
+
+                        <!-- Workplace nodes — JS renders these -->
+                        <div class="scm-nodes-layer" id="scmNodesLayer"></div>
 
                         <!-- Marvel title overlay — hidden until Act 2 -->
                         <div class="scm-marvel-title" id="scmMarvelTitle">
@@ -3357,26 +3324,53 @@ unitConversions: [
         // ============================================================
         (function() {
 
-            // Mind-map elbow connector
-            function buildElbowPath(ox, oy, dx, dy) {
-                const midY = (oy + dy) / 2;
-                return `M${ox},${oy} L${ox},${midY} L${dx},${midY} L${dx},${dy}`;
-            }
-
-            function getNodePositions(W, H) {
-                const cx = W / 2;
-                const cy = H / 2;
-                const R = Math.min(W, H) * 0.36;
+            // ── Node orbit positions ──
+            function getNodePositions(cx, cy, R) {
                 const angles = [300, 45, 110, 185, 255];
-
-                const nodes = angles.map((deg) => {
+                return angles.map((deg) => {
                     const rad = (deg - 90) * Math.PI / 180;
                     return { x: cx + R * Math.cos(rad), y: cy + R * Math.sin(rad) };
                 });
-
-                return { hubY: cy, cx, cy, nodes };
             }
 
+            // ── VHV elbow: hub-center → vertical → horizontal → vertical → node-center ──
+            function buildElbowPath(ox, oy, dx, dy) {
+                const midY = oy + (dy - oy) / 2;
+                return `M${ox},${oy} L${ox},${midY} L${dx},${midY} L${dx},${dy}`;
+            }
+
+            // ── Draw connector from hub center to node center ──
+            // Nodes sit on top (higher z-index) so the path endpoints are hidden behind cards
+            function drawConnector(svg, hubEl, nodeEl, lineId) {
+                const container = document.getElementById('scmVizStage');
+                if (!container) return null;
+                const cRect = container.getBoundingClientRect();
+                const hRect = hubEl.getBoundingClientRect();
+                const nRect = nodeEl.getBoundingClientRect();
+
+                // Centers relative to container
+                const ox = hRect.left + hRect.width / 2 - cRect.left;
+                const oy = hRect.top + hRect.height / 2 - cRect.top;
+                const dx = nRect.left + nRect.width / 2 - cRect.left;
+                const dy = nRect.top + nRect.height / 2 - cRect.top;
+
+                const d = buildElbowPath(ox, oy, dx, dy);
+
+                const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                path.setAttribute('d', d);
+                path.setAttribute('class', 'scm-connector');
+                if (lineId) path.setAttribute('id', lineId);
+
+                // Setup draw-in animation via dashoffset
+                const len = path.getTotalLength ? path.getTotalLength() : 200;
+                path.setAttribute('stroke-dasharray', len);
+                path.setAttribute('stroke-dashoffset', len);
+
+                svg.appendChild(path);
+                return { sx: ox, sy: oy, ex: dx, ey: dy, len };
+            }
+
+            // ── Build the desktop layout ──
             function buildDesktop() {
                 const stage  = document.getElementById('scmVizStage');
                 const svg    = document.getElementById('scmSpokeSvg');
@@ -3388,26 +3382,29 @@ unitConversions: [
 
                 const W  = stage.offsetWidth;
                 const H  = stage.offsetHeight;
-                const { hubY, cx, cy, nodes } = getNodePositions(W, H);
+                const cx = W / 2;
+                const cy = H / 2;
+                const R  = Math.min(W, H) * 0.36;
+                const nodePositions = getNodePositions(cx, cy, R);
                 const eps = [];
 
-                // Hub position
+                // Position hub at center
                 const hubEl = document.getElementById('scmOrgHub');
-                if (hubEl) hubEl.style.top = hubY + 'px';
+                if (!hubEl) return null;
+                hubEl.style.left   = (cx - hubEl.offsetWidth / 2) + 'px';
+                hubEl.style.top    = (cy - hubEl.offsetHeight / 2) + 'px';
+                hubEl.style.transform = 'none';
 
-                // Hub half-width matches CSS: clamp(130px, 13vw, 200px)
-                const hubHalfW = Math.min(200, Math.max(130, window.innerWidth * 0.13)) / 2 + 8;
-
+                // Create node elements
+                const nodeData = [];
                 SCM_DATA.workplaceViz.primaryOrg.workplaces.forEach((wp, i) => {
-                    const n = nodes[i];
-                    if (!n) return;
-
-                    // Place node
+                    const np = nodePositions[i];
+                    if (!np) return;
                     const node = document.createElement('div');
                     node.className = 'scm-wp-node';
                     node.id = `scmWpNode${i}`;
-                    node.style.left = n.x + 'px';
-                    node.style.top  = n.y + 'px';
+                    node.style.left = np.x + 'px';
+                    node.style.top  = np.y + 'px';
                     node.innerHTML = `
                         <div class="scm-wp-card">
                             <div class="scm-wp-header">
@@ -3421,38 +3418,39 @@ unitConversions: [
                             </div>
                         </div>`;
                     nLayer.appendChild(node);
-
-                    // Connector from hub center to node center
-                    const ndx = n.x - cx;
-                    const ndy = n.y - hubY;
-                    const ndist = Math.hypot(ndx, ndy);
-
-                    // Origin: just outside hub edge (+8px so it's visible)
-                    const ox = cx + (ndx / ndist) * (hubHalfW);
-                    const oy = hubY + (ndy / ndist) * (hubHalfW);
-
-                    // Destination: node card center, pulled back 48px to sit on card edge
-                    const dx = n.x - (ndx / ndist) * 48;
-                    const dy = n.y - (ndy / ndist) * 48;
-
-                    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-                    path.setAttribute('d', buildElbowPath(ox, oy, dx, dy));
-                    path.setAttribute('class', 'scm-connector');
-                    path.setAttribute('id', `scmLine${i}`);
-                    const pathLen = path.getTotalLength();
-                    path.setAttribute('stroke-dasharray', pathLen);
-                    path.setAttribute('stroke-dashoffset', pathLen);
-                    svg.appendChild(path);
-                    eps.push({ sx: ox, sy: oy, ex: dx, ey: dy, len: pathLen });
+                    nodeData.push({ node, np, i });
                 });
 
-                return { eps, cx, hubY, W, H };
+                // Force layout
+                void stage.offsetHeight;
+
+                // Temporarily make nodes visible for measurement
+                nodeData.forEach(({ node }) => {
+                    node.style.transform = 'translate(-50%, -50%) scale(1)';
+                    node.style.opacity   = '1';
+                });
+                void stage.offsetHeight;
+
+                // Draw connectors from hub to each node
+                nodeData.forEach(({ node, np, i }) => {
+                    const result = drawConnector(svg, hubEl, node, `scmLine${i}`);
+                    if (result) eps.push(result);
+                });
+
+                // Reset nodes to hidden for GSAP animation
+                nodeData.forEach(({ node }) => {
+                    node.style.transform = '';
+                    node.style.opacity   = '';
+                });
+
+                return { eps, cx, cy, W, H, hubEl, nodeData };
             }
 
+            // ── Build ghost org ──
             function buildGhost(ghostData, idx, W, H) {
                 const cx = W / 2;
                 const cy = H / 2;
-                const R = Math.min(W, H) * 0.28;
+                const R  = Math.min(W, H) * 0.28;
                 const layer = document.getElementById('scmGhostLayer');
                 if (!layer) return null;
 
@@ -3466,6 +3464,17 @@ unitConversions: [
                 wrap.appendChild(gSvg);
 
                 const ghostAngles = [300, 45, 110, 185, 255];
+
+                // Create ghost hub
+                const hub = document.createElement('div');
+                hub.className = 'scm-ghost-hub';
+                hub.style.cssText = `position:absolute;left:${cx}px;top:${cy}px;transform:translate(-50%,-50%);`;
+                hub.innerHTML = `
+                    <i class="fas ${ghostData.icon}" style="font-size:clamp(0.7rem,0.9vw,0.9rem);color:${ghostData.color};opacity:0.55;"></i>
+                    <div class="scm-ghost-hub-name">${ghostData.name}</div>`;
+                wrap.appendChild(hub);
+
+                // Create ghost nodes and connectors
                 ghostData.workplaces.forEach((wp, i) => {
                     if (i >= ghostAngles.length) return;
                     const deg = ghostAngles[i];
@@ -3473,63 +3482,37 @@ unitConversions: [
                     const nx = cx + R * Math.cos(rad);
                     const ny = cy + R * Math.sin(rad);
 
-                    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-                    path.setAttribute('d', buildElbowPath(cx, cy, nx, ny - 15));
-                    path.setAttribute('class', 'scm-ghost-connector');
-                    path.setAttribute('stroke', ghostData.color);
-                    gSvg.appendChild(path);
-
                     const wn = document.createElement('div');
                     wn.className = 'scm-ghost-wp-node';
-                    wn.style.cssText = `position:absolute;left:${nx}px;top:${ny}px;`;
+                    wn.style.cssText = `position:absolute;left:${nx}px;top:${ny}px;transform:translate(-50%,-50%);`;
                     wn.innerHTML = `<div class="scm-ghost-wp-name">${wp.name}</div>`;
                     wrap.appendChild(wn);
-                });
 
-                const hub = document.createElement('div');
-                hub.className = 'scm-ghost-hub';
-                hub.style.cssText = `position:absolute;left:${cx}px;top:${cy}px;`;
-                hub.innerHTML = `
-                    <i class="fas ${ghostData.icon}" style="font-size:clamp(0.7rem,0.9vw,0.9rem);color:${ghostData.color};opacity:0.55;"></i>
-                    <div class="scm-ghost-hub-name">${ghostData.name}</div>`;
-                wrap.appendChild(hub);
+                    // Draw ghost connector using simple line
+                    const cRect = wrap.getBoundingClientRect();
+                    const hRect = hub.getBoundingClientRect();
+                    const nRect = wn.getBoundingClientRect();
+                    const hcx = hRect.left + hRect.width / 2 - cRect.left;
+                    const hcy = hRect.top + hRect.height / 2 - cRect.top;
+                    const ncx = nRect.left + nRect.width / 2 - cRect.left;
+                    const ncy = nRect.top + nRect.height / 2 - cRect.top;
+
+                    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                    line.setAttribute('x1', hcx);
+                    line.setAttribute('y1', hcy);
+                    line.setAttribute('x2', ncx);
+                    line.setAttribute('y2', ncy);
+                    line.setAttribute('class', 'scm-ghost-connector');
+                    line.setAttribute('stroke', ghostData.color);
+                    gSvg.appendChild(line);
+                });
 
                 layer.appendChild(wrap);
                 return wrap;
             }
 
-            let dotIntervals = [];
-            let activeDots   = [];
-
-            function startDots(eps) {
-                eps.forEach((ep, i) => {
-                    const iv = setInterval(() => {
-                        if (document.hidden) return;
-                        const stage = document.getElementById('scmVizStage');
-                        if (!stage) return;
-                        const dot = document.createElement('div');
-                        dot.className = 'scm-dot-packet';
-                        stage.appendChild(dot);
-                        activeDots.push(dot);
-                        gsap.fromTo(dot,
-                            { x: ep.sx, y: ep.sy, opacity: 1 },
-                            { x: ep.ex, y: ep.ey, opacity: 0, duration: 1.4, ease: 'power1.in',
-                                onComplete: () => { dot.remove(); activeDots = activeDots.filter(d => d !== dot); } }
-                        );
-                    }, 2000 + i * 250);
-                    dotIntervals.push(iv);
-                });
-            }
-
-            function stopDots() {
-                dotIntervals.forEach(clearInterval);
-                dotIntervals = [];
-                activeDots.forEach(d => d.remove());
-                activeDots = [];
-            }
-
+            // ── Cleanup ──
             function cleanup() {
-                stopDots();
                 gsap.killTweensOf('#scmOrgHub .scm-hub-inner');
                 gsap.killTweensOf('.scm-hub-ring');
                 gsap.killTweensOf('#scmMarvelTitle');
@@ -3539,52 +3522,58 @@ unitConversions: [
                 document.querySelectorAll('[id^=scmWpNode]').forEach(el => gsap.killTweensOf(el));
                 document.querySelectorAll('.scm-ghost-org').forEach(el => { gsap.killTweensOf(el); el.remove(); });
                 gsap.set('#scmMarvelTitle', { opacity: 0 });
-                // Reset hub position
                 const hubEl = document.getElementById('scmOrgHub');
-                if (hubEl) hubEl.style.top = '';
-                // Clear SVG and node layer before rebuild
+                if (hubEl) { hubEl.style.top = ''; hubEl.style.left = ''; hubEl.style.transform = ''; }
                 const svg    = document.getElementById('scmSpokeSvg');
                 const nLayer = document.getElementById('scmNodesLayer');
                 if (svg)    svg.innerHTML    = '';
                 if (nLayer) nLayer.innerHTML = '';
             }
 
+            // ── Main animation runner ──
             function runAnim() {
                 cleanup();
                 const refs = buildDesktop();
                 if (!refs) return;
-                const { eps } = refs;
+                let { eps, hubEl, nodeData } = refs;
 
                 gsap.set('#scmOrgHub .scm-hub-inner', { scale: 0, opacity: 0 });
                 gsap.set('.scm-hub-ring', { scale: 0, opacity: 0 });
 
-                // Double-RAF: ensures DOM has painted and connectors are in the DOM before GSAP reads path lengths
                 requestAnimationFrame(() => {
                     requestAnimationFrame(() => {
-                        const tl = gsap.timeline({ repeat: -1, repeatDelay: 2, onRepeat: cleanup });
+                        const tl = gsap.timeline({
+                            repeat: -1,
+                            repeatDelay: 2,
+                            onRepeat: () => {
+                                cleanup();
+                                const fresh = buildDesktop();
+                                if (!fresh) return;
+                                eps.length = 0;
+                                fresh.eps.forEach(e => eps.push(e));
+                            }
+                        });
 
                         // ACT 1 — Hub pops in
                         tl.to('#scmOrgHub .scm-hub-inner', { scale: 1, opacity: 1, duration: 0.5, ease: 'back.out(2)' });
                         tl.to('.scm-hub-ring', { scale: 1, opacity: 1, duration: 0.4, stagger: 0.15, ease: 'power2.out' }, '-=0.2');
 
-                        // ACT 1 — Connectors draw
-                        eps.forEach((_, i) => {
-                            const el = document.getElementById(`scmLine${i}`);
-                            if (!el) return;
-                            const len = parseFloat(el.getAttribute('stroke-dasharray'));
-                            tl.to(`#scmLine${i}`, { strokeDashoffset: 0, duration: 0.55, ease: 'power2.inOut' }, 0.4 + i * 0.1);
+                        // ACT 1 — Connectors draw in via stroke-dashoffset
+                        eps.forEach((ep, i) => {
+                            tl.to(`#scmLine${i}`, {
+                                strokeDashoffset: 0,
+                                duration: 0.5,
+                                ease: 'power2.inOut'
+                            }, 0.3 + i * 0.08);
                         });
 
                         // ACT 1 — Workplace nodes pop in
                         SCM_DATA.workplaceViz.primaryOrg.workplaces.forEach((_, i) => {
-                            tl.to(`#scmWpNode${i}`, { scale: 1, opacity: 1, duration: 0.35, ease: 'back.out(2.5)' }, 0.65 + i * 0.12);
+                            tl.to(`#scmWpNode${i}`, { scale: 1, opacity: 1, duration: 0.35, ease: 'back.out(2.5)' }, 0.5 + i * 0.1);
                         });
 
-                        // ACT 1 — Dot packets (eps populated by RAF callback before timeline fires)
-                        tl.add(() => startDots(eps), 1.7);
-                        tl.addPause('+=2.2');
-
                         // ACT 2 — Marvel title
+                        tl.addPause('+=1.5');
                         tl.to('#scmMarvelTitle', { opacity: 1, duration: 0.12 });
                         tl.from('.scm-marvel-line1', { y: 28, opacity: 0, duration: 0.4, ease: 'back.out(2)' }, '-=0.05');
                         tl.from('.scm-marvel-line2', { y: 18, opacity: 0, duration: 0.35, ease: 'power2.out' }, '-=0.2');

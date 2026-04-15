@@ -23,6 +23,8 @@ p,h1,h2,h3,h4,h5,h6,span{
     --s-primary-vibrant: #0099ff;
     --s-primary-dark: #004d99;
     --s-primary-light: #3399ff;
+    --s-primary-400: #60a5fa;   /* light blue — Tailwind blue-400 */
+    --s-primary-400-rgb: 96, 165, 250;
     --s-accent: #1a73e8;
     --s-primary-500: #3490fa;
     --s-primary-600: #2563eb;

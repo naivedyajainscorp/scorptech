@@ -1,16 +1,7 @@
 {
   "permissions": {
     "allow": [
-      "Bash(powershell *)",
-      "Bash(python *)",
-      "Bash(del *)",
-      "Bash(start *)",
-      "Bash(type *)",
-      "Bash(node *)",
-      "Bash(sapphire.html *)",
-      "Bash(ren *)",
-      "Bash(move *)"
+      "Bash(powershell *)"
     ]
-  },
-  "$version": 3
+  }
 }
