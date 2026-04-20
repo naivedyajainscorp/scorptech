@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section Header Showcase — Scorptech Sapphire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="style.css" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f1f5f9;
+  padding: 48px 40px;
+  color: #1e293b;
+}
+
+.page-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 48px;
+}
+
+.group-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #cbd5e1;
+  margin: 52px 0 14px;
+  padding-left: 4px;
+}
+
+.stack { display: flex; flex-direction: column; gap: 12px; }
+
+/* ══════════════════════════════════════════
+   BASE HEADER SHELL
+══════════════════════════════════════════ */
+.ih {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  height: 88px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow:
+    0 2px 12px rgba(0,0,0,0.10),
+    0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* shape-1: LEFT — icon block, flush TOP */
+.ih .s1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 76px; /* slightly less than container = gap shows at bottom */
+  clip-path: polygon(0 0, 100% 0, 62% 100%, 0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 24px;
+  font-size: 1.6rem;
+  color: rgba(255,255,255,0.95);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  z-index: 2;
+}
+
+/* shape-2: RIGHT — text block, flush BOTTOM */
+.ih .s2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: calc(100% - 60px);
+  height: 76px; /* slightly less = gap shows at top */
+  clip-path: polygon(9% 0, 100% 0, 100% 100%, 0 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: clamp(72px, 13%, 96px);
+  padding-right: 28px;
+  gap: 3px;
+  z-index: 1;
+}
+
+/* ── Text ── */
+.ih .lbl {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.ih .ttl {
+  font-size: 15px;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1.2;
+  margin: 0;
+}
+.ih .sub {
+  font-size: 11.5px;
+  color: #64748b;
+  line-height: 1.35;
+  margin: 0;
+}
+.ih .rule {
+  display: block;
+  width: 28px;
+  height: 2px;
+  border-radius: 2px;
+  margin: 1px 0;
+}
+
+/* ══════════════════════════════════════════
+   16 COLOR VARIANTS
+   Each defines: base bg, s1 gradient, s2 bg, lbl color, rule color
+══════════════════════════════════════════ */
+
+/* 1. PRIMARY (Blue) */
+.ih-primary { background: #dbeafe; }
+.ih-primary .s1 { background: linear-gradient(140deg, #0066cc, #3399ff); box-shadow: 3px 0 18px rgba(0,102,204,0.4), inset 0 1px 0 rgba(255,255,255,0.2); }
+.ih-primary .s2 { background: linear-gradient(105deg, #eff6ff, #dbeafe); }
+.ih-primary .lbl { color: #0066cc; }
+.ih-primary .rule { background: linear-gradient(90deg,#0066cc,#3399ff); }
+
+/* 2. SUCCESS (Green) */
+.ih-success { background: #dcfce7; }
+.ih-success .s1 { background: linear-gradient(140deg, #16a34a, #22c55e); box-shadow: 3px 0 18px rgba(22,163,74,0.4), inset 0 1px 0 rgba(255,255,255,0.2); }
+.ih-success .s2 { background: linear-gradient(105deg, #f0fdf4, #dcfce7); }
+.ih-success .lbl { color: #16a34a; }
+.ih-success .rule { background: linear-gradient(90deg,#16a34a,#22c55e); }
+
+/* 3. SUCCESS-SOFT (Lime) */
+.ih-success-soft { background: #ecfccb; }
+.ih-success-soft .s1 { background: linear-gradient(140deg, #5acc17, #a3e635); box-shadow: 3px 0 18px rgba(90,204,23,0.4), inset 0 1px 0 rgba(255,255,255,0.2); }
+.ih-success-soft .s2 { background: linear-gradient(105deg, #f7fee7, #ecfccb); }
+.ih-success-soft .lbl { color: #4d7c0f; }
+.ih-success-soft .rule { background: linear-gradient(90deg,#5acc17,#a3e635); }
+
+/* 4. DANGER (Red) */
+.ih-danger { background: #fee2e2; }
+.ih-danger .s1 { background: linear-gradient(140deg, #dc2626, #ef4444); box-shadow: 3px 0 18px rgba(220,38,38,0.4), inset 0 1px 0 rgba(255,255,255,0.2); }
+.ih-danger .s2 { background: linear-gradient(105deg, #fff5f5, #fee2e2); }
+.ih-danger .lbl { color: #dc2626; }
+.ih-danger .rule { background: linear-gradient(90deg,#dc2626,#ef4444); }
+
+/* 5. WARNING (Yellow) */
+.ih-warning { background: #fef9c3; }
+.ih-warning .s1 { background: linear-gradient(140deg, #ca8a04, #eab308); box-shadow: 3px 0 18px rgba(202,138,4,0.4), inset 0 1px 0 rgba(255,255,255,0.2); }
+.ih-warning .s2 { background: linear-gradient(105deg, #fefce8, #fef9c3); }
+.ih-warning .lbl { color: #854d0e; }
+.ih-warning .rule { background: linear-gradient(90deg,#ca8a04,#eab308); }
+
+/* 6. AMBER */
+.ih-amber { background: #fef3c7; }
+.ih-amber .s1 { background: linear-gradient(140deg, #d97706, #f59e0b); box-shadow: 3px 0 18px rgba(217,119,6,0.4), inset 0 1px 0 rgba(255,255,255,0.2); }
+.ih-amber .s2 { background: linear-gradient(105deg, #fffbeb, #fef3c7); }
+.ih-amber .lbl { color: #92400e; }
+.ih-amber .rule { background: linear-gradient(90deg,#d97706,#f59e0b); }
+
+/* 7. ATTENTION (Orange) */
+.ih-attention { background: #ffedd5; }
+.ih-attention .s1 { background: linear-gradient(140deg, #ea580c, #f97316); box-shadow: 3px 0 18px rgba(234,88,12,0.4), inset 0 1px 0 rgba(255,255,255,0.2); }
+.ih-attention .s2 { background: linear-gradient(105deg, #fff7ed, #ffedd5); }
+.ih-attention .lbl { color: #c2410c; }
+.ih-attention .rule { background: linear-gradient(90deg,#ea580c,#f97316); }
+
+/* 8. INFO (Cyan-Blue) */
+.ih-info { background: #e0f2fe; }
+.ih-info .s1 { background: linear-gradient(140deg, #0891b2, #06b6d4); box-shadow: 3px 0 18px rgba(8,145,178,0.4), inset 0 1px 0 rgba(255,255,255,0.2); }
+.ih-info .s2 { background: linear-gradient(105deg, #f0f9ff, #e0f2fe); }
+.ih-info .lbl { color: #0369a1; }
+.ih-info .rule { background: linear-gradient(90deg,#0891b2,#06b6d4); }
+
+/* 9. INFO-SPECIAL (Teal) */
+.ih-info-special { background: #ccfbf1; }
+.ih-info-special .s1 { background: linear-gradient(140deg, #0d9488, #14b8a6); box-shadow: 3px 0 18px rgba(13,148,136,0.4), inset 0 1px 0 rgba(255,255,255,0.2); }
+.ih-info-special .s2 { background: linear-gradient(105deg, #f0fdfa, #ccfbf1); }
+.ih-info-special .lbl { color: #0f766e; }
+.ih-info-special .rule { background: linear-gradient(90deg,#0d9488,#14b8a6); }
+
+/* 10. ROYAL (Violet) */
+.ih-royal { background: #ede9fe; }
+.ih-royal .s1 { background: linear-gradient(140deg, #7c3aed, #a78bfa); box-shadow: 3px 0 18px rgba(124,58,237,0.4), inset 0 1px 0 rgba(255,255,255,0.2); }
+.ih-royal .s2 { background: linear-gradient(105deg, #f5f3ff, #ede9fe); }
+.ih-royal .lbl { color: #6d28d9; }
+.ih-royal .rule { background: linear-gradient(90deg,#7c3aed,#a78bfa); }
+
+/* 11. ROYAL-SOFT (Lavender) */
+.ih-royal-soft { background: #f5f3ff; }
+.ih-royal-soft .s1 { background: linear-gradient(140deg, #a78bfa, #c4b5fd); box-shadow: 3px 0 18px rgba(167,139,250,0.4), inset 0 1px 0 rgba(255,255,255,0.2); }
+.ih-royal-soft .s2 { background: linear-gradient(105deg, #faf5ff, #f5f3ff); }
+.ih-royal-soft .lbl { color: #7c3aed; }
+.ih-royal-soft .rule { background: linear-gradient(90deg,#a78bfa,#c4b5fd); }
+
+/* 12. POP (Pink) */
+.ih-pop { background: #fce7f3; }
+.ih-pop .s1 { background: linear-gradient(140deg, #ec4899, #f472b6); box-shadow: 3px 0 18px rgba(236,72,153,0.4), inset 0 1px 0 rgba(255,255,255,0.2); }
+.ih-pop .s2 { background: linear-gradient(105deg, #fdf2f8, #fce7f3); }
+.ih-pop .lbl { color: #be185d; }
+.ih-pop .rule { background: linear-gradient(90deg,#ec4899,#f472b6); }
+
+/* 13. PURPLE */
+.ih-purple { background: #ede9fe; }
+.ih-purple .s1 { background: linear-gradient(140deg, #7c3aed, #8b5cf6); box-shadow: 3px 0 18px rgba(139,92,246,0.4), inset 0 1px 0 rgba(255,255,255,0.2); }
+.ih-purple .s2 { background: linear-gradient(105deg, #faf5ff, #ede9fe); }
+.ih-purple .lbl { color: #6d28d9; }
+.ih-purple .rule { background: linear-gradient(90deg,#7c3aed,#8b5cf6); }
+
+/* 14. INDIGO */
+.ih-indigo { background: #e0e7ff; }
+.ih-indigo .s1 { background: linear-gradient(140deg, #4f46e5, #6366f1); box-shadow: 3px 0 18px rgba(99,102,241,0.4), inset 0 1px 0 rgba(255,255,255,0.2); }
+.ih-indigo .s2 { background: linear-gradient(105deg, #eef2ff, #e0e7ff); }
+.ih-indigo .lbl { color: #4338ca; }
+.ih-indigo .rule { background: linear-gradient(90deg,#4f46e5,#6366f1); }
+
+/* 15. DARK (Slate) */
+.ih-dark { background: #e2e8f0; }
+.ih-dark .s1 { background: linear-gradient(140deg, #334155, #475569); box-shadow: 3px 0 18px rgba(51,65,85,0.4), inset 0 1px 0 rgba(255,255,255,0.12); }
+.ih-dark .s2 { background: linear-gradient(105deg, #f8fafc, #e2e8f0); }
+.ih-dark .lbl { color: #334155; }
+.ih-dark .rule { background: linear-gradient(90deg,#334155,#64748b); }
+
+/* 16. BLACK */
+.ih-black { background: #cbd5e1; }
+.ih-black .s1 { background: linear-gradient(140deg, #0f172a, #1e293b); box-shadow: 3px 0 18px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08); }
+.ih-black .s2 { background: linear-gradient(105deg, #f1f5f9, #e2e8f0); }
+.ih-black .lbl { color: #1e293b; }
+.ih-black .rule { background: linear-gradient(90deg,#0f172a,#334155); }
+
+</style>
+</head>
+<body>
+
+<p class="page-title">Section Header Showcase — 16 Semantic Shades — Scorptech Sapphire</p>
+
+<div class="stack">
+
+  <!-- 1. PRIMARY -->
+  <div class="ih ih-primary">
+    <div class="s1"><i class="fa-solid fa-microchip"></i></div>
+    <div class="s2">
+      <span class="lbl">Primary</span>
+      <span class="rule"></span>
+      <h2 class="ttl">Asset Management</h2>
+      <p class="sub">Track and manage all enterprise assets efficiently</p>
+    </div>
+  </div>
+
+  <!-- 2. SUCCESS -->
+  <div class="ih ih-success">
+    <div class="s1"><i class="fa-solid fa-circle-check"></i></div>
+    <div class="s2">
+      <span class="lbl">Success</span>
+      <span class="rule"></span>
+      <h2 class="ttl">Compliance Status</h2>
+      <p class="sub">All assets are within compliance thresholds</p>
+    </div>
+  </div>
+
+  <!-- 3. SUCCESS-SOFT -->
+  <div class="ih ih-success-soft">
+    <div class="s1"><i class="fa-solid fa-leaf"></i></div>
+    <div class="s2">
+      <span class="lbl">Success Soft</span>
+      <span class="rule"></span>
+      <h2 class="ttl">Green Metrics</h2>
+      <p class="sub">Sustainability and energy efficiency overview</p>
+    </div>
+  </div>
+
+  <!-- 4. DANGER -->
+  <div class="ih ih-danger">
+    <div class="s1"><i class="fa-solid fa-triangle-exclamation"></i></div>
+    <div class="s2">
+      <span class="lbl">Danger</span>
+      <span class="rule"></span>
+      <h2 class="ttl">Critical Alerts</h2>
+      <p class="sub">Immediate attention required on 3 assets</p>
+    </div>
+  </div>
+
+  <!-- 5. WARNING -->
+  <div class="ih ih-warning">
+    <div class="s1"><i class="fa-solid fa-bell"></i></div>
+    <div class="s2">
+      <span class="lbl">Warning</span>
+      <span class="rule"></span>
+      <h2 class="ttl">Pending Reviews</h2>
+      <p class="sub">12 assets flagged for scheduled inspection</p>
+    </div>
+  </div>
+
+  <!-- 6. AMBER -->
+  <div class="ih ih-amber">
+    <div class="s1"><i class="fa-solid fa-clock"></i></div>
+    <div class="s2">
+      <span class="lbl">Amber</span>
+      <span class="rule"></span>
+      <h2 class="ttl">Maintenance Due</h2>
+      <p class="sub">Upcoming preventive maintenance schedule</p>
+    </div>
+  </div>
+
+  <!-- 7. ATTENTION -->
+  <div class="ih ih-attention">
+    <div class="s1"><i class="fa-solid fa-bolt"></i></div>
+    <div class="s2">
+      <span class="lbl">Attention</span>
+      <span class="rule"></span>
+      <h2 class="ttl">Urgent Work Orders</h2>
+      <p class="sub">High-priority breakdown repairs in progress</p>
+    </div>
+  </div>
+
+  <!-- 8. INFO -->
+  <div class="ih ih-info">
+    <div class="s1"><i class="fa-solid fa-circle-info"></i></div>
+    <div class="s2">
+      <span class="lbl">Info</span>
+      <span class="rule"></span>
+      <h2 class="ttl">System Overview</h2>
+      <p class="sub">Real-time operational data and KPI summary</p>
+    </div>
+  </div>
+
+  <!-- 9. INFO-SPECIAL -->
+  <div class="ih ih-info-special">
+    <div class="s1"><i class="fa-solid fa-water"></i></div>
+    <div class="s2">
+      <span class="lbl">Info Special</span>
+      <span class="rule"></span>
+      <h2 class="ttl">Utility Monitoring</h2>
+      <p class="sub">Water, power and resource consumption tracking</p>
+    </div>
+  </div>
+
+  <!-- 10. ROYAL -->
+  <div class="ih ih-royal">
+    <div class="s1"><i class="fa-solid fa-crown"></i></div>
+    <div class="s2">
+      <span class="lbl">Royal</span>
+      <span class="rule"></span>
+      <h2 class="ttl">Enterprise Control</h2>
+      <p class="sub">Multi-location command and asset governance</p>
+    </div>
+  </div>
+
+  <!-- 11. ROYAL-SOFT -->
+  <div class="ih ih-royal-soft">
+    <div class="s1"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+    <div class="s2">
+      <span class="lbl">Royal Soft</span>
+      <span class="rule"></span>
+      <h2 class="ttl">Automation Hub</h2>
+      <p class="sub">Workflow rules, triggers and smart assignments</p>
+    </div>
+  </div>
+
+  <!-- 12. POP -->
+  <div class="ih ih-pop">
+    <div class="s1"><i class="fa-solid fa-star"></i></div>
+    <div class="s2">
+      <span class="lbl">Pop</span>
+      <span class="rule"></span>
+      <h2 class="ttl">Highlights</h2>
+      <p class="sub">Top-performing assets and milestone achievements</p>
+    </div>
+  </div>
+
+  <!-- 13. PURPLE -->
+  <div class="ih ih-purple">
+    <div class="s1"><i class="fa-solid fa-network-wired"></i></div>
+    <div class="s2">
+      <span class="lbl">Purple</span>
+      <span class="rule"></span>
+      <h2 class="ttl">Integration Layer</h2>
+      <p class="sub">Connected systems, APIs and data pipelines</p>
+    </div>
+  </div>
+
+  <!-- 14. INDIGO -->
+  <div class="ih ih-indigo">
+    <div class="s1"><i class="fa-solid fa-diagram-project"></i></div>
+    <div class="s2">
+      <span class="lbl">Indigo</span>
+      <span class="rule"></span>
+      <h2 class="ttl">Project Modules</h2>
+      <p class="sub">Structured asset project tracking and delivery</p>
+    </div>
+  </div>
+
+  <!-- 15. DARK -->
+  <div class="ih ih-dark">
+    <div class="s1"><i class="fa-solid fa-shield-halved"></i></div>
+    <div class="s2">
+      <span class="lbl">Dark</span>
+      <span class="rule"></span>
+      <h2 class="ttl">Audit & Security</h2>
+      <p class="sub">Access control, audit trails and data governance</p>
+    </div>
+  </div>
+
+  <!-- 16. BLACK -->
+  <div class="ih ih-black">
+    <div class="s1"><i class="fa-solid fa-building"></i></div>
+    <div class="s2">
+      <span class="lbl">Black</span>
+      <span class="rule"></span>
+      <h2 class="ttl">Corporate Overview</h2>
+      <p class="sub">Organisation-wide asset portfolio and reporting</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

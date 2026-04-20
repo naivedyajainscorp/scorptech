@@ -793,7 +793,7 @@ class AssessmentReport {
 
             return {
                 primary: 'Multiple responses recorded.', // Primary is usually option-specific, better to keep generic or pick first
-                secondary: secondaries.join(' ')
+                secondary: secondaries.join('<br><br>') // Separate multiple insights with line breaks')
             };
         }
 

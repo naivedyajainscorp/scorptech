@@ -2,7 +2,6 @@
    SAPPHIRE MAIN ENGINE - UNIVERSAL INITIALIZATION
    ════════════════════════════════════════════════════════════════════════════ */
 
-
 import { SFloatingButton } from './components/SFloatingButton.js';
 import { initNavigationManager } from './components/NavigationManager.js';
 import { initCardTiltEffects } from './components/CardTiltEffects.js';
@@ -15,31 +14,31 @@ import { initFooterManager } from './components/FooterManager.js';
 import { initIntelligencePage } from './pages/intelligence.js';
 
 
-
+// ═════════════════════════════════════════════════════════════════════════════
+// ✅ GLOBAL EVENT LISTENERS (Mouse proximity for scrollbar visibility)
+// ═════════════════════════════════════════════════════════════════════════════
 console.log('🔵 Main.js loaded - waiting for DOM...');
-
-
-// ─────────────────────────────────────────────────────────────────────────────
-// SCROLLBAR EDGE-HOVER REVEAL (Universal - all pages)
-// ─────────────────────────────────────────────────────────────────────────────
-
-const SCROLLBAR_EDGE_THRESHOLD = 40;
+const SCROLLBAR_EDGE_THRESHOLD = 50;
 
 document.addEventListener('mousemove', (e) => {
+  // Check if mouse is near the right edge
   const nearEdge = e.clientX >= window.innerWidth - SCROLLBAR_EDGE_THRESHOLD;
-  document.documentElement.classList.toggle('scrollbar-visible', nearEdge);
+  
+  if (nearEdge) {
+    document.documentElement.classList.add('scrollbar-visible');
+  } else {
+    document.documentElement.classList.remove('scrollbar-visible');
+  }
 });
 
+// Hide if mouse leaves window
 document.addEventListener('mouseleave', () => {
   document.documentElement.classList.remove('scrollbar-visible');
 });
 
-
-
 // ═════════════════════════════════════════════════════════════════════════════
 // ✅ SINGLE DOMContentLoaded INITIALIZATION
 // ═════════════════════════════════════════════════════════════════════════════
-
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log('✅ DOM ready - initializing universal components');
@@ -51,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
   FormEnhancements.init();
   initFooterManager();
   console.log('✅ Form Enhancements and Footer initialized');
-
 
 
   // ─────────────────────────────────────────────────────────────────────────────
@@ -112,6 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   console.log('✅ All universal components initialized');
 
+
   // ─────────────────────────────────────────────────────────────────────────────
   // INTELLIGENCE PAGE INITIALIZATION
   // ─────────────────────────────────────────────────────────────────────────────
@@ -126,7 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // ⚠️ These are safe because SAccordion.js uses idempotent initialization
 // ─────────────────────────────────────────────────────────────────────────────
 
-
 window.refreshForms = function () {
   if (window.FormEnhancements) {
     FormEnhancements.refresh();
@@ -134,13 +132,11 @@ window.refreshForms = function () {
   }
 };
 
-
 // ✅ Safe to call - won't double-bind thanks to dataset flag
 window.refreshAccordions = function () {
   initAccordions();
   console.log('🔄 Accordions refreshed');
 };
-
 
 // ✅ Refresh Floating Element Cards dynamically
 window.refreshFloatingCards = function () {
@@ -154,7 +150,6 @@ window.refreshFloatingCards = function () {
 // ─────────────────────────────────────────────────────────────────────────────
 // CLEANUP ON PAGE UNLOAD
 // ─────────────────────────────────────────────────────────────────────────────
-
 
 window.addEventListener('beforeunload', () => {
   console.log('🧹 Cleaning up...');

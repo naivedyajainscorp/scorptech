@@ -69,7 +69,7 @@ export class WordSlider {
     document.body.removeChild(measureEl);
 
     // Set the fixed width on the wrapper to accommodate the longest word + padding
-    const finalWidth = Math.ceil(maxWidth) + 10;
+    const finalWidth = Math.ceil(maxWidth) + 20;
     this.wrapper.style.width = `${finalWidth}px`;
     this.wrapper.style.minWidth = `${finalWidth}px`;
     this.wrapper.style.maxWidth = `${finalWidth}px`;

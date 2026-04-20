@@ -587,45 +587,6 @@ body {
     z-index: 2;
 }
 
-/* Card Decoration & Alignment */
-.s-pic-card {
-    display: flex;
-    flex-direction: column;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.s-pic-card-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-.s-pic-card-text {
-    flex-grow: 1;
-}
-.s-pic-card-action {
-    margin-top: auto;
-    padding-top: 1.5rem;
-}
-
-/* Pill Badge Placement & Hover Fix */
-.s-pic-card-img {
-    position: relative;
-}
-.s-pic-card-img-badge {
-    position: absolute !important;
-    top: 1rem !important;
-    left: 1rem !important;
-    z-index: 10 !important;
-    pointer-events: none; /* Allows hover on card even if over badge */
-}
-.s-pic-card-img-badge .s-pill {
-    pointer-events: auto; /* Re-enable for the pill itself if needed */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    backdrop-filter: blur(8px);
-}
-
-.s-pic-card:hover .s-pic-card-img img {
-    transform: scale(1.05);
-}
 
 /* ══════════════════════════
    BLOG TABLE

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section Header Showcase — Sapphire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0d0d14;
+  color: #e2e2e8;
+  padding: 48px 32px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+h1 {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6b6b80;
+  margin-bottom: 40px;
+}
+.section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #444458;
+  margin: 52px 0 16px;
+}
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ═══════════════════════════════════════
+   SHARED BASE
+═══════════════════════════════════════ */
+.ih {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  height: 88px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.5),
+    0 2px 8px rgba(0,0,0,0.3);
+}
+.ih .s1, .ih .s2 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+.ih .s1 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: rgba(255,255,255,0.93);
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
+}
+.ih .s2 {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3px;
+}
+.ih .lbl {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.ih .ttl {
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #f0f0f8;
+}
+.ih .sub {
+  font-size: clamp(0.65rem, 1vw, 0.75rem);
+  line-height: 1.3;
+  opacity: 0.68;
+  color: #c8c8d8;
+}
+.ih .rule {
+  display: block;
+  width: 28px;
+  height: 2px;
+  border-radius: 2px;
+  margin: 1px 0;
+}
+
+/* ═══════════════════════════════════════
+   TYPE A — Original (your base design)
+   Left trap flush-top / Right trap flush-bottom
+═══════════════════════════════════════ */
+.ih-a .s1 {
+  width: 22%;
+  height: 80px;
+  top: 0; left: 10px;
+  clip-path: polygon(0 0, 100% 0, 55% 100%, 0 100%);
+  justify-content: flex-start;
+  padding-left: 22px;
+}
+.ih-a .s2 {
+  width: 82%;
+  height: 80px;
+  bottom: 0; right: 10px;
+  clip-path: polygon(11% 0, 100% 0, 100% 100%, 0 100%);
+  padding-left: clamp(36px, 11%, 70px);
+  padding-right: 24px;
+}
+
+/* TYPE A — COLORS */
+.ih-a.c-indigo { background: linear-gradient(120deg,#1e1b4b,#2e1065,#0f172a); }
+.ih-a.c-indigo .s1 { background: linear-gradient(135deg,#4338ca,#6d28d9,#7c3aed); box-shadow: 4px 0 20px rgba(99,102,241,.5), inset 0 1px 0 rgba(255,255,255,.15); }
+.ih-a.c-indigo .s2 { background: linear-gradient(135deg,#1e1b4b,#312e81 50%,#1e1b4b); box-shadow: -4px 0 20px rgba(99,102,241,.25), inset 0 1px 0 rgba(255,255,255,.05); }
+.ih-a.c-indigo .lbl { color:#a5b4fc; }
+.ih-a.c-indigo .rule { background:#818cf8; }
+
+.ih-a.c-cyan { background: linear-gradient(120deg,#042f2e,#0c4a6e,#0f172a); }
+.ih-a.c-cyan .s1 { background: linear-gradient(135deg,#0891b2,#0e7490,#155e75); box-shadow: 4px 0 20px rgba(6,182,212,.5), inset 0 1px 0 rgba(255,255,255,.15); }
+.ih-a.c-cyan .s2 { background: linear-gradient(135deg,#042f2e,#164e63 50%,#042f2e); box-shadow: -4px 0 20px rgba(6,182,212,.25), inset 0 1px 0 rgba(255,255,255,.05); }
+.ih-a.c-cyan .lbl { color:#67e8f9; }
+.ih-a.c-cyan .rule { background:#22d3ee; }
+
+.ih-a.c-green { background: linear-gradient(120deg,#052e16,#0c4a2e,#0f172a); }
+.ih-a.c-green .s1 { background: linear-gradient(135deg,#059669,#047857,#065f46); box-shadow: 4px 0 20px rgba(16,185,129,.5), inset 0 1px 0 rgba(255,255,255,.15); }
+.ih-a.c-green .s2 { background: linear-gradient(135deg,#052e16,#064e3b 50%,#052e16); box-shadow: -4px 0 20px rgba(16,185,129,.25), inset 0 1px 0 rgba(255,255,255,.05); }
+.ih-a.c-green .lbl { color:#6ee7b7; }
+.ih-a.c-green .rule { background:#34d399; }
+
+.ih-a.c-violet { background: linear-gradient(120deg,#2e1065,#4a044e,#0f172a); }
+.ih-a.c-violet .s1 { background: linear-gradient(135deg,#7c3aed,#a21caf,#be185d); box-shadow: 4px 0 20px rgba(168,85,247,.5), inset 0 1px 0 rgba(255,255,255,.15); }
+.ih-a.c-violet .s2 { background: linear-gradient(135deg,#2e1065,#4a044e 50%,#2e1065); box-shadow: -4px 0 20px rgba(168,85,247,.25), inset 0 1px 0 rgba(255,255,255,.05); }
+.ih-a.c-violet .lbl { color:#f0abfc; }
+.ih-a.c-violet .rule { background:#e879f9; }
+
+.ih-a.c-blue { background: linear-gradient(120deg,#0c1445,#1e3a8a,#0f172a); }
+.ih-a.c-blue .s1 { background: linear-gradient(135deg,#1d4ed8,#1e40af,#1e3a8a); box-shadow: 4px 0 20px rgba(59,130,246,.5), inset 0 1px 0 rgba(255,255,255,.15); }
+.ih-a.c-blue .s2 { background: linear-gradient(135deg,#0c1445,#1e3a8a 50%,#0c1445); box-shadow: -4px 0 20px rgba(59,130,246,.25), inset 0 1px 0 rgba(255,255,255,.05); }
+.ih-a.c-blue .lbl { color:#93c5fd; }
+.ih-a.c-blue .rule { background:#60a5fa; }
+
+/* ═══════════════════════════════════════
+   TYPE B — Reverse Diagonal
+   Right trap flush-top / Left trap flush-bottom
+═══════════════════════════════════════ */
+.ih-b .s1 {
+  width: 22%;
+  height: 80px;
+  bottom: 0; left: 10px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 45% 100%);
+  justify-content: flex-start;
+  padding-left: 22px;
+}
+.ih-b .s2 {
+  width: 82%;
+  height: 80px;
+  top: 0; right: 10px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 11% 100%);
+  padding-left: clamp(36px, 11%, 70px);
+  padding-right: 24px;
+}
+
+.ih-b.c-indigo { background: linear-gradient(120deg,#1e1b4b,#2e1065,#0f172a); }
+.ih-b.c-indigo .s1 { background: linear-gradient(135deg,#4338ca,#6d28d9,#7c3aed); box-shadow: 4px 0 20px rgba(99,102,241,.5), inset 0 1px 0 rgba(255,255,255,.15); }
+.ih-b.c-indigo .s2 { background: linear-gradient(135deg,#1e1b4b,#312e81 50%,#1e1b4b); box-shadow: -4px 0 20px rgba(99,102,241,.25); }
+.ih-b.c-indigo .lbl { color:#a5b4fc; } .ih-b.c-indigo .rule { background:#818cf8; }
+
+.ih-b.c-cyan { background: linear-gradient(120deg,#042f2e,#0c4a6e,#0f172a); }
+.ih-b.c-cyan .s1 { background: linear-gradient(135deg,#0891b2,#0e7490); box-shadow: 4px 0 20px rgba(6,182,212,.5), inset 0 1px 0 rgba(255,255,255,.15); }
+.ih-b.c-cyan .s2 { background: linear-gradient(135deg,#042f2e,#164e63 50%,#042f2e); box-shadow: -4px 0 20px rgba(6,182,212,.25); }
+.ih-b.c-cyan .lbl { color:#67e8f9; } .ih-b.c-cyan .rule { background:#22d3ee; }
+
+.ih-b.c-green { background: linear-gradient(120deg,#052e16,#0c4a2e,#0f172a); }
+.ih-b.c-green .s1 { background: linear-gradient(135deg,#059669,#047857); box-shadow: 4px 0 20px rgba(16,185,129,.5), inset 0 1px 0 rgba(255,255,255,.15); }
+.ih-b.c-green .s2 { background: linear-gradient(135deg,#052e16,#064e3b 50%,#052e16); box-shadow: -4px 0 20px rgba(16,185,129,.25); }
+.ih-b.c-green .lbl { color:#6ee7b7; } .ih-b.c-green .rule { background:#34d399; }
+
+.ih-b.c-violet { background: linear-gradient(120deg,#2e1065,#4a044e,#0f172a); }
+.ih-b.c-violet .s1 { background: linear-gradient(135deg,#7c3aed,#be185d); box-shadow: 4px 0 20px rgba(168,85,247,.5), inset 0 1px 0 rgba(255,255,255,.15); }
+.ih-b.c-violet .s2 { background: linear-gradient(135deg,#2e1065,#4a044e 50%,#2e1065); box-shadow: -4px 0 20px rgba(168,85,247,.25); }
+.ih-b.c-violet .lbl { color:#f0abfc; } .ih-b.c-violet .rule { background:#e879f9; }
+
+.ih-b.c-blue { background: linear-gradient(120deg,#0c1445,#1e3a8a,#0f172a); }
+.ih-b.c-blue .s1 { background: linear-gradient(135deg,#1d4ed8,#1e3a8a); box-shadow: 4px 0 20px rgba(59,130,246,.5), inset 0 1px 0 rgba(255,255,255,.15); }
+.ih-b.c-blue .s2 { background: linear-gradient(135deg,#0c1445,#1e3a8a 50%,#0c1445); box-shadow: -4px 0 20px rgba(59,130,246,.25); }
+.ih-b.c-blue .lbl { color:#93c5fd; } .ih-b.c-blue .rule { background:#60a5fa; }
+
+/* ═══════════════════════════════════════
+   TYPE C — Double Arrow / Chevron
+   Both shapes point right like >>
+═══════════════════════════════════════ */
+.ih-c .s1 {
+  width: 28%;
+  height: 80px;
+  top: 0; left: 0;
+  clip-path: polygon(0 0, 80% 0, 100% 50%, 80% 100%, 0 100%);
+  justify-content: flex-start;
+  padding-left: 20px;
+  padding-right: 14%;
+  z-index: 2;
+}
+.ih-c .s2 {
+  width: 78%;
+  height: 80px;
+  top: 0; right: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 14% 50%);
+  padding-left: clamp(32px, 8%, 56px);
+  padding-right: 24px;
+  z-index: 1;
+}
+
+.ih-c.c-indigo { background:#0f0c29; }
+.ih-c.c-indigo .s1 { background: linear-gradient(135deg,#4338ca,#7c3aed); box-shadow: inset 0 1px 0 rgba(255,255,255,.15); }
+.ih-c.c-indigo .s2 { background: linear-gradient(105deg,#1e1b4b,#2d2b60); }
+.ih-c.c-indigo .lbl { color:#a5b4fc; } .ih-c.c-indigo .rule { background:#818cf8; }
+
+.ih-c.c-cyan { background:#04201f; }
+.ih-c.c-cyan .s1 { background: linear-gradient(135deg,#0891b2,#0e7490); box-shadow: inset 0 1px 0 rgba(255,255,255,.15); }
+.ih-c.c-cyan .s2 { background: linear-gradient(105deg,#042f2e,#0a3d3c); }
+.ih-c.c-cyan .lbl { color:#67e8f9; } .ih-c.c-cyan .rule { background:#22d3ee; }
+
+.ih-c.c-green { background:#021a0d; }
+.ih-c.c-green .s1 { background: linear-gradient(135deg,#059669,#047857); box-shadow: inset 0 1px 0 rgba(255,255,255,.15); }
+.ih-c.c-green .s2 { background: linear-gradient(105deg,#052e16,#073d1f); }
+.ih-c.c-green .lbl { color:#6ee7b7; } .ih-c.c-green .rule { background:#34d399; }
+
+.ih-c.c-violet { background:#1a0930; }
+.ih-c.c-violet .s1 { background: linear-gradient(135deg,#7c3aed,#be185d); box-shadow: inset 0 1px 0 rgba(255,255,255,.15); }
+.ih-c.c-violet .s2 { background: linear-gradient(105deg,#2e1065,#3d1060); }
+.ih-c.c-violet .lbl { color:#f0abfc; } .ih-c.c-violet .rule { background:#e879f9; }
+
+.ih-c.c-blue { background:#060d2a; }
+.ih-c.c-blue .s1 { background: linear-gradient(135deg,#1d4ed8,#1e3a8a); box-shadow: inset 0 1px 0 rgba(255,255,255,.15); }
+.ih-c.c-blue .s2 { background: linear-gradient(105deg,#0c1445,#1a2255); }
+.ih-c.c-blue .lbl { color:#93c5fd; } .ih-c.c-blue .rule { background:#60a5fa; }
+
+/* ═══════════════════════════════════════
+   TYPE D — Stepped / Notch
+   Left rect with bottom-right notch cut out
+   Right rect with top-left notch
+═══════════════════════════════════════ */
+.ih-d .s1 {
+  width: 26%;
+  height: 80px;
+  top: 0; left: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 55%, 70% 100%, 0 100%);
+  justify-content: flex-start;
+  padding-left: 20px;
+  padding-right: 8%;
+  z-index: 2;
+}
+.ih-d .s2 {
+  width: 80%;
+  height: 80px;
+  bottom: 0; right: 0;
+  clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%, 0 45%);
+  padding-left: clamp(28px, 7%, 48px);
+  padding-right: 24px;
+  z-index: 1;
+}
+
+.ih-d.c-indigo { background:#0f0c29; }
+.ih-d.c-indigo .s1 { background: linear-gradient(160deg,#4338ca,#7c3aed); box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 2px 2px 12px rgba(99,102,241,.4); }
+.ih-d.c-indigo .s2 { background: linear-gradient(120deg,#1e1b4b,#312e81 40%,#1a1740); }
+.ih-d.c-indigo .lbl { color:#a5b4fc; } .ih-d.c-indigo .rule { background:#818cf8; }
+
+.ih-d.c-cyan { background:#031d1c; }
+.ih-d.c-cyan .s1 { background: linear-gradient(160deg,#0891b2,#0e7490); box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 2px 2px 12px rgba(6,182,212,.4); }
+.ih-d.c-cyan .s2 { background: linear-gradient(120deg,#042f2e,#164e63 40%,#042f2e); }
+.ih-d.c-cyan .lbl { color:#67e8f9; } .ih-d.c-cyan .rule { background:#22d3ee; }
+
+.ih-d.c-green { background:#021a0d; }
+.ih-d.c-green .s1 { background: linear-gradient(160deg,#059669,#047857); box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 2px 2px 12px rgba(16,185,129,.4); }
+.ih-d.c-green .s2 { background: linear-gradient(120deg,#052e16,#064e3b 40%,#052e16); }
+.ih-d.c-green .lbl { color:#6ee7b7; } .ih-d.c-green .rule { background:#34d399; }
+
+.ih-d.c-violet { background:#1a0930; }
+.ih-d.c-violet .s1 { background: linear-gradient(160deg,#7c3aed,#be185d); box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 2px 2px 12px rgba(168,85,247,.4); }
+.ih-d.c-violet .s2 { background: linear-gradient(120deg,#2e1065,#4a044e 40%,#2e1065); }
+.ih-d.c-violet .lbl { color:#f0abfc; } .ih-d.c-violet .rule { background:#e879f9; }
+
+.ih-d.c-blue { background:#060d2a; }
+.ih-d.c-blue .s1 { background: linear-gradient(160deg,#1d4ed8,#1e3a8a); box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 2px 2px 12px rgba(59,130,246,.4); }
+.ih-d.c-blue .s2 { background: linear-gradient(120deg,#0c1445,#1e3a8a 40%,#0c1445); }
+.ih-d.c-blue .lbl { color:#93c5fd; } .ih-d.c-blue .rule { background:#60a5fa; }
+
+/* ═══════════════════════════════════════
+   TYPE E — Wide Parallelogram
+   Both shapes are full-height parallelograms, slight overlap
+═══════════════════════════════════════ */
+.ih-e .s1 {
+  width: 30%;
+  height: 80px;
+  top: 0; left: 0;
+  clip-path: polygon(0 0, 85% 0, 100% 100%, 15% 100%);
+  justify-content: center;
+  padding: 0 16%;
+  z-index: 2;
+}
+.ih-e .s2 {
+  width: 76%;
+  height: 80px;
+  top: 0; right: 0;
+  clip-path: polygon(4% 0, 100% 0, 96% 100%, 0 100%);
+  padding-left: clamp(24px, 6%, 44px);
+  padding-right: 24px;
+  z-index: 1;
+}
+
+.ih-e.c-indigo { background:#0f0c29; }
+.ih-e.c-indigo .s1 { background: linear-gradient(180deg,#6d28d9,#4338ca); box-shadow: inset 0 1px 0 rgba(255,255,255,.2); }
+.ih-e.c-indigo .s2 { background: linear-gradient(90deg,#312e81,#1e1b4b); }
+.ih-e.c-indigo .lbl { color:#a5b4fc; } .ih-e.c-indigo .rule { background:#818cf8; }
+
+.ih-e.c-cyan { background:#031d1c; }
+.ih-e.c-cyan .s1 { background: linear-gradient(180deg,#0e7490,#0891b2); box-shadow: inset 0 1px 0 rgba(255,255,255,.2); }
+.ih-e.c-cyan .s2 { background: linear-gradient(90deg,#164e63,#042f2e); }
+.ih-e.c-cyan .lbl { color:#67e8f9; } .ih-e.c-cyan .rule { background:#22d3ee; }
+
+.ih-e.c-green { background:#021a0d; }
+.ih-e.c-green .s1 { background: linear-gradient(180deg,#047857,#059669); box-shadow: inset 0 1px 0 rgba(255,255,255,.2); }
+.ih-e.c-green .s2 { background: linear-gradient(90deg,#064e3b,#052e16); }
+.ih-e.c-green .lbl { color:#6ee7b7; } .ih-e.c-green .rule { background:#34d399; }
+
+.ih-e.c-violet { background:#1a0930; }
+.ih-e.c-violet .s1 { background: linear-gradient(180deg,#be185d,#7c3aed); box-shadow: inset 0 1px 0 rgba(255,255,255,.2); }
+.ih-e.c-violet .s2 { background: linear-gradient(90deg,#4a044e,#2e1065); }
+.ih-e.c-violet .lbl { color:#f0abfc; } .ih-e.c-violet .rule { background:#e879f9; }
+
+.ih-e.c-blue { background:#060d2a; }
+.ih-e.c-blue .s1 { background: linear-gradient(180deg,#1e3a8a,#1d4ed8); box-shadow: inset 0 1px 0 rgba(255,255,255,.2); }
+.ih-e.c-blue .s2 { background: linear-gradient(90deg,#1e3a8a,#0c1445); }
+.ih-e.c-blue .lbl { color:#93c5fd; } .ih-e.c-blue .rule { background:#60a5fa; }
+
+/* ═══════════════════════════════════════
+   TYPE F — Wedge / Triangle Split
+   Left is a right-pointing wedge, right fills the rest
+═══════════════════════════════════════ */
+.ih-f .s1 {
+  width: 32%;
+  height: 80px;
+  top: 0; left: 0;
+  clip-path: polygon(0 0, 65% 0, 100% 50%, 65% 100%, 0 100%);
+  justify-content: flex-start;
+  padding-left: 20px;
+  padding-right: 24%;
+  z-index: 2;
+}
+.ih-f .s2 {
+  width: 72%;
+  height: 80px;
+  top: 0; right: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  padding-left: clamp(20px, 5%, 36px);
+  padding-right: 24px;
+  z-index: 1;
+}
+
+.ih-f.c-indigo { background:#0f0c29; }
+.ih-f.c-indigo .s1 { background: linear-gradient(145deg,#4338ca,#7c3aed); box-shadow: 4px 0 24px rgba(99,102,241,.5), inset 0 1px 0 rgba(255,255,255,.15); }
+.ih-f.c-indigo .s2 { background: linear-gradient(90deg,#1e1b4b,#2d2a5a); }
+.ih-f.c-indigo .lbl { color:#a5b4fc; } .ih-f.c-indigo .rule { background:#818cf8; }
+
+.ih-f.c-cyan { background:#031d1c; }
+.ih-f.c-cyan .s1 { background: linear-gradient(145deg,#0891b2,#0e7490); box-shadow: 4px 0 24px rgba(6,182,212,.5), inset 0 1px 0 rgba(255,255,255,.15); }
+.ih-f.c-cyan .s2 { background: linear-gradient(90deg,#042f2e,#0a3d3c); }
+.ih-f.c-cyan .lbl { color:#67e8f9; } .ih-f.c-cyan .rule { background:#22d3ee; }
+
+.ih-f.c-green { background:#021a0d; }
+.ih-f.c-green .s1 { background: linear-gradient(145deg,#059669,#047857); box-shadow: 4px 0 24px rgba(16,185,129,.5), inset 0 1px 0 rgba(255,255,255,.15); }
+.ih-f.c-green .s2 { background: linear-gradient(90deg,#052e16,#073d1f); }
+.ih-f.c-green .lbl { color:#6ee7b7; } .ih-f.c-green .rule { background:#34d399; }
+
+.ih-f.c-violet { background:#1a0930; }
+.ih-f.c-violet .s1 { background: linear-gradient(145deg,#7c3aed,#be185d); box-shadow: 4px 0 24px rgba(168,85,247,.5), inset 0 1px 0 rgba(255,255,255,.15); }
+.ih-f.c-violet .s2 { background: linear-gradient(90deg,#2e1065,#3d1060); }
+.ih-f.c-violet .lbl { color:#f0abfc; } .ih-f.c-violet .rule { background:#e879f9; }
+
+.ih-f.c-blue { background:#060d2a; }
+.ih-f.c-blue .s1 { background: linear-gradient(145deg,#1d4ed8,#1e3a8a); box-shadow: 4px 0 24px rgba(59,130,246,.5), inset 0 1px 0 rgba(255,255,255,.15); }
+.ih-f.c-blue .s2 { background: linear-gradient(90deg,#0c1445,#1a2255); }
+.ih-f.c-blue .lbl { color:#93c5fd; } .ih-f.c-blue .rule { background:#60a5fa; }
+
+</style>
+</head>
+<body>
+
+<h1>Section Header Showcase — Sapphire / Aurora Theme</h1>
+
+<!-- TYPE A -->
+<p class="section-label">Type A — Original Diagonal (Left flush-top / Right flush-bottom)</p>
+<div class="stack">
+  <div class="ih ih-a c-indigo">
+    <div class="s1"><i class="fa-solid fa-microchip"></i></div>
+    <div class="s2"><span class="lbl">Module 01</span><span class="rule"></span><h2 class="ttl">Asset Management</h2><p class="sub">Track and manage all enterprise assets in one place</p></div>
+  </div>
+  <div class="ih ih-a c-cyan">
+    <div class="s1"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+    <div class="s2"><span class="lbl">Module 02</span><span class="rule"></span><h2 class="ttl">Maintenance Logs</h2><p class="sub">Schedule and track all preventive maintenance tasks</p></div>
+  </div>
+  <div class="ih ih-a c-green">
+    <div class="s1"><i class="fa-solid fa-chart-line"></i></div>
+    <div class="s2"><span class="lbl">Module 03</span><span class="rule"></span><h2 class="ttl">Performance Analytics</h2><p class="sub">Real-time KPIs and asset utilization insights</p></div>
+  </div>
+  <div class="ih ih-a c-violet">
+    <div class="s1"><i class="fa-solid fa-network-wired"></i></div>
+    <div class="s2"><span class="lbl">Module 04</span><span class="rule"></span><h2 class="ttl">Multi-Location Control</h2><p class="sub">Manage assets across all facilities and branches</p></div>
+  </div>
+  <div class="ih ih-a c-blue">
+    <div class="s1"><i class="fa-solid fa-shield-halved"></i></div>
+    <div class="s2"><span class="lbl">Module 05</span><span class="rule"></span><h2 class="ttl">Compliance & Audit</h2><p class="sub">Stay audit-ready with automated compliance tracking</p></div>
+  </div>
+</div>
+
+<!-- TYPE B -->
+<p class="section-label">Type B — Reverse Diagonal (Left flush-bottom / Right flush-top)</p>
+<div class="stack">
+  <div class="ih ih-b c-indigo">
+    <div class="s1"><i class="fa-solid fa-microchip"></i></div>
+    <div class="s2"><span class="lbl">Module 01</span><span class="rule"></span><h2 class="ttl">Asset Management</h2><p class="sub">Track and manage all enterprise assets in one place</p></div>
+  </div>
+  <div class="ih ih-b c-cyan">
+    <div class="s1"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+    <div class="s2"><span class="lbl">Module 02</span><span class="rule"></span><h2 class="ttl">Maintenance Logs</h2><p class="sub">Schedule and track all preventive maintenance tasks</p></div>
+  </div>
+  <div class="ih ih-b c-green">
+    <div class="s1"><i class="fa-solid fa-chart-line"></i></div>
+    <div class="s2"><span class="lbl">Module 03</span><span class="rule"></span><h2 class="ttl">Performance Analytics</h2><p class="sub">Real-time KPIs and asset utilization insights</p></div>
+  </div>
+  <div class="ih ih-b c-violet">
+    <div class="s1"><i class="fa-solid fa-network-wired"></i></div>
+    <div class="s2"><span class="lbl">Module 04</span><span class="rule"></span><h2 class="ttl">Multi-Location Control</h2><p class="sub">Manage assets across all facilities and branches</p></div>
+  </div>
+  <div class="ih ih-b c-blue">
+    <div class="s1"><i class="fa-solid fa-shield-halved"></i></div>
+    <div class="s2"><span class="lbl">Module 05</span><span class="rule"></span><h2 class="ttl">Compliance & Audit</h2><p class="sub">Stay audit-ready with automated compliance tracking</p></div>
+  </div>
+</div>
+
+<!-- TYPE C -->
+<p class="section-label">Type C — Double Chevron Arrow (Both shapes point right)</p>
+<div class="stack">
+  <div class="ih ih-c c-indigo">
+    <div class="s1"><i class="fa-solid fa-microchip"></i></div>
+    <div class="s2"><span class="lbl">Module 01</span><span class="rule"></span><h2 class="ttl">Asset Management</h2><p class="sub">Track and manage all enterprise assets in one place</p></div>
+  </div>
+  <div class="ih ih-c c-cyan">
+    <div class="s1"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+    <div class="s2"><span class="lbl">Module 02</span><span class="rule"></span><h2 class="ttl">Maintenance Logs</h2><p class="sub">Schedule and track all preventive maintenance tasks</p></div>
+  </div>
+  <div class="ih ih-c c-green">
+    <div class="s1"><i class="fa-solid fa-chart-line"></i></div>
+    <div class="s2"><span class="lbl">Module 03</span><span class="rule"></span><h2 class="ttl">Performance Analytics</h2><p class="sub">Real-time KPIs and asset utilization insights</p></div>
+  </div>
+  <div class="ih ih-c c-violet">
+    <div class="s1"><i class="fa-solid fa-network-wired"></i></div>
+    <div class="s2"><span class="lbl">Module 04</span><span class="rule"></span><h2 class="ttl">Multi-Location Control</h2><p class="sub">Manage assets across all facilities and branches</p></div>
+  </div>
+  <div class="ih ih-c c-blue">
+    <div class="s1"><i class="fa-solid fa-shield-halved"></i></div>
+    <div class="s2"><span class="lbl">Module 05</span><span class="rule"></span><h2 class="ttl">Compliance & Audit</h2><p class="sub">Stay audit-ready with automated compliance tracking</p></div>
+  </div>
+</div>
+
+<!-- TYPE D -->
+<p class="section-label">Type D — Stepped Notch (L-shape interlocking)</p>
+<div class="stack">
+  <div class="ih ih-d c-indigo">
+    <div class="s1"><i class="fa-solid fa-microchip"></i></div>
+    <div class="s2"><span class="lbl">Module 01</span><span class="rule"></span><h2 class="ttl">Asset Management</h2><p class="sub">Track and manage all enterprise assets in one place</p></div>
+  </div>
+  <div class="ih ih-d c-cyan">
+    <div class="s1"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+    <div class="s2"><span class="lbl">Module 02</span><span class="rule"></span><h2 class="ttl">Maintenance Logs</h2><p class="sub">Schedule and track all preventive maintenance tasks</p></div>
+  </div>
+  <div class="ih ih-d c-green">
+    <div class="s1"><i class="fa-solid fa-chart-line"></i></div>
+    <div class="s2"><span class="lbl">Module 03</span><span class="rule"></span><h2 class="ttl">Performance Analytics</h2><p class="sub">Real-time KPIs and asset utilization insights</p></div>
+  </div>
+  <div class="ih ih-d c-violet">
+    <div class="s1"><i class="fa-solid fa-network-wired"></i></div>
+    <div class="s2"><span class="lbl">Module 04</span><span class="rule"></span><h2 class="ttl">Multi-Location Control</h2><p class="sub">Manage assets across all facilities and branches</p></div>
+  </div>
+  <div class="ih ih-d c-blue">
+    <div class="s1"><i class="fa-solid fa-shield-halved"></i></div>
+    <div class="s2"><span class="lbl">Module 05</span><span class="rule"></span><h2 class="ttl">Compliance & Audit</h2><p class="sub">Stay audit-ready with automated compliance tracking</p></div>
+  </div>
+</div>
+
+<!-- TYPE E -->
+<p class="section-label">Type E — Symmetric Parallelogram (Both shapes skewed same direction)</p>
+<div class="stack">
+  <div class="ih ih-e c-indigo">
+    <div class="s1"><i class="fa-solid fa-microchip"></i></div>
+    <div class="s2"><span class="lbl">Module 01</span><span class="rule"></span><h2 class="ttl">Asset Management</h2><p class="sub">Track and manage all enterprise assets in one place</p></div>
+  </div>
+  <div class="ih ih-e c-cyan">
+    <div class="s1"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+    <div class="s2"><span class="lbl">Module 02</span><span class="rule"></span><h2 class="ttl">Maintenance Logs</h2><p class="sub">Schedule and track all preventive maintenance tasks</p></div>
+  </div>
+  <div class="ih ih-e c-green">
+    <div class="s1"><i class="fa-solid fa-chart-line"></i></div>
+    <div class="s2"><span class="lbl">Module 03</span><span class="rule"></span><h2 class="ttl">Performance Analytics</h2><p class="sub">Real-time KPIs and asset utilization insights</p></div>
+  </div>
+  <div class="ih ih-e c-violet">
+    <div class="s1"><i class="fa-solid fa-network-wired"></i></div>
+    <div class="s2"><span class="lbl">Module 04</span><span class="rule"></span><h2 class="ttl">Multi-Location Control</h2><p class="sub">Manage assets across all facilities and branches</p></div>
+  </div>
+  <div class="ih ih-e c-blue">
+    <div class="s1"><i class="fa-solid fa-shield-halved"></i></div>
+    <div class="s2"><span class="lbl">Module 05</span><span class="rule"></span><h2 class="ttl">Compliance & Audit</h2><p class="sub">Stay audit-ready with automated compliance tracking</p></div>
+  </div>
+</div>
+
+<!-- TYPE F -->
+<p class="section-label">Type F — Pointed Wedge (Left is a sharp arrow, right is rectangular)</p>
+<div class="stack">
+  <div class="ih ih-f c-indigo">
+    <div class="s1"><i class="fa-solid fa-microchip"></i></div>
+    <div class="s2"><span class="lbl">Module 01</span><span class="rule"></span><h2 class="ttl">Asset Management</h2><p class="sub">Track and manage all enterprise assets in one place</p></div>
+  </div>
+  <div class="ih ih-f c-cyan">
+    <div class="s1"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+    <div class="s2"><span class="lbl">Module 02</span><span class="rule"></span><h2 class="ttl">Maintenance Logs</h2><p class="sub">Schedule and track all preventive maintenance tasks</p></div>
+  </div>
+  <div class="ih ih-f c-green">
+    <div class="s1"><i class="fa-solid fa-chart-line"></i></div>
+    <div class="s2"><span class="lbl">Module 03</span><span class="rule"></span><h2 class="ttl">Performance Analytics</h2><p class="sub">Real-time KPIs and asset utilization insights</p></div>
+  </div>
+  <div class="ih ih-f c-violet">
+    <div class="s1"><i class="fa-solid fa-network-wired"></i></div>
+    <div class="s2"><span class="lbl">Module 04</span><span class="rule"></span><h2 class="ttl">Multi-Location Control</h2><p class="sub">Manage assets across all facilities and branches</p></div>
+  </div>
+  <div class="ih ih-f c-blue">
+    <div class="s1"><i class="fa-solid fa-shield-halved"></i></div>
+    <div class="s2"><span class="lbl">Module 05</span><span class="rule"></span><h2 class="ttl">Compliance & Audit</h2><p class="sub">Stay audit-ready with automated compliance tracking</p></div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="style.css" rel="stylesheet"/>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      font-family: 'Science Gothic', sans-serif;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+
+    .container{
+      width: 98vw;
+      height: 120px;
+      position: relative;
+      overflow: hidden;
+    }
+    .shape-1 {
+      position: absolute;
+      width: 20vw;
+      height: 100px;
+      top: 0px;
+      left: 10px;
+      clip-path: polygon(0 0, 100% 0, 55% 100%, 0 100%);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      box-shadow: 20px 20px 40px #bebebe,
+      -20px -20px 40px #ffffff;
+    }
+    .shape-2 {
+      position: absolute;
+      width: 80vw;
+      height: 100px;
+      bottom: 0;
+      right: 10px;
+      clip-path: polygon(11% 0, 100% 0, 100% 100%, 0 100%);
+      box-shadow: 20px 20px 40px #bebebe,
+      -20px -20px 40px #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container s-bg-primary-dark">
+    <div class="shape-1 s-bg-white"></div>
+    <div class="shape-2 s-bg-white"></div>
+
+
+  </div>
+</body>
+</html>
