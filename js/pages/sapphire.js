@@ -199,7 +199,7 @@ function initMobileUSPWorkOrder() {
         const lineW = Math.random() > 0.5 ? 'long' : 'medium';
         d.innerHTML = `
             <div class="s-cpblts-wo-dot"
-                 style="background:${color};
+                style="background:${color};
                         box-shadow:0 0 6px ${color}cc,0 0 12px ${color}55;">
             </div>
             <div class="s-cpblts-wo-lines">

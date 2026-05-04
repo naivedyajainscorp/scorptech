@@ -885,16 +885,52 @@
   flex-direction: column;
   border-radius: var(--s-radius-xl);
   overflow: hidden;
-  border: 2px solid var(--s-gray-200);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.95));
   box-shadow: var(--s-shadow-md);
   transition: var(--s-transition-smooth);
+  border: 2px solid transparent;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.98), rgba(248,250,252,0.95)) padding-box,
+    linear-gradient(
+      var(--s-border-angle),
+      #0066cc 0%,
+      #0066cc 20%,
+      #0099ff 28%,
+      #06b6d4 35%,
+      #0066cc 42%,
+      #3490fa 50%,
+      #7c3aed 58%,
+      #0066cc 65%,
+      #16a34a 72%,
+      #0066cc 80%,
+      #1a73e8 88%,
+      #0066cc 100%
+    ) border-box;
 }
+
+@property --s-border-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes s-border-spin {
+  to { --s-border-angle: 360deg; }
+}
+
 
 .s-pic-card:hover {
   transform: translateY(-8px);
-  box-shadow: var(--s-shadow-2xl);
-  border-color: var(--s-primary);
+  box-shadow:
+    var(--s-shadow-sm),
+    0 0 18px rgba(0, 102, 204, 0.18);  /* soft blue glow */
+  animation: s-border-spin 6s linear infinite;
+}
+
+.s-pic-card:not(:hover) {
+  animation: none;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.98), rgba(248,250,252,0.95)) padding-box,
+    linear-gradient(135deg, #e2e8f0, #e2e8f0) border-box;
 }
 
 
@@ -975,13 +1011,158 @@
   border: none;
   box-shadow: none;
   background: transparent;
-  padding: var(--s-space-6);
+  padding: var(--s-space-3);
 }
 
 .s-pic-card .s-cm-feature:hover {
   transform: none;
   box-shadow: none;
   border-color: transparent;
+}
+
+
+.s-cm-section-header {
+  display: flex;
+  align-items: center;
+  gap: var(--s-space-3);
+  margin-bottom: var(--s-space-5);
+  padding-bottom: var(--s-space-3);
+  border-bottom: 3px solid var(--s-primary);
+}
+
+.s-cm-section-header h3 {
+  font-family: 'Science Gothic', sans-serif;
+  font-style: italic;
+  font-weight: var(--s-font-black);
+  font-size: var(--s-text-2xl);
+  color: var(--s-gray-900);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Stats Grid
+───────────────────────────────────────────────────────────────────────────── */
+.s-cm-modal-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--s-space-4);
+}
+
+.s-cm-modal-stat-card {
+  display: flex;
+  align-items: center;
+  gap: var(--s-space-4);
+  padding: var(--s-space-5);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.98));
+  border-radius: var(--s-radius-xl);
+  border: 2px solid var(--s-gray-200);
+  box-shadow: var(--s-shadow-md);
+  transition: var(--s-transition-smooth);
+}
+
+.s-cm-modal-stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--s-shadow-xl);
+  border-color: var(--s-primary);
+}
+
+.s-cm-stat-value {
+  font-size: var(--s-text-2xl);
+  font-weight: var(--s-font-black);
+  font-family: 'Science Gothic', sans-serif;
+  font-style: italic;
+  color: var(--s-primary);
+  line-height: 1;
+  margin-bottom: var(--s-space-1);
+}
+
+.s-cm-stat-label {
+  font-size: var(--s-text-sm);
+  color: var(--s-gray-600);
+  font-weight: var(--s-font-bold);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Main Content Section
+───────────────────────────────────────────────────────────────────────────── */
+.s-cm-modal-content-section {
+  background: linear-gradient(135deg, rgba(0, 102, 204, 0.03), rgba(0, 102, 204, 0.01));
+  border: 2px solid rgba(0, 102, 204, 0.15);
+  border-radius: var(--s-radius-xl);
+  padding: var(--s-space-6);
+}
+
+.s-cm-modal-lead {
+  font-size: var(--s-text-lg);
+  line-height: var(--s-leading-relaxed);
+  color: var(--s-gray-800);
+  font-weight: var(--s-font-bold);
+  margin-bottom: var(--s-space-5);
+  text-align: center;
+  padding: var(--s-space-5);
+  background: var(--s-white);
+  border-radius: var(--s-radius-lg);
+  border: 2px solid var(--s-primary);
+  box-shadow: var(--s-shadow-md);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Feature Cards
+───────────────────────────────────────────────────────────────────────────── */
+.s-cm-feature {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.95));
+  border: 2px solid var(--s-gray-200);
+  border-radius: var(--s-radius-xl);
+  padding: var(--s-space-6);
+  height: 100%;
+  transition: var(--s-transition-smooth);
+  box-shadow: var(--s-shadow-md);
+}
+
+.s-cm-feature:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--s-shadow-2xl);
+  border-color: var(--s-primary);
+}
+
+.s-cm-feature-header {
+  display: flex;
+  align-items: center;
+  gap: var(--s-space-3);
+  margin-bottom: var(--s-space-4);
+}
+
+.s-cm-content-header{
+  display: flex;
+  align-items: center;
+  gap: var(--s-space-2);
+  margin: var(--s-space-4) 0;
+}
+
+.s-cm-img-header {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 2rem 1.25rem 1rem;
+  /* background: linear-gradient(to top, rgba(5, 15, 35, 0.80), transparent); */
+}
+
+.s-cm-feature-title {
+  font-family: 'Science Gothic', sans-serif;
+  font-style: italic;
+  font-weight: var(--s-font-black);
+  font-size: var(--s-text-xl);
+  color: var(--s-gray-900);
+  margin-bottom: var(--s-space-2);
+}
+
+.s-cm-feature-text {
+  color: var(--s-gray-900);
+  line-height: var(--s-leading-relaxed);
+  font-size: var(--s-text-base);
+  margin-bottom: var(--s-space-4);
+  text-align: justify;
 }
 
 
@@ -1064,10 +1245,10 @@
   font-size: 0.95rem;
   font-weight: 600;
   line-height: 1.4;
-  color: #ffffff;
+  color: var(--s-white);
   margin: 0;
   font-family: 'Science Gothic', sans-serif;
-  text-shadow: var(--s-text-shadow-xs);
+  text-shadow: var(--s-text-shadow);
 }
 
 /* ── Read time ── */

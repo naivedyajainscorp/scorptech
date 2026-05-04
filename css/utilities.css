@@ -34,12 +34,12 @@
    color: var(--s-success-soft) !important;
 }
 
-.s-text-success-soft {
+.s-text-success-light {
    color: var(--s-success-lime) !important;
 }
 
-.s-text-success-soft:hover {
-   color: var(--s-success-lime-soft) !important;
+.s-text-success-light:hover {
+   color: var(--s-success-lime-light) !important;
 }
 
 .s-text-danger {
@@ -47,7 +47,7 @@
 }
 
 .s-text-danger:hover {
-   color: var(--s-danger-soft) !important;
+   color: var(--s-danger-light) !important;
 }
 
 .s-text-warning {
@@ -55,7 +55,7 @@
 }
 
 .s-text-warning:hover {
-   color: var(--s-warning-soft) !important;
+   color: var(--s-warning-light) !important;
 }
 
 .s-text-amber {
@@ -63,7 +63,7 @@
 }
 
 .s-text-amber:hover {
-   color: var(--s-amber-soft) !important;
+   color: var(--s-amber-light) !important;
 }
 
 .s-text-info {
@@ -71,7 +71,7 @@
 }
 
 .s-text-info:hover {
-   color: var(--s-info-soft) !important;
+   color: var(--s-info-light) !important;
 }
 
 .s-text-info-special {
@@ -79,7 +79,7 @@
 }
 
 .s-text-info-special:hover {
-   color: var(--s-info-special-soft) !important;
+   color: var(--s-info-special-light) !important;
 }
 
 .s-text-attention {
@@ -87,7 +87,7 @@
 }
 
 .s-text-attention:hover {
-   color: var(--s-attention-soft) !important;
+   color: var(--s-attention-light) !important;
 }
 
 .s-text-royal {
@@ -95,7 +95,7 @@
 }
 
 .s-text-royal:hover {
-   color: var(--s-royal-soft) !important;
+   color: var(--s-royal-light) !important;
 }
 
 .s-text-pop {
@@ -103,7 +103,7 @@
 }
 
 .s-text-pop:hover {
-   color: var(--s-pop-soft) !important;
+   color: var(--s-pop-light) !important;
 }
 
 .s-text-dark {
@@ -295,7 +295,7 @@
 }
 
 .s-text-error:hover {
-   color: var(--s-danger-soft) !important;
+   color: var(--s-danger-light) !important;
 }
 
 .s-text-body {
@@ -341,7 +341,7 @@
 .s-text-gradient-primary-dark,
 .s-text-gradient-secondary,
 .s-text-gradient-success,
-.s-text-gradient-success-soft,
+.s-text-gradient-success-light,
 .s-text-gradient-danger,
 .s-text-gradient-warning,
 .s-text-gradient-amber,
@@ -384,7 +384,7 @@
 .s-text-gradient-primary-dark:hover,
 .s-text-gradient-secondary:hover,
 .s-text-gradient-success:hover,
-.s-text-gradient-success-soft:hover,
+.s-text-gradient-success-light:hover,
 .s-text-gradient-danger:hover,
 .s-text-gradient-warning:hover,
 .s-text-gradient-amber:hover,
@@ -444,11 +444,11 @@
    filter: var(--s-text-drop-shadow) saturate(1.2) !important;
 }
 
-.s-text-gradient-success-soft {
+.s-text-gradient-success-light {
    background-image: linear-gradient(135deg, #5acc17, #a3e635, #bef264, #5acc17) !important;
 }
 
-.s-text-gradient-success-soft:hover {
+.s-text-gradient-success-light:hover {
    filter: var(--s-text-drop-shadow) saturate(1.15) !important;
 }
 
@@ -763,9 +763,9 @@
 /* === BACKGROUND COLOR UTILITIES (Ultra Nuclear Consolidation) === */
 .s-bg-primary,
 .s-bg-primary-dark,
-.s-bg-primary-soft,
+.s-bg-primary-light,
 .s-bg-success,
-.s-bg-success-soft,
+.s-bg-success-light,
 .s-bg-danger,
 .s-bg-error,
 .s-bg-warning,
@@ -787,7 +787,7 @@
 }
 
 .s-bg-warning,
-.s-bg-soft {
+.s-bg-light {
    color: var(--s-gray-900) !important
 }
 
@@ -799,8 +799,8 @@
    background-color: var(--s-primary-dark) !important
 }
 
-.s-bg-primary-soft {
-   background-color: var(--s-primary-soft) !important
+.s-bg-primary-light {
+   background-color: var(--s-primary-light) !important
 }
 
 .s-bg-secondary {
@@ -811,7 +811,7 @@
    background-color: var(--s-success) !important
 }
 
-.s-bg-success-soft {
+.s-bg-success-light {
    background-color: var(--s-success-lime) !important
 }
 
@@ -860,7 +860,7 @@
    background-color: var(--s-white) !important
 }
 
-.s-bg-soft {
+.s-bg-light {
    background-color: var(--s-gray-100) !important
 }
 
@@ -911,7 +911,7 @@
 /* Gradient Backgrounds */
 .s-bg-gradient-primary,
 .s-bg-gradient-success,
-.s-bg-gradient-success-soft,
+.s-bg-gradient-success-light,
 .s-bg-gradient-danger,
 .s-bg-gradient-warning,
 .s-bg-gradient-amber,
@@ -942,8 +942,8 @@
    background: var(--s-gradient-success) !important
 }
 
-.s-bg-gradient-success-soft {
-   background: var(--s-gradient-success-soft) !important
+.s-bg-gradient-success-light {
+   background: var(--s-gradient-success-light) !important
 }
 
 .s-bg-gradient-danger {
@@ -1411,6 +1411,23 @@
 
 
 /* ─────────────────────────────────────────────────────────────────────────────
+   LAYER 6.1: Text shadow utilities (Attribute Scoped)
+   ───────────────────────────────────────────────────────────────────────────── */
+
+
+.s-text-shadow         { text-shadow: var(--s-text-shadow); }
+.s-text-shadow-xs      { text-shadow: var(--s-text-shadow-xs); }
+.s-text-shadow-md      { text-shadow: var(--s-text-shadow-md); }
+.s-text-shadow-lg      { text-shadow: var(--s-text-shadow-lg); }
+.s-text-shadow-xl      { text-shadow: var(--s-text-shadow-xl); }
+
+.s-text-shadow-icon-sm { text-shadow: var(--s-text-shadow-icon-sm); }
+.s-text-shadow-icon-md { text-shadow: var(--s-text-shadow-icon-md); }
+.s-text-shadow-icon-lg { text-shadow: var(--s-text-shadow-icon-lg); }
+.s-text-shadow-icon-xl { text-shadow: var(--s-text-shadow-icon-xl); }
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
    LAYER 7: Animation Keyframes (Shared)
    ───────────────────────────────────────────────────────────────────────────── */
 @keyframes border-glow-pulse {
@@ -1521,8 +1538,8 @@
    background: var(--s-gradient-success)
 }
 
-.s-gradient-text-success-soft {
-   background: var(--s-gradient-success-soft)
+.s-gradient-text-success-light {
+   background: var(--s-gradient-success-light)
 }
 
 .s-gradient-text-danger {
@@ -1549,8 +1566,8 @@
    background: var(--s-gradient-royal)
 }
 
-.s-gradient-text-royal-soft {
-   background: var(--s-gradient-royal-soft)
+.s-gradient-text-royal-light {
+   background: var(--s-gradient-royal-light)
 }
 
 .s-gradient-text-pop {

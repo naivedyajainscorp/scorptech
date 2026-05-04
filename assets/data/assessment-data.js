@@ -22,7 +22,7 @@ const assessmentData = {
                 id: "jobLevel",
                 label: "Position Level",
                 type: "radio",
-                icon: "fa-briefcase",
+                icon: "fa-id-card-clip",
                 required: true,
                 options: [{
                         value: "clerk",
@@ -46,7 +46,7 @@ const assessmentData = {
                 id: "experience",
                 label: "Years of Experience",
                 type: "radio",
-                icon: "fa-hourglass-start",
+                icon: "fa-business-time",
                 required: true,
                 options: [{
                         value: "0-5",
@@ -166,7 +166,7 @@ const assessmentData = {
     // ORGANIZATION SECTION (No scoring, just data collection)
     // ============================================
     organizationSection: {
-        title: "Tell us about your organization",
+        title: "About Organization",
         subtitle: "Help us understand your organizational scale and operational structure",
         fields: [{
                 id: "workforce_size",
@@ -225,19 +225,23 @@ const assessmentData = {
                 subtitle: "Do your operations run on multiple shifts or 24/7 schedules?",
                 options: [{
                         value: "single-shift",
-                        label: "Single shift operation (standard business hours)"
+                        label: "Single shift operation",
+                        sublabel: "(standard business hours)",
                     },
                     {
                         value: "two-shift",
-                        label: "Two-shift operation (day + evening/night)"
+                        label: "Two-shift operation",
+                        sublabel: "(day + evening/night)"
                     },
                     {
                         value: "three-shift",
-                        label: "Three-shift operation (24-hour coverage — 8 hours × 3)"
+                        label: "Three-shift operation",
+                        sublabel: "(24-hour coverage — 8 hours × 3)"
                     },
                     {
                         value: "24-7",
-                        label: "Continuous operations (24/7×365)"
+                        label: "Continuous operations (24/7×365)",
+                        sublabel: "Continuous operations (24/7×365)"
                     }
                 ]
             },

@@ -227,7 +227,7 @@
 }
 
 .s-btn-info:focus {
-  outline: 2px solid var(--s-info-soft);
+  outline: 2px solid var(--s-info-light);
   outline-offset: 2px
 }
 
@@ -1178,7 +1178,7 @@
 }
 
 .s-border-info-soft {
-  border: 2px solid var(--s-info-soft)
+  border: 2px solid var(--s-info-light)
 }
 
 .s-border-info-special {
@@ -1768,19 +1768,15 @@
 .s-icon-blue-2 {
   background: linear-gradient(135deg, var(--s-primary), var(--s-primary-dark))
 }
-
 .s-icon-blue-1 {
   background: linear-gradient(135deg, var(--s-primary-soft), var(--s-primary))
 }
-
 .s-icon-blue-3 {
   background: linear-gradient(135deg, var(--s-accent), var(--s-primary))
 }
-
 .s-icon-blue-4 {
   background: linear-gradient(135deg, color-mix(in srgb, var(--s-primary-soft) 70%, white), color-mix(in srgb, var(--s-primary) 70%, white))
 }
-
 .s-icon-blue-5 {
   background: linear-gradient(135deg, color-mix(in srgb, var(--s-accent) 65%, white), color-mix(in srgb, var(--s-primary) 65%, white))
 }
@@ -2644,64 +2640,6 @@
 }
 
 
-/* ─────────────────────────────────────────────────────────────────────────────
-  LAYER 8: Text Color Utilities (For Solid Colors)
-   ───────────────────────────────────────────────────────────────────────────── */
-.s-text-primary {
-  color: var(--s-primary)
-}
-
-.s-text-secondary {
-  color: var(--s-gray-500)
-}
-
-.s-text-success {
-  color: var(--s-success)
-}
-
-.s-text-success-soft {
-  color: var(--s-success-lime)
-}
-
-.s-text-danger {
-  color: var(--s-danger)
-}
-
-.s-text-warning {
-  color: var(--s-warning)
-}
-
-.s-text-attention {
-  color: var(--s-attention)
-}
-
-.s-text-info {
-  color: var(--s-info)
-}
-
-.s-text-info-special {
-  color: var(--s-info-special)
-}
-
-.s-text-royal {
-  color: var(--s-royal)
-}
-
-.s-text-royal-soft {
-  color: var(--s-royal-soft)
-}
-
-.s-text-pop {
-  color: var(--s-pop)
-}
-
-.s-text-amber {
-  color: var(--s-amber-500)
-}
-
-.s-text-muted {
-  color: var(--s-text-muted)
-}
 
 
 
@@ -6400,10 +6338,10 @@ body.modal-open .s-floating-button {
 }
 .s-btn-electric:hover,
 .s-btn-electric:focus-visible {
-  background: linear-gradient(135deg, var(--s-cyan-500), var(--s-sky-300));
+  background: linear-gradient(135deg, var(--s-cyan-500), var(--s-primary-dark));
   color: var(--s-white);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(var(--s-cyan-400-rgb), 0.45);
+  box-shadow: 0 6px 20px rgba(var(--s-primeary-dark), 0.45);
 }
 .s-btn-electric:active {
   transform: translateY(0);

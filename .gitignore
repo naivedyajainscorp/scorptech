@@ -11,6 +11,7 @@ scorp_js.txt
 scorp_structure.txt
 scorp_full_export.txt
 scorp_misc.txt
+scorp_css_export.txt
 
 
 # ==================================================
@@ -92,3 +93,8 @@ blog/*.md
 blog/template_*.html
 blog/scorp_blog_template*
 blog/scorp_blog_layout*
+
+# JS FILES AND INJECTORS
+inject_data-label.js
+injectblogs.js
+injectblogs1.js

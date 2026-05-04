@@ -444,27 +444,27 @@ class SapphireAssessment {
         const section = this.data.profileSection;
 
         container.innerHTML = `
-            <div class="assessment-section-header mb-4">
+            <div class="assessment-section-header mb-2">
                 <div class="container-fluid px-0">
                     <div class="row justify-content-center">
                         <div class="col-12 col-lg-10 col-xl-8">
-                            <h2 class="s-section-title text-center mb-3">${section.title}</h2>
+                            <h2 class="s-section-title s-text-gradient-primary text-center mb-2">${section.title}</h2>
                             ${section.subtitle ? `<p class="s-section-subtitle text-center mb-0">${section.subtitle}</p>` : ''}
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="demo-form-card shadow-sm">
-                <div class="card-body p-4 p-md-5">
+            <div class="s-content-card s-border-primary shadow-md mb-4">
+                <div class="card-body p-2">
                     <form id="profile-form" class="assessment-form">
                         <div class="row g-4">
                             ${section.fields.map(field => this.renderField(field, true)).join('')}
                         </div>
 
-                        <div class="assessment-form-actions d-flex justify-content-center justify-content-md-end mt-4 pt-3 border-top">
-                            <button type="button" class="s-btn s-btn-primary  px-4 py-2" id="next-btn">
-                                <span class="d-none d-sm-inline">Continue to Organization</span>
+                        <div class="assessment-form-actions d-flex justify-content-center justify-content-md-end mt-2 border-top">
+                            <button type="button" class="s-btn s-btn-sm s-btn-primary mt-2" id="next-btn">
+                                <span class="d-none d-sm-inline">Continue</span>
                                 <span class="d-inline d-sm-none">Next</span>
                                 <i class="fas fa-arrow-right ms-2"></i>
                             </button>
@@ -483,18 +483,18 @@ class SapphireAssessment {
         const section = this.data.organizationSection;
 
         container.innerHTML = `
-            <div class="assessment-section-header mb-4">
+            <div class="assessment-section-header mb-2">
                 <div class="container-fluid px-0">
                     <div class="row justify-content-center">
                         <div class="col-12 col-lg-10 col-xl-8">
-                            <h2 class="s-section-title text-center mb-3">${section.title}</h2>
+                            <h2 class="s-section-title s-text-gradient-primary text-center mb-3">${section.title}</h2>
                             ${section.subtitle ? `<p class="s-section-subtitle text-center mb-0">${section.subtitle}</p>` : ''}
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="demo-form-card shadow-sm">
+            <div class="s-content-card s-border-gradient-primary shadow-sm">
                 <div class="card-body p-4 p-md-5">
                     <form id="organization-form" class="assessment-form">
                         <div class="row g-4">
@@ -502,7 +502,7 @@ class SapphireAssessment {
                         </div>
 
                         <div class="assessment-form-actions d-flex flex-column flex-sm-row justify-content-center justify-content-md-between align-items-center gap-3 mt-4 pt-3 border-top">
-                            <button type="button" class="s-btn s-btn-outline-secondary  order-2 order-sm-1" id="back-btn">
+                            <button type="button" class="s-btn s-btn-outline-secondary s-btn-sm  order-2 order-sm-1" id="back-btn">
                                 <i class="fas fa-arrow-left me-2"></i>
                                 <span class="d-none d-sm-inline">Back to Profile</span>
                                 <span class="d-inline d-sm-none">Back</span>
