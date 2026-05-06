@@ -880,6 +880,7 @@
 
 /* Card Decoration & Alignment */
 .s-pic-card {
+  position: relative;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -2168,7 +2169,7 @@
 
 /* Compact Hero */
 .s-hero-compact {
-  min-height: 40vh;
+  min-height: 50vh;
   padding: var(--s-space-16) var(--s-space-6);
   margin-bottom: 2rem;
 }

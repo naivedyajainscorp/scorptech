@@ -217,6 +217,7 @@
     font-weight: 600;
     white-space: nowrap;
     transition: var(--s-transition-smooth);
+    cursor: pointer;
 }
 .intel-snav-item:hover  { background: var(--s-gray-100); color: var(--s-gray-900); }
 .intel-snav-item.active { background: var(--s-gray-100); color: var(--s-gray-900); font-weight: 700; }

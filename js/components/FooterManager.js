@@ -100,7 +100,7 @@ const showComingSoonModal = (platform) => {
                         
                         <p class=" mb-4" style="font-size: 0.95rem;">
                             But hey, you can still reach us the old-fashioned way!
-                            <a href="contact.html" class="s-btn s-btn-primary-ghost mt-3 fw-bold"><i class="bi bi-chat-dots me-2"></i>drop us a line</a>.
+                            <a href="contact.html" class="s-btn s-btn-primary-ghost mt-3 fw-bold"><i class="bi bi-chat-dots me-2"></i>drop us a line</a>
                         </p>
 
                         <!-- Button -->

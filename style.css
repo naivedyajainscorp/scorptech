@@ -45,6 +45,8 @@ html {
   border-radius: 6px;
 }
 
+
+
 /* ############# Visible State (Triggered by JS) ############# */
 
 /* Firefox Support */
@@ -355,10 +357,6 @@ html.scrollbar-visible ::-webkit-scrollbar-track {
     font-size: clamp(1.875rem, 4vw, var(--s-text-4xl));
   }
 
-  /* Components - Cards */
-  .s-card {
-    padding: var(--s-space-6);
-  }
 
   .capital-allocation-heatmap-container {
     grid-template-columns: repeat(3, 1fr);

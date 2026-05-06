@@ -49,7 +49,7 @@ export async function initIntelligencePage() {
     return `rgb(${Math.round(lerp(r1,r2,t))},${Math.round(lerp(g1,g2,t))},${Math.round(lerp(b1,b2,t))})`;
   }
 
-  /* ── SCORP COLOR TOKENS (mirrors core.css CSS variables) ────── */
+  /* ── SCORP COLOR TOKENS MIRRORED ────── */
   const COLORS = {
     /* Primary / Blue */
     primary:       '#0066cc',
@@ -699,19 +699,31 @@ export async function initIntelligencePage() {
     ],
   });
 
-  /* ═══════════════════════════════════════════════════════════════
-     STICKY SECTION NAV — SCROLL SPY
-  ═══════════════════════════════════════════════════════════════ */
-  const sectionIds = ['section-enterprise','section-inventory','section-lifecycle','section-financial'];
-  const navItems   = document.querySelectorAll('.intel-snav-item');
+/* ═══════════════════════════════════════════════════════════════
+   STICKY SECTION NAV
+═══════════════════════════════════════════════════════════════ */
+const sectionIds = ['section-enterprise','section-inventory','section-lifecycle','section-financial'];
+const navItems   = document.querySelectorAll('.intel-snav-item');
+const SCROLL_OFFSET = 64; // adjust this to your nav height
 
-  // ── SNAV SHOW / HIDE ─────────────────────────────────────────
-  const snav = document.querySelector('.intel-snav');
-  const snavStart = document.getElementById('section-enterprise');
-  const snavEnd = document.getElementById('section-financial');
+navItems.forEach(item => {
+  item.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.getElementById(item.dataset.target);
+    if (target) {
+      const top = target.getBoundingClientRect().top + window.scrollY - SCROLL_OFFSET;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
+
+// ── SNAV SHOW / HIDE ─────────────────────────────────────────
+const snav = document.querySelector('.intel-snav');
+const snavStart = document.getElementById('section-enterprise');
+const snavEnd = document.getElementById('section-financial');
 if (snav && snavStart && snavEnd) {
-  const enterpriseTop    = snavStart.offsetTop;
-  const financialBottom  = snavEnd.offsetTop + snavEnd.offsetHeight;
+  const enterpriseTop   = snavStart.offsetTop;
+  const financialBottom = snavEnd.offsetTop + snavEnd.offsetHeight;
 
   function checkSnavVisibility() {
     const scrollY = window.scrollY;
@@ -719,37 +731,34 @@ if (snav && snavStart && snavEnd) {
       'snav-visible',
       scrollY >= enterpriseTop && scrollY < financialBottom
     );
-}
+  }
   window.addEventListener('scroll', checkSnavVisibility, { passive: true });
   checkSnavVisibility();
 }
 
-  function scrollNavToActive() {
-    const navInner   = document.querySelector('.intel-snav-inner');
-    const activeItem = navInner?.querySelector('.intel-snav-item.active');
-    if (!navInner || !activeItem) return;
-    navInner.scrollTo({
-      left:     activeItem.offsetLeft - navInner.offsetWidth / 2 + activeItem.offsetWidth / 2,
-      behavior: 'smooth',
-    });
-  }
+function scrollNavToActive() {
+  const navInner   = document.querySelector('.intel-snav-inner');
+  const activeItem = navInner?.querySelector('.intel-snav-item.active');
+  if (!navInner || !activeItem) return;
+  navInner.scrollTo({
+    left:     activeItem.offsetLeft - navInner.offsetWidth / 2 + activeItem.offsetWidth / 2,
+    behavior: 'smooth',
+  });
+}
 
-  function updateSectionNav() {
-    const scrollY = window.scrollY + 200;
-    let current   = '';
-    sectionIds.forEach(id => {
-      const el = document.getElementById(id);
-      if (el && el.offsetTop <= scrollY) current = id.replace('section-', '');
-    });
-    navItems.forEach(item => item.classList.toggle('active', item.dataset.domain === current));
-    scrollNavToActive();
-  }
+function updateSectionNav() {
+  const scrollY = window.scrollY + 200;
+  let current   = '';
+  sectionIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && el.offsetTop <= scrollY) current = id.replace('section-', '');
+  });
+  navItems.forEach(item => item.classList.toggle('active', item.dataset.domain === current));
+  scrollNavToActive();
+}
 
-  
-
-  window.addEventListener('scroll', updateSectionNav, { passive: true });
-  updateSectionNav();
-
+window.addEventListener('scroll', updateSectionNav, { passive: true });
+updateSectionNav();
   /* ═══════════════════════════════════════════════════════════════
      SCROLL REVEAL
   ═══════════════════════════════════════════════════════════════ */

@@ -12,6 +12,7 @@ import FloatingElementCard from './components/FloatingElementCard.js';
 import { FormEnhancements } from './utils/form-enhancements.js';
 import { initFooterManager } from './components/FooterManager.js';
 import { initIntelligencePage } from './pages/intelligence.js';
+import { initCardWatermarks } from './helpers/card_watermark.js';
 
 
 // ═════════════════════════════════════════════════════════════════════════════
@@ -23,35 +24,27 @@ const SCROLLBAR_EDGE_THRESHOLD = 50;
 document.addEventListener('mousemove', (e) => {
   // Check if mouse is near the right edge
   const nearEdge = e.clientX >= window.innerWidth - SCROLLBAR_EDGE_THRESHOLD;
-  
   if (nearEdge) {
     document.documentElement.classList.add('scrollbar-visible');
   } else {
-    document.documentElement.classList.remove('scrollbar-visible');
+    document.documentElement.classList.remove('scrollbar-visible'); 
   }
 });
-
 // Hide if mouse leaves window
 document.addEventListener('mouseleave', () => {
   document.documentElement.classList.remove('scrollbar-visible');
 });
-
 // ═════════════════════════════════════════════════════════════════════════════
 // ✅ SINGLE DOMContentLoaded INITIALIZATION
 // ═════════════════════════════════════════════════════════════════════════════
-
 document.addEventListener('DOMContentLoaded', () => {
   console.log('✅ DOM ready - initializing universal components');
-
-
   // ─────────────────────────────────────────────────────────────────────────────
   // FORM ENHANCEMENTS (Universal - dropdowns, validation, etc.)
   // ─────────────────────────────────────────────────────────────────────────────
   FormEnhancements.init();
   initFooterManager();
   console.log('✅ Form Enhancements and Footer initialized');
-
-
   // ─────────────────────────────────────────────────────────────────────────────
   // FLOATING ACTION BUTTON (Universal - appears on all pages)
   // ─────────────────────────────────────────────────────────────────────────────
@@ -59,32 +52,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const fab = new SFloatingButton();
     console.log('✅ Floating Action Button initialized');
   }
-
-
   // ─────────────────────────────────────────────────────────────────────────────
   // NAVIGATION MANAGER (Universal - active state handling)
   // ─────────────────────────────────────────────────────────────────────────────
   initNavigationManager();
-
-
   // ─────────────────────────────────────────────────────────────────────────────
   // CARD TILT EFFECTS (Universal - applies to any card with data-tilt)
   // ─────────────────────────────────────────────────────────────────────────────
   initCardTiltEffects();
-
-
   // ─────────────────────────────────────────────────────────────────────────────
   // WORD ROTATOR (Universal - auto-detects data-word-rotator)
   // ─────────────────────────────────────────────────────────────────────────────
   initWordSlider();
-
-
   // ─────────────────────────────────────────────────────────────────────────────
   // S-ACCORDION SYSTEM - ✅ INITIALIZED ONCE HERE
   // ─────────────────────────────────────────────────────────────────────────────
   initAccordions();
-
-
+    // ─────────────────────────────────────────────────────────────────────────────
+  // CARD WATERMARKS (Universal - auto-detects s-card-watermark & s-pic-card-watermark)
+  // ─────────────────────────────────────────────────────────────────────────────
+  initCardWatermarks();
+  console.log('✅ Card Watermarks initialized');
   // ─────────────────────────────────────────────────────────────────────────────
   // FLOATING ELEMENT CARD (Universal - cards with floating icon animations)
   // ─────────────────────────────────────────────────────────────────────────────
@@ -92,8 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const floatingCards = new FloatingElementCard();
     console.log('✅ Floating Element Cards initialized');
   }
-
-
   // ─────────────────────────────────────────────────────────────────────────────
   // PILLS RAIL (Universal - appears on analytics and other pages)
   // ─────────────────────────────────────────────────────────────────────────────
@@ -106,11 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     console.log('✅ Pills Rail initialized');
   }
-
-
   console.log('✅ All universal components initialized');
-
-
   // ─────────────────────────────────────────────────────────────────────────────
   // INTELLIGENCE PAGE INITIALIZATION
   // ─────────────────────────────────────────────────────────────────────────────

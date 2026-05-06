@@ -164,7 +164,7 @@
             <!-- Book Demo Button (Green Styled) -->
 <li class="nav-item">
   <a class="book-demo-button" href="book-demo.html">
-    <i class="bi bi-calendar-check-fill"></i>
+    <i class="fas fa-calendar-alt"></i>
     <span><strong>Book Demo</strong></span>
   </a>
 </li>
@@ -239,16 +239,16 @@
 <nav class="intel-snav" id="sectionNav">
   <div class="container">
     <div class="intel-snav-inner">
-      <a href="#section-enterprise" class="intel-snav-item" data-domain="enterprise">
+      <a class="intel-snav-item" data-domain="enterprise" data-target="section-enterprise">
         <span class="intel-snav-dot" style="background:#0066cc;color:#0066cc;"></span>Your Organisation
       </a>
-      <a href="#section-inventory" class="intel-snav-item" data-domain="inventory">
+      <a class="intel-snav-item" data-domain="inventory" data-target="section-inventory">
         <span class="intel-snav-dot" style="background:#f59e0b;color:#f59e0b;"></span>Every Asset
       </a>
-      <a href="#section-lifecycle" class="intel-snav-item" data-domain="lifecycle">
+      <a class="intel-snav-item" data-domain="lifecycle" data-target="section-lifecycle">
         <span class="intel-snav-dot" style="background:#ea580c;color:#ea580c;"></span>Asset Lifecycle
       </a>
-      <a href="#section-financial" class="intel-snav-item" data-domain="financial">
+      <a class="intel-snav-item" data-domain="financial" data-target="section-financial">
         <span class="intel-snav-dot" style="background:#7c3aed;color:#7c3aed;"></span>Financial Intelligence
       </a>
     </div>
@@ -1087,31 +1087,30 @@
 
     <div class="s-footer__links">
 
-      <div>
-        <span class="s-footer__col-title">Explore</span>
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/about.html">About Scorptech</a></li>
-          <li><a href="/sapphire.html">Sapphire EAM</a></li>
-          <li><a href="/analytics.html">Sapphire Analytics</a></li>
-          <li><a href="/intelligence.html">Sapphire Intelligence</a></li>
-          <li><a href="/contact.html">Contact Us</a></li>
-          <li><a href="/book-demo.html">Book a Demo</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <span class="s-footer__col-title">Platform</span>
-        <ul>
-          <li><a href="/sapphire.html#work-orders">Work Order Management</a></li>
-          <li><a href="/sapphire.html#inventory">Inventory Control</a></li>
-          <li><a href="/sapphire.html#purchase">Purchase Management</a></li>
-          <li><a href="/sapphire.html#asset-tracking">Asset Tracking</a></li>
-          <li><a href="/sapphire.html#pm-scheduling">PM Scheduling</a></li>
-          <li><a href="/sapphire.html#documents">Document Management</a></li>
-          <li><a href="https://stage.scorptech.in/login" target="_blank" rel="noopener">Log In to Sapphire ↗</a></li>
-        </ul>
-      </div>
+<div>
+  <span class="s-footer__col-title">Explore</span>
+  <ul>
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/about.html#whyscorp">Why Scorptech</a></li>
+    <li><a href="/about.html">About Scorptech</a></li>
+    <li><a href="/index.html#sapphire-teaser">See Sapphire in Action</a></li>
+    <li><a href="/sapphire.html">Sapphire EAM</a></li>
+    <li><a href="/contact.html">Contact Us</a></li>
+    <li><a href="/book-demo.html">Book a Demo</a></li>
+  </ul>
+</div>
+<div>
+  <span class="s-footer__col-title">Platform</span>
+  <ul>
+    <li><a href="/sapphire.html">Sapphire</a></li>
+    <li><a href="/sapphire.html#why-sapphire">Why Sapphire</a></li>
+    <li><a href="/sapphire.html#sapphire-capabilities">Capabilities</a></li>
+    <li><a href="/sapphire.html#SapphireCoreSuite">Sapphire Core Suite</a></li>
+    <li><a href="/industry-use.html">Industry Use</a></li>
+    <li><a href="/sapphire.html#industries">Industries We Cater</a></li>
+    <li><a href="/how-do-i-use-sapphire.html">Getting Started</a></li>
+  </ul>
+</div>
 
       <div>
         <span class="s-footer__col-title">Resources</span>
@@ -1286,10 +1285,10 @@
   <div class="s-fab-menu">
     <div class="s-fab-menu-header"><h6 class="s-fab-menu-title">Quick Navigation</h6></div>
     <div class="s-fab-menu-body">
-      <a href="#section-enterprise" class="s-fab-menu-item"><div class="s-fab-menu-item-icon"><i class="fas fa-building"></i></div><span class="s-fab-menu-item-text">Enterprise Operations</span></a>
-      <a href="#section-inventory" class="s-fab-menu-item"><div class="s-fab-menu-item-icon"><i class="fas fa-boxes-stacked"></i></div><span class="s-fab-menu-item-text">Strategic Inventory</span></a>
-      <a href="#section-lifecycle" class="s-fab-menu-item"><div class="s-fab-menu-item-icon"><i class="fas fa-arrows-spin"></i></div><span class="s-fab-menu-item-text">Asset Lifecycle</span></a>
-      <a href="#section-financial" class="s-fab-menu-item"><div class="s-fab-menu-item-icon"><i class="fas fa-indian-rupee-sign"></i></div><span class="s-fab-menu-item-text">Financial Operations</span></a>
+      <a data-target="section-enterprise" class="s-fab-menu-item"><div class="s-fab-menu-item-icon"><i class="fas fa-building"></i></div><span class="s-fab-menu-item-text">Enterprise Operations</span></a>
+      <a data-target="section-inventory" class="s-fab-menu-item"><div class="s-fab-menu-item-icon"><i class="fas fa-boxes-stacked"></i></div><span class="s-fab-menu-item-text">Strategic Inventory</span></a>
+      <a data-target="section-lifecycle" class="s-fab-menu-item"><div class="s-fab-menu-item-icon"><i class="fas fa-arrows-spin"></i></div><span class="s-fab-menu-item-text">Asset Lifecycle</span></a>
+      <a data-target="section-financial" class="s-fab-menu-item"><div class="s-fab-menu-item-icon"><i class="fas fa-indian-rupee-sign"></i></div><span class="s-fab-menu-item-text">Financial Operations</span></a>
     </div>
     <div class="s-fab-menu-divider"></div>
     <div class="s-fab-menu-footer">

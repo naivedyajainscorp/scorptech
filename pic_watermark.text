@@ -1,0 +1,55 @@
+/* ── FA icon (pen-ruler) ── */
+.s-card-watermark:has(.fa-pen-ruler) .s-wm-icon {
+    background: var(--s-info);
+    -webkit-mask-image: url("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/svgs/solid/pen-ruler.svg");
+    mask-image: url("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/svgs/solid/pen-ruler.svg");
+}
+
+/* ── Bootstrap Icons ── */
+.s-card-watermark:has(.bi-box-seam) .s-wm-icon {
+    background: var(--s-primary);
+    -webkit-mask-image: url("https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/box-seam.svg");
+    mask-image: url("https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/box-seam.svg");
+}
+
+.s-card-watermark:has(.bi-geo-alt-fill) .s-wm-icon {
+    background: var(--s-royal);
+    -webkit-mask-image: url("https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/geo-alt-fill.svg");
+    mask-image: url("https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/geo-alt-fill.svg");
+}
+
+.s-card-watermark:has(.bi-receipt-cutoff) .s-wm-icon {
+    background: var(--s-danger);
+    -webkit-mask-image: url("https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/receipt-cutoff.svg");
+    mask-image: url("https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/receipt-cutoff.svg");
+}
+
+.s-card-watermark:has(.bi-fuel-pump-fill) .s-wm-icon {
+    background: var(--s-success);
+    -webkit-mask-image: url("https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/fuel-pump-fill.svg");
+    mask-image: url("https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/fuel-pump-fill.svg");
+}
+
+.s-card-watermark:has(.bi-award-fill) .s-wm-icon {
+    background: var(--s-amber);
+    -webkit-mask-image: url("https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/award-fill.svg");
+    mask-image: url("https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/award-fill.svg");
+}
+
+.s-card-watermark:has(.bi-diagram-3-fill) .s-wm-icon {
+    background: var(--s-pop);
+    -webkit-mask-image: url("https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/diagram-3-fill.svg");
+    mask-image: url("https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/diagram-3-fill.svg");
+}
+
+.s-card-watermark:has(.bi-person-badge-fill) .s-wm-icon {
+    background: var(--s-primary);
+    -webkit-mask-image: url("https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/person-badge-fill.svg");
+    mask-image: url("https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/person-badge-fill.svg");
+}
+
+.s-card-watermark:has(.bi-calendar2-week-fill) .s-wm-icon {
+    background: var(--s-attention);
+    -webkit-mask-image: url("https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/calendar2-week-fill.svg");
+    mask-image: url("https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/calendar2-week-fill.svg");
+}

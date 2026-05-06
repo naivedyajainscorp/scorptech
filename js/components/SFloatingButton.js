@@ -5,17 +5,23 @@
 export class SFloatingButton {
   constructor() {
     console.log('🔵 SFloatingButton: Constructor called');
-    this.button = document.querySelector('.s-fab-trigger');
-    this.menu = document.querySelector('.s-fab-menu');
+    this.button   = document.querySelector('.s-fab-trigger');
+    this.menu     = document.querySelector('.s-fab-menu');
     this.backdrop = document.querySelector('.s-fab-backdrop');
     this.menuItems = document.querySelectorAll('.s-fab-menu-item');
-    this.isOpen = false;
+    this.isOpen   = false;
+
+    // ── Core Modules dropdown refs ──
+    this.cmToggle   = document.getElementById('cmDropdownToggle');
+    this.cmDropdown = document.getElementById('cmDropdown');
 
     console.log('🔍 Elements found:', {
       button: !!this.button,
       menu: !!this.menu,
       backdrop: !!this.backdrop,
-      menuItemsCount: this.menuItems.length
+      menuItemsCount: this.menuItems.length,
+      cmToggle: !!this.cmToggle,
+      cmDropdown: !!this.cmDropdown
     });
 
     if (this.button && this.menu) {
@@ -25,6 +31,7 @@ export class SFloatingButton {
       console.error('❌ Floating button or menu not found');
     }
   }
+
 
   init() {
     this.handleButtonClick = (e) => {
@@ -40,39 +47,32 @@ export class SFloatingButton {
 
     this.handleMenuItemClick = (e) => {
       console.log('🖱️ Menu item clicked');
-      const item = e.currentTarget;
-      const href = item.getAttribute('href');
+      const item       = e.currentTarget;
+      const dataTarget = item.dataset.target;
 
-      if (href && href.startsWith('#')) {
+      if (dataTarget) {
+        // ── Section scroll (no hash, no URL change) ──────────────────────
         e.preventDefault();
         this.close();
-        const target = document.querySelector(href);
+        const target = document.getElementById(dataTarget);
         if (target) {
-          // Get all possible navbar elements - check multiple selectors for compatibility
-          const navbar = document.querySelector('.s-navbar') || 
-                       document.querySelector('.navbar') ||
-                       document.querySelector('[class*="navbar"]');
-          
-          // Calculate navbar height with fallback
-          let navbarHeight = 80; // default fallback
+          const navbar = document.querySelector('.s-navbar') ||
+                         document.querySelector('.navbar') ||
+                         document.querySelector('[class*="navbar"]');
+          let navbarHeight = 80;
           if (navbar) {
-            const computedStyle = window.getComputedStyle(navbar);
-            const height = parseFloat(computedStyle.height) || navbar.offsetHeight;
-            const marginTop = parseFloat(computedStyle.marginTop) || 0;
-            const marginBottom = parseFloat(computedStyle.marginBottom) || 0;
-            navbarHeight = height + marginTop + marginBottom;
+            const cs = window.getComputedStyle(navbar);
+            navbarHeight = navbar.offsetHeight
+              + parseFloat(cs.marginTop    || 0)
+              + parseFloat(cs.marginBottom || 0);
           }
-          
-          // Additional offset for smooth scrolling (16px as before)
-          const additionalOffset = 16;
-          
-          // Calculate target position
-          const targetTop = target.getBoundingClientRect().top + window.scrollY - navbarHeight - additionalOffset;
-          
-          console.log('📍 Scroll target:', href, 'navbarHeight:', navbarHeight, 'targetTop:', targetTop);
+          const targetTop = target.getBoundingClientRect().top + window.scrollY - navbarHeight - 16;
+          console.log('📍 Scroll target:', dataTarget, 'navbarHeight:', navbarHeight, 'targetTop:', targetTop);
           window.scrollTo({ top: targetTop, behavior: 'smooth' });
         }
+
       } else {
+        // ── External page link — close menu, let navigation happen ───────
         this.close();
       }
     };
@@ -88,11 +88,11 @@ export class SFloatingButton {
       }
     };
 
-    // Scroll handler for scroll indicators
     this.handleMenuScroll = () => {
       this.updateScrollIndicators();
     };
 
+    // ── Core listeners ────────────────────────────────────────────────────
     this.button.addEventListener('click', this.handleButtonClick, { passive: false });
 
     if (this.backdrop) {
@@ -105,42 +105,64 @@ export class SFloatingButton {
 
     this.menu.addEventListener('click', this.handleMenuClick, { passive: false });
 
-    // Add scroll listener to menu body for scroll indicators
     const menuBody = this.menu.querySelector('.s-fab-menu-body');
     if (menuBody) {
       menuBody.addEventListener('scroll', this.handleMenuScroll, { passive: true });
-      // Initial check after menu opens
       this._menuBody = menuBody;
+    }
+
+    // ── Core Modules dropdown toggle ──────────────────────────────────────
+    if (this.cmToggle && this.cmDropdown) {
+      this.cmToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = this.cmDropdown.classList.toggle('open');
+        this.cmToggle.classList.toggle('open', isOpen);
+        this.cmToggle.setAttribute('aria-expanded', isOpen);
+      });
+
+      // Sub-item clicks — scroll + close FAB
+      this.cmDropdown.querySelectorAll('.s-fab-cm-item').forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.preventDefault();
+          this.close();
+          const target = document.getElementById(item.dataset.target);
+          if (target) {
+            const navbar = document.querySelector('.s-navbar') ||
+                           document.querySelector('.navbar') ||
+                           document.querySelector('[class*="navbar"]');
+            let navbarHeight = 80;
+            if (navbar) {
+              const cs = window.getComputedStyle(navbar);
+              navbarHeight = navbar.offsetHeight
+                + parseFloat(cs.marginTop    || 0)
+                + parseFloat(cs.marginBottom || 0);
+            }
+            const top = target.getBoundingClientRect().top + window.scrollY - navbarHeight - 16;
+            window.scrollTo({ top, behavior: 'smooth' });
+          }
+        });
+      });
     }
 
     console.log('✅ Floating button initialized successfully');
   }
 
+
   updateScrollIndicators() {
     if (!this._menuBody) return;
-    
+
     const { scrollTop, scrollHeight, clientHeight } = this._menuBody;
-    const topIndicator = this.menu.querySelector('.s-fab-scroll-indicator-top');
+    const topIndicator    = this.menu.querySelector('.s-fab-scroll-indicator-top');
     const bottomIndicator = this.menu.querySelector('.s-fab-scroll-indicator-bottom');
-    
-    // Show top indicator when scrolled down (has content above)
+
     if (topIndicator) {
-      if (scrollTop > 0) {
-        topIndicator.classList.add('visible');
-      } else {
-        topIndicator.classList.remove('visible');
-      }
+      topIndicator.classList.toggle('visible', scrollTop > 0);
     }
-    
-    // Show bottom indicator when not at bottom (has more content below)
     if (bottomIndicator) {
-      if (scrollTop + clientHeight < scrollHeight - 5) {
-        bottomIndicator.classList.add('visible');
-      } else {
-        bottomIndicator.classList.remove('visible');
-      }
+      bottomIndicator.classList.toggle('visible', scrollTop + clientHeight < scrollHeight - 5);
     }
   }
+
 
   toggle() {
     if (this.isOpen) {
@@ -150,29 +172,31 @@ export class SFloatingButton {
     }
   }
 
-open() {
-  console.log('📂 Opening menu...');
-  this.isOpen = true;
-  this.button.classList.add('active');
-  this.menu.classList.add('active');
-  if (this.backdrop) this.backdrop.classList.add('active');
 
-  document.body.style.overflow = 'hidden'; // lock scroll — no paddingRight needed
+  open() {
+    console.log('📂 Opening menu...');
+    this.isOpen = true;
+    this.button.classList.add('active');
+    this.menu.classList.add('active');
+    if (this.backdrop) this.backdrop.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', this.handleEscapeKey, { passive: true });
+  }
 
-  document.addEventListener('keydown', this.handleEscapeKey, { passive: true });
-}
 
-close() {
-  console.log('📁 Closing menu...');
-  this.isOpen = false;
-  this.button.classList.remove('active');
-  this.menu.classList.remove('active');
-  if (this.backdrop) this.backdrop.classList.remove('active');
+  close() {
+    console.log('📁 Closing menu...');
+    this.isOpen = false;
+    this.button.classList.remove('active');
+    this.menu.classList.remove('active');
+    if (this.backdrop) this.backdrop.classList.remove('active');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', this.handleEscapeKey);
 
-  document.body.style.overflow = ''; // restore — page position untouched
-
-  document.removeEventListener('keydown', this.handleEscapeKey);
-}
+    // ── Collapse cm dropdown on FAB close ─────────────────────────────
+    if (this.cmDropdown) this.cmDropdown.classList.remove('open');
+    if (this.cmToggle)   this.cmToggle.classList.remove('open');
+  }
 
 
   destroy() {

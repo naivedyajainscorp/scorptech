@@ -42,7 +42,7 @@ export class DisposalMethodsDonut {
       discarded: {
         color: getColor('--s-neutral-600'),
         gradient: [getColor('--s-neutral-500'), getColor('--s-neutral-600')],
-        pillClass: 's-pill-neutral',
+        pillClass: 's-pill-secondary',
         iconClass: 'fas fa-trash-can',
         label: 'Trashed'
       },

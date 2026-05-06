@@ -809,7 +809,6 @@
 .s-cpblts-play-circle i {
     color: white;
     font-size: 2.5rem;
-    margin-left: 4px;
 }
 
 .s-cpblts-play-ripple {
@@ -991,7 +990,6 @@
 .s-cpblts-tutorial-thumb {
     width: 26px;
     height: 26px;
-    font-size: 0.8rem;
     border-radius: 50%;
     background: rgba(250, 112, 154, 0.6);
     display: flex;
@@ -1062,6 +1060,84 @@
 }
 
 
+/* ═══════════════════════════════════════════════════════════════
+   CORE MODULES STICKY NAV
+═══════════════════════════════════════════════════════════════ */
+.cm-nav {
+    position: sticky;
+    top: 88px;
+    margin-top: 0.5rem;
+    z-index: var(--s-z-sticky);
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: var(--s-shadow-lg);
+    margin-left: 5vw;
+    margin-right: 5vw;
+    border-radius: var(--s-radius-lg);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-16px) scale(0.96);
+    filter: blur(6px);
+    transform-origin: top center;
+    transition: opacity 0.35s cubic-bezier(0.22, 0.61, 0.36, 1),
+                transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1),
+                filter 0.35s ease-out;
+}
+.cm-nav.cm-nav-visible {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+}
+
+.cm-nav-inner {
+    display: flex;
+    gap: 0.15rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 0.5rem 0.25rem;
+    white-space: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.cm-nav-inner::-webkit-scrollbar { display: none; }
+
+.cm-nav-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: var(--s-radius-full);
+    color: var(--s-gray-600);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: var(--s-transition-smooth);
+    cursor: pointer;
+}
+.cm-nav-item i {
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+.cm-nav-item:hover  { background: var(--s-gray-100); color: var(--s-gray-900); }
+.cm-nav-item.active { background: var(--s-gray-100); font-weight: 700; }
+
+/* ── Active colors per token ─────────────────────────────── */
+.cm-nav-item[data-domain="workplace_management"].active   { color: var(--s-primary); }
+.cm-nav-item[data-domain="user_management"].active        { color: var(--s-info-special); }
+.cm-nav-item[data-domain="master_data_management"].active { color: var(--s-info); }
+.cm-nav-item[data-domain="inventory_management"].active   { color: var(--s-primary); }
+.cm-nav-item[data-domain="request_handling"].active       { color: var(--s-success); }
+.cm-nav-item[data-domain="inspection_reporting"].active   { color: var(--s-primary); }
+.cm-nav-item[data-domain="report_resolution"].active      { color: var(--s-success); }
+.cm-nav-item[data-domain="service_maintenance"].active    { color: var(--s-pop); }
+.cm-nav-item[data-domain="my_workstation"].active         { color: var(--s-info-special); }
+
+
+
+/* ================================================================= */
 .s-cm-pp{
     font-weight: 600;
 }

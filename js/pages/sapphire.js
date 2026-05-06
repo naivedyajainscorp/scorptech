@@ -4,7 +4,6 @@
 
 import { initInfiniteScroll } from '../components/InfiniteScroll.js';
 import { initBackground } from '../components/fog_bg.js';
-
 console.log('💎 Sapphire page initialization started');
 
 /* ════════════════════════════════════════════════════════════════════════════
@@ -377,51 +376,101 @@ function initializeSapphireHeroGrid() {
 // 3. Module Showcase — Tab + Panel System
 // ─────────────────────────────────────────────────────────────────────────────
 
-function initModuleShowcase() {
-  const tabs      = document.querySelectorAll('.s-showcase-tab');
-  const panels    = document.querySelectorAll('.s-showcase-panel');
-  const showcase  = document.getElementById('module-showcase');
-  const navEl     = document.getElementById('showcaseNav');
+/* ═══════════════════════════════════════════════════════════════
+   CORE MODULES STICKY NAV
+═══════════════════════════════════════════════════════════════ */
+function initCmNav() {
+const cmSectionIds = [
+  'cm-workplace_management',
+  'cm-user_management',
+  'cm-master_data_management',
+  'cm-inventory_management',
+  'cm-request_handling',
+  'cm-inspection_reporting',
+  'cm-report_resolution',
+  'cm-service_maintenance',
+  'cm-my_workstation'
+];
 
-  if (!tabs.length || !panels.length) return;
+const cmNavItems = document.querySelectorAll('.cm-nav-item');
+const cmNav      = document.querySelector('.cm-nav');
+const cmNavStart = document.getElementById('cm-workplace_management');
+const cmNavEnd   = document.getElementById('cm-my_workstation');
 
-  function activateModule(moduleId) {
-    tabs.forEach(t => {
-      const isActive = t.dataset.showcaseTarget === moduleId;
-      t.classList.toggle('active', isActive);
-      t.setAttribute('aria-selected', String(isActive));
-    });
-
-    panels.forEach(p => {
-      p.classList.toggle('active', p.id === `showcase-${moduleId}`);
-    });
-
-    // Scroll active tab into view within the horizontal scroller
-    const activeTab = document.querySelector(`.s-showcase-tab[data-showcase-target="${moduleId}"]`);
-    activeTab?.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
-  }
-
-  // Tab bar clicks
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => activateModule(tab.dataset.showcaseTarget));
-  });
-
-  // Card "Explore" buttons → scroll to showcase + activate module
-  document.querySelectorAll('[data-showcase-target]').forEach(btn => {
-    // Skip tabs themselves (they already have the click handler above)
-    if (btn.classList.contains('s-showcase-tab')) return;
-
-    btn.addEventListener('click', () => {
-      activateModule(btn.dataset.showcaseTarget);
-      const navOffset = navEl ? navEl.offsetHeight : 0;
-      const top = showcase.getBoundingClientRect().top + window.scrollY - 64 - navOffset;
-      window.scrollTo({ top, behavior: 'smooth' });
-    });
-  });
-
-  console.log('✅ Module Showcase initialized');
+// ── TRUE PAGE OFFSET (walks full offset parent chain) ────────
+function cmGetTop(el) {
+  let top = 0;
+  while (el) { top += el.offsetTop; el = el.offsetParent; }
+  return top;
 }
 
+// ── CLICK → SMOOTH SCROLL ────────────────────────────────────
+cmNavItems.forEach(item => {
+  item.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.getElementById(item.dataset.target);
+    if (target) {
+      const navbar = document.querySelector('.s-navbar') ||
+                     document.querySelector('.navbar') ||
+                     document.querySelector('[class*="navbar"]');
+      let navbarHeight = 88;
+      if (navbar) {
+        const cs = window.getComputedStyle(navbar);
+        navbarHeight = navbar.offsetHeight
+          + parseFloat(cs.marginTop  || 0)
+          + parseFloat(cs.marginBottom || 0);
+      }
+      const cmNavHeight = cmNav ? cmNav.offsetHeight : 0;
+      const top = cmGetTop(target) - navbarHeight - cmNavHeight - 0;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
+
+// ── SHOW / HIDE ──────────────────────────────────────────────
+if (cmNav && cmNavStart && cmNavEnd) {
+  function checkCmNavVisibility() {
+    const scrollY   = window.scrollY;
+    const startTop  = cmGetTop(cmNavStart);
+    const endBottom = cmGetTop(cmNavEnd) + cmNavEnd.offsetHeight - 200;
+    cmNav.classList.toggle('cm-nav-visible', scrollY >= startTop && scrollY < endBottom);
+  }
+  window.addEventListener('scroll', checkCmNavVisibility, { passive: true });
+  checkCmNavVisibility();
+}
+
+// ── ACTIVE TAB ON SCROLL ─────────────────────────────────────
+function scrollCmNavToActive() {
+  const navInner   = document.querySelector('.cm-nav-inner');
+  const activeItem = navInner?.querySelector('.cm-nav-item.active');
+  if (!navInner || !activeItem) return;
+  navInner.scrollTo({
+    left:     activeItem.offsetLeft - navInner.offsetWidth / 2 + activeItem.offsetWidth / 2,
+    behavior: 'smooth',
+  });
+}
+
+function updateCmNav() {
+  const navbar  = document.querySelector('.s-navbar') ||
+                  document.querySelector('.navbar') ||
+                  document.querySelector('[class*="navbar"]');
+  const navH    = (navbar ? navbar.offsetHeight : 88) + (cmNav ? cmNav.offsetHeight : 0) + 48; // ← was 16, now 48
+  const scrollY = window.scrollY + navH;
+  let current   = '';
+
+  cmSectionIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && cmGetTop(el) <= scrollY) current = id.replace('cm-', '');
+  });
+
+  cmNavItems.forEach(item => item.classList.toggle('active', item.dataset.domain === current));
+  scrollCmNavToActive();
+}
+
+window.addEventListener('scroll', updateCmNav, { passive: true });
+updateCmNav();
+  console.log('✅ cm-nav initialized');
+}
 // ─────────────────────────────────────────────────────────────────────────────
 // 4. Industry Card Pill Rails — Infinite Scroll
 // ─────────────────────────────────────────────────────────────────────────────
@@ -454,7 +503,7 @@ function initIndustryPillRails() {
 document.addEventListener('DOMContentLoaded', () => {
   initAOS();
   initializeSapphireHeroGrid();
-  initModuleShowcase();
+  initCmNav();
   initSapphireCapabilityCards();
   initIndustryPillRails();
 
