@@ -4843,9 +4843,6 @@
     gap: var(--s-space-4);
 }
 
-
-/* ✅ CORRECT ORDER */
-
 /* === WATERMARK MODIFIER === */
 .s-wm-icon {
     position: absolute;

@@ -180,6 +180,7 @@ body {
   font-size: 18px; line-height: 1.82;
   color: var(--s-blog-body-text-secondary); margin-bottom: 0;
   font-weight: 300; letter-spacing: .01em;
+  text-align: justify;
 }
 .s-blog-article-intro p + p { margin-top: 18px }
 .s-blog-article-intro strong { color: var(--text-1); font-weight: 600 }
@@ -341,7 +342,7 @@ body {
 }
 
 /* Body text */
-.s-blog-body-text { font-size: 16px; line-height: 1.88; color: var(--text-2); letter-spacing: .01em }
+.s-blog-body-text { font-size: 16px; line-height: 1.88; color: var(--text-2); letter-spacing: .01em; text-align: justify }
 .s-blog-body-text p + p { margin-top: 16px }
 .s-blog-body-text strong { color: var(--text-1) }
 .s-blog-body-text p:first-child { color: var(--s-blog-body-text-primary) }
