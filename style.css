@@ -13,9 +13,10 @@
 @import url('css/sapphire-assessment.css');
 @import url('css/assessment-report-pdf.css');
 @import url('css/intelligence.css');
-
+/* modules */
 @import url('css/blog.css');
-
+@import url('css/industries.css');
+/* redundant */
 @import url('css/animations.css');
 
 /* ############# scrollbars ############# */
@@ -102,174 +103,6 @@ html.scrollbar-visible ::-webkit-scrollbar-track {
   margin: 0 auto;
 }
 
-
-
-
-
-/* ========================================
-   INTELLIGENCE PAGE STYLES
-   ======================================== */
-
-/* Hero Section */
-.intelligence-hero {
-  background: linear-gradient(135deg, var(--s-primary), var(--s-primary-light));
-  padding: 6rem 0 5rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.intelligence-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
-  opacity: 0.3;
-}
-
-.intelligence-hero .s-hero-title {
-  color: var(--s-white);
-  font-size: 2.75rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  position: relative;
-  z-index: 1;
-}
-
-
-
-
-
-/* Section Spacing */
-.intelligence-section {
-  padding: 3rem 0;
-}
-
-.intelligence-section:first-of-type {
-  padding-top: 4rem;
-}
-
-/* Content Wrapper */
-.intelligence-content-wrapper {
-  background: var(--s-white);
-  border: 1px solid var(--s-gray-200);
-  border-radius: 16px;
-  padding: 3rem 2.5rem;
-  box-shadow: 0 4px 16px rgba(0, 102, 204, 0.08);
-  transition: box-shadow 0.3s ease;
-}
-
-.intelligence-content-wrapper:hover {
-  box-shadow: 0 8px 28px rgba(0, 102, 204, 0.12);
-}
-
-/* Section Header */
-.intelligence-section-header {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 3rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 2px solid var(--s-gray-200);
-}
-
-.intelligence-section-title {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--s-gray-900);
-  margin: 0 0 0.5rem 0;
-}
-
-/* Content Block */
-.intelligence-content {
-  margin-bottom: 3.5rem;
-}
-
-.intelligence-content:last-child {
-  margin-bottom: 0;
-}
-
-/* Content Header */
-.intelligence-content-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.intelligence-content-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0;
-}
-
-/* Content Text with Glass Sheen */
-.intelligence-content-text {
-  background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.9),
-      rgba(248, 250, 252, 0.95));
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(203, 213, 225, 0.5);
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 0;
-  box-shadow:
-    0 2px 8px rgba(0, 102, 204, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
-}
-
-.intelligence-content-text p {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--s-gray-600);
-  margin: 0;
-}
-
-/* Benefit Cards with Header Architecture */
-.intel-benefit-card {
-  background: var(--s-white);
-  border: 1px solid var(--s-gray-200);
-  border-radius: 12px;
-  padding: 1.5rem;
-  height: 100%;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 102, 204, 0.04);
-}
-
-.intel-benefit-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 102, 204, 0.12);
-  border-color: var(--s-primary-light);
-}
-
-/* Benefit Card Header with Flex Layout */
-.intel-benefit-card-header {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-}
-
-.intel-benefit-card-title {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--s-gray-800);
-  margin: 0;
-}
-
-.intel-benefit-card-text {
-  font-size: 0.875rem;
-  color: var(--s-gray-600);
-  line-height: 1.6;
-  margin: 0;
-}
-
-
-
-
-
-/* ═══════════════════════════════════════════════════
-   VIDEO BACKGROUND HERO SECTION
-   ═══════════════════════════════════════════════════ */
 
 /* ═══════════════════════════════════════════════════
    VIDEO BACKGROUND HERO SECTION - ALL DEVICES
@@ -515,10 +348,6 @@ html.scrollbar-visible ::-webkit-scrollbar-track {
   }
 
 
-  /* Components - Cards */
-  .s-card {
-    padding: var(--s-space-6) var(--s-space-4);
-  }
 
   /* Components - Icons */
   .icon-box-glass {
@@ -753,19 +582,10 @@ html.scrollbar-visible ::-webkit-scrollbar-track {
    ───────────────────────────────────────────────────────────────────────────── */
 @media (max-width: 480px) {
 
-
   /* Components - Cards */
-  .s-card {
-    padding: var(--s-space-3);
-    border-radius: var(--s-radius-md);
-  }
 
   .s-card-title {
     font-size: var(--s-text-base);
-  }
-
-  .s-card-body {
-    font-size: var(--s-text-xs);
   }
 
   
@@ -863,14 +683,9 @@ html.scrollbar-visible ::-webkit-scrollbar-track {
   }
 
   .s-pill-icon {
-    padding: 0.25rem;
+    padding: 0.125rem;
   }
 
-  
-  .s-card {
-    padding: var(--s-space-2);
-    border-radius: var(--s-radius-sm);
-  }
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -900,139 +715,6 @@ html.scrollbar-visible ::-webkit-scrollbar-track {
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 
 
-
-/* ========================================
-   CORE MODULE PILLS - Glossy Design System
-   Using SCORP Root Variables
-   ======================================== */
-
-/* Container */
-.core-module-pill-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s-space-2);
-}
-
-.core-module-pill {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--s-space-2) var(--s-space-4);
-  border-radius: var(--s-radius-sm);
-  font-weight: var(--s-font-extrabold);
-  font-size: var(--s-text-sm);
-  color: var(--s-gray-50);
-  background: var(--s-gradient-primary);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .45), 0 6px 18px rgba(20, 96, 255, .18);
-  transition: var(--s-transition-fast);
-}
-
-/* Glossy Overlay Effect */
-.core-module-pill::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  /* Radial gradient commented out - can be re-enabled if needed */
-  /* background: radial-gradient(120% 90% at 50% 10%, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 60%); */
-  mix-blend-mode: screen;
-}
-
-/* Hover State */
-.core-module-pill:hover {
-  transform: translateY(-1px);
-  filter: brightness(1.06);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55),
-    var(--s-shadow-btn-primary-hover);
-  /* Using root hover shadow */
-}
-
-/* Active State */
-.core-module-pill:active {
-  transform: translateY(0) scale(0.98);
-}
-
-/* Focus State - Accessibility */
-.core-module-pill:focus-visible {
-  outline: 3px solid var(--s-info-light);
-  /* Changed from hardcoded #93c5fd */
-  outline-offset: 2px;
-}
-
-
-
-
-
-
-
-
-/* ========================================
-   core-modules-grid
-   ======================================== */
-
-/* ======= Grid ======= */
-.core-modules-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
-}
-
-
-/* ========================================
-   core-modules-card
-   ======================================== */
-
-/* ======= Card ======= */
-.core-modules-card {
-  position: relative;
-  background: #f5f5f5;
-  /* border: 1px solid var(--s-neutral-300); */
-  border-radius: 16px;
-  height: var(--card-h);
-  display: flex;
-  flex-direction: column;
-  padding: 18px 16px 16px;
-  box-shadow:
-    0 20px 40px rgba(2, 6, 23, .10),
-    0 2px 12px rgba(2, 6, 23, .06),
-    0 0 0 1px rgba(255, 255, 255, .72) inset;
-  transition: box-shadow .18s ease, border-color .18s ease, transform .18s ease, opacity .18s ease;
-  transform: perspective(900px) rotateX(0) rotateY(0);
-  will-change: transform, box-shadow;
-}
-
-.core-modules-card:hover {
-  border-color: #c9d6ea;
-  box-shadow:
-    0 28px 56px rgba(2, 6, 23, .14),
-    0 4px 16px rgba(2, 6, 23, .08),
-    0 0 0 1px rgba(255, 255, 255, .80) inset;
-}
-
-.core-modules-card::before {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  pointer-events: none;
-  background:
-    radial-gradient(420px 160px at var(--glx, 50%) var(--gly, 0%),
-      rgba(52, 144, 250, .16), rgba(23, 71, 166, 0) 60%),
-    linear-gradient(135deg, rgba(52, 144, 250, .06), rgba(23, 71, 166, .04));
-  opacity: 0;
-  transition: opacity .18s ease;
-}
-
-.core-modules-card:hover::before {
-  opacity: 1;
-}
-
-/* .core-modules-card:focus-within {
-  outline: 3px solid var(--ring);
-  outline-offset: 2px;
-} */
 
 @keyframes aurora {
 
@@ -1357,47 +1039,43 @@ html.scrollbar-visible ::-webkit-scrollbar-track {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-/* ─────────────────────────────────────────────────────────────────────────────
-   FOOTER MODAL GLASS STYLES
-   ───────────────────────────────────────────────────────────────────────────── */
-.s-modal-glass {
-  background: rgba(15, 23, 42, 0.8) !important;
-  backdrop-filter: blur(20px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  border-radius: 2rem !important;
-  color: white !important;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+.contact-success-modal-header, .demo-success-modal-header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
 }
 
-.s-modal-glass .btn-close-white {
-  filter: invert(1) grayscale(100%) brightness(200%);
-  opacity: 0.8;
+.response-success-details{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: var(--s-space-2);
 }
 
-.bg-white-10 {
-  background: rgba(255, 255, 255, 0.1);
+.success-details-item{
+  display: flex;
+  align-items: start;
+  gap: var(--s-space-2);
+  font-size: var(--s-text-sm);
+  justify-content: start;
 }
 
-.h-px {
-  height: 1px;
+.success-modal-content {
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.07),
+    0 12px 32px rgba(0, 0, 0, 0.12),
+    0 32px 64px rgba(0, 102, 204, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════════
-   CORE MODULE MODAL - CLEAN & MINIMAL (s-cm-modal prefix)
-   Uses existing design system gradients - NO duplicate classes
-═══════════════════════════════════════════════════════════════════════════════ */
+
+
+
+
+
+
 
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -1583,89 +1261,6 @@ html.scrollbar-visible ::-webkit-scrollbar-track {
   .s-cm-benefit-badge i {
     font-size: 1.5rem;
   }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ════════════════════════════════════════════════════════════════════
-   RESPONSIVE DESIGN
-   ════════════════════════════════════════════════════════════════════ */
-
-@media (max-width: 768px) {
-  .s-floating-button {
-    bottom: 1.25rem !important;
-    right: 1.25rem !important;
-  }
-
-  .s-fab-trigger {
-    width: 56px !important;
-    height: 56px !important;
-    font-size: 1.25rem !important;
-  }
-
-  .s-fab-menu {
-    width: calc(100vw - 2.5rem) !important;
-    right: -0.625rem !important;
-  }
-
-  .s-fab-menu-body {
-    max-height: 300px !important;
-  }
-
-  /* ✅ Reduce shadow on mobile */
-  .s-fab-trigger {
-    box-shadow: 0 4px 16px rgba(0, 102, 204, 0.25) !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .s-fab-cta-btn {
-    font-size: 0.75rem !important;
-    padding: 0.5rem !important;
-  }
-
-  .s-fab-cta-btn i {
-    font-size: 1rem !important;
-  }
-
-  /* ✅ Reduce menu width on small screens */
-  .s-fab-menu {
-    width: calc(100vw - 2.5rem) !important;
-  }
-}
-
-/* ════════════════════════════════════════════════════════════════════
-   HIGH-DPI DISPLAYS
-   ════════════════════════════════════════════════════════════════════ */
-
-@media (-webkit-min-device-pixel-ratio: 2),
-(min-resolution: 192dpi) {
-
-  .s-fab-trigger,
-  .s-fab-menu,
-  .s-fab-cta-btn {
-    -webkit-font-smoothing: antialiased !important;
-    -moz-osx-font-smoothing: grayscale !important;
-  }
-}
-
-/* ════════════════════════════════════════════════════════════════════
-   ANIMATION PERFORMANCE - Reduce during page scroll
-   ════════════════════════════════════════════════════════════════════ */
-
-/* ✅ Disable complex shadows during scroll */
-.infinite-scroll-container.scrolling .s-fab-trigger {
-  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2) !important;
 }
 
 /* ===================================================================

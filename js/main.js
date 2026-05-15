@@ -13,6 +13,7 @@ import { FormEnhancements } from './utils/form-enhancements.js';
 import { initFooterManager } from './components/FooterManager.js';
 import { initIntelligencePage } from './pages/intelligence.js';
 import { initCardWatermarks } from './helpers/card_watermark.js';
+import { initScrollTo } from './helpers/scroll_to.js';
 
 
 // ═════════════════════════════════════════════════════════════════════════════
@@ -68,11 +69,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // S-ACCORDION SYSTEM - ✅ INITIALIZED ONCE HERE
   // ─────────────────────────────────────────────────────────────────────────────
   initAccordions();
-    // ─────────────────────────────────────────────────────────────────────────────
+  // ─────────────────────────────────────────────────────────────────────────────
   // CARD WATERMARKS (Universal - auto-detects s-card-watermark & s-pic-card-watermark)
   // ─────────────────────────────────────────────────────────────────────────────
   initCardWatermarks();
   console.log('✅ Card Watermarks initialized');
+  // ─────────────────────────────────────────────────────────────────────────────
+  // scrollTo Helper (Universal - auto-detects data-scroll-to attributes)
+  // ─────────────────────────────────────────────────────────────────────────────
+  initScrollTo();
+  console.log('✅ Scroll-To initialized');
   // ─────────────────────────────────────────────────────────────────────────────
   // FLOATING ELEMENT CARD (Universal - cards with floating icon animations)
   // ─────────────────────────────────────────────────────────────────────────────
@@ -108,10 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // ─────────────────────────────────────────────────────────────────────────────
 
 window.refreshForms = function () {
-  if (window.FormEnhancements) {
-    FormEnhancements.refresh();
-    console.log('🔄 Form Enhancements refreshed');
-  }
+  FormEnhancements.refresh?.();
+  console.log('🔄 Form Enhancements refreshed');
 };
 
 // ✅ Safe to call - won't double-bind thanks to dataset flag
@@ -127,8 +131,6 @@ window.refreshFloatingCards = function () {
     console.log('🔄 Floating Element Cards refreshed');
   }
 };
-
-
 // ─────────────────────────────────────────────────────────────────────────────
 // CLEANUP ON PAGE UNLOAD
 // ─────────────────────────────────────────────────────────────────────────────

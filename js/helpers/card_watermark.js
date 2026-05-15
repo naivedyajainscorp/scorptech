@@ -1,6 +1,6 @@
 export function initCardWatermarks() {
     console.log('🎨 Watermark init running...');
-    const cards = document.querySelectorAll('.s-card-watermark, .s-pic-card-watermark');
+    const cards = document.querySelectorAll('.s-card-watermark, .s-pic-card-watermark, .s-content-card-watermark');
     console.log('🎨 Cards found:', cards.length);
 
     const colorMap = {

@@ -18,7 +18,7 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.11.3/build/css/intlTelInput.css">
-		<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 		<link rel="icon" type="image/x-icon" href="your-favicon-path/favicon.ico">
 		<link rel="stylesheet" href="style.css">
 	</head>
@@ -145,178 +145,31 @@
 				</ul>
 			</div>
 		</nav>
-		<section class="s-hero s-hero-compact mb-5" style="position: relative; overflow: hidden;">
-			<img src="assets/images/book-demo-hero.png" alt="Book Demo Hero" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
-			<div class="s-hero-overlay" style="z-index: 2;"></div>
-			<div class="container" style="position: relative; z-index: 10;">
-				<div class="s-hero-content">
-					<h1 class="s-hero-title">Book Your Free Demo</h1>
-					<p class="s-hero-description">
-						See <span class="s-hero-brand-highlight">SAPPHIRE ERP</span> in action! Schedule a personalized demo with our experts and discover how we can transform your asset management operations.
-					</p>
-					<div class="s-hero-actions">
-						<a class="s-btn-success s-btn-glare" href="#DemoFormSection">
-						<i class="fas fa-laptop-code me-1"></i>
-						Live Interactive Demo
-						</a>
-						<a class="s-btn-primary s-btn-glare" href="sapphire.html">
-						<i class="fas fa-diamond me-1"></i>
-						Explore SAPPHIRE
-						</a>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- Why Demo Section -->
-		<section class="container">
-			<div class="row justify-content-center mb-5">
-				<div class="col-lg-12">
-					<div class="s-content-card mb-4">
-						<div class="form-header">
-							<h3><i class="fas fa-question-circle"></i>Why book a demo?</h3>
-							<p class="form-description">Our demos are tailored to your specific needs and industry requirements</p>
-						</div>
-						<div class="row g-4">
-							<div class="col-md-6">
-								<div class="card h-100 border-0 shadow-sm">
-									<div class="card-body p-4">
-										<div class="d-flex align-items-center mb-3">
-											<div class="s-icon s-icon-blue me-3">
-												<i class="fas fa-user-cog"></i>
-											</div>
-											<h5 class="card-title mb-0 text-primary">Personalized Experience</h5>
-										</div>
-										<p class="text-muted">See features relevant to your business</p>
-									</div>
-								</div>
+		<section class="s-hero mb-5">
+			<img src="assets/images/book-demo-hero.png" alt="book sapphire demo" class="s-hero-img"></div>
+			<div class="s-hero-overlay"></div>
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-12 col-lg-10 col-xl-8 text-center">
+						<div class="s-hero-content">
+							<span class="s-pill s-pill-frost mb-3"><i class="fas fa-calendar-check me-1"></i>Live demo, tailored to your workflow</span>
+							<h1 class="s-hero-title">Book Your<br>Free Demo</h1>
+							<p class="s-hero-description mb-4">See how SCORP fits your business with a guided demo, expert Q&A, and ROI-focused walkthroughs.</p>
+							<div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
+								<span class="s-pill s-pill-frost s-pill-lg s-pill-round-sm"><i class="fas fa-comments"></i>Open Q&A</span>
+								<span class="s-pill s-pill-frost s-pill-lg s-pill-round-sm"><i class="fas fa-chart-bar"></i>ROI Review</span>
+								<span class="s-pill s-pill-frost s-pill-lg s-pill-round-sm"><i class="fas fa-industry"></i>Industry Use Cases</span>
 							</div>
-							<div class="col-md-6">
-								<div class="card h-100 border-0 shadow-sm">
-									<div class="card-body p-4">
-										<div class="d-flex align-items-center mb-3">
-											<div class="s-icon s-icon-green me-3">
-												<i class="fas fa-comments"></i>
-											</div>
-											<h5 class="card-title mb-0 text-primary">Ask Questions</h5>
-										</div>
-										<p class="text-muted">Get answers from our experts</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="card h-100 border-0 shadow-sm">
-									<div class="card-body p-4">
-										<div class="d-flex align-items-center mb-3">
-											<div class="s-icon s-icon-purple me-3">
-												<i class="fas fa-cogs"></i>
-											</div>
-											<h5 class="card-title mb-0 text-primary">Implementation Guidance</h5>
-										</div>
-										<p class="text-muted">Learn about deployment options</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="card h-100 border-0 shadow-sm">
-									<div class="card-body p-4">
-										<div class="d-flex align-items-center mb-3">
-											<div class="s-icon s-icon-amber me-3">
-												<i class="fas fa-chart-bar"></i>
-											</div>
-											<h5 class="card-title mb-0 text-primary">ROI Analysis</h5>
-										</div>
-										<p class="text-muted">Understand potential cost savings</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="s-content-card">
-						<div class="form-header">
-							<h3><i class="fas fa-star"></i> What You'll Experience</h3>
-							<p class="form-description">Our demos are tailored to your specific needs and industry requirements</p>
-						</div>
-						<div class="row g-4">
-							<div class="col-md-6">
-								<div class="card h-100 border-0 shadow-sm">
-									<div class="card-body p-4">
-										<div class="d-flex align-items-center mb-3">
-											<div class="s-icon s-icon-blue me-3">
-												<i class="fas fa-tv"></i>
-											</div>
-											<h5 class="card-title mb-0 text-primary">Live Interactive Demo</h5>
-										</div>
-										<p class="text-muted">See SAPPHIRE ERP in action with a personalized walkthrough of key features and modules.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="card h-100 border-0 shadow-sm">
-									<div class="card-body p-4">
-										<div class="d-flex align-items-center mb-3">
-											<div class="s-icon s-icon-green me-3">
-												<i class="fas fa-user-tie"></i>
-											</div>
-											<h5 class="card-title mb-0 text-primary">Expert Consultation</h5>
-										</div>
-										<p class="text-muted">Discuss your specific requirements with our solution experts and get professional advice.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="card h-100 border-0 shadow-sm">
-									<div class="card-body p-4">
-										<div class="d-flex align-items-center mb-3">
-											<div class="s-icon s-icon-purple me-3">
-												<i class="fas fa-industry"></i>
-											</div>
-											<h5 class="card-title mb-0 text-primary">Custom Use Cases</h5>
-										</div>
-										<p class="text-muted">We'll show examples and scenarios relevant to your specific industry and business needs.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="card h-100 border-0 shadow-sm">
-									<div class="card-body p-4">
-										<div class="d-flex align-items-center mb-3">
-											<div class="s-icon s-icon-amber me-3">
-												<i class="bi bi bi-graph-up-arrow"></i>
-											</div>
-											<h5 class="card-title mb-0 text-primary">ROI Analysis</h5>
-										</div>
-										<p class="text-muted">Understand the potential cost savings and return on investment for your organization.</p>
-									</div>
-								</div>
+							<div class="s-hero-actions">
+								<button data-scroll-to="DemoFormSection" class="s-btn s-btn-green s-btn-glare"><i class="fas fa-calendar-alt me-1"></i>Book Demo!</button>
+								<a class="s-btn s-btn-primary s-btn-glare" href="sapphire.html"><i class="fas fa-diamond me-1"></i>Explore SAPPHIRE</a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- Testimonial Section -->
-			<!-- <div class="row justify-content-center mb-5">
-				<div class="col-lg-8">
-				  <div class="card border-0 shadow-lg bg-gradient" style="background: linear-gradient(135deg, #f8fafc 0%, #e1f5fe 100%);">
-				    <div class="card-body p-5 text-center">
-				      <i class="fas fa-quote-left fa-3x text-primary opacity-25 mb-3"></i>
-				      <blockquote class="blockquote mb-4">
-				        <p class="fs-5">"The demo was incredibly helpful. The team showed us exactly how SAPPHIRE ERP would solve our specific challenges. We signed up immediately after!"</p>
-				      </blockquote>
-				      <div class="d-flex align-items-center justify-content-center">
-				        <div class="s-icon s-icon-lg s-icon-blue me-3">
-				          <i class="fas fa-user"></i>
-				        </div>
-				        <div class="text-start">
-				          <h6 class="mb-0 text-primary fw-bold">Sarah Johnson</h6>
-				          <small class="text-muted">CFO, TechCorp Industries</small>
-				        </div>
-				      </div>
-				    </div>
-				  </div>
-				</div>
-				</div> -->
 		</section>
-		<!-- Form Section -->
+
 		<section class="demo-form-section mb-3" id="DemoFormSection">
 			<div class="container">
 			<div class="form-header s-card text-center mb-4">
@@ -1305,7 +1158,7 @@
 						</div>
 					</a>
 					<a href="/blog/real-estate-facilities-management-eam.html" class="s-mini-card text-decoration-none">
-						<div class="s-mini-card__img"><img src="assets/images_industries/A_wide_horizontal_is.jpeg" alt="Real Estate Facilities Management EAM"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div>
+						<div class="s-mini-card__img"><img src="assets/images_industries/audit_desk.jpeg" alt="Real Estate Facilities Management EAM"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div>
 						<div class="s-mini-card__body">
 							<p class="s-mini-card__title">Real Estate Facilities Management EAM</p>
 						</div>
@@ -1476,7 +1329,7 @@
 						</div>
 						<span class="s-footer__logoname">SCORP</span>
 					</a>
-					<p class="s-footer__tagline">In the business of making<br><em>yours simple.</em></p>
+					<p class="s-footer__tagline">In the business of making<br><span class="s-footer__tagline-emphasis">yours simple!</span></p>
 					<div class="s-footer__contact">
 						<a href="tel:+919782383338" class="s-footer__contact-item">
 							<svg viewBox="0 0 16 16" fill="none">
@@ -1724,29 +1577,37 @@
 		<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.11.3/build/js/intlTelInput.min.js"></script>
-		<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> 
+		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script> 
 		<!-- modals and popups -->
-		<div class="modal fade" id="successModalDemo" tabindex="-1">
-			<div class="modal-dialog modal-dialog-centered modal-lg">
-				<div class="modal-content border-0 shadow-lg rounded-3">
-					<div class="modal-header bg-success bg-gradient text-white text-center border-0">
-						<h5 class="modal-title w-100">
-							<i class="fas fa-rocket fa-fade"></i> Request Confirmed!
-						</h5>
-						<!-- <button type="button" class="btn-close white-close" style="filter: invert(1);" data-bs-dismiss="modal"></button> -->
-					</div>
-					<div class="modal-body text-center px-4">
-						<i class="fas fa-check-to-slot text-success fa-5x fa-beat-fade"></i> 
-						<h4 class="fw-bold mt-3 text-dark">Your demo request has been sent successfully!</h4>
-						<p class="text-muted fs-5">
-							Our team will connect with you shortly to schedule your personalized session. <br><br> 
-							<strong>Thank you for your interest in Sapphire</strong>—we look forward to showing you what it can do.
-						</p>
-						<div class="mt-4">
-							<button type="button" class="btn btn-success px-4 shadow-lg" data-bs-dismiss="modal">
-							<i class="fas fa-thumbs-up me-1"></i> Got it!
-							</button>
+		<div class="modal fade" id="successModalDemo" tabindex="-1" aria-labelledby="successModalDemoLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content success-modal-content">
+					<div class="modal-header demo-success-modal-header s-bg-gradient-success">
+						<div class="s-icon s-icon-frost me-2">
+							<i class="fas fa-rocket"></i>
 						</div>
+						<h5 class="mb-0 s-text-gradient-white">Request Confirmed!</h5>
+					</div>
+					<div class="modal-body success-modal-body">
+						<h4 class="s-text-gradient-green">Demo Request Sent Successfully!</h4>
+						<p class="s-text-green">Our team will connect with you shortly to schedule your personalized session.<br>
+							Thank you for your interest in Sapphire—we look forward to showing you what it can do.
+						</p>
+						<div class="response-success-details">
+							<div class="success-details-item s-label-success-soft w-100">
+								<i class="fas fa-calendar-check"></i>
+								<span>Session scheduled within 24 hours</span>
+							</div>
+							<div class="success-details-item s-label-success-soft w-100">
+								<i class="fas fa-envelope"></i>
+								<span>Check your email for confirmation</span>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer success-modal-footer">
+						<button type="button" class="s-btn-success" data-bs-dismiss="modal">
+						<i class="fas fa-thumbs-up me-1"></i>Got It!
+						</button>
 					</div>
 				</div>
 			</div>

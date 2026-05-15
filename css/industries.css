@@ -1,0 +1,246 @@
+/* 1. Wrapper & Layout */
+.s-ind-search-wrap {
+	position: relative;
+}
+
+/* 2. Main Search Input */
+#industrySearch {
+	/* Box Model */
+	height: 2.8rem;
+	padding-left: 2.6rem;
+	padding-right: 2.6rem;
+	font-size: 0.93rem;
+	background: var(--s-white);
+	border: 2px solid var(--s-gray-300);
+	border-radius: var(--s-radius-md);
+	box-shadow: var(--s-shadow-lg);
+	outline: none;
+	transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+#industrySearch:hover {
+	box-shadow: var(--s-shadow-xl)
+}
+
+#industrySearch:focus {
+	background: linear-gradient(var(--s-bg, #fff), var(--s-bg, #fff)) padding-box, linear-gradient(var(--s-border-angle, 0deg), #0066cc 0%, #0066cc 20%, #0099ff 28%, #06b6d4 35%, #0066cc 42%, #3490fa 50%, #7c3aed 58%, #0066cc 65%, #16a34a 72%, #0066cc 80%, #1a73e8 88%, #0066cc 100%) border-box;
+	box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.10), 0 4px 20px rgba(0, 102, 204, 0.15);
+	animation: s-border-spin 3s linear infinite;
+}
+
+#industrySearch::placeholder {
+	color: var(--s-text-muted, #94a3b8);
+	font-size: 0.88rem;
+}
+
+/* 3. Icons (Search & Clear) */
+.s-ind-search-wrap>i.fas.fa-search {
+	position: absolute;
+	top: 50%;
+	left: 1rem;
+	transform: translateY(-50%);
+	z-index: 2;
+	color: var(--s-primary);
+	pointer-events: none;
+}
+
+#industrySearchClear {
+	position: absolute;
+	top: 50%;
+	right: 1rem;
+	transform: translateY(-50%);
+	z-index: 2;
+	background: none;
+	border: none;
+	color: var(--s-danger);
+	cursor: pointer;
+}
+
+/* 4. Autocomplete Dropdown */
+#industryAutocomplete {
+	position: absolute;
+	top: calc(100% + 6px);
+	left: 0;
+	right: 0;
+	z-index: 999;
+	max-height: 320px;
+	overflow-y: auto;
+    overflow-x: hidden;
+	background: #ffffff;
+	border: 1.5px solid var(--s-border);
+	border-radius: 0.5rem;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Custom Scrollbar */
+#industryAutocomplete::-webkit-scrollbar {
+	width: 4px;
+}
+
+#industryAutocomplete::-webkit-scrollbar-track {
+	background: transparent;
+
+}
+
+#industryAutocomplete::-webkit-scrollbar-thumb {
+	background: var(--s-primary);
+	border-radius: 0.5rem;
+}
+
+/* 5. Suggestion Rows */
+.s-ind-suggestion-row {
+	transition: background 0.15s ease, transform 0.15s ease, padding-left 0.15s ease;
+}
+
+.s-ind-suggestion-row:hover {
+	transform: translateX(3px);
+}
+
+.s-ind-row-cat:hover {
+	background: linear-gradient(90deg, rgba(0, 102, 204, 0.07), transparent) !important;
+}
+
+.s-ind-row-ind:hover {
+	background: linear-gradient(90deg, rgba(0, 102, 204, 0.05) 0%, transparent 100%) !important;
+}
+
+.s-ind-row-pill:hover {
+	background: rgba(0, 102, 204, 0.04) !important;
+}
+
+/* 6. Helpers/Status */
+#industrySearchStatus {
+	min-height: 1.2em;
+	font-size: 0.8rem;
+	color: var(--s-text-muted);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CORE SUITE STICKY NAV
+═══════════════════════════════════════════════════════════════ */
+.csp-nav {
+	position: sticky;
+	top: 88px;
+	margin-top: 0.5rem;
+	z-index: var(--s-z-sticky);
+	background: rgba(255, 255, 255, 0.92);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	box-shadow: var(--s-shadow-lg);
+	margin-left: 5vw;
+	margin-right: 5vw;
+	border-radius: var(--s-radius-lg);
+	opacity: 0;
+	pointer-events: none;
+	transform: translateY(-16px) scale(0.96);
+	filter: blur(6px);
+	transform-origin: top center;
+	transition:
+		opacity 0.35s cubic-bezier(0.22, 0.61, 0.36, 1),
+		transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1),
+		filter 0.35s ease-out;
+}
+
+.csp-nav.csp-nav-visible {
+	opacity: 1;
+	pointer-events: all;
+	transform: translateY(0) scale(1);
+	filter: blur(0);
+}
+
+.csp-nav-inner {
+	display: flex;
+	gap: 0.15rem;
+	overflow-x: auto;
+	scrollbar-width: none;
+	padding: 0.5rem 0.25rem;
+	white-space: nowrap;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.csp-nav-inner::-webkit-scrollbar {
+	display: none;
+}
+
+.csp-nav-item {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	padding: 0.4rem 0.75rem;
+	border-radius: var(--s-radius-full);
+	color: var(--s-gray-600);
+	text-decoration: none;
+	font-size: 0.8rem;
+	font-weight: 600;
+	white-space: nowrap;
+	transition: var(--s-transition-smooth);
+	cursor: pointer;
+}
+
+.csp-nav-item i {
+	font-size: 0.85rem;
+	flex-shrink: 0;
+}
+
+.csp-nav-item:hover {
+	background: var(--s-gray-100);
+	color: var(--s-gray-900);
+}
+
+.csp-nav-item.active {
+	background: var(--s-gray-100);
+	font-weight: 700;
+}
+
+/* ── Active colors per token ─────────────────────────────── */
+
+.csp-nav-item[data-domain="workplace_management"].active {
+	color: var(--s-primary);
+}
+
+.csp-nav-item[data-domain="user_management"].active {
+	color: var(--s-info-special);
+}
+
+.csp-nav-item[data-domain="master_data_management"].active {
+	color: var(--s-info);
+}
+
+.csp-nav-item[data-domain="inventory_management"].active {
+	color: var(--s-primary);
+}
+
+.csp-nav-item[data-domain="request_handling"].active {
+	color: var(--s-success);
+}
+
+.csp-nav-item[data-domain="reporting"].active {
+	color: var(--s-info);
+}
+
+.csp-nav-item[data-domain="inspection_reporting"].active {
+	color: var(--s-primary);
+}
+
+.csp-nav-item[data-domain="report_resolution"].active {
+	color: var(--s-success);
+}
+
+.csp-nav-item[data-domain="service_maintenance"].active {
+	color: var(--s-pop);
+}
+
+.csp-nav-item[data-domain="my_workstation"].active {
+	color: var(--s-info-special);
+}
+
+.csp-nav-item[data-domain="analytics"].active {
+	color: var(--s-primary);
+}
+
+.csp-nav-item[data-domain="fleet_management"].active {
+	color: var(--s-pop);
+}
+
+/* ================================================================= */

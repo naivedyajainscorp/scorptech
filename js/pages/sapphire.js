@@ -372,9 +372,6 @@ function initializeSapphireHeroGrid() {
   console.log(`✅ Sapphire hero grid initialized (${gridCols}x${gridRows} = ${totalCells} cells)`);
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// 3. Module Showcase — Tab + Panel System
-// ─────────────────────────────────────────────────────────────────────────────
 
 /* ═══════════════════════════════════════════════════════════════
    CORE MODULES STICKY NAV

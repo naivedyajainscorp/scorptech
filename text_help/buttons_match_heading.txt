@@ -1,0 +1,29 @@
+My bad — here's the exact order, clean:
+
+**Step 1 — Backup:**
+```powershell
+Copy-Item "industries\index.html" "industries\index.html.bak"
+```
+
+**Step 2 — Run the fix:**
+```powershell
+$file = "industries\index.html"
+$html = Get-Content $file -Raw
+
+$colors = @('info','royal','success','amber','pop','attention','danger')
+
+foreach ($color in $colors) {
+    $html = [regex]::Replace($html, 
+        "(?s)(s-text-gradient-$color.*?s-btn s-btn-sm s-btn-)primary( s-btn-glare)", 
+        "`${1}$color`${2}")
+}
+
+Set-Content $file $html -Encoding UTF8
+```
+
+**Step 3 — Check browser.** If broken, restore:
+```powershell
+Copy-Item "industries\index.html.bak" "industries\index.html"
+```
+
+That's it. Run 1, then 2, then check.

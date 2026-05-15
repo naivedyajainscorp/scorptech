@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon | SCORP</title>
+  <meta name="description" content="This page is currently under construction. SCORP is preparing a new experience.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://scorptech.in/">
+  <link rel="icon" type="image/png" href="../assets/images/scorp-logo-favicon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <!-- ═══════════════════════════════════════════════════════════════
+     SCORP NAVIGATION 
+     ═══════════════════════════════════════════════════════════════ -->
+<nav class="navbar navbar-expand-xxl s-navbar" id="scorpNavbar">
+    
+    <!-- Brand -->
+    <a class="navbar-brand s-navbar-brand" href="index.html">
+      <div class="s-brand-logo">
+        <img src="../assets/images/Scorp-Logo.png" alt="Scorptech" width="24" height="24" style="filter: brightness(0) invert(1);">
+      </div>
+      <span class="s-brand-text">SCORP</span>
+    </a>
+
+    <!-- Animated Hamburger Toggle -->
+    <button class="navbar-toggler s-mobile-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="s-hamburger-box">
+        <span class="s-hamburger-inner"></span>
+      </span>
+    </button>
+
+    <!-- Collapsible Content -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto s-nav-links">
+        
+        <!-- Home -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="../index.html">
+            <i class="fas fa-home-alt"></i>
+            <span>Home</span>
+          </a>
+        </li>
+
+        <!-- Sapphire -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="../sapphire.html">
+            <i class="fas fa-diamond"></i>
+            <span>Sapphire</span>
+          </a>
+        </li>
+
+        <!-- Contact -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="../contact.html">
+            <i class="bi bi-telephone-outbound-fill"></i>
+            <span>Contact</span>
+          </a>
+        </li>
+
+        <!-- About -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link" href="../about.html">
+            <i class="fas fa-users-line"></i>
+            <span>About</span>
+          </a>
+        </li>
+
+
+
+        <!-- Resources Dropdown (Internal Pages) -->
+        <li class="nav-item dropdown s-nav-dropdown-internal">
+          <a class="nav-link s-nav-link dropdown-toggle" 
+             href="#" 
+             role="button" 
+             data-bs-toggle="dropdown" 
+             aria-expanded="false"
+             data-dropdown-id="resources">
+            <i class="bi bi-grid-3x3-gap-fill"></i>
+            <span>Resources</span>
+            <!-- Active Indicator Badge -->
+            <span class="s-active-badge"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end s-internal-dropdown-menu">
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="../faq.html" data-page="faq.html">
+                <i class="fas fa-circle-question"></i>
+                <span>FAQ</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="../terms_of_use.html" data-page="terms_of_use.html">
+                <i class="fas fa-file-contract"></i>
+                <span>Terms of Use</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-internal-menu-item" href="../privacy_policy.html" data-page="privacy_policy.html">
+                <i class="fas fa-file-shield"></i>
+                <span>Privacy Policy</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Announcement Icon -->
+        <li class="nav-item">
+          <a class="nav-link s-nav-link s-nav-link-icon" href="../announcement.html" title="Announcements">
+            <i class="fa-solid fa-bullhorn fa-rotate-by" style="--fa-rotate-angle: 325deg;"></i>
+          </a>
+        </li>
+
+        <!-- Book Demo Button (Green Styled) -->
+<li class="nav-item">
+  <a class="book-demo-button" href="../book-demo.html">
+    <i class="fas fa-calendar-alt"></i>
+    <span><strong>Book Demo</strong></span>
+  </a>
+</li>
+
+
+        <!-- Go to Sapphire Dropdown (External Links - Blue Styled) -->
+        <li class="nav-item dropdown s-sapphire-dropdown">
+          <button class="btn s-sapphire-trigger dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            <span>go to</span>
+            <div class="s-sapphire-logo">
+              <img src="../assets/images/scorp-sapphire-cropped.png" alt="Sapphire" width="32" height="32" style="border-radius: 4px;">
+            </div>
+            <span><strong>Sapphire</strong></span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end s-sapphire-menu">
+            <li>
+              <a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/login" target="_blank">
+                <i class="bi bi-door-open-fill"></i>
+                <span>Log-in</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/register" target="_blank">
+                <i class="bi bi-person-plus-fill"></i>
+                <span>Sign-up</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+</nav>
+  
+  <main class="min-vh-100 d-flex align-items-center justify-content-center py-5">
+    <section class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8 col-xl-7 text-center">
+          <div class="s-card p-4 p-md-5">
+            <div class="d-inline-flex justify-content-center mb-4">
+                <div class="s-icon s-icon-xl s-icon-warning">
+                    <i class="fas fa-hammer"></i>
+                </div>
+            </div>
+            <h1 class="s-section-title gradient mb-3">Page Under Construction</h1>
+            <p class="mb-4 text-muted">
+              We’re building this page right now. Please check back soon for the full experience.
+            </p>
+            <div class="d-flex flex-wrap justify-content-center gap-2">
+              <a href="../index.html" class="s-btn s-btn-primary s-btn-glare">
+                <i class="fas fa-home me-1"></i>
+                Go to Home
+              </a>
+              <a href="../book-demo.html" class="s-btn s-btn-success s-btn-glare">
+                <i class="fas fa-calendar-alt me-1"></i>
+                Book a Demo
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  	<!-- ════════════════════════════════════════════════════════════
+	SECTION 1 — CTA
+	════════════════════════════════════════════════════════════ -->
+	<section class="s-cta">
+	<svg class="s-cta__accent s-cta__accent--tl" width="80" height="80" viewBox="0 0 80 80" fill="none">
+		<path d="M1 79 L1 1 L79 1" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+		<rect x="1" y="1" width="10" height="10" fill="rgba(255,255,255,0.12)"/>
+	</svg>
+	<svg class="s-cta__accent s-cta__accent--br" width="80" height="80" viewBox="0 0 80 80" fill="none">
+		<path d="M1 79 L1 1 L79 1" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+		<rect x="1" y="1" width="10" height="10" fill="rgba(255,255,255,0.12)"/>
+	</svg>
+
+	<div class="s-cta__inner">
+		<p class="s-eyebrow">Came this far... to manage chaos?</p>
+		<h2 class="s-cta__headline">
+		CHAOS ENDS<br>
+		<span>CONTROL BEGINS</span><br>HERE!
+		</h2>
+		<p class="s-cta__sub">
+		Sapphire adapts to your workflows — not the other way around.
+		Real operations. Real deadlines. Real accountability.
+		</p>
+		<div class="s-cta__actions">
+					<a href="../book-demo.html" class="s-btn s-btn-success s-btn-glare s-full-width-btn">
+						<i class="bi bi-collection-play-fill me-1"></i>
+						<span>Book a Demo</span>
+					</a>
+					
+					<a href="../contact.html" class="s-btn s-btn-secondary s-btn-glare s-full-width-btn">
+						<i class="bi bi-telephone-outbound-fill me-1"></i>
+						<span>Talk to Our Team</span>
+					</a>
+		</div>
+		<div class="s-cta__pills">
+		<a href="../sapphire.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">Sapphire</a>
+		<a href="../intelligence.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">Intelligence</a>
+		<a href="../analytics.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">Analytics</a>
+		<a href="../blog/index.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">Knowledge Hub</a>
+		<a href="../about.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">About</a>
+		<a href="../faq.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">FAQs</a>
+		</div>
+	</div>
+	</section>
+		<!-- ════════════════════════════════════════════════════════════
+	SECTION 1 — CTA
+	════════════════════════════════════════════════════════════ -->
+	<footer class="s-footer">
+		<div class="s-footer__top-strip">
+			<div class="s-footer__status">
+				<span class="s-status-dot"></span>
+				Sapphire is live — all systems operational
+			</div>
+			<div class="s-footer__top-cta">
+				<a href="/contact.html" class="s-btn-sm s-btn-primary s-btn-glare">
+				<i class="fas fa-comments me-1"></i>
+				Talk to our team
+				</a>
+				<a href="../book-demo.html" class="s-btn-sm s-btn-success s-btn-glare">
+				<i class="fas fa-calendar-alt me-1"></i>
+				Book a Demo
+				</a>
+			</div>
+		</div>
+		<div class="s-footer__body">
+			<div class="s-footer__brand">
+				<a href="index.html" class="s-footer__logo" style="text-decoration: none;">
+					<div class="s-footer__logomark">
+						<img src="../assets/images/Scorp-Logo.png" alt="Scorptech" width="22" height="22" style="filter: brightness(0) invert(1);">
+					</div>
+					<span class="s-footer__logoname">SCORP</span>
+				</a>
+				<p class="s-footer__tagline">In the business of making<br><span class="s-footer__tagline-emphasis">yours simple!</span></p>
+				<div class="s-footer__contact">
+					<a href="tel:+919782383338" class="s-footer__contact-item">
+						<svg viewBox="0 0 16 16" fill="none">
+							<path d="M3 3.5C3 3.224 3.224 3 3.5 3h2.379c.246 0 .46.163.523.402l.754 2.64a.542.542 0 01-.167.567L5.586 7.414c.981 2.016 2.56 3.595 4.576 4.576l.805-.903a.542.542 0 01.567-.167l2.64.754c.239.063.402.277.402.523V14.5c0 .276-.224.5-.5.5C6.044 15 1 9.956 1 3.5z" stroke="currentColor" stroke-width="1.2"/>
+						</svg>
+						+91 97823 83338
+					</a>
+					<a href="mailto:support@scorptech.in" class="s-footer__contact-item">
+						<svg viewBox="0 0 16 16" fill="none">
+							<rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
+							<path d="M1 5l7 5 7-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+						</svg>
+						support@scorptech.in
+					</a>
+					<a href="/contact.html" class="s-footer__contact-item">
+						<svg viewBox="0 0 16 16" fill="none">
+							<path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.375 4.5 8.5 4.5 8.5S12.5 9.375 12.5 6c0-2.485-2.015-4.5-4.5-4.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" stroke="currentColor" stroke-width="1.2"/>
+						</svg>
+						Jaipur, Rajasthan
+					</a>
+				</div>
+				<span class="s-footer__location">
+					<svg viewBox="0 0 12 12" fill="none">
+						<circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1"/>
+						<path d="M1.5 6h9M6 1.5a7 7 0 000 9M6 1.5a7 7 0 010 9" stroke="currentColor" stroke-width="0.8"/>
+					</svg>
+					Jaipur-built · Deployed globally
+				</span>
+			</div>
+			<div class="s-footer__links">
+				<div>
+					<span class="s-footer__col-title">Explore</span>
+					<ul>
+						<li><a href="/index.html">Home</a></li>
+						<li><a href="/about.html#whyscorp">Why Scorptech</a></li>
+						<li><a href="/about.html">About Scorptech</a></li>
+						<li><a href="/index.html#sapphire-teaser">See Sapphire in Action</a></li>
+						<li><a href="/sapphire.html">Sapphire EAM</a></li>
+						<li><a href="/contact.html">Contact Us</a></li>
+						<li><a href="../book-demo.html">Book a Demo</a></li>
+					</ul>
+				</div>
+				<div>
+					<span class="s-footer__col-title">Platform</span>
+					<ul>
+						<li><a href="/sapphire.html">Sapphire</a></li>
+						<li><a href="/sapphire.html#why-sapphire">Why Sapphire</a></li>
+						<li><a href="/sapphire.html#sapphire-capabilities">Capabilities</a></li>
+						<li><a href="/sapphire.html#SapphireCoreSuite">Sapphire Core Suite</a></li>
+						<li><a href="/industry-use.html">Industry Use</a></li>
+						<li><a href="/sapphire.html#industries">Industries We Cater</a></li>
+						<li><a href="/how-do-i-use-sapphire.html">Getting Started</a></li>
+					</ul>
+				</div>
+				<div>
+					<span class="s-footer__col-title">Resources</span>
+					<ul>
+						<li><a href="/blog/index.html">Knowledge Hub</a></li>
+						<li><a href="/faq.html">FAQs</a></li>
+						<li><a href="/privacy_policy.html">Privacy Policy</a></li>
+						<li><a href="/terms_of_use.html">Terms of Use</a></li>
+						<li><a href="mailto:support@scorptech.in">Support</a></li>
+					</ul>
+				</div>
+				<div class="s-footer__blog-section">
+					<div class="s-footer__blog-header">
+						<span class="s-footer__col-title" style="margin-bottom:0;">Knowledge Hub — 42 Articles</span>
+						<a href="/blog/index.html" class="s-view-all" style="font-size:0.72rem;">
+							View all
+							<svg viewBox="0 0 16 16" fill="none">
+								<path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</a>
+					</div>
+					<div class="s-blog-categories">
+						<details class="s-acc">
+							<summary>
+								<span class="s-acc__label"><span class="s-acc__dot s-dot-fundamentals"></span>Fundamentals<span class="s-acc__count">7</span></span>
+								<svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none">
+									<path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</summary>
+							<div class="s-acc__body">
+								<a href="/blog/what-is-eam-enterprise-asset-management-guide.html">What Is Enterprise Asset Management?</a>
+								<a href="/blog/eam-vs-cmms-vs-erp-differences.html">EAM vs ERP: The Key Difference</a>
+								<a href="/blog/asset-lifecycle-management-guide.html">Asset Lifecycle Management</a>
+								<a href="/blog/preventive-predictive-reactive-maintenance.html">Preventive vs Predictive Maintenance</a>
+								<a href="/blog/maintenance-kpis-that-actually-matter.html">Building a Maintenance Strategy</a>
+								<a href="/blog/manufacturing-equipment-downtime-eam.html">The True Cost of Asset Downtime</a>
+								<a href="/blog/compliance-audit-trails-eam.html">ISO 55000: The Global Standard</a>
+							</div>
+						</details>
+						<details class="s-acc">
+							<summary>
+								<span class="s-acc__label"><span class="s-acc__dot s-dot-modules"></span>Sapphire Modules<span class="s-acc__count">7</span></span>
+								<svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none">
+									<path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</summary>
+							<div class="s-acc__body">
+								<a href="/blog/work-order-management-backbone-operations.html">Work Order Management</a>
+								<a href="/blog/spare-parts-inventory-management-eam.html">Inventory Control</a>
+								<a href="/blog/vendor-contractor-management-eam.html">Purchase Module: PO to Payment</a>
+								<a href="/blog/construction-infrastructure-site-asset-tracking.html">Asset Tracking</a>
+								<a href="/blog/asset-performance-dashboards-what-to-track.html">Dashboard Intelligence</a>
+								<a href="/blog/preventive-maintenance-scheduling-automation.html">PM Scheduling</a>
+								<a href="/blog/asset-register-single-source-of-truth.html">Document Management</a>
+							</div>
+						</details>
+						<details class="s-acc">
+							<summary>
+								<span class="s-acc__label"><span class="s-acc__dot s-dot-industries"></span>Industries<span class="s-acc__count">7</span></span>
+								<svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none">
+									<path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</summary>
+							<div class="s-acc__body">
+								<a href="/blog/manufacturing-equipment-downtime-eam.html">Manufacturing</a>
+								<a href="/blog/real-estate-facilities-management-eam.html">Facility Management</a>
+								<a href="/blog/healthcare-medical-equipment-compliance.html">Healthcare</a>
+								<a href="/blog/energy-utilities-grid-asset-management.html">Power & Utilities</a>
+								<a href="/blog/land-air-water-vehicles-eam.html">Oil & Gas</a>
+								<a href="/blog/it-parks-commercial-real-estate-eam.html">Real Estate</a>
+								<a href="/blog/logistics-warehousing-fleet-facility-management.html">Aviation & Airports</a>
+							</div>
+						</details>
+						<details class="s-acc">
+							<summary>
+								<span class="s-acc__label"><span class="s-acc__dot s-dot-analytics"></span>Analytics<span class="s-acc__count">7</span></span>
+								<svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none">
+									<path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</summary>
+							<div class="s-acc__body">
+								<a href="/blog/energy-monitoring-sustainability-analytics-eam.html">Real-Time Asset Analytics</a>
+								<a href="/blog/predictive-analytics-asset-failure-prevention.html">Predictive Maintenance Analytics</a>
+								<a href="/blog/oee-overall-equipment-effectiveness-guide.html">OEE Tracking</a>
+								<a href="/blog/maintenance-kpis-that-actually-matter.html">KPI Design for EAM</a>
+								<a href="/blog/mtbf-mttr-reliability-numbers-guide.html">MTBF: Calculating & Reducing</a>
+								<a href="/blog/cost-analytics-maintenance-budget-savings.html">Maintenance Cost Benchmarking</a>
+								<a href="/blog/digital-twins-and-eam-next-frontier.html">Asset Health Scoring</a>
+							</div>
+						</details>
+						<details class="s-acc">
+							<summary>
+								<span class="s-acc__label"><span class="s-acc__dot s-dot-business"></span>Business Value<span class="s-acc__count">7</span></span>
+								<svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none">
+									<path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</summary>
+							<div class="s-acc__body">
+								<a href="/blog/roi-of-eam-implementation-real-numbers.html">ROI of EAM Software</a>
+								<a href="/blog/total-cost-of-ownership-asset-management.html">The Spreadsheet Trap</a>
+								<a href="/blog/eam-implementation-roadmap-indian-enterprises.html">Why EAM Implementations Fail</a>
+								<a href="/blog/making-business-case-for-eam-investment.html">Justifying EAM to the C-Suite</a>
+								<a href="/blog/maintenance-kpis-that-actually-matter.html">Maintenance Maturity Model</a>
+								<a href="/blog/eam-for-cfos-how-finance-reads-asset-data.html">EAM and ESG</a>
+								<a href="/blog/vendor-contractor-management-eam.html">EAM Vendor Buyer's Guide</a>
+							</div>
+						</details>
+						<details class="s-acc">
+							<summary>
+								<span class="s-acc__label"><span class="s-acc__dot s-dot-special"></span>Special Editions<span class="s-acc__count">7</span></span>
+								<svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none">
+									<path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</summary>
+							<div class="s-acc__body">
+								<a href="/blog/sapphire-eam-for-indian-msmes.html">Sapphire 2025: What's New</a>
+								<a href="/blog/scorp-story-jaipur-honest-industrial-software.html">Built in Jaipur: Our Story</a>
+								<a href="/blog/eam-implementation-roadmap-indian-enterprises.html">EAM in India</a>
+								<a href="/blog/sapphire-vs-sap-pm.html">Sapphire vs SAP PM</a>
+								<a href="/blog/iot-integration-with-eam-sensors-to-work-orders.html">AI in Asset Management</a>
+								<a href="/blog/education-campus-infrastructure-management.html">Customer Spotlight</a>
+								<a href="/blog/what-is-eam-enterprise-asset-management-guide.html">EAM Glossary: 60 Terms</a>
+							</div>
+						</details>
+					</div>
+				</div>
+			</div>
+		</div>
+<div class="s-footer__social container mb-2">
+	<div class="row justify-content-center g-3">
+		<div class="col-auto">
+			<a href="#" class="s-icon s-icon-md s-icon-whatsapp" data-coming-soon="WhatsApp" aria-label="WhatsApp" style="text-decoration: none;">
+				<i class="fab fa-whatsapp"></i>
+			</a>
+		</div>
+		<div class="col-auto">
+			<a href="#" class="s-icon s-icon-md s-icon-linkedin" data-coming-soon="LinkedIn" aria-label="LinkedIn" style="text-decoration: none;">
+				<i class="fab fa-linkedin-in"></i>
+			</a>
+		</div>
+		<div class="col-auto">
+			<a href="#" class="s-icon s-icon-md s-icon-youtube" data-coming-soon="YouTube" aria-label="YouTube" style="text-decoration: none;">
+				<i class="fab fa-youtube"></i>
+			</a>
+		</div>
+		<div class="col-auto">
+			<a href="#" class="s-icon s-icon-md s-icon-instagram" data-coming-soon="Instagram" aria-label="Instagram" style="text-decoration: none;">
+				<i class="fab fa-instagram"></i>
+			</a>
+		</div>
+		<div class="col-auto">
+			<a href="#" class="s-icon s-icon-md s-icon-facebook" data-coming-soon="Facebook" aria-label="Facebook" style="text-decoration: none;">
+				<i class="fab fa-facebook-f"></i>
+			</a>
+		</div>
+		<div class="col-auto">
+			<a href="#" class="s-icon s-icon-md s-icon-x" data-coming-soon="X (formerly Twitter)" aria-label="X" style="text-decoration: none;">
+				<i class="fab fa-x-twitter"></i>
+			</a>
+		</div>
+		<div class="col-auto">
+			<a href="#" class="s-icon s-icon-md s-icon-discord" data-coming-soon="Discord" aria-label="Discord" style="text-decoration: none;">
+				<i class="fab fa-discord"></i>
+			</a>
+		</div>
+		<div class="col-auto">
+			<a href="#" class="s-icon s-icon-md s-icon-github" data-coming-soon="GitHub" aria-label="GitHub" style="text-decoration: none;">
+				<i class="fab fa-github"></i>
+			</a>
+		</div>
+	</div>
+</div>
+		<div class="s-footer__bottom">
+			<p class="s-footer__copy">© 2026 SCORP — Scorptech Technologies Private Limited. All rights reserved.</p>
+			<div class="s-footer__legal">
+				<a href="/privacy_policy.html">Privacy Policy</a>
+				<a href="/terms_of_use.html">Terms of Use</a>
+				<a href="/contact.html">Contact</a>
+			</div>
+			<div class="s-footer__made">
+				<svg width="10" height="10" viewBox="0 0 16 16" fill="none">
+					<path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.375 4.5 8.5 4.5 8.5S12.5 9.375 12.5 6c0-2.485-2.015-4.5-4.5-4.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" stroke="rgba(143,169,196,0.7)"/>
+				</svg>
+				Made with intent in Jaipur
+			</div>
+		</div>
+	</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js" type="module"></script>
+</body>
+</html>

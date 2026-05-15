@@ -1,0 +1,673 @@
+PS C:\Users\user\Documents\GitHub\scorp webfront structured\assets\images> ls -1 assets/images_industries/       
+Get-ChildItem: Cannot find path 'C:\Users\user\Documents\GitHub\scorp webfront structured\assets\images\-1' because it does not exist.
+PS C:\Users\user\Documents\GitHub\scorp webfront structured\assets\images> cd..              
+PS C:\Users\user\Documents\GitHub\scorp webfront structured\assets> cd..
+PS C:\Users\user\Documents\GitHub\scorp webfront structured> ls -1 assets/images_industries/
+Get-ChildItem: Cannot find path 'C:\Users\user\Documents\GitHub\scorp webfront structured\-1' because it does not exist.
+PS C:\Users\user\Documents\GitHub\scorp webfront structured> ls assets/images_industries/   
+
+    Directory: C:\Users\user\Documents\GitHub\scorp webfront structured\assets\images_industries
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           1/30/2026  2:34 AM        1145434 audit_desk.jpeg
+-a---           2/21/2026  4:46 AM        1244023 Agro_Processing_Unit.jpeg
+-a---           1/29/2026  4:45 PM        1468780 Airport_Hangars.jpeg
+-a---           1/29/2026  4:48 PM        1430319 Amusement_Parks.jpeg
+-a---           1/29/2026  3:34 PM        1177727 automotive_service_station.jpeg
+-a---           1/29/2026  4:41 PM        1412313 Cargo_Terminals.jpeg
+-a---           1/29/2026  4:57 PM        1489794 Clubs_&_Leisure_Facilities.jpeg
+-a---           2/21/2026  3:41 AM        1259625 co-working_&_IT_Park_2.jpeg
+-a---           1/29/2026  4:49 PM        1411721 Concert_Hall.jpeg
+-a---           1/29/2026  3:37 PM        1403607 construction.jpeg
+-a---           1/29/2026  6:03 PM        1165270 Corporate_Offices.jpeg
+-a---           2/21/2026  5:18 AM        6538881 coworkingITpark.png
+-a---           2/21/2026  3:18 AM        1138914 diagnostic_center.jpeg
+-a---           2/21/2026  4:54 AM        7280636 Disaster_Response_Storage.png
+-a---           2/21/2026  4:44 AM        6194440 Farm_Equipment_Warehouse.png
+-a---           2/21/2026  5:00 AM        7099091 Fertilizer_&_Irrigation_depots.png
+-a---           1/29/2026  4:56 PM        1305608 Fitness_Centers_&_Gym.jpeg
+-a---           1/29/2026  4:44 PM        1971257 Ground_support_bays.jpeg
+-a---           2/21/2026  3:14 AM        1022768 hospital.jpeg
+-a---           1/29/2026  4:59 PM        1242276 Hotels_Guest_Houses.jpeg
+-a---           2/21/2026  5:42 AM        6474909 Logistics_&_Fleet_Operations.png
+-a---           1/29/2026  3:32 PM        1393533 manufacturing_factory.jpeg
+-a---           1/29/2026  4:50 PM        1237383 Movie_Theaters.jpeg
+-a---           2/21/2026  4:03 AM        2960962 muncipal_departments.png
+-a---           2/21/2026  4:33 AM        6321388 power_generation_unit.png
+-a---           2/21/2026  4:12 AM        1880945 Public_Utility_Board.jpeg
+-a---           2/21/2026  4:08 AM        3453577 Rail Maintenance Units.png
+-a---           1/29/2026  5:23 PM        1472695 Real_Estate_Developors.jpeg
+-a---            4/5/2026 11:56 PM        1939865 refineries_industries.png
+-a---           2/21/2026  5:03 AM        7242554 Relief_Logistics.png
+-a---           2/21/2026  5:05 AM        6443887 Rescue_Equipment_Depots.png
+-a---           2/21/2026  3:22 AM        1219521 research_test_laoratories.jpeg
+-a---           1/29/2026  4:58 PM        1297668 Restaurants_&_Cafes.jpeg
+-a---           1/29/2026  5:25 PM        1284951 Retail_Chains_&_Shopping_malls.jpeg
+-a---           1/29/2026  5:03 PM        1384421 schools_universites.jpeg
+-a---           1/29/2026  4:43 PM        1407919 Shipping_Ports_&_Dock.jpeg
+-a---           2/21/2026  4:17 AM        3293126 state-workshops.png
+-a---           1/29/2026  5:00 PM        1315361 Training_&_Vocational_centers.jpeg
+-a---           2/21/2026  4:37 AM        6496855 Transmission_Network.png
+-a---           1/29/2026  4:53 PM        1386168 transporation_agency.jpeg
+-a---           1/29/2026  3:42 PM        1410682 warehouse.jpeg
+-a---           2/21/2026  4:29 AM        6913086 Water_Supply_Infrastructure.png
+
+PS C:\Users\user\Documents\GitHub\scorp webfront structured> ls assets/images_industries/
+
+    Directory: C:\Users\user\Documents\GitHub\scorp webfront structured\assets\images_industries
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           2/21/2026  4:46 AM        1244023 Agro_Processing_Unit.jpeg
+-a---           1/29/2026  4:45 PM        1468780 Airport_Hangars.jpeg
+-a---           1/29/2026  4:48 PM        1430319 Amusement_Parks.jpeg
+-a---           1/29/2026  3:34 PM        1177727 automotive_service_station.jpeg
+-a---           1/29/2026  4:41 PM        1412313 Cargo_Terminals.jpeg
+-a---           1/29/2026  4:57 PM        1489794 Clubs_&_Leisure_Facilities.jpeg
+-a---           2/21/2026  3:41 AM        1259625 co-working_&_IT_Park_2.jpeg
+-a---           1/29/2026  4:49 PM        1411721 Concert_Hall.jpeg
+-a---           1/29/2026  3:37 PM        1403607 construction.jpeg
+-a---           1/29/2026  6:03 PM        1165270 Corporate_Offices.jpeg
+-a---           2/21/2026  5:18 AM        6538881 coworkingITpark.png
+-a---           2/21/2026  3:18 AM        1138914 diagnostic_center.jpeg
+-a---           2/21/2026  4:54 AM        7280636 Disaster_Response_Storage.png
+-a---           2/21/2026  4:44 AM        6194440 Farm_Equipment_Warehouse.png
+-a---           2/21/2026  5:00 AM        7099091 Fertilizer_&_Irrigation_depots.png
+-a---           1/29/2026  4:56 PM        1305608 Fitness_Centers_&_Gym.jpeg
+-a---           1/29/2026  4:44 PM        1971257 Ground_support_bays.jpeg
+-a---           2/21/2026  3:14 AM        1022768 hospital.jpeg
+-a---           1/29/2026  4:59 PM        1242276 Hotels_Guest_Houses.jpeg
+-a---           2/21/2026  5:42 AM        6474909 Logistics_&_Fleet_Operations.png
+-a---           1/29/2026  3:32 PM        1393533 manufacturing_factory.jpeg
+-a---           1/29/2026  4:50 PM        1237383 Movie_Theaters.jpeg
+-a---           2/21/2026  4:03 AM        2960962 muncipal_departments.png
+-a---           2/21/2026  4:33 AM        6321388 power_generation_unit.png
+-a---           2/21/2026  4:12 AM        1880945 Public_Utility_Board.jpeg
+-a---           2/21/2026  4:08 AM        3453577 Rail Maintenance Units.png
+-a---           1/29/2026  5:23 PM        1472695 Real_Estate_Developors.jpeg
+-a---            4/5/2026 11:56 PM        1939865 refineries_industries.png
+-a---           2/21/2026  5:03 AM        7242554 Relief_Logistics.png
+-a---           2/21/2026  5:05 AM        6443887 Rescue_Equipment_Depots.png
+-a---           2/21/2026  3:22 AM        1219521 research_test_laoratories.jpeg
+-a---           1/29/2026  4:58 PM        1297668 Restaurants_&_Cafes.jpeg
+-a---           1/29/2026  5:25 PM        1284951 Retail_Chains_&_Shopping_malls.jpeg
+-a---           1/29/2026  5:03 PM        1384421 schools_universites.jpeg
+-a---           1/29/2026  4:43 PM        1407919 Shipping_Ports_&_Dock.jpeg
+-a---           2/21/2026  4:17 AM        3293126 state-workshops.png
+-a---           1/29/2026  5:00 PM        1315361 Training_&_Vocational_centers.jpeg
+-a---           2/21/2026  4:37 AM        6496855 Transmission_Network.png
+-a---           1/29/2026  4:53 PM        1386168 transporation_agency.jpeg
+-a---           1/29/2026  3:42 PM        1410682 warehouse.jpeg
+-a---           2/21/2026  4:29 AM        6913086 Water_Supply_Infrastructure.png
+
+PS C:\Users\user\Documents\GitHub\scorp webfront structured> $html = Get-Content "sapphire.html" -Raw
+>> $tracks = [regex]::Matches($html, '(?s)s-cm-feature-title[^>]+>(.+?)</h\d>.+?s-pill-track.+?>(.*?)(?=</div>\s*</div>\s*</div>\s*</div>)')
+>> foreach ($t in $tracks) {
+>>     $title = [regex]::Match($t.Groups[1].Value, '>([^<]+)<').Groups[1].Value
+>>     Write-Host "`n=== $title ===" -ForegroundColor Cyan
+>>     $pills = [regex]::Matches($t.Groups[2].Value, '(?<=>)([^<]+)(?=</span>)')
+>>     foreach ($p in $pills) { Write-Host "  - $($p.Value)" }
+>> }
+
+===  ===
+  - Metal & Steel Plants
+  - Plastic & Polymer Units
+  - Chemical Plants
+  - Textile Mills
+  - Food & Beverage Plants
+  - Pharmaceutical Plants
+  - Electronics & PCB Units
+  - Auto Component Plants
+  - Paper & Packaging Units
+  - Paint & Coatings Plants
+  - Glass & Ceramics Units
+  - Rubber & Tyre Plants
+
+===  ===
+  - 2-Wheeler Workshops
+  - 3-Wheeler Workshops
+  - Car Service Centres
+  - Light Commercial Vehicle Workshops
+  - Truck & Bus Workshops
+  - Earth Moving Equipment Workshops
+  - Tractor & Farm Vehicle Workshops
+  - EV Service Centres
+  - Multi-brand Garages
+
+===  ===
+  - Residential Projects
+  - Commercial Projects
+  - Industrial Construction
+  - Road & Highway Projects
+  - Bridge & Flyover Projects
+  - Dam & Irrigation Projects
+
+===  ===
+  - Cold Storage Warehouses
+  - Dry Goods Warehouses
+  - E-commerce Fulfilment Centres
+  - Pharmaceutical Warehouses
+  - Chemical & Hazardous Storage
+  - Bulk Commodity Storage
+
+===  ===
+  - Full-scale Hospitals
+  - Small Hospitals & Nursing Homes
+  - Specialty Clinics
+  - Dental Clinics
+  - Eye Care Centres
+  - Ayurveda & Wellness Centres
+  - Rehabilitation Centres
+
+===  ===
+  - Pathology Labs
+  - Radiology & Imaging Centres
+  - Molecular Diagnostic Labs
+  - Environmental Testing Labs
+  - Food & Drug Testing Labs
+  - Forensic Labs
+
+===  ===
+  - Corporate R&D Centres
+  - Government Research Institutes
+  - University Research Centres
+  - Product Certification Labs
+  - Automotive Testing Facilities
+
+===  ===
+  - IT & Software Companies
+  - Banks & Financial Institutions
+  - Insurance Companies
+  - Telecom Companies
+  - FMCG Companies
+  - Consulting & Law Firms
+  - Media & Advertising Agencies
+
+===  ===
+  - Co-working Spaces
+  - IT & ITES Parks
+  - SEZs
+  - BPO & Call Centre Campuses
+  - Startup Incubators
+
+===  ===
+  - Supermarkets & Hypermarkets
+  - Fashion Retail Chains
+  - Electronics Retail Chains
+  - Pharmacy Retail Chains
+  - Shopping Malls
+  - Petrol Pump Convenience Stores
+
+===  ===
+  - Residential Complexes
+  - Gated Communities & Townships
+  - Commercial Office Complexes
+  - Industrial Estates
+  - Mixed-use Developments
+
+===  ===
+  - Primary & Secondary Schools
+  - Engineering Colleges
+  - Medical Colleges
+  - Arts & Science Colleges
+  - Polytechnic Institutes
+  - Coaching Institutes
+  - International Schools
+
+===  ===
+  - Industrial Training Institutes
+  - Skill Development Centres
+  - Corporate Training Campuses
+  - Driving Schools
+
+===  ===
+  - Luxury Hotels
+  - Business Hotels
+  - Budget Hotels & Lodges
+  - Heritage & Palace Hotels
+  - Resorts & Spas
+  - Serviced Apartments
+  - Dharamshalas
+
+===  ===
+  - Fine Dining Restaurants
+  - QSR Chains
+  - Cloud Kitchens
+  - Institutional Cafeterias
+  - Bakeries
+  - Dhaba Chains
+  - Bars & Pubs
+
+===  ===
+  - Private Members Clubs
+  - Sports Clubs
+  - Golf Courses
+  - Community Clubs
+
+===  ===
+  - Commercial Gym Chains
+  - Independent Gyms
+  - Sports Complexes
+  - Yoga & Wellness Studios
+  - Swimming Pools
+  - Stadium Facilities
+
+===  ===
+  - State Road Transport Corporations
+  - City Bus Services
+  - Metro Rail Corporations
+  - Cab & Taxi Fleet Operators
+
+===  ===
+  - Road Freight Operators
+  - Last-mile Delivery Fleets
+  - Tanker Fleets
+  - Refrigerated Transport
+  - Courier & Express Logistics
+
+===  ===
+  - Multiplex Chains
+  - Single-screen Theatres
+  - IMAX & Premium Format Screens
+
+===  ===
+  - Auditoriums
+  - Convention & Exhibition Centres
+  - Amphitheatres
+  - Stadium Venues
+
+===  ===
+  - Theme Parks
+  - Water Parks
+  - Indoor Entertainment Centres
+  - Adventure Parks
+
+===  ===
+  - Commercial Airline Hangars
+  - Private & Charter Hangars
+  - Helicopter Maintenance Bases
+  - MRO Facilities
+
+===  ===
+  - Ground Handling Equipment Depots
+  - Baggage Handling Systems
+  - Aircraft Fuelling Stations
+
+===  ===
+  - Major Ports
+  - Minor & Private Ports
+  - Shipbuilding & Repair Yards
+  - Fishing Harbours
+
+===  ===
+  - Inland Container Depots
+  - Container Freight Stations
+  - Multi-modal Logistics Parks
+  - Air Cargo Terminals
+
+===  ===
+  - Water Supply Boards
+  - Sewage & Drainage Boards
+  - Solid Waste Management
+  - Street Lighting Departments
+  - Public Parks & Gardens
+
+===  ===
+  - Locomotive Sheds
+  - Carriage & Wagon Workshops
+  - Track Maintenance Depots
+  - Metro Rail Depots
+
+===  ===
+  - Electricity Distribution Companies
+  - Gas Distribution Companies
+  - Telecom Infrastructure Boards
+
+===  ===
+  - Government Vehicle Workshops
+  - State Transport Workshops
+  - Police & Paramilitary Workshops
+  - Fire Department Depots
+  - PWD Workshops
+
+===  ===
+  - Thermal Power Plants
+  - Hydroelectric Plants
+  - Solar Power Farms
+  - Wind Energy Farms
+  - Captive Power Plants
+  - Biogas & Biomass Plants
+
+===  ===
+  - Water Treatment Plants
+  - Sewage Treatment Plants
+  - Pumping Stations
+  - Pipeline Networks
+
+===  ===
+  - High Voltage Transmission Lines
+  - Substations & Switchyards
+  - Distribution Networks
+  - Telecom Tower Networks
+
+===  ===
+  - Tractor & Implement Depots
+  - Custom Hiring Centres
+  - Agricultural Machinery Dealerships
+
+===  ===
+  - Rice Mills & Flour Mills
+  - Oil Extraction Units
+  - Dairy Processing Plants
+  - Fruit & Vegetable Processing
+  - Sugar Mills
+  - Cotton Ginning Units
+  - Spice Processing Units
+
+===  ===
+  - Fertilizer Distribution Centres
+  - Drip & Sprinkler Equipment Suppliers
+  - Agrochemical Storage Units
+
+===  ===
+  - NDRF & SDRF Equipment Depots
+  - Civil Defence Stores
+  - Flood Control Depots
+
+===  ===
+  - Government Relief Distribution Centres
+  - NGO Logistics Hubs
+  - Emergency Food Grain Stockpiles
+
+===  ===
+  - Fire Station Equipment Stores
+  - Ambulance & Emergency Fleet Centres
+  - Marine Rescue Depots
+PS C:\Users\user\Documents\GitHub\scorp webfront structured> $html = Get-Content "sapphire.html" -Raw
+>> $cards = [regex]::Matches($html, '(?s)<div class="s-cm-feature">.*?<h\d[^>]*s-cm-feature-title[^>]*>(.*?)</h\d>.*?<div[^>]*s-pill-track[^>]*>(.*?)</div>')
+>> foreach ($c in $cards) {
+>>     $rawTitle = $c.Groups[1].Value
+>>     $title = [regex]::Replace($rawTitle, '<[^>]+>', '').Trim()
+>>     Write-Host "`n=== $title ===" -ForegroundColor Cyan
+>>     $pills = [regex]::Matches($c.Groups[2].Value, '(?<=>)([^<]+)(?=</span>)')
+>>     foreach ($p in $pills) {
+>>         $text = $p.Value.Trim()
+>>         if ($text -ne '') { Write-Host "  - $text" }
+>>     }
+>> }
+
+=== Still not sure who has access to what — and quietly hoping nobody's doing something they shouldn't be? ===
+  - Metal & Steel Plants
+  - Plastic & Polymer Units
+  - Chemical Plants
+  - Textile Mills
+  - Food & Beverage Plants
+  - Pharmaceutical Plants
+  - Electronics & PCB Units
+  - Auto Component Plants
+  - Paper & Packaging Units
+  - Paint & Coatings Plants
+  - Glass & Ceramics Units
+  - Rubber & Tyre Plants
+
+=== Service Stations ===
+  - 2-Wheeler Workshops
+  - 3-Wheeler Workshops
+  - Car Service Centres
+  - Light Commercial Vehicle Workshops
+  - Truck & Bus Workshops
+  - Earth Moving Equipment Workshops
+  - Tractor & Farm Vehicle Workshops
+  - EV Service Centres
+  - Multi-brand Garages
+
+=== Construction & Engineering Sites ===
+  - Residential Projects
+  - Commercial Projects
+  - Industrial Construction
+  - Road & Highway Projects
+  - Bridge & Flyover Projects
+  - Dam & Irrigation Projects
+
+=== Warehouses & Logistics Centers ===
+  - Cold Storage Warehouses
+  - Dry Goods Warehouses
+  - E-commerce Fulfilment Centres
+  - Pharmaceutical Warehouses
+  - Chemical & Hazardous Storage
+  - Bulk Commodity Storage
+
+=== Hospitals ===
+  - Full-scale Hospitals
+  - Small Hospitals & Nursing Homes
+  - Specialty Clinics
+  - Dental Clinics
+  - Eye Care Centres
+  - Ayurveda & Wellness Centres
+  - Rehabilitation Centres
+
+=== Diagnostic Centers ===
+  - Pathology Labs
+  - Radiology & Imaging Centres
+  - Molecular Diagnostic Labs
+  - Environmental Testing Labs
+  - Food & Drug Testing Labs
+  - Forensic Labs
+
+=== Research & Test Laboratories ===
+  - Corporate R&D Centres
+  - Government Research Institutes
+  - University Research Centres
+  - Product Certification Labs
+  - Automotive Testing Facilities
+
+=== Corporate Offices ===
+  - IT & Software Companies
+  - Banks & Financial Institutions
+  - Insurance Companies
+  - Telecom Companies
+  - FMCG Companies
+  - Consulting & Law Firms
+  - Media & Advertising Agencies
+
+=== Co-working & IT Parks ===
+  - Co-working Spaces
+  - IT & ITES Parks
+  - SEZs
+  - BPO & Call Centre Campuses
+  - Startup Incubators
+
+=== Retail Chains & Shopping Malls ===
+  - Supermarkets & Hypermarkets
+  - Fashion Retail Chains
+  - Electronics Retail Chains
+  - Pharmacy Retail Chains
+  - Shopping Malls
+  - Petrol Pump Convenience Stores
+
+=== Real Estate Developers ===
+  - Residential Complexes
+  - Gated Communities & Townships
+  - Commercial Office Complexes
+  - Industrial Estates
+  - Mixed-use Developments
+
+=== Schools, Universities & Colleges ===
+  - Primary & Secondary Schools
+  - Engineering Colleges
+  - Medical Colleges
+  - Arts & Science Colleges
+  - Polytechnic Institutes
+  - Coaching Institutes
+  - International Schools
+
+=== Training & Vocational Centers ===
+  - Industrial Training Institutes
+  - Skill Development Centres
+  - Corporate Training Campuses
+  - Driving Schools
+
+=== Hotels, Guest Houses & Lodges ===
+  - Luxury Hotels
+  - Business Hotels
+  - Budget Hotels & Lodges
+  - Heritage & Palace Hotels
+  - Resorts & Spas
+  - Serviced Apartments
+  - Dharamshalas
+
+=== Restaurants & Cafes ===
+  - Fine Dining Restaurants
+  - QSR Chains
+  - Cloud Kitchens
+  - Institutional Cafeterias
+  - Bakeries
+  - Dhaba Chains
+  - Bars & Pubs
+
+=== Clubs & Leisure Facilities ===
+  - Private Members Clubs
+  - Sports Clubs
+  - Golf Courses
+  - Community Clubs
+
+=== Fitness Centers & Gyms ===
+  - Commercial Gym Chains
+  - Independent Gyms
+  - Sports Complexes
+  - Yoga & Wellness Studios
+  - Swimming Pools
+  - Stadium Facilities
+
+=== Transportation Agencies ===
+  - State Road Transport Corporations
+  - City Bus Services
+  - Metro Rail Corporations
+  - Cab & Taxi Fleet Operators
+
+=== Logistics & Fleet Operations ===
+  - Road Freight Operators
+  - Last-mile Delivery Fleets
+  - Tanker Fleets
+  - Refrigerated Transport
+  - Courier & Express Logistics
+
+=== Movie Theaters ===
+  - Multiplex Chains
+  - Single-screen Theatres
+  - IMAX & Premium Format Screens
+
+=== Concert Halls ===
+  - Auditoriums
+  - Convention & Exhibition Centres
+  - Amphitheatres
+  - Stadium Venues
+
+=== Amusement Parks & Event Zones ===
+  - Theme Parks
+  - Water Parks
+  - Indoor Entertainment Centres
+  - Adventure Parks
+
+=== Airport Hangars ===
+  - Commercial Airline Hangars
+  - Private & Charter Hangars
+  - Helicopter Maintenance Bases
+  - MRO Facilities
+
+=== Ground Support Bays ===
+  - Ground Handling Equipment Depots
+  - Baggage Handling Systems
+  - Aircraft Fuelling Stations
+
+=== Shipping Ports & Docks ===
+  - Major Ports
+  - Minor & Private Ports
+  - Shipbuilding & Repair Yards
+  - Fishing Harbours
+
+=== Cargo Terminals ===
+  - Inland Container Depots
+  - Container Freight Stations
+  - Multi-modal Logistics Parks
+  - Air Cargo Terminals
+
+=== Municipal Departments ===
+  - Water Supply Boards
+  - Sewage & Drainage Boards
+  - Solid Waste Management
+  - Street Lighting Departments
+  - Public Parks & Gardens
+
+=== Rail Maintenance Units ===
+  - Locomotive Sheds
+  - Carriage & Wagon Workshops
+  - Track Maintenance Depots
+  - Metro Rail Depots
+
+=== Public Utility Boards ===
+  - Electricity Distribution Companies
+  - Gas Distribution Companies
+  - Telecom Infrastructure Boards
+
+=== State Workshops ===
+  - Government Vehicle Workshops
+  - State Transport Workshops
+  - Police & Paramilitary Workshops
+  - Fire Department Depots
+  - PWD Workshops
+
+=== Power Generation Units ===
+  - Thermal Power Plants
+  - Hydroelectric Plants
+  - Solar Power Farms
+  - Wind Energy Farms
+  - Captive Power Plants
+  - Biogas & Biomass Plants
+
+=== Water Supply Infrastructure ===
+  - Water Treatment Plants
+  - Sewage Treatment Plants
+  - Pumping Stations
+  - Pipeline Networks
+
+=== Transmission Networks ===
+  - High Voltage Transmission Lines
+  - Substations & Switchyards
+  - Distribution Networks
+  - Telecom Tower Networks
+
+=== Oil, Gas & Energy Infrastructure ===
+  - Tractor & Implement Depots
+  - Custom Hiring Centres
+  - Agricultural Machinery Dealerships
+
+=== Agro-Processing Units ===
+  - Rice Mills & Flour Mills
+  - Oil Extraction Units
+  - Dairy Processing Plants
+  - Fruit & Vegetable Processing
+  - Sugar Mills
+  - Cotton Ginning Units
+  - Spice Processing Units
+
+=== Fertilizer & Irrigation Depots ===
+  - Fertilizer Distribution Centres
+  - Drip & Sprinkler Equipment Suppliers
+  - Agrochemical Storage Units
+
+=== Disaster Response Storage ===
+  - NDRF & SDRF Equipment Depots
+  - Civil Defence Stores
+  - Flood Control Depots
+
+=== Relief Logistics ===
+  - Government Relief Distribution Centres
+  - NGO Logistics Hubs
+  - Emergency Food Grain Stockpiles
+
+=== Rescue Equipment Depots ===
+  - Fire Station Equipment Stores
+  - Ambulance & Emergency Fleet Centres
+  - Marine Rescue Depots
