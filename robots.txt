@@ -1,15 +1,27 @@
 User-agent: *
 Allow: /
+Allow: /assets/images/
+Allow: /assets/images_blog/
+Allow: /assets/images_industries/
+Allow: /assets/live_icons/
+Allow: /assets/videos/
+Allow: /assets/data/
 
-Disallow: /assets/
+# Block backend configurations & legal drafts
+Disallow: /assets/data/*.json
+Disallow: /text_help/
 Disallow: /assessment.html
 Disallow: /privacypolicy.html
 Disallow: /termsofuse.html
 
+# Allow AI Search & Assistant Discovery
 User-agent: GPTBot
 Allow: /
 
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://scorptech.in/sitemap.xml
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://scorptech.in

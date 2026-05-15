@@ -14,6 +14,7 @@ import { initFooterManager } from './components/FooterManager.js';
 import { initIntelligencePage } from './pages/intelligence.js';
 import { initCardWatermarks } from './helpers/card_watermark.js';
 import { initScrollTo } from './helpers/scroll_to.js';
+import { initMarqueeLoops } from './helpers/marquee_continuity.js';
 
 
 // ═════════════════════════════════════════════════════════════════════════════
@@ -80,6 +81,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollTo();
   console.log('✅ Scroll-To initialized');
   // ─────────────────────────────────────────────────────────────────────────────
+  // scrollTo Helper (Universal - auto-detects data-scroll-to attributes)
+  // ─────────────────────────────────────────────────────────────────────────────
+  initMarqueeLoops();
+  console.log('✅ Marquee Loops initialized');
+  // ─────────────────────────────────────────────────────────────────────────────
   // FLOATING ELEMENT CARD (Universal - cards with floating icon animations)
   // ─────────────────────────────────────────────────────────────────────────────
   if (document.querySelector('.philosophy-card-floating')) {
@@ -99,6 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('✅ Pills Rail initialized');
   }
   console.log('✅ All universal components initialized');
+
+  
   // ─────────────────────────────────────────────────────────────────────────────
   // INTELLIGENCE PAGE INITIALIZATION
   // ─────────────────────────────────────────────────────────────────────────────

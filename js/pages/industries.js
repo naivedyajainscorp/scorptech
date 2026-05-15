@@ -357,38 +357,27 @@ function initCspNav() {
 	function checkCspNavVisibility() {
 
 		if (!cspNavStart || !cspNavEnd) return;
-
 		const scrollY = window.scrollY;
-
 		const startTop = cspGetTop(cspNavStart);
-
 		const endBottom =
 			cspGetTop(cspNavEnd) +
 			cspNavEnd.offsetHeight -
 			200;
-
 		cspNav.classList.toggle(
 			'csp-nav-visible',
 			scrollY >= startTop && scrollY < endBottom
 		);
 	}
-
 	window.addEventListener('scroll', checkCspNavVisibility, {
 		passive: true
 	});
-
 	checkCspNavVisibility();
-
 	// ── ACTIVE TAB ON SCROLL ────────────────────────────────
 	function scrollCspNavToActive() {
-
 		const navInner = document.querySelector('.csp-nav-inner');
-
 		const activeItem =
 			navInner?.querySelector('.csp-nav-item.active');
-
 		if (!navInner || !activeItem) return;
-
 		navInner.scrollTo({
 			left:
 				activeItem.offsetLeft -
