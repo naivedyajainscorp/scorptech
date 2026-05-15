@@ -52,7 +52,7 @@ assets/data/tools/content-extractor/exports/
 
 __pycache__/
 *.pyc
-
+*.py
 
 # ==================================================
 # SYSTEM FILES
