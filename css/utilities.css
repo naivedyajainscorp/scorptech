@@ -655,3 +655,11 @@
 .s-gradient-text-red { background: var(--s-gradient-red); }
 .s-gradient-text-slate { background: var(--s-gradient-slate); }
 .s-gradient-text-neutral { background: var(--s-gradient-neutral); }
+
+.s-para{
+  color: var(--s-black);
+  text-align: justify;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  hyphens: none;
+}

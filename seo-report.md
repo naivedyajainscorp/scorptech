@@ -1,19 +1,19 @@
-# SEO Audit Report - Scorptech
+# SEO Audit Report - Scorptech JARVIS v2.0
 
 | Meta | Value |
 |------|-------|
 | **Project** | C:\Users\user\Documents\GitHub\scorp webfront structured |
-| **Generated** | 2026-04-24 23:52 |
-| **Pages Scanned** | 83 |
+| **Generated** | 2026-05-18 00:39 |
+| **Pages Scanned** | 120 |
 
 ---
 
 ## 3d_block_layers.html
 
-**Status:** CRITICAL | **Critical:** 7 | **Warnings:** 8
+**Status:** CRITICAL | **Critical:** 7 | **Warnings:** 8 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too short: 27 chars] -- ` 3D Block Layers Infographic `
+- **Title** [WARN: 27 chars] -- ` 3D Block Layers Infographic `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
@@ -34,17 +34,17 @@
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
 - [CRITICAL] **H1** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## about.html
 
-**Status:** NEEDS WORK | **Critical:** 0 | **Warnings:** 5
+**Status:** NEEDS WORK | **Critical:** 0 | **Warnings:** 5 | **Health Score:** 65%
 
 ### Present Tags
 - **Title** [OK] -- ` About SCORP — Human-Centered ERP & EAM for Shop Floors `
-- **Meta Description** [!! Too long: 219 chars] -- ` SCORP builds human-centered ERP and EAM software for shop-floor teams. DPIIT Startup India recognized. iStart Rajasthan registered. Founded to eliminate operational complexity in manufacturing and industrial operations. `
+- **Meta Description** [WARN: 219 chars] -- ` SCORP builds human-centered ERP and EAM software for shop-floor teams. DPIIT Startup India recognized. iStart Rajasthan registered. Founded to eliminate operational complexity in manufacturing and industrial operations. `
 - **Canonical** [OK] -- ` https://scorptech.in/about.html `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
@@ -56,7 +56,7 @@
 - **og:url** [OK] -- ` https://scorptech.in/about.html `
 - **og:type** [OK] -- ` website `
 - **twitter:card** [OK] -- ` summary_large_image `
-- **H1** [OK] -- ` Simplicity that works on the floor `
+- **H1** [OK] -- ` Simplicity that workson the floor `
 - **Image Alt Tags** [OK] -- All present
 
 ### Missing / Fix Needed
@@ -64,17 +64,17 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## analytics.html
 
-**Status:** NEEDS WORK | **Critical:** 0 | **Warnings:** 6
+**Status:** NEEDS WORK | **Critical:** 0 | **Warnings:** 6 | **Health Score:** 58%
 
 ### Present Tags
-- **Title** [!! Too long: 66 chars] -- ` Sapphire Smart Analytics — Real-Time Industrial Dashboards | SCORP `
-- **Meta Description** [!! Too long: 211 chars] -- ` Sapphire Smart Analytics by SCORP — real-time industrial dashboards, reporting, and operational insights. Track MTBF, MTTR, asset health, and maintenance performance. Data-driven decision making for shop floors. `
+- **Title** [WARN: 66 chars] -- ` Sapphire Smart Analytics — Real-Time Industrial Dashboards | SCORP `
+- **Meta Description** [WARN: 211 chars] -- ` Sapphire Smart Analytics by SCORP — real-time industrial dashboards, reporting, and operational insights. Track MTBF, MTTR, asset health, and maintenance performance. Data-driven decision making for shop floors. `
 - **Canonical** [OK] -- ` https://scorptech.in/analytics.html `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
@@ -100,16 +100,16 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## announcement.html
 
-**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too short: 24 chars] -- ` Announcement - Scorptech `
+- **Title** [WARN: 24 chars] -- ` Announcement - Scorptech `
 - **Meta Description** [OK] -- ` Stay updated with the latest news, product releases, and announcements from SCORP. Explore new features in Sapphire ERP & EAM and company updates. `
 - **Canonical** [OK] -- ` https://scorptech.in/announcement.html `
 - **Lang** [OK] -- ` en `
@@ -117,9 +117,9 @@
 - **Charset** [OK] -- ` UTF-8 `
 - **Robots** [OK] -- ` index, follow `
 - **H1** [OK] -- ` 
-                            SAPPHIRE ERP 
-                            Version 3.2 Now Live!
-                         `
+        SAPPHIRE
+        Version 3.2 Now Live!
+       `
 - **Image Alt Tags** [OK] -- All present
 
 ### Missing / Fix Needed
@@ -133,13 +133,13 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## assessment-report.html
 
-**Status:** CRITICAL | **Critical:** 7 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 7 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` Sapphire Assessment Report — Asset Management Maturity `
@@ -162,17 +162,17 @@
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
 - [CRITICAL] **H1** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## assessment.html
 
-**Status:** CRITICAL | **Critical:** 3 | **Warnings:** 5
+**Status:** CRITICAL | **Critical:** 3 | **Warnings:** 5 | **Health Score:** 5%
 
 ### Present Tags
 - **Title** [OK] -- ` Digital Assessment — Evaluate Your EAM/ERP Readiness | SCORP `
-- **Meta Description** [!! Too short: 57 chars] -- ` Take our digital assessment to evaluate your organization `
+- **Meta Description** [WARN: 57 chars] -- ` Take our digital assessment to evaluate your organization `
 - **Canonical** [OK] -- ` https://scorptech.in/assessment.html `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
@@ -192,17 +192,17 @@
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
 - [CRITICAL] **H1** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## book-demo.html
 
-**Status:** CRITICAL | **Critical:** 1 | **Warnings:** 5
+**Status:** CRITICAL | **Critical:** 1 | **Warnings:** 5 | **Health Score:** 45%
 
 ### Present Tags
 - **Title** [OK] -- ` Book a Free Sapphire ERP & EAM Demo | SCORP `
-- **Meta Description** [!! Too long: 161 chars] -- ` Book a free live demo of Sapphire ERP & EAM. Experience how SCORP simplifies enterprise operations. Choose your industry and schedule a session with our experts. `
+- **Meta Description** [WARN: 161 chars] -- ` Book a free live demo of Sapphire ERP & EAM. Experience how SCORP simplifies enterprise operations. Choose your industry and schedule a session with our experts. `
 - **Canonical** [OK] -- ` https://scorptech.in/book-demo.html `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1 `
@@ -213,7 +213,7 @@
 - **og:url** [OK] -- ` https://scorptech.in/book-demo.html `
 - **og:type** [OK] -- ` website `
 - **twitter:card** [OK] -- ` summary_large_image `
-- **H1** [OK] -- ` Book Your Free Demo `
+- **H1** [OK] -- ` Book YourFree Demo `
 - **Image Alt Tags** [OK] -- All present
 
 ### Missing / Fix Needed
@@ -222,17 +222,17 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## capabiliteis_bak.html
 
-**Status:** NEEDS WORK | **Critical:** 0 | **Warnings:** 2
+**Status:** NEEDS WORK | **Critical:** 0 | **Warnings:** 2 | **Health Score:** 86%
 
 ### Present Tags
 - **Title** [OK] -- ` Capabilities — SCORP Sapphire ERP `
-- **Meta Description** [!! Too short: 108 chars] -- ` Explore SCORP Sapphire ERP capabilities. Enterprise asset management designed for simplicity and efficiency. `
+- **Meta Description** [WARN: 108 chars] -- ` Explore SCORP Sapphire ERP capabilities. Enterprise asset management designed for simplicity and efficiency. `
 - **Canonical** [OK] -- ` https://scorptech.in/capabiliteis.html `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
@@ -257,17 +257,17 @@
 
 ### Missing / Fix Needed
 - [WARNING] **Meta Description** -- Length issue (108 chars, ideal 120-160)
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## capabilities_backup_draft.html
 
-**Status:** NEEDS WORK | **Critical:** 0 | **Warnings:** 2
+**Status:** NEEDS WORK | **Critical:** 0 | **Warnings:** 2 | **Health Score:** 86%
 
 ### Present Tags
 - **Title** [OK] -- ` Capabilities — SCORP Sapphire ERP `
-- **Meta Description** [!! Too short: 108 chars] -- ` Explore SCORP Sapphire ERP capabilities. Enterprise asset management designed for simplicity and efficiency. `
+- **Meta Description** [WARN: 108 chars] -- ` Explore SCORP Sapphire ERP capabilities. Enterprise asset management designed for simplicity and efficiency. `
 - **Canonical** [OK] -- ` https://scorptech.in/capabiliteis.html `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
@@ -292,17 +292,17 @@
 
 ### Missing / Fix Needed
 - [WARNING] **Meta Description** -- Length issue (108 chars, ideal 120-160)
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## capabilities.html
 
-**Status:** NEEDS WORK | **Critical:** 0 | **Warnings:** 2
+**Status:** NEEDS WORK | **Critical:** 0 | **Warnings:** 2 | **Health Score:** 86%
 
 ### Present Tags
 - **Title** [OK] -- ` Capabilities — SCORP Sapphire ERP `
-- **Meta Description** [!! Too short: 108 chars] -- ` Explore SCORP Sapphire ERP capabilities. Enterprise asset management designed for simplicity and efficiency. `
+- **Meta Description** [WARN: 108 chars] -- ` Explore SCORP Sapphire ERP capabilities. Enterprise asset management designed for simplicity and efficiency. `
 - **Canonical** [OK] -- ` https://scorptech.in/capabiliteis.html `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
@@ -327,13 +327,13 @@
 
 ### Missing / Fix Needed
 - [WARNING] **Meta Description** -- Length issue (108 chars, ideal 120-160)
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## contact.html
 
-**Status:** CRITICAL | **Critical:** 1 | **Warnings:** 4
+**Status:** CRITICAL | **Critical:** 1 | **Warnings:** 4 | **Health Score:** 52%
 
 ### Present Tags
 - **Title** [OK] -- ` Contact SCORP — Book an ERP & EAM Demo | Scorptech `
@@ -349,8 +349,8 @@
 - **og:type** [OK] -- ` website `
 - **twitter:card** [OK] -- ` summary_large_image `
 - **H1** [OK] -- ` 
-        Get in Touch
-       `
+						Get in Touch
+					 `
 - **Image Alt Tags** [OK] -- All present
 
 ### Missing / Fix Needed
@@ -358,42 +358,13 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
-
----
-
-## content_moderation_backup.html
-
-**Status:** CRITICAL | **Critical:** 7 | **Warnings:** 7
-
-### Present Tags
-- **Title** [OK] -- ` Sapphire Module Showcase — Prototype `
-- **Lang** [OK] -- ` en `
-- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
-- **Charset** [OK] -- ` UTF-8 `
-- **Image Alt Tags** [OK] -- All present
-
-### Missing / Fix Needed
-- [CRITICAL] **Meta Description** -- Missing
-- [CRITICAL] **Canonical URL** -- Missing
-- [WARNING] **Meta Robots** -- Missing (defaults to index,follow)
-- [CRITICAL] **og:title** -- Missing
-- [CRITICAL] **og:description** -- Missing
-- [CRITICAL] **og:image** -- Missing
-- [WARNING] **og:url** -- Missing
-- [WARNING] **og:type** -- Missing
-- [CRITICAL] **twitter:card** -- Missing
-- [WARNING] **twitter:title** -- Missing
-- [WARNING] **twitter:description** -- Missing
-- [WARNING] **twitter:image** -- Missing
-- [CRITICAL] **H1** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## content_moderation.html
 
-**Status:** CRITICAL | **Critical:** 7 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 7 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` Sapphire Module Showcase — Prototype `
@@ -416,17 +387,17 @@
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
 - [CRITICAL] **H1** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## faq.html
 
-**Status:** CRITICAL | **Critical:** 3 | **Warnings:** 5
+**Status:** CRITICAL | **Critical:** 2 | **Warnings:** 5 | **Health Score:** 25%
 
 ### Present Tags
 - **Title** [OK] -- ` FAQ — Sapphire ERP & EAM Platform | SCORP `
-- **Meta Description** [!! Too long: 170 chars] -- ` Frequently Asked Questions about SCORP and Sapphire ERP & EAM. Find answers about implementation, modules, pricing, and how our platform transforms industrial operations. `
+- **Meta Description** [WARN: 170 chars] -- ` Frequently Asked Questions about SCORP and Sapphire ERP & EAM. Find answers about implementation, modules, pricing, and how our platform transforms industrial operations. `
 - **Canonical** [OK] -- ` https://scorptech.in/faq.html `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
@@ -436,6 +407,7 @@
 - **og:description** [OK] -- ` Common questions and answers about Sapphire ERP & EAM implementation and features. `
 - **og:url** [OK] -- ` https://scorptech.in/faq.html `
 - **og:type** [OK] -- ` website `
+- **H1** [OK] -- ` Frequently Asked Questions `
 - **Image Alt Tags** [OK] -- All present
 
 ### Missing / Fix Needed
@@ -445,14 +417,13 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [CRITICAL] **H1** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## googleb77111c9dc259328.html
 
-**Status:** CRITICAL | **Critical:** 10 | **Warnings:** 8
+**Status:** CRITICAL | **Critical:** 10 | **Warnings:** 8 | **Health Score:** 0%
 
 ### Present Tags
 - **Image Alt Tags** [OK] -- All present
@@ -475,16 +446,16 @@
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
 - [CRITICAL] **H1** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## header.html
 
-**Status:** CRITICAL | **Critical:** 7 | **Warnings:** 8
+**Status:** CRITICAL | **Critical:** 7 | **Warnings:** 8 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too short: 8 chars] -- ` Document `
+- **Title** [WARN: 8 chars] -- ` Document `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
@@ -505,17 +476,17 @@
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
 - [CRITICAL] **H1** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## how-do-I-use-sapphire.html
 
-**Status:** CRITICAL | **Critical:** 1 | **Warnings:** 2
+**Status:** CRITICAL | **Critical:** 1 | **Warnings:** 2 | **Health Score:** 66%
 
 ### Present Tags
 - **Title** [OK] -- ` Free Asset Management Assessment | SCORP `
-- **Meta Description** [!! Too long: 177 chars] -- ` Take a free 5-minute asset management maturity assessment by SCORP. Discover gaps in procurement, maintenance, inspection, and compliance — then get a clear improvement roadmap. `
+- **Meta Description** [WARN: 177 chars] -- ` Take a free 5-minute asset management maturity assessment by SCORP. Discover gaps in procurement, maintenance, inspection, and compliance — then get a clear improvement roadmap. `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
@@ -538,17 +509,17 @@
 ### Missing / Fix Needed
 - [WARNING] **Meta Description** -- Length issue (177 chars, ideal 120-160)
 - [CRITICAL] **Canonical URL** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## index.html
 
-**Status:** NEEDS WORK | **Critical:** 0 | **Warnings:** 1
+**Status:** NEEDS WORK | **Critical:** 0 | **Warnings:** 1 | **Health Score:** 93%
 
 ### Present Tags
 - **Title** [OK] -- ` SCORP | In the Business of making yours simple `
-- **Meta Description** [!! Too long: 181 chars] -- ` EAM software India: SCORP Sapphire ERP by Jaipur Scorptech. Human-centered enterprise asset management for shop floors. Lean, intuitive, multi-location. DPIIT recognized. Book demo. `
+- **Meta Description** [WARN: 181 chars] -- ` EAM software India: SCORP Sapphire ERP by Jaipur Scorptech. Human-centered enterprise asset management for shop floors. Lean, intuitive, multi-location. DPIIT recognized. Book demo. `
 - **Canonical** [OK] -- ` https://scorptech.in/ `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
@@ -564,10 +535,10 @@
 - **twitter:description** [OK] -- ` EAM software India by Scorptech Jaipur. `
 - **twitter:image** [OK] -- ` https://scorptech.in/assets/images/Scorp-Logo.png `
 - **H1** [OK] -- ` 
-        In the business
-        of making yours
-        SIMPLE
-       `
+                        In the business
+                        of making yours
+                        SIMPLE
+                     `
 - **Schema JSON-LD** [OK] -- Present
 - **Image Alt Tags** [OK] -- All present
 
@@ -578,11 +549,11 @@
 
 ## index4.html
 
-**Status:** NEEDS WORK | **Critical:** 0 | **Warnings:** 1
+**Status:** NEEDS WORK | **Critical:** 0 | **Warnings:** 1 | **Health Score:** 93%
 
 ### Present Tags
 - **Title** [OK] -- ` SCORP — Enterprise Applications That Simplify `
-- **Meta Description** [!! Too long: 181 chars] -- ` EAM software India: SCORP Sapphire ERP by Jaipur Scorptech. Human-centered enterprise asset management for shop floors. Lean, intuitive, multi-location. DPIIT recognized. Book demo. `
+- **Meta Description** [WARN: 181 chars] -- ` EAM software India: SCORP Sapphire ERP by Jaipur Scorptech. Human-centered enterprise asset management for shop floors. Lean, intuitive, multi-location. DPIIT recognized. Book demo. `
 - **Canonical** [OK] -- ` https://scorptech.in/ `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
@@ -612,10 +583,10 @@
 
 ## info_header.html
 
-**Status:** CRITICAL | **Critical:** 7 | **Warnings:** 8
+**Status:** CRITICAL | **Critical:** 7 | **Warnings:** 8 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too short: 8 chars] -- ` Document `
+- **Title** [WARN: 8 chars] -- ` Document `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
@@ -636,16 +607,16 @@
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
 - [CRITICAL] **H1** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## info_header2.html
 
-**Status:** CRITICAL | **Critical:** 7 | **Warnings:** 8
+**Status:** CRITICAL | **Critical:** 7 | **Warnings:** 8 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too short: 8 chars] -- ` Document `
+- **Title** [WARN: 8 chars] -- ` Document `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
@@ -666,17 +637,17 @@
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
 - [CRITICAL] **H1** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## intelligence.html
 
-**Status:** NEEDS WORK | **Critical:** 0 | **Warnings:** 5
+**Status:** NEEDS WORK | **Critical:** 0 | **Warnings:** 5 | **Health Score:** 65%
 
 ### Present Tags
 - **Title** [OK] -- ` Sapphire Intelligence — Scorptech EAM Operations Modules `
-- **Meta Description** [!! Too long: 186 chars] -- ` EAM operations modules Jaipur — Sapphire Intelligence by Scorptech. Multi-location asset management, inventory intelligence, workplace analytics. Enterprise ERP software Rajasthan India. `
+- **Meta Description** [WARN: 186 chars] -- ` EAM operations modules Jaipur — Sapphire Intelligence by Scorptech. Multi-location asset management, inventory intelligence, workplace analytics. Enterprise ERP software Rajasthan India. `
 - **Canonical** [OK] -- ` https://scorptech.in/intelligence.html `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
@@ -699,17 +670,50 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## mobileUSP_final_mockup_2.html
+
+**Status:** CRITICAL | **Critical:** 1 | **Warnings:** 5 | **Health Score:** 45%
+
+### Present Tags
+- **Title** [OK] -- ` Mobile-First ERP & EAM Software | Sapphire by SCORP `
+- **Meta Description** [WARN: 170 chars] -- ` Sapphire ERP & EAM is built for mobile first. Perform inspections, approvals, and asset tracking from any smartphone. Industrial-grade mobile software for your workforce. `
+- **Canonical** [OK] -- ` https://scorptech.in/mobileUSP.html `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` index, follow `
+- **og:title** [OK] -- ` Mobile-First ERP & EAM Software | Sapphire by SCORP `
+- **og:description** [OK] -- ` Industrial-grade mobile ERP & EAM for your workforce. Inspections, approvals, and tracking on the go. `
+- **og:url** [OK] -- ` https://scorptech.in/mobileUSP.html `
+- **og:type** [OK] -- ` product `
+- **twitter:card** [OK] -- ` summary_large_image `
+- **H1** [OK] -- ` 
+        Your entire operation.
+        In your pocket.
+       `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Meta Description** -- Length issue (170 chars, ideal 120-160)
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## mobileUSP_mockup_final.html
 
-**Status:** CRITICAL | **Critical:** 1 | **Warnings:** 5
+**Status:** CRITICAL | **Critical:** 1 | **Warnings:** 5 | **Health Score:** 45%
 
 ### Present Tags
 - **Title** [OK] -- ` Mobile-First ERP & EAM Software | Sapphire by SCORP `
-- **Meta Description** [!! Too long: 170 chars] -- ` Sapphire ERP & EAM is built for mobile first. Perform inspections, approvals, and asset tracking from any smartphone. Industrial-grade mobile software for your workforce. `
+- **Meta Description** [WARN: 170 chars] -- ` Sapphire ERP & EAM is built for mobile first. Perform inspections, approvals, and asset tracking from any smartphone. Industrial-grade mobile software for your workforce. `
 - **Canonical** [OK] -- ` https://scorptech.in/mobileUSP.html `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
@@ -729,17 +733,17 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## mobileUSP.html
 
-**Status:** CRITICAL | **Critical:** 1 | **Warnings:** 5
+**Status:** CRITICAL | **Critical:** 1 | **Warnings:** 5 | **Health Score:** 45%
 
 ### Present Tags
 - **Title** [OK] -- ` Mobile-First ERP & EAM Software | Sapphire by SCORP `
-- **Meta Description** [!! Too long: 170 chars] -- ` Sapphire ERP & EAM is built for mobile first. Perform inspections, approvals, and asset tracking from any smartphone. Industrial-grade mobile software for your workforce. `
+- **Meta Description** [WARN: 170 chars] -- ` Sapphire ERP & EAM is built for mobile first. Perform inspections, approvals, and asset tracking from any smartphone. Industrial-grade mobile software for your workforce. `
 - **Canonical** [OK] -- ` https://scorptech.in/mobileUSP.html `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
@@ -762,16 +766,49 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## mobileusp1.html
+
+**Status:** CRITICAL | **Critical:** 1 | **Warnings:** 5 | **Health Score:** 45%
+
+### Present Tags
+- **Title** [OK] -- ` Mobile-First ERP & EAM Software | Sapphire by SCORP `
+- **Meta Description** [WARN: 170 chars] -- ` Sapphire ERP & EAM is built for mobile first. Perform inspections, approvals, and asset tracking from any smartphone. Industrial-grade mobile software for your workforce. `
+- **Canonical** [OK] -- ` https://scorptech.in/mobileUSP.html `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` index, follow `
+- **og:title** [OK] -- ` Mobile-First ERP & EAM Software | Sapphire by SCORP `
+- **og:description** [OK] -- ` Industrial-grade mobile ERP & EAM for your workforce. Inspections, approvals, and tracking on the go. `
+- **og:url** [OK] -- ` https://scorptech.in/mobileUSP.html `
+- **og:type** [OK] -- ` product `
+- **twitter:card** [OK] -- ` summary_large_image `
+- **H1** [OK] -- ` 
+                Mobile-First
+                Operations
+             `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Meta Description** -- Length issue (170 chars, ideal 120-160)
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## privacy_policy.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too short: 22 chars] -- ` Privacy Policy | SCORP `
+- **Title** [WARN: 22 chars] -- ` Privacy Policy | SCORP `
 - **Canonical** [OK] -- ` https://scorptech.in/privacy_policy.html `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
@@ -792,162 +829,13 @@
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
 - [CRITICAL] **H1** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
-
----
-
-## sapphire_core_module_suite_3.html
-
-**Status:** CRITICAL | **Critical:** 7 | **Warnings:** 8
-
-### Present Tags
-- **Title** [!! Too short: 24 chars] -- ` Core Modules — Scorptech `
-- **Lang** [OK] -- ` en `
-- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
-- **Charset** [OK] -- ` UTF-8 `
-- **Image Alt Tags** [OK] -- All present
-
-### Missing / Fix Needed
-- [WARNING] **Title** -- Length issue (24 chars, ideal 30-60)
-- [CRITICAL] **Meta Description** -- Missing
-- [CRITICAL] **Canonical URL** -- Missing
-- [WARNING] **Meta Robots** -- Missing (defaults to index,follow)
-- [CRITICAL] **og:title** -- Missing
-- [CRITICAL] **og:description** -- Missing
-- [CRITICAL] **og:image** -- Missing
-- [WARNING] **og:url** -- Missing
-- [WARNING] **og:type** -- Missing
-- [CRITICAL] **twitter:card** -- Missing
-- [WARNING] **twitter:title** -- Missing
-- [WARNING] **twitter:description** -- Missing
-- [WARNING] **twitter:image** -- Missing
-- [CRITICAL] **H1** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
-
----
-
-## sapphire_core_module_suite_4.html
-
-**Status:** CRITICAL | **Critical:** 7 | **Warnings:** 8
-
-### Present Tags
-- **Title** [!! Too short: 24 chars] -- ` Core Modules — Scorptech `
-- **Lang** [OK] -- ` en `
-- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
-- **Charset** [OK] -- ` UTF-8 `
-- **Image Alt Tags** [OK] -- All present
-
-### Missing / Fix Needed
-- [WARNING] **Title** -- Length issue (24 chars, ideal 30-60)
-- [CRITICAL] **Meta Description** -- Missing
-- [CRITICAL] **Canonical URL** -- Missing
-- [WARNING] **Meta Robots** -- Missing (defaults to index,follow)
-- [CRITICAL] **og:title** -- Missing
-- [CRITICAL] **og:description** -- Missing
-- [CRITICAL] **og:image** -- Missing
-- [WARNING] **og:url** -- Missing
-- [WARNING] **og:type** -- Missing
-- [CRITICAL] **twitter:card** -- Missing
-- [WARNING] **twitter:title** -- Missing
-- [WARNING] **twitter:description** -- Missing
-- [WARNING] **twitter:image** -- Missing
-- [CRITICAL] **H1** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
-
----
-
-## sapphire_core_suite_1.html
-
-**Status:** CRITICAL | **Critical:** 7 | **Warnings:** 8
-
-### Present Tags
-- **Title** [!! Too short: 25 chars] -- ` Core Modules — Experiment `
-- **Lang** [OK] -- ` en `
-- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
-- **Charset** [OK] -- ` UTF-8 `
-- **Image Alt Tags** [OK] -- All present
-
-### Missing / Fix Needed
-- [WARNING] **Title** -- Length issue (25 chars, ideal 30-60)
-- [CRITICAL] **Meta Description** -- Missing
-- [CRITICAL] **Canonical URL** -- Missing
-- [WARNING] **Meta Robots** -- Missing (defaults to index,follow)
-- [CRITICAL] **og:title** -- Missing
-- [CRITICAL] **og:description** -- Missing
-- [CRITICAL] **og:image** -- Missing
-- [WARNING] **og:url** -- Missing
-- [WARNING] **og:type** -- Missing
-- [CRITICAL] **twitter:card** -- Missing
-- [WARNING] **twitter:title** -- Missing
-- [WARNING] **twitter:description** -- Missing
-- [WARNING] **twitter:image** -- Missing
-- [CRITICAL] **H1** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
-
----
-
-## sapphire_core_suite_2.html
-
-**Status:** CRITICAL | **Critical:** 7 | **Warnings:** 8
-
-### Present Tags
-- **Title** [OK] -- ` Core Modules — Light Theme Experiment `
-- **Lang** [OK] -- ` en `
-- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
-- **Charset** [OK] -- ` UTF-8 `
-
-### Missing / Fix Needed
-- [CRITICAL] **Meta Description** -- Missing
-- [CRITICAL] **Canonical URL** -- Missing
-- [WARNING] **Meta Robots** -- Missing (defaults to index,follow)
-- [CRITICAL] **og:title** -- Missing
-- [CRITICAL] **og:description** -- Missing
-- [CRITICAL] **og:image** -- Missing
-- [WARNING] **og:url** -- Missing
-- [WARNING] **og:type** -- Missing
-- [CRITICAL] **twitter:card** -- Missing
-- [WARNING] **twitter:title** -- Missing
-- [WARNING] **twitter:description** -- Missing
-- [WARNING] **twitter:image** -- Missing
-- [CRITICAL] **H1** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
-- [WARNING] **Image Alt Tags** -- 2 image(s) missing alt attribute
-
----
-
-## sapphire_core_suite.html
-
-**Status:** NEEDS WORK | **Critical:** 0 | **Warnings:** 6
-
-### Present Tags
-- **Title** [OK] -- ` Sapphire Core Suite | Scorptech `
-- **Meta Description** [!! Too short: 71 chars] -- ` Sapphire Core Suite - Enterprise Asset Management modules by Scorptech. `
-- **Canonical** [OK] -- ` https://scorptech.in/sapphire_core_suite.html `
-- **Lang** [OK] -- ` en `
-- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
-- **Charset** [OK] -- ` UTF-8 `
-- **Robots** [OK] -- ` index, follow `
-- **og:title** [OK] -- ` Sapphire Core Suite | Scorptech `
-- **og:description** [OK] -- ` Sapphire Core Suite - Enterprise Asset Management modules. `
-- **og:image** [OK] -- ` https://scorptech.in/assets/images/newsapphirehero.png `
-- **og:url** [OK] -- ` https://scorptech.in/sapphire_core_suite.html `
-- **og:type** [OK] -- ` website `
-- **twitter:card** [OK] -- ` summary_large_image `
-- **Image Alt Tags** [OK] -- All present
-
-### Missing / Fix Needed
-- [WARNING] **Meta Description** -- Length issue (71 chars, ideal 120-160)
-- [WARNING] **twitter:title** -- Missing
-- [WARNING] **twitter:description** -- Missing
-- [WARNING] **twitter:image** -- Missing
-- [WARNING] **H1** -- Multiple H1 tags found (9), should be exactly 1
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## sapphire-demo.html
 
-**Status:** CRITICAL | **Critical:** 5 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 5 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` Live Demo Flows — SCORP Sapphire ERP `
@@ -970,13 +858,13 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## sapphire-live-demo-flows_1.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` Sapphire — Live Demo Flows Showcase `
@@ -999,17 +887,17 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## sapphire.html
 
-**Status:** NEEDS WORK | **Critical:** 0 | **Warnings:** 4
+**Status:** NEEDS WORK | **Critical:** 0 | **Warnings:** 4 | **Health Score:** 72%
 
 ### Present Tags
 - **Title** [OK] -- ` Sapphire EAM by Scorptech | Enterprise Asset Management `
-- **Meta Description** [!! Too long: 180 chars] -- ` Enterprise asset management Jaipur: Sapphire EAM ERP by Scorptech. Complete platform for asset tracking, procurement, maintenance, inventory. ERP software Rajasthan, zero training. `
+- **Meta Description** [WARN: 180 chars] -- ` Enterprise asset management Jaipur: Sapphire EAM ERP by Scorptech. Complete platform for asset tracking, procurement, maintenance, inventory. ERP software Rajasthan, zero training. `
 - **Canonical** [OK] -- ` https://scorptech.in/sapphire.html `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
@@ -1022,8 +910,8 @@
 - **og:type** [OK] -- ` product `
 - **twitter:card** [OK] -- ` summary_large_image `
 - **H1** [OK] -- ` 
-        SAPPHIRE
-       `
+						SAPPHIRE
+					 `
 - **Schema JSON-LD** [OK] -- Present
 - **Image Alt Tags** [OK] -- All present
 
@@ -1037,11 +925,11 @@
 
 ## sapphire2.html
 
-**Status:** NEEDS WORK | **Critical:** 0 | **Warnings:** 5
+**Status:** NEEDS WORK | **Critical:** 0 | **Warnings:** 5 | **Health Score:** 65%
 
 ### Present Tags
-- **Title** [!! Too long: 63 chars] -- ` Enterprise Asset Management Jaipur | Sapphire EAM ERP Scorptech `
-- **Meta Description** [!! Too long: 180 chars] -- ` Enterprise asset management Jaipur: Sapphire EAM ERP by Scorptech. Complete platform for asset tracking, procurement, maintenance, inventory. ERP software Rajasthan, zero training. `
+- **Title** [WARN: 63 chars] -- ` Enterprise Asset Management Jaipur | Sapphire EAM ERP Scorptech `
+- **Meta Description** [WARN: 180 chars] -- ` Enterprise asset management Jaipur: Sapphire EAM ERP by Scorptech. Complete platform for asset tracking, procurement, maintenance, inventory. ERP software Rajasthan, zero training. `
 - **Canonical** [OK] -- ` https://scorptech.in/sapphire.html `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
@@ -1070,7 +958,7 @@
 
 ## sapphireHero.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` Sapphire Hero - Terminal Concept `
@@ -1095,13 +983,13 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## section-header-showcase.html
 
-**Status:** CRITICAL | **Critical:** 7 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 7 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` Section Header Showcase — Scorptech Sapphire `
@@ -1124,13 +1012,13 @@
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
 - [CRITICAL] **H1** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## section-headers-showcase.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` Section Header Showcase — Sapphire `
@@ -1153,16 +1041,16 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## terms_of_use.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too short: 20 chars] -- ` Terms of Use | SCORP `
+- **Title** [WARN: 20 chars] -- ` Terms of Use | SCORP `
 - **Canonical** [OK] -- ` https://scorptech.in/terms_of_use.html `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
@@ -1183,16 +1071,16 @@
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
 - [CRITICAL] **H1** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## why_sapphire.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too short: 26 chars] -- ` Why SCORP Sapphire | SCORP `
+- **Title** [WARN: 26 chars] -- ` Why SCORP Sapphire | SCORP `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
@@ -1216,47 +1104,16 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
-
----
-
-## bak\index - Copy.html
-
-**Status:** CRITICAL | **Critical:** 5 | **Warnings:** 7
-
-### Present Tags
-- **Title** [OK] -- ` Sapphire EAM Blog | SCORP Intelligence `
-- **Meta Description** [OK] -- ` 42 articles on Enterprise Asset Management. Fundamentals, industries, Sapphire modules, analytics. Jaipur operations truth. `
-- **Lang** [OK] -- ` en `
-- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
-- **Charset** [OK] -- ` UTF-8 `
-- **H1** [OK] -- ` 
-                        EAM Intelligence.All of It. Here.
-                     `
-- **Image Alt Tags** [OK] -- All present
-
-### Missing / Fix Needed
-- [CRITICAL] **Canonical URL** -- Missing
-- [WARNING] **Meta Robots** -- Missing (defaults to index,follow)
-- [CRITICAL] **og:title** -- Missing
-- [CRITICAL] **og:description** -- Missing
-- [CRITICAL] **og:image** -- Missing
-- [WARNING] **og:url** -- Missing
-- [WARNING] **og:type** -- Missing
-- [CRITICAL] **twitter:card** -- Missing
-- [WARNING] **twitter:title** -- Missing
-- [WARNING] **twitter:description** -- Missing
-- [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\asset-lifecycle-management-guide.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too long: 76 chars] -- ` Asset Lifecycle Management: From Procurement to Disposal | Sapphire EAM Blog `
+- **Title** [WARN: 76 chars] -- ` Asset Lifecycle Management: From Procurement to Disposal | Sapphire EAM Blog `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
@@ -1277,13 +1134,13 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\asset-performance-dashboards-what-to-track.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` Asset Performance Dashboards EAM Metrics | SCORP Blog `
@@ -1306,16 +1163,16 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\asset-register-single-source-of-truth.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too long: 76 chars] -- ` The Asset Register: Building Your Single Source of Truth | Sapphire EAM Blog `
+- **Title** [WARN: 76 chars] -- ` The Asset Register: Building Your Single Source of Truth | Sapphire EAM Blog `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
@@ -1336,16 +1193,16 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\compliance-audit-trails-eam.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too long: 79 chars] -- ` Compliance and Audit Trails: Never Fail an Inspection Again | Sapphire EAM Blog `
+- **Title** [WARN: 79 chars] -- ` Compliance and Audit Trails: Never Fail an Inspection Again | Sapphire EAM Blog `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
@@ -1366,16 +1223,16 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\construction-infrastructure-site-asset-tracking.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too long: 63 chars] -- ` Construction & Infrastructure: Site Asset Tracking — SCORP Blog `
+- **Title** [WARN: 63 chars] -- ` Construction & Infrastructure: Site Asset Tracking — SCORP Blog `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
@@ -1396,16 +1253,16 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\cost-analytics-maintenance-budget-savings.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too long: 78 chars] -- ` Cost Analytics: Finding Hidden Savings in Your Maintenance Budget — SCORP Blog `
+- **Title** [WARN: 78 chars] -- ` Cost Analytics: Finding Hidden Savings in Your Maintenance Budget — SCORP Blog `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
@@ -1426,13 +1283,13 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\digital-twins-and-eam-next-frontier.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` Digital Twins EAM Asset Management | SCORP Blog `
@@ -1455,13 +1312,13 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\eam-for-cfos-how-finance-reads-asset-data.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` EAM for CFOs: Finance Asset Data Guide | SCORP Blog `
@@ -1484,16 +1341,16 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\eam-implementation-roadmap-indian-enterprises.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too long: 81 chars] -- ` EAM Implementation Roadmap: What Indian Enterprises Get Wrong | Sapphire EAM Blog `
+- **Title** [WARN: 81 chars] -- ` EAM Implementation Roadmap: What Indian Enterprises Get Wrong | Sapphire EAM Blog `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
@@ -1514,13 +1371,13 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\eam-vs-cmms-vs-erp-differences.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` EAM vs CMMS vs ERP: Real Differences | SCORP Blog `
@@ -1543,16 +1400,16 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\education-campus-infrastructure-management.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too long: 65 chars] -- ` Educational Campus Infrastructure Asset Management | Sapphire EAM `
+- **Title** [WARN: 65 chars] -- ` Educational Campus Infrastructure Asset Management | Sapphire EAM `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
@@ -1573,13 +1430,13 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\energy-monitoring-sustainability-analytics-eam.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` Energy Monitoring EAM SEC ESG Analytics | SCORP Blog `
@@ -1602,13 +1459,13 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\energy-utilities-grid-asset-management.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` Energy Utilities Grid Asset Management with EAM | SCORP Blog `
@@ -1631,13 +1488,13 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\food-beverage-equipment-hygiene-fssai.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` Food Beverage Equipment Hygiene FSSAI EAM | SCORP Blog `
@@ -1660,13 +1517,13 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\government-psu-public-asset-accountability.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` Government PSU Public Asset EAM | SCORP Blog `
@@ -1689,16 +1546,16 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\healthcare-medical-equipment-compliance.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too long: 71 chars] -- ` Healthcare: Medical Equipment Compliance is Non-Negotiable — SCORP Blog `
+- **Title** [WARN: 71 chars] -- ` Healthcare: Medical Equipment Compliance is Non-Negotiable — SCORP Blog `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
@@ -1719,16 +1576,16 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\hospitality-hotels-resorts-facility-eam.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too long: 75 chars] -- ` Hospitality Facility Management: Hotels and Resorts EAM | Sapphire EAM Blog `
+- **Title** [WARN: 75 chars] -- ` Hospitality Facility Management: Hotels and Resorts EAM | Sapphire EAM Blog `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
@@ -1749,13 +1606,13 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\index.html
 
-**Status:** CRITICAL | **Critical:** 5 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 5 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` Sapphire EAM Blog | SCORP Intelligence `
@@ -1764,8 +1621,8 @@
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
 - **H1** [OK] -- ` 
-                        EAM Intelligence.All of It. Here.
-                     `
+							EAM IntelligenceAll of It!
+						 `
 - **Image Alt Tags** [OK] -- All present
 
 ### Missing / Fix Needed
@@ -1780,16 +1637,16 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\iot-integration-with-eam-sensors-to-work-orders.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too long: 63 chars] -- ` IoT EAM Integration Practical Indian Manufacturing | SCORP Blog `
+- **Title** [WARN: 63 chars] -- ` IoT EAM Integration Practical Indian Manufacturing | SCORP Blog `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
@@ -1810,13 +1667,13 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\it-parks-commercial-real-estate-eam.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` IT Parks Commercial Real Estate EAM | SCORP Blog `
@@ -1839,13 +1696,13 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\land-air-water-vehicles-eam.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` Land Air Water Vehicle EAM Fleet Management | SCORP Blog `
@@ -1868,16 +1725,16 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\logistics-warehousing-fleet-facility-management.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too long: 65 chars] -- ` Logistics & Warehousing: Fleet + Facility Management — SCORP Blog `
+- **Title** [WARN: 65 chars] -- ` Logistics & Warehousing: Fleet + Facility Management — SCORP Blog `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
@@ -1898,13 +1755,13 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\maintenance-kpis-that-actually-matter.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` Maintenance KPIs That Actually Matter | Sapphire EAM Blog `
@@ -1927,13 +1784,13 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\making-business-case-for-eam-investment.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` EAM Business Case ROI Calculation | SCORP Blog `
@@ -1956,16 +1813,16 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\manufacturing-equipment-downtime-eam.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too long: 70 chars] -- ` Manufacturing Equipment Downtime Costs | Heavy Industry EAM | Sapphire `
+- **Title** [WARN: 70 chars] -- ` Manufacturing Equipment Downtime Costs | Heavy Industry EAM | Sapphire `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
@@ -1986,16 +1843,16 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\mobile-eam-field-technician-revolution.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too long: 73 chars] -- ` Mobile EAM: How Technicians Work Smarter in the Field | Sapphire EAM Blog `
+- **Title** [WARN: 73 chars] -- ` Mobile EAM: How Technicians Work Smarter in the Field | Sapphire EAM Blog `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
@@ -2016,13 +1873,13 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\mtbf-mttr-reliability-numbers-guide.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` MTBF MTTR Reliability Benchmarks Guide | SCORP Blog `
@@ -2045,16 +1902,16 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\oee-overall-equipment-effectiveness-guide.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too long: 65 chars] -- ` OEE Explained: The Metric That Runs Factories | Sapphire EAM Blog `
+- **Title** [WARN: 65 chars] -- ` OEE Explained: The Metric That Runs Factories | Sapphire EAM Blog `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
@@ -2075,16 +1932,16 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\pharma-gmp-compliance-equipment-validation.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too long: 68 chars] -- ` Pharma GMP Compliance and Equipment Validation with EAM | SCORP Blog `
+- **Title** [WARN: 68 chars] -- ` Pharma GMP Compliance and Equipment Validation with EAM | SCORP Blog `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
@@ -2105,13 +1962,13 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\predictive-analytics-asset-failure-prevention.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` Predictive Analytics Asset Failure EAM | SCORP Blog `
@@ -2134,16 +1991,16 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\preventive-maintenance-scheduling-automation.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too long: 91 chars] -- ` Preventive Maintenance Scheduling: Time-Based vs Usage-Based Automation | Sapphire EAM Blog `
+- **Title** [WARN: 91 chars] -- ` Preventive Maintenance Scheduling: Time-Based vs Usage-Based Automation | Sapphire EAM Blog `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
@@ -2164,16 +2021,16 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\preventive-predictive-reactive-maintenance.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too long: 94 chars] -- ` Preventive vs Predictive vs Reactive Maintenance: Which Strategy Is Right? | Sapphire EAM Blog `
+- **Title** [WARN: 94 chars] -- ` Preventive vs Predictive vs Reactive Maintenance: Which Strategy Is Right? | Sapphire EAM Blog `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
@@ -2194,13 +2051,13 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\real-estate-facilities-management-eam.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` Real Estate Facilities Management and EAM | SCORP Blog `
@@ -2223,13 +2080,13 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\retail-multi-store-asset-management.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` Retail Multi-Store Asset Management EAM | SCORP Blog `
@@ -2252,13 +2109,13 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\roi-of-eam-implementation-real-numbers.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` ROI of EAM Implementation: Real Numbers | Sapphire EAM Blog `
@@ -2281,13 +2138,13 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\sapphire-eam-for-indian-msmes.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` Sapphire EAM for Indian MSMEs | SCORP Blog `
@@ -2310,16 +2167,16 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\scorp-story-jaipur-honest-industrial-software.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too long: 72 chars] -- ` The SCORP Story: Jaipur's Bet on Honest Industrial Software — SCORP Blog `
+- **Title** [WARN: 72 chars] -- ` The SCORP Story: Jaipur's Bet on Honest Industrial Software — SCORP Blog `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
@@ -2340,13 +2197,13 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\smart-cities-iot-urban-asset-management.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` Smart Cities IoT Urban Asset Management EAM | SCORP Blog `
@@ -2369,16 +2226,16 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\spare-parts-inventory-management-eam.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too long: 80 chars] -- ` Spare Parts Inventory Management: Stop Bleeding on Stockouts | Sapphire EAM Blog `
+- **Title** [WARN: 80 chars] -- ` Spare Parts Inventory Management: Stop Bleeding on Stockouts | Sapphire EAM Blog `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
@@ -2399,16 +2256,16 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\total-cost-of-ownership-asset-management.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too long: 83 chars] -- ` Total Cost of Ownership: The Hidden Math of Asset Mismanagement | Sapphire EAM Blog `
+- **Title** [WARN: 83 chars] -- ` Total Cost of Ownership: The Hidden Math of Asset Mismanagement | Sapphire EAM Blog `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
@@ -2429,13 +2286,13 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\vendor-contractor-management-eam.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` Vendor & Contractor Management in Sapphire EAM — SCORP Blog `
@@ -2458,13 +2315,13 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\what-is-eam-enterprise-asset-management-guide.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 7 | **Health Score:** 0%
 
 ### Present Tags
 - **Title** [OK] -- ` What is Enterprise Asset Management? — SCORP Blog `
@@ -2487,16 +2344,16 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## blog\work-order-management-backbone-operations.html
 
-**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8
+**Status:** CRITICAL | **Critical:** 6 | **Warnings:** 8 | **Health Score:** 0%
 
 ### Present Tags
-- **Title** [!! Too long: 86 chars] -- ` Work Order Management: The Backbone of Every Maintenance Operation | Sapphire EAM Blog `
+- **Title** [WARN: 86 chars] -- ` Work Order Management: The Backbone of Every Maintenance Operation | Sapphire EAM Blog `
 - **Lang** [OK] -- ` en `
 - **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
 - **Charset** [OK] -- ` UTF-8 `
@@ -2517,94 +2374,1429 @@
 - [WARNING] **twitter:title** -- Missing
 - [WARNING] **twitter:description** -- Missing
 - [WARNING] **twitter:image** -- Missing
-- [WARNING] **Schema Markup** -- No JSON-LD structured data found
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\agro_processing_units.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\airport_hangars.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\amusement_parks_and_event_zones.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\cargo_terminals.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\clubs_and_leisure_facilities.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\co_working_and_it_parks.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\concert_halls.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\construction_and_engineering_sites.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\corporate_offices.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\diagnostic_centers.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\disaster_response_storage.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\farm_equipment_warehouses.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\fertilizer_and_irrigation_depots.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\fitness_centers_and_gyms.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\ground_support_bays.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\hospitals.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\hotels_guest_houses_and_lodges.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\index.html
+
+**Status:** CRITICAL | **Critical:** 1 | **Warnings:** 4 | **Health Score:** 52%
+
+### Present Tags
+- **Title** [OK] -- ` Industries We Serve — Sapphire EAM | SCORP `
+- **Meta Description** [OK] -- ` Sapphire EAM serves 40+ industries across manufacturing, healthcare, real estate, energy, aviation, and more. Find your sector. `
+- **Canonical** [OK] -- ` https://scorptech.in/industries/index.html `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` index, follow `
+- **og:title** [OK] -- ` Industries We Serve — Sapphire EAM | SCORP `
+- **og:description** [OK] -- ` 40+ industries trust Sapphire EAM for asset lifecycle management. Find your sector. `
+- **og:url** [OK] -- ` https://scorptech.in/industries/index.html `
+- **og:type** [OK] -- ` website `
+- **twitter:card** [OK] -- ` summary_large_image `
+- **H1** [OK] -- ` Every IndustryOne System `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\logistics_and_fleet_operations.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\manufacturing_plants_and_factories.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\movie_theaters.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\municipal_departments.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\oil_gas_and_energy_infrastructure.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\power_generation_units.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\public_utility_boards.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\rail_maintenance_units.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\real_estate_developers.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\relief_logistics.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\rescue_equipment_depots.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\research_and_test_laboratories.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\restaurants_and_cafes.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\retail_chains_and_shopping_malls.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\sapphire_core_suite.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 5 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [OK] -- ` Sapphire Core Suite — Every Module Explained | SCORP `
+- **Meta Description** [OK] -- ` A deep-dive into every Sapphire module — what it does, why it exists, and what it handles. No industry context. Just the system, explained plainly. `
+- **Canonical** [OK] -- ` https://scorptech.in/industries/sapphirecoresuite.html `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` index, follow `
+- **H1** [OK] -- ` 11 Modules.Every Answer. `
+- **Schema JSON-LD** [OK] -- Present
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+
+---
+
+## industries\schools_universities_and_colleges.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\service_stations.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\shipping_ports_and_docks.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\state_workshops.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\training_and_vocational_centers.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\transmission_networks.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\transportation_agencies.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\warehouses_and_logistics_centers.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
+
+---
+
+## industries\water_supply_infrastructure.html
+
+**Status:** CRITICAL | **Critical:** 4 | **Warnings:** 8 | **Health Score:** 0%
+
+### Present Tags
+- **Title** [WARN: 19 chars] -- ` Coming Soon | SCORP `
+- **Meta Description** [WARN: 79 chars] -- ` This page is currently under construction. SCORP is preparing a new experience. `
+- **Canonical** [OK] -- ` https://scorptech.in/ `
+- **Lang** [OK] -- ` en `
+- **Viewport** [OK] -- ` width=device-width, initial-scale=1.0 `
+- **Charset** [OK] -- ` UTF-8 `
+- **Robots** [OK] -- ` noindex, follow `
+- **H1** [OK] -- ` Page Under Construction `
+- **Image Alt Tags** [OK] -- All present
+
+### Missing / Fix Needed
+- [WARNING] **Title** -- Length issue (19 chars, ideal 30-60)
+- [WARNING] **Meta Description** -- Length issue (79 chars, ideal 120-160)
+- [CRITICAL] **og:title** -- Missing
+- [CRITICAL] **og:description** -- Missing
+- [CRITICAL] **og:image** -- Missing
+- [WARNING] **og:url** -- Missing
+- [WARNING] **og:type** -- Missing
+- [CRITICAL] **twitter:card** -- Missing
+- [WARNING] **twitter:title** -- Missing
+- [WARNING] **twitter:description** -- Missing
+- [WARNING] **twitter:image** -- Missing
+- [WARNING] **Schema Markup** -- No JSON-LD found
 
 ---
 
 ## Summary Table
 
-| Page | Critical | Warnings | Status |
-|------|----------|----------|--------|
-| googleb77111c9dc259328.html | 10 | 8 | CRITICAL |
-| 3d_block_layers.html | 7 | 8 | CRITICAL |
-| sapphire_core_suite_1.html | 7 | 8 | CRITICAL |
-| sapphire_core_suite_2.html | 7 | 8 | CRITICAL |
-| info_header2.html | 7 | 8 | CRITICAL |
-| info_header.html | 7 | 8 | CRITICAL |
-| header.html | 7 | 8 | CRITICAL |
-| sapphire_core_module_suite_3.html | 7 | 8 | CRITICAL |
-| content_moderation.html | 7 | 7 | CRITICAL |
-| content_moderation_backup.html | 7 | 7 | CRITICAL |
-| sapphire_core_module_suite_4.html | 7 | 8 | CRITICAL |
-| assessment-report.html | 7 | 7 | CRITICAL |
-| section-header-showcase.html | 7 | 7 | CRITICAL |
-| blog\hospitality-hotels-resorts-facility-eam.html | 6 | 8 | CRITICAL |
-| blog\healthcare-medical-equipment-compliance.html | 6 | 8 | CRITICAL |
-| blog\government-psu-public-asset-accountability.html | 6 | 7 | CRITICAL |
-| blog\food-beverage-equipment-hygiene-fssai.html | 6 | 7 | CRITICAL |
-| blog\energy-utilities-grid-asset-management.html | 6 | 7 | CRITICAL |
-| blog\it-parks-commercial-real-estate-eam.html | 6 | 7 | CRITICAL |
-| blog\land-air-water-vehicles-eam.html | 6 | 7 | CRITICAL |
-| blog\logistics-warehousing-fleet-facility-management.html | 6 | 8 | CRITICAL |
-| blog\energy-monitoring-sustainability-analytics-eam.html | 6 | 7 | CRITICAL |
-| blog\maintenance-kpis-that-actually-matter.html | 6 | 7 | CRITICAL |
-| blog\making-business-case-for-eam-investment.html | 6 | 7 | CRITICAL |
-| blog\education-campus-infrastructure-management.html | 6 | 8 | CRITICAL |
-| blog\eam-vs-cmms-vs-erp-differences.html | 6 | 7 | CRITICAL |
-| blog\iot-integration-with-eam-sensors-to-work-orders.html | 6 | 8 | CRITICAL |
-| blog\mtbf-mttr-reliability-numbers-guide.html | 6 | 7 | CRITICAL |
-| blog\mobile-eam-field-technician-revolution.html | 6 | 8 | CRITICAL |
-| blog\vendor-contractor-management-eam.html | 6 | 7 | CRITICAL |
-| blog\total-cost-of-ownership-asset-management.html | 6 | 8 | CRITICAL |
-| blog\spare-parts-inventory-management-eam.html | 6 | 8 | CRITICAL |
-| blog\smart-cities-iot-urban-asset-management.html | 6 | 7 | CRITICAL |
-| blog\scorp-story-jaipur-honest-industrial-software.html | 6 | 8 | CRITICAL |
-| blog\sapphire-eam-for-indian-msmes.html | 6 | 7 | CRITICAL |
-| blog\roi-of-eam-implementation-real-numbers.html | 6 | 7 | CRITICAL |
-| blog\retail-multi-store-asset-management.html | 6 | 7 | CRITICAL |
-| blog\real-estate-facilities-management-eam.html | 6 | 7 | CRITICAL |
-| blog\preventive-predictive-reactive-maintenance.html | 6 | 8 | CRITICAL |
-| blog\preventive-maintenance-scheduling-automation.html | 6 | 8 | CRITICAL |
-| blog\predictive-analytics-asset-failure-prevention.html | 6 | 7 | CRITICAL |
-| blog\pharma-gmp-compliance-equipment-validation.html | 6 | 8 | CRITICAL |
-| blog\oee-overall-equipment-effectiveness-guide.html | 6 | 8 | CRITICAL |
-| blog\eam-implementation-roadmap-indian-enterprises.html | 6 | 8 | CRITICAL |
-| blog\manufacturing-equipment-downtime-eam.html | 6 | 8 | CRITICAL |
-| blog\eam-for-cfos-how-finance-reads-asset-data.html | 6 | 7 | CRITICAL |
-| blog\asset-performance-dashboards-what-to-track.html | 6 | 7 | CRITICAL |
-| blog\cost-analytics-maintenance-budget-savings.html | 6 | 8 | CRITICAL |
-| blog\digital-twins-and-eam-next-frontier.html | 6 | 7 | CRITICAL |
-| sapphire-live-demo-flows_1.html | 6 | 7 | CRITICAL |
-| sapphireHero.html | 6 | 7 | CRITICAL |
-| section-headers-showcase.html | 6 | 7 | CRITICAL |
-| terms_of_use.html | 6 | 7 | CRITICAL |
-| why_sapphire.html | 6 | 8 | CRITICAL |
-| privacy_policy.html | 6 | 7 | CRITICAL |
-| blog\asset-lifecycle-management-guide.html | 6 | 8 | CRITICAL |
-| blog\construction-infrastructure-site-asset-tracking.html | 6 | 8 | CRITICAL |
-| blog\compliance-audit-trails-eam.html | 6 | 8 | CRITICAL |
-| blog\work-order-management-backbone-operations.html | 6 | 8 | CRITICAL |
-| blog\what-is-eam-enterprise-asset-management-guide.html | 6 | 7 | CRITICAL |
-| blog\asset-register-single-source-of-truth.html | 6 | 8 | CRITICAL |
-| blog\index.html | 5 | 7 | CRITICAL |
-| sapphire-demo.html | 5 | 7 | CRITICAL |
-| bak\index - Copy.html | 5 | 7 | CRITICAL |
-| announcement.html | 4 | 7 | CRITICAL |
-| assessment.html | 3 | 5 | CRITICAL |
-| faq.html | 3 | 5 | CRITICAL |
-| how-do-I-use-sapphire.html | 1 | 2 | CRITICAL |
-| mobileUSP.html | 1 | 5 | CRITICAL |
-| mobileUSP_mockup_final.html | 1 | 5 | CRITICAL |
-| contact.html | 1 | 4 | CRITICAL |
-| book-demo.html | 1 | 5 | CRITICAL |
-| about.html | 0 | 5 | NEEDS WORK |
-| analytics.html | 0 | 6 | NEEDS WORK |
-| capabiliteis_bak.html | 0 | 2 | NEEDS WORK |
-| sapphire2.html | 0 | 5 | NEEDS WORK |
-| capabilities.html | 0 | 2 | NEEDS WORK |
-| index.html | 0 | 1 | NEEDS WORK |
-| intelligence.html | 0 | 5 | NEEDS WORK |
-| sapphire_core_suite.html | 0 | 6 | NEEDS WORK |
-| sapphire.html | 0 | 4 | NEEDS WORK |
-| capabilities_backup_draft.html | 0 | 2 | NEEDS WORK |
-| index4.html | 0 | 1 | NEEDS WORK |
+| Page | Critical | Warnings | Health | Status |
+|------|----------|----------|--------|--------|
+| googleb77111c9dc259328.html | 10 | 8 | 0% | CRITICAL |
+| 3d_block_layers.html | 7 | 8 | 0% | CRITICAL |
+| info_header2.html | 7 | 8 | 0% | CRITICAL |
+| info_header.html | 7 | 8 | 0% | CRITICAL |
+| header.html | 7 | 8 | 0% | CRITICAL |
+| section-header-showcase.html | 7 | 7 | 0% | CRITICAL |
+| content_moderation.html | 7 | 7 | 0% | CRITICAL |
+| assessment-report.html | 7 | 7 | 0% | CRITICAL |
+| blog\government-psu-public-asset-accountability.html | 6 | 7 | 0% | CRITICAL |
+| blog\healthcare-medical-equipment-compliance.html | 6 | 8 | 0% | CRITICAL |
+| blog\hospitality-hotels-resorts-facility-eam.html | 6 | 8 | 0% | CRITICAL |
+| blog\energy-utilities-grid-asset-management.html | 6 | 7 | 0% | CRITICAL |
+| blog\making-business-case-for-eam-investment.html | 6 | 7 | 0% | CRITICAL |
+| blog\iot-integration-with-eam-sensors-to-work-orders.html | 6 | 8 | 0% | CRITICAL |
+| blog\energy-monitoring-sustainability-analytics-eam.html | 6 | 7 | 0% | CRITICAL |
+| blog\it-parks-commercial-real-estate-eam.html | 6 | 7 | 0% | CRITICAL |
+| blog\land-air-water-vehicles-eam.html | 6 | 7 | 0% | CRITICAL |
+| blog\logistics-warehousing-fleet-facility-management.html | 6 | 8 | 0% | CRITICAL |
+| blog\education-campus-infrastructure-management.html | 6 | 8 | 0% | CRITICAL |
+| blog\eam-vs-cmms-vs-erp-differences.html | 6 | 7 | 0% | CRITICAL |
+| blog\maintenance-kpis-that-actually-matter.html | 6 | 7 | 0% | CRITICAL |
+| blog\food-beverage-equipment-hygiene-fssai.html | 6 | 7 | 0% | CRITICAL |
+| blog\mobile-eam-field-technician-revolution.html | 6 | 8 | 0% | CRITICAL |
+| blog\predictive-analytics-asset-failure-prevention.html | 6 | 7 | 0% | CRITICAL |
+| blog\oee-overall-equipment-effectiveness-guide.html | 6 | 8 | 0% | CRITICAL |
+| blog\work-order-management-backbone-operations.html | 6 | 8 | 0% | CRITICAL |
+| blog\what-is-eam-enterprise-asset-management-guide.html | 6 | 7 | 0% | CRITICAL |
+| blog\vendor-contractor-management-eam.html | 6 | 7 | 0% | CRITICAL |
+| blog\total-cost-of-ownership-asset-management.html | 6 | 8 | 0% | CRITICAL |
+| blog\spare-parts-inventory-management-eam.html | 6 | 8 | 0% | CRITICAL |
+| blog\smart-cities-iot-urban-asset-management.html | 6 | 7 | 0% | CRITICAL |
+| blog\scorp-story-jaipur-honest-industrial-software.html | 6 | 8 | 0% | CRITICAL |
+| blog\sapphire-eam-for-indian-msmes.html | 6 | 7 | 0% | CRITICAL |
+| blog\roi-of-eam-implementation-real-numbers.html | 6 | 7 | 0% | CRITICAL |
+| blog\retail-multi-store-asset-management.html | 6 | 7 | 0% | CRITICAL |
+| blog\real-estate-facilities-management-eam.html | 6 | 7 | 0% | CRITICAL |
+| blog\preventive-predictive-reactive-maintenance.html | 6 | 8 | 0% | CRITICAL |
+| blog\preventive-maintenance-scheduling-automation.html | 6 | 8 | 0% | CRITICAL |
+| blog\eam-implementation-roadmap-indian-enterprises.html | 6 | 8 | 0% | CRITICAL |
+| blog\pharma-gmp-compliance-equipment-validation.html | 6 | 8 | 0% | CRITICAL |
+| blog\mtbf-mttr-reliability-numbers-guide.html | 6 | 7 | 0% | CRITICAL |
+| blog\eam-for-cfos-how-finance-reads-asset-data.html | 6 | 7 | 0% | CRITICAL |
+| blog\manufacturing-equipment-downtime-eam.html | 6 | 8 | 0% | CRITICAL |
+| blog\cost-analytics-maintenance-budget-savings.html | 6 | 8 | 0% | CRITICAL |
+| blog\digital-twins-and-eam-next-frontier.html | 6 | 7 | 0% | CRITICAL |
+| privacy_policy.html | 6 | 7 | 0% | CRITICAL |
+| sapphireHero.html | 6 | 7 | 0% | CRITICAL |
+| section-headers-showcase.html | 6 | 7 | 0% | CRITICAL |
+| terms_of_use.html | 6 | 7 | 0% | CRITICAL |
+| sapphire-live-demo-flows_1.html | 6 | 7 | 0% | CRITICAL |
+| blog\asset-lifecycle-management-guide.html | 6 | 8 | 0% | CRITICAL |
+| why_sapphire.html | 6 | 8 | 0% | CRITICAL |
+| blog\compliance-audit-trails-eam.html | 6 | 8 | 0% | CRITICAL |
+| blog\construction-infrastructure-site-asset-tracking.html | 6 | 8 | 0% | CRITICAL |
+| blog\asset-performance-dashboards-what-to-track.html | 6 | 7 | 0% | CRITICAL |
+| blog\asset-register-single-source-of-truth.html | 6 | 8 | 0% | CRITICAL |
+| sapphire-demo.html | 5 | 7 | 0% | CRITICAL |
+| blog\index.html | 5 | 7 | 0% | CRITICAL |
+| industries\fertilizer_and_irrigation_depots.html | 4 | 8 | 0% | CRITICAL |
+| industries\power_generation_units.html | 4 | 8 | 0% | CRITICAL |
+| industries\oil_gas_and_energy_infrastructure.html | 4 | 8 | 0% | CRITICAL |
+| industries\municipal_departments.html | 4 | 8 | 0% | CRITICAL |
+| industries\movie_theaters.html | 4 | 8 | 0% | CRITICAL |
+| industries\manufacturing_plants_and_factories.html | 4 | 8 | 0% | CRITICAL |
+| industries\hotels_guest_houses_and_lodges.html | 4 | 8 | 0% | CRITICAL |
+| industries\hospitals.html | 4 | 8 | 0% | CRITICAL |
+| industries\ground_support_bays.html | 4 | 8 | 0% | CRITICAL |
+| industries\public_utility_boards.html | 4 | 8 | 0% | CRITICAL |
+| industries\fitness_centers_and_gyms.html | 4 | 8 | 0% | CRITICAL |
+| industries\logistics_and_fleet_operations.html | 4 | 8 | 0% | CRITICAL |
+| industries\rail_maintenance_units.html | 4 | 8 | 0% | CRITICAL |
+| industries\sapphire_core_suite.html | 4 | 5 | 0% | CRITICAL |
+| industries\relief_logistics.html | 4 | 8 | 0% | CRITICAL |
+| industries\rescue_equipment_depots.html | 4 | 8 | 0% | CRITICAL |
+| industries\research_and_test_laboratories.html | 4 | 8 | 0% | CRITICAL |
+| industries\restaurants_and_cafes.html | 4 | 8 | 0% | CRITICAL |
+| industries\retail_chains_and_shopping_malls.html | 4 | 8 | 0% | CRITICAL |
+| industries\farm_equipment_warehouses.html | 4 | 8 | 0% | CRITICAL |
+| industries\schools_universities_and_colleges.html | 4 | 8 | 0% | CRITICAL |
+| industries\service_stations.html | 4 | 8 | 0% | CRITICAL |
+| industries\shipping_ports_and_docks.html | 4 | 8 | 0% | CRITICAL |
+| industries\state_workshops.html | 4 | 8 | 0% | CRITICAL |
+| industries\training_and_vocational_centers.html | 4 | 8 | 0% | CRITICAL |
+| industries\transmission_networks.html | 4 | 8 | 0% | CRITICAL |
+| industries\transportation_agencies.html | 4 | 8 | 0% | CRITICAL |
+| industries\real_estate_developers.html | 4 | 8 | 0% | CRITICAL |
+| industries\disaster_response_storage.html | 4 | 8 | 0% | CRITICAL |
+| industries\cargo_terminals.html | 4 | 8 | 0% | CRITICAL |
+| industries\corporate_offices.html | 4 | 8 | 0% | CRITICAL |
+| industries\warehouses_and_logistics_centers.html | 4 | 8 | 0% | CRITICAL |
+| industries\diagnostic_centers.html | 4 | 8 | 0% | CRITICAL |
+| announcement.html | 4 | 7 | 0% | CRITICAL |
+| industries\agro_processing_units.html | 4 | 8 | 0% | CRITICAL |
+| industries\airport_hangars.html | 4 | 8 | 0% | CRITICAL |
+| industries\water_supply_infrastructure.html | 4 | 8 | 0% | CRITICAL |
+| industries\clubs_and_leisure_facilities.html | 4 | 8 | 0% | CRITICAL |
+| industries\construction_and_engineering_sites.html | 4 | 8 | 0% | CRITICAL |
+| industries\co_working_and_it_parks.html | 4 | 8 | 0% | CRITICAL |
+| industries\concert_halls.html | 4 | 8 | 0% | CRITICAL |
+| industries\amusement_parks_and_event_zones.html | 4 | 8 | 0% | CRITICAL |
+| assessment.html | 3 | 5 | 5% | CRITICAL |
+| faq.html | 2 | 5 | 25% | CRITICAL |
+| industries\index.html | 1 | 4 | 52% | CRITICAL |
+| mobileusp1.html | 1 | 5 | 45% | CRITICAL |
+| mobileUSP.html | 1 | 5 | 45% | CRITICAL |
+| mobileUSP_mockup_final.html | 1 | 5 | 45% | CRITICAL |
+| mobileUSP_final_mockup_2.html | 1 | 5 | 45% | CRITICAL |
+| how-do-I-use-sapphire.html | 1 | 2 | 66% | CRITICAL |
+| book-demo.html | 1 | 5 | 45% | CRITICAL |
+| contact.html | 1 | 4 | 52% | CRITICAL |
+| index.html | 0 | 1 | 93% | NEEDS WORK |
+| index4.html | 0 | 1 | 93% | NEEDS WORK |
+| intelligence.html | 0 | 5 | 65% | NEEDS WORK |
+| capabilities.html | 0 | 2 | 86% | NEEDS WORK |
+| capabiliteis_bak.html | 0 | 2 | 86% | NEEDS WORK |
+| analytics.html | 0 | 6 | 58% | NEEDS WORK |
+| about.html | 0 | 5 | 65% | NEEDS WORK |
+| sapphire.html | 0 | 4 | 72% | NEEDS WORK |
+| sapphire2.html | 0 | 5 | 65% | NEEDS WORK |
+| capabilities_backup_draft.html | 0 | 2 | 86% | NEEDS WORK |

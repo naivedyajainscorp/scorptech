@@ -290,15 +290,14 @@ function initCspNav() {
 		'mod-resolution',
 		'mod-maintenance',
 		'mod-workstation',
-		'mod-analytics',
-		'mod-fleet'
+		'mod-analytics'
 	];
 
 	const cspNavItems = document.querySelectorAll('.csp-nav-item');
 	const cspNav = document.querySelector('.csp-nav');
 
 	const cspNavStart = document.getElementById('mod-workplace');
-	const cspNavEnd = document.getElementById('mod-fleet');
+	const cspNavEnd = document.getElementById('mod-analytics');
 
 	if (!cspNav || !cspNavItems.length) return;
 

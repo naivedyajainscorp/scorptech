@@ -2124,6 +2124,19 @@ EXTENDED PALETTE (5 variants)
    S-ACCORDION - PRODUCTION SYSTEM
    ════════════════════════════════════════════════════════════════════════ */
 
+   .s-emphasis-area{
+  font-family: "Science Gothic", sans-serif;
+  font-size: var(--s-text-lg);
+  font-weight: var(--s-font-semibold);
+  margin-top: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+   }
+/* ════════════════════════════════════════════════════════════════════════════
+   S-ACCORDION - PRODUCTION SYSTEM
+   ════════════════════════════════════════════════════════════════════════ */
+
 .s-accordion {
   display: flex;
   flex-direction: column;
@@ -2242,7 +2255,7 @@ EXTENDED PALETTE (5 variants)
 .s-fab-trigger i {
   /* ✅ Only transform the icon, not the button */
   transition: transform 0.3s ease !important;
-  font-size: 1.5rem !important;
+  font-size: 2rem !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;

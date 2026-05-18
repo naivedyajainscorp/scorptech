@@ -162,12 +162,11 @@ fieldset {
    ═══════════════════════════════════════════════════════════════ */
 
 /* Base styling */
-.radio-option,
-.checkbox-option {
+.radio-option, .checkbox-option {
   background: var(--s-white);
   border: 1px solid var(--s-primary);
   border-radius: var(--s-radius-md);
-  padding: 1rem 1.25rem;
+  padding: 0.5rem .5rem;
   cursor: pointer;
   transition: var(--s-transition-fast);
   display: flex;

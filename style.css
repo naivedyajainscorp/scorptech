@@ -138,16 +138,6 @@ html.scrollbar-visible ::-webkit-scrollbar-track {
   z-index: 2;
 }
 
-/* Ensure content stays on top */
-.s-hero .container {
-  position: relative;
-  z-index: 3;
-}
-
-.s-hero-content {
-  position: relative;
-  z-index: 3;
-}
 
 
 

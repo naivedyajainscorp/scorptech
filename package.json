@@ -2,10 +2,12 @@
   "name": "scorp-webfront-structured",
   "version": "1.0.0",
   "description": "",
-  "main": "injectBlogs.js",
   "type": "module",
+  "main": "injectBlogs.js",
   "scripts": {
-    "inject": "node injectBlogs.js"
+    "inject": "node injectBlogs.js",
+    "audit": "node lazy-audit.cjs",
+    "audit:dry": "node lazy-audit.cjs . --dry-run"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,11 @@
   "homepage": "https://github.com/naivedyajainscorp/scorptech#readme",
   "dependencies": {
     "jsdom": "^29.0.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "bin": {
+    "lazy-audit": "./lazy-audit.cjs"
   }
 }

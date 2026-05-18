@@ -93,8 +93,11 @@ blog/*.md
 blog/template_*.html
 blog/scorp_blog_template*
 blog/scorp_blog_layout*
+seo-report.md
 
 # JS FILES AND INJECTORS
 inject_data-label.js
 injectblogs.js
 injectblogs1.js
+
+lazy-audit.cjs
