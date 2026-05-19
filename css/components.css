@@ -521,11 +521,14 @@
   font-size: var(--s-text-sm);
   font-weight: var(--s-font-semibold);
   line-height: var(--s-leading-tight);
-  white-space: nowrap;
   border: 1.5px solid transparent;
   transition: var(--s-transition-base);
   text-shadow: var(--s-text-shadow);
   cursor: default;
+  white-space: normal;     /* Allows text to wrap to the next line */
+  word-break: normal;      /* Prevents forcing breaks inside words */
+  overflow-wrap: normal;  /* Prevents breaking long words like URLs */
+  hyphens: none;   
 }
 [class^="s-label-"]:hover,
 [class*=" s-label-"]:hover {
