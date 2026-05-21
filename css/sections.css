@@ -2090,10 +2090,6 @@ a .s-mini-card {
 /* Title Highlight */
 .s-hero-title-highlight {
   display: block;
-  /* background: var(--s-gradient-primary); */
-  /* -webkit-background-clip: text; */
-  /* -webkit-text-fill-color: transparent; */
-  /* background-clip: text; */
   position: relative;
   letter-spacing: 0.2rem;
   text-shadow:
@@ -2112,7 +2108,7 @@ a .s-mini-card {
   margin-right: auto;
 }
 
-
+.s-hero-video,
 .s-hero-img {
   position: absolute;
   top: 0;
@@ -2121,6 +2117,15 @@ a .s-mini-card {
   height: 100%;
   object-fit: cover;
   z-index: 1;
+}
+
+.hero-transition {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: #000;
+  opacity: 0;
+  pointer-events: none;
 }
 
 

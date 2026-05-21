@@ -1060,7 +1060,7 @@ if (hiddenIframe) {
     demoForm.classList.remove("submitted");
     isSubmitting = false;
     submitBtnDemo.disabled = false;
-    submitBtnDemo.innerHTML = '<i class="fa fa-check"></i> Submit';
+    submitBtnDemo.innerHTML = '<i class="fa fa-check me-1"></i>Submit';
 
     console.log("✅ Demo form submitted and reset.");
   });
