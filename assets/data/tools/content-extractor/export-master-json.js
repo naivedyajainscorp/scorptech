@@ -107,4 +107,4 @@ const outputPath = path.join(versionFolder, "master-assessment.json");
 
 fs.writeFileSync(outputPath, JSON.stringify(master, null, 2), "utf8");
 
-console.log(`✅ MASTER JSON exported to: exports/json/v${nextVersion}`);
+console.log(`🫡 MASTER JSON exported to: exports/json/v${nextVersion}`);

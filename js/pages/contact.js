@@ -22,7 +22,7 @@ const itiContact = window.intlTelInput(phoneInputContact, {
     utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.11.3/build/js/utils.js"
 });
 
-// ✅ Search Blur & Simplified Scroll Lock
+// 🫡 Search Blur & Simplified Scroll Lock
 phoneInputContact.addEventListener("open:dropdown", function () {
     // 1. Prevent Search Autofocus (Delay of 10ms to catch library's internal trigger)
     setTimeout(() => {
@@ -51,7 +51,7 @@ phoneInputContact.addEventListener("close:dropdown", function () {
         window.scrollTo(0, parseInt(scrollY || '0'));
     }
 });
-// ✅ Tracker for Shake Animation (Trigger once per invalid transition)
+// 🫡 Tracker for Shake Animation (Trigger once per invalid transition)
 const hasShaken = {
     name: false,
     email: false,
@@ -100,20 +100,20 @@ function toggleError(field, errorEl, show, fieldKey) {
     }
 }
 
-// ✅ Real-Time Name Formatting and Validation
+// 🫡 Real-Time Name Formatting and Validation
 nameInputContact.addEventListener("input", function () {
     this.value = this.value.toLowerCase().replace(/\b\w/g, char => char.toUpperCase());
     const isValid = /^[A-Za-zÀ-ÿ\'.\-\s]{3,}$/.test(this.value.trim());
     toggleError(this, nameErrorMessageContact, !isValid, 'name');
 });
 
-// ✅ Real-Time Email Validation
+// 🫡 Real-Time Email Validation
 emailInputContact.addEventListener("input", function () {
     const isValid = /^\S+@\S+\.\S+$/.test(this.value.trim());
     toggleError(this, emailErrorMessageContact, !isValid, 'email');
 });
 
-// ✅ Real-Time Phone Validation (Ensure Exactly 10 Digits & Starts with 6-9)
+// 🫡 Real-Time Phone Validation (Ensure Exactly 10 Digits & Starts with 6-9)
 phoneInputContact.addEventListener("input", function () {
     this.value = this.value.replace(/\D/g, "").slice(0, 10);
     const isValid = /^[6-9]\d{9}$/.test(this.value);
@@ -127,14 +127,14 @@ phoneInputContact.addEventListener("keypress", function (event) {
     }
 });
 
-// ✅ Real-Time Message Validation (At Least 10 Words)
+// 🫡 Real-Time Message Validation (At Least 10 Words)
 messageInputContact.addEventListener("input", function () {
     const wordCount = this.value.trim().split(/\s+/).filter(word => word.length > 0).length;
     const isValid = wordCount >= 10;
     toggleError(this, messageErrorMessageContact, !isValid, 'message');
 });
 
-// ✅ Form Submission with Validation
+// 🫡 Form Submission with Validation
 formContact.addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -166,7 +166,7 @@ formContact.addEventListener("submit", function (e) {
     }, 100);
 });
 
-// ✅ Show Success Message After Submission
+// 🫡 Show Success Message After Submission
 function showSuccess() {
     if (submittedContact) {
         submittedContact = false;
@@ -190,7 +190,7 @@ function showSuccess() {
     }
 }
 
-// ✅ Ensure Success Message Shows on Iframe Load (Fixing Undefined Variable Issue)
+// 🫡 Ensure Success Message Shows on Iframe Load (Fixing Undefined Variable Issue)
 document.querySelector("iframe[name='hidden_iframe']").addEventListener("load", function () {
     if (submittedContact) showSuccess();
 });

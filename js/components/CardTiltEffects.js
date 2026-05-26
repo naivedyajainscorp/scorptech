@@ -64,7 +64,7 @@ export function initCardTiltEffects() {
     card.addEventListener('blur', handleMouseLeave, true); // Reset on focus loss
   });
 
-  console.log(`✅ Card tilt effects initialized for ${cards.length} card(s)`);
+  console.log(`🫡 Card tilt effects initialized for ${cards.length} card(s)`);
 }
 
 // Optional: Manual initialization for dynamically added cards

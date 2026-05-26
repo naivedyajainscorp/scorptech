@@ -3,24 +3,6 @@
  * Unified 3D Ring Engine — master ring + all domain rings share one factory.
  * SCORP Design System — Science Gothic / Verdana / FA7 icons
  */
-import { initBackground } from '../components/fog_bg.js';
-
-// Initialize fog background for intel hero - only if element exists
-document.addEventListener('DOMContentLoaded', () => {
-  const intelHero = document.querySelector('#intel-hero');
-  if (intelHero) {
-    initBackground('#intel-hero', 'fog', {
-      tone: 'WHITE',
-      mood: 'PEARL',
-      blur: 0.65,
-      pace: 1.2,
-      zoom: 0.85,
-      showcase: true,
-      showcaseDuration: 1000,
-      showcaseTransition: 2500,
-    });
-  }
-});
 
 export async function initIntelligencePage() {
   console.log('[Scorptech] Intelligence Page init…');

@@ -1584,7 +1584,7 @@ COUNTRY DROPDOWN LIST (Popup Mode)
   display: flex;
   gap: 1.5rem;
   flex-wrap: nowrap;
-  /* ✅ Single horizontal line */
+  /* 🫡 Single horizontal line */
   align-items: center;
   will-change: transform;
 }
@@ -1627,12 +1627,12 @@ COUNTRY DROPDOWN LIST (Popup Mode)
    PERFORMANCE: Reduce paint/reflow during scrolling
    ════════════════════════════════════════════════════════════════════ */
 
-/* ✅ Disable transform on hover during scroll */
+/* 🫡 Disable transform on hover during scroll */
 .infinite-scroll-container.scrolling .scroll-card:hover {
   transform: none;
 }
 
-/* ✅ Simplify box-shadow during scroll */
+/* 🫡 Simplify box-shadow during scroll */
 .infinite-scroll-container.scrolling .scroll-card {
   box-shadow: none;
 }

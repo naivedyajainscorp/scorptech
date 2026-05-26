@@ -115,7 +115,7 @@ if (viewportWidth <= 480) {
     resizeObserver.observe(container);
     resizeObserver.observe(track); // Observe track too for content changes
 
-    console.log(`✅ CSS Infinite Scroll initialized: "${containerSelector}" (Dynamic Speed)`);
+    console.log(`🫡 CSS Infinite Scroll initialized: "${containerSelector}" (Dynamic Speed)`);
 
     const instance = {
       container,

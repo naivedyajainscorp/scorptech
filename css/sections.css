@@ -89,7 +89,7 @@
   align-items: center;
   gap: 0.4rem;
   background: transparent !important;
-  /* ✅ FIXED: Always transparent */
+  /* 🫡 FIXED: Always transparent */
 }
 
 .s-nav-link {
@@ -293,7 +293,7 @@
   font-weight: 600;
 }
 
-/* ✅ TR-1 FIXED: Dropdown Menu - No Ghost Spacing */
+/* 🫡 TR-1 FIXED: Dropdown Menu - No Ghost Spacing */
 .s-internal-dropdown-menu {
   min-width: 220px !important;
   background: rgba(255, 255, 255, 0.94) !important;
@@ -307,7 +307,7 @@
     inset 0 1px 0 rgba(255, 255, 255, 1) !important;
   margin-top: 0.5rem !important;
   display: none;
-  /* ✅ FIXED: Was 'display: block' - no ghost space */
+  /* 🫡 FIXED: Was 'display: block' - no ghost space */
   visibility: hidden;
   opacity: 0;
   transform: translateY(-12px) scale(0.96);
@@ -318,10 +318,10 @@
   pointer-events: none;
 }
 
-/* ✅ TR-2 FIXED: Click-based toggle only (hover removed) */
+/* 🫡 TR-2 FIXED: Click-based toggle only (hover removed) */
 .s-internal-dropdown-menu.show {
   display: block;
-  /* ✅ Only visible when .show class added by JS */
+  /* 🫡 Only visible when .show class added by JS */
   visibility: visible;
   opacity: 1;
   transform: translateY(0) scale(1);
@@ -374,7 +374,7 @@
   transform: translateX(6px);
 }
 
-/* ✅ CRITICAL FIX: Active state (when clicking) - Keep white text on blue background */
+/* 🫡 CRITICAL FIX: Active state (when clicking) - Keep white text on blue background */
 .s-internal-menu-item:active,
 .s-internal-menu-item:focus {
   background: var(--s-gradient-primary) !important;
@@ -383,7 +383,7 @@
   transform: translateX(6px);
 }
 
-/* ✅ Force icon/span to stay white during click/focus */
+/* 🫡 Force icon/span to stay white during click/focus */
 .s-internal-menu-item:active i,
 .s-internal-menu-item:focus i,
 .s-internal-menu-item:active span,
@@ -413,7 +413,7 @@
   position: relative;
 }
 
-/* ✅ TR-4 FIXED: Button height matches Book Demo (48px) */
+/* 🫡 TR-4 FIXED: Button height matches Book Demo (48px) */
 .s-sapphire-trigger {
   display: flex !important;
   align-items: center;
@@ -445,10 +445,10 @@
   display: none !important;
 }
 
-/* ✅ TR-4 FIXED: Logo reduced from 36px to 32px */
+/* 🫡 TR-4 FIXED: Logo reduced from 36px to 32px */
 .s-sapphire-logo {
   width: 32px;
-  /* ✅ FIXED: Reduced from 36px */
+  /* 🫡 FIXED: Reduced from 36px */
   height: 32px;
   flex-shrink: 0;
   display: flex;
@@ -461,7 +461,7 @@
   transform: rotate(180deg) scale(1.12);
 }
 
-/* ✅ TR-1 FIXED: Sapphire Dropdown Menu - No Ghost Spacing */
+/* 🫡 TR-1 FIXED: Sapphire Dropdown Menu - No Ghost Spacing */
 .s-sapphire-menu {
   min-width: 220px !important;
   background: rgba(255, 255, 255, 0.94) !important;
@@ -475,7 +475,7 @@
     inset 0 1px 0 rgba(255, 255, 255, 1) !important;
   margin-top: 0.5rem !important;
   display: none;
-  /* ✅ FIXED: No ghost spacing */
+  /* 🫡 FIXED: No ghost spacing */
   visibility: hidden;
   opacity: 0;
   transform: translateY(-12px) scale(0.96);
@@ -486,10 +486,10 @@
   pointer-events: none;
 }
 
-/* ✅ TR-2 FIXED: Click-based toggle only */
+/* 🫡 TR-2 FIXED: Click-based toggle only */
 .s-sapphire-menu.show {
   display: block;
-  /* ✅ Only visible when .show class added by JS */
+  /* 🫡 Only visible when .show class added by JS */
   visibility: visible;
   opacity: 1;
   transform: translateY(0) scale(1);
@@ -538,7 +538,7 @@
   gap: 0.65rem;
   padding: 0.6rem 1.1rem !important;
   min-height: 52px;
-  /* ✅ FIXED: Equal height with Sapphire trigger */
+  /* 🫡 FIXED: Equal height with Sapphire trigger */
   background: var(--s-gradient-success) !important;
   color: white !important;
   border: none !important;
@@ -1403,10 +1403,10 @@
 }
 
 .s-mq-row--fwd {
-  animation: mq-fwd 165s linear infinite;
+  animation: mq-fwd 300s linear infinite;
 }
 .s-mq-row--rev {
-  animation: mq-rev 175s linear infinite;
+  animation: mq-rev 350s linear infinite;
 }
 .s-mq-row:hover {
   animation-play-state: paused;

@@ -11,7 +11,7 @@
   box-shadow: var(--s-shadow-lg);
   border: 1px solid rgba(255, 255, 255, 0.5);
   transition: var(--s-transition-smooth);
-  overflow: visible; /* ✅ Changed from hidden */
+  overflow: visible; /* 🫡 Changed from hidden */
 }
 
 /* Subtle background wave animation (same as s-card) */
@@ -46,7 +46,7 @@
   }
 }
 
-/* ✅ NO HOVER EFFECTS - Removed entirely */
+/* 🫡 NO HOVER EFFECTS - Removed entirely */
 
 /* Contact Card Components */
 .contact-card-header {

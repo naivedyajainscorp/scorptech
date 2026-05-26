@@ -12,7 +12,7 @@ export function initAccordions() {
   }
 
   accordions.forEach((accordion, idx) => {
-    // ✅ Prevent duplicate initialization
+    // 🫡 Prevent duplicate initialization
     if (accordion.dataset.sAccordionInit === 'true') {
       return;
     }
@@ -24,10 +24,10 @@ export function initAccordions() {
       setupItem(item, `acc-${idx}-item-${itemIdx}`);
     });
 
-    // ✅ EVENT DELEGATION: Single listener for entire accordion
+    // 🫡 EVENT DELEGATION: Single listener for entire accordion
     accordion.addEventListener('click', handleAccordionClick);
     
-    console.log(`✅ Accordion ${idx} initialized (${items.length} items)`);
+    console.log(`🫡 Accordion ${idx} initialized (${items.length} items)`);
   });
 }
 
@@ -141,7 +141,7 @@ function toggleItem(item) {
 }
 
 /**
- * ✅ ONLY auto-init when NOT imported as module
+ * 🫡 ONLY auto-init when NOT imported as module
  */
 if (typeof window !== 'undefined') {
   // Check if we're in a module context

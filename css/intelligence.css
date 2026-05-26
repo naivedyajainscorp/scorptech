@@ -3,6 +3,22 @@
    SCORP Design System Integration
 ═══════════════════════════════════════════════════════════════ */
 
+
+#intel-hero .container-fluid {
+  position: relative;
+  z-index: 3;
+}
+
+#intel-hero .hero-copy {
+  position: relative;
+  z-index: 5;
+}
+
+#intel-hero .intel-ring-wrap {
+  position: relative;
+  z-index: 4;
+}
+
 /* ── INTEL HERO ─────────────────────────────────────────────── */
 .intel-hero {
   position: relative;

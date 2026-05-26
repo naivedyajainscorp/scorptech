@@ -427,7 +427,7 @@ function initCspNav() {
 
 	updateCspNav();
 
-	console.log('✅ csp-nav initialized');
+	console.log('🫡 csp-nav initialized');
 }
 
 initCspNav();

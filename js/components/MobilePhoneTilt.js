@@ -133,5 +133,5 @@ export function initMobilePhoneTilt() {
     animId = requestAnimationFrame(tick);
   }
 
-  console.log('✅ Mobile phone 3D tilt initialized');
+  console.log('🫡 Mobile phone 3D tilt initialized');
 }

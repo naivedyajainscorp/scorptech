@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    console.log(`✅ Initialized ${carouselItems.length + featurePhones.length} phone titles`);
+    console.log(`🫡 Initialized ${carouselItems.length + featurePhones.length} phone titles`);
   }
 
   initPhoneTitles();

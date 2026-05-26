@@ -28,8 +28,8 @@ export const loadAnalyticsData = async () => {
 
     analyticsData = await response.json();
 
-    // ✅ VERIFICATION - PROOF JSON IS LOADED
-    console.log('✅ Analytics data loaded from JSON successfully!');
+    // 🫡 VERIFICATION - PROOF JSON IS LOADED
+    console.log('🫡 Analytics data loaded from JSON successfully!');
     console.log('📦 DATA SOURCE: analytics-data.json');
     console.log('🔍 VERIFICATION:');
     console.log(`   Tools: ${analyticsData?.assets?.tools?.length || 0}`);
@@ -946,8 +946,8 @@ export const generateReturnConditionData = () => {
   // Get damage note from JSON based on asset category
   let damageNote = null;
   if (condition.label !== 'Okay') {
-    const data = ensureDataLoaded(); // ✅ FIX: Get loaded data first
-    const damageNotes = data.damageNotes[asset.category]; // ✅ FIX: Use 'data' instead of 'ANALYTICS_DATA'
+    const data = ensureDataLoaded(); // 🫡 FIX: Get loaded data first
+    const damageNotes = data.damageNotes[asset.category]; // 🫡 FIX: Use 'data' instead of 'ANALYTICS_DATA'
     damageNote = getRandomItem(damageNotes);
 
     // For TOOLKIT, append condition to part name
@@ -1857,6 +1857,6 @@ export function generateFuelEconomyData() {
 // INITIALIZATION VERIFICATION
 // ═══════════════════════════════════════════════════════════════════════════
 
-console.log('✅ CardDataGenerators.js loaded successfully');
+console.log('🫡 CardDataGenerators.js loaded successfully');
 console.log('📊 27 data generators ready');
 console.log('🔒 Using JSON ONLY - no fallback data');

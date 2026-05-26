@@ -31,5 +31,5 @@ export function analyticsIconRain(heroId, icons, count, config) {
     hero.appendChild(icon);
   }
 
-  console.log(`✅ Icon rain initialized for "${heroId}" with ${count} icons`);
+  console.log(`🫡 Icon rain initialized for "${heroId}" with ${count} icons`);
 }

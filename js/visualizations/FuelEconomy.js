@@ -20,7 +20,7 @@ export class FuelEconomy {
       try {
          await initializeFuelPrices();
          this.render();
-         console.log('✅ Fuel Economy system initialized (Bulletproof Interpolation Active)');
+         console.log('🫡 Fuel Economy system initialized (Bulletproof Interpolation Active)');
       } catch (error) {
          console.error('❌ Failed to initialize Fuel Economy Visualization:', error);
       }

@@ -182,9 +182,9 @@ Here's the full mapping. **45 entries across 7 families — 8 exact matches, 13 
 
 | core.css Token | core.css Value | capabilities.html Value | Type | Match Status | Usage in capabilities.html |
 |---|---|---|---|---|---|
-| `--s-attention` | `#ea580c` | `#ea580c` | Solid | ✅ **EXACT MATCH** | Play button gradient stop 100% (Card 4) |
-| `--s-attention-light` | `#f97316` | `#f97316` | Solid | ✅ **EXACT MATCH** | Play button gradient stop 0% (Card 4) |
-| `--s-attention-light` | `#f97316` | `rgba(249,115,22,x)` × 6 | RGBA | ✅ **EXACT base** – 6 alpha levels | Step active bg/border, play ripple, learn icons, `.tag-orange` bg |
+| `--s-attention` | `#ea580c` | `#ea580c` | Solid | 🫡 **EXACT MATCH** | Play button gradient stop 100% (Card 4) |
+| `--s-attention-light` | `#f97316` | `#f97316` | Solid | 🫡 **EXACT MATCH** | Play button gradient stop 0% (Card 4) |
+| `--s-attention-light` | `#f97316` | `rgba(249,115,22,x)` × 6 | RGBA | 🫡 **EXACT base** – 6 alpha levels | Step active bg/border, play ripple, learn icons, `.tag-orange` bg |
 | — | — | `rgba(251,146,60)` = `#fb923c` | RGBA×2 | 🆕 NEW – lighter orange shade | `.chip-wo` border & icon color (Card 1) |
 | — | — | `#7c2d12` | Solid | 🆕 NEW – very dark burnt orange/rust | Card 4 (Guides) bg gradient stop 0% |
 | — | — | `#fed7aa` | Solid | 🆕 NEW – pale peach tint (tag text) | `.tag-orange` text color |
@@ -205,7 +205,7 @@ Here's the full mapping. **45 entries across 7 families — 8 exact matches, 13 
 |---|---|---|---|---|---|
 | `--s-royal` | `#7c3aed` | `#7b4397` | Solid | **Near Match** – muted vintage purple-magenta | Hero title text gradient stop 100%, CTA bg gradient |
 | `--s-royal-lighter` | `#c4b5fd` | `#d4b8ff` | Solid | **Near Match** – slightly lighter lavender | `.tag-purple` text color |
-| `--s-purple-500` | `#8b5cf6` | `rgba(139,92,246,0.8)` | RGBA | ✅ **EXACT base MATCH** | Pie chart segment 3 stroke (Analytics) |
+| `--s-purple-500` | `#8b5cf6` | `rgba(139,92,246,0.8)` | RGBA | 🫡 **EXACT base MATCH** | Pie chart segment 3 stroke (Analytics) |
 | — | — | `rgba(156,110,255,x)` = `#9c6eff` × 2 | RGBA | 🆕 NEW – bright saturated purple | Enhanced bg radial gradient, `.tag-purple` bg |
 
 ***
@@ -231,12 +231,12 @@ Here's the full mapping. **45 entries across 7 families — 8 exact matches, 13 
 
 | core.css Token | core.css Value | capabilities.html Value | Type | Match Status | Usage in capabilities.html |
 |---|---|---|---|---|---|
-| `--s-gray-900` | `#0f172a` | `#0f172a` | Solid | ✅ **EXACT MATCH** | Card 3 (Analytics) bg gradient stop 100% |
+| `--s-gray-900` | `#0f172a` | `#0f172a` | Solid | 🫡 **EXACT MATCH** | Card 3 (Analytics) bg gradient stop 100% |
 | `--s-gray-50` | `#f8fafc` | `#f8f9fa` | Solid | **Near Match** – 1 digit off, visually identical | Comparison section background |
 | `--s-neutral-200` | `#e9eef6` | `#e9ecef` | Solid | **Near Match** – 2 digits off, visually identical | Table cell bottom border |
-| `--s-white` | `#ffffff` | `#ffffff` | Solid | ✅ **EXACT MATCH** | Scroll wheel, progress dot, play icon |
-| `--s-black` | `#000000` | `rgba(0,0,0,x)` × 7 | RGBA | ✅ **EXACT base** – 7 alpha levels | Card shadows (0.15–0.4), content overlays (0.88, 0.9) |
-| `--s-white` | `#ffffff` | `rgba(255,255,255,x)` × 13 | RGBA | ✅ **EXACT base** – 13 alpha levels | Stat card bg, chips, step circles, grid overlays |
+| `--s-white` | `#ffffff` | `#ffffff` | Solid | 🫡 **EXACT MATCH** | Scroll wheel, progress dot, play icon |
+| `--s-black` | `#000000` | `rgba(0,0,0,x)` × 7 | RGBA | 🫡 **EXACT base** – 7 alpha levels | Card shadows (0.15–0.4), content overlays (0.88, 0.9) |
+| `--s-white` | `#ffffff` | `rgba(255,255,255,x)` × 13 | RGBA | 🫡 **EXACT base** – 13 alpha levels | Stat card bg, chips, step circles, grid overlays |
 | — | — | `#1a1a2e` | Solid | 🆕 NEW – dark desaturated navy-purple | Hero bg, Card 4 bg, Highlight section, Table thead |
 | — | — | `#16213e` | Solid | 🆕 NEW – deep slate-navy | Hero bg gradient stop 100% |
 | — | — | `#f0f4ff` | Solid | 🆕 NEW – pale blue-tinted surface | Enhanced capabilities section bg |
@@ -247,7 +247,7 @@ Here's the full mapping. **45 entries across 7 families — 8 exact matches, 13 
 
 | Match Type | Count | Meaning |
 |---|---|---|
-| ✅ Exact Match | **8** | Identical to a core.css token (reusing correctly) |
+| 🫡 Exact Match | **8** | Identical to a core.css token (reusing correctly) |
 | ⚠️ Near Match | **13** | Same family, slightly different shade — could be tokenized |
 | 🆕 New / Distinct | **24** | No equivalent in core.css — capabilities-specific palette |
 

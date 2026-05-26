@@ -18,7 +18,7 @@ import { initMarqueeLoops } from './helpers/marquee_continuity.js';
 
 
 // ═════════════════════════════════════════════════════════════════════════════
-// ✅ GLOBAL EVENT LISTENERS (Mouse proximity for scrollbar visibility)
+// 🫡 GLOBAL EVENT LISTENERS (Mouse proximity for scrollbar visibility)
 // ═════════════════════════════════════════════════════════════════════════════
 console.log('🔵 Main.js loaded - waiting for DOM...');
 const SCROLLBAR_EDGE_THRESHOLD = 50;
@@ -37,22 +37,22 @@ document.addEventListener('mouseleave', () => {
   document.documentElement.classList.remove('scrollbar-visible');
 });
 // ═════════════════════════════════════════════════════════════════════════════
-// ✅ SINGLE DOMContentLoaded INITIALIZATION
+// 🫡 SINGLE DOMContentLoaded INITIALIZATION
 // ═════════════════════════════════════════════════════════════════════════════
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('✅ DOM ready - initializing universal components');
+  console.log('🫡 DOM ready - initializing universal components');
   // ─────────────────────────────────────────────────────────────────────────────
   // FORM ENHANCEMENTS (Universal - dropdowns, validation, etc.)
   // ─────────────────────────────────────────────────────────────────────────────
   FormEnhancements.init();
   initFooterManager();
-  console.log('✅ Form Enhancements and Footer initialized');
+  console.log('🫡 Form Enhancements and Footer initialized');
   // ─────────────────────────────────────────────────────────────────────────────
   // FLOATING ACTION BUTTON (Universal - appears on all pages)
   // ─────────────────────────────────────────────────────────────────────────────
   if (document.querySelector('.s-fab-trigger')) {
     const fab = new SFloatingButton();
-    console.log('✅ Floating Action Button initialized');
+    console.log('🫡 Floating Action Button initialized');
   }
   // ─────────────────────────────────────────────────────────────────────────────
   // NAVIGATION MANAGER (Universal - active state handling)
@@ -67,30 +67,30 @@ document.addEventListener('DOMContentLoaded', () => {
   // ─────────────────────────────────────────────────────────────────────────────
   initWordSlider();
   // ─────────────────────────────────────────────────────────────────────────────
-  // S-ACCORDION SYSTEM - ✅ INITIALIZED ONCE HERE
+  // S-ACCORDION SYSTEM - 🫡 INITIALIZED ONCE HERE
   // ─────────────────────────────────────────────────────────────────────────────
   initAccordions();
   // ─────────────────────────────────────────────────────────────────────────────
   // CARD WATERMARKS (Universal - auto-detects s-card-watermark & s-pic-card-watermark)
   // ─────────────────────────────────────────────────────────────────────────────
   initCardWatermarks();
-  console.log('✅ Card Watermarks initialized');
+  console.log('🫡 Card Watermarks initialized');
   // ─────────────────────────────────────────────────────────────────────────────
   // scrollTo Helper (Universal - auto-detects data-scroll-to attributes)
   // ─────────────────────────────────────────────────────────────────────────────
   initScrollTo();
-  console.log('✅ Scroll-To initialized');
+  console.log('🫡 Scroll-To initialized');
   // ─────────────────────────────────────────────────────────────────────────────
   // scrollTo Helper (Universal - auto-detects data-scroll-to attributes)
   // ─────────────────────────────────────────────────────────────────────────────
   initMarqueeLoops();
-  console.log('✅ Marquee Loops initialized');
+  console.log('🫡 Marquee Loops initialized');
   // ─────────────────────────────────────────────────────────────────────────────
   // FLOATING ELEMENT CARD (Universal - cards with floating icon animations)
   // ─────────────────────────────────────────────────────────────────────────────
   if (document.querySelector('.philosophy-card-floating')) {
     const floatingCards = new FloatingElementCard();
-    console.log('✅ Floating Element Cards initialized');
+    console.log('🫡 Floating Element Cards initialized');
   }
   // ─────────────────────────────────────────────────────────────────────────────
   // PILLS RAIL (Universal - appears on analytics and other pages)
@@ -102,9 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
       direction: 'left',
       pauseOnHover: true
     });
-    console.log('✅ Pills Rail initialized');
+    console.log('🫡 Pills Rail initialized');
   }
-  console.log('✅ All universal components initialized');
+  console.log('🫡 All universal components initialized');
 
   
   // ─────────────────────────────────────────────────────────────────────────────
@@ -126,13 +126,13 @@ window.refreshForms = function () {
   console.log('🔄 Form Enhancements refreshed');
 };
 
-// ✅ Safe to call - won't double-bind thanks to dataset flag
+// 🫡 Safe to call - won't double-bind thanks to dataset flag
 window.refreshAccordions = function () {
   initAccordions();
   console.log('🔄 Accordions refreshed');
 };
 
-// ✅ Refresh Floating Element Cards dynamically
+// 🫡 Refresh Floating Element Cards dynamically
 window.refreshFloatingCards = function () {
   if (document.querySelector('.philosophy-card-floating')) {
     window.floatingElementCard = new FloatingElementCard();

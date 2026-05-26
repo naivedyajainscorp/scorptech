@@ -87,7 +87,43 @@ document.addEventListener('DOMContentLoaded', () => {
     backdrop.addEventListener('click', closeDrawer);
     closeBtn.addEventListener('click', closeDrawer);
     closeBtn2.addEventListener('click', closeDrawer);
-    links.forEach(link => link.addEventListener('click', () => closeDrawer()));
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        const href = link.getAttribute('href');
+        if (!href || !href.startsWith('#')) {
+          closeDrawer();
+          return;
+        }
+
+        const target = document.getElementById(href.slice(1));
+        if (!target) {
+          closeDrawer();
+          return;
+        }
+
+        e.preventDefault();
+
+        const navbarEl =
+          document.querySelector('.s-navbar') ||
+          document.querySelector('.navbar') ||
+          document.getElementById('scorpNavbar');
+
+        let navbarHeight = 88;
+        if (navbarEl) {
+          const cs = window.getComputedStyle(navbarEl);
+          navbarHeight =
+            navbarEl.offsetHeight +
+            parseFloat(cs.marginTop || 0) +
+            parseFloat(cs.marginBottom || 0);
+        }
+
+        const extraOffset = 88;
+        const top = target.getBoundingClientRect().top + window.scrollY - navbarHeight - extraOffset;
+
+        closeDrawer();
+        window.scrollTo({ top, behavior: 'smooth' });
+      });
+    });
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && drawer.classList.contains('is-open')) closeDrawer();
     });

@@ -37,7 +37,7 @@
 			═══════════════════════════════════════════════════════════════ -->
 		<nav class="navbar navbar-expand-xxl s-navbar" id="scorpNavbar">
 			<!-- Brand -->
-			<a class="navbar-brand s-navbar-brand" href="index.html">
+			<a class="navbar-brand s-navbar-brand" href="/index.html">
 				<div class="s-brand-logo">
 					<img src="assets/images/Scorp-Logo.png" alt="Scorptech" width="24" height="24" style="filter: brightness(0) invert(1);" loading="lazy">
 				</div>
@@ -54,28 +54,28 @@
 				<ul class="navbar-nav ms-auto s-nav-links">
 					<!-- Home -->
 					<li class="nav-item">
-						<a class="nav-link s-nav-link" href="index.html">
+						<a class="nav-link s-nav-link" href="/index.html">
 						<i class="fas fa-home-alt"></i>
 						<span>Home</span>
 						</a>
 					</li>
 					<!-- Sapphire -->
 					<li class="nav-item">
-						<a class="nav-link s-nav-link" href="sapphire.html">
+						<a class="nav-link s-nav-link" href="/sapphire.html">
 						<i class="fas fa-diamond"></i>
 						<span>Sapphire</span>
 						</a>
 					</li>
 					<!-- Contact -->
 					<li class="nav-item">
-						<a class="nav-link s-nav-link" href="contact.html">
+						<a class="nav-link s-nav-link" href="/contact.html">
 						<i class="bi bi-telephone-outbound-fill"></i>
 						<span>Contact</span>
 						</a>
 					</li>
 					<!-- About -->
 					<li class="nav-item">
-						<a class="nav-link s-nav-link" href="about.html">
+						<a class="nav-link s-nav-link" href="/about.html">
 						<i class="fas fa-users-line"></i>
 						<span>About</span>
 						</a>
@@ -83,7 +83,7 @@
 					<!-- Resources Dropdown (Internal Pages) -->
 					<li class="nav-item dropdown s-nav-dropdown-internal">
 						<a class="nav-link s-nav-link dropdown-toggle" 
-							href="#" 
+							href="/#" 
 							role="button" 
 							data-bs-toggle="dropdown" 
 							aria-expanded="false"
@@ -95,19 +95,19 @@
 						</a>
 						<ul class="dropdown-menu dropdown-menu-end s-internal-dropdown-menu">
 							<li>
-								<a class="dropdown-item s-internal-menu-item" href="faq.html" data-page="faq.html">
+								<a class="dropdown-item s-internal-menu-item" href="/faq.html" data-page="faq.html">
 								<i class="fas fa-circle-question"></i>
 								<span>FAQ</span>
 								</a>
 							</li>
 							<li>
-								<a class="dropdown-item s-internal-menu-item" href="terms_of_use.html" data-page="terms_of_use.html">
+								<a class="dropdown-item s-internal-menu-item" href="/terms_of_use.html" data-page="terms_of_use.html">
 								<i class="fas fa-file-contract"></i>
 								<span>Terms of Use</span>
 								</a>
 							</li>
 							<li>
-								<a class="dropdown-item s-internal-menu-item" href="privacy_policy.html" data-page="privacy_policy.html">
+								<a class="dropdown-item s-internal-menu-item" href="/privacy_policy.html" data-page="privacy_policy.html">
 								<i class="fas fa-file-shield"></i>
 								<span>Privacy Policy</span>
 								</a>
@@ -116,13 +116,13 @@
 					</li>
 					<!-- Announcement Icon -->
 					<li class="nav-item">
-						<a class="nav-link s-nav-link s-nav-link-icon" href="announcement.html" title="Announcements">
+						<a class="nav-link s-nav-link s-nav-link-icon" href="/announcement.html" title="Announcements">
 						<i class="fa-solid fa-bullhorn fa-rotate-by" style="--fa-rotate-angle: 325deg;"></i>
 						</a>
 					</li>
 					<!-- Book Demo Button (Green Styled) -->
 					<li class="nav-item">
-						<a class="book-demo-button" href="book-demo.html">
+						<a class="book-demo-button" href="/book-demo.html">
 						<i class="fas fa-calendar-alt"></i>
 						<span><strong>Book Demo</strong></span>
 						</a>
@@ -154,6 +154,9 @@
 				</ul>
 			</div>
 		</nav>
+		<!-- ════════════════════════════════════════════════════════════
+			HERO SECTION
+			════════════════════════════════════════════════════════════ -->
 		<section class="s-hero" id="homeHero">
 			<video class="s-hero-video" autoplay loop muted playsinline poster="assets/images/homehero38.png">
 				<source src="assets/videos/scorp_home_hero_video.mp4" type="video/mp4">
@@ -177,12 +180,13 @@
 				</div>
 			</div>
 		</section>
-		<!-- Why SCORP Section -->
+		<!-- ════════════════════════════════════════════════════════════
+			WHY SCORP SECTION
+			════════════════════════════════════════════════════════════ -->
 		<div class="s-section-header">
 			<h2 class="s-section-title gradient">Why Scorp?</h2>
 			<p class="s-section-subtitle">Technology should elevate operations<br>not complicate them</p>
 		</div>
-		<!-- Why SCORP Section -->
 		<section class="why-scorp-section px-4" id="whyscorp">
 			<div class="row justify-content-center mt-4">
 				<!-- Card 1 -->
@@ -934,38 +938,73 @@
 			if ('serviceWorker' in navigator) {
 			  window.addEventListener('load', () => {
 			    navigator.serviceWorker.register('./service-worker.js')
-			      .then(reg => console.log('✅ Service Worker registered:', reg.scope))
+			      .then(reg => console.log('🫡 Service Worker registered:', reg.scope))
 			      .catch(err => console.error('❌ Service Worker registration failed:', err));
 			  });
 			}
 			</script> -->
 		<script type="application/ld+json">
-			{
-			  "@context": "https://schema.org",
-			  "@type": ["Organization", "LocalBusiness"],
-			  "name": "Scorptech Technologies Private Limited",
-			  "alternateName": "SCORP",
-			  "url": "https://scorptech.in",
-			  "logo": "https://scorptech.in/assets/images/Scorp-Logo.png",
-			  "image": "https://scorptech.in/assets/images/ScorpHero.png",
-			  "description": "SCORP builds enterprise ERP and EAM software for industrial shop floors. Sapphire is our flagship Enterprise Asset Management platform — lean, intuitive, and built for real-world operations.",
-			  "foundingDate": "2020",
-			  "address": {
-			    "@type": "PostalAddress",
-			    "addressLocality": "Jaipur",
-			    "addressRegion": "Rajasthan",
-			    "postalCode": "302018",
-			    "addressCountry": "IN"
+			[
+			  {
+			    "@context": "https://schema.org",
+			    "@type": ["Organization", "LocalBusiness"],
+			    "name": "Scorptech Technologies Private Limited",
+			    "alternateName": "SCORP",
+			    "url": "https://scorptech.in",
+			    "logo": "https://scorptech.in/assets/images/Scorp-Logo.png",
+			    "image": "https://scorptech.in/assets/images/ScorpHero.png",
+			    "description": "SCORP builds enterprise ERP and EAM software for industrial shop floors. Sapphire is our flagship Enterprise Asset Management platform — lean, intuitive, and built for real-world operations.",
+			    "foundingDate": "2020",
+			    "address": {
+			      "@type": "PostalAddress",
+			      "addressLocality": "Jaipur",
+			      "addressRegion": "Rajasthan",
+			      "postalCode": "302018",
+			      "addressCountry": "IN"
+			    },
+			    "contactPoint": {
+			      "@type": "ContactPoint",
+			      "contactType": "Sales",
+			      "email": "support@scorptech.in",
+			      "url": "https://scorptech.in/contact.html"
+			    },
+			    "areaServed": "IN",
+			    "serviceType": ["ERP Software", "EAM Software", "Enterprise Asset Management", "Industrial Operations Software"]
 			  },
-			  "contactPoint": {
-			    "@type": "ContactPoint",
-			    "contactType": "Sales",
-			    "email": "support@scorptech.in",
-			    "url": "https://scorptech.in/contact.html"
-			  },
-			  "areaServed": "IN",
-			  "serviceType": ["ERP Software", "EAM Software", "Enterprise Asset Management", "Industrial Operations Software"]
-			}
+			  {
+			    "@context": "https://schema.org",
+			    "@type": "WebSite",
+			    "name": "Scorptech",
+			    "url": "https://scorptech.in/",
+			    "hasPart": [
+			      {
+			        "@type": "WebPage",
+			        "name": "Sapphire EAM Platform",
+			        "url": "https://scorptech.in"
+			      },
+			      {
+			        "@type": "WebPage",
+			        "name": "Book Demo",
+			        "url": "https://scorptech.in"
+			      },
+			      {
+			        "@type": "WebPage",
+			        "name": "Contact Us",
+			        "url": "https://scorptech.in/contact.html"
+			      },
+			      {
+			        "@type": "WebPage",
+			        "name": "About SCORP",
+			        "url": "https://scorptech.in"
+			      },
+			      {
+			        "@type": "WebPage",
+			        "name": "Frequently Asked Questions",
+			        "url": "https://scorptech.in"
+			      }
+			    ]
+			  }
+			]
 		</script>
 	</body>
 </html>

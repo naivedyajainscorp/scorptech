@@ -282,7 +282,7 @@ async function fetchPincodeData(pincode, districtEl, stateEl, countryEl, pincode
   const loader = document.getElementById("pincode-loader");
 
   try {
-    // ✅ Show loader - it will appear in the same space as the checkmark
+    // 🫡 Show loader - it will appear in the same space as the checkmark
     if (loader) loader.classList.add("active");
     // No need to adjust padding - loader and checkmark occupy same space
 
@@ -297,7 +297,7 @@ async function fetchPincodeData(pincode, districtEl, stateEl, countryEl, pincode
       stateEl.value = postOffice.State || "";
       countryEl.value = postOffice.Country || "India";
 
-      // ✅ Mark as verified - tick will appear after loader hides
+      // 🫡 Mark as verified - tick will appear after loader hides
       pincodeVerified = true;
       
       // Show valid state (green tick will appear automatically via toggleError)
@@ -325,7 +325,7 @@ async function fetchPincodeData(pincode, districtEl, stateEl, countryEl, pincode
     countryEl.value = "";
     toggleError(pincodeEl, null, true, 'pincode');
   } finally {
-    // ✅ Hide loader - tick will appear here if valid
+    // 🫡 Hide loader - tick will appear here if valid
     if (loader) loader.classList.remove("active");
     // No padding reset needed - checkmark takes same space
   }
@@ -337,7 +337,7 @@ async function fetchPincodeData(pincode, districtEl, stateEl, countryEl, pincode
 
 let industrySet = new Set();
 let franchiseSet = new Set();
-// ✅ Normalize function for case and space-insensitive comparison
+// 🫡 Normalize function for case and space-insensitive comparison
 function normalizeString(str) {
   return str.toLowerCase().replace(/\s+/g, "");
 }
@@ -423,7 +423,7 @@ document.addEventListener("click", function (event) {
 
 
 // ********************************************
-// ✅ VALIDATION ENHANCEMENTS (ICON & JITTER)
+// 🫡 VALIDATION ENHANCEMENTS (ICON & JITTER)
 // ********************************************
 
 const hasShaken = {
@@ -499,7 +499,7 @@ function toggleError(field, errorEl, show, fieldKey) {
       errorEl.classList.remove("d-none");
       errorEl.style.display = "block";
       errorEl.classList.add("active-error");
-      console.log(`✅ Error shown for ${field.id}:`, errorEl.textContent.substring(0, 50));
+      console.log(`🫡 Error shown for ${field.id}:`, errorEl.textContent.substring(0, 50));
     } else {
       console.log(`⚠️ ERROR: No error element found for ${field.id}`);
     }
@@ -647,12 +647,12 @@ if (msgDemo) {
 // Real-time validation for industry types, other industries and franchise brands *
 // ********************************************************************************
 
-// ✅ Attach Real-Time Validation for All Industry Category Checkboxes
+// 🫡 Attach Real-Time Validation for All Industry Category Checkboxes
 document.querySelectorAll('input[type="checkbox"][name^="industry_"]').forEach(checkbox => {
   checkbox.addEventListener("change", validateIndustrySelection);
 });
 
-// ✅ Attach Real-Time Validation for Other Industry Input Fields
+// 🫡 Attach Real-Time Validation for Other Industry Input Fields
 document.addEventListener("input", (e) => {
   if (e.target.name === "otherIndustry[]") {
     validateIndustrySelection();
@@ -713,10 +713,10 @@ function validateIndustrySelection() {
 
 
 // ********************************************
-// ✅ REAL-TIME VALIDATION FOR RADIO BUTTONS
+// 🫡 REAL-TIME VALIDATION FOR RADIO BUTTONS
 // ********************************************
 
-// ✅ Generic real-time validation for radio groups (excluding software)
+// 🫡 Generic real-time validation for radio groups (excluding software)
 function handleRadioGroup(name, errorId) {
   const radios = document.querySelectorAll(`input[name="${name}"]`);
   const errorDiv = document.getElementById(errorId);
@@ -743,7 +743,7 @@ handleRadioGroup("assetquantity", "assetQuantityError");
 handleRadioGroup("asset_cost", "assetCostError");
 
 
-// ✅ Real-time validation for asset_software radios AND "Other" framework input
+// 🫡 Real-time validation for asset_software radios AND "Other" framework input
 const frameworkRadios = document.querySelectorAll('input[name="asset_software"]');
 const frameworkOtherInput2 = document.getElementById("frameworkOtherText");
 const frameworkOtherError2 = document.getElementById("frameworkOtherError");
@@ -788,7 +788,7 @@ if (frameworkOtherInput2 && frameworkOtherError2) {
   });
 }
 // *************************************************
-// ✅ FINAL SUBMIT LOGIC: FORM VALIDATION & SUBMIT
+// 🫡 FINAL SUBMIT LOGIC: FORM VALIDATION & SUBMIT
 // *************************************************
 
 const demoForm = document.getElementById("demoForm");
@@ -1006,7 +1006,7 @@ if (demoForm) {
             if (firstErrorElement.tagName === "INPUT" || firstErrorElement.tagName === "TEXTAREA" || firstErrorElement.tagName === "SELECT") {
               setTimeout(() => {
                 firstErrorElement.focus();
-                console.log("✅ Focused on:", firstErrorElement.id);
+                console.log("🫡 Focused on:", firstErrorElement.id);
               }, 300);
             }
           } else {
@@ -1018,7 +1018,7 @@ if (demoForm) {
       return;
     }
 
-    // ✅ Prevent double submission + disable button
+    // 🫡 Prevent double submission + disable button
     isSubmitting = true;
     demoForm.classList.add("submitted");
     submitBtnDemo.disabled = true;
@@ -1039,12 +1039,12 @@ if (demoForm) {
   });
 }
 
-// ✅ Handle iframe load after submission
+// 🫡 Handle iframe load after submission
 if (hiddenIframe) {
   hiddenIframe.addEventListener("load", function () {
     if (!demoForm.classList.contains("submitted")) return;
 
-    // ✅ Assume successful submission (no CORS document reading)
+    // 🫡 Assume successful submission (no CORS document reading)
     const successModal = new bootstrap.Modal(document.getElementById("successModalDemo"));
     successModal.show();
 
@@ -1062,7 +1062,7 @@ if (hiddenIframe) {
     submitBtnDemo.disabled = false;
     submitBtnDemo.innerHTML = '<i class="fa fa-check me-1"></i>Submit';
 
-    console.log("✅ Demo form submitted and reset.");
+    console.log("🫡 Demo form submitted and reset.");
   });
 }
 

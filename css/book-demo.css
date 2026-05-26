@@ -261,21 +261,21 @@ fieldset {
    SPECIAL AMBER "NONE" OPTION
    ───────────────────────────────────────────────────────────── */
 
-/* ✅ Light yellow background when UNCHECKED */
+/* 🫡 Light yellow background when UNCHECKED */
 .radio-option.special,
 .radio-option.none-special {
   border: 1px solid var(--s-attention);
   background: linear-gradient(135deg, #fffbf0, var(--s-white));
 }
 
-/* ✅ NONE radio button - amber accent color */
+/* 🫡 NONE radio button - amber accent color */
 .radio-option.special input[type="radio"],
 .radio-option.none-special input[type="radio"] {
   accent-color: var(--s-attention) !important;
   border: 0.5px solid var(--s-attention) !important;
 }
 
-/* ✅ NONE radio button when CHECKED - amber fill */
+/* 🫡 NONE radio button when CHECKED - amber fill */
 .radio-option.special input[type="radio"]:checked,
 .radio-option.none-special input[type="radio"]:checked {
   accent-color: var(--s-attention) !important;

@@ -135,7 +135,7 @@ export async function initializeFuelPrices() {
   let fetchedData = await fetchJaipurFuelPrices();
 
   if (fetchedData && Object.keys(fetchedData.petrol || {}).length > 0) {
-    console.log('✅ Successfully fetched real fuel prices for Jaipur');
+    console.log('🫡 Successfully fetched real fuel prices for Jaipur');
     cachedFuelPrices = fillMissingYears(fetchedData);
   } else {
     console.log('📊 Using realistic random fuel prices');
@@ -239,4 +239,4 @@ export function formatINR(amount) {
   }
 }
 
-console.log('✅ Utility helpers loaded');
+console.log('🫡 Utility helpers loaded');

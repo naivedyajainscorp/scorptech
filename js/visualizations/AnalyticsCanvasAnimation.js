@@ -64,7 +64,7 @@ export class AnalyticsCanvasAnimation {
       this.createDots();
     }, { passive: true });
     
-    console.log('✅ Analytics canvas animation started with enhanced SCORP palette');
+    console.log('🫡 Analytics canvas animation started with enhanced SCORP palette');
   }
 
   resizeCanvas() {

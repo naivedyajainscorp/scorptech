@@ -271,7 +271,7 @@ function handleDemoRequest(e) {
       e.parameter.countryDemo
     ].filter(v => v && v.trim()).join(", ");
 
-  // ✅ Corrected Industry Category Handler
+  // 🫡 Corrected Industry Category Handler
   const getSelectedIndustryValues = (e) => {
   const categories = [
     "manufacturing", "healthcare", "corporate", "education", "hospitality",

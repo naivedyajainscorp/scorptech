@@ -116,5 +116,5 @@ master.assessmentSections.forEach(section => {
     const buffer = await Packer.toBuffer(doc);
     fs.writeFileSync(outputPath, buffer);
 
-    console.log(`✅ Word generated for version ${version} → exports/doc/${version}`);
+    console.log(`🫡 Word generated for version ${version} → exports/doc/${version}`);
 })();

@@ -42,7 +42,7 @@ export function initNavigationManager() {
         navbar.classList.remove('scrolled');
       }
     }, { passive: true });
-    console.log('✅ Navbar scroll effect initialized');
+    console.log('🫡 Navbar scroll effect initialized');
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -78,7 +78,7 @@ export function initNavigationManager() {
         }
       });
     });
-    console.log('✅ Nav link click handlers initialized');
+    console.log('🫡 Nav link click handlers initialized');
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -94,7 +94,7 @@ export function initNavigationManager() {
         link.classList.add('active');
       }
     });
-    console.log('✅ Active page highlighting initialized');
+    console.log('🫡 Active page highlighting initialized');
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -132,7 +132,7 @@ export function initNavigationManager() {
       navLinksAll.forEach(l => l.classList.remove('active'));
     }
   });
-  console.log('✅ Dropdown active child detection initialized');
+  console.log('🫡 Dropdown active child detection initialized');
 
   // ═══════════════════════════════════════════════════════════════════════════
   // 5. INTERNAL DROPDOWN MENU ITEM NUDGE (DROPDOWN-SAFE)
@@ -154,7 +154,7 @@ export function initNavigationManager() {
       // If different page, allow normal navigation (dropdown will close naturally)
     });
   });
-  console.log('✅ Internal dropdown menu item nudge initialized');
+  console.log('🫡 Internal dropdown menu item nudge initialized');
 
   // ═══════════════════════════════════════════════════════════════════════════
   // 6. CLICK/PRESS-BASED DROPDOWN TOGGLE SYSTEM (TR-2) - PRD v2.1
@@ -239,7 +239,7 @@ export function initNavigationManager() {
     }
   });
 
-  console.log('✅ Click-based dropdown system initialized (TR-2)');
+  console.log('🫡 Click-based dropdown system initialized (TR-2)');
 
   console.log('🎉 Navigation Manager fully initialized');
 }
@@ -268,5 +268,5 @@ export function initSmoothScroll() {
     });
   });
 
-  console.log('✅ Smooth scroll initialized');
+  console.log('🫡 Smooth scroll initialized');
 }

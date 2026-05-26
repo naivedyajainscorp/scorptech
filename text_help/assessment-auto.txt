@@ -88,5 +88,5 @@
         await wait(400);
     }
 
-    console.log("✅ Auto-fill finished.");
+    console.log("🫡 Auto-fill finished.");
 })();

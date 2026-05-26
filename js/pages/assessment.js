@@ -284,7 +284,7 @@ class SapphireAssessment {
         // Step 3: Initialize accordions (should work immediately)
         if (typeof window.refreshAccordions === 'function') {
             window.refreshAccordions();
-            console.log('✅ Accordions initialized');
+            console.log('🫡 Accordions initialized');
         } else {
             console.error('❌ refreshAccordions not found!');
         }
@@ -716,7 +716,7 @@ class SapphireAssessment {
     renderQuestion(question) {
         const icon = question.icon ? `<div class="s-icon s-icon-md s-icon-primary"><i class="fas ${question.icon}"></i></div>` : '';
 
-        // ✅ AFTER (no escaping, just store ID)
+        // 🫡 AFTER (no escaping, just store ID)
         const hintButton = question.hint ? `
             <button type="button" class="assessment-hint-trigger" 
                 data-qid="${question.id}" 
@@ -862,7 +862,7 @@ class SapphireAssessment {
             hintBtn.addEventListener('click', (e) => {
                 e.preventDefault();
 
-                // ✅ Get hint directly from question object (not from dataset)
+                // 🫡 Get hint directly from question object (not from dataset)
                 const hintText = question.hint ||
                     `[TEST MODE]\n\nQuestion ID: ${question.id}\n\n(No hint text defined for this question yet)`;
 
@@ -919,19 +919,19 @@ class SapphireAssessment {
                 this.updateProgress();
             }
             else {
-                // ✅ Finished all assessment sections (s5_q12) → go to wishes
+                // 🫡 Finished all assessment sections (s5_q12) → go to wishes
                 this.currentSection = 'wishes';
                 this.renderBonusSection('wishes');
             }
         }
         else if (this.currentSection === 'wishes') {
-            // ✅ Save wishes responses and move to pain
+            // 🫡 Save wishes responses and move to pain
             this.saveBonusResponse('wishes');
             this.currentSection = 'pain';
             this.renderBonusSection('pain');
         }
         else if (this.currentSection === 'pain') {
-            // ✅ Save pain responses and complete assessment
+            // 🫡 Save pain responses and complete assessment
             this.saveBonusResponse('pain');
             this.completeAssessment();
         }
@@ -982,7 +982,7 @@ class SapphireAssessment {
             }
         }
         else if (this.currentSection === 'wishes') {
-            // ✅ Go back from wishes to last assessment question (s5_q12)
+            // 🫡 Go back from wishes to last assessment question (s5_q12)
             this.currentSection = this.data.assessmentSections.length - 1;
             const section = this.data.assessmentSections[this.currentSection];
             this.currentQuestion = section.questions.length - 1;
@@ -991,7 +991,7 @@ class SapphireAssessment {
             this.updateProgress();
         }
         else if (this.currentSection === 'pain') {
-            // ✅ Go back from pain to wishes
+            // 🫡 Go back from pain to wishes
             this.saveBonusResponse('pain');
             this.currentSection = 'wishes';
             this.renderBonusSection('wishes');

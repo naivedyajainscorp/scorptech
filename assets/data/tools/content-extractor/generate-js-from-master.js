@@ -110,4 +110,4 @@ if (typeof window !== "undefined") {
 
 fs.writeFileSync(path.join(jsVersionFolder, "assessment-responses.js"), rebuiltResponses.trim(), "utf8");
 
-console.log(`✅ JS generated for version ${version} → exports/js/${version}`);
+console.log(`🫡 JS generated for version ${version} → exports/js/${version}`);

@@ -125,7 +125,7 @@ export class WordSlider {
 export function initWordSlider() {
   const sliders = document.querySelectorAll('[data-word-rotator]');
   sliders.forEach(el => new WordSlider(el));
-  console.log(`✅ Word Rotator initialized with Dynamic Width & Resize Support`);
+  console.log(`🫡 Word Rotator initialized with Dynamic Width & Resize Support`);
 }
 
 export default WordSlider;

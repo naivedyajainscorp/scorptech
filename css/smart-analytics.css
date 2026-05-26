@@ -3097,7 +3097,7 @@
   .infinite-scroll-container {
     height: 320px;
 
-    /* ✅ Reduce container overhead on mobile */
+    /* 🫡 Reduce container overhead on mobile */
     border-radius: 8px;
   }
 
@@ -3109,7 +3109,7 @@
     font-size: 0.95rem;
   }
 
-  /* ✅ Reduce shadow complexity on mobile */
+  /* 🫡 Reduce shadow complexity on mobile */
   .scroll-card {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
   }
@@ -3135,7 +3135,7 @@
    ════════════════════════════════════════════════════════════════════ */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .infinite-scroll-container {
-    /* ✅ Sharper rendering on Retina displays */
+    /* 🫡 Sharper rendering on Retina displays */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

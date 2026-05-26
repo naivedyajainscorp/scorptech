@@ -131,7 +131,7 @@ export async function initWaves(selector, options = {}) {
   });
 
   element.__vantaEffect = effect;
-  console.log('✅ Waves initialized', { color, wave, shine });
+  console.log('🫡 Waves initialized', { color, wave, shine });
   return effect;
 }
 

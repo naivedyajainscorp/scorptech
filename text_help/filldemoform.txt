@@ -1,6 +1,6 @@
 console.log("🚀 Auto-filling Sapphire Demo Form with dummy data...");
 
-// ✅ Dummy text values for inputs
+// 🫡 Dummy text values for inputs
 const dummyValues = {
     "name-demo": "John Doe",
     "phone-demo": "9876543210",
@@ -17,7 +17,7 @@ const dummyValues = {
     "location": "Tech Park, Jaipur"
 };
 
-// ✅ Populate text fields dynamically
+// 🫡 Populate text fields dynamically
 Object.keys(dummyValues).forEach(id => {
     let field = document.getElementById(id);
     if (field) {
@@ -28,20 +28,20 @@ Object.keys(dummyValues).forEach(id => {
     }
 });
 
-// ✅ Select radio buttons for Organization Type
+// 🫡 Select radio buttons for Organization Type
 document.querySelector("[name='orgType'][value='Non-Government']").checked = true;
 
-// ✅ Select checkboxes for Industry Scale
+// 🫡 Select checkboxes for Industry Scale
 const industrySelections = ["Corporate Offices", "IT Parks"];
 document.querySelectorAll("[name='industry']").forEach(checkbox => {
     if (industrySelections.includes(checkbox.value)) checkbox.checked = true;
 });
 
-// ✅ Fill Asset Quantity and Cost dropdowns
+// 🫡 Fill Asset Quantity and Cost dropdowns
 document.querySelector("[name='assetquantity'][value='100 to 300']").checked = true;
 document.querySelector("[name='asset_cost'][value='₹30 to ₹50 Lakhs']").checked = true;
 
-// ✅ Select a Management System option
+// 🫡 Select a Management System option
 document.querySelector("[name='asset_software'][value='MS Excel / Google Sheets']").checked = true;
 
-console.log("✅ Dummy form entries successfully populated!");
+console.log("🫡 Dummy form entries successfully populated!");

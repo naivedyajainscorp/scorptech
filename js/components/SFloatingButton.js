@@ -25,7 +25,7 @@ export class SFloatingButton {
     });
 
     if (this.button && this.menu) {
-      console.log('✅ Initializing floating button...');
+      console.log('🫡 Initializing floating button...');
       this.init();
     } else {
       console.error('❌ Floating button or menu not found');
@@ -66,7 +66,7 @@ export class SFloatingButton {
               + parseFloat(cs.marginTop    || 0)
               + parseFloat(cs.marginBottom || 0);
           }
-          const targetTop = target.getBoundingClientRect().top + window.scrollY - navbarHeight - 16;
+          const targetTop = target.getBoundingClientRect().top + window.scrollY - navbarHeight + 16;
           console.log('📍 Scroll target:', dataTarget, 'navbarHeight:', navbarHeight, 'targetTop:', targetTop);
           window.scrollTo({ top: targetTop, behavior: 'smooth' });
         }
@@ -144,7 +144,7 @@ export class SFloatingButton {
       });
     }
 
-    console.log('✅ Floating button initialized successfully');
+    console.log('🫡 Floating button initialized successfully');
   }
 
 

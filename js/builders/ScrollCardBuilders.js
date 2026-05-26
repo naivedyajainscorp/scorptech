@@ -3099,5 +3099,5 @@ export const FuelEconomyCardBuilder = (index) => {
 // VERIFICATION
 // ═══════════════════════════════════════════════════════════════════════════
 
-console.log('✅ ScrollCardBuilders.js loaded successfully');
+console.log('🫡 ScrollCardBuilders.js loaded successfully');
 console.log('📊 All 27 card builders ready');

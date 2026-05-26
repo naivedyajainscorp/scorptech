@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', async () => { // ← Changed to as
     console.log('🔄 Loading analytics data from JSON...');
     await loadAnalyticsData();
     await initializeFuelPrices();
-    console.log('✅ Analytics data and Fuel prices loaded');
+    console.log('🫡 Analytics data and Fuel prices loaded');
   } catch (error) {
     console.warn('⚠️ Failed to load analytics data, using fallback:', error);
   }
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', async () => { // ← Changed to as
   if (canvasElement) {
     const canvasAnimation = new AnalyticsCanvasAnimation('analyticsNetworkCanvas');
     canvasAnimation.init();
-    console.log('✅ Analytics canvas animation initialized');
+    console.log('🫡 Analytics canvas animation initialized');
   } else {
     console.warn('⚠️ Analytics canvas not found');
   }
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', async () => { // ← Changed to as
     }
   });
 
-  console.log('✅ Analytics icon rains initialized');
+  console.log('🫡 Analytics icon rains initialized');
 
   //=============================================================================
   // 3. INFINITE SCROLLS WITH CARD BUILDERS (27 scrolls - CORRECT IDs)
@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', async () => { // ← Changed to as
     }
   });
 
-  console.log(`✅ Initialized ${initializedCount}/27 infinite scrolls (all vertical)`);
+  console.log(`🫡 Initialized ${initializedCount}/27 infinite scrolls (all vertical)`);
 
   //=============================================================================
   // 4. CAPITAL ALLOCATION HEATMAP
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', async () => { // ← Changed to as
   const heatmapContainer = document.getElementById('viz-capital-allocation');
   if (heatmapContainer) {
     const heatmap = new CapitalAllocationHeatmap('viz-capital-allocation');
-    console.log('✅ Capital allocation heatmap initialized');
+    console.log('🫡 Capital allocation heatmap initialized');
   } else {
     console.warn('⚠️ Heatmap container not found');
   }
@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', async () => { // ← Changed to as
   const opexContainer = document.getElementById('viz-opex-overview');
   if (opexContainer) {
     const opexViz = new OpexOverview('viz-opex-overview');
-    console.log('✅ OPEX Overview visualization initialized');
+    console.log('🫡 OPEX Overview visualization initialized');
   } else {
     console.warn('⚠️ OPEX Overview container not found');
   }
@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', async () => { // ← Changed to as
   if (protectionContainer) {
     const protectionViz = new ConsolidatedProtection('viz-protection-consolidated');
     protectionViz.init();
-    console.log('✅ Consolidated Protection visualization initialized');
+    console.log('🫡 Consolidated Protection visualization initialized');
   } else {
     console.warn('⚠️ Consolidated Protection container not found');
   }
@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', async () => { // ← Changed to as
   const protectionGridContainer = document.getElementById('viz-protection-category');
   if (protectionGridContainer) {
     new ProtectionCategoryGrid('viz-protection-category');
-    console.log('✅ Protection Category Grid initialized');
+    console.log('🫡 Protection Category Grid initialized');
   } else {
     console.warn('⚠️ Protection Category Grid container not found');
   }
@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', async () => { // ← Changed to as
   const protectionTypeContainer = document.getElementById('viz-protection-type');
   if (protectionTypeContainer) {
     new ProtectionTypeBreakdown('viz-protection-type');
-    console.log('✅ Protection Type Breakdown initialized');
+    console.log('🫡 Protection Type Breakdown initialized');
   } else {
     console.warn('⚠️ Protection Type Breakdown container not found');
   }
@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', async () => { // ← Changed to as
   const inspectionCorrelationContainer = document.getElementById('viz-inspection-correlation');
   if (inspectionCorrelationContainer) {
     new InspectionCorrelationViz('viz-inspection-correlation');
-    console.log('✅ Inspection Correlation initialized');
+    console.log('🫡 Inspection Correlation initialized');
   } else {
     console.warn('⚠️ Inspection Correlation container not found');
   }
@@ -261,7 +261,7 @@ document.addEventListener('DOMContentLoaded', async () => { // ← Changed to as
   if (netCostRecoveryContainer) {
     try {
       window.netCostRecoveryViz = new NetCostRecovery('viz-opex-net');
-      console.log('✅ Net Cost Recovery visualization initialized');
+      console.log('🫡 Net Cost Recovery visualization initialized');
     } catch (error) {
       console.error('❌ Failed to initialize Net Cost Recovery:', error);
     }
@@ -270,12 +270,12 @@ document.addEventListener('DOMContentLoaded', async () => { // ← Changed to as
   }
 
   //=============================================================================
-  // 6. PURCHASE TIMELINE VISUALIZATION ✅ ADD THIS SECTION
+  // 6. PURCHASE TIMELINE VISUALIZATION 🫡 ADD THIS SECTION
   //=============================================================================
   const timelineContainer = document.getElementById('viz-procurement-timeline');
   if (timelineContainer) {
     const timelineViz = new PurchaseTimeline('viz-procurement-timeline');
-    console.log('✅ Purchase Timeline visualization initialized');
+    console.log('🫡 Purchase Timeline visualization initialized');
   } else {
     console.warn('⚠️ Purchase Timeline container not found');
   }
@@ -286,7 +286,7 @@ document.addEventListener('DOMContentLoaded', async () => { // ← Changed to as
   const opexTimelineContainer = document.getElementById('viz-opex-timeline');
   if (opexTimelineContainer) {
     const opexTimeline = new OpexTrendTimeline('viz-opex-timeline');
-    console.log('✅ OPEX Trend Timeline visualization initialized');
+    console.log('🫡 OPEX Trend Timeline visualization initialized');
   } else {
     console.warn('⚠️ OPEX Trend Timeline container not found');
   }
@@ -320,7 +320,7 @@ document.addEventListener('DOMContentLoaded', async () => { // ← Changed to as
   const disposalDonutContainer = document.getElementById('viz-disposal-methods');
   if (disposalDonutContainer) {
     const disposalDonut = new DisposalMethodsDonut('viz-disposal-methods');
-    console.log('✅ Disposal Methods Donut initialized');
+    console.log('🫡 Disposal Methods Donut initialized');
   } else {
     console.warn('⚠️ Disposal Methods container not found');
   }
@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded', async () => { // ← Changed to as
   const disposalWaterfallContainer = document.getElementById('viz-disposal-waterfall');
   if (disposalWaterfallContainer) {
     const disposalWaterfall = new DisposalWaterfallAnalysis('viz-disposal-waterfall');
-    console.log('✅ Disposal Waterfall Analysis initialized');
+    console.log('🫡 Disposal Waterfall Analysis initialized');
   } else {
     console.warn('⚠️ Disposal Waterfall container not found');
   }
@@ -343,7 +343,7 @@ document.addEventListener('DOMContentLoaded', async () => { // ← Changed to as
   const categoryRetentionContainer = document.getElementById('viz-disposal-category');
   if (categoryRetentionContainer) {
     const categoryRetention = new CategoryRetentionViz('viz-disposal-category');
-    console.log('✅ Category Retention Visualization initialized');
+    console.log('🫡 Category Retention Visualization initialized');
   } else {
     console.warn('⚠️ Category Retention container not found');
   }
@@ -354,7 +354,7 @@ document.addEventListener('DOMContentLoaded', async () => { // ← Changed to as
   const depreciationVizContainer = document.getElementById('viz-depreciation');
   if (depreciationVizContainer) {
     const depreciationViz = new DepreciationViz('viz-depreciation');
-    console.log('✅ Depreciation Visualization initialized');
+    console.log('🫡 Depreciation Visualization initialized');
   } else {
     console.warn('⚠️ Depreciation Visualization container not found');
   }
@@ -367,7 +367,7 @@ document.addEventListener('DOMContentLoaded', async () => { // ← Changed to as
   const fuelEconomyContainer = document.getElementById('viz-fuel-economy');
   if (fuelEconomyContainer) {
     new FuelEconomy('viz-fuel-economy');
-    console.log('✅ Fuel Economy visualization initialized');
+    console.log('🫡 Fuel Economy visualization initialized');
   } else {
     console.warn('⚠️ Fuel Economy container not found');
   }

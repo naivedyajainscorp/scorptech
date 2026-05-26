@@ -26,5 +26,5 @@ export function initCarouselHoverPause() {
     }, { passive: true });
   });
 
-  console.log('✅ Carousel hover pause initialized for', carousels.length, 'carousels');
+  console.log('🫡 Carousel hover pause initialized for', carousels.length, 'carousels');
 }

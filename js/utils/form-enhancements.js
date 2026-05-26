@@ -72,5 +72,5 @@ const FormEnhancements = {
 // Expose globally
 window.FormEnhancements = FormEnhancements;
 
-// ✅ ES6 Module Export (for main.js)
+// 🫡 ES6 Module Export (for main.js)
 export { FormEnhancements };

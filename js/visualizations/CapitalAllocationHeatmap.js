@@ -279,7 +279,7 @@ export class CapitalAllocationHeatmap {
       }
     }, this.changeInterval);
 
-    console.log('✅ Service Station Budget Animation Started');
+    console.log('🫡 Service Station Budget Animation Started');
   }
 
   destroy() {
