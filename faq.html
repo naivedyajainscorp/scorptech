@@ -1,928 +1,1258 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-    <link rel="icon" type="image/png" sizes="48x48" href="assets/images/scorp-logo-favicon-96.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/images/scorp-logo-favicon-96.png">
-    <link rel="icon" type="image/png" sizes="144x144" href="assets/images/scorp-logo-favicon-144.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/scorp-logo-favicon-192.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/scorp-logo-favicon-180.png">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>FAQ — Sapphire ERP & EAM Platform | SCORP</title>
-        <meta name="description" content="Frequently Asked Questions about SCORP and Sapphire ERP & EAM. Find answers about implementation, modules, pricing, and how our platform transforms industrial operations.">
-        <meta name="keywords" content="Sapphire FAQ, SCORP software help, ERP implementation questions, EAM platform details, industrial software support">
-        <link rel="canonical" href="https://scorptech.in/faq.html">
-        <meta property="og:title" content="FAQ — Sapphire ERP & EAM Platform | SCORP">
-        <meta property="og:description" content="Common questions and answers about Sapphire ERP & EAM implementation and features.">
-        <meta property="og:url" content="https://scorptech.in/faq.html">
-        <meta property="og:type" content="website">
-        <meta name="robots" content="index, follow">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     SCORP NAVIGATION 
-     ═══════════════════════════════════════════════════════════════ -->
-<nav class="navbar navbar-expand-xxl s-navbar" id="scorpNavbar">
-    
-    <!-- Brand -->
-    <a class="navbar-brand s-navbar-brand" href="index.html">
-      <div class="s-brand-logo">
-        <img src="assets/images/Scorp-Logo.png" alt="Scorptech" width="24" height="24" style="filter: brightness(0) invert(1);" loading="lazy">
-      </div>
-      <span class="s-brand-text">SCORP</span>
-    </a>
-
-    <!-- Animated Hamburger Toggle -->
-    <button class="navbar-toggler s-mobile-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="s-hamburger-box">
-        <span class="s-hamburger-inner"></span>
-      </span>
-    </button>
-
-    <!-- Collapsible Content -->
-    <div class="collapse navbar-collapse" id="navbarContent">
-      <ul class="navbar-nav ms-auto s-nav-links">
-        
-        <!-- Home -->
-        <li class="nav-item">
-          <a class="nav-link s-nav-link" href="index.html">
-            <i class="fas fa-home-alt"></i>
-            <span>Home</span>
-          </a>
-        </li>
-
-        <!-- Sapphire -->
-        <li class="nav-item">
-          <a class="nav-link s-nav-link" href="sapphire.html">
-            <i class="fas fa-diamond"></i>
-            <span>Sapphire</span>
-          </a>
-        </li>
-
-        <!-- Contact -->
-        <li class="nav-item">
-          <a class="nav-link s-nav-link" href="contact.html">
-            <i class="bi bi-telephone-outbound-fill"></i>
-            <span>Contact</span>
-          </a>
-        </li>
-
-        <!-- About -->
-        <li class="nav-item">
-          <a class="nav-link s-nav-link" href="about.html">
-            <i class="fas fa-users-line"></i>
-            <span>About</span>
-          </a>
-        </li>
-
-
-
-        <!-- Resources Dropdown (Internal Pages) -->
-        <li class="nav-item dropdown s-nav-dropdown-internal">
-          <a class="nav-link s-nav-link dropdown-toggle" 
-             href="#" 
-             role="button" 
-             data-bs-toggle="dropdown" 
-             aria-expanded="false"
-             data-dropdown-id="resources">
-            <i class="bi bi-grid-3x3-gap-fill"></i>
-            <span>Resources</span>
-            <!-- Active Indicator Badge -->
-            <span class="s-active-badge"></span>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end s-internal-dropdown-menu">
-            <li>
-              <a class="dropdown-item s-internal-menu-item" href="faq.html" data-page="faq.html">
-                <i class="fas fa-circle-question"></i>
-                <span>FAQ</span>
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item s-internal-menu-item" href="terms_of_use.html" data-page="terms_of_use.html">
-                <i class="fas fa-file-contract"></i>
-                <span>Terms of Use</span>
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item s-internal-menu-item" href="privacy_policy.html" data-page="privacy_policy.html">
-                <i class="fas fa-file-shield"></i>
-                <span>Privacy Policy</span>
-              </a>
-            </li>
-          </ul>
-        </li>
-
-        <!-- Announcement Icon -->
-        <li class="nav-item">
-          <a class="nav-link s-nav-link s-nav-link-icon" href="announcement.html" title="Announcements">
-            <i class="fa-solid fa-bullhorn fa-rotate-by" style="--fa-rotate-angle: 325deg;"></i>
-          </a>
-        </li>
-
-        <!-- Book Demo Button (Green Styled) -->
-<li class="nav-item">
-  <a class="book-demo-button" href="book-demo.html">
-    <i class="fas fa-calendar-alt"></i>
-    <span><strong>Book Demo</strong></span>
-  </a>
-</li>
-
-
-        <!-- Go to Sapphire Dropdown (External Links - Blue Styled) -->
-        <li class="nav-item dropdown s-sapphire-dropdown">
-          <button class="btn s-sapphire-trigger dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-            <span>go to</span>
-            <div class="s-sapphire-logo">
-              <img src="assets/images/scorp-sapphire-cropped.png" alt="Sapphire" width="32" height="32" style="border-radius: 4px;" loading="lazy">
-            </div>
-            <span><strong>Sapphire</strong></span>
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end s-sapphire-menu">
-            <li>
-              <a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/login" target="_blank">
-                <i class="bi bi-door-open-fill"></i>
-                <span>Log-in</span>
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/register" target="_blank">
-                <i class="bi bi-person-plus-fill"></i>
-                <span>Sign-up</span>
-              </a>
-            </li>
-          </ul>
-        </li>
-
-      </ul>
-    </div>
-</nav>
-
-
-
-        <!-- FAQ Section -->
-<section class="s-hero s-hero-compact">
-  <img src="assets/images/faq-hero.png" alt="" aria-hidden="true" loading="lazy">
-  <div class="s-hero-overlay-2" aria-hidden="true"></div>
-  <div class="container">
-    <div class="s-hero-content">
-      <h1 class="s-hero-title">Frequently Asked Questions</h1>
-      <p class="s-hero-subtitle">Your questions, answered. Everything you need to know about Sapphire ERP & EAM.</p>
-    </div>
-    <div class="s-hero-microcopy mt-4">
-  <div class="d-flex flex-wrap justify-content-center gap-2 mb-3">
-    <span class="s-pill s-pill-frost s-pill-lg">
-      <i class="fas fa-bolt me-1"></i>
-      Quick Answers
-    </span>
-    <span class="s-pill s-pill-frost s-pill-lg">
-      <i class="fas fa-user-check me-1"></i>
-      Setup Help
-    </span>
-    <span class="s-pill s-pill-frost s-pill-lg">
-      <i class="fas fa-clock me-1"></i>
-      Fast Response
-    </span>
-    <span class="s-pill s-pill-frost s-pill-lg">
-      <i class="fas fa-cogs me-1"></i>
-      Implementation
-    </span>
-    <span class="s-pill s-pill-frost s-pill-lg">
-      <i class="fas fa-headset me-1"></i>
-      Need Human Help?
-    </span>
-  </div>
-
-  <div class="d-flex flex-wrap justify-content-center gap-3">
-    <a href="#DemoFormSection" class="s-btn s-btn-success s-btn-glare">
-      <i class="fas fa-calendar-check me-1"></i>
-      Book a Demo
-    </a>
-    <a href="contact.html" class="s-btn s-btn-primary s-btn-glare">
-      <i class="fas fa-phone-alt me-1"></i>
-      Contact Support
-    </a>
-  </div>
-</div>
-  </div>
-</section>
-        <div class="container">
-            <div class="s-accordion" id="faqAccordion">
-                <div class="s-accordion-item s-accordion-active">
-                    <button class="s-accordion-trigger">
-                        <span class="s-accordion-trigger-text">What is Sapphire?</span>
-                        <i class="fas fa-chevron-down s-accordion-icon"></i>
-                    </button>
-                    <div class="s-accordion-panel">
-                        <div class="s-accordion-body">
-                            <p>Sapphire is an advanced ERP platform purpose-built for fixed asset lifecycle management. Designed for modern workplaces, it enables real-time operations, simplified workflows, and intuitive usability across departments and industries.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="s-accordion-item">
-                    <button class="s-accordion-trigger">
-                        <span class="s-accordion-trigger-text">क्या सैफायर भारत में निर्मित है?<br>(Is Sapphire Made in India?)</span>
-                        <i class="fas fa-chevron-down s-accordion-icon"></i>
-                    </button>
-                    <div class="s-accordion-panel">
-                        <div class="s-accordion-body">
-                            <p>हाँ, सैफायर पूरी तरह से भारत में डिज़ाइन और विकसित किया गया है। <strong>स्कॉर्पटेक टेक्नोलॉजीज प्राइवेट लिमिटेड</strong> एक भारतीय कंपनी है और सैफायर भारतीय तकनीकी आत्मनिर्भरता का प्रतीक है。</p>
-                            <br>
-                            <img src="assets/images/made-in-India-seal.png" alt="Made in India Seal" style="max-width:150px;" loading="lazy">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="s-accordion-item">
-                    <button class="s-accordion-trigger">
-                        <span class="s-accordion-trigger-text">Is Sapphire suitable for small and medium enterprises?</span>
-                        <i class="fas fa-chevron-down s-accordion-icon"></i>
-                    </button>
-                    <div class="s-accordion-panel">
-                        <div class="s-accordion-body">
-                            <p>Yes. Sapphire is engineered to be cost-effective and scalable, making it an ideal solution for MSMEs seeking digital transformation without heavy IT investment.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="s-accordion-item">
-                    <button class="s-accordion-trigger">
-                        <span class="s-accordion-trigger-text">Can Sapphire be accessed on mobile devices?</span>
-                        <i class="fas fa-chevron-down s-accordion-icon"></i>
-                    </button>
-                    <div class="s-accordion-panel">
-                        <div class="s-accordion-body">
-                            <p>Absolutely. Sapphire is fully mobile-optimized. Every module and feature is accessible from smartphones—enabling real-time updates, inspections, approvals, and operations on the go.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="s-accordion-item">
-                    <button class="s-accordion-trigger">
-                        <span class="s-accordion-trigger-text">Does Sapphire support multi-location workplaces?</span>
-                        <i class="fas fa-chevron-down s-accordion-icon"></i>
-                    </button>
-                    <div class="s-accordion-panel">
-                        <div class="s-accordion-body">
-                            <p>Yes. Sapphire allows seamless management of multiple branches, hierarchical addresses, department-level structuring, and shift planning across locations.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="s-accordion-item">
-                    <button class="s-accordion-trigger">
-                        <span class="s-accordion-trigger-text">What kind of assets can Sapphire track?</span>
-                        <i class="fas fa-chevron-down s-accordion-icon"></i>
-                    </button>
-                    <div class="s-accordion-panel">
-                        <div class="s-accordion-body">
-                            <p>Sapphire can manage a diverse set of "<strong>fixed assets</strong>"—ranging from hand tools, machinery, and vehicles to materials, blends, and consumables—across their complete lifecycle.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="s-accordion-item">
-                    <button class="s-accordion-trigger">
-                        <span class="s-accordion-trigger-text">What are the reporting features available?</span>
-                        <i class="fas fa-chevron-down s-accordion-icon"></i>
-                    </button>
-                    <div class="s-accordion-panel">
-                        <div class="s-accordion-body">
-                            <p>The platform provides role-specific inspection checklists, item-level reporting rubrics, and real-time condition reports, enabling structured audits and actionable insights.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="s-accordion-item">
-                    <button class="s-accordion-trigger">
-                        <span class="s-accordion-trigger-text">Can Sapphire handle maintenance schedules and warranties?</span>
-                        <i class="fas fa-chevron-down s-accordion-icon"></i>
-                    </button>
-                    <div class="s-accordion-panel">
-                        <div class="s-accordion-body">
-                            <p>Yes. Sapphire logs scheduled and event-based maintenance, including services covered under warranties, maintenance contracts, and insurance policies. Spare parts, labor, and material usage are also tracked and recorded.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="s-accordion-item">
-                    <button class="s-accordion-trigger">
-                        <span class="s-accordion-trigger-text">Does Sapphire support role-based access?</span>
-                        <i class="fas fa-chevron-down s-accordion-icon"></i>
-                    </button>
-                    <div class="s-accordion-panel">
-                        <div class="s-accordion-body">
-                            <p>Yes. With dedicated portals for different user roles (owners, managers, issuers, staff), Sapphire ensures secure, streamlined, and role-specific access throughout the system.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="s-accordion-item">
-                    <button class="s-accordion-trigger">
-                        <span class="s-accordion-trigger-text">Is the system customizable?</span>
-                        <i class="fas fa-chevron-down s-accordion-icon"></i>
-                    </button>
-                    <div class="s-accordion-panel">
-                        <div class="s-accordion-body">
-                            <p>Sapphire encapsulates all essential generic workflows. However, for specific needs, custom modules can be developed on request. These are scoped separately and involve additional cost and time.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="s-accordion-item">
-                    <button class="s-accordion-trigger">
-                        <span class="s-accordion-trigger-text">Can Sapphire handle requests like issue, return or location change?</span>
-                        <i class="fas fa-chevron-down s-accordion-icon"></i>
-                    </button>
-                    <div class="s-accordion-panel">
-                        <div class="s-accordion-body">
-                            <p>Yes. Sapphire includes structured request workflows for issuing items, submitting returns or surrenders, and processing location changes—each integrated with approval hierarchies and logs.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="s-accordion-item">
-                    <button class="s-accordion-trigger">
-                        <span class="s-accordion-trigger-text">What kind of analytics does Sapphire offer?</span>
-                        <i class="fas fa-chevron-down s-accordion-icon"></i>
-                    </button>
-                    <div class="s-accordion-panel">
-                        <div class="s-accordion-body">
-                            <p>Sapphire includes performance, financial, and operational analytics: usage trends, breakdown frequencies, failure rates, asset downtime, service logs, and consumption behavior across time.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="s-accordion-item">
-                    <button class="s-accordion-trigger">
-                        <span class="s-accordion-trigger-text">How does Sapphire handle inspections?</span>
-                        <i class="fas fa-chevron-down s-accordion-icon"></i>
-                    </button>
-                    <div class="s-accordion-panel">
-                        <div class="s-accordion-body">
-                            <p>Inspections are conducted using pre-defined checklists. These can be scheduled periodically, performed on the go, and used to generate structured reports that enable prompt resolution of issues.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="s-accordion-item">
-                    <button class="s-accordion-trigger">
-                        <span class="s-accordion-trigger-text">How does Sapphire help in reducing asset downtime?</span>
-                        <i class="fas fa-chevron-down s-accordion-icon"></i>
-                    </button>
-                    <div class="s-accordion-panel">
-                        <div class="s-accordion-body">
-                            <p>With real-time alerts and metrics like MTBF, MTTR, and service intervals, Sapphire ensures proactive maintenance and planning—minimizing operational disruptions and maximizing uptime.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="s-accordion-item">
-                    <button class="s-accordion-trigger">
-                        <span class="s-accordion-trigger-text">How secure is Sapphire’s data?</span>
-                        <i class="fas fa-chevron-down s-accordion-icon"></i>
-                    </button>
-                    <div class="s-accordion-panel">
-                        <div class="s-accordion-body">
-                            <p>Security is integral to Sapphire’s architecture. It features encrypted storage, role-based access, audit trails, and centralized workflows to ensure data integrity and protection.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="s-accordion-item">
-                    <button class="s-accordion-trigger">
-                        <span class="s-accordion-trigger-text">Does Sapphire support integrations with external software?</span>
-                        <i class="fas fa-chevron-down s-accordion-icon"></i>
-                    </button>
-                    <div class="s-accordion-panel">
-                        <div class="s-accordion-body">
-                            <p>Yes. Sapphire can integrate via APIs and supports exportable formats to sync with accounting systems, HRMS, or third-party platforms as required.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="s-accordion-item">
-                    <button class="s-accordion-trigger">
-                        <span class="s-accordion-trigger-text">Can Sapphire generate financial summaries?</span>
-                        <i class="fas fa-chevron-down s-accordion-icon"></i>
-                    </button>
-                    <div class="s-accordion-panel">
-                        <div class="s-accordion-body">
-                            <p>Yes. It provides detailed financial reporting, including ownership costs, maintenance expenses, consumption tracking, warranty utilization, and depreciation assessments.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="s-accordion-item">
-                    <button class="s-accordion-trigger">
-                        <span class="s-accordion-trigger-text">How is Sapphire implemented?</span>
-                        <i class="fas fa-chevron-down s-accordion-icon"></i>
-                    </button>
-                    <div class="s-accordion-panel">
-                        <div class="s-accordion-body">
-                            <p>Sapphire is currently deployed directly within enterprise environments (on-premise or private cloud). However, it will soon be available as a fully cloud-based SaaS solution. Deployment today is guided, fast, and minimally disruptive.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="s-accordion-item">
-                    <button class="s-accordion-trigger">
-                        <span class="s-accordion-trigger-text">Does Sapphire require specialized training to use?</span>
-                        <i class="fas fa-chevron-down s-accordion-icon"></i>
-                    </button>
-                    <div class="s-accordion-panel">
-                        <div class="s-accordion-body">
-                            <p>No. The system is designed for intuitive adoption. With simplified UIs and clear workflows, even users with limited digital literacy can begin using Sapphire with minimal onboarding.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="s-accordion-item">
-                    <button class="s-accordion-trigger">
-                        <span class="s-accordion-trigger-text">Does Sapphire support depreciation calculations?</span>
-                        <i class="fas fa-chevron-down s-accordion-icon"></i>
-                    </button>
-                    <div class="s-accordion-panel">
-                        <div class="s-accordion-body">
-                            <p>Yes. Sapphire provides dual-mode depreciation tracking based on both the Indian Companies Act and the Income Tax Act. It also calculates partial-year depreciation as per standard Indian accounting norms.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-
-        <!-- ════════════════════════════════════════════════════════════
-     SECTION 1 — CTA
-     ════════════════════════════════════════════════════════════ -->
-<section class="s-cta">
-
-  <svg class="s-cta__accent s-cta__accent--tl" width="80" height="80" viewBox="0 0 80 80" fill="none">
-    <path d="M1 79 L1 1 L79 1" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
-    <rect x="1" y="1" width="10" height="10" fill="rgba(255,255,255,0.12)"/>
-  </svg>
-  <svg class="s-cta__accent s-cta__accent--br" width="80" height="80" viewBox="0 0 80 80" fill="none">
-    <path d="M1 79 L1 1 L79 1" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
-    <rect x="1" y="1" width="10" height="10" fill="rgba(255,255,255,0.12)"/>
-  </svg>
-
-  <div class="s-cta__inner">
-    <p class="s-eyebrow">Came this far... to manage chaos?</p>
-    <h2 class="s-cta__headline">
-      CHAOS ENDS<br>
-      <span>CONTROL BEGINS</span><br>HERE!
-    </h2>
-    <p class="s-cta__sub">
-      Sapphire adapts to your workflows — not the other way around.
-      Real operations. Real deadlines. Real accountability.
-    </p>
-    <div class="s-cta__actions">
-                <a href="book-demo.html" class="s-btn s-btn-success s-btn-glare s-full-width-btn">
-                    <i class="bi bi-collection-play-fill me-1"></i>
-                    <span>Book a Demo</span>
-                </a>
-                
-                <a href="contact.html" class="s-btn s-btn-secondary s-btn-glare s-full-width-btn">
-                    <i class="bi bi-telephone-outbound-fill me-1"></i>
-                    <span>Talk to Our Team</span>
-                </a>
-    </div>
-    <div class="s-cta__pills">
-      <a href="/sapphire.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">Sapphire</a>
-      <a href="/intelligence.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">Intelligence</a>
-      <a href="/analytics.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">Analytics</a>
-      <a href="/blog/index.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">Knowledge Hub</a>
-      <a href="/about.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">About</a>
-      <a href="/faq.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">FAQs</a>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════════════════════════
-     SECTION 2 — FEATURED BLOG CARDS
-     ════════════════════════════════════════════════════════════ -->
-<section class="s-blogs-featured">
-  <div class="s-wrap">
-    <div class="s-section-intro">
-      <div class="s-section-intro__text">
-        <p class="s-eyebrow">From the Knowledge Hub</p>
-        <h2>EAM intelligence.<br><em>All of it.</em></h2>
-      </div>
-      <a href="/blog/index.html" class="s-view-all">
-        View all 42 articles
-        <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-
-<div class="s-blog-grid">
-
-  <!-- Card 1 — Hero -->
-  <a href="/blog/what-is-eam-enterprise-asset-management-guide.html" class="s-full-pic-card text-decoration-none">
-    <img src="assets/images_blog/what_is_EAM_hero.png" alt="EAM Fundamentals" class="s-full-pic-card__img" loading="lazy"> class="s-full-pic-card__img">
-    <div class="s-full-pic-card__content">
-      <div class="s-full-pic-card__meta">
-        <span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm">
-          <i class="fa-solid fa-book-open me-1"></i>Fundamentals
-        </span>
-        <p class="s-full-pic-card__title">What Is Enterprise Asset Management? A Complete Guide</p>
-      </div>
-      <div class="s-full-pic-card__bar">
-        <span class="s-full-pic-card__read">8 min read</span>
-        <span class="s-full-pic-card__cta">
-          Read article 
-          <svg viewBox="0 0 16 16" fill="none">
-            <path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-      </div>
-    </div>
-  </a>
-
-  <!-- Card 2 -->
-  <a href="/blog/work-order-management-backbone-operations.html" class="s-full-pic-card text-decoration-none">
-    <img src="assets/images_industries/Corporate_Offices.jpeg" alt="Sapphire Modules" class="s-full-pic-card__img" loading="lazy">
-    <div class="s-full-pic-card__content">
-      <div class="s-full-pic-card__meta">
-        <span class="s-pill s-pill-sm s-pill-info s-pill-round-sm">
-          <i class="bi bi-window-stack"></i>Modules
-        </span>
-        <p class="s-full-pic-card__title">Sapphire Work Order Management: A Complete Deep Dive</p>
-      </div>
-      <div class="s-full-pic-card__bar">
-        <span class="s-full-pic-card__read">12 min read</span>
-        <span class="s-full-pic-card__cta">
-          Read article 
-          <svg viewBox="0 0 16 16" fill="none">
-            <path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-      </div>
-    </div>
-  </a>
-
-  <!-- Card 3 -->
-  <a href="/blog/manufacturing-equipment-downtime-eam.html" class="s-full-pic-card text-decoration-none">
-    <img src="assets/images_industries/automotive_service_station.jpeg" alt="EAM Industries" class="s-full-pic-card__img" loading="lazy">
-    <div class="s-full-pic-card__content">
-      <div class="s-full-pic-card__meta">
-        <span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm">
-          <i class="fa-solid fa-industry me-1"></i>Industries
-        </span>
-        <p class="s-full-pic-card__title">EAM for Manufacturing: Keep the Line Running</p>
-      </div>
-      <div class="s-full-pic-card__bar">
-        <span class="s-full-pic-card__read">10 min read</span>
-        <span class="s-full-pic-card__cta">
-          Read article 
-          <svg viewBox="0 0 16 16" fill="none">
-            <path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-      </div>
-    </div>
-  </a>
-
-  <!-- Card 4 -->
-  <a href="/blog/energy-monitoring-sustainability-analytics-eam.html" class="s-full-pic-card text-decoration-none">
-    <img src="assets/images_industries/warehouse.jpeg" alt="Asset Analytics" class="s-full-pic-card__img" loading="lazy">
-    <div class="s-full-pic-card__content">
-      <div class="s-full-pic-card__meta">
-        <span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm">
-          <i class="fa-solid fa-chart-line me-1"></i>Analytics
-        </span>
-        <p class="s-full-pic-card__title">Real-Time Asset Analytics: From Data to Decision</p>
-      </div>
-      <div class="s-full-pic-card__bar">
-        <span class="s-full-pic-card__read">7 min read</span>
-        <span class="s-full-pic-card__cta">
-          Read article 
-          <svg viewBox="0 0 16 16" fill="none">
-            <path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-      </div>
-    </div>
-  </a>
-
-  <!-- Card 5 -->
-  <a href="/blog/roi-of-eam-implementation-real-numbers.html" class="s-full-pic-card text-decoration-none">
-    <img src="assets/images_industries/hospital.jpeg" alt="Business Value" class="s-full-pic-card__img" loading="lazy">
-    <div class="s-full-pic-card__content">
-      <div class="s-full-pic-card__meta">
-        <span class="s-pill s-pill-sm s-pill-success s-pill-round-sm">
-          <i class="fa-solid fa-money-bill-wave me-1"></i>Business Value
-        </span>
-        <p class="s-full-pic-card__title">ROI of EAM Software: A Practical Calculation Guide</p>
-      </div>
-      <div class="s-full-pic-card__bar">
-        <span class="s-full-pic-card__read">9 min read</span>
-        <span class="s-full-pic-card__cta">
-          Read article 
-          <svg viewBox="0 0 16 16" fill="none">
-            <path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-      </div>
-    </div>
-  </a>
-
-</div>
-
-  </div>
-</section>
-
-
-<!-- ════════════════════════════════════════════════════════════
-     SECTION 3 — MARQUEE BLOGS
-     ════════════════════════════════════════════════════════════ -->
-<section class="s-marquee-section">
-
-  <div class="s-marquee-rule"><hr></div>
-
-  <div class="s-marquee-top">
-    <p><strong>42</strong> deep-dive articles across <strong>6</strong> pillars — no filler, ever.</p>
-    <a href="/blog/index.html" class="s-view-all">
-      Browse the full Knowledge Hub
-      <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-  </div>
-
-  <div class="s-marquee-wrap">
-
-    <!-- ROW 1 forward -->
-    <div class="s-mq-row s-mq-row--fwd">
-      <a href="/blog/what-is-eam-enterprise-asset-management-guide.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/manufacturing_factory.jpeg" alt="What Is Enterprise Asset Management? A Complete Guide" loading="lazy"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">What Is Enterprise Asset Management? A Complete Guide</p></div></a>
-      <a href="/blog/eam-vs-cmms-vs-erp-differences.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/automotive_service_station.jpeg" alt="EAM vs ERP: The Key Difference Explained" loading="lazy"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">EAM vs ERP: The Key Difference Explained</p></div></a>
-      <a href="/blog/asset-lifecycle-management-guide.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/construction.jpeg" alt="Asset Lifecycle Management: From Acquisition to Disposal" loading="lazy"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Asset Lifecycle Management: From Acquisition to Disposal</p></div></a>
-      <a href="/blog/preventive-predictive-reactive-maintenance.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/warehouse.jpeg" alt="Preventive vs Predictive Maintenance: Which Is Right?" loading="lazy"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Preventive vs Predictive Maintenance: Which Is Right?</p></div></a>
-      <a href="/blog/maintenance-kpis-that-actually-matter.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/hospital.jpeg" alt="Building a Maintenance Strategy from Zero" loading="lazy"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Building a Maintenance Strategy from Zero</p></div></a>
-      <a href="/blog/manufacturing-equipment-downtime-eam.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/diagnostic_center.jpeg" alt="The True Cost of Asset Downtime" loading="lazy"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">The True Cost of Asset Downtime</p></div></a>
-      <a href="/blog/compliance-audit-trails-eam.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/research_test_laoratories.jpeg" alt="ISO 55000: The Global Standard for Asset Management" loading="lazy"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">ISO 55000: The Global Standard for Asset Management</p></div></a>
-      <a href="/blog/work-order-management-backbone-operations.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Corporate_Offices.jpeg" alt="Sapphire Work Order Management: A Complete Deep Dive" loading="lazy"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Sapphire Work Order Management: A Complete Deep Dive</p></div></a>
-      <a href="/blog/spare-parts-inventory-management-eam.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/coworkingITpark.png" alt="Inventory Control in Sapphire: Zero Dead Stock" loading="lazy"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Inventory Control in Sapphire: Zero Dead Stock</p></div></a>
-      <a href="/blog/vendor-contractor-management-eam.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Retail_Chains_&_Shopping_malls.jpeg" alt="Sapphire Purchase Module: From PO to Payment" loading="lazy"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Sapphire Purchase Module: From PO to Payment</p></div></a>
-      <a href="/blog/construction-infrastructure-site-asset-tracking.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Real_Estate_Developors.jpeg" alt="Asset Tracking with Sapphire: Real-Time Visibility" loading="lazy"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Asset Tracking with Sapphire: Real-Time Visibility</p></div></a>
-      <a href="/blog/asset-performance-dashboards-what-to-track.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/schools_universites.jpeg" alt="Sapphire Dashboard Intelligence: Metrics That Matter" loading="lazy"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Sapphire Dashboard Intelligence: Metrics That Matter</p></div></a>
-      <a href="/blog/preventive-maintenance-scheduling-automation.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Hotels_Guest_Houses.jpeg" alt="Preventive Maintenance Scheduling in Sapphire EAM" loading="lazy"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Preventive Maintenance Scheduling in Sapphire EAM</p></div></a>
-      <a href="/blog/asset-register-single-source-of-truth.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/co-working_&_IT_Park_2.jpeg" alt="Document Management Inside Sapphire EAM" loading="lazy"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack"></i>Modules</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Document Management Inside Sapphire EAM</p></div></a>
-      <a href="/blog/manufacturing-equipment-downtime-eam.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Fitness_Centers_&_Gym.jpeg" alt="EAM for Manufacturing: Keep the Line Running" loading="lazy"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">EAM for Manufacturing: Keep the Line Running</p></div></a>
-      <a href="/blog/real-estate-facilities-management-eam.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/muncipal_departments.png" alt="Facility Management with Sapphire" loading="lazy"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Facility Management with Sapphire</p></div></a>
-      <a href="/blog/healthcare-medical-equipment-compliance.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/hospital.jpeg" alt="Healthcare Asset Management: Compliance Meets Efficiency" loading="lazy"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Healthcare Asset Management: Compliance Meets Efficiency</p></div></a>
-      <a href="/blog/energy-utilities-grid-asset-management.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/power_generation_unit.png" alt="Power & Utilities: EAM at Enterprise Scale" loading="lazy"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Power & Utilities: EAM at Enterprise Scale</p></div></a>
-      <a href="/blog/land-air-water-vehicles-eam.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Transmission_Network.png" alt="Oil & Gas Maintenance Operations and EAM" loading="lazy"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Oil & Gas Maintenance Operations and EAM</p></div></a>
-      <a href="/blog/it-parks-commercial-real-estate-eam.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/audit_desk.jpeg" alt="EAM for Real Estate Portfolios" loading="lazy"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">EAM for Real Estate Portfolios</p></div></a>
-      <a href="/blog/logistics-warehousing-fleet-facility-management.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Airport_Hangars.jpeg" alt="Airport Asset Management: Zero Tolerance for Failure" loading="lazy"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Airport Asset Management: Zero Tolerance for Failure</p></div></a>
-    </div>
-
-    <!-- ROW 2 reverse -->
-    <div class="s-mq-row s-mq-row--rev">
-      <a href="/blog/energy-monitoring-sustainability-analytics-eam.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/state-workshops.png" alt="Real-Time Asset Analytics: From Data to Decision" loading="lazy"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Real-Time Asset Analytics: From Data to Decision</p></div></a>
-      <a href="/blog/predictive-analytics-asset-failure-prevention.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Farm_Equipment_Warehouse.png" alt="Predictive Maintenance Analytics with Sapphire Smart" loading="lazy"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Predictive Maintenance Analytics with Sapphire Smart</p></div></a>
-      <a href="/blog/oee-overall-equipment-effectiveness-guide.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Cargo_Terminals.jpeg" alt="OEE Tracking: Beyond the Dashboard Number" loading="lazy"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">OEE Tracking: Beyond the Dashboard Number</p></div></a>
-      <a href="/blog/maintenance-kpis-that-actually-matter.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Concert_Hall.jpeg" alt="KPI Design for EAM Programs" loading="lazy"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">KPI Design for EAM Programs</p></div></a>
-      <a href="/blog/mtbf-mttr-reliability-numbers-guide.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Logistics_&_Fleet_Operations.png" alt="MTBF: Calculating and Reducing Mean Time Between Failure" loading="lazy"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">MTBF: Calculating and Reducing Mean Time Between Failure</p></div></a>
-      <a href="/blog/cost-analytics-maintenance-budget-savings.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Water_Supply_Infrastructure.png" alt="Maintenance Cost Benchmarking: Industry Standards" loading="lazy"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Maintenance Cost Benchmarking: Industry Standards</p></div></a>
-      <a href="/blog/digital-twins-and-eam-next-frontier.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Agro_Processing_Unit.jpeg" alt="Asset Health Scoring: A New Framework" loading="lazy"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Asset Health Scoring: A New Framework</p></div></a>
-      <a href="/blog/roi-of-eam-implementation-real-numbers.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Amusement_Parks.jpeg" alt="ROI of EAM Software: A Practical Calculation Guide" loading="lazy"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">ROI of EAM Software: A Practical Calculation Guide</p></div></a>
-      <a href="/blog/total-cost-of-ownership-asset-management.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Movie_Theaters.jpeg" alt="The Hidden Cost of Spreadsheet-Based Maintenance" loading="lazy"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">The Hidden Cost of Spreadsheet-Based Maintenance</p></div></a>
-      <a href="/blog/eam-implementation-roadmap-indian-enterprises.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Training_&_Vocational_centers.jpeg" alt="EAM Implementation: Why Most Fail and How Yours Won't" loading="lazy"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">EAM Implementation: Why Most Fail and How Yours Won't</p></div></a>
-      <a href="/blog/making-business-case-for-eam-investment.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Clubs_&_Leisure_Facilities.jpeg" alt="Justifying EAM Investment to the C-Suite" loading="lazy"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Justifying EAM Investment to the C-Suite</p></div></a>
-      <a href="/blog/maintenance-kpis-that-actually-matter.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Rail Maintenance Units.png" alt="From Reactive to Proactive: The Maintenance Maturity Model" loading="lazy"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">From Reactive to Proactive: The Maintenance Maturity Model</p></div></a>
-      <a href="/blog/eam-for-cfos-how-finance-reads-asset-data.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Fertilizer_&_Irrigation_depots.png" alt="EAM and ESG: Sustainability Through Asset Intelligence" loading="lazy"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">EAM and ESG: Sustainability Through Asset Intelligence</p></div></a>
-      <a href="/blog/vendor-contractor-management-eam.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Disaster_Response_Storage.png" alt="How to Choose Your EAM Vendor: A Buyer's Guide" loading="lazy"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">How to Choose Your EAM Vendor: A Buyer's Guide</p></div></a>
-      <a href="/blog/sapphire-eam-for-indian-msmes.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Shipping_Ports_&_Dock.jpeg" alt="Sapphire 2025: What's New and What's Next" loading="lazy"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Sapphire 2025: What's New and What's Next</p></div></a>
-      <a href="/blog/scorp-story-jaipur-honest-industrial-software.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Restaurants_&_Cafes.jpeg" alt="Built in Jaipur: The Scorptech Story" loading="lazy"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Built in Jaipur: The Scorptech Story</p></div></a>
-      <a href="/blog/eam-implementation-roadmap-indian-enterprises.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/transporation_agency.jpeg" alt="EAM in India: A Massive Market Coming of Age" loading="lazy"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">EAM in India: A Massive Market Coming of Age</p></div></a>
-      <a href="/blog/sapphire-vs-sap-pm.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Relief_Logistics.png" alt="Sapphire vs SAP PM: An Honest Side-by-Side" loading="lazy"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Sapphire vs SAP PM: An Honest Side-by-Side</p></div></a>
-      <a href="/blog/iot-integration-with-eam-sensors-to-work-orders.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Ground_support_bays.jpeg" alt="AI in Asset Management: What's Real, What's Hype" loading="lazy"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">AI in Asset Management: What's Real, What's Hype</p></div></a>
-      <a href="/blog/education-campus-infrastructure-management.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Public_Utility_Board.jpeg" alt="Customer Spotlight: Sapphire Deployed in 90 Days" loading="lazy"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">Customer Spotlight: Sapphire Deployed in 90 Days</p></div></a>
-      <a href="/blog/what-is-eam-enterprise-asset-management-guide.html" class="s-mini-card text-decoration-none"><div class="s-mini-card__img"><img src="assets/images_industries/Rescue_Equipment_Depots.png" alt="EAM Glossary: 60 Terms Every Maintenance Manager Must Know" loading="lazy"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div><div class="s-mini-card__body"><p class="s-mini-card__title">EAM Glossary: 60 Terms Every Maintenance Manager Must Know</p></div></a>
-    </div>
-
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════════════════════════
-     SECTION 4 — FOOTER
-     ════════════════════════════════════════════════════════════ -->
-<footer class="s-footer">
-
-  <div class="s-footer__top-strip">
-    <div class="s-footer__status">
-      <span class="s-status-dot"></span>
-      Sapphire is live — all systems operational
-    </div>
-    <div class="s-footer__top-cta">
-      <a href="/contact.html" class="s-btn-sm s-btn-primary s-btn-glare">
-        <i class="fas fa-comments me-1"></i>
-        Talk to our team
-      </a>
-      <a href="/book-demo.html" class="s-btn-sm s-btn-success s-btn-glare">
-        <i class="fas fa-calendar-alt me-1"></i>
-        Book a Demo
-      </a>
-    </div>
-  </div>
-
-  <div class="s-footer__body">
-
-    <div class="s-footer__brand">
-      <a href="/index.html" class="s-footer__logo" style="text-decoration: none;">
-        <div class="s-footer__logomark">
-          <img src="assets/images/Scorp-Logo.png" alt="Scorptech" width="22" height="22" style="filter: brightness(0) invert(1);" loading="lazy">
-        </div>
-        <span class="s-footer__logoname">SCORP</span>
-      </a>
-      <p class="s-footer__tagline">In the business of making<br><span class="s-footer__tagline-emphasis">yours simple!</span></p>
-      <div class="s-footer__contact">
-        <a href="tel:+919782383338" class="s-footer__contact-item">
-          <svg viewBox="0 0 16 16" fill="none"><path d="M3 3.5C3 3.224 3.224 3 3.5 3h2.379c.246 0 .46.163.523.402l.754 2.64a.542.542 0 01-.167.567L5.586 7.414c.981 2.016 2.56 3.595 4.576 4.576l.805-.903a.542.542 0 01.567-.167l2.64.754c.239.063.402.277.402.523V14.5c0 .276-.224.5-.5.5C6.044 15 1 9.956 1 3.5z" stroke="currentColor" stroke-width="1.2"/></svg>
-          +91 97823 83338
-        </a>
-        <a href="mailto:support@scorptech.in" class="s-footer__contact-item">
-          <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M1 5l7 5 7-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-          support@scorptech.in
-        </a>
-        <a href="/contact.html" class="s-footer__contact-item">
-          <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.375 4.5 8.5 4.5 8.5S12.5 9.375 12.5 6c0-2.485-2.015-4.5-4.5-4.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" stroke="currentColor" stroke-width="1.2"/></svg>
-          Jaipur, Rajasthan
-        </a>
-      </div>
-      <span class="s-footer__location">
-        <svg viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1"/><path d="M1.5 6h9M6 1.5a7 7 0 000 9M6 1.5a7 7 0 010 9" stroke="currentColor" stroke-width="0.8"/></svg>
-        Jaipur-built · Deployed globally
-      </span>
-    </div>
-
-    <div class="s-footer__links">
-
-<div>
-  <span class="s-footer__col-title">Explore</span>
-  <ul>
-    <li><a href="/index.html">Home</a></li>
-    <li><a href="/about.html#whyscorp">Why Scorptech</a></li>
-    <li><a href="/about.html">About Scorptech</a></li>
-    <li><a href="/index.html#sapphire-teaser">See Sapphire in Action</a></li>
-    <li><a href="/sapphire.html">Sapphire EAM</a></li>
-    <li><a href="/contact.html">Contact Us</a></li>
-    <li><a href="/book-demo.html">Book a Demo</a></li>
-  </ul>
-</div>
-<div>
-  <span class="s-footer__col-title">Platform</span>
-  <ul>
-    <li><a href="/sapphire.html">Sapphire</a></li>
-    <li><a href="/sapphire.html#why-sapphire">Why Sapphire</a></li>
-    <li><a href="/sapphire.html#sapphire-capabilities">Capabilities</a></li>
-    <li><a href="/sapphire.html#SapphireCoreSuite">Sapphire Core Suite</a></li>
-    <li><a href="/industry-use.html">Industry Use</a></li>
-    <li><a href="/sapphire.html#industries">Industries We Cater</a></li>
-    <li><a href="/how-do-i-use-sapphire.html">Getting Started</a></li>
-  </ul>
-</div>
-
-      <div>
-        <span class="s-footer__col-title">Resources</span>
-        <ul>
-          <li><a href="/blog/index.html">Knowledge Hub</a></li>
-          <li><a href="/faq.html">FAQs</a></li>
-          <li><a href="/privacy_policy.html">Privacy Policy</a></li>
-          <li><a href="/terms_of_use.html">Terms of Use</a></li>
-          <li><a href="mailto:support@scorptech.in">Support</a></li>
-        </ul>
-      </div>
-
-      <div class="s-footer__blog-section">
-        <div class="s-footer__blog-header">
-          <span class="s-footer__col-title" style="margin-bottom:0;">Knowledge Hub — 42 Articles</span>
-          <a href="/blog/index.html" class="s-view-all" style="font-size:0.72rem;">
-            View all
-            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-        <div class="s-blog-categories">
-
-          <details class="s-acc">
-            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-fundamentals"></span>Fundamentals<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-            <div class="s-acc__body">
-              <a href="/blog/what-is-eam-enterprise-asset-management-guide.html">What Is Enterprise Asset Management?</a>
-              <a href="/blog/eam-vs-cmms-vs-erp-differences.html">EAM vs ERP: The Key Difference</a>
-              <a href="/blog/asset-lifecycle-management-guide.html">Asset Lifecycle Management</a>
-              <a href="/blog/preventive-predictive-reactive-maintenance.html">Preventive vs Predictive Maintenance</a>
-              <a href="/blog/maintenance-kpis-that-actually-matter.html">Building a Maintenance Strategy</a>
-              <a href="/blog/manufacturing-equipment-downtime-eam.html">The True Cost of Asset Downtime</a>
-              <a href="/blog/compliance-audit-trails-eam.html">ISO 55000: The Global Standard</a>
-            </div>
-          </details>
-
-          <details class="s-acc">
-            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-modules"></span>Sapphire Modules<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-            <div class="s-acc__body">
-              <a href="/blog/work-order-management-backbone-operations.html">Work Order Management</a>
-              <a href="/blog/spare-parts-inventory-management-eam.html">Inventory Control</a>
-              <a href="/blog/vendor-contractor-management-eam.html">Purchase Module: PO to Payment</a>
-              <a href="/blog/construction-infrastructure-site-asset-tracking.html">Asset Tracking</a>
-              <a href="/blog/asset-performance-dashboards-what-to-track.html">Dashboard Intelligence</a>
-              <a href="/blog/preventive-maintenance-scheduling-automation.html">PM Scheduling</a>
-              <a href="/blog/asset-register-single-source-of-truth.html">Document Management</a>
-            </div>
-          </details>
-
-          <details class="s-acc">
-            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-industries"></span>Industries<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-            <div class="s-acc__body">
-              <a href="/blog/manufacturing-equipment-downtime-eam.html">Manufacturing</a>
-              <a href="/blog/real-estate-facilities-management-eam.html">Facility Management</a>
-              <a href="/blog/healthcare-medical-equipment-compliance.html">Healthcare</a>
-              <a href="/blog/energy-utilities-grid-asset-management.html">Power & Utilities</a>
-              <a href="/blog/land-air-water-vehicles-eam.html">Oil & Gas</a>
-              <a href="/blog/it-parks-commercial-real-estate-eam.html">Real Estate</a>
-              <a href="/blog/logistics-warehousing-fleet-facility-management.html">Aviation & Airports</a>
-            </div>
-          </details>
-
-          <details class="s-acc">
-            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-analytics"></span>Analytics<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-            <div class="s-acc__body">
-              <a href="/blog/energy-monitoring-sustainability-analytics-eam.html">Real-Time Asset Analytics</a>
-              <a href="/blog/predictive-analytics-asset-failure-prevention.html">Predictive Maintenance Analytics</a>
-              <a href="/blog/oee-overall-equipment-effectiveness-guide.html">OEE Tracking</a>
-              <a href="/blog/maintenance-kpis-that-actually-matter.html">KPI Design for EAM</a>
-              <a href="/blog/mtbf-mttr-reliability-numbers-guide.html">MTBF: Calculating & Reducing</a>
-              <a href="/blog/cost-analytics-maintenance-budget-savings.html">Maintenance Cost Benchmarking</a>
-              <a href="/blog/digital-twins-and-eam-next-frontier.html">Asset Health Scoring</a>
-            </div>
-          </details>
-
-          <details class="s-acc">
-            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-business"></span>Business Value<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-            <div class="s-acc__body">
-              <a href="/blog/roi-of-eam-implementation-real-numbers.html">ROI of EAM Software</a>
-              <a href="/blog/total-cost-of-ownership-asset-management.html">The Spreadsheet Trap</a>
-              <a href="/blog/eam-implementation-roadmap-indian-enterprises.html">Why EAM Implementations Fail</a>
-              <a href="/blog/making-business-case-for-eam-investment.html">Justifying EAM to the C-Suite</a>
-              <a href="/blog/maintenance-kpis-that-actually-matter.html">Maintenance Maturity Model</a>
-              <a href="/blog/eam-for-cfos-how-finance-reads-asset-data.html">EAM and ESG</a>
-              <a href="/blog/vendor-contractor-management-eam.html">EAM Vendor Buyer's Guide</a>
-            </div>
-          </details>
-
-          <details class="s-acc">
-            <summary><span class="s-acc__label"><span class="s-acc__dot s-dot-special"></span>Special Editions<span class="s-acc__count">7</span></span><svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-            <div class="s-acc__body">
-              <a href="/blog/sapphire-eam-for-indian-msmes.html">Sapphire 2025: What's New</a>
-              <a href="/blog/scorp-story-jaipur-honest-industrial-software.html">Built in Jaipur: Our Story</a>
-              <a href="/blog/eam-implementation-roadmap-indian-enterprises.html">EAM in India</a>
-              <a href="/blog/sapphire-vs-sap-pm.html">Sapphire vs SAP PM</a>
-              <a href="/blog/iot-integration-with-eam-sensors-to-work-orders.html">AI in Asset Management</a>
-              <a href="/blog/education-campus-infrastructure-management.html">Customer Spotlight</a>
-              <a href="/blog/what-is-eam-enterprise-asset-management-guide.html">EAM Glossary: 60 Terms</a>
-            </div>
-          </details>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-<div class="s-footer__social container mb-2">
-    <div class="row justify-content-center g-3 mb-3">
-        <div class="col-auto"><a href="#" class="s-icon s-icon-md s-icon-whatsapp" data-coming-soon="WhatsApp" aria-label="WhatsApp" style="text-decoration: none;"><i class="fab fa-whatsapp"></i></a></div>
-        <div class="col-auto"><a href="#" class="s-icon s-icon-md s-icon-linkedin" data-coming-soon="LinkedIn" aria-label="LinkedIn" style="text-decoration: none;"><i class="fab fa-linkedin-in"></i></a></div>
-        <div class="col-auto"><a href="#" class="s-icon s-icon-md s-icon-youtube" data-coming-soon="YouTube" aria-label="YouTube" style="text-decoration: none;"><i class="fab fa-youtube"></i></a></div>
-        <div class="col-auto"><a href="#" class="s-icon s-icon-md s-icon-instagram" data-coming-soon="Instagram" aria-label="Instagram" style="text-decoration: none;"><i class="fab fa-instagram"></i></a></div>
-    </div>
-    <div class="row justify-content-center g-3">
-        <div class="col-auto"><a href="#" class="s-icon s-icon-md s-icon-facebook" data-coming-soon="Facebook" aria-label="Facebook" style="text-decoration: none;"><i class="fab fa-facebook-f"></i></a></div>
-        <div class="col-auto"><a href="#" class="s-icon s-icon-md s-icon-x" data-coming-soon="X (formerly Twitter)" aria-label="X" style="text-decoration: none;"><i class="fab fa-x-twitter"></i></a></div>
-        <div class="col-auto"><a href="#" class="s-icon s-icon-md s-icon-discord" data-coming-soon="Discord" aria-label="Discord" style="text-decoration: none;"><i class="fab fa-discord"></i></a></div>
-        <div class="col-auto"><a href="#" class="s-icon s-icon-md s-icon-github" data-coming-soon="GitHub" aria-label="GitHub" style="text-decoration: none;"><i class="fab fa-github"></i></a></div>
-    </div>
-</div>
-  <div class="s-footer__bottom">
-    <p class="s-footer__copy">© 2026 SCORP — Scorptech Technologies Private Limited. All rights reserved.</p>
-    <div class="s-footer__legal">
-      <a href="/privacy_policy.html">Privacy Policy</a>
-      <a href="/terms_of_use.html">Terms of Use</a>
-      <a href="/contact.html">Contact</a>
-    </div>
-    <div class="s-footer__made">
-      <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.375 4.5 8.5 4.5 8.5S12.5 9.375 12.5 6c0-2.485-2.015-4.5-4.5-4.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" stroke="rgba(143,169,196,0.7)"/></svg>
-      Made with intent in Jaipur
-    </div>
-  </div>
-
-</footer>
-
-
-        <!-- Bootstrap Bundle -->
-        <script type="module" src="js/main.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
+	<head>
+		<link rel="icon" type="image/png" sizes="48x48" href="assets/images/scorp-logo-favicon-96.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="assets/images/scorp-logo-favicon-96.png">
+		<link rel="icon" type="image/png" sizes="144x144" href="assets/images/scorp-logo-favicon-144.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="assets/images/scorp-logo-favicon-192.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/images/scorp-logo-favicon-180.png">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>FAQ — Sapphire ERP & EAM Platform | SCORP</title>
+		<meta name="description" content="Frequently Asked Questions about SCORP and Sapphire ERP & EAM. Find answers about implementation, modules, pricing, and how our platform transforms industrial operations.">
+		<meta name="keywords" content="Sapphire FAQ, SCORP software help, ERP implementation questions, EAM platform details, industrial software support">
+		<link rel="canonical" href="https://scorptech.in/faq.html">
+		<meta property="og:title" content="FAQ — Sapphire ERP & EAM Platform | SCORP">
+		<meta property="og:description" content="Common questions and answers about Sapphire ERP & EAM implementation and features.">
+		<meta property="og:url" content="https://scorptech.in/faq.html">
+		<meta property="og:type" content="website">
+		<meta name="robots" content="index, follow">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<!-- ═══════════════════════════════════════════════════════════════
+			SCORP NAVIGATION 
+			═══════════════════════════════════════════════════════════════ -->
+		<nav class="navbar navbar-expand-xxl s-navbar" id="scorpNavbar">
+			<!-- Brand -->
+			<a class="navbar-brand s-navbar-brand" href="index.html">
+				<div class="s-brand-logo">
+					<img src="assets/images/Scorp-Logo.png" alt="Scorptech" width="24" height="24" style="filter: brightness(0) invert(1);" loading="lazy">
+				</div>
+				<span class="s-brand-text">SCORP</span>
+			</a>
+			<!-- Animated Hamburger Toggle -->
+			<button class="navbar-toggler s-mobile-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="s-hamburger-box">
+			<span class="s-hamburger-inner"></span>
+			</span>
+			</button>
+			<!-- Collapsible Content -->
+			<div class="collapse navbar-collapse" id="navbarContent">
+				<ul class="navbar-nav ms-auto s-nav-links">
+					<!-- Home -->
+					<li class="nav-item">
+						<a class="nav-link s-nav-link" href="index.html">
+						<i class="fas fa-home-alt"></i>
+						<span>Home</span>
+						</a>
+					</li>
+					<!-- Sapphire -->
+					<li class="nav-item">
+						<a class="nav-link s-nav-link" href="sapphire.html">
+						<i class="fas fa-diamond"></i>
+						<span>Sapphire</span>
+						</a>
+					</li>
+					<!-- Contact -->
+					<li class="nav-item">
+						<a class="nav-link s-nav-link" href="contact.html">
+						<i class="bi bi-telephone-outbound-fill"></i>
+						<span>Contact</span>
+						</a>
+					</li>
+					<!-- About -->
+					<li class="nav-item">
+						<a class="nav-link s-nav-link" href="about.html">
+						<i class="fas fa-users-line"></i>
+						<span>About</span>
+						</a>
+					</li>
+					<!-- Resources Dropdown (Internal Pages) -->
+					<li class="nav-item dropdown s-nav-dropdown-internal">
+						<a class="nav-link s-nav-link dropdown-toggle" 
+							href="#" 
+							role="button" 
+							data-bs-toggle="dropdown" 
+							aria-expanded="false"
+							data-dropdown-id="resources">
+							<i class="bi bi-grid-3x3-gap-fill"></i>
+							<span>Resources</span>
+							<!-- Active Indicator Badge -->
+							<span class="s-active-badge"></span>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-end s-internal-dropdown-menu">
+							<li>
+								<a class="dropdown-item s-internal-menu-item" href="faq.html" data-page="faq.html">
+								<i class="fas fa-circle-question"></i>
+								<span>FAQ</span>
+								</a>
+							</li>
+							<li>
+								<a class="dropdown-item s-internal-menu-item" href="terms_of_use.html" data-page="terms_of_use.html">
+								<i class="fas fa-file-contract"></i>
+								<span>Terms of Use</span>
+								</a>
+							</li>
+							<li>
+								<a class="dropdown-item s-internal-menu-item" href="privacy_policy.html" data-page="privacy_policy.html">
+								<i class="fas fa-file-shield"></i>
+								<span>Privacy Policy</span>
+								</a>
+							</li>
+						</ul>
+					</li>
+					<!-- Announcement Icon -->
+					<li class="nav-item">
+						<a class="nav-link s-nav-link s-nav-link-icon" href="announcement.html" title="Announcements">
+						<i class="fa-solid fa-bullhorn fa-rotate-by" style="--fa-rotate-angle: 325deg;"></i>
+						</a>
+					</li>
+					<!-- Book Demo Button (Green Styled) -->
+					<li class="nav-item">
+						<a class="book-demo-button" href="book-demo.html">
+						<i class="fas fa-calendar-alt"></i>
+						<span><strong>Book Demo</strong></span>
+						</a>
+					</li>
+					<!-- Go to Sapphire Dropdown (External Links - Blue Styled) -->
+					<li class="nav-item dropdown s-sapphire-dropdown">
+						<button class="btn s-sapphire-trigger dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+							<span>go to</span>
+							<div class="s-sapphire-logo">
+								<img src="assets/images/scorp-sapphire-cropped.png" alt="Sapphire" width="32" height="32" style="border-radius: 4px;">
+							</div>
+							<span><strong>Sapphire</strong></span>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-end s-sapphire-menu">
+							<li>
+								<a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/login" target="_blank">
+								<i class="bi bi-door-open-fill"></i>
+								<span>Log-in</span>
+								</a>
+							</li>
+							<li>
+								<a class="dropdown-item s-sapphire-menu-item" href="https://stage.scorptech.in/register" target="_blank">
+								<i class="bi bi-person-plus-fill"></i>
+								<span>Sign-up</span>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<!-- FAQ Section -->
+		<section class="s-hero s-hero-compact">
+			<img src="assets/images/faq-hero.png" alt="" aria-hidden="true" loading="lazy">
+			<div class="s-hero-overlay-2" aria-hidden="true"></div>
+			<div class="container">
+				<div class="s-hero-content">
+					<div class="d-flex justify-content-center mb-3">
+						<span class="s-pill s-pill-xl s-pill-frost">
+						<i class="fas fa-bolt"></i>Quick Answers
+						</span>
+					</div>
+					<h1 class="s-hero-title">Frequently Asked Questions</h1>
+					<p class="s-hero-subtitle">Your questions, answered. Everything you need to know about Sapphire ERP & EAM.</p>
+				</div>
+				<div class="s-hero-microcopy mt-4">
+					<div class="s-hero-actions">
+						<a href="#DemoFormSection" class="s-btn s-btn-success s-btn-glare">
+						<i class="fas fa-calendar-check me-1"></i>
+						Book a Demo
+						</a>
+						<a href="contact.html" class="s-btn s-btn-primary s-btn-glare">
+						<i class="fas fa-diamond me-1"></i>
+						Explore Sapphire
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="container">
+			<div class="s-accordion" id="faqAccordion">
+				<div class="s-accordion-item s-accordion-active">
+					<button class="s-accordion-trigger">
+					<span class="s-accordion-trigger-text">What is Sapphire?</span>
+					<i class="fas fa-chevron-down s-accordion-icon"></i>
+					</button>
+					<div class="s-accordion-panel">
+						<div class="s-accordion-body">
+							<p>Sapphire is an advanced ERP platform purpose-built for fixed asset lifecycle management. Designed for modern workplaces, it enables real-time operations, simplified workflows, and intuitive usability across departments and industries.</p>
+						</div>
+					</div>
+				</div>
+				<div class="s-accordion-item">
+					<button class="s-accordion-trigger">
+					<span class="s-accordion-trigger-text">क्या सैफायर भारत में निर्मित है?<br>(Is Sapphire Made in India?)</span>
+					<i class="fas fa-chevron-down s-accordion-icon"></i>
+					</button>
+					<div class="s-accordion-panel">
+						<div class="s-accordion-body">
+							<p>हाँ, सैफायर पूरी तरह से भारत में डिज़ाइन और विकसित किया गया है। <strong>स्कॉर्पटेक टेक्नोलॉजीज प्राइवेट लिमिटेड</strong> एक भारतीय कंपनी है और सैफायर भारतीय तकनीकी आत्मनिर्भरता का प्रतीक है。</p>
+							<br>
+							<img src="assets/images/made-in-India-seal.png" alt="Made in India Seal" style="max-width:150px;" loading="lazy">
+						</div>
+					</div>
+				</div>
+				<div class="s-accordion-item">
+					<button class="s-accordion-trigger">
+					<span class="s-accordion-trigger-text">Is Sapphire suitable for small and medium enterprises?</span>
+					<i class="fas fa-chevron-down s-accordion-icon"></i>
+					</button>
+					<div class="s-accordion-panel">
+						<div class="s-accordion-body">
+							<p>Yes. Sapphire is engineered to be cost-effective and scalable, making it an ideal solution for MSMEs seeking digital transformation without heavy IT investment.</p>
+						</div>
+					</div>
+				</div>
+				<div class="s-accordion-item">
+					<button class="s-accordion-trigger">
+					<span class="s-accordion-trigger-text">Can Sapphire be accessed on mobile devices?</span>
+					<i class="fas fa-chevron-down s-accordion-icon"></i>
+					</button>
+					<div class="s-accordion-panel">
+						<div class="s-accordion-body">
+							<p>Absolutely. Sapphire is fully mobile-optimized. Every module and feature is accessible from smartphones—enabling real-time updates, inspections, approvals, and operations on the go.</p>
+						</div>
+					</div>
+				</div>
+				<div class="s-accordion-item">
+					<button class="s-accordion-trigger">
+					<span class="s-accordion-trigger-text">Does Sapphire support multi-location workplaces?</span>
+					<i class="fas fa-chevron-down s-accordion-icon"></i>
+					</button>
+					<div class="s-accordion-panel">
+						<div class="s-accordion-body">
+							<p>Yes. Sapphire allows seamless management of multiple branches, hierarchical addresses, department-level structuring, and shift planning across locations.</p>
+						</div>
+					</div>
+				</div>
+				<div class="s-accordion-item">
+					<button class="s-accordion-trigger">
+					<span class="s-accordion-trigger-text">What kind of assets can Sapphire track?</span>
+					<i class="fas fa-chevron-down s-accordion-icon"></i>
+					</button>
+					<div class="s-accordion-panel">
+						<div class="s-accordion-body">
+							<p>Sapphire can manage a diverse set of "<strong>fixed assets</strong>"—ranging from hand tools, machinery, and vehicles to materials, blends, and consumables—across their complete lifecycle.</p>
+						</div>
+					</div>
+				</div>
+				<div class="s-accordion-item">
+					<button class="s-accordion-trigger">
+					<span class="s-accordion-trigger-text">What are the reporting features available?</span>
+					<i class="fas fa-chevron-down s-accordion-icon"></i>
+					</button>
+					<div class="s-accordion-panel">
+						<div class="s-accordion-body">
+							<p>The platform provides role-specific inspection checklists, item-level reporting rubrics, and real-time condition reports, enabling structured audits and actionable insights.</p>
+						</div>
+					</div>
+				</div>
+				<div class="s-accordion-item">
+					<button class="s-accordion-trigger">
+					<span class="s-accordion-trigger-text">Can Sapphire handle maintenance schedules and warranties?</span>
+					<i class="fas fa-chevron-down s-accordion-icon"></i>
+					</button>
+					<div class="s-accordion-panel">
+						<div class="s-accordion-body">
+							<p>Yes. Sapphire logs scheduled and event-based maintenance, including services covered under warranties, maintenance contracts, and insurance policies. Spare parts, labor, and material usage are also tracked and recorded.</p>
+						</div>
+					</div>
+				</div>
+				<div class="s-accordion-item">
+					<button class="s-accordion-trigger">
+					<span class="s-accordion-trigger-text">Does Sapphire support role-based access?</span>
+					<i class="fas fa-chevron-down s-accordion-icon"></i>
+					</button>
+					<div class="s-accordion-panel">
+						<div class="s-accordion-body">
+							<p>Yes. With dedicated portals for different user roles (owners, managers, issuers, staff), Sapphire ensures secure, streamlined, and role-specific access throughout the system.</p>
+						</div>
+					</div>
+				</div>
+				<div class="s-accordion-item">
+					<button class="s-accordion-trigger">
+					<span class="s-accordion-trigger-text">Is the system customizable?</span>
+					<i class="fas fa-chevron-down s-accordion-icon"></i>
+					</button>
+					<div class="s-accordion-panel">
+						<div class="s-accordion-body">
+							<p>Sapphire encapsulates all essential generic workflows. However, for specific needs, custom modules can be developed on request. These are scoped separately and involve additional cost and time.</p>
+						</div>
+					</div>
+				</div>
+				<div class="s-accordion-item">
+					<button class="s-accordion-trigger">
+					<span class="s-accordion-trigger-text">Can Sapphire handle requests like issue, return or location change?</span>
+					<i class="fas fa-chevron-down s-accordion-icon"></i>
+					</button>
+					<div class="s-accordion-panel">
+						<div class="s-accordion-body">
+							<p>Yes. Sapphire includes structured request workflows for issuing items, submitting returns or surrenders, and processing location changes—each integrated with approval hierarchies and logs.</p>
+						</div>
+					</div>
+				</div>
+				<div class="s-accordion-item">
+					<button class="s-accordion-trigger">
+					<span class="s-accordion-trigger-text">What kind of analytics does Sapphire offer?</span>
+					<i class="fas fa-chevron-down s-accordion-icon"></i>
+					</button>
+					<div class="s-accordion-panel">
+						<div class="s-accordion-body">
+							<p>Sapphire includes performance, financial, and operational analytics: usage trends, breakdown frequencies, failure rates, asset downtime, service logs, and consumption behavior across time.</p>
+						</div>
+					</div>
+				</div>
+				<div class="s-accordion-item">
+					<button class="s-accordion-trigger">
+					<span class="s-accordion-trigger-text">How does Sapphire handle inspections?</span>
+					<i class="fas fa-chevron-down s-accordion-icon"></i>
+					</button>
+					<div class="s-accordion-panel">
+						<div class="s-accordion-body">
+							<p>Inspections are conducted using pre-defined checklists. These can be scheduled periodically, performed on the go, and used to generate structured reports that enable prompt resolution of issues.</p>
+						</div>
+					</div>
+				</div>
+				<div class="s-accordion-item">
+					<button class="s-accordion-trigger">
+					<span class="s-accordion-trigger-text">How does Sapphire help in reducing asset downtime?</span>
+					<i class="fas fa-chevron-down s-accordion-icon"></i>
+					</button>
+					<div class="s-accordion-panel">
+						<div class="s-accordion-body">
+							<p>With real-time alerts and metrics like MTBF, MTTR, and service intervals, Sapphire ensures proactive maintenance and planning—minimizing operational disruptions and maximizing uptime.</p>
+						</div>
+					</div>
+				</div>
+				<div class="s-accordion-item">
+					<button class="s-accordion-trigger">
+					<span class="s-accordion-trigger-text">How secure is Sapphire’s data?</span>
+					<i class="fas fa-chevron-down s-accordion-icon"></i>
+					</button>
+					<div class="s-accordion-panel">
+						<div class="s-accordion-body">
+							<p>Security is integral to Sapphire’s architecture. It features encrypted storage, role-based access, audit trails, and centralized workflows to ensure data integrity and protection.</p>
+						</div>
+					</div>
+				</div>
+				<div class="s-accordion-item">
+					<button class="s-accordion-trigger">
+					<span class="s-accordion-trigger-text">Does Sapphire support integrations with external software?</span>
+					<i class="fas fa-chevron-down s-accordion-icon"></i>
+					</button>
+					<div class="s-accordion-panel">
+						<div class="s-accordion-body">
+							<p>Yes. Sapphire can integrate via APIs and supports exportable formats to sync with accounting systems, HRMS, or third-party platforms as required.</p>
+						</div>
+					</div>
+				</div>
+				<div class="s-accordion-item">
+					<button class="s-accordion-trigger">
+					<span class="s-accordion-trigger-text">Can Sapphire generate financial summaries?</span>
+					<i class="fas fa-chevron-down s-accordion-icon"></i>
+					</button>
+					<div class="s-accordion-panel">
+						<div class="s-accordion-body">
+							<p>Yes. It provides detailed financial reporting, including ownership costs, maintenance expenses, consumption tracking, warranty utilization, and depreciation assessments.</p>
+						</div>
+					</div>
+				</div>
+				<div class="s-accordion-item">
+					<button class="s-accordion-trigger">
+					<span class="s-accordion-trigger-text">How is Sapphire implemented?</span>
+					<i class="fas fa-chevron-down s-accordion-icon"></i>
+					</button>
+					<div class="s-accordion-panel">
+						<div class="s-accordion-body">
+							<p>Sapphire is currently deployed directly within enterprise environments (on-premise or private cloud). However, it will soon be available as a fully cloud-based SaaS solution. Deployment today is guided, fast, and minimally disruptive.</p>
+						</div>
+					</div>
+				</div>
+				<div class="s-accordion-item">
+					<button class="s-accordion-trigger">
+					<span class="s-accordion-trigger-text">Does Sapphire require specialized training to use?</span>
+					<i class="fas fa-chevron-down s-accordion-icon"></i>
+					</button>
+					<div class="s-accordion-panel">
+						<div class="s-accordion-body">
+							<p>No. The system is designed for intuitive adoption. With simplified UIs and clear workflows, even users with limited digital literacy can begin using Sapphire with minimal onboarding.</p>
+						</div>
+					</div>
+				</div>
+				<div class="s-accordion-item">
+					<button class="s-accordion-trigger">
+					<span class="s-accordion-trigger-text">Does Sapphire support depreciation calculations?</span>
+					<i class="fas fa-chevron-down s-accordion-icon"></i>
+					</button>
+					<div class="s-accordion-panel">
+						<div class="s-accordion-body">
+							<p>Yes. Sapphire provides dual-mode depreciation tracking based on both the Indian Companies Act and the Income Tax Act. It also calculates partial-year depreciation as per standard Indian accounting norms.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ════════════════════════════════════════════════════════════
+			SECTION 1 — CTA
+			════════════════════════════════════════════════════════════ -->
+		<section class="s-cta">
+			<svg class="s-cta__accent s-cta__accent--tl" width="80" height="80" viewBox="0 0 80 80" fill="none">
+				<path d="M1 79 L1 1 L79 1" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+				<rect x="1" y="1" width="10" height="10" fill="rgba(255,255,255,0.12)"/>
+			</svg>
+			<svg class="s-cta__accent s-cta__accent--br" width="80" height="80" viewBox="0 0 80 80" fill="none">
+				<path d="M1 79 L1 1 L79 1" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+				<rect x="1" y="1" width="10" height="10" fill="rgba(255,255,255,0.12)"/>
+			</svg>
+			<div class="s-cta__inner">
+				<p class="s-eyebrow">Came this far... to manage chaos?</p>
+				<h2 class="s-cta__headline">
+					CHAOS ENDS<br>
+					<span>CONTROL BEGINS</span><br>HERE!
+				</h2>
+				<p class="s-cta__sub">
+					Sapphire adapts to your workflows — not the other way around.
+					Real operations. Real deadlines. Real accountability.
+				</p>
+				<div class="s-cta__actions">
+					<a href="book-demo.html" class="s-btn s-btn-success s-btn-glare s-full-width-btn">
+					<i class="bi bi-collection-play-fill me-1"></i>
+					<span>Book a Demo</span>
+					</a>
+					<a href="contact.html" class="s-btn s-btn-secondary s-btn-glare s-full-width-btn">
+					<i class="bi bi-telephone-outbound-fill me-1"></i>
+					<span>Talk to Our Team</span>
+					</a>
+				</div>
+				<div class="s-cta__pills">
+					<a href="/sapphire.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">Sapphire</a>
+					<a href="/intelligence.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">Intelligence</a>
+					<a href="/analytics.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">Analytics</a>
+					<a href="/blog/index.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">Knowledge Hub</a>
+					<a href="/about.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">About</a>
+					<a href="/faq.html" class="s-pill s-pill-s s-pill-frost s-pill-round-sm">FAQs</a>
+				</div>
+			</div>
+		</section>
+		<!-- ════════════════════════════════════════════════════════════
+			SECTION 2 — FEATURED BLOG CARDS
+			════════════════════════════════════════════════════════════ -->
+		<section class="s-blogs-featured">
+			<div class="s-wrap">
+				<div class="s-section-intro">
+					<div class="s-section-intro__text">
+						<p class="s-eyebrow">From the Knowledge Hub</p>
+						<h2>EAM intelligence.<br><em>All of it.</em></h2>
+					</div>
+					<a href="/blog/index.html" class="s-view-all">
+						View all 42 articles
+						<svg viewBox="0 0 16 16" fill="none">
+							<path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</a>
+				</div>
+				<div class="s-blog-grid">
+					<!-- Card 1 — Hero -->
+					<a href="/blog/what-is-eam-enterprise-asset-management-guide.html" class="s-full-pic-card text-decoration-none">
+						<img src="assets/images_blog/what_is_EAM_hero.png" alt="EAM Fundamentals" class="s-full-pic-card__img" loading="lazy">
+						<div class="s-full-pic-card__content">
+							<div class="s-full-pic-card__meta">
+								<span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm">
+								<i class="fa-solid fa-book-open me-1"></i>Fundamentals
+								</span>
+								<p class="s-full-pic-card__title">What Is Enterprise Asset Management? A Complete Guide</p>
+							</div>
+							<div class="s-full-pic-card__bar">
+								<span class="s-full-pic-card__read">8 min read</span>
+								<span class="s-full-pic-card__cta">
+									Read article 
+									<svg viewBox="0 0 16 16" fill="none">
+										<path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+								</span>
+							</div>
+						</div>
+					</a>
+					<!-- Card 2 -->
+					<a href="/blog/work-order-management-backbone-operations.html" class="s-full-pic-card text-decoration-none">
+						<img src="assets/images_industries/Corporate_Offices.jpeg" alt="Sapphire Modules" class="s-full-pic-card__img" loading="lazy">
+						<div class="s-full-pic-card__content">
+							<div class="s-full-pic-card__meta">
+								<span class="s-pill s-pill-sm s-pill-info s-pill-round-sm">
+								<i class="bi bi-window-stack"></i>Modules
+								</span>
+								<p class="s-full-pic-card__title">Sapphire Work Order Management: A Complete Deep Dive</p>
+							</div>
+							<div class="s-full-pic-card__bar">
+								<span class="s-full-pic-card__read">12 min read</span>
+								<span class="s-full-pic-card__cta">
+									Read article 
+									<svg viewBox="0 0 16 16" fill="none">
+										<path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+								</span>
+							</div>
+						</div>
+					</a>
+					<!-- Card 3 -->
+					<a href="/blog/manufacturing-equipment-downtime-eam.html" class="s-full-pic-card text-decoration-none">
+						<img src="assets/images_industries/automotive_service_station.jpeg" alt="EAM Industries" class="s-full-pic-card__img" loading="lazy">
+						<div class="s-full-pic-card__content">
+							<div class="s-full-pic-card__meta">
+								<span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm">
+								<i class="fa-solid fa-industry me-1"></i>Industries
+								</span>
+								<p class="s-full-pic-card__title">EAM for Manufacturing: Keep the Line Running</p>
+							</div>
+							<div class="s-full-pic-card__bar">
+								<span class="s-full-pic-card__read">10 min read</span>
+								<span class="s-full-pic-card__cta">
+									Read article 
+									<svg viewBox="0 0 16 16" fill="none">
+										<path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+								</span>
+							</div>
+						</div>
+					</a>
+					<!-- Card 4 -->
+					<a href="/blog/energy-monitoring-sustainability-analytics-eam.html" class="s-full-pic-card text-decoration-none">
+						<img src="assets/images_industries/warehouse.jpeg" alt="Asset Analytics" class="s-full-pic-card__img" loading="lazy">
+						<div class="s-full-pic-card__content">
+							<div class="s-full-pic-card__meta">
+								<span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm">
+								<i class="fa-solid fa-chart-line me-1"></i>Analytics
+								</span>
+								<p class="s-full-pic-card__title">Real-Time Asset Analytics: From Data to Decision</p>
+							</div>
+							<div class="s-full-pic-card__bar">
+								<span class="s-full-pic-card__read">7 min read</span>
+								<span class="s-full-pic-card__cta">
+									Read article 
+									<svg viewBox="0 0 16 16" fill="none">
+										<path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+								</span>
+							</div>
+						</div>
+					</a>
+					<!-- Card 5 -->
+					<a href="/blog/roi-of-eam-implementation-real-numbers.html" class="s-full-pic-card text-decoration-none">
+						<img src="assets/images_industries/hospital.jpeg" alt="Business Value" class="s-full-pic-card__img" loading="lazy">
+						<div class="s-full-pic-card__content">
+							<div class="s-full-pic-card__meta">
+								<span class="s-pill s-pill-sm s-pill-success s-pill-round-sm">
+								<i class="fa-solid fa-money-bill-wave me-1"></i>Business Value
+								</span>
+								<p class="s-full-pic-card__title">ROI of EAM Software: A Practical Calculation Guide</p>
+							</div>
+							<div class="s-full-pic-card__bar">
+								<span class="s-full-pic-card__read">9 min read</span>
+								<span class="s-full-pic-card__cta">
+									Read article 
+									<svg viewBox="0 0 16 16" fill="none">
+										<path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+								</span>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</section>
+		<!-- ════════════════════════════════════════════════════════════
+			SECTION 3 — MARQUEE BLOGS
+			════════════════════════════════════════════════════════════ -->
+		<section class="s-marquee-section">
+			<div class="s-marquee-rule">
+				<hr>
+			</div>
+			<div class="s-marquee-top">
+				<p><strong>42</strong> deep-dive articles across <strong>6</strong> pillars — no filler, ever.</p>
+				<a href="/blog/index.html" class="s-view-all">
+					Browse the full Knowledge Hub
+					<svg viewBox="0 0 16 16" fill="none">
+						<path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</a>
+			</div>
+			<div class="s-marquee-wrap">
+				<!-- ROW 1 forward -->
+				<div class="s-mq-row s-mq-row--fwd">
+					<a href="/blog/what-is-eam-enterprise-asset-management-guide.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/manufacturing_factory.jpeg" alt="What Is Enterprise Asset Management? A Complete Guide" loading="lazy"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">What Is Enterprise Asset Management? A Complete Guide</p>
+						</div>
+					</a>
+					<a href="/blog/eam-vs-cmms-vs-erp-differences.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/automotive_service_station.jpeg" alt="EAM vs ERP: The Key Difference Explained" loading="lazy"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">EAM vs ERP: The Key Difference Explained</p>
+						</div>
+					</a>
+					<a href="/blog/asset-lifecycle-management-guide.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/construction.jpeg" alt="Asset Lifecycle Management: From Acquisition to Disposal" loading="lazy"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">Asset Lifecycle Management: From Acquisition to Disposal</p>
+						</div>
+					</a>
+					<a href="/blog/preventive-predictive-reactive-maintenance.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/warehouse.jpeg" alt="Preventive vs Predictive Maintenance: Which Is Right?" loading="lazy"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">Preventive vs Predictive Maintenance: Which Is Right?</p>
+						</div>
+					</a>
+					<a href="/blog/maintenance-kpis-that-actually-matter.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/hospital.jpeg" alt="Building a Maintenance Strategy from Zero" loading="lazy"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">Building a Maintenance Strategy from Zero</p>
+						</div>
+					</a>
+					<a href="/blog/manufacturing-equipment-downtime-eam.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/diagnostic_center.jpeg" alt="The True Cost of Asset Downtime" loading="lazy"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">The True Cost of Asset Downtime</p>
+						</div>
+					</a>
+					<a href="/blog/compliance-audit-trails-eam.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/research_test_laoratories.jpeg" alt="ISO 55000: The Global Standard for Asset Management" loading="lazy"><span class="s-pill s-pill-sm s-pill-primary s-pill-round-sm"><i class="fa-solid fa-book-open me-1"></i>Fundamentals</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">ISO 55000: The Global Standard for Asset Management</p>
+						</div>
+					</a>
+					<a href="/blog/work-order-management-backbone-operations.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/Corporate_Offices.jpeg" alt="Sapphire Work Order Management: A Complete Deep Dive" loading="lazy"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack"></i>Modules</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">Sapphire Work Order Management: A Complete Deep Dive</p>
+						</div>
+					</a>
+					<a href="/blog/spare-parts-inventory-management-eam.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/coworkingITpark.png" alt="Inventory Control in Sapphire: Zero Dead Stock" loading="lazy"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack"></i>Modules</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">Inventory Control in Sapphire: Zero Dead Stock</p>
+						</div>
+					</a>
+					<a href="/blog/vendor-contractor-management-eam.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/Retail_Chains_&_Shopping_malls.jpeg" alt="Sapphire Purchase Module: From PO to Payment" loading="lazy"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack"></i>Modules</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">Sapphire Purchase Module: From PO to Payment</p>
+						</div>
+					</a>
+					<a href="/blog/construction-infrastructure-site-asset-tracking.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/Real_Estate_Developors.jpeg" alt="Asset Tracking with Sapphire: Real-Time Visibility" loading="lazy"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack"></i>Modules</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">Asset Tracking with Sapphire: Real-Time Visibility</p>
+						</div>
+					</a>
+					<a href="/blog/asset-performance-dashboards-what-to-track.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/schools_universites.jpeg" alt="Sapphire Dashboard Intelligence: Metrics That Matter" loading="lazy"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack"></i>Modules</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">Sapphire Dashboard Intelligence: Metrics That Matter</p>
+						</div>
+					</a>
+					<a href="/blog/preventive-maintenance-scheduling-automation.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/Hotels_Guest_Houses.jpeg" alt="Preventive Maintenance Scheduling in Sapphire EAM" loading="lazy"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack"></i>Modules</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">Preventive Maintenance Scheduling in Sapphire EAM</p>
+						</div>
+					</a>
+					<a href="/blog/asset-register-single-source-of-truth.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/co-working_&_IT_Park_2.jpeg" alt="Document Management Inside Sapphire EAM" loading="lazy"><span class="s-pill s-pill-sm s-pill-info s-pill-round-sm"><i class="bi bi-window-stack"></i>Modules</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">Document Management Inside Sapphire EAM</p>
+						</div>
+					</a>
+					<a href="/blog/manufacturing-equipment-downtime-eam.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/Fitness_Centers_&_Gym.jpeg" alt="EAM for Manufacturing: Keep the Line Running" loading="lazy"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">EAM for Manufacturing: Keep the Line Running</p>
+						</div>
+					</a>
+					<a href="/blog/real-estate-facilities-management-eam.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/muncipal_departments.png" alt="Facility Management with Sapphire" loading="lazy"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">Facility Management with Sapphire</p>
+						</div>
+					</a>
+					<a href="/blog/healthcare-medical-equipment-compliance.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/hospital.jpeg" alt="Healthcare Asset Management: Compliance Meets Efficiency" loading="lazy"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">Healthcare Asset Management: Compliance Meets Efficiency</p>
+						</div>
+					</a>
+					<a href="/blog/energy-utilities-grid-asset-management.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/power_generation_unit.png" alt="Power & Utilities: EAM at Enterprise Scale" loading="lazy"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">Power & Utilities: EAM at Enterprise Scale</p>
+						</div>
+					</a>
+					<a href="/blog/land-air-water-vehicles-eam.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/Transmission_Network.png" alt="Oil & Gas Maintenance Operations and EAM" loading="lazy"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">Oil & Gas Maintenance Operations and EAM</p>
+						</div>
+					</a>
+					<a href="/blog/it-parks-commercial-real-estate-eam.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/audit_desk.jpeg" alt="EAM for Real Estate Portfolios" loading="lazy"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">EAM for Real Estate Portfolios</p>
+						</div>
+					</a>
+					<a href="/blog/logistics-warehousing-fleet-facility-management.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/Airport_Hangars.jpeg" alt="Airport Asset Management: Zero Tolerance for Failure" loading="lazy"><span class="s-pill s-pill-sm s-pill-amber s-pill-round-sm"><i class="fa-solid fa-industry me-1"></i>Industries</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">Airport Asset Management: Zero Tolerance for Failure</p>
+						</div>
+					</a>
+				</div>
+				<!-- ROW 2 reverse -->
+				<div class="s-mq-row s-mq-row--rev">
+					<a href="/blog/energy-monitoring-sustainability-analytics-eam.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/state-workshops.png" alt="Real-Time Asset Analytics: From Data to Decision" loading="lazy"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">Real-Time Asset Analytics: From Data to Decision</p>
+						</div>
+					</a>
+					<a href="/blog/predictive-analytics-asset-failure-prevention.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/Farm_Equipment_Warehouse.png" alt="Predictive Maintenance Analytics with Sapphire Smart" loading="lazy"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">Predictive Maintenance Analytics with Sapphire Smart</p>
+						</div>
+					</a>
+					<a href="/blog/oee-overall-equipment-effectiveness-guide.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/Cargo_Terminals.jpeg" alt="OEE Tracking: Beyond the Dashboard Number" loading="lazy"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">OEE Tracking: Beyond the Dashboard Number</p>
+						</div>
+					</a>
+					<a href="/blog/maintenance-kpis-that-actually-matter.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/Concert_Hall.jpeg" alt="KPI Design for EAM Programs" loading="lazy"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">KPI Design for EAM Programs</p>
+						</div>
+					</a>
+					<a href="/blog/mtbf-mttr-reliability-numbers-guide.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/Logistics_&_Fleet_Operations.png" alt="MTBF: Calculating and Reducing Mean Time Between Failure" loading="lazy"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">MTBF: Calculating and Reducing Mean Time Between Failure</p>
+						</div>
+					</a>
+					<a href="/blog/cost-analytics-maintenance-budget-savings.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/Water_Supply_Infrastructure.png" alt="Maintenance Cost Benchmarking: Industry Standards" loading="lazy"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">Maintenance Cost Benchmarking: Industry Standards</p>
+						</div>
+					</a>
+					<a href="/blog/digital-twins-and-eam-next-frontier.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/Agro_Processing_Unit.jpeg" alt="Asset Health Scoring: A New Framework" loading="lazy"><span class="s-pill s-pill-sm s-pill-royal s-pill-round-sm"><i class="fa-solid fa-chart-line me-1"></i>Analytics</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">Asset Health Scoring: A New Framework</p>
+						</div>
+					</a>
+					<a href="/blog/roi-of-eam-implementation-real-numbers.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/Amusement_Parks.jpeg" alt="ROI of EAM Software: A Practical Calculation Guide" loading="lazy"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">ROI of EAM Software: A Practical Calculation Guide</p>
+						</div>
+					</a>
+					<a href="/blog/total-cost-of-ownership-asset-management.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/Movie_Theaters.jpeg" alt="The Hidden Cost of Spreadsheet-Based Maintenance" loading="lazy"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">The Hidden Cost of Spreadsheet-Based Maintenance</p>
+						</div>
+					</a>
+					<a href="/blog/eam-implementation-roadmap-indian-enterprises.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/Training_&_Vocational_centers.jpeg" alt="EAM Implementation: Why Most Fail and How Yours Won't" loading="lazy"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">EAM Implementation: Why Most Fail and How Yours Won't</p>
+						</div>
+					</a>
+					<a href="/blog/making-business-case-for-eam-investment.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/Clubs_&_Leisure_Facilities.jpeg" alt="Justifying EAM Investment to the C-Suite" loading="lazy"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">Justifying EAM Investment to the C-Suite</p>
+						</div>
+					</a>
+					<a href="/blog/maintenance-kpis-that-actually-matter.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/Rail Maintenance Units.png" alt="From Reactive to Proactive: The Maintenance Maturity Model" loading="lazy"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">From Reactive to Proactive: The Maintenance Maturity Model</p>
+						</div>
+					</a>
+					<a href="/blog/eam-for-cfos-how-finance-reads-asset-data.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/Fertilizer_&_Irrigation_depots.png" alt="EAM and ESG: Sustainability Through Asset Intelligence" loading="lazy"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">EAM and ESG: Sustainability Through Asset Intelligence</p>
+						</div>
+					</a>
+					<a href="/blog/vendor-contractor-management-eam.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/Disaster_Response_Storage.png" alt="How to Choose Your EAM Vendor: A Buyer's Guide" loading="lazy"><span class="s-pill s-pill-sm s-pill-success s-pill-round-sm"><i class="fa-solid fa-money-bill-wave me-1"></i>Business Value</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">How to Choose Your EAM Vendor: A Buyer's Guide</p>
+						</div>
+					</a>
+					<a href="/blog/sapphire-eam-for-indian-msmes.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/Shipping_Ports_&_Dock.jpeg" alt="Sapphire 2025: What's New and What's Next" loading="lazy"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">Sapphire 2025: What's New and What's Next</p>
+						</div>
+					</a>
+					<a href="/blog/scorp-story-jaipur-honest-industrial-software.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/Restaurants_&_Cafes.jpeg" alt="Built in Jaipur: The Scorptech Story" loading="lazy"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">Built in Jaipur: The Scorptech Story</p>
+						</div>
+					</a>
+					<a href="/blog/eam-implementation-roadmap-indian-enterprises.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/transporation_agency.jpeg" alt="EAM in India: A Massive Market Coming of Age" loading="lazy"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">EAM in India: A Massive Market Coming of Age</p>
+						</div>
+					</a>
+					<a href="/blog/sapphire-vs-sap-pm.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/Relief_Logistics.png" alt="Sapphire vs SAP PM: An Honest Side-by-Side" loading="lazy"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">Sapphire vs SAP PM: An Honest Side-by-Side</p>
+						</div>
+					</a>
+					<a href="/blog/iot-integration-with-eam-sensors-to-work-orders.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/Ground_support_bays.jpeg" alt="AI in Asset Management: What's Real, What's Hype" loading="lazy"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">AI in Asset Management: What's Real, What's Hype</p>
+						</div>
+					</a>
+					<a href="/blog/education-campus-infrastructure-management.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/Public_Utility_Board.jpeg" alt="Customer Spotlight: Sapphire Deployed in 90 Days" loading="lazy"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">Customer Spotlight: Sapphire Deployed in 90 Days</p>
+						</div>
+					</a>
+					<a href="/blog/what-is-eam-enterprise-asset-management-guide.html" class="s-mini-card text-decoration-none">
+						<div class="s-mini-card__img"><img src="assets/images_industries/Rescue_Equipment_Depots.png" alt="EAM Glossary: 60 Terms Every Maintenance Manager Must Know" loading="lazy"><span class="s-pill s-pill-sm s-pill-attention s-pill-round-sm"><i class="fa-solid fa-star me-1"></i>Special Editions</span></div>
+						<div class="s-mini-card__body">
+							<p class="s-mini-card__title">EAM Glossary: 60 Terms Every Maintenance Manager Must Know</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</section>
+		<!-- ════════════════════════════════════════════════════════════
+			SECTION 4 — FOOTER
+			════════════════════════════════════════════════════════════ -->
+		<footer class="s-footer">
+			<div class="s-footer__top-strip">
+				<div class="s-footer__status">
+					<span class="s-status-dot"></span>
+					Sapphire is live — all systems operational
+				</div>
+				<div class="s-footer__top-cta">
+					<a href="/contact.html" class="s-btn-sm s-btn-primary s-btn-glare">
+					<i class="fas fa-comments me-1"></i>
+					Talk to our team
+					</a>
+					<a href="/book-demo.html" class="s-btn-sm s-btn-success s-btn-glare">
+					<i class="fas fa-calendar-alt me-1"></i>
+					Book a Demo
+					</a>
+				</div>
+			</div>
+			<div class="s-footer__body">
+				<div class="s-footer__brand">
+					<a href="/index.html" class="s-footer__logo" style="text-decoration: none;">
+						<div class="s-footer__logomark">
+							<img src="assets/images/Scorp-Logo.png" alt="Scorptech" width="22" height="22" style="filter: brightness(0) invert(1);" loading="lazy">
+						</div>
+						<span class="s-footer__logoname">SCORP</span>
+					</a>
+					<p class="s-footer__tagline">In the business of making<br><span class="s-footer__tagline-emphasis">yours simple!</span></p>
+					<div class="s-footer__contact">
+						<a href="tel:+919782383338" class="s-footer__contact-item">
+							<svg viewBox="0 0 16 16" fill="none">
+								<path d="M3 3.5C3 3.224 3.224 3 3.5 3h2.379c.246 0 .46.163.523.402l.754 2.64a.542.542 0 01-.167.567L5.586 7.414c.981 2.016 2.56 3.595 4.576 4.576l.805-.903a.542.542 0 01.567-.167l2.64.754c.239.063.402.277.402.523V14.5c0 .276-.224.5-.5.5C6.044 15 1 9.956 1 3.5z" stroke="currentColor" stroke-width="1.2"/>
+							</svg>
+							+91 97823 83338
+						</a>
+						<a href="mailto:support@scorptech.in" class="s-footer__contact-item">
+							<svg viewBox="0 0 16 16" fill="none">
+								<rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
+								<path d="M1 5l7 5 7-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+							</svg>
+							support@scorptech.in
+						</a>
+						<a href="/contact.html" class="s-footer__contact-item">
+							<svg viewBox="0 0 16 16" fill="none">
+								<path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.375 4.5 8.5 4.5 8.5S12.5 9.375 12.5 6c0-2.485-2.015-4.5-4.5-4.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" stroke="currentColor" stroke-width="1.2"/>
+							</svg>
+							Jaipur, Rajasthan
+						</a>
+					</div>
+					<span class="s-footer__location">
+						<svg viewBox="0 0 12 12" fill="none">
+							<circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1"/>
+							<path d="M1.5 6h9M6 1.5a7 7 0 000 9M6 1.5a7 7 0 010 9" stroke="currentColor" stroke-width="0.8"/>
+						</svg>
+						Jaipur-built · Deployed globally
+					</span>
+				</div>
+				<div class="s-footer__links">
+					<div>
+						<span class="s-footer__col-title">Explore</span>
+						<ul>
+							<li><a href="/index.html">Home</a></li>
+							<li><a href="/about.html#whyscorp">Why Scorptech</a></li>
+							<li><a href="/about.html">About Scorptech</a></li>
+							<li><a href="/index.html#sapphire-teaser">See Sapphire in Action</a></li>
+							<li><a href="/sapphire.html">Sapphire EAM</a></li>
+							<li><a href="/contact.html">Contact Us</a></li>
+							<li><a href="/book-demo.html">Book a Demo</a></li>
+						</ul>
+					</div>
+					<div>
+						<span class="s-footer__col-title">Platform</span>
+						<ul>
+							<li><a href="/sapphire.html">Sapphire</a></li>
+							<li><a href="/sapphire.html#why-sapphire">Why Sapphire</a></li>
+							<li><a href="/sapphire.html#sapphire-capabilities">Capabilities</a></li>
+							<li><a href="/sapphire.html#SapphireCoreSuite">Sapphire Core Suite</a></li>
+							<li><a href="/industry-use.html">Industry Use</a></li>
+							<li><a href="/sapphire.html#industries">Industries We Cater</a></li>
+							<li><a href="/how-do-i-use-sapphire.html">Getting Started</a></li>
+						</ul>
+					</div>
+					<div>
+						<span class="s-footer__col-title">Resources</span>
+						<ul>
+							<li><a href="/blog/index.html">Knowledge Hub</a></li>
+							<li><a href="/faq.html">FAQs</a></li>
+							<li><a href="/privacy_policy.html">Privacy Policy</a></li>
+							<li><a href="/terms_of_use.html">Terms of Use</a></li>
+							<li><a href="mailto:support@scorptech.in">Support</a></li>
+						</ul>
+					</div>
+					<div class="s-footer__blog-section">
+						<div class="s-footer__blog-header">
+							<span class="s-footer__col-title" style="margin-bottom:0;">Knowledge Hub — 42 Articles</span>
+							<a href="/blog/index.html" class="s-view-all" style="font-size:0.72rem;">
+								View all
+								<svg viewBox="0 0 16 16" fill="none">
+									<path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</a>
+						</div>
+						<div class="s-blog-categories">
+							<details class="s-acc">
+								<summary>
+									<span class="s-acc__label"><span class="s-acc__dot s-dot-fundamentals"></span>Fundamentals<span class="s-acc__count">7</span></span>
+									<svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none">
+										<path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+								</summary>
+								<div class="s-acc__body">
+									<a href="/blog/what-is-eam-enterprise-asset-management-guide.html">What Is Enterprise Asset Management?</a>
+									<a href="/blog/eam-vs-cmms-vs-erp-differences.html">EAM vs ERP: The Key Difference</a>
+									<a href="/blog/asset-lifecycle-management-guide.html">Asset Lifecycle Management</a>
+									<a href="/blog/preventive-predictive-reactive-maintenance.html">Preventive vs Predictive Maintenance</a>
+									<a href="/blog/maintenance-kpis-that-actually-matter.html">Building a Maintenance Strategy</a>
+									<a href="/blog/manufacturing-equipment-downtime-eam.html">The True Cost of Asset Downtime</a>
+									<a href="/blog/compliance-audit-trails-eam.html">ISO 55000: The Global Standard</a>
+								</div>
+							</details>
+							<details class="s-acc">
+								<summary>
+									<span class="s-acc__label"><span class="s-acc__dot s-dot-modules"></span>Sapphire Modules<span class="s-acc__count">7</span></span>
+									<svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none">
+										<path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+								</summary>
+								<div class="s-acc__body">
+									<a href="/blog/work-order-management-backbone-operations.html">Work Order Management</a>
+									<a href="/blog/spare-parts-inventory-management-eam.html">Inventory Control</a>
+									<a href="/blog/vendor-contractor-management-eam.html">Purchase Module: PO to Payment</a>
+									<a href="/blog/construction-infrastructure-site-asset-tracking.html">Asset Tracking</a>
+									<a href="/blog/asset-performance-dashboards-what-to-track.html">Dashboard Intelligence</a>
+									<a href="/blog/preventive-maintenance-scheduling-automation.html">PM Scheduling</a>
+									<a href="/blog/asset-register-single-source-of-truth.html">Document Management</a>
+								</div>
+							</details>
+							<details class="s-acc">
+								<summary>
+									<span class="s-acc__label"><span class="s-acc__dot s-dot-industries"></span>Industries<span class="s-acc__count">7</span></span>
+									<svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none">
+										<path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+								</summary>
+								<div class="s-acc__body">
+									<a href="/blog/manufacturing-equipment-downtime-eam.html">Manufacturing</a>
+									<a href="/blog/real-estate-facilities-management-eam.html">Facility Management</a>
+									<a href="/blog/healthcare-medical-equipment-compliance.html">Healthcare</a>
+									<a href="/blog/energy-utilities-grid-asset-management.html">Power & Utilities</a>
+									<a href="/blog/land-air-water-vehicles-eam.html">Oil & Gas</a>
+									<a href="/blog/it-parks-commercial-real-estate-eam.html">Real Estate</a>
+									<a href="/blog/logistics-warehousing-fleet-facility-management.html">Aviation & Airports</a>
+								</div>
+							</details>
+							<details class="s-acc">
+								<summary>
+									<span class="s-acc__label"><span class="s-acc__dot s-dot-analytics"></span>Analytics<span class="s-acc__count">7</span></span>
+									<svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none">
+										<path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+								</summary>
+								<div class="s-acc__body">
+									<a href="/blog/energy-monitoring-sustainability-analytics-eam.html">Real-Time Asset Analytics</a>
+									<a href="/blog/predictive-analytics-asset-failure-prevention.html">Predictive Maintenance Analytics</a>
+									<a href="/blog/oee-overall-equipment-effectiveness-guide.html">OEE Tracking</a>
+									<a href="/blog/maintenance-kpis-that-actually-matter.html">KPI Design for EAM</a>
+									<a href="/blog/mtbf-mttr-reliability-numbers-guide.html">MTBF: Calculating & Reducing</a>
+									<a href="/blog/cost-analytics-maintenance-budget-savings.html">Maintenance Cost Benchmarking</a>
+									<a href="/blog/digital-twins-and-eam-next-frontier.html">Asset Health Scoring</a>
+								</div>
+							</details>
+							<details class="s-acc">
+								<summary>
+									<span class="s-acc__label"><span class="s-acc__dot s-dot-business"></span>Business Value<span class="s-acc__count">7</span></span>
+									<svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none">
+										<path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+								</summary>
+								<div class="s-acc__body">
+									<a href="/blog/roi-of-eam-implementation-real-numbers.html">ROI of EAM Software</a>
+									<a href="/blog/total-cost-of-ownership-asset-management.html">The Spreadsheet Trap</a>
+									<a href="/blog/eam-implementation-roadmap-indian-enterprises.html">Why EAM Implementations Fail</a>
+									<a href="/blog/making-business-case-for-eam-investment.html">Justifying EAM to the C-Suite</a>
+									<a href="/blog/maintenance-kpis-that-actually-matter.html">Maintenance Maturity Model</a>
+									<a href="/blog/eam-for-cfos-how-finance-reads-asset-data.html">EAM and ESG</a>
+									<a href="/blog/vendor-contractor-management-eam.html">EAM Vendor Buyer's Guide</a>
+								</div>
+							</details>
+							<details class="s-acc">
+								<summary>
+									<span class="s-acc__label"><span class="s-acc__dot s-dot-special"></span>Special Editions<span class="s-acc__count">7</span></span>
+									<svg class="s-acc__chevron" viewBox="0 0 16 16" fill="none">
+										<path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+								</summary>
+								<div class="s-acc__body">
+									<a href="/blog/sapphire-eam-for-indian-msmes.html">Sapphire 2025: What's New</a>
+									<a href="/blog/scorp-story-jaipur-honest-industrial-software.html">Built in Jaipur: Our Story</a>
+									<a href="/blog/eam-implementation-roadmap-indian-enterprises.html">EAM in India</a>
+									<a href="/blog/sapphire-vs-sap-pm.html">Sapphire vs SAP PM</a>
+									<a href="/blog/iot-integration-with-eam-sensors-to-work-orders.html">AI in Asset Management</a>
+									<a href="/blog/education-campus-infrastructure-management.html">Customer Spotlight</a>
+									<a href="/blog/what-is-eam-enterprise-asset-management-guide.html">EAM Glossary: 60 Terms</a>
+								</div>
+							</details>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="s-footer__social container mb-2">
+				<div class="row justify-content-center g-3 mb-3">
+					<div class="col-auto"><a href="#" class="s-icon s-icon-md s-icon-whatsapp" data-coming-soon="WhatsApp" aria-label="WhatsApp" style="text-decoration: none;"><i class="fab fa-whatsapp"></i></a></div>
+					<div class="col-auto"><a href="#" class="s-icon s-icon-md s-icon-linkedin" data-coming-soon="LinkedIn" aria-label="LinkedIn" style="text-decoration: none;"><i class="fab fa-linkedin-in"></i></a></div>
+					<div class="col-auto"><a href="#" class="s-icon s-icon-md s-icon-youtube" data-coming-soon="YouTube" aria-label="YouTube" style="text-decoration: none;"><i class="fab fa-youtube"></i></a></div>
+					<div class="col-auto"><a href="#" class="s-icon s-icon-md s-icon-instagram" data-coming-soon="Instagram" aria-label="Instagram" style="text-decoration: none;"><i class="fab fa-instagram"></i></a></div>
+				</div>
+				<div class="row justify-content-center g-3">
+					<div class="col-auto"><a href="#" class="s-icon s-icon-md s-icon-facebook" data-coming-soon="Facebook" aria-label="Facebook" style="text-decoration: none;"><i class="fab fa-facebook-f"></i></a></div>
+					<div class="col-auto"><a href="#" class="s-icon s-icon-md s-icon-x" data-coming-soon="X (formerly Twitter)" aria-label="X" style="text-decoration: none;"><i class="fab fa-x-twitter"></i></a></div>
+					<div class="col-auto"><a href="#" class="s-icon s-icon-md s-icon-discord" data-coming-soon="Discord" aria-label="Discord" style="text-decoration: none;"><i class="fab fa-discord"></i></a></div>
+					<div class="col-auto"><a href="#" class="s-icon s-icon-md s-icon-github" data-coming-soon="GitHub" aria-label="GitHub" style="text-decoration: none;"><i class="fab fa-github"></i></a></div>
+				</div>
+			</div>
+			<div class="s-footer__bottom">
+				<p class="s-footer__copy">© 2026 SCORP — Scorptech Technologies Private Limited. All rights reserved.</p>
+				<div class="s-footer__legal">
+					<a href="/privacy_policy.html">Privacy Policy</a>
+					<a href="/terms_of_use.html">Terms of Use</a>
+					<a href="/contact.html">Contact</a>
+				</div>
+				<div class="s-footer__made">
+					<svg width="10" height="10" viewBox="0 0 16 16" fill="none">
+						<path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.375 4.5 8.5 4.5 8.5S12.5 9.375 12.5 6c0-2.485-2.015-4.5-4.5-4.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" stroke="rgba(143,169,196,0.7)"/>
+					</svg>
+					Made with intent in Jaipur
+				</div>
+			</div>
+		</footer>
+		<!-- Bootstrap Bundle -->
+		<script type="module" src="js/main.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+		<script type="application/ld+json">
+			{
+			  "@context": "https://schema.org",
+			  "@type": "FAQPage",
+			  "mainEntity": [
+			    {
+			      "@type": "Question",
+			      "name": "What is Sapphire?",
+			      "acceptedAnswer": {
+			        "@type": "Answer",
+			        "text": "Sapphire is an advanced ERP platform purpose-built for fixed asset lifecycle management. Designed for modern workplaces, it enables real-time operations, simplified workflows, and intuitive usability across departments and industries."
+			      }
+			    },
+			    {
+			      "@type": "Question",
+			      "name": "क्या सैफायर भारत में निर्मित है? (Is Sapphire Made in India?)",
+			      "acceptedAnswer": {
+			        "@type": "Answer",
+			        "text": "हाँ, सैफायर पूरी तरह से भारत में डिज़ाइन और विकसित किया गया है। स्कॉर्पटेक टेक्नोलॉजीज प्राइवेट लिमिटेड एक भारतीय कंपनी है और सैफायर भारतीय तकनीकी आत्मनिर्भरता का प्रतीक है।"
+			      }
+			    },
+			    {
+			      "@type": "Question",
+			      "name": "Is Sapphire suitable for small and medium enterprises?",
+			      "acceptedAnswer": {
+			        "@type": "Answer",
+			        "text": "Yes. Sapphire is engineered to be cost-effective and scalable, making it an ideal solution for MSMEs seeking digital transformation without heavy IT investment."
+			      }
+			    },
+			    {
+			      "@type": "Question",
+			      "name": "Can Sapphire be accessed on mobile devices?",
+			      "acceptedAnswer": {
+			        "@type": "Answer",
+			        "text": "Absolutely. Sapphire is fully mobile-optimized. Every module and feature is accessible from smartphones—enabling real-time updates, inspections, approvals, and operations on the go."
+			      }
+			    },
+			    {
+			      "@type": "Question",
+			      "name": "Does Sapphire support multi-location workplaces?",
+			      "acceptedAnswer": {
+			        "@type": "Answer",
+			        "text": "Yes. Sapphire allows seamless management of multiple branches, hierarchical addresses, department-level structuring, and shift planning across locations."
+			      }
+			    },
+			    {
+			      "@type": "Question",
+			      "name": "What kind of assets can Sapphire track?",
+			      "acceptedAnswer": {
+			        "@type": "Answer",
+			        "text": "Sapphire can manage a diverse set of \" fixed assets \"—ranging from hand tools, machinery, and vehicles to materials, blends, and consumables—across their complete lifecycle."
+			      }
+			    },
+			    {
+			      "@type": "Question",
+			      "name": "What are the reporting features available?",
+			      "acceptedAnswer": {
+			        "@type": "Answer",
+			        "text": "The platform provides role-specific inspection checklists, item-level reporting rubrics, and real-time condition reports, enabling structured audits and actionable insights."
+			      }
+			    },
+			    {
+			      "@type": "Question",
+			      "name": "Can Sapphire handle maintenance schedules and warranties?",
+			      "acceptedAnswer": {
+			        "@type": "Answer",
+			        "text": "Yes. Sapphire logs scheduled and event-based maintenance, including services covered under warranties, maintenance contracts, and insurance policies. Spare parts, labor, and material usage are also tracked and recorded."
+			      }
+			    },
+			    {
+			      "@type": "Question",
+			      "name": "Does Sapphire support role-based access?",
+			      "acceptedAnswer": {
+			        "@type": "Answer",
+			        "text": "Yes. With dedicated portals for different user roles (owners, managers, issuers, staff), Sapphire ensures secure, streamlined, and role-specific access throughout the system."
+			      }
+			    },
+			    {
+			      "@type": "Question",
+			      "name": "Is the system customizable?",
+			      "acceptedAnswer": {
+			        "@type": "Answer",
+			        "text": "Sapphire encapsulates all essential generic workflows. However, for specific needs, custom modules can be developed on request. These are scoped separately and involve additional cost and time."
+			      }
+			    },
+			    {
+			      "@type": "Question",
+			      "name": "Can Sapphire handle requests like issue, return or location change?",
+			      "acceptedAnswer": {
+			        "@type": "Answer",
+			        "text": "Yes. Sapphire includes structured request workflows for issuing items, submitting returns or surrenders, and processing location changes—each integrated with approval hierarchies and logs."
+			      }
+			    },
+			    {
+			      "@type": "Question",
+			      "name": "What kind of analytics does Sapphire offer?",
+			      "acceptedAnswer": {
+			        "@type": "Answer",
+			        "text": "Sapphire includes performance, financial, and operational analytics: usage trends, breakdown frequencies, failure rates, asset downtime, service logs, and consumption behavior across time."
+			      }
+			    },
+			    {
+			      "@type": "Question",
+			      "name": "How does Sapphire handle inspections?",
+			      "acceptedAnswer": {
+			        "@type": "Answer",
+			        "text": "Inspections are conducted using pre-defined checklists. These can be scheduled periodically, performed on the go, and used to generate structured reports that enable prompt resolution of issues."
+			      }
+			    },
+			    {
+			      "@type": "Question",
+			      "name": "How does Sapphire help in reducing asset downtime?",
+			      "acceptedAnswer": {
+			        "@type": "Answer",
+			        "text": "With real-time alerts and metrics like MTBF, MTTR, and service intervals, Sapphire ensures proactive maintenance and planning—minimizing operational disruptions and maximizing uptime."
+			      }
+			    },
+			    {
+			      "@type": "Question",
+			      "name": "How secure is Sapphire’s data?",
+			      "acceptedAnswer": {
+			        "@type": "Answer",
+			        "text": "Security is integral to Sapphire’s architecture. It features encrypted storage, role-based access, audit trails, and centralized workflows to ensure data integrity and protection."
+			      }
+			    },
+			    {
+			      "@type": "Question",
+			      "name": "Does Sapphire support integrations with external software?",
+			      "acceptedAnswer": {
+			        "@type": "Answer",
+			        "text": "Yes. Sapphire can integrate via APIs and supports exportable formats to sync with accounting systems, HRMS, or third-party platforms as required."
+			      }
+			    },
+			    {
+			      "@type": "Question",
+			      "name": "Can Sapphire generate financial summaries?",
+			      "acceptedAnswer": {
+			        "@type": "Answer",
+			        "text": "Yes. It provides detailed financial reporting, including ownership costs, maintenance expenses, consumption tracking, warranty utilization, and depreciation assessments."
+			      }
+			    },
+			    {
+			      "@type": "Question",
+			      "name": "How is Sapphire implemented?",
+			      "acceptedAnswer": {
+			        "@type": "Answer",
+			        "text": "Sapphire is currently deployed directly within enterprise environments (on-premise or private cloud). However, it will soon be available as a fully cloud-based SaaS solution. Deployment today is guided, fast, and minimally disruptive."
+			      }
+			    },
+			    {
+			      "@type": "Question",
+			      "name": "Does Sapphire require specialized training to use?",
+			      "acceptedAnswer": {
+			        "@type": "Answer",
+			        "text": "No. The system is designed for intuitive adoption. With simplified UIs and clear workflows, even users with limited digital literacy can begin using Sapphire with minimal onboarding."
+			      }
+			    },
+			    {
+			      "@type": "Question",
+			      "name": "Does Sapphire support depreciation calculations?",
+			      "acceptedAnswer": {
+			        "@type": "Answer",
+			        "text": "Yes. Sapphire provides dual-mode depreciation tracking based on both the Indian Companies Act and the Income Tax Act. It also calculates partial-year depreciation as per standard Indian accounting norms."
+			      }
+			    }
+			  ]
+			}
+		</script>
+	</body>
 </html>
-

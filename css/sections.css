@@ -2025,8 +2025,8 @@ a .s-mini-card {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: var(--s-space-20) var(--s-space-6);
-  background: var(--s-gradient-subtle);
+  padding: 1rem;
+  /* background: var(--s-gradient-subtle); */
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -2036,7 +2036,6 @@ a .s-mini-card {
 .s-hero-content {
   position: relative;
   z-index: 10;
-  /* max-width: 1200px; */
   width: 100%;
   text-align: center;
 }
@@ -2152,37 +2151,44 @@ a .s-mini-card {
   margin-bottom: var(--s-space-8);
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: var(--s-space-4);
   flex-wrap: wrap;
 }
 
 .s-hero-feature {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: var(--s-space-3);
+  min-width: 0;
+  flex: 1 1 11rem;
+  max-width: 14rem;
   font-size: var(--s-text-sm);
   font-weight: var(--s-font-medium);
+  line-height: var(--s-leading-tight);
   color: var(--s-white);
   transition: var(--s-transition-smooth);
   background: rgba(255, 255, 255, 0.2);
   padding: var(--s-space-3) var(--s-space-4);
-  border-radius: var(--s-radius-full);
+  border-radius: var(--s-radius-lg);
   backdrop-filter: blur(10px);
-  width: 9rem;
-  text-align: center;
+  -webkit-backdrop-filter: blur(10px);
+  text-align: left;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .s-hero-feature:hover {
   transform: translateY(-2px);
   color: var(--s-white);
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.28);
   box-shadow: var(--s-shadow-lg);
 }
 
 .s-hero-gradient .s-hero-feature,
 .s-hero-sapphire .s-hero-feature,
 .s-hero-diamonds .s-hero-feature {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .s-hero-gradient .s-hero-feature:hover,
@@ -2195,6 +2201,7 @@ a .s-mini-card {
 .s-hero-feature-icon {
   width: 32px;
   height: 32px;
+  flex: 0 0 32px;
   background: linear-gradient(135deg, var(--s-primary), var(--s-primary-dark));
   border-radius: var(--s-radius-full);
   display: flex;
@@ -2211,6 +2218,15 @@ a .s-mini-card {
   box-shadow: var(--s-shadow-md);
 }
 
+.s-hero-feature > span,
+.s-hero-feature > div,
+.s-hero-feature > p {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+
 /* ─────────────────────────────────────────────────────────────────────────────
    5.5 Hero Actions
    ───────────────────────────────────────────────────────────────────────────── */
@@ -2218,6 +2234,13 @@ a .s-mini-card {
 .s-hero-actions {
   display: flex;
   justify-content: center;
+  gap: var(--s-space-4);
+  flex-wrap: nowrap;
+}
+
+.s-hero-actions-start {
+  display: flex;
+  justify-content: start;
   gap: var(--s-space-4);
   flex-wrap: nowrap;
 }
@@ -2305,11 +2328,7 @@ a .s-mini-card {
   border-radius: 0 !important;
 }
 
-@media (max-width: 576px) {
-  .s-hero-compact {
-    padding: var(--s-space-10) var(--s-space-4);
-  }
-}
+
 
 /* Tall Hero */
 .s-hero-tall {
@@ -2321,12 +2340,16 @@ a .s-mini-card {
   min-height: 100vh;
 }
 
+
 /* ─────────────────────────────────────────────────────────────────────────────
    Responsive Hero & Section Styles
    ───────────────────────────────────────────────────────────────────────────── */
 
 @media (max-width: 992px) {
   /* Hero Styles */
+  .s-hero {
+    padding: 5rem 0 3rem;
+  }
   .s-hero-features {
     gap: var(--s-space-4);
     justify-content: space-around;
@@ -2334,6 +2357,10 @@ a .s-mini-card {
 
   .s-hero-title {
     font-size: clamp(2.2rem, 6vw, 3.5rem);
+  }
+
+  .s-hero-actions-start{
+    justify-content: center;
   }
 }
 
@@ -2357,22 +2384,29 @@ a .s-mini-card {
     padding: 0 0.5rem;
   }
 
-  /* Hero Styles */
   .s-hero-features {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 0.5rem;
+    gap: var(--s-space-3);
+  }
+
+  .s-hero-feature {
+    flex: 1 1 calc(50% - var(--s-space-3));
+    max-width: none;
   }
 
   .s-hero-actions {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     min-width: 100%;
+    padding: 1rem;
   }
 
   .s-hero-actions .s-btn {
-    width: 100%;
+    width: 50%;
+    justify-content: center;
+  }
+  
+  .s-hero-actions-start .s-btn {
+    width: 50%;
     justify-content: center;
   }
 
@@ -2380,6 +2414,46 @@ a .s-mini-card {
     margin-bottom: var(--s-space-6);
   }
 }
+@media (max-width: 576px) {
+
+  .s-hero-actions {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .s-hero-actions .s-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .s-hero-compact {
+    padding: var(--s-space-10) var(--s-space-4);
+  }
+
+  .s-hero-features {
+    gap: var(--s-space-2);
+  }
+
+  .s-hero-feature {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    flex: 1 1 calc(50% - var(--s-space-2));
+    padding: var(--s-space-3);
+    gap: var(--s-space-2);
+    border-radius: var(--s-radius-md);
+  }
+}
+
+
+@media (max-width: 360px) {
+  .s-hero-feature {
+    flex-basis: 100%;
+  }
+}
+
 
 /* ─────────────────────────────────────────────────────────────────────────────
   why Sapphire Section and why scorp section gutters

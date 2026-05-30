@@ -5,6 +5,7 @@
 @import url('css/utilities.css');
 /* pages */
 @import url('css/mobileUSP.css');
+@import url('css/sapphire_mobile.css');
 @import url('css/sapphire.css');
 @import url('css/about.css');
 @import url('css/book-demo.css');
@@ -22,6 +23,15 @@
 /* ############# scrollbars ############# */
 
 /* ############# Core Layout ############# */
+@font-face {
+  font-family: "Science Gothic";
+  src: url("../fonts/ScienceGothic-Reg.ttf") format("truetype");
+  font-weight: 100 900;
+  font-stretch: 50% 200%;
+  font-display: swap;
+}
+
+
 html {
   scrollbar-gutter: stable;
   scrollbar-width: none; /* Hide for Firefox by default */
@@ -241,10 +251,6 @@ html.scrollbar-visible ::-webkit-scrollbar-track {
     font-size: var(--s-text-lg);
   }
 
-  .s-hero-features {
-    gap: var(--s-space-4);
-    justify-content: space-around;
-  }
 
   .s-hero-title {
     font-size: clamp(2.2rem, 6vw, 3.5rem);
@@ -368,26 +374,6 @@ html.scrollbar-visible ::-webkit-scrollbar-track {
   .s-section-subtitle {
     font-size: clamp(0.9rem, 2.5vw, 1rem);
     padding: 0 0.5rem;
-  }
-
-
-  .s-hero-features {
-    display: flex;
-    /* flex-direction: column; */
-    justify-content: space-around;
-    align-items: center;
-    gap: 0.5rem
-  }
-
-  .s-hero-actions {
-    flex-direction: column;
-    align-items: center;
-    min-width: 100%;
-  }
-
-  .s-hero-actions .s-btn {
-    width: 100%;
-    justify-content: center;
   }
 
   .s-hero-description {
@@ -1584,7 +1570,6 @@ COUNTRY DROPDOWN LIST (Popup Mode)
   display: flex;
   gap: 1.5rem;
   flex-wrap: nowrap;
-  /* 🫡 Single horizontal line */
   align-items: center;
   will-change: transform;
 }

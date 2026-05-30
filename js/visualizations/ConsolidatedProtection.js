@@ -32,7 +32,7 @@ class ConsolidatedProtection {
   }
 
   formatCurrency(amount) {
-    return `₹${amount.toLocaleString('en-IN')}`;
+    return `₹${amount.toLocaleString("en-IN")}`;
   }
 
   formatPercent(value) {
@@ -149,40 +149,40 @@ class ConsolidatedProtection {
 
     setTimeout(() => {
       // Animate progress bars
-      document.getElementById('seg-warranty').style.width = `${data.warranty}%`;
-      document.getElementById('seg-insurance').style.width = `${data.insurance}%`;
-      document.getElementById('seg-maintenance').style.width = `${data.maintenance}%`;
+      document.getElementById("seg-warranty").style.width = `${data.warranty}%`;
+      document.getElementById("seg-insurance").style.width = `${data.insurance}%`;
+      document.getElementById("seg-maintenance").style.width = `${data.maintenance}%`;
 
       // Animate progress bar percentages (by 1s)
-      this.animateValue(document.getElementById('pct-warranty'), 0, data.warranty, 1000, this.formatPercent, 1);
-      this.animateValue(document.getElementById('pct-insurance'), 0, data.insurance, 1000, this.formatPercent, 1);
-      this.animateValue(document.getElementById('pct-maintenance'), 0, data.maintenance, 1000, this.formatPercent, 1);
+      this.animateValue(document.getElementById("pct-warranty"), 0, data.warranty, 1000, this.formatPercent, 1);
+      this.animateValue(document.getElementById("pct-insurance"), 0, data.insurance, 1000, this.formatPercent, 1);
+      this.animateValue(document.getElementById("pct-maintenance"), 0, data.maintenance, 1000, this.formatPercent, 1);
 
       // Animate legend percentages (by 1s)
-      this.animateValue(document.getElementById('pct2-warranty'), 0, data.warranty, 1000, this.formatPercent, 1);
-      this.animateValue(document.getElementById('pct2-insurance'), 0, data.insurance, 1000, this.formatPercent, 1);
-      this.animateValue(document.getElementById('pct2-maintenance'), 0, data.maintenance, 1000, this.formatPercent, 1);
+      this.animateValue(document.getElementById("pct2-warranty"), 0, data.warranty, 1000, this.formatPercent, 1);
+      this.animateValue(document.getElementById("pct2-insurance"), 0, data.insurance, 1000, this.formatPercent, 1);
+      this.animateValue(document.getElementById("pct2-maintenance"), 0, data.maintenance, 1000, this.formatPercent, 1);
 
       // Animate amounts with 4-DIGIT PRIME STEPS
-      this.animateValue(document.getElementById('amt-warranty'), 0, data.warrantyAmount, 1000, this.formatCurrency.bind(this), 1327);
-      this.animateValue(document.getElementById('amt-insurance'), 0, data.insuranceAmount, 1000, this.formatCurrency.bind(this), 1597);
-      this.animateValue(document.getElementById('amt-maintenance'), 0, data.maintenanceAmount, 1000, this.formatCurrency.bind(this), 1787);
-      this.animateValue(document.getElementById('p-total'), 0, data.total, 1000, this.formatCurrency.bind(this), 2003);
+      this.animateValue(document.getElementById("amt-warranty"), 0, data.warrantyAmount, 1000, this.formatCurrency.bind(this), 1327);
+      this.animateValue(document.getElementById("amt-insurance"), 0, data.insuranceAmount, 1000, this.formatCurrency.bind(this), 1597);
+      this.animateValue(document.getElementById("amt-maintenance"), 0, data.maintenanceAmount, 1000, this.formatCurrency.bind(this), 1787);
+      this.animateValue(document.getElementById("p-total"), 0, data.total, 1000, this.formatCurrency.bind(this), 2003);
 
       this.current = data;
     }, 100);
   }
 
   attachInteractions() {
-    const segments = this.container.querySelectorAll('.protection-segment');
-    const items = this.container.querySelectorAll('.protection-legend-item');
+    const segments = this.container.querySelectorAll(".protection-segment");
+    const items = this.container.querySelectorAll(".protection-legend-item");
 
     segments.forEach((seg, i) => {
-      seg.addEventListener('mouseenter', () => {
-        if (items[i]) items[i].style.transform = 'translateY(-4px) scale(1.05)';
+      seg.addEventListener("mouseenter", () => {
+        if (items[i]) items[i].style.transform = "translateY(-4px) scale(1.05)";
       });
-      seg.addEventListener('mouseleave', () => {
-        if (items[i]) items[i].style.transform = '';
+      seg.addEventListener("mouseleave", () => {
+        if (items[i]) items[i].style.transform = "";
       });
     });
   }
@@ -190,24 +190,24 @@ class ConsolidatedProtection {
   update = () => {
     const data = this.generateData();
 
-    document.getElementById('seg-warranty').style.width = `${data.warranty}%`;
-    document.getElementById('seg-insurance').style.width = `${data.insurance}%`;
-    document.getElementById('seg-maintenance').style.width = `${data.maintenance}%`;
+    document.getElementById("seg-warranty").style.width = `${data.warranty}%`;
+    document.getElementById("seg-insurance").style.width = `${data.insurance}%`;
+    document.getElementById("seg-maintenance").style.width = `${data.maintenance}%`;
 
     // Percentages by 1
-    this.animateValue(document.getElementById('pct-warranty'), this.current.warranty, data.warranty, 1000, this.formatPercent, 1);
-    this.animateValue(document.getElementById('pct-insurance'), this.current.insurance, data.insurance, 1000, this.formatPercent, 1);
-    this.animateValue(document.getElementById('pct-maintenance'), this.current.maintenance, data.maintenance, 1000, this.formatPercent, 1);
+    this.animateValue(document.getElementById("pct-warranty"), this.current.warranty, data.warranty, 1000, this.formatPercent, 1);
+    this.animateValue(document.getElementById("pct-insurance"), this.current.insurance, data.insurance, 1000, this.formatPercent, 1);
+    this.animateValue(document.getElementById("pct-maintenance"), this.current.maintenance, data.maintenance, 1000, this.formatPercent, 1);
 
-    this.animateValue(document.getElementById('pct2-warranty'), this.current.warranty, data.warranty, 1000, this.formatPercent, 1);
-    this.animateValue(document.getElementById('pct2-insurance'), this.current.insurance, data.insurance, 1000, this.formatPercent, 1);
-    this.animateValue(document.getElementById('pct2-maintenance'), this.current.maintenance, data.maintenance, 1000, this.formatPercent, 1);
+    this.animateValue(document.getElementById("pct2-warranty"), this.current.warranty, data.warranty, 1000, this.formatPercent, 1);
+    this.animateValue(document.getElementById("pct2-insurance"), this.current.insurance, data.insurance, 1000, this.formatPercent, 1);
+    this.animateValue(document.getElementById("pct2-maintenance"), this.current.maintenance, data.maintenance, 1000, this.formatPercent, 1);
 
     // Amounts with prime steps
-    this.animateValue(document.getElementById('amt-warranty'), this.current.warrantyAmount, data.warrantyAmount, 1000, this.formatCurrency.bind(this), 1327);
-    this.animateValue(document.getElementById('amt-insurance'), this.current.insuranceAmount, data.insuranceAmount, 1000, this.formatCurrency.bind(this), 1597);
-    this.animateValue(document.getElementById('amt-maintenance'), this.current.maintenanceAmount, data.maintenanceAmount, 1000, this.formatCurrency.bind(this), 1787);
-    this.animateValue(document.getElementById('p-total'), this.current.total, data.total, 1000, this.formatCurrency.bind(this), 2003);
+    this.animateValue(document.getElementById("amt-warranty"), this.current.warrantyAmount, data.warrantyAmount, 1000, this.formatCurrency.bind(this), 1327);
+    this.animateValue(document.getElementById("amt-insurance"), this.current.insuranceAmount, data.insuranceAmount, 1000, this.formatCurrency.bind(this), 1597);
+    this.animateValue(document.getElementById("amt-maintenance"), this.current.maintenanceAmount, data.maintenanceAmount, 1000, this.formatCurrency.bind(this), 1787);
+    this.animateValue(document.getElementById("p-total"), this.current.total, data.total, 1000, this.formatCurrency.bind(this), 2003);
 
     this.current = data;
   };

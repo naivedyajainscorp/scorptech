@@ -15,11 +15,11 @@
   --border: var(--s-blog-border);
 }
 
-*,
+/* *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
+} */
 html {
   scroll-behavior: smooth;
 }
@@ -801,7 +801,6 @@ body {
 /* Blog Index Hero */
 .s-hero-blog {
   position: relative;
-  background: url("../assets/images/mesh-hero-bg-3.jpg") no-repeat center center;
   background-size: cover;
   height: 100vh;
   display: flex;

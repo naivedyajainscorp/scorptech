@@ -12,8 +12,6 @@ scorp_structure.txt
 scorp_full_export.txt
 scorp_misc.txt
 scorp_css_export.txt
-scorp_css_export.txt
-
 
 # ==================================================
 # DEVELOPMENT / EDITOR
@@ -30,7 +28,7 @@ scorp_css_export.txt
 
 tmp/
 *.log
-
+*.csv
 
 # ==================================================
 # NODE DEPENDENCIES (CONTENT EXTRACTOR TOOL)
@@ -38,6 +36,7 @@ tmp/
 
 node_modules/
 assets/data/tools/content-extractor/node_modules/
+complexity-report/
 
 
 # ==================================================
@@ -87,7 +86,19 @@ js/pages/*.html
 *Copy.html
 syntaxopt.html
 navigator.html
-
+blast-radius.html
+capabiliteis_bak.html
+capabilities_backup_draft.html
+capabilities.html
+content_moderation.html
+chaos-to-clarity-hero.html
+info_header.html
+info_header2.html
+header.html
+sapphireHero.html
+section-header-showcase.html
+section-headers-showcase.html
+index4.html
 # --- Blog drafts / templates ---
 blog/*.txt
 blog/*.md
@@ -102,3 +113,4 @@ injectblogs.js
 injectblogs1.js
 
 lazy-audit.cjs
+.dependency-cruiser.cjs

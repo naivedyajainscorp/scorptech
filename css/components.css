@@ -751,7 +751,7 @@
 .s-pill-dark { background: var(--s-gradient-dark); color: var(--s-white); }
 .s-pill-black { background: var(--s-gradient-black); color: var(--s-white); }
 .s-pill-white { background: var(--s-white); color: var(--s-gray-900); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(0, 0, 0, 0.1); }
-.s-pill-light { background: var(--s-gradient-light-bg); color: var(--s-gray-900); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); }
+.s-pill-light { background: var(--s-gradient-white); color: var(--s-gray-900); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); }
 .s-pill-neutral { background: linear-gradient(135deg, #e5e7eb, #d1d5db); color: var(--s-gray-900); }
 /* ───────────────────────────────────────────────────────────────────────────
    SHADOW MODIFIERS (Attribute Scoped)
@@ -2438,9 +2438,8 @@ EXTENDED PALETTE (5 variants)
   height: 1px !important;
   background: var(--s-gray-200) !important;
   margin: 0.5rem 1rem !important;
-
-  /* 🫡 Prevent layout shift */
   flex-shrink: 0 !important;
+  box-shadow: var(--s-text-drop-shadow) !important;
 }
 /* ════════════════════════════════════════════════════════════════════
     SPLIT FAB ROW & DROPDOWN - PERFORMANCE OPTIMIZED
@@ -3395,7 +3394,7 @@ body.modal-open .s-floating-button { display: none !important; }
   white-space: nowrap;
 
   /* Gradient text using design system */
-  background: var(--s-gradient-light-bg);
+  background: var(--s-gradient-white);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

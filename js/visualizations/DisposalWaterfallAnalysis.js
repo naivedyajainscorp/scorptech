@@ -31,9 +31,9 @@ export class DisposalWaterfallAnalysis {
   }
 
   formatINR(value) {
-    return new Intl.NumberFormat('en-IN', {
-      style: 'currency',
-      currency: 'INR',
+    return new Intl.NumberFormat("en-IN", {
+      style: "currency",
+      currency: "INR",
       maximumFractionDigits: 0
     }).format(value);
   }
@@ -84,14 +84,14 @@ export class DisposalWaterfallAnalysis {
     const parent = element.parentElement;
     if (!parent) return;
 
-    const existing = parent.querySelector('.value-arrow');
+    const existing = parent.querySelector(".value-arrow");
     if (existing) existing.remove();
 
-    const arrow = document.createElement('span');
-    arrow.className = `value-arrow ${isIncrease ? 'arrow-up' : 'arrow-down'}`;
-    arrow.innerHTML = `<i class="fas fa-arrow-${isIncrease ? 'up' : 'down'}"></i>`;
+    const arrow = document.createElement("span");
+    arrow.className = `value-arrow ${isIncrease ? "arrow-up" : "arrow-down"}`;
+    arrow.innerHTML = `<i class="fas fa-arrow-${isIncrease ? "up" : "down"}"></i>`;
 
-    parent.style.position = 'relative';
+    parent.style.position = "relative";
     parent.appendChild(arrow);
 
     setTimeout(() => arrow.remove(), 1500);
@@ -114,18 +114,14 @@ export class DisposalWaterfallAnalysis {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
       const easeOut = 1 - Math.pow(1 - progress, 3);
-      const current = oldValue + (difference * easeOut);
+      const current = oldValue + difference * easeOut;
 
-      element.textContent = isCurrency
-        ? this.formatINR(Math.round(current))
-        : `${Math.round(current)}%`;
+      element.textContent = isCurrency ? this.formatINR(Math.round(current)) : `${Math.round(current)}%`;
 
       if (progress < 1) {
         requestAnimationFrame(animate);
       } else {
-        element.textContent = isCurrency
-          ? this.formatINR(newValue)
-          : `${newValue}%`;
+        element.textContent = isCurrency ? this.formatINR(newValue) : `${newValue}%`;
       }
     };
 
@@ -143,7 +139,7 @@ export class DisposalWaterfallAnalysis {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
       const easeOut = 1 - Math.pow(1 - progress, 3);
-      const current = oldPct + ((newPct - oldPct) * easeOut);
+      const current = oldPct + (newPct - oldPct) * easeOut;
 
       bar.style.width = `${current}%`;
 
@@ -159,17 +155,17 @@ export class DisposalWaterfallAnalysis {
     const old = { ...this.current };
     const newVals = this.generateNewValues();
 
-    this.animateValue('val-purchase', old.purchase, newVals.purchase);
-    this.animateValue('val-depreciation', old.depreciation, newVals.depreciation);
-    this.animateValue('val-book', old.book, newVals.book);
-    this.animateValue('val-recovered', old.recovered, newVals.recovered);
-    this.animateValue('val-net-loss', old.netLoss, newVals.netLoss);
-    this.animateValue('val-recovery-rate', old.recoveryRate, newVals.recoveryRate, false);
+    this.animateValue("val-purchase", old.purchase, newVals.purchase);
+    this.animateValue("val-depreciation", old.depreciation, newVals.depreciation);
+    this.animateValue("val-book", old.book, newVals.book);
+    this.animateValue("val-recovered", old.recovered, newVals.recovered);
+    this.animateValue("val-net-loss", old.netLoss, newVals.netLoss);
+    this.animateValue("val-recovery-rate", old.recoveryRate, newVals.recoveryRate, false);
 
     const maxValue = newVals.purchase;
-    this.animateProgress('bar-depreciation', (old.depreciation / old.purchase) * 100, (newVals.depreciation / maxValue) * 100);
-    this.animateProgress('bar-book', (old.book / old.purchase) * 100, (newVals.book / maxValue) * 100);
-    this.animateProgress('bar-recovered', (old.recovered / old.book) * 100, (newVals.recovered / newVals.book) * 100);
+    this.animateProgress("bar-depreciation", (old.depreciation / old.purchase) * 100, (newVals.depreciation / maxValue) * 100);
+    this.animateProgress("bar-book", (old.book / old.purchase) * 100, (newVals.book / maxValue) * 100);
+    this.animateProgress("bar-recovered", (old.recovered / old.book) * 100, (newVals.recovered / newVals.book) * 100);
 
     this.current = newVals;
   }
