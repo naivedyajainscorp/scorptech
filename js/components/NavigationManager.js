@@ -1,23 +1,52 @@
 /* ════════════════════════════════════════════════════════════════════════════
-   NAVIGATION MANAGER COMPONENT - PRD v2.1 COMPLIANT
-   Click-based dropdowns, proper collapse, accessibility, all fixes applied
+   NAVIGATION MANAGER COMPONENT - REVISED
+   Path-safe active states with exact-match top-level highlighting
+   Dropdown parent behavior preserved intentionally
    ════════════════════════════════════════════════════════════════════════════ */
 
 // Helper functions
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => document.querySelectorAll(selector);
 
-const isSamePage = (href) => {
+const normalizePath = (input) => {
+  if (!input) return '/';
+
+  const url = new URL(input, window.location.origin);
+  let path = url.pathname;
+
+  // Normalize index.html to folder root
+  path = path.replace(/index\.html$/i, '');
+
+  // Remove trailing slash except for root
+  path = path.replace(/\/+$/, '') || '/';
+
+  return path;
+};
+
+const isInternalNavigableLink = (href) => {
   if (!href) return false;
-  const target = href.split('#')[0];
-  const current = window.location.pathname.split('/').pop() || 'index.html';
-  return target === current;
+  if (href.startsWith('#')) return false;
+  if (href.startsWith('http://') || href.startsWith('https://')) return false;
+  if (href.startsWith('mailto:') || href.startsWith('tel:')) return false;
+  if (href === 'javascript:void(0)') return false;
+  return true;
+};
+
+const isSamePage = (href) => {
+  if (!isInternalNavigableLink(href)) return false;
+  return normalizePath(href) === normalizePath(window.location.pathname);
+};
+
+const isExactPageMatch = (href) => {
+  if (!isInternalNavigableLink(href)) return false;
+  return normalizePath(href) === normalizePath(window.location.pathname);
 };
 
 const nudgeActive = (el) => {
   el.classList.remove('s-already-active');
   void el.offsetWidth; // Force reflow
   el.classList.add('s-already-active');
+
   if (window.navigator && typeof window.navigator.vibrate === 'function') {
     window.navigator.vibrate(18);
   }
@@ -42,6 +71,7 @@ export function initNavigationManager() {
         navbar.classList.remove('scrolled');
       }
     }, { passive: true });
+
     console.log('🫡 Navbar scroll effect initialized');
   }
 
@@ -52,17 +82,15 @@ export function initNavigationManager() {
   if (navLinksAll.length > 0) {
     navLinksAll.forEach(link => {
       link.addEventListener('click', function (e) {
-        // Allow Ctrl+Click/Meta+Click to open in new tab
-        if (e.ctrlKey || e.metaKey) return;
+        // Allow Ctrl+Click / Meta+Click / middle click behavior
+        if (e.ctrlKey || e.metaKey || e.button === 1) return;
 
         const href = this.getAttribute('href');
 
-        // Skip external links, anchors, and javascript: links
-        if (href && !href.startsWith('#') && !href.startsWith('http') && href !== 'javascript:void(0)') {
-
-          // If already on this page, nudge instead of navigate
-          // Don't treat Book Demo as an active page link (it's a button)
+        if (isInternalNavigableLink(href)) {
           const isBookDemo = this.classList.contains('book-demo-button');
+
+          // If already on this exact page, nudge instead of navigate
           if (!isBookDemo && (this.classList.contains('active') || isSamePage(href))) {
             e.preventDefault();
             nudgeActive(this);
@@ -72,28 +100,33 @@ export function initNavigationManager() {
           // Page transition effect
           e.preventDefault();
           document.body.classList.add('page-exit');
+
           setTimeout(() => {
             window.location.href = href;
           }, 300);
         }
       });
     });
+
     console.log('🫡 Nav link click handlers initialized');
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // 3. ACTIVE PAGE HIGHLIGHTING
+  // 3. ACTIVE PAGE HIGHLIGHTING (EXACT MATCH ONLY)
   // ═══════════════════════════════════════════════════════════════════════════
 
   if (navLinksAll.length > 0) {
+    navLinksAll.forEach(link => link.classList.remove('active'));
+
     navLinksAll.forEach(link => {
       const linkHref = link.getAttribute('href');
-      // Exclude Book Demo button from active highlighting
-      if (linkHref === currentPage && !link.classList.contains('book-demo-button')) {
-        navLinksAll.forEach(l => l.classList.remove('active'));
+      const isBookDemo = link.classList.contains('book-demo-button');
+
+      if (!isBookDemo && isExactPageMatch(linkHref)) {
         link.classList.add('active');
       }
     });
+
     console.log('🫡 Active page highlighting initialized');
   }
 
@@ -103,7 +136,7 @@ export function initNavigationManager() {
 
   const dropdownPageMap = {
     'resources': ['faq.html', 'terms_of_use.html', 'privacy_policy.html'],
-    'sapphire-smart': ['analytics.html', 'intelligence.html', 'mobileUSP.html', 'how-do-I-use-sapphire.html'],
+    'sapphire-smart': ['analytics.html', 'intelligence.html', 'sapphire_mobile.html', 'how-do-I-use-sapphire.html'],
   };
 
   Object.keys(dropdownPageMap).forEach(dropdownId => {
@@ -115,10 +148,13 @@ export function initNavigationManager() {
       if (dropdownTrigger) {
         dropdownTrigger.classList.add('s-has-active-child');
 
-        const dropdownMenu = dropdownTrigger.closest('.s-nav-dropdown-internal')?.querySelector('.s-internal-dropdown-menu');
+        const dropdownMenu = dropdownTrigger
+          .closest('.s-nav-dropdown-internal')
+          ?.querySelector('.s-internal-dropdown-menu');
 
         if (dropdownMenu) {
           const menuItems = dropdownMenu.querySelectorAll('.s-internal-menu-item');
+
           menuItems.forEach(item => {
             const itemPage = item.getAttribute('data-page');
             if (itemPage === currentPage) {
@@ -128,10 +164,11 @@ export function initNavigationManager() {
         }
       }
 
-      // Remove active class from main nav links when in dropdown
+      // Remove top-level active class when current page belongs to dropdown group
       navLinksAll.forEach(l => l.classList.remove('active'));
     }
   });
+
   console.log('🫡 Dropdown active child detection initialized');
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -139,37 +176,38 @@ export function initNavigationManager() {
   // ═══════════════════════════════════════════════════════════════════════════
 
   const internalItems = document.querySelectorAll('.s-internal-menu-item');
+
   internalItems.forEach(item => {
     item.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
 
       // Only prevent default if on same page
-      // This keeps dropdown open and nudges without navigation
       if (this.classList.contains('s-active-page') || isSamePage(href)) {
         e.preventDefault();
         e.stopPropagation();
         nudgeActive(this);
         console.log('🔔 Nudged active dropdown item (no navigation)');
       }
-      // If different page, allow normal navigation (dropdown will close naturally)
+      // If different page, allow normal navigation
     });
   });
+
   console.log('🫡 Internal dropdown menu item nudge initialized');
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // 6. CLICK/PRESS-BASED DROPDOWN TOGGLE SYSTEM (TR-2) - PRD v2.1
+  // 6. CLICK/PRESS-BASED DROPDOWN TOGGLE SYSTEM (TR-2)
   // ═══════════════════════════════════════════════════════════════════════════
 
   const dropdowns = $$('.s-nav-dropdown-internal, .s-sapphire-dropdown');
 
-  // Helper to close all dropdowns
   const closeAllDropdowns = () => {
     document.querySelectorAll('.s-internal-dropdown-menu, .s-sapphire-menu').forEach(menu => {
       menu.classList.remove('show');
     });
+
     document.querySelectorAll('.dropdown-toggle, .s-sapphire-trigger').forEach(trigger => {
       trigger.setAttribute('aria-expanded', 'false');
-      trigger.classList.remove('show'); // Ensure caret resets
+      trigger.classList.remove('show');
     });
   };
 
@@ -179,43 +217,33 @@ export function initNavigationManager() {
 
     if (!trigger || !menu) return;
 
-    // 🛑 CRITICAL: Remove Bootstrap's data attribute to prevent conflict
-    // This allows our manual click handler to have full control
+    // Remove Bootstrap's data attribute to prevent conflict
     if (trigger.hasAttribute('data-bs-toggle')) {
       trigger.removeAttribute('data-bs-toggle');
     }
 
-    // Click to toggle
     trigger.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
-      e.stopImmediatePropagation(); // Ensure no other listeners fire
+      e.stopImmediatePropagation();
 
       const isOpen = menu.classList.contains('show');
 
-      // Close others first
       closeAllDropdowns();
 
-      // Toggle current
       if (!isOpen) {
         menu.classList.add('show');
         trigger.setAttribute('aria-expanded', 'true');
         trigger.classList.add('show');
-      } else {
-        // If it was open, closeAllDropdowns() already closed it, so we're good.
-        // But for clarity/active-toggle behavior, clicking open closes it.
       }
     });
 
-    // Keyboard Accessibility
     trigger.addEventListener('keydown', (e) => {
-      // Enter or Space to toggle
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         trigger.click();
       }
 
-      // Escape to close
       if (e.key === 'Escape') {
         e.preventDefault();
         closeAllDropdowns();
@@ -224,7 +252,7 @@ export function initNavigationManager() {
     });
   });
 
-  // Click Outside to Close
+  // Click outside to close
   document.addEventListener('click', (e) => {
     const isDropdownClick = e.target.closest('.s-nav-dropdown-internal, .s-sapphire-dropdown');
     if (!isDropdownClick) {
@@ -232,7 +260,7 @@ export function initNavigationManager() {
     }
   });
 
-  // Global Escape to Close
+  // Global Escape to close
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeAllDropdowns();
@@ -240,7 +268,6 @@ export function initNavigationManager() {
   });
 
   console.log('🫡 Click-based dropdown system initialized (TR-2)');
-
   console.log('🎉 Navigation Manager fully initialized');
 }
 

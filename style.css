@@ -4,6 +4,7 @@
 @import url('css/sections.css');
 @import url('css/utilities.css');
 /* pages */
+@import url('css/index.css');
 @import url('css/mobileUSP.css');
 @import url('css/sapphire_mobile.css');
 @import url('css/sapphire.css');

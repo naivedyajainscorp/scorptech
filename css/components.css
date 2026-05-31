@@ -1525,14 +1525,6 @@ EXTENDED PALETTE (5 variants)
 .s-wm-icon[style*="mask-image"],
 .s-wm-icon[style*="-webkit-mask-image"] { opacity: 0.1; }
 
-/* Watermark override for s-pic-card — MUST come after base rule */
-.s-pic-card-watermark .s-wm-icon {
-  right: -20px;
-  bottom: -20px;
-  z-index: 6;
-  width: 10rem;
-  height: 10rem;
-}
 /* ═════════════════════════════════════════════════════════════════════════════
    S-CONTENT-CARD STYLES (Exact replica of s-card)
 ═════════════════════════════════════════════════════════════════════════════ */
@@ -1740,7 +1732,7 @@ EXTENDED PALETTE (5 variants)
   height: 100%;
   display: flex;
   flex-direction: column;
-  border-radius: var(--s-radius-xl);
+  border-radius: var(--s-radius-md);
   overflow: hidden;
   box-shadow: var(--s-shadow-md);
   transition: var(--s-transition-smooth);
@@ -1874,6 +1866,14 @@ EXTENDED PALETTE (5 variants)
   border-color: transparent;
 }
 
+
+.s-pic-card-watermark .s-wm-icon {
+  right: -20px;
+  bottom: -20px;
+  z-index: 6;
+  width: 10rem;
+  height: 10rem;
+}
 
 /* ═══════════════════════════════════════════════════════
    s-full-pic-card — Full bleed image card

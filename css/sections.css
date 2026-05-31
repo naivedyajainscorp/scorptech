@@ -2256,6 +2256,7 @@ a .s-mini-card {
   min-height: 50vh!important;
   padding: var(--s-space-16) var(--s-space-6);
   margin-bottom: 2rem;
+  padding-top: 5rem;
 }
 
 .s-hero-compact > img:first-child {
@@ -2370,15 +2371,6 @@ a .s-mini-card {
     margin-bottom: clamp(1.5rem, 4vw, 2rem);
   }
 
-  .s-section-title {
-    font-size: clamp(1.75rem, 5vw, 2.25rem);
-  }
-
-  .s-section-title::after {
-    width: 50px;
-    height: 2.5px;
-  }
-
   .s-section-subtitle {
     font-size: clamp(0.9rem, 2.5vw, 1rem);
     padding: 0 0.5rem;
@@ -2428,7 +2420,7 @@ a .s-mini-card {
   }
 
   .s-hero-compact {
-    padding: var(--s-space-10) var(--s-space-4);
+    padding: 6rem var(--s-space-4);
   }
 
   .s-hero-features {
@@ -2472,11 +2464,27 @@ a .s-mini-card {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   STYLE VARIANTS
+  SECTION HEADERS/section headings 
    ═══════════════════════════════════════════════════════════════ */
 
+.s-section-header {
+  text-align: center;
+  margin-bottom: var(--s-space-2xl, 3rem);
+  padding: 0 1rem;
+  position: relative;
+}
+
+/* Section Title - Main Heading */
 .s-section-title {
-  margin: 2rem 0.75rem;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  color: var(--s-gray-900, #0f172a);
+  margin-bottom: var(--s-space-md, 1rem);
+  line-height: 1.2;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Ultra Clean (No underline) */
@@ -2537,30 +2545,6 @@ a .s-mini-card {
   display: none;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-  SECTION HEADERS/section headings 
-   ═══════════════════════════════════════════════════════════════ */
-
-.s-section-header {
-  text-align: center;
-  margin-bottom: var(--s-space-2xl, 3rem);
-  padding: 0 1rem;
-  position: relative;
-}
-
-/* Section Title - Main Heading */
-.s-section-title {
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 800;
-  color: var(--s-gray-900, #0f172a);
-  margin-bottom: var(--s-space-md, 1rem);
-  line-height: 1.2;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 /* Section Subtitle - Supporting Text */
 .s-section-subtitle {
   font-size: clamp(1rem, 2vw, 1.125rem);
@@ -2583,7 +2567,7 @@ a .s-mini-card {
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   border: 1px solid rgba(0, 102, 204, 0.15);
 }
 
@@ -2599,19 +2583,7 @@ a .s-mini-card {
   gap: 0.5rem;
 }
 
-.s-section-title.gradient {
-  background: linear-gradient(135deg, var(--s-primary), var(--s-primary-light), var(--s-accent));
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradientFlow 4s ease-in-out infinite;
-}
 
-.s-section-title.gradient::after {
-  display: none;
-  /* No underline with gradient */
-}
 
 /* ─────────────────────────────────────────────────────────────────────────────
     Feature Node Icons (Home Page Hero)
