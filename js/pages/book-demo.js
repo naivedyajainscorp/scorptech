@@ -216,46 +216,56 @@ document.addEventListener("DOMContentLoaded", function () {
 // ********************************************
 
 const pincodeInput = document.getElementById("pincode");
-let pincodeVerified = false; // Track if pincode has been successfully verified
-
-// Debounce function to avoid too many API calls
+let pincodeVerified = false;
+let pincodeLookupInProgress = false;
 let debounceTimer;
+
+function resetPincodeFields() {
+  const district = document.getElementById("district");
+  const state = document.getElementById("state");
+  const country = document.getElementById("country");
+
+  district.value = "";
+  state.value = "";
+  country.value = "";
+
+  [pincodeInput, district, state, country].forEach(el => {
+    el.classList.remove("is-valid", "is-invalid");
+  });
+}
+
+function schedulePincodeLookup(pin) {
+  const district = document.getElementById("district");
+  const state = document.getElementById("state");
+  const country = document.getElementById("country");
+
+  clearTimeout(debounceTimer);
+
+  if (pin.length !== 6) {
+    pincodeVerified = false;
+    pincodeLookupInProgress = false;
+    resetPincodeFields();
+    return;
+  }
+
+  pincodeLookupInProgress = true;
+
+  debounceTimer = setTimeout(() => {
+    fetchPincodeData(pin, district, state, country, pincodeInput);
+  }, 150);
+}
 
 if (pincodeInput) {
   pincodeInput.addEventListener("input", function () {
-    // Only allow numbers, max 6 digits
     this.value = this.value.replace(/\D/g, "").slice(0, 6);
+    pincodeVerified = false;
+    schedulePincodeLookup(this.value.trim());
+  });
 
-    const pin = this.value.trim();
-    const district = document.getElementById("district");
-    const state = document.getElementById("state");
-    const country = document.getElementById("country");
-
-    // Reset verification flag if pincode is being edited
-    if (pin.length !== 6) {
-      pincodeVerified = false;
-      // Clear fields if pincode is incomplete
-      district.value = "";
-      state.value = "";
-      country.value = "";
-      // Remove any validation state (no tick, no error - just idle)
-      this.classList.remove("is-valid", "is-invalid");
-      district.classList.remove("is-valid", "is-invalid");
-      state.classList.remove("is-valid", "is-invalid");
-      country.classList.remove("is-valid", "is-invalid");
-      return;
-    }
-
-    // Only fetch when we have exactly 6 digits
-    if (pin.length === 6) {
-      // Clear previous debounce
-      clearTimeout(debounceTimer);
-
-      // Debounce API call (wait 500ms after user stops typing)
-      debounceTimer = setTimeout(() => {
-        fetchPincodeData(pin, district, state, country, this);
-      }, 500);
-    }
+  pincodeInput.addEventListener("change", function () {
+    this.value = this.value.replace(/\D/g, "").slice(0, 6);
+    pincodeVerified = false;
+    schedulePincodeLookup(this.value.trim());
   });
 
   pincodeInput.addEventListener("blur", function () {
@@ -264,15 +274,23 @@ if (pincodeInput) {
     const state = document.getElementById("state");
     const country = document.getElementById("country");
 
-    // Only show error if pincode is not 6 digits OR if it's 6 digits but not verified
-    if (pin.length !== 6 || (pin.length === 6 && !pincodeVerified)) {
+    if (pin.length !== 6) {
       toggleError(this, null, true, 'pincode');
-      if (pin.length === 6 && !pincodeVerified) {
-        // Also mark dependent fields as invalid
-        toggleError(district, null, true, 'district');
-        toggleError(state, null, true, 'state');
-        toggleError(country, null, true, 'country');
-      }
+      toggleError(district, null, true, 'district');
+      toggleError(state, null, true, 'state');
+      toggleError(country, null, true, 'country');
+      return;
+    }
+
+    if (pincodeLookupInProgress) {
+      return;
+    }
+
+    if (!pincodeVerified) {
+      toggleError(this, null, true, 'pincode');
+      toggleError(district, null, true, 'district');
+      toggleError(state, null, true, 'state');
+      toggleError(country, null, true, 'country');
     }
   });
 }
@@ -282,52 +300,51 @@ async function fetchPincodeData(pincode, districtEl, stateEl, countryEl, pincode
   const loader = document.getElementById("pincode-loader");
 
   try {
-    // 🫡 Show loader - it will appear in the same space as the checkmark
+    pincodeLookupInProgress = true;
     if (loader) loader.classList.add("active");
-    // No need to adjust padding - loader and checkmark occupy same space
 
     const response = await fetch(`https://api.postalpincode.in/pincode/${pincode}`);
     const data = await response.json();
 
-    // Check if API returned success
-    if (data[0].Status === "Success" && data[0].PostOffice && data[0].PostOffice.length > 0) {
+    if (data[0]?.Status === "Success" && data[0]?.PostOffice?.length) {
       const postOffice = data[0].PostOffice[0];
 
       districtEl.value = postOffice.District || "";
       stateEl.value = postOffice.State || "";
       countryEl.value = postOffice.Country || "India";
 
-      // 🫡 Mark as verified - tick will appear after loader hides
       pincodeVerified = true;
-      
-      // Show valid state (green tick will appear automatically via toggleError)
+
       toggleError(pincodeEl, null, false, 'pincode');
       toggleError(districtEl, null, false, 'district');
       toggleError(stateEl, null, false, 'state');
       toggleError(countryEl, null, false, 'country');
     } else {
-      // Invalid pincode
       pincodeVerified = false;
+
       districtEl.value = "";
       stateEl.value = "";
       countryEl.value = "";
+
       toggleError(pincodeEl, null, true, 'pincode');
       toggleError(districtEl, null, true, 'district');
       toggleError(stateEl, null, true, 'state');
       toggleError(countryEl, null, true, 'country');
     }
   } catch (error) {
-    console.error("Pincode API Error:", error);
     pincodeVerified = false;
-    // On error, mark as invalid
+
     districtEl.value = "";
     stateEl.value = "";
     countryEl.value = "";
+
     toggleError(pincodeEl, null, true, 'pincode');
+    toggleError(districtEl, null, true, 'district');
+    toggleError(stateEl, null, true, 'state');
+    toggleError(countryEl, null, true, 'country');
   } finally {
-    // 🫡 Hide loader - tick will appear here if valid
+    pincodeLookupInProgress = false;
     if (loader) loader.classList.remove("active");
-    // No padding reset needed - checkmark takes same space
   }
 }
 
@@ -877,6 +894,15 @@ if (demoForm) {
         }
       }
     });
+
+    // 🧪 Pincode Verification Check
+    if (!pincodeVerified) {
+      toggleError(document.getElementById('pincode'), null, true, 'pincode');
+      toggleError(document.getElementById('district'), null, true, 'district');
+      toggleError(document.getElementById('state'), null, true, 'state');
+      toggleError(document.getElementById('country'), null, true, 'country');
+      valid = false;
+    }
 
     // 🧪 Org Type
     const orgTypeRadios = document.querySelectorAll('input[name="orgType"]');

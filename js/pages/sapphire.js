@@ -2,45 +2,8 @@
    SAPPHIRE PAGE INITIALIZATION
    ════════════════════════════════════════════════════════════════════════════ */
 import { initInfiniteScroll } from '../components/InfiniteScroll.js';
-import { fetchStageBank, pickPair, normalizePair } from '../builders/SapphireHeroDataAdapters.js';
-import { renderHeroPair } from '../builders/SapphireHeroCardBuilders.js';
-let sapphireStageData = null; // Cache for fetched data
 
 console.log('💎 Sapphire page initialization started');
-
-/* ═══════════════════════════════════════════════════════════════
-PLACEHOLDER FILLER FOR INFINITE VARIETY
-═══════════════════════════════════════════════════════════════ */
-function fillPlaceholders(text) {
-    if (!text || typeof text !== 'string') return text;
-    const mocks = {
-        personName: ['Rahul', 'Priya', 'Amit', 'Sneha', 'Vikram', 'Neha', 'Rajesh', 'Pooja'][Math.floor(Math.random() * 8)],
-        assetName: ['Generator-04', 'Drill Press-12', 'Forklift-B2', 'Compressor-X', 'CNC Machine-7', 'Laptop-IT-45'][Math.floor(Math.random() * 6)],
-        assetCode: ['AST-2847', 'AST-9012', 'AST-5634', 'AST-7821'][Math.floor(Math.random() * 4)],
-        materialName: ['Cement', 'Steel Rods', 'Lubricant Oil', 'Safety Gloves', 'Welding Electrodes', 'Paint Buckets'][Math.floor(Math.random() * 6)],
-        quantity: ['12', '50', '8', '150', '25', '200'][Math.floor(Math.random() * 6)],
-        unit: ['bags', 'units', 'litres', 'pcs', 'boxes', 'kg'][Math.floor(Math.random() * 6)],
-        location: ['Bay 3', 'Store A', 'Floor 2', 'Workshop', 'Site B', 'Warehouse C'][Math.floor(Math.random() * 6)],
-        fromLocation: ['Bay 1', 'Store B', 'Floor 1', 'Reception'][Math.floor(Math.random() * 4)],
-        time: new Date().toLocaleTimeString('en-IN', {hour: '2-digit', minute:'2-digit'}),
-        date: new Date().toLocaleDateString('en-IN'),
-        days: ['3', '7', '14', '30', '5'][Math.floor(Math.random() * 5)],
-        status: ['Good', 'Damaged', 'Under Review', 'Pending', 'Approved'][Math.floor(Math.random() * 5)],
-        role: ['Technician', 'Supervisor', 'Store Keeper', 'Manager'][Math.floor(Math.random() * 4)],
-        itemCount: ['24', '15', '8', '42', '10'][Math.floor(Math.random() * 5)],
-        batchNo: ['BATCH-2024-001', 'BATCH-2024-045', 'BATCH-2024-112'][Math.floor(Math.random() * 3)],
-        vendorName: ['ABC Suppliers', 'XYZ Services', 'Metro Vendors'][Math.floor(Math.random() * 3)]
-    };
-    return text.replace(/\{(\w+)\}/g, (match, key) => mocks[key] || match);
-}
-
-function fillPlaceholdersInPair(pair) {
-    return {
-        ...pair,
-        chaos: { ...pair.chaos, title: fillPlaceholders(pair.chaos.title), text: fillPlaceholders(pair.chaos.text) },
-        sapphire: { ...pair.sapphire, title: fillPlaceholders(pair.sapphire.title), text: fillPlaceholders(pair.sapphire.text) }
-    };
-}
 
 /* ═══════════════════════════════════════════════════════════════
 CAPABILITY CARDS ANIMATIONS
@@ -167,36 +130,6 @@ function initSapphireCapabilityCards() {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-SAPPHIRE HERO
-═══════════════════════════════════════════════════════════════ */
-function initSapphireStageViz() {
-    function animCount(el, target, suffix, duration) {
-        const start = performance.now();
-        function step(now) {
-            const p = Math.min((now - start) / duration, 1);
-            el.textContent = Math.round((1 - Math.pow(1 - p, 3)) * target) + suffix;
-            if (p < 1) requestAnimationFrame(step);
-        }
-        requestAnimationFrame(step);
-    }
-    let count = 1284;
-    const procEl = document.getElementById('proc-count');
-    const m1 = document.getElementById('m1');
-    const m2 = document.getElementById('m2');
-    const m3 = document.getElementById('m3');
-    if (!procEl || !m1 || !m2 || !m3) return;
-
-    function tickCount() { count += Math.floor(Math.random() * 3) + 1; procEl.textContent = count.toLocaleString(); }
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        m1.textContent = '2,400+'; m2.textContent = '890+'; m3.textContent = '5,100+'; procEl.textContent = '1,284';
-        return;
-    }
-    setTimeout(() => {
-        animCount(m1, 2400, '+', 1800); animCount(m2, 890, '+', 1600); animCount(m3, 5100, '+', 2000);
-        procEl.textContent = count.toLocaleString(); setInterval(tickCount, 1800);
-    }, 1600);
-}
-/* ═══════════════════════════════════════════════════════════════
 UI & NAV INITIALIZERS
 ═══════════════════════════════════════════════════════════════ */
 function initAOS() {
@@ -281,72 +214,15 @@ function initIndustryPillRails() {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   HERO PAIR INITIALIZATION & ROTATION
-   ═══════════════════════════════════════════════════════════════ */
-
-async function initSapphireHeroPair() {
-    const container = document.querySelector('.s-stage');
-    if (!container) return;
-
-    try {
-        // 1. Fetch data only once
-        if (!sapphireStageData) {
-            sapphireStageData = await fetchStageBank();
-        }
-
-        const category = container.dataset.category || 'default';
-        let pair;
-
-        // 2. If 'default', pick a random pair to enable rotation
-        if (category === 'default' && sapphireStageData.pairs) {
-            const randomIndex = Math.floor(Math.random() * sapphireStageData.pairs.length);
-            pair = sapphireStageData.pairs[randomIndex];
-        } else {
-            // 3. Otherwise, use the adapter to find the specific category
-            pair = pickPair(sapphireStageData, category);
-        }
-
-        const normalized = normalizePair(pair, sapphireStageData);
-        const populated = fillPlaceholdersInPair(normalized);
-        
-        // 4. Render (triggers the CSS fade-in animation)
-        renderHeroPair(container, populated);
-        return true;
-    } catch (error) {
-        console.error(' Failed to update Sapphire hero pair:', error);
-        return false;
-    }
-}
-
-// Rotation Loop Logic
-function startHeroRotation(intervalMs = 6000) {
-    console.log('🔄 Starting Sapphire hero card rotation...');
-    
-    // Wait 1.5s after load so the user sees the first card before it flips
-    setTimeout(() => {
-        setInterval(async () => {
-            await initSapphireHeroPair();
-        }, intervalMs);
-    }, 1500);
-}
-
-/* ═══════════════════════════════════════════════════════════════
 DOM
 ═══════════════════════════════════════════════════════════════ */
 document.addEventListener('DOMContentLoaded', async () => {
     initAOS();
     initializeSapphireHeroGrid();
-    
-    // Initial render
-    await initSapphireHeroPair();
-    
-    // Start the automatic rotation
-    startHeroRotation(6000); 
 
     initCmNav();
     initSapphireCapabilityCards();
     initIndustryPillRails();
-    initSapphireStageViz();
 
     let resizeTimeout;
     window.addEventListener('resize', () => {
