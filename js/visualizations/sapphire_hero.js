@@ -990,6 +990,15 @@
         flipPill(getRow('MAT-3328').cells[6], 'sh-inv-pill sh-inv-pill--danger sh-inv-condition-pill', 'Expired', T7 + 2900);
         flipPill(getRow('MAT-3328').cells[7], 'sh-inv-pill sh-inv-pill--danger sh-inv-status-pill', 'Unavailable', T7 + 2950);
 
+        // Slide out and remove the discarded row
+        schedule(() => {
+          const row = getRow('MAT-3328');
+          if (row) {
+            row.classList.add('sh-row-discarded');
+            setTimeout(() => row.remove(), 500);
+          }
+        }, T7 + 3400);
+
         // ============================================================
         // ACT 8 — MAT-1042 Consumption Cycle (T8=T7+3900)
         // MAT-1042 is already: Condition OK, Status Available, Stock 180 L, Expiry 4 Jun 2027
