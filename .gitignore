@@ -114,3 +114,7 @@ injectblogs1.js
 
 lazy-audit.cjs
 .dependency-cruiser.cjs
+# DIRECTORIES
+.claude
+.blackbox\skills
+.blackbox\
