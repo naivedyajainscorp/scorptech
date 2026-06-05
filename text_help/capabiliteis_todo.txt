@@ -36,3 +36,226 @@ and increase the size of the mobile mockup as it is the center of attraction of 
 7. make sure to use text shadow for all the texts so that the readability of the text is not affected by the graphics running behind it, or manage it your way
 8. use the css elements like buttons from the projects css ssystems, project components, ther a button of every color, and size
 
+
+
+Here is the fully corrected schedule, computed exactly from your current JS source.
+
+***
+
+## Root Cause Summary
+
+Before the table: **3 bugs were killing the animation**:
+1. `CYCLE_MS = 60000` — the engine restarts the scene at 60 s, but your Reports content runs to ~62.4 s 
+2. `req_tab_switch = 33200` — ACT 3 splash fires at 33100 ms, only 100 ms before the tab switches away — the table screen vanishes mid-ACT
+3. Your written schedule listed `invBento[0]–[11]` but the DOM only has **7** bento cards 
+
+**Fix required in JS only:** Change `CYCLE_MS` to `90000`, and move the `req_tab_switch` to `65500` (after ACT 8 finishes). Zero CSS changes needed. 
+
+***
+
+## ✅ Corrected Full Schedule — `CYCLE_MS = 90000`
+
+### DASHBOARD PHASE
+| Time | Event |
+|------|-------|
+| 400 | `wo` card visible |
+| 2300 | `prop` card visible |
+| 2300 | propItem visible |
+| 2800 | propItem visible |
+| 3300 | propItem visible |
+| 3800 | propItem visible |
+| 2900 | propItem checked |
+| 3400 | propItem checked |
+| 3900 | propItem checked |
+| 4400 | propItem checked |
+| 5400 | `insp` card visible |
+| 5800 | checkItem visible |
+| 6150 | checkItem visible |
+| 6500 | checkItem visible |
+| 6850 | checkItem visible |
+| 7200 | checkItem visible |
+| 7550 | checkItem visible |
+| 9900 | metricCard visible |
+| 10150 | metricCard visible |
+| 10400 | metricCard visible |
+| 10650 | metricCard visible |
+
+### DASH → INV TRANSITION
+| Time | Event |
+|------|-------|
+| 11800 | dashboard exit begins; `dash→inv` tab switch; `invStage.is-active` |
+| 12450 | dashboard hidden; `typesScreen` is-active + `sh-inv-screen-shift-in` |
+
+### INVENTORY — Types Screen
+| Time | Event |
+|------|-------|
+| 12900 | invCard is-visible (Reserve) |
+| 13120 | invCard |
+| 13340 | invCard is-visible (Active) |
+| 13560 | invCard is-visible (Spare Parts) |
+| 16750 | typesScreen exit begins (`sh-inv-screen-shift-out`) |
+| 17450 | typesScreen removed; groupScreen is-active + `sh-inv-screen-shift-in` |
+
+### INVENTORY — Groups Screen *(7 cards only)*
+| Time | Event |
+|------|-------|
+| 17900 | invBento is-visible (tools) |
+| 18080 | invBento is-visible (toolkits) |
+| 18260 | invBento is-visible (machinery) |
+| 18440 | invBento is-visible (materials) |
+| 18620 | invBento is-visible (vehicles) |
+| 18800 | invBento is-visible (blends) |
+| 18980 | invBento is-visible (assembly) |
+| 21950 | groupScreen exit begins (`sh-inv-screen-shift-out`) |
+| 22650 | groupScreen removed; tableScreen is-active + `sh-inv-screen-shift-in` |
+
+### INVENTORY — Table Screen *(15 rows)*
+| Time | Event |
+|------|-------|
+| 23100 | invRow (SCD-488F) |
+| 23220 | invRow (MAT-1042) |
+| 23340 | invRow (ASM-2207) |
+| 23460 | invRow (VEH-0914) |
+| 23580 | invRow (TLS-4481) |
+| 23700 | invRow (MAT-3328) |
+| 23820 | invRow (MAC-7816) |
+| 23940 | invRow (ELC-5503) |
+| 24060 | invRow (HYD-1209) |
+| 24180 | invRow (VEH-7721) |
+| 24300 | invRow (ITM-8830) |
+| 24420 | invRow (CLN-3317) |
+| 24540 | invRow (PNE-6652) |
+| 24660 | invRow (WLD-2281) |
+| 24780 | invRow (ACO-0099) |
+
+### ACTs 1–8 (interleaved in Table Screen)
+
+| Time | Event |
+|------|-------|
+| **25300** | **ACT 1** — `ELC-5503` splashCard appears |
+| 27900 | ACT 1 — card removed |
+| 28000 | ACT 1 — focusRow(ELC-5503) |
+| 28200 | ACT 1 — pill flip cells → **Requested** (`sh-inv-pill--info`) |
+| **29200** | **ACT 2** — `MAC-7816` splashCard appears |
+| 31800 | ACT 2 — card removed |
+| 31900 | ACT 2 — focusRow(MAC-7816) |
+| 32100 | ACT 2 — pill flip cells → **OK** (`sh-inv-pill--success`) |
+| 32150 | ACT 2 — pill flip cells → **Available** |
+| **33100** | **ACT 3** — `SCD-488F` splashCard appears |
+| 35700 | ACT 3 — card removed |
+| 35800 | ACT 3 — focusRow(SCD-488F) |
+| 36000 | ACT 3 — pill flip cells → **OK** |
+| 36050 | ACT 3 — pill flip cells → **Available** |
+| **37000** | **ACT 4** — `ASM-2207` splashCard appears |
+| 39600 | ACT 4 — card removed |
+| 39700 | ACT 4 — focusRow(ASM-2207) |
+| 39900 | ACT 4 — pill flip cells → **Under Maintenance** |
+| 39950 | ACT 4 — pill flip cells → **Unavailable** |
+| **40900** | **ACT 5** — `CLN-3317` splashCard appears |
+| 43500 | ACT 5 — card removed |
+| 43600 | ACT 5 — focusRow(CLN-3317) |
+| 43800 | ACT 5 — pill flip cells → **OK** |
+| 43850 | ACT 5 — pill flip cells → **Available** |
+| **44800** | **ACT 6** — `MAT-1042` splashCard appears |
+| 47400 | ACT 6 — card removed |
+| 47500 | ACT 6 — focusRow(MAT-1042) |
+| 47700 | ACT 6 — pill flip cells → **Unfit** |
+| 47750 | ACT 6 — pill flip cells → **Unavailable** |
+| 48100 | ACT 6 — pill flip cells → **OK** |
+| 48150 | ACT 6 — pill flip cells → **Available** |
+| 48200 | ACT 6 — expiry cell flash + update → `4 Jun 2027` |
+| **48700** | **ACT 7** — `MAT-3328` splashCard appears |
+| 51300 | ACT 7 — card removed |
+| 51400 | ACT 7 — focusRow(MAT-3328) |
+| 51600 | ACT 7 — pill flip cells → **Expired** |
+| 51650 | ACT 7 — pill flip cells → **Unavailable** |
+| 52100 | ACT 7 — row MAT-3328 `sh-row-discarded` → slides out → DOM removed after 500ms |
+| **52600** | **ACT 8** — clearFocus; focusRow(MAT-1042) |
+| 53000 | Consumption card appears (12 L consumed) |
+| 53700 | Consumption qty updated → **168 L** |
+| 54400 | Consumption card removed |
+| 54800 | Consumption  card appears (8 L consumed) |
+| 55500 | Consumption  qty updated → **160 L** |
+| 56200 | Consumption  card removed |
+| 56600 | Consumption card appears (15 L consumed) |
+| 57300 | Consumption qty updated → **145 L** |
+| 58000 | Consumption card removed |
+| 58400 | Consumption card appears (20 L consumed) |
+| 59100 | Consumption qty updated → **125 L** |
+| 59800 | Consumption card removed |
+| 60200 | Consumption card appears (25 L consumed) |
+| 60900 | Consumption qty updated → **100 L** |
+| 61600 | Consumption card removed |
+| 62000 | Consumption card appears (18 L consumed) |
+| 62700 | Consumption qty updated → **82 L** |
+| 63400 | Consumption card removed |
+| 64300 | clearFocus — all row focus/dimmed classes removed |
+
+### REQUESTS PHASE
+| Time | Event |
+|------|-------|
+| **65500** | inv→req tab switch; tableScreen `sh-inv-screen-shift-out` |
+| 66200 | tableScreen removed; reqStage `is-active` + `aria-hidden false` |
+| 66600 | reqCard is-visible (ELC-5503 VFD) |
+| 66760 | reqCard is-visible (MAC-7816 Air Compressor) |
+| 66920 | reqCard is-visible (MAT-3328 Solvent) |
+| 67080 | reqCard is-visible (SAF-0044 Arc Suit) |
+| 67240 | reqCard is-visible (VEH-7721 Forklift) |
+| 67400 | reqCard is-visible (ASM-2207 Hydraulic Pump) |
+| 68200 | reqCard outcome → **ACCEPT** |
+| 68620 | reqCard  outcome → **ACCEPT** |
+| 69040 | reqCard outcome → **REJECT** |
+| 69460 | reqCard outcome → **ACCEPT** |
+| 69880 | reqCard outcome → **REJECT** |
+| 70300 | reqCard outcome → **REJECT** |
+
+### REPORTS PHASE
+| Time | Event |
+|------|-------|
+| **71300** | req→rep tab switch; reqStage `sh-req-stage-exit` |
+| 72000 | reqStage removed; repStage `is-active` + `sh-rep-stage-enter` |
+| 72350 | repKpi is-visible (Open Exceptions) |
+| 72470 | repKpi is-visible (Resolution Rate) |
+| 72590 | repKpi is-visible (Downtime Hours) |
+| 72710 | repKpi is-visible (Compliance Score) |
+| 72650 | repPanel is-visible (Weekly variance) |
+| 72830 | repPanel is-visible (Exception register) |
+| 73010 | repPanel is-visible (Top movement — aside) |
+| 73400 | repBar is-visible (Mon) |
+| 73500 | repBar is-visible (Tue) |
+| 73600 | repBar is-visible (Wed) |
+| 73700 | repBar is-visible (Thu) |
+| 73800 | repBar is-visible (Fri) |
+| 73900 | repBar is-visible (Sat) |
+| 74000 | repBar is-visible (Sun) |
+| 73800 | repRow is-visible (Power Room issues) |
+| 73900 | repRow is-visible (Service backlog) |
+| 74000 | repRow is-visible (Material variances) |
+| 74100 | repRow is-visible (Resolved approvals) |
+| 74200 | repRow is-visible (REP-2401) |
+| 74300 | repRow is-visible (REP-2402) |
+| 74400 | repRow is-visible (REP-2403) |
+| 74500 | repRow is-visible (REP-2404) |
+| 74600 | repRow is-visible (REP-2405) |
+| 74700 | repRow is-visible (REP-2406) |
+
+### Loop Restart
+| Time | Event |
+|------|-------|
+| **85000** | all timers cleared; `switchScene(restart)` |
+
+***
+
+## Two JS lines to change
+
+```js
+const CYCLE_MS = 90000;   // was 60000
+```
+
+And in `animate()`, change the req tab switch:
+```js
+// was: }, 33200);
+}, 65500);  // after ACT 8 clearFocus at 64300
+```
+
+Also fix the duplicate Reports tab in `render()` — you have two `id="sb-rep"` buttons; remove the second one.
