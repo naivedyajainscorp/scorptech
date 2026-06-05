@@ -54,12 +54,12 @@
 
               <div class="sh-app-tabs">
                 <button class="sh-app-tab active" id="sb-dash">Dashboard</button>
-                <button class="sh-app-tab" id="sb-inv">Inventory</button>
-                <button class="sh-app-tab" id="sb-req">Requests <span class="sh-nav-badge">4</span></button>
-                <button class="sh-app-tab" id="sb-insp">Inspections <span class="sh-nav-badge">1</span></button>
+                <button class="sh-app-tab" id="sb-inv">Inventory<span class="sh-nav-badge">8</span></button>
+                <button class="sh-app-tab" id="sb-req">Requests <span class="sh-nav-badge">6</span></button>
+                <button class="sh-app-tab" id="sb-rep">Reports<span class="sh-nav-badge">7</span></button>
+                <button class="sh-app-tab" id="sb-insp">Inspections <span class="sh-nav-badge">10+</span></button>
                 <button class="sh-app-tab" id="sb-maint">Maintenance</button>
                 <button class="sh-app-tab" id="sb-opex">OPEX</button>
-                <button class="sh-app-tab" id="sb-rep">Reports</button>
               </div>
 
               <div class="sh-app-user">
@@ -524,8 +524,115 @@
                     </table>
                   </div>
                 </section>
+                <section class="sh-req-stage" data-sh-el="req-stage" aria-hidden="true">
+              <div class="sh-req-page-head">
+                <div>
+                  <div class="sh-req-page-kicker">Item Issue</div>
+                  <div class="sh-req-page-title">Pending approvals</div>
+                </div>
+                <div class="sh-req-live-pill"><span class="sh-req-live-dot"></span>Action queue</div>
               </div>
 
+              <div class="sh-req-grid">
+                <article class="sh-req-card" data-sh-req-card data-sh-req-outcome="accept">
+                  <div class="sh-req-top"><span class="sh-req-time">04 Jun 2026 · 09:10</span></div>
+                  <h3 class="sh-req-asset">Variable Frequency Drive</h3>
+                  <div class="sh-req-code">ELC-5503</div>
+                  <div class="sh-req-meta">
+                    <div class="sh-req-meta-row"><span>Inventory</span><strong>Power Room</strong></div>
+                    <div class="sh-req-meta-row"><span>Requested by</span><strong>Arjun Mehta</strong></div>
+                  </div>
+                  <div class="sh-req-actions">
+                    <button class="s-btn s-btn-md s-btn-success">Accept</button>
+                    <button class="s-btn s-btn-md s-btn-danger">Reject</button>
+                  </div>
+                  <div class="sh-req-result sh-req-result--accept">Accepted</div>
+                </article>
+
+                <article class="sh-req-card" data-sh-req-card data-sh-req-outcome="accept">
+                  <div class="sh-req-top"><span class="sh-req-time">04 Jun 2026 · 09:18</span></div>
+                  <h3 class="sh-req-asset">Air Compressor Unit</h3>
+                  <div class="sh-req-code">MAC-7816</div>
+                  <div class="sh-req-meta">
+                    <div class="sh-req-meta-row"><span>Inventory</span><strong>Service</strong></div>
+                    <div class="sh-req-meta-row"><span>Requested by</span><strong>Rakesh Nair</strong></div>
+                  </div>
+                  <div class="sh-req-actions">
+                    <button class="s-btn s-btn-md s-btn-success">Accept</button>
+                    <button class="s-btn s-btn-md s-btn-danger">Reject</button>
+                  </div>
+                  <div class="sh-req-result sh-req-result--accept">Accepted</div>
+                </article>
+
+                <article class="sh-req-card" data-sh-req-card data-sh-req-outcome="reject">
+                  <div class="sh-req-top">
+                    <span class="sh-req-type">Return Request</span>
+                    <span class="sh-req-time">04 Jun 2026 · 09:24</span>
+                  </div>
+                  <h3 class="sh-req-asset">Industrial Solvent Drum</h3>
+                  <div class="sh-req-code">MAT-3328</div>
+                  <div class="sh-req-meta">
+                    <div class="sh-req-meta-row"><span>Inventory</span><strong>Wash Area</strong></div>
+                    <div class="sh-req-meta-row"><span>Requested by</span><strong>Deepak Soni</strong></div>
+                  </div>
+                  <div class="sh-req-actions">
+                    <button class="s-btn s-btn-md s-btn-success">Accept</button>
+                    <button class="s-btn s-btn-md s-btn-danger">Reject</button>
+                  </div>
+                  <div class="sh-req-result sh-req-result--reject">Rejected</div>
+                </article>
+
+                <article class="sh-req-card" data-sh-req-card data-sh-req-outcome="accept">
+                  <div class="sh-req-top"><span class="sh-req-time">04 Jun 2026 · 09:31</span></div>
+                  <h3 class="sh-req-asset">Arc Flash Suit XL</h3>
+                  <div class="sh-req-code">SAF-0044</div>
+                  <div class="sh-req-meta">
+                    <div class="sh-req-meta-row"><span>Inventory</span><strong>Safety Store</strong></div>
+                    <div class="sh-req-meta-row"><span>Requested by</span><strong>Neeraj Singh</strong></div>
+                  </div>
+                  <div class="sh-req-actions">
+                    <button class="s-btn s-btn-md s-btn-success">Accept</button>
+                    <button class="s-btn s-btn-md s-btn-danger">Reject</button>
+                  </div>
+                  <div class="sh-req-result sh-req-result--accept">Accepted</div>
+                </article>
+
+                <article class="sh-req-card" data-sh-req-card data-sh-req-outcome="reject">
+                  <div class="sh-req-top"><span class="sh-req-time">04 Jun 2026 · 09:37</span></div>
+                  <h3 class="sh-req-asset">Forklift Diesel</h3>
+                  <div class="sh-req-code">VEH-7721</div>
+                  <div class="sh-req-meta">
+                    <div class="sh-req-meta-row"><span>Inventory</span><strong>Yard A</strong></div>
+                    <div class="sh-req-meta-row"><span>Requested by</span><strong>Mohit Joshi</strong></div>
+                  </div>
+                  <div class="sh-req-actions">
+                    <button class="s-btn s-btn-md s-btn-success">Accept</button>
+                    <button class="s-btn s-btn-md s-btn-danger">Reject</button>
+                  </div>
+                  <div class="sh-req-result sh-req-result--reject">Rejected</div>
+                </article>
+
+                <article class="sh-req-card" data-sh-req-card data-sh-req-outcome="reject">
+                  <div class="sh-req-top">
+                    <span class="sh-req-type">Return Request</span>
+                    <span class="sh-req-time">04 Jun 2026 · 09:42</span>
+                  </div>
+                  <h3 class="sh-req-asset">Hydraulic Pump Assembly</h3>
+                  <div class="sh-req-code">ASM-2207</div>
+                  <div class="sh-req-meta">
+                    <div class="sh-req-meta-row"><span>Inventory</span><strong>Service</strong></div>
+                    <div class="sh-req-meta-row"><span>Requested by</span><strong>Vishnu Pandit</strong></div>
+                  </div>
+                  <div class="sh-req-actions">
+                    <button class="s-btn s-btn-md s-btn-success">Accept</button>
+                    <button class="s-btn s-btn-md s-btn-danger">Reject</button>
+                  </div>
+                  <div class="sh-req-result sh-req-result--reject">Rejected</div>
+                </article>
+              </div>
+            </section>
+            
+              </div>
             </div>
           </div>`;
       },
@@ -546,6 +653,9 @@
         const groupScreen = qs('[data-sh-inv-screen="groups"]');
         const invCards = qsa('[data-sh-inv-card]');
         const invBento = qsa('[data-sh-inv-bento]');
+        const reqTab = qs('#sb-req');
+        const reqStage = qs('[data-sh-el="req-stage"]');
+        const reqCards = qsa('[data-sh-req-card]');
 
         schedule(() => wo && wo.classList.add('visible'), 400);
         schedule(() => prop && prop.classList.add('visible'), 2300);
@@ -626,6 +736,44 @@
 
         invRows.forEach((row, i) => {
           schedule(() => row.classList.add('is-visible'), 23100 + (i * 120));
+        });
+
+        /* ============================================================
+           REQUESTS APP TAB (append-only)
+           ============================================================ */
+        schedule(() => {
+          invTab && invTab.classList.remove('active');
+          reqTab && reqTab.classList.add('active');
+
+          const tableScreen = qs('[data-sh-inv-screen="table"]');
+          tableScreen && tableScreen.classList.add('sh-inv-screen-shift-out');
+        }, 33200);
+
+        schedule(() => {
+          const tableScreen = qs('[data-sh-inv-screen="table"]');
+          if (tableScreen) {
+            tableScreen.classList.remove('is-active');
+            tableScreen.setAttribute('aria-hidden', 'true');
+          }
+          if (reqStage) {
+            reqStage.classList.add('is-active');
+            reqStage.setAttribute('aria-hidden', 'false');
+          }
+        }, 33950);
+
+        reqCards.forEach((card, i) => {
+          schedule(() => card.classList.add('is-visible'), 34300 + (i * 160));
+        });
+
+        reqCards.forEach((card, i) => {
+          const outcome = card.getAttribute('data-sh-req-outcome');
+          schedule(() => {
+            if (outcome === 'accept') {
+              card.classList.add('is-accepted');
+            } else {
+              card.classList.add('is-rejected');
+            }
+          }, 35600 + (i * 420));
         });
 
         /* ============================================================
@@ -1329,7 +1477,7 @@
         qsa: (sel) => canvas.querySelectorAll(sel)
       };
 
-      scene.animate(ctx);
+      scene.animate.call(this, ctx);
 
       this.timeouts.push(setTimeout(() => {
         if (this.currentScene === sceneId) this.switchScene(sceneId);

@@ -1,6 +1,5 @@
 
 Instructions
-Tell Computer how it should work in this space.
 SCORP WEBFRONT PROJECT - COMPLETE SPACE INSTRUCTIONS
 
 ## CORE CODING PRINCIPLES

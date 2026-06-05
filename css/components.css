@@ -107,8 +107,8 @@
 /* ═══════════════════════════════════════════════════════════════════════════════
    LIGHT BUTTONS (Scoped Attribute Selector)
    ═══════════════════════════════════════════════════════════════════════════════ */
-[class*="s-btn-"][class*="-soft"]:not(.s-btn-success-soft):not(.s-btn-success-soft-soft):not(.s-btn-success-soft-outline):not(.s-btn-success-soft-ghost) { background-color: transparent; box-shadow: none !important; border: 1px solid; }
-[class*="s-btn-"][class*="-soft"]:not(.s-btn-success-soft):not(.s-btn-success-soft-soft):not(.s-btn-success-soft-outline):not(.s-btn-success-soft-ghost):hover { box-shadow: none; transform: translateY(-2px) scale(1.02); }
+[class*="s-btn-"][class*="-soft"]:not(.s-btn-success-soft):not(.s-btn-success-soft-soft):not(.s-btn-success-soft-outline):not(.s-btn-success-soft-ghost):not(.s-btn-danger-soft) { background-color: transparent; box-shadow: none !important; border: 1px solid; }
+[class*="s-btn-"][class*="-soft"]:not(.s-btn-success-soft):not(.s-btn-success-soft-soft):not(.s-btn-success-soft-outline):not(.s-btn-success-soft-ghost):not(.s-btn-danger-soft):hover { box-shadow: none; transform: translateY(-2px) scale(1.02); }
 .s-btn-primary-soft { background-color: rgba(0, 102, 204, 0.15); color: var(--s-primary); border-color: rgba(0, 102, 204, 0.3); } .s-btn-primary-soft:hover { background-color: rgba(0, 102, 204, 0.25); border-color: var(--s-primary); }
 .s-btn-secondary-soft { background-color: rgba(100, 116, 139, 0.15); color: var(--s-gray-600); border-color: rgba(100, 116, 139, 0.3); } .s-btn-secondary-soft:hover { background-color: rgba(100, 116, 139, 0.25); border-color: var(--s-gray-600); }
 .s-btn-success-soft { background-color: rgba(22, 163, 74, 0.15); color: var(--s-success); border-color: rgba(22, 163, 74, 0.3); } .s-btn-success-soft:hover { background-color: rgba(22, 163, 74, 0.25); border-color: var(--s-success); }
