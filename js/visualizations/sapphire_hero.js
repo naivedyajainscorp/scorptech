@@ -635,226 +635,169 @@
   <div class="sh-rep-page-head">
     <div>
       <div class="sh-rep-page-kicker">Operational Reports</div>
-      <div class="sh-rep-page-title">Live reporting board</div>
+      <div class="sh-rep-page-title">Asset Reports</div>
     </div>
     <div class="sh-rep-live-pill"><span class="sh-rep-live-dot"></span>Auto refreshed</div>
   </div>
 
-  <div class="sh-rep-layout">
-    <div class="sh-rep-main">
-      <div class="sh-rep-kpis">
-        <article class="sh-rep-kpi" data-sh-rep-kpi>
-          <div class="sh-rep-kpi-label">Open Exceptions</div>
-          <div class="sh-rep-kpi-value">18</div>
-          <div class="sh-rep-kpi-meta down">+4 vs yesterday</div>
-        </article>
+<div class="sh-rep-table-shell">
+  <div class="sh-rep-table-wrap">
+    <table class="sh-rep-table">
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Name</th>
+          <th>Item Type</th>
+          <th>Inventory</th>
+          <th>Location</th>
+          <th>Condition</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+  <tr data-sh-rep-row>
+    <td><strong>MAT-1042</strong></td>
+    <td>High Temp Primer</td>
+    <td>Material</td>
+    <td>Paint Booth</td>
+    <td>H3/WR2/S4/B6</td>
+    <td><span class="sh-rep-pill sh-rep-pill--info sh-rep-condition-pill">Unfit</span></td>
+    <td><span class="sh-rep-pill sh-rep-pill--danger sh-rep-status-pill">Unavailable</span></td>
+  </tr>
 
-        <article class="sh-rep-kpi" data-sh-rep-kpi>
-          <div class="sh-rep-kpi-label">Resolution Rate</div>
-          <div class="sh-rep-kpi-value">92.4%</div>
-          <div class="sh-rep-kpi-meta up">+2.1%</div>
-        </article>
+  <tr data-sh-rep-row>
+    <td><strong>TLS-4481</strong></td>
+    <td>Torque Wrench Kit</td>
+    <td>Tool</td>
+    <td>Service</td>
+    <td>A1/PB2/R4/D5</td>
+    <td><span class="sh-rep-pill sh-rep-pill--attention sh-rep-condition-pill">Incomplete Kit</span></td>
+    <td><span class="sh-rep-pill sh-rep-pill--attention sh-rep-status-pill">Available</span></td>
+  </tr>
 
-        <article class="sh-rep-kpi" data-sh-rep-kpi>
-          <div class="sh-rep-kpi-label">Downtime Hours</div>
-          <div class="sh-rep-kpi-value">126h</div>
-          <div class="sh-rep-kpi-meta down">-14h</div>
-        </article>
+  <tr data-sh-rep-row>
+    <td><strong>VEH-3324</strong></td>
+    <td>Maintenance Pickup</td>
+    <td>Vehicle</td>
+    <td>Transport Pool</td>
+    <td>N3/WR1/S8/B2</td>
+    <td><span class="sh-rep-pill sh-rep-pill--pop sh-rep-condition-pill">Under Maintenance</span></td>
+    <td><span class="sh-rep-pill sh-rep-pill--danger sh-rep-status-pill">Unavailable</span></td>
+  </tr>
 
-        <article class="sh-rep-kpi" data-sh-rep-kpi>
-          <div class="sh-rep-kpi-label">Compliance Score</div>
-          <div class="sh-rep-kpi-value">97.8%</div>
-          <div class="sh-rep-kpi-meta up">stable</div>
-        </article>
-      </div>
+  <tr data-sh-rep-row>
+    <td><strong>HYD-1209</strong></td>
+    <td>Hydraulic Jack 20T</td>
+    <td>Tool</td>
+    <td>Workshop B</td>
+    <td>B2/EL1/R8/T3</td>
+    <td><span class="sh-rep-pill sh-rep-pill--warning sh-rep-condition-pill">Missing</span></td>
+    <td><span class="sh-rep-pill sh-rep-pill--danger sh-rep-status-pill">Unavailable</span></td>
+  </tr>
 
-      <article class="sh-rep-panel" data-sh-rep-panel>
-        <div class="sh-rep-panel-head">
-          <div>
-            <h3 class="sh-rep-panel-title">Weekly variance</h3>
-            <p class="sh-rep-panel-sub">Cross-module movement over the last 7 days</p>
-          </div>
-          <div class="sh-rep-chip">7D</div>
-        </div>
+  <tr data-sh-rep-row>
+    <td><strong>WLD-2281</strong></td>
+    <td>MIG Welder 400A</td>
+    <td>Machinery</td>
+    <td>Fabrication</td>
+    <td>G1/MH1/R7/D2</td>
+    <td><span class="sh-rep-pill sh-rep-pill--attention sh-rep-condition-pill">Partially Damaged</span></td>
+    <td><span class="sh-rep-pill sh-rep-pill--success sh-rep-status-pill">Available</span></td>
+  </tr>
 
-        <div class="sh-rep-chart">
-          <div class="sh-rep-bars">
-            <div class="sh-rep-bar" data-sh-rep-bar style="--sh-rep-h:58%;">
-              <div class="sh-rep-bar-value">12K</div>
-              <div class="sh-rep-bar-track"><div class="sh-rep-bar-fill"></div></div>
-              <div class="sh-rep-bar-label">Mon</div>
-            </div>
-            <div class="sh-rep-bar" data-sh-rep-bar style="--sh-rep-h:72%;">
-              <div class="sh-rep-bar-value">16K</div>
-              <div class="sh-rep-bar-track"><div class="sh-rep-bar-fill"></div></div>
-              <div class="sh-rep-bar-label">Tue</div>
-            </div>
-            <div class="sh-rep-bar" data-sh-rep-bar style="--sh-rep-h:49%;">
-              <div class="sh-rep-bar-value">9K</div>
-              <div class="sh-rep-bar-track"><div class="sh-rep-bar-fill"></div></div>
-              <div class="sh-rep-bar-label">Wed</div>
-            </div>
-            <div class="sh-rep-bar" data-sh-rep-bar style="--sh-rep-h:84%;">
-              <div class="sh-rep-bar-value">19K</div>
-              <div class="sh-rep-bar-track"><div class="sh-rep-bar-fill"></div></div>
-              <div class="sh-rep-bar-label">Thu</div>
-            </div>
-            <div class="sh-rep-bar" data-sh-rep-bar style="--sh-rep-h:66%;">
-              <div class="sh-rep-bar-value">14K</div>
-              <div class="sh-rep-bar-track"><div class="sh-rep-bar-fill"></div></div>
-              <div class="sh-rep-bar-label">Fri</div>
-            </div>
-            <div class="sh-rep-bar" data-sh-rep-bar style="--sh-rep-h:43%;">
-              <div class="sh-rep-bar-value">8K</div>
-              <div class="sh-rep-bar-track"><div class="sh-rep-bar-fill"></div></div>
-              <div class="sh-rep-bar-label">Sat</div>
-            </div>
-            <div class="sh-rep-bar" data-sh-rep-bar style="--sh-rep-h:61%;">
-              <div class="sh-rep-bar-value">13K</div>
-              <div class="sh-rep-bar-track"><div class="sh-rep-bar-fill"></div></div>
-              <div class="sh-rep-bar-label">Sun</div>
-            </div>
-          </div>
-        </div>
-      </article>
+  <tr data-sh-rep-row>
+    <td><strong>TKT-4420</strong></td>
+    <td>Emergency Repair Toolkit</td>
+    <td>Toolkit</td>
+    <td>Maintenance Hub</td>
+    <td>D1/WR3/R6/D9</td>
+    <td><span class="sh-rep-pill sh-rep-pill--attention sh-rep-condition-pill">Incomplete Kit</span></td>
+    <td><span class="sh-rep-pill sh-rep-pill--danger sh-rep-status-pill">Unavailable</span></td>
+  </tr>
 
-      <article class="sh-rep-panel" data-sh-rep-panel>
-        <div class="sh-rep-panel-head">
-          <div>
-            <h3 class="sh-rep-panel-title">Exception register</h3>
-            <p class="sh-rep-panel-sub">Assets and records requiring action</p>
-          </div>
-          <div class="sh-rep-chip">Live</div>
-        </div>
+  <tr data-sh-rep-row>
+    <td><strong>VEH-0914</strong></td>
+    <td>Field Response Van</td>
+    <td>Vehicle</td>
+    <td>Wash Area</td>
+    <td>L4/MH3/R3/B8</td>
+    <td><span class="sh-rep-pill sh-rep-pill--warning sh-rep-condition-pill">Missing</span></td>
+    <td><span class="sh-rep-pill sh-rep-pill--danger sh-rep-status-pill">Unavailable</span></td>
+  </tr>
 
-        <div class="sh-rep-table-wrap">
-          <table class="sh-rep-table">
-            <thead>
-              <tr>
-                <th>Report ID</th>
-                <th>Module</th>
-                <th>Asset / Record</th>
-                <th>Owner</th>
-                <th>Severity</th>
-                <th>Status</th>
-                <th>Updated</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr data-sh-rep-row>
-                <td><strong>REP-2401</strong></td>
-                <td>Inventory</td>
-                <td>Forklift Diesel / VEH-7721</td>
-                <td>Mohit Joshi</td>
-                <td><span class="sh-rep-pill sh-rep-pill--danger">Critical</span></td>
-                <td><span class="sh-rep-pill sh-rep-pill--warning">Pending</span></td>
-                <td>06:24 AM</td>
-              </tr>
+  <tr data-sh-rep-row>
+    <td><strong>ELC-5503</strong></td>
+    <td>Variable Frequency Drive</td>
+    <td>Machinery</td>
+    <td>Power Room</td>
+    <td>F5/EL2/R1/T8</td>
+    <td><span class="sh-rep-pill sh-rep-pill--danger sh-rep-condition-pill">Damage</span></td>
+    <td><span class="sh-rep-pill sh-rep-pill--danger sh-rep-status-pill">Unavailable</span></td>
+  </tr>
 
-              <tr data-sh-rep-row>
-                <td><strong>REP-2402</strong></td>
-                <td>Maintenance</td>
-                <td>Hydraulic Pump / ASM-2207</td>
-                <td>Vishnu Pandit</td>
-                <td><span class="sh-rep-pill sh-rep-pill--danger">High</span></td>
-                <td><span class="sh-rep-pill sh-rep-pill--primary">In Review</span></td>
-                <td>06:19 AM</td>
-              </tr>
+  <tr data-sh-rep-row>
+    <td><strong>MAT-8806</strong></td>
+    <td>Protective Coating Compound</td>
+    <td>Material</td>
+    <td>Surface Prep</td>
+    <td>K1/EL4/S1/T5</td>
+    <td><span class="sh-rep-pill sh-rep-pill--indigo sh-rep-condition-pill">Mishandled</span></td>
+    <td><span class="sh-rep-pill sh-rep-pill--danger sh-rep-status-pill">Unavailable</span></td>
+  </tr>
 
-              <tr data-sh-rep-row>
-                <td><strong>REP-2403</strong></td>
-                <td>Compliance</td>
-                <td>Safety audit variance / SAF-0044</td>
-                <td>Neeraj Singh</td>
-                <td><span class="sh-rep-pill sh-rep-pill--warning">Medium</span></td>
-                <td><span class="sh-rep-pill sh-rep-pill--success">Closed</span></td>
-                <td>06:11 AM</td>
-              </tr>
+  <tr data-sh-rep-row>
+    <td><strong>MAC-7816</strong></td>
+    <td>Multimeter</td>
+    <td>Tool</td>
+    <td>Service</td>
+    <td>A3/PA1/R2/B7</td>
+    <td><span class="sh-rep-pill sh-rep-pill--warning sh-rep-condition-pill">Missing</span></td>
+    <td><span class="sh-rep-pill sh-rep-pill--danger sh-rep-status-pill">Unavailable</span></td>
+  </tr>
 
-              <tr data-sh-rep-row>
-                <td><strong>REP-2404</strong></td>
-                <td>OPEX</td>
-                <td>Repair cost overrun / CNC-04</td>
-                <td>Arjun Mehta</td>
-                <td><span class="sh-rep-pill sh-rep-pill--danger">High</span></td>
-                <td><span class="sh-rep-pill sh-rep-pill--warning">Pending</span></td>
-                <td>05:58 AM</td>
-              </tr>
+  <tr data-sh-rep-row>
+    <td><strong>ASM-2207</strong></td>
+    <td>Hydraulic Pump Assembly</td>
+    <td>Machinery</td>
+    <td>Service</td>
+    <td>E2/PB4/S2/B3</td>
+    <td><span class="sh-rep-pill sh-rep-pill--pop sh-rep-condition-pill">Under Maintenance</span></td>
+    <td><span class="sh-rep-pill sh-rep-pill--danger sh-rep-status-pill">Unavailable</span></td>
+  </tr>
 
-              <tr data-sh-rep-row>
-                <td><strong>REP-2405</strong></td>
-                <td>Inspection</td>
-                <td>Seal verification / ELC-5503</td>
-                <td>Rakesh Nair</td>
-                <td><span class="sh-rep-pill sh-rep-pill--warning">Medium</span></td>
-                <td><span class="sh-rep-pill sh-rep-pill--primary">Queued</span></td>
-                <td>05:46 AM</td>
-              </tr>
+  <tr data-sh-rep-row>
+    <td><strong>MAT-3328</strong></td>
+    <td>Industrial Solvent</td>
+    <td>Material</td>
+    <td>Wash Area</td>
+    <td>J2/PA3/R9/D4</td>
+    <td><span class="sh-rep-pill sh-rep-pill--danger sh-rep-condition-pill">Expired</span></td>
+    <td><span class="sh-rep-pill sh-rep-pill--danger sh-rep-status-pill">Unavailable</span></td>
+  </tr>
 
-              <tr data-sh-rep-row>
-                <td><strong>REP-2406</strong></td>
-                <td>Inventory</td>
-                <td>Primer batch variance / MAT-1042</td>
-                <td>Deepak Soni</td>
-                <td><span class="sh-rep-pill sh-rep-pill--danger">High</span></td>
-                <td><span class="sh-rep-pill sh-rep-pill--warning">Pending</span></td>
-                <td>05:40 AM</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </article>
-    </div>
+  <tr data-sh-rep-row>
+    <td><strong>TKT-3012</strong></td>
+    <td>Electrical Response Toolkit</td>
+    <td>Toolkit</td>
+    <td>Safety Store</td>
+    <td>C4/MH2/S5/B1</td>
+    <td><span class="sh-rep-pill sh-rep-pill--warning sh-rep-condition-pill">Missing</span></td>
+    <td><span class="sh-rep-pill sh-rep-pill--danger sh-rep-status-pill">Unavailable</span></td>
+  </tr>
 
-    <aside class="sh-rep-side">
-      <article class="sh-rep-panel" data-sh-rep-panel>
-        <div class="sh-rep-panel-head">
-          <div>
-            <h3 class="sh-rep-panel-title">Top movement</h3>
-            <p class="sh-rep-panel-sub">Highest operational shifts today</p>
-          </div>
-        </div>
-
-        <div class="sh-rep-list">
-          <div class="sh-rep-row" data-sh-rep-row>
-            <div class="sh-rep-row-main">
-              <p class="sh-rep-row-title">Power Room issues</p>
-              <p class="sh-rep-row-sub">Inventory + inspection linkage</p>
-            </div>
-            <div class="sh-rep-row-value">14</div>
-            <div class="sh-rep-row-trend up">+22%</div>
-          </div>
-
-          <div class="sh-rep-row" data-sh-rep-row>
-            <div class="sh-rep-row-main">
-              <p class="sh-rep-row-title">Service backlog</p>
-              <p class="sh-rep-row-sub">Maintenance queue aging</p>
-            </div>
-            <div class="sh-rep-row-value">09</div>
-            <div class="sh-rep-row-trend down">-6%</div>
-          </div>
-
-          <div class="sh-rep-row" data-sh-rep-row>
-            <div class="sh-rep-row-main">
-              <p class="sh-rep-row-title">Material variances</p>
-              <p class="sh-rep-row-sub">Batch and stock exceptions</p>
-            </div>
-            <div class="sh-rep-row-value">07</div>
-            <div class="sh-rep-row-trend up">+11%</div>
-          </div>
-
-          <div class="sh-rep-row" data-sh-rep-row>
-            <div class="sh-rep-row-main">
-              <p class="sh-rep-row-title">Resolved approvals</p>
-              <p class="sh-rep-row-sub">Closed within SLA</p>
-            </div>
-            <div class="sh-rep-row-value">31</div>
-            <div class="sh-rep-row-trend flat">Stable</div>
-          </div>
-        </div>
-      </article>
-    </aside>
+  <tr data-sh-rep-row>
+    <td><strong>VEH-7721</strong></td>
+    <td>Forklift Diesel</td>
+    <td>Vehicle</td>
+    <td>Yard A</td>
+    <td>M2/PB1/R5/D7</td>
+    <td><span class="sh-rep-pill sh-rep-pill--attention sh-rep-condition-pill">Partially Damaged</span></td>
+    <td><span class="sh-rep-pill sh-rep-pill--danger sh-rep-status-pill">Available</span></td>
+  </tr>
+</tbody>
+    </table>
   </div>
+</div>
 </section>
 
               </div>
@@ -1006,10 +949,7 @@
         /* ============================================================
            REPORTS APP TAB
            ============================================================ */
-        const repKpis = qsa('.sh-rep-kpi');
-        const repPanels = qsa('.sh-rep-panel');
-        const repBars = qsa('.sh-rep-bar');
-        const repRows = qsa('.sh-rep-row');
+        const repRows = qsa('[data-sh-rep-row]');
 
         schedule(() => {
           reqTab && reqTab.classList.remove('active');
@@ -1031,20 +971,8 @@
           }
         }, 72000);
 
-        repKpis.forEach((kpi, i) => {
-          schedule(() => kpi.classList.add('is-visible'), 72350 + (i * 120));
-        });
-
-        repPanels.forEach((panel, i) => {
-          schedule(() => panel.classList.add('is-visible'), 72650 + (i * 180));
-        });
-
-        repBars.forEach((bar, i) => {
-          schedule(() => bar.classList.add('is-visible'), 73400 + (i * 100));
-        });
-
         repRows.forEach((row, i) => {
-          schedule(() => row.classList.add('is-visible'), 73800 + (i * 100));
+          schedule(() => row.classList.add('is-visible'), 59850 + (i * 90));
         });
 
         /* ============================================================
