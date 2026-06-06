@@ -272,7 +272,7 @@
                   <div class="sh-inv-page-head">
                     <div>
                       <div class="sh-inv-page-kicker">Inventory Register</div>
-                      <div class="sh-inv-page-title">Live item ledger</div>
+                      <div class="sh-inv-page-title">Sapphire Inventory</div>
                     </div>
                     <div class="sh-inv-live-pill"><span class="sh-inv-live-dot"></span>Synced records</div>
                   </div>
@@ -359,7 +359,7 @@
                         <tr data-sh-inv-row>
                           <td>TLS-4481</td>
                           <td>Torque Wrench Kit</td>
-                          <td>Tool</td>
+                          <td>Toolkit</td>
                           <td>1N</td>
                           <td>Body Shop</td>
                           <td>B2/BS1/R8/C3</td>
@@ -617,7 +617,7 @@
                     <span class="sh-req-type">Return Request</span>
                     <span class="sh-req-time">04 Jun 2026 · 09:42</span>
                   </div>
-                  <h3 class="sh-req-asset">Hydraulic Pump Assembly</h3>
+                  <h3 class="sh-req-asset">Hydraulic Pump</h3>
                   <div class="sh-req-code">ASM-2207</div>
                   <div class="sh-req-meta">
                     <div class="sh-req-meta-row"><span>Inventory</span><strong>Service</strong></div>
@@ -757,7 +757,7 @@
 
   <tr data-sh-rep-row>
     <td><strong>ASM-2207</strong></td>
-    <td>Hydraulic Pump Assembly</td>
+    <td>Hydraulic Pump</td>
     <td>Machinery</td>
     <td>Service</td>
     <td>E2/PB4/S2/B3</td>
@@ -971,16 +971,287 @@
           }
         }, 72000);
 
+        schedule(() => {
+          if (repStage) repStage.classList.remove('sh-rep-stage-enter');
+        }, 72000 + 700);
+
+        const REP_STAGE_T = 72000;
+        const REP_ROWS_T = REP_STAGE_T + 450;
+
         repRows.forEach((row, i) => {
-          schedule(() => row.classList.add('is-visible'), 59850 + (i * 90));
+          schedule(() => row.classList.add('is-visible'), REP_ROWS_T + i * 90);
         });
+
+        /* ============================================================
+           REPORT TABLE SPLASH ACTIONS
+           ============================================================ */
+
+        /* shared engine ref + icons (also used by live ACTs below) */
+        const engine = this;
+        const ICO = {
+          wrench: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+          recycle: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4-4.64 4.36A9 9 0 0 1 3.51 15"/></svg>`,
+          returnLeft: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M9 8l-5 5 5 5"/></svg>`,
+          check: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`,
+          trash: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>`,
+          edit: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>`,
+          clock: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+          replace: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8l4 10H4L8 2z"/><path d="M12 12v10"/><path d="M8 22h8"/></svg>`
+        };
+
+        /* helpers */
+        const getRepTableRowByCode = (code) => {
+          return Array.from(qsa('.sh-rep-table tbody tr')).find((row) => {
+            return Array.from(row.cells).some((cell) => cell.textContent.includes(code));
+          });
+        };
+
+        const getRepRowPill = (row, type) => {
+          if (!row) return null;
+          return row.querySelector(
+            type === 'condition'
+              ? '.sh-rep-condition-pill'
+              : '.sh-rep-status-pill'
+          );
+        };
+
+        const flipRepPill = (row, type, cls, label, delay) => {
+          schedule(() => {
+            const pill = getRepRowPill(row, type);
+            if (!pill) return;
+            pill.classList.add('sh-pill-flipping');
+            const halfway = setTimeout(() => {
+              pill.className =
+                type === 'condition'
+                  ? `sh-rep-pill ${cls} sh-rep-condition-pill`
+                  : `sh-rep-pill ${cls} sh-rep-status-pill`;
+              pill.textContent = label;
+            }, 260);
+            engine.timeouts.push(halfway);
+          }, delay);
+        };
+
+        const focusRepRow = (target, delay) => {
+          schedule(() => {
+            Array.from(qsa('.sh-rep-table tbody tr')).forEach((row) => {
+              if (row === target) {
+                row.classList.add('sh-row-focus');
+                row.classList.remove('sh-row-dimmed');
+              } else {
+                row.classList.remove('sh-row-focus');
+                row.classList.add('sh-row-dimmed');
+              }
+            });
+          }, delay);
+        };
+
+        const clearRepFocus = (delay) => {
+          schedule(() => {
+            Array.from(qsa('.sh-rep-table tbody tr')).forEach((row) => {
+              row.classList.remove('sh-row-focus', 'sh-row-dimmed');
+            });
+          }, delay);
+        };
+
+        const repSplashCard = (html, delay) => {
+          schedule(() => {
+            const wrap = qs('.sh-rep-table-wrap');
+            if (!wrap) return;
+            wrap.insertAdjacentHTML('beforeend', html);
+            const card = wrap.querySelector('.sh-act-card');
+            if (card) requestAnimationFrame(() => card.classList.add('is-active'));
+          }, delay);
+        };
+
+        const removeRepSplashCard = (delay) => {
+          schedule(() => {
+            const card = qs('.sh-rep-table-wrap .sh-act-card');
+            if (!card) return;
+            card.classList.remove('is-active');
+            setTimeout(() => card.remove(), 350);
+          }, delay);
+        };
+
+        const slideOutRepRow = (row, delay) => {
+          schedule(() => {
+            if (!row) return;
+            row.classList.add('sh-row-discarded');
+            setTimeout(() => row.remove(), 650);
+          }, delay);
+        };
+
+        /* success theme for all report page splash cards */
+        const repSuccessCardHTML = ({
+          icon,
+          title,
+          headline,
+          itemLabel,
+          itemValue,
+          stateLabel,
+          stateValue,
+          extraHtml = '',
+          actionsHtml = `
+            <div class="sh-act-confirm">
+              <button class="sh-act-btn sh-act-btn--cancel">Cancel</button>
+              <button class="sh-act-btn sh-act-btn--success">Confirm</button>
+            </div>
+          `
+        }) => `
+          <div class="sh-act-card">
+            <div class="sh-act-card-bar sh-act-card-bar--success"></div>
+            <div class="sh-act-card-head">
+              <div class="sh-act-card-icon sh-act-card-icon--success">${icon}</div>
+              <div>
+                <div class="sh-act-card-title">${title}</div>
+                <div class="sh-act-card-headline">${headline}</div>
+              </div>
+            </div>
+            <div class="sh-act-item-row">
+              <span class="sh-act-item-label">${itemLabel}</span>
+              <span class="sh-act-item-value">${itemValue}</span>
+            </div>
+            <div class="sh-act-state-row">
+              <span class="sh-act-state-label">${stateLabel}</span>
+              <span class="sh-act-state-value">${stateValue}</span>
+            </div>
+            ${extraHtml}
+            ${actionsHtml}
+          </div>
+        `;
+
+        /* report icons reuse existing ICO set */
+        const repRepairChecklistHTML = `
+          <div class="sh-act-log-line">
+            <span class="sh-act-log-time">✓</span>
+            <span class="sh-act-log-label">Repair</span>
+            <span class="sh-act-log-val">Housing aligned</span>
+          </div>
+          <div class="sh-act-log-line">
+            <span class="sh-act-log-time">✓</span>
+            <span class="sh-act-log-label">Repair</span>
+            <span class="sh-act-log-val">Wiring corrected</span>
+          </div>
+          <div class="sh-act-log-line">
+            <span class="sh-act-log-time">✓</span>
+            <span class="sh-act-log-label">Repair</span>
+            <span class="sh-act-log-val">Output tested OK</span>
+          </div>
+        `;
+
+        const repDisposeMetaHTML = `
+          <div class="sh-act-log-line">
+            <span class="sh-act-log-time">Code</span>
+            <span class="sh-act-log-label">Item</span>
+            <span class="sh-act-log-val">MAT-8806</span>
+          </div>
+          <div class="sh-act-log-line">
+            <span class="sh-act-log-time">Name</span>
+            <span class="sh-act-log-label">Material</span>
+            <span class="sh-act-log-val">Contaminated Resin Batch</span>
+          </div>
+          <div class="sh-act-log-line">
+            <span class="sh-act-log-time">Qty</span>
+            <span class="sh-act-log-label">Volume</span>
+            <span class="sh-act-log-val">240 KG</span>
+          </div>
+        `;
+
+        /* timeline starts after report rows become visible */
+        const REP_ACT_T1 = REP_ROWS_T + (repRows.length * 90) + 900;
+        const REP_ACT_T2 = REP_ACT_T1 + 4700;
+        const REP_ACT_T3 = REP_ACT_T2 + 4700;
+
+        /* ACT 1 — WLD-2281 */
+        const repRowWLD = getRepTableRowByCode('WLD-2281');
+
+        repSplashCard(
+          repSuccessCardHTML({
+            icon: ICO.wrench,
+            title: 'Item repair',
+            headline: 'Report action • Sapphire EAM',
+            itemLabel: 'Asset',
+            itemValue: 'WLD-2881',
+            stateLabel: 'Condition',
+            stateValue: 'Partially Damage',
+            extraHtml: repRepairChecklistHTML,
+            actionsHtml: `
+              <div class="sh-act-confirm">
+                <button class="sh-act-btn sh-act-btn--cancel">Cancel</button>
+                <button class="sh-act-btn sh-act-btn--success">Repair Complete</button>
+              </div>
+            `
+          }),
+          REP_ACT_T1
+        );
+
+        focusRepRow(repRowWLD, REP_ACT_T1 + 120);
+        removeRepSplashCard(REP_ACT_T1 + 2500);
+        flipRepPill(repRowWLD, 'condition', 'sh-rep-pill--success', 'OK', REP_ACT_T1 + 2750);
+        slideOutRepRow(repRowWLD, REP_ACT_T1 + 3300);
+        clearRepFocus(REP_ACT_T1 + 3950);
+
+        /* ACT 2 — ASM-2207 */
+        const repRowASM = getRepTableRowByCode('ASM-2207');
+
+        repSplashCard(
+          repSuccessCardHTML({
+            icon: ICO.check,
+            title: 'Service Complete',
+            headline: 'Maintenance closeout • Sapphire EAM',
+            itemLabel: 'Item',
+            itemValue: 'Hydraulic Pump • ASM-2207',
+            stateLabel: 'Update',
+            stateValue: 'Condition + status restored',
+            actionsHtml: `
+              <div class="sh-act-confirm">
+                <button class="sh-act-btn sh-act-btn--cancel">Cancel</button>
+                <button class="sh-act-btn sh-act-btn--success">Confirm</button>
+              </div>
+            `
+          }),
+          REP_ACT_T2
+        );
+
+        focusRepRow(repRowASM, REP_ACT_T2 + 120);
+        removeRepSplashCard(REP_ACT_T2 + 2400);
+        flipRepPill(repRowASM, 'condition', 'sh-rep-pill--success', 'OK', REP_ACT_T2 + 2680);
+        flipRepPill(repRowASM, 'status', 'sh-rep-pill--success', 'Available', REP_ACT_T2 + 2860);
+        slideOutRepRow(repRowASM, REP_ACT_T2 + 3300);
+        clearRepFocus(REP_ACT_T2 + 3950);
+
+        /* ACT 3 — MAT-8806 */
+        const repRowMAT = getRepTableRowByCode('MAT-8806');
+
+        repSplashCard(
+          repSuccessCardHTML({
+            icon: ICO.trash,
+            title: 'Material Dispose',
+            headline: 'Disposal request • Sapphire EAM',
+            itemLabel: 'Record',
+            itemValue: 'MAT-8806',
+            stateLabel: 'Action',
+            stateValue: 'Ready for disposal',
+            extraHtml: repDisposeMetaHTML,
+            actionsHtml: `
+              <div class="sh-act-confirm">
+                <button class="sh-act-btn sh-act-btn--cancel">Cancel</button>
+                <button class="sh-act-btn sh-act-btn--success">Dispose</button>
+              </div>
+            `
+          }),
+          REP_ACT_T3
+        );
+
+        focusRepRow(repRowMAT, REP_ACT_T3 + 120);
+        removeRepSplashCard(REP_ACT_T3 + 2400);
+        slideOutRepRow(repRowMAT, REP_ACT_T3 + 2850);
+        clearRepFocus(REP_ACT_T3 + 3450);
 
         /* ============================================================
            LIVE ACTIONS — 8 sequential animated acts
            ============================================================ */
 
         // ---- helpers ----
-        const engine = this;
         function getRow(code) {
           return invRows.find(r => r.cells[0] && r.cells[0].textContent.trim() === code);
         }
@@ -1064,18 +1335,6 @@
             }
           }, delay);
         }
-
-        // ---- icons ----
-        const ICO = {
-          wrench: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
-          recycle: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4-4.64 4.36A9 9 0 0 1 3.51 15"/></svg>`,
-          returnLeft: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M9 8l-5 5 5 5"/></svg>`,
-          check: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`,
-          trash: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>`,
-          edit: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>`,
-          clock: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
-          replace: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8l4 10H4L8 2z"/><path d="M12 12v10"/><path d="M8 22h8"/></svg>`
-        };
 
         function successCardHTML(icon, barClass, title, headline, itemLabel, itemVal, stateLabel, stateVal, btnCls) {
           return `<div class="sh-act-card">

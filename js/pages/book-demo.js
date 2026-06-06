@@ -1048,7 +1048,7 @@ if (demoForm) {
     isSubmitting = true;
     demoForm.classList.add("submitted");
     submitBtnDemo.disabled = true;
-    submitBtnDemo.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Submitting...';
+    submitBtnDemo.innerHTML = '<i class="fa fa-spinner fa-spin me-1"></i> Submitting...';
 
     const fullNumberDemo = iti.getNumber().trim();
     document.getElementById("phone-demo").value = fullNumberDemo;

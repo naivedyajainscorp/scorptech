@@ -533,12 +533,14 @@ body {
   font-size: var(--s-text-base);
   line-height: var(--s-leading-relaxed);
   color: var(--s-black);
-  /* background: url('../assets/images/white_bg-highres.png') no-repeat center center fixed; */
+  background: url('../assets/images/white_bg-highres.png') no-repeat center center fixed;
   background-size: cover;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  animation: luxuryFadeIn 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  /* animation: luxuryFadeIn 3s cubic-bezier(0.4, 0, 0.2, 1) forwards; */
 }
 
 /* Remove default list styles */

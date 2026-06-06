@@ -403,7 +403,7 @@
   --icon-fs: var(--s-icon-fs-md);
   min-width: var(--s-icon-size-md);
   min-height: var(--s-icon-size-md);
-  border-radius: var(--s-radius-md);
+  border-radius: var(--s-radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -425,9 +425,9 @@
    LAYER 2: Size Modifiers (Attribute Scoped)
    ────────────────────────────────────────────────────────────────────────────── */
 [class*="s-icon-sm"] { --icon-fs: var(--s-icon-fs-sm); min-width: var(--s-icon-size-sm); min-height: var(--s-icon-size-sm); border-radius: var(--s-radius-sm); text-shadow: var(--s-text-shadow-icon-sm); }
-[class*="s-icon-md"] { --icon-fs: var(--s-icon-fs-md); min-width: var(--s-icon-size-md); min-height: var(--s-icon-size-md); border-radius: var(--s-radius-md); text-shadow: var(--s-text-shadow-icon-md); }
-[class*="s-icon-lg"] { --icon-fs: var(--s-icon-fs-lg); min-width: var(--s-icon-size-lg); min-height: var(--s-icon-size-lg); border-radius: var(--s-radius-md); text-shadow: var(--s-text-shadow-icon-lg); }
-[class*="s-icon-xl"] { --icon-fs: var(--s-icon-fs-xl); min-width: var(--s-icon-size-xl); min-height: var(--s-icon-size-xl); border-radius: var(--s-radius-md); text-shadow: var(--s-text-shadow-icon-xl); }
+[class*="s-icon-md"] { --icon-fs: var(--s-icon-fs-md); min-width: var(--s-icon-size-md); min-height: var(--s-icon-size-md); border-radius: var(--s-radius-sm); text-shadow: var(--s-text-shadow-icon-md); }
+[class*="s-icon-lg"] { --icon-fs: var(--s-icon-fs-lg); min-width: var(--s-icon-size-lg); min-height: var(--s-icon-size-lg); border-radius: var(--s-radius-sm); text-shadow: var(--s-text-shadow-icon-lg); }
+[class*="s-icon-xl"] { --icon-fs: var(--s-icon-fs-xl); min-width: var(--s-icon-size-xl); min-height: var(--s-icon-size-xl); border-radius: var(--s-radius-sm); text-shadow: var(--s-text-shadow-icon-xl); }
 
 /* ─────────────────────────────────────────────────────────────────────────────
    LAYER 3: Blue Gradient Variants (5 Blue Variants - Unchanged)
@@ -1875,6 +1875,7 @@ EXTENDED PALETTE (5 variants)
   height: 10rem;
 }
 
+
 /* ═══════════════════════════════════════════════════════
    s-full-pic-card — Full bleed image card
    Text + pill overlaid on image with gradient scrim
@@ -1884,7 +1885,7 @@ EXTENDED PALETTE (5 variants)
   position: relative;
   display: flex;
   flex-direction: column;
-  border-radius: var(--s-radius-xl);
+  border-radius: var(--s-radius-md);
   overflow: hidden;
   border: 2px solid var(--s-gray-200);
   box-shadow: var(--s-shadow-md);

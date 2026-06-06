@@ -2565,6 +2565,15 @@
   position:relative;
 }
 
+.sh-rep-table-wrap .sh-act-card{
+  top:44%;
+}
+
+.sh-rep-table-wrap .sh-act-card .sh-act-btn--success{
+  background:linear-gradient(135deg,#1a7a3a,#28b566);
+  color:#fff;
+}
+
 /* ---- Custom pills for reports table ---- */
 .sh-rep-pill{
   display:inline-block;
@@ -2664,6 +2673,29 @@
 
 .sh-rep-table tbody tr:hover{
   background:rgba(0,102,204,.1);
+}
+
+.sh-rep-table tbody tr.sh-row-discarded{
+  background:rgba(179,0,0,.10) !important;
+  animation:sh-rep-row-discard-out .62s cubic-bezier(.16,1,.3,1) forwards;
+  transform-origin:center;
+}
+
+@keyframes sh-rep-row-discard-out{
+  0%{
+    opacity:1;
+    transform:translateX(0);
+    filter:blur(0);
+  }
+  30%{
+    opacity:1;
+    transform:translateX(14px);
+  }
+  100%{
+    opacity:0;
+    transform:translateX(-120px);
+    filter:blur(1px);
+  }
 }
 
 .sh-rep-table td strong{

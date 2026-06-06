@@ -1280,9 +1280,9 @@ html.scrollbar-visible ::-webkit-scrollbar-track {
 }
 
 .form-control {
-  border: 2px solid var(--s-gray-400);
-  border-radius: var(--s-radius-md);
-  padding: 1rem 1.5rem;
+  border: 2px solid var(--s-primary);
+  border-radius: var(--s-radius-sm);
+  padding: 0.5rem;
   font-size: var(--s-text-base);
   font-weight: var(--s-font-medium);
   transition: var(--s-transition-fast);
@@ -1420,12 +1420,21 @@ textarea.form-control {
 /* ─────────────────────────────────────────────────────────────────
    INPUT FIELD
    ───────────────────────────────────────────────────────────────── */
+
+.iti__search-input-wrapper {
+  border-radius: var(--s-radius-sm);
+}
+
 .iti input,
 .iti input[type="tel"] {
   width: 100%;
-  border-radius: var(--s-radius-md) !important;
+  border-radius: var(--s-radius-sm);
   position: relative;
   z-index: 1;
+}
+
+.iti--inline-dropdown .iti__dropdown-content{
+  border-radius: var(--s-radius-sm);
 }
 
 
@@ -1441,7 +1450,7 @@ textarea.form-control {
    ───────────────────────────────────────────────────────────────── */
 .iti__search-input {
   border: 1px solid var(--s-gray-300);
-  border-radius: var(--s-radius-md);
+  border-radius: 0;
   padding: 0.65rem 1rem;
   font-size: var(--s-text-sm);
   width: 100%;

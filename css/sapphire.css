@@ -96,16 +96,46 @@
 
 .s-cpblts-card-link {
   display: block;
+  text-decoration: none;
 }
 
+/* Base Card Layout */
 .s-cpblts-card {
+  height: 480px;
+  border-radius: var(--s-radius-md);
+  overflow: hidden;
+  position: relative;
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   position: relative;
-}
+} 
 
 .s-cpblts-card-link:hover .s-cpblts-card {
   transform: translateY(-15px) scale(1.02);
   box-shadow: 0 30px 80px rgba(var(--s-primary-rgb), 0.25);
+}
+
+/* 1. Mobile App Card */
+.s-cpblts-card.mobile_app {
+    background: linear-gradient(160deg, var(--s-primary-940) 0%, var(--s-primary-920) 45%, var(--s-primary-940) 100%);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* 2. Intelligence Card */
+.s-cpblts-card.intelligence {
+    background: linear-gradient(180deg, var(--s-primary-980) 0%, var(--s-primary-950) 50%, var(--s-primary-980) 100%);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* 3. Smart Analytics Card */
+.s-cpblts-card.smart_analytics {
+    background: linear-gradient(180deg, var(--s-primary-800) 0%, var(--s-gray-900) 100%);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* 4. How To Use Card */
+.s-cpblts-card.how_to_use {
+    background: linear-gradient(180deg, var(--s-attention-800) 0%, var(--s-neutral-900) 100%);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
 /* ────────────────────────────────────────────────────────────────
@@ -188,7 +218,7 @@
   width: 140px;
   height: 280px;
   background: linear-gradient(145deg, var(--s-primary-960) 0%, var(--s-primary-950) 100%);
-  border-radius: 24px;
+  border-radius: 12px;
   padding: 8px;
   box-shadow:
     0 0 0 2px rgba(var(--s-cyan-400-rgb), 0.3),
@@ -206,14 +236,14 @@
   width: 60px;
   height: 24px;
   background: var(--s-neutral-900);
-  border-radius: 0 0 12px 12px;
+  border-radius: 0 0 6px 6px;
 }
 
 .s-cpblts-phone-screen {
   width: 100%;
   height: 100%;
   background: linear-gradient(160deg, var(--s-primary-990) 0%, var(--s-primary-970) 55%, var(--s-primary-940) 100%);
-  border-radius: 16px;
+  border-radius: 8px;
   overflow: hidden;
   position: relative;
 }
