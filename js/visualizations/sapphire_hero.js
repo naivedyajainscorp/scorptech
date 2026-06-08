@@ -9,7 +9,7 @@
 
   const DESIGN_W = 1440;
   const DESIGN_H = 760;
-  const CYCLE_MS = 90000;
+  const CYCLE_MS = 112000;
 
   const ICON = {
     dashboard: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>',
@@ -336,7 +336,7 @@
                           <td><span class="sh-inv-pill sh-inv-pill--danger sh-inv-condition-pill">Damage</span></td>
                           <td><span class="sh-inv-pill sh-inv-pill--danger sh-inv-status-pill">Unavailable</span></td>
                           <td>N/A</td>
-                          <td>3 Feb 2027</td>
+                          <td>N/A</td>
                           <td>10 Jun 2026</td>
                           <td>14 Jun 2026</td>
                         </tr>
@@ -351,8 +351,8 @@
                           <td><span class="sh-inv-pill sh-inv-pill--success sh-inv-condition-pill">OK</span></td>
                           <td><span class="sh-inv-pill sh-inv-pill--success sh-inv-status-pill">Available</span></td>
                           <td>N/A</td>
-                          <td class="s-text-danger">28 May 2026</td>
-                          <td>18 Dec 2026</td>
+                          <td>N/A</td>
+                          <td>N/A</td>
                           <td>8 Jun 2026</td>
                         </tr>
 
@@ -363,12 +363,12 @@
                           <td>1N</td>
                           <td>Body Shop</td>
                           <td>B2/BS1/R8/C3</td>
-                          <td><span class="sh-inv-pill sh-inv-pill--attention sh-inv-condition-pill">Incomplete Kit</span></td>
+                          <td><span class="sh-inv-pill sh-inv-pill--success sh-inv-condition-pill">Incomplete Kit</span></td>
                           <td><span class="sh-inv-pill sh-inv-pill--success sh-inv-status-pill">Available</span></td>
                           <td>N/A</td>
-                          <td>22 Jan 2027</td>
                           <td>N/A</td>
-                          <td class="s-text-attention">12 Jun 2026</td>
+                          <td>N/A</td>
+                          <td>12 Jun 2026</td>
                         </tr>
 
                         <tr data-sh-inv-row>
@@ -411,7 +411,7 @@
                           <td><span class="sh-inv-pill sh-inv-pill--success sh-inv-condition-pill">OK</span></td>
                           <td><span class="sh-inv-pill sh-inv-pill--success sh-inv-status-pill">Available</span></td>
                           <td>N/A</td>
-                          <td>30 Nov 2027</td>
+                          <td>N/A</td>
                           <td>N/A</td>
                           <td>N/A</td>
                         </tr>
@@ -668,11 +668,11 @@
   <tr data-sh-rep-row>
     <td><strong>TLS-4481</strong></td>
     <td>Torque Wrench Kit</td>
-    <td>Tool</td>
-    <td>Service</td>
-    <td>A1/PB2/R4/D5</td>
-    <td><span class="sh-rep-pill sh-rep-pill--attention sh-rep-condition-pill">Incomplete Kit</span></td>
-    <td><span class="sh-rep-pill sh-rep-pill--attention sh-rep-status-pill">Available</span></td>
+    <td>Toolkit</td>
+    <td>Body Shop</td>
+    <td>B2BS1R8C3</td>
+    <td><span class="sh-rep-pill sh-rep-pill--success sh-rep-condition-pill">Incomplete Kit</span></td>
+    <td><span class="sh-rep-pill sh-rep-pill--success sh-rep-status-pill">Available</span></td>
   </tr>
 
   <tr data-sh-rep-row>
@@ -701,7 +701,7 @@
     <td>Machinery</td>
     <td>Fabrication</td>
     <td>G1/MH1/R7/D2</td>
-    <td><span class="sh-rep-pill sh-rep-pill--attention sh-rep-condition-pill">Partially Damaged</span></td>
+    <td><span class="sh-rep-pill sh-rep-pill--attention sh-rep-condition-pill">Partially Damage</span></td>
     <td><span class="sh-rep-pill sh-rep-pill--success sh-rep-status-pill">Available</span></td>
   </tr>
 
@@ -720,9 +720,9 @@
     <td>Field Response Van</td>
     <td>Vehicle</td>
     <td>Wash Area</td>
-    <td>L4/MH3/R3/B8</td>
-    <td><span class="sh-rep-pill sh-rep-pill--warning sh-rep-condition-pill">Missing</span></td>
-    <td><span class="sh-rep-pill sh-rep-pill--danger sh-rep-status-pill">Unavailable</span></td>
+    <td>Y2WA1B7</td>
+    <td><span class="sh-rep-pill sh-rep-pill--success sh-rep-condition-pill">OK</span></td>
+    <td><span class="sh-rep-pill sh-rep-pill--success sh-rep-status-pill">Available</span></td>
   </tr>
 
   <tr data-sh-rep-row>
@@ -730,9 +730,9 @@
     <td>Variable Frequency Drive</td>
     <td>Machinery</td>
     <td>Power Room</td>
-    <td>F5/EL2/R1/T8</td>
-    <td><span class="sh-rep-pill sh-rep-pill--danger sh-rep-condition-pill">Damage</span></td>
-    <td><span class="sh-rep-pill sh-rep-pill--danger sh-rep-status-pill">Unavailable</span></td>
+    <td>E3VFDL1</td>
+    <td><span class="sh-rep-pill sh-rep-pill--success sh-rep-condition-pill">OK</span></td>
+    <td><span class="sh-rep-pill sh-rep-pill--success sh-rep-status-pill">Available</span></td>
   </tr>
 
   <tr data-sh-rep-row>
@@ -760,8 +760,8 @@
     <td>Hydraulic Pump</td>
     <td>Machinery</td>
     <td>Service</td>
-    <td>E2/PB4/S2/B3</td>
-    <td><span class="sh-rep-pill sh-rep-pill--pop sh-rep-condition-pill">Under Maintenance</span></td>
+    <td>F1SB3LN2</td>
+    <td><span class="sh-rep-pill sh-rep-pill--pop sh-rep-condition-pill">Damage</span></td>
     <td><span class="sh-rep-pill sh-rep-pill--danger sh-rep-status-pill">Unavailable</span></td>
   </tr>
 
@@ -790,15 +790,119 @@
     <td>Forklift Diesel</td>
     <td>Vehicle</td>
     <td>Yard A</td>
-    <td>M2/PB1/R5/D7</td>
-    <td><span class="sh-rep-pill sh-rep-pill--attention sh-rep-condition-pill">Partially Damaged</span></td>
-    <td><span class="sh-rep-pill sh-rep-pill--danger sh-rep-status-pill">Available</span></td>
+    <td>YAFL1B2</td>
+    <td><span class="sh-rep-pill sh-rep-pill--danger sh-rep-condition-pill">Partially Damage</span></td>
+    <td><span class="sh-rep-pill sh-rep-pill--danger sh-rep-status-pill">Unavailable</span></td>
   </tr>
 </tbody>
     </table>
   </div>
 </div>
 </section>
+
+              <section class="sh-insp-stage" data-sh-el="insp-stage" aria-hidden="true">
+                <div class="sh-insp-page-head">
+                  <div>
+                    <div class="sh-insp-page-kicker">Scheduled Inspections</div>
+                    <div class="sh-insp-page-title">Asset Inspections</div>
+                  </div>
+                  <div class="sh-insp-live-pill">
+                    <span class="sh-insp-live-dot"></span>
+                    Queue active
+                  </div>
+                </div>
+                <div class="sh-insp-table-shell">
+                  <div class="sh-insp-table-wrap">
+                    <table class="sh-insp-table">
+                      <thead>
+                        <tr>
+                          <th>Code</th>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Location</th>
+                          <th>Condition</th>
+                          <th>Status</th>
+                          <th>Last Inspected</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr data-sh-insp-row>
+                          <td>TLS-4481</td>
+                          <td>Torque Wrench Kit</td>
+                          <td>Toolkit</td>
+                          <td>Body Shop</td>
+                          <td><span class="sh-insp-pill sh-insp-pill--attention sh-insp-condition-pill">Incomplete Kit</span></td>
+                          <td><span class="sh-insp-pill sh-insp-pill--success sh-insp-status-pill">Available</span></td>
+                          <td>14/03/2026</td>
+                        </tr>
+                        <tr data-sh-insp-row>
+                          <td>HYD-1209</td>
+                          <td>Hydraulic Jack 20T</td>
+                          <td>Tool</td>
+                          <td>Workshop B</td>
+                          <td><span class="sh-insp-pill sh-insp-pill--warning sh-insp-condition-pill">Missing</span></td>
+                          <td><span class="sh-insp-pill sh-insp-pill--danger sh-insp-status-pill">Unavailable</span></td>
+                          <td>02/01/2026</td>
+                        </tr>
+                        <tr data-sh-insp-row>
+                          <td>PNE-6652</td>
+                          <td>Pneumatic Drill</td>
+                          <td>Machinery</td>
+                          <td>Heavy Bay</td>
+                          <td><span class="sh-insp-pill sh-insp-pill--success sh-insp-condition-pill">Active</span></td>
+                          <td><span class="sh-insp-pill sh-insp-pill--primary sh-insp-status-pill">Issued</span></td>
+                          <td>28/04/2026</td>
+                        </tr>
+                        <tr data-sh-insp-row>
+                          <td>VEH-3324</td>
+                          <td>Maintenance Pickup</td>
+                          <td>Vehicle</td>
+                          <td>Transport Pool</td>
+                          <td><span class="sh-insp-pill sh-insp-pill--pop sh-insp-condition-pill">Under Maintenance</span></td>
+                          <td><span class="sh-insp-pill sh-insp-pill--danger sh-insp-status-pill">Unavailable</span></td>
+                          <td>10/02/2026</td>
+                        </tr>
+                        <tr data-sh-insp-row>
+                          <td>ELC-5503</td>
+                          <td>Variable Frequency Drive</td>
+                          <td>Machinery</td>
+                          <td>Power Room</td>
+                          <td><span class="sh-insp-pill sh-insp-pill--success sh-insp-condition-pill">OK</span></td>
+                          <td><span class="sh-insp-pill sh-insp-pill--success sh-insp-status-pill">Available</span></td>
+                          <td>19/05/2026</td>
+                        </tr>
+                        <tr data-sh-insp-row>
+                          <td>WLD-2281</td>
+                          <td>MIG Welder 400A</td>
+                          <td>Machinery</td>
+                          <td>Fabrication</td>
+                          <td><span class="sh-insp-pill sh-insp-pill--attention sh-insp-condition-pill">Partially Damage</span></td>
+                          <td><span class="sh-insp-pill sh-insp-pill--success sh-insp-status-pill">Available</span></td>
+                          <td>07/04/2026</td>
+                        </tr>
+                        <tr data-sh-insp-row>
+                          <td>VEH-0914</td>
+                          <td>Field Response Van</td>
+                          <td>Vehicle</td>
+                          <td>Wash Area</td>
+                          <td><span class="sh-insp-pill sh-insp-pill--success sh-insp-condition-pill">OK</span></td>
+                          <td><span class="sh-insp-pill sh-insp-pill--success sh-insp-status-pill">Available</span></td>
+                          <td>01/06/2026</td>
+                        </tr>
+                        <tr data-sh-insp-row>
+                          <td>ACO-0099</td>
+                          <td>Daikin Compressor</td>
+                          <td>Machinery</td>
+                          <td>QC Lab</td>
+                          <td><span class="sh-insp-pill sh-insp-pill--success sh-insp-condition-pill">OK</span></td>
+                          <td><span class="sh-insp-pill sh-insp-pill--success sh-insp-status-pill">Available</span></td>
+                          <td>22/05/2026</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </section>
 
               </div>
             </div>
@@ -1147,7 +1251,7 @@
           <div class="sh-act-log-line">
             <span class="sh-act-log-time">Name</span>
             <span class="sh-act-log-label">Material</span>
-            <span class="sh-act-log-val">Contaminated Resin Batch</span>
+            <span class="sh-act-log-val">Protective Coating Compound</span>
           </div>
           <div class="sh-act-log-line">
             <span class="sh-act-log-time">Qty</span>
@@ -1170,7 +1274,7 @@
             title: 'Item repair',
             headline: 'Report action • Sapphire EAM',
             itemLabel: 'Asset',
-            itemValue: 'WLD-2881',
+            itemValue: 'WLD-2281',
             stateLabel: 'Condition',
             stateValue: 'Partially Damage',
             extraHtml: repRepairChecklistHTML,
@@ -1201,7 +1305,7 @@
             itemLabel: 'Item',
             itemValue: 'Hydraulic Pump • ASM-2207',
             stateLabel: 'Update',
-            stateValue: 'Condition + status restored',
+            stateValue: 'Damage + Unavailable',
             actionsHtml: `
               <div class="sh-act-confirm">
                 <button class="sh-act-btn sh-act-btn--cancel">Cancel</button>
@@ -1228,7 +1332,7 @@
             title: 'Material Dispose',
             headline: 'Disposal request • Sapphire EAM',
             itemLabel: 'Record',
-            itemValue: 'MAT-8806',
+            itemValue: 'Protective Coating Compound',
             stateLabel: 'Action',
             stateValue: 'Ready for disposal',
             extraHtml: repDisposeMetaHTML,
@@ -1246,6 +1350,339 @@
         removeRepSplashCard(REP_ACT_T3 + 2400);
         slideOutRepRow(repRowMAT, REP_ACT_T3 + 2850);
         clearRepFocus(REP_ACT_T3 + 3450);
+
+        /* ============================================================
+           INSPECTIONS TABLE — splash → checkpoint → flip → slide
+           ============================================================ */
+
+        const inspStage   = qs('[data-sh-el="insp-stage"]');
+        const inspTab     = qs('#sb-insp');
+        const inspRows    = Array.from(qsa('[data-sh-insp-row]'));
+
+        /* ---- timing: fires after Reports Act 3 fully completes ---- */
+        const REPENDT     = REP_ACT_T3 + 3450;           // clearRepFocus last step
+        const REPEXITT    = REPENDT + 250;               // Reports exit trigger
+        const INSPSTAGET  = REPEXITT + 700;              // Inspections enters after Reports exits
+        const INSPROWST   = INSPSTAGET + 450;            // rows stagger 450 ms after stage enters
+
+        /* ---- Reports exit ---- */
+        schedule(() => {
+          if (repTab)  repTab.classList.remove('active');
+          if (repStage) repStage.classList.add('sh-rep-stage-exit');
+        }, REPEXITT);
+        schedule(() => {
+          if (repStage) {
+            repStage.classList.remove('is-active', 'sh-rep-stage-enter', 'sh-rep-stage-exit');
+            repStage.setAttribute('aria-hidden', 'true');
+          }
+        }, REPEXITT + 650);
+
+        /* ---- Inspections stage reveal ---- */
+        schedule(() => {
+          if (inspTab)  inspTab.classList.add('active');
+          if (inspStage) {
+            inspStage.classList.add('is-active', 'sh-insp-stage-enter');
+            inspStage.setAttribute('aria-hidden', 'false');
+          }
+        }, INSPSTAGET);
+        schedule(() => {
+          if (inspStage) inspStage.classList.remove('sh-insp-stage-enter');
+        }, INSPSTAGET + 700);
+        inspRows.forEach((row, i) => {
+          schedule(() => row.classList.add('is-visible'), INSPROWST + i * 100);
+        });
+
+        /* ---- helpers ---- */
+        const getInspRow = code =>
+          inspRows.find(r => Array.from(r.cells).some(c => c.textContent.trim() === code));
+
+        const flipInspPill = (row, type, cls, label, delay) => {
+          schedule(() => {
+            const pill = row.querySelector(
+              type === 'condition' ? '.sh-insp-condition-pill' : '.sh-insp-status-pill'
+            );
+            if (!pill) return;
+            pill.classList.add('sh-insp-pill-flipping');
+            setTimeout(() => {
+              pill.className = `sh-insp-pill ${cls} ${
+                type === 'condition' ? 'sh-insp-condition-pill' : 'sh-insp-status-pill'
+              }`;
+              pill.textContent = label;
+            }, 260);
+          }, delay);
+        };
+
+        const focusInspRow = (target, delay) => {
+          schedule(() => {
+            inspRows.forEach(r => {
+              if (r === target) r.classList.add('sh-insp-row-focus');
+              else              r.classList.add('sh-insp-row-dimmed');
+            });
+          }, delay);
+        };
+
+        const clearInspFocus = delay => {
+          schedule(() => {
+            inspRows.forEach(r =>
+              r.classList.remove('sh-insp-row-focus','sh-insp-row-dimmed')
+            );
+          }, delay);
+        };
+
+        const slideOutInspRow = (row, delay) => {
+          schedule(() => {
+            if (!row) return;
+            row.classList.add('sh-row-discarded');
+            setTimeout(() => row.remove(), 650);
+          }, delay);
+        };
+
+        const getWrap = () => qs('.sh-insp-table-wrap');
+
+        /* show/remove backdrop */
+        const showInspBackdrop = delay => {
+          schedule(() => {
+            const w = getWrap();
+            if (!w) return;
+            let bd = w.querySelector('.sh-insp-backdrop');
+            if (!bd) { bd = document.createElement('div'); bd.className = 'sh-insp-backdrop'; w.prepend(bd); }
+            requestAnimationFrame(() => bd.classList.add('is-active'));
+          }, delay);
+        };
+        const hideInspBackdrop = delay => {
+          schedule(() => {
+            const bd = getWrap()?.querySelector('.sh-insp-backdrop');
+            if (!bd) return;
+            bd.classList.remove('is-active');
+            setTimeout(() => bd.remove(), 350);
+          }, delay);
+        };
+
+        /* show/remove splash card (step 1) */
+        const showInspSplash = (html, delay) => {
+          schedule(() => {
+            const w = getWrap();
+            if (!w) return;
+            w.insertAdjacentHTML('beforeend', html);
+            const card = w.querySelector('.sh-insp-card');
+            if (card) requestAnimationFrame(() => card.classList.add('is-active'));
+          }, delay);
+        };
+        const removeInspSplash = delay => {
+          schedule(() => {
+            const card = getWrap()?.querySelector('.sh-insp-card');
+            if (!card) return;
+            card.classList.remove('is-active');
+            setTimeout(() => card.remove(), 350);
+          }, delay);
+        };
+
+        /* show/remove checkpoint card (step 2) */
+        const showInspCheckCard = (html, delay) => {
+          schedule(() => {
+            const w = getWrap();
+            if (!w) return;
+            w.insertAdjacentHTML('beforeend', html);
+            const card = w.querySelector('.sh-insp-check-card');
+            if (card) requestAnimationFrame(() => card.classList.add('is-active'));
+          }, delay);
+        };
+        const removeInspCheckCard = delay => {
+          schedule(() => {
+            const card = getWrap()?.querySelector('.sh-insp-check-card');
+            if (!card) return;
+            card.classList.remove('is-active');
+            setTimeout(() => card.remove(), 350);
+          }, delay);
+        };
+
+        /* tick checkboxes in the live card */
+        const tickInspCheckboxes = (indices, delay) => {
+          indices.forEach((idx, i) => {
+            schedule(() => {
+              const boxes = getWrap()?.querySelectorAll('.sh-insp-checkbox');
+              if (boxes?.[idx]) boxes[idx].classList.add('is-checked');
+            }, delay + i * 280);
+          });
+        };
+
+        /* ---- SVG icons ---- */
+        const ICO_INSP = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>`;
+        const ICO_CHECK_INSP = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
+
+        /* ---- splash card HTML builder ---- */
+        const inspSplashHTML = (itemName, itemCode, itemType, condition, condCls, status, statusCls) => `
+<div class="sh-insp-card">
+  <div class="sh-insp-card-bar"></div>
+  <div class="sh-insp-card-head">
+    <div class="sh-insp-card-icon">${ICO_INSP}</div>
+    <div>
+      <div class="sh-insp-card-title">Inspection</div>
+      <div class="sh-insp-card-headline">Asset Inspection · Sapphire EAM</div>
+    </div>
+  </div>
+  <div class="sh-insp-meta-row">
+    <span class="sh-insp-meta-label">Item</span>
+    <span class="sh-insp-meta-value">${itemName}</span>
+  </div>
+  <div class="sh-insp-meta-row">
+    <span class="sh-insp-meta-label">Code</span>
+    <span class="sh-insp-meta-value">${itemCode}</span>
+  </div>
+  <div class="sh-insp-meta-row">
+    <span class="sh-insp-meta-label">Type</span>
+    <span class="sh-insp-meta-value">${itemType}</span>
+  </div>
+  <div class="sh-insp-meta-row">
+    <span class="sh-insp-meta-label">Condition</span>
+    <span class="sh-insp-pill ${condCls} sh-insp-condition-pill">${condition}</span>
+  </div>
+  <div class="sh-insp-meta-row" style="border-bottom:none">
+    <span class="sh-insp-meta-label">Status</span>
+    <span class="sh-insp-pill ${statusCls} sh-insp-status-pill">${status}</span>
+  </div>
+  <div class="sh-insp-card-actions">
+    <button class="sh-insp-btn sh-insp-btn--cancel">Cancel</button>
+    <button class="sh-insp-btn sh-insp-btn--primary">Inspect</button>
+  </div>
+</div>`;
+
+        /* ---- checkpoint card HTML builder ---- */
+        const inspCheckCardHTML = (itemCode, checkpoints) => `
+<div class="sh-insp-check-card">
+  <div class="sh-insp-check-card-bar"></div>
+  <div class="sh-insp-check-card-head">
+    <div class="sh-insp-check-card-icon">${ICO_CHECK_INSP}</div>
+    <div>
+      <div class="sh-insp-check-card-title">Inspection Checklist</div>
+      <div class="sh-insp-check-card-subtitle">${itemCode} · Field Inspection</div>
+    </div>
+  </div>
+  <div class="sh-insp-checklist-body">
+    ${checkpoints.map(cp => `
+    <div class="sh-insp-check-item">
+      <div class="sh-insp-checkbox"></div>
+      <span>${cp}</span>
+    </div>`).join('')}
+  </div>
+  <div class="sh-insp-check-card-actions">
+    <button class="sh-insp-btn sh-insp-btn--cancel">Cancel</button>
+    <button class="sh-insp-btn sh-insp-btn--success">Submit</button>
+  </div>
+</div>`;
+
+        /* =====================================================
+           ACTS — 4 items, each: splash → inspect → checkpoints
+                  → random ticks → submit → flip → slide out
+           ===================================================== */
+
+        const ACTT = INSPROWST + inspRows.length * 100 + 800;
+
+        /* ---------- SHARED CHECKPOINTS per type ---------- */
+        const CP = {
+          tool:      ['Visual damage check','Moving parts functional','Calibration verified','Lubrication OK','Safety guard intact','Grip and handle secure','Storage condition OK'],
+          toolkit:   ['All items accounted for','Case integrity OK','Tools free of corrosion','Cutting edges serviceable','Measurement tools calibrated','Labels readable','Packed correctly'],
+          machinery: ['Power isolation confirmed','Guards in place','Fluid levels checked','Vibration within limits','Operating temp normal','Sensors responsive','Last service log reviewed'],
+          vehicle:   ['Tyre pressure & condition','Lights functional','Brakes responsive','Engine oil level OK','Battery charge adequate','Seat belts intact','Pre-trip log signed'],
+        };
+
+        /* each act: { code, name, type, condition, condCls, status, statusCls,
+                       checkpoints, tickIdxs,
+                       newCondition, newCondCls, newStatus, newStatusCls } */
+        const INSP_ACTS = [
+          {
+            code:'TLS-4481', name:'Torque Wrench Kit', type:'Toolkit',
+            condition:'Incomplete Kit', condCls:'sh-insp-pill--attention',
+            status:'Available',        statusCls:'sh-insp-pill--success',
+            checkpoints: CP.toolkit,   tickIdxs:[0,1,3,5],
+            newCondition:'OK',         newCondCls:'sh-insp-pill--success',
+            newStatus:'Available',     newStatusCls:'sh-insp-pill--success',
+          },
+          {
+            code:'HYD-1209', name:'Hydraulic Jack 20T', type:'Tool',
+            condition:'Missing',       condCls:'sh-insp-pill--warning',
+            status:'Unavailable',      statusCls:'sh-insp-pill--danger',
+            checkpoints: CP.tool,      tickIdxs:[0,2,4,6],
+            newCondition:'OK',         newCondCls:'sh-insp-pill--success',
+            newStatus:'Available',     newStatusCls:'sh-insp-pill--success',
+          },
+          {
+            code:'VEH-3324', name:'Maintenance Pickup', type:'Vehicle',
+            condition:'Under Maintenance', condCls:'sh-insp-pill--pop',
+            status:'Unavailable',          statusCls:'sh-insp-pill--danger',
+            checkpoints: CP.vehicle,       tickIdxs:[0,1,2,5,6],
+            newCondition:'OK',             newCondCls:'sh-insp-pill--success',
+            newStatus:'Available',         newStatusCls:'sh-insp-pill--success',
+          },
+          {
+            code:'WLD-2281', name:'MIG Welder 400A', type:'Machinery',
+            condition:'Partially Damage', condCls:'sh-insp-pill--attention',
+            status:'Available',           statusCls:'sh-insp-pill--success',
+            checkpoints: CP.machinery,    tickIdxs:[0,2,3,4,6],
+            newCondition:'Active',        newCondCls:'sh-insp-pill--success',
+            newStatus:'Available',        newStatusCls:'sh-insp-pill--success',
+          },
+        ];
+
+        const ACT_GAP = 5200; /* ms between acts */
+
+        INSP_ACTS.forEach((act, i) => {
+          const T = ACTT + i * ACT_GAP;
+          const row = getInspRow(act.code);
+
+          /* Step 1: backdrop + splash */
+          showInspBackdrop(T);
+          showInspSplash(
+            inspSplashHTML(act.name, act.code, act.type,
+                           act.condition, act.condCls,
+                           act.status, act.statusCls),
+            T
+          );
+          focusInspRow(row, T + 120);
+
+          /* Step 2: dismiss splash, open checkpoint card */
+          removeInspSplash(T + 1600);
+          showInspCheckCard(inspCheckCardHTML(act.code, act.checkpoints), T + 1900);
+
+          /* Step 3: tick random checkboxes */
+          tickInspCheckboxes(act.tickIdxs, T + 2300);
+
+          /* Step 4: submit — dismiss checkpoint card */
+          removeInspCheckCard(T + 2300 + act.tickIdxs.length * 280 + 600);
+          hideInspBackdrop(T + 2300 + act.tickIdxs.length * 280 + 600);
+
+          const afterSubmit = T + 2300 + act.tickIdxs.length * 280 + 950;
+
+          /* Step 5: flip condition + status pills */
+          flipInspPill(row, 'condition', act.newCondCls, act.newCondition, afterSubmit);
+          flipInspPill(row, 'status',    act.newStatusCls, act.newStatus,  afterSubmit + 200);
+
+          /* Step 6: slide out row */
+          slideOutInspRow(row, afterSubmit + 700);
+          clearInspFocus(afterSubmit + 1350);
+        });
+
+        /* ---- Inspections end + exit ---- */
+        const INSPACTS_COUNT = INSP_ACTS.length;
+        const LAST_INSP_T = ACTT + ((INSPACTS_COUNT - 1) * ACT_GAP);
+        const LAST_INSP_AFTER_SUBMIT =
+          LAST_INSP_T +
+          2300 +
+          (Math.max(...INSP_ACTS[INSPACTS_COUNT - 1].tickIdxs.map((_, i) => i + 1)) * 280) +
+          950;
+        const INSPENDT = LAST_INSP_AFTER_SUBMIT + 1350;
+        const INSPEXITT = INSPENDT + 300;
+
+        schedule(() => {
+          if (inspTab) inspTab.classList.remove('active');
+          if (inspStage) inspStage.classList.add('sh-insp-stage-exit');
+        }, INSPEXITT);
+        schedule(() => {
+          if (inspStage) {
+            inspStage.classList.remove('is-active', 'sh-insp-stage-enter', 'sh-insp-stage-exit');
+            inspStage.setAttribute('aria-hidden', 'true');
+          }
+        }, INSPEXITT + 650);
 
         /* ============================================================
            LIVE ACTIONS — 8 sequential animated acts
