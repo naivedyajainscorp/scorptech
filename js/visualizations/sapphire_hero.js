@@ -9,7 +9,7 @@
 
   const DESIGN_W = 1440;
   const DESIGN_H = 760;
-  const CYCLE_MS = 112000;
+  const CYCLE_MS = 145000;
 
   const ICON = {
     dashboard: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>',
@@ -34,8 +34,53 @@
     materials: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6h14"></path><path d="M7 6v12"></path><path d="M17 6v12"></path><path d="M7 18h10"></path><path d="M10 10h4"></path></svg>`,
     vehicle: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 15h14l-1.2-4a2 2 0 0 0-1.9-1.5H8.1A2 2 0 0 0 6.2 11L5 15Z"></path><path d="M6 15v2"></path><path d="M18 15v2"></path><circle cx="8" cy="17.5" r="1.5"></circle><circle cx="16" cy="17.5" r="1.5"></circle></svg>`,
     blend: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6"></path><path d="M10 3v5l-4.5 7.5A3 3 0 0 0 8.1 20h7.8a3 3 0 0 0 2.6-4.5L14 8V3"></path><path d="M8.5 14h7"></path></svg>`,
-    assembly: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6"></rect><rect x="14" y="4" width="6" height="6"></rect><rect x="9" y="14" width="6" height="6"></rect><path d="M10 7h4"></path><path d="M12 10v4"></path></svg>`    
+    assembly: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6"></rect><rect x="14" y="4" width="6" height="6"></rect><rect x="9" y="14" width="6" height="6"></rect><path d="M10 7h4"></path><path d="M12 10v4"></path></svg>`
   };
+
+  // ---- Maintenance stage data (module-level for render() access) ----
+  function shFormatFutureDate(daysFromNow) {
+    const d = new Date();
+    d.setDate(d.getDate() + daysFromNow);
+    return d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+  }
+  function shDueOffset(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  const MAINT_ITEMS = [
+    { code: 'SRV-2001', name: 'Compressor Service',         type: 'Service',       location: 'Workshop A',   priority: 'High',   due: shFormatFutureDate(shDueOffset(7,10)),  status: 'Scheduled' },
+    { code: 'SRV-2002', name: 'Conveyor Belt Replace',      type: 'Replacement',   location: 'Line 3',       priority: 'Medium', due: shFormatFutureDate(shDueOffset(8,12)),  status: 'Scheduled' },
+    { code: 'SRV-2003', name: 'Hydraulic Test',             type: 'Inspection',    location: 'Bay 4',         priority: 'Low',    due: shFormatFutureDate(shDueOffset(10,15)),status: 'Scheduled' },
+    { code: 'SRV-2004', name: 'Welding Rig Check',          type: 'Inspection',    location: 'Fab Shop',      priority: 'Medium', due: shFormatFutureDate(shDueOffset(9,14)),  status: 'Scheduled' },
+    { code: 'SRV-2005', name: 'Forklift Annual Cert',       type: 'Certification', location: 'Yard',           priority: 'High',   due: shFormatFutureDate(shDueOffset(7,10)),  status: 'Scheduled' },
+    { code: 'SRV-2006', name: 'HVAC Filter Replace',        type: 'Replacement',   location: 'Office Wing',   priority: 'Low',    due: shFormatFutureDate(shDueOffset(12,15)),status: 'Scheduled' },
+    { code: 'SRV-2007', name: 'Generator Load Test',        type: 'Test',          location: 'Substation',    priority: 'High',   due: shFormatFutureDate(shDueOffset(8,11)),  status: 'Scheduled' },
+    { code: 'SRV-2008', name: 'Crane Wire Rope Insp',       type: 'Inspection',    location: 'Bay 2',         priority: 'High',   due: shFormatFutureDate(shDueOffset(7,9)),   status: 'Scheduled' },
+    { code: 'SRV-2009', name: 'Pneumatic Tool Service',     type: 'Service',       location: 'Workshop B',   priority: 'Medium', due: shFormatFutureDate(shDueOffset(10,13)),status: 'Scheduled' },
+    { code: 'SRV-2010', name: 'Lathe Bed Alignment',        type: 'Adjustment',    location: 'Machine Shop',  priority: 'Low',    due: shFormatFutureDate(shDueOffset(11,15)),status: 'Scheduled' },
+    { code: 'SRV-2011', name: 'Air Compressor Drain',      type: 'Maintenance',   location: 'Line 1',        priority: 'Low',    due: shFormatFutureDate(shDueOffset(9,12)),  status: 'Scheduled' },
+    { code: 'SRV-2012', name: 'Paint Booth Filter',         type: 'Replacement',   location: 'Paint Shop',    priority: 'Medium', due: shFormatFutureDate(shDueOffset(8,10)),  status: 'Scheduled' },
+    { code: 'SRV-2013', name: 'Elevator Inspection',        type: 'Certification', location: 'Main Building', priority: 'High',   due: shFormatFutureDate(shDueOffset(7,8)),   status: 'Scheduled' },
+    { code: 'SRV-2014', name: 'Pump Calibration',           type: 'Calibration',   location: 'Water Station', priority: 'Medium', due: shFormatFutureDate(shDueOffset(10,14)),status: 'Scheduled' },
+    { code: 'SRV-2015', name: 'Welding Circuit Test',       type: 'Test',          location: 'Fab Shop',      priority: 'Medium', due: shFormatFutureDate(shDueOffset(12,15)),status: 'Scheduled' },
+  ];
+
+  function renderMaintRows() {
+    return MAINT_ITEMS.map(item => {
+      const statusCls = item.priority === 'High' ? 'sh-maint-pill--danger'
+        : item.priority === 'Medium' ? 'sh-maint-pill--warning'
+        : 'sh-maint-pill--success';
+      return `<tr data-sh-maint-row>
+        <td>${item.code}</td>
+        <td>${item.name}</td>
+        <td>${item.type}</td>
+        <td>${item.location}</td>
+        <td><span class="sh-maint-pill ${statusCls} sh-maint-priority-pill">${item.priority}</span></td>
+        <td>${item.due}</td>
+        <td><span class="sh-maint-pill sh-maint-pill--primary sh-maint-status-pill">${item.status}</span></td>
+      </tr>`;
+    }).join('');
+  }
 
   const SCENES = {
     desktop: {
@@ -904,6 +949,39 @@
                 </div>
               </section>
 
+              <section class="sh-maint-stage" data-sh-el="maint-stage" aria-hidden="true">
+                <div class="sh-maint-page-head">
+                  <div>
+                    <div class="sh-maint-page-kicker">Preventive Maintenance</div>
+                    <div class="sh-maint-page-title">Maintenance Queue</div>
+                  </div>
+                  <div class="sh-maint-live-pill">
+                    <span class="sh-maint-live-dot"></span>
+                    Queue active
+                  </div>
+                </div>
+                <div class="sh-maint-table-shell">
+                  <div class="sh-maint-table-wrap">
+                    <table class="sh-maint-table">
+                      <thead>
+                        <tr>
+                          <th>Code</th>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Location</th>
+                          <th>Priority</th>
+                          <th>Due</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        ${renderMaintRows()}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </section>
+
               </div>
             </div>
           </div>`;
@@ -1685,6 +1763,267 @@
         }, INSPEXITT + 650);
 
         /* ============================================================
+           MAINTENANCE STAGE
+           ============================================================ */
+        const MAINTTAB = qs('#sb-maint');
+        const MAINTSTAGE = qs('[data-sh-el="maint-stage"]');
+
+        /* ---------- Maintenance rows: dynamic access, never cache once ---------- */
+        const getMaintRows = () => Array.from(qsa('[data-sh-maint-row]'));
+
+        function getMaintRowByCode(code) {
+          return getMaintRows().find(row => row.cells[0] && row.cells[0].textContent.trim() === code);
+        }
+
+        function getMaintPill(row, type) {
+          if (!row) return null;
+          return row.querySelector(type === 'priority' ? '.sh-maint-priority-pill' : '.sh-maint-status-pill');
+        }
+
+        function focusMaintRow(target, delay) {
+          schedule(() => {
+            getMaintRows().forEach(row => {
+              if (row === target) {
+                row.classList.add('sh-maint-row-focus');
+                row.classList.remove('sh-maint-row-dimmed');
+              } else {
+                row.classList.remove('sh-maint-row-focus');
+                row.classList.add('sh-maint-row-dimmed');
+              }
+            });
+          }, delay);
+        }
+
+        function clearMaintFocus(delay) {
+          schedule(() => {
+            getMaintRows().forEach(row => {
+              row.classList.remove('sh-maint-row-focus', 'sh-maint-row-dimmed');
+            });
+          }, delay);
+        }
+
+        function flipMaintPill(row, type, cls, label, delay) {
+          schedule(() => {
+            const pill = getMaintPill(row, type);
+            if (!pill) return;
+            pill.classList.add('sh-maint-pill-flipping');
+            const halfway = setTimeout(() => {
+              pill.className = cls;
+              pill.textContent = label;
+            }, 260);
+            engine.timeouts.push(halfway);
+          }, delay);
+        }
+
+        function maintCard(html, delay) {
+          schedule(() => {
+            const wrap = qs('.sh-maint-table-wrap');
+            if (!wrap) return;
+            const old = wrap.querySelector('.sh-maint-card');
+            if (old) old.remove();
+            wrap.insertAdjacentHTML('beforeend', html);
+            const card = wrap.querySelector('.sh-maint-card');
+            if (card) {
+              requestAnimationFrame(() => card.classList.add('is-visible'));
+            }
+          }, delay);
+        }
+
+        function removeMaintCard(delay) {
+          schedule(() => {
+            const card = qs('.sh-maint-card');
+            if (!card) return;
+            card.classList.remove('is-visible');
+            setTimeout(() => card.remove(), 400);
+          }, delay);
+        }
+
+        function morphMaintCardToForm(delay) {
+          schedule(() => {
+            const card = qs('.sh-maint-card');
+            if (card) card.classList.add('sh-maint-card--form');
+          }, delay);
+        }
+
+        function typeMaintReason(delay) {
+          schedule(() => {
+            const ta = qs('.sh-maint-textarea');
+            if (!ta) return;
+            const txt = 'Routine service completed. All checks passed. Lubrication topped up.';
+            let idx = 0;
+            ta.value = '';
+            const iv = setInterval(() => {
+              ta.value += txt[idx++];
+              if (idx >= txt.length) clearInterval(iv);
+            }, 28);
+            engine.timeouts.push(iv);
+          }, delay);
+        }
+
+        function slideOutMaintRow(code, delay) {
+          schedule(() => {
+            const row = getMaintRowByCode(code);
+            if (!row) return;
+            row.classList.add('sh-maint-row-discard');
+            setTimeout(() => row.remove(), 600);
+          }, delay);
+        }
+
+        function startServiceCardHTML(code, name) {
+          return `
+    <div class="sh-maint-card">
+      <div class="sh-maint-card-bar sh-maint-card-bar--primary"></div>
+      <div class="sh-maint-card-head">
+        <div class="sh-maint-card-icon sh-maint-card-icon--primary">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+          </svg>
+        </div>
+        <div>
+          <div class="sh-maint-card-title">Start Service</div>
+          <div class="sh-maint-card-headline">${name} · ${code}</div>
+        </div>
+      </div>
+      <div class="sh-maint-meta-row">
+        <span class="sh-maint-meta-label">Action</span>
+        <span class="sh-maint-meta-value">Begin scheduled maintenance</span>
+      </div>
+      <div class="sh-maint-form">
+        <textarea class="sh-maint-textarea" placeholder="Notes optional" rows="3"></textarea>
+      </div>
+      <div class="sh-maint-card-actions">
+        <button class="sh-maint-btn sh-maint-btn--ghost">Skip</button>
+        <button class="sh-maint-btn sh-maint-btn--primary">Start Service</button>
+      </div>
+    </div>
+  `;
+        }
+
+        function skipMaintCardHTML(code, name) {
+          return `
+    <div class="sh-maint-card">
+      <div class="sh-maint-card-bar sh-maint-card-bar--warning"></div>
+      <div class="sh-maint-card-head">
+        <div class="sh-maint-card-icon sh-maint-card-icon--warning">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 8v4"></path>
+            <path d="M12 16h.01"></path>
+          </svg>
+        </div>
+        <div>
+          <div class="sh-maint-card-title">Skip Service</div>
+          <div class="sh-maint-card-headline">${name} · ${code}</div>
+        </div>
+      </div>
+      <div class="sh-maint-meta-row">
+        <span class="sh-maint-meta-label">Reason</span>
+        <span class="sh-maint-meta-value">Resource unavailable</span>
+      </div>
+      <div class="sh-maint-form">
+        <textarea class="sh-maint-textarea" placeholder="Reason for skipping..." rows="3"></textarea>
+      </div>
+      <div class="sh-maint-card-actions">
+        <button class="sh-maint-btn sh-maint-btn--ghost">Cancel</button>
+        <button class="sh-maint-btn sh-maint-btn--warning">Confirm Skip</button>
+      </div>
+    </div>
+  `;
+        }
+
+        /* timing chain */
+        const MAINTSTAGET = INSPEXITT + 950;
+        const MAINTROWST = MAINTSTAGET + 1200;
+        const MAINTACT1 = MAINTROWST + 1600;
+        const MAINTACT2 = MAINTACT1 + 4200;
+        const MAINTACT3 = MAINTACT2 + 4200;
+        const MAINTACT4 = MAINTACT3 + 4200;
+        const MAINTENDT = MAINTACT4 + 2800;
+
+        const m1 = MAINT_ITEMS[0];
+        const m2 = MAINT_ITEMS[1];
+        const m3 = MAINT_ITEMS[3];
+        const m4 = MAINT_ITEMS[8];
+
+        /* enter maintenance stage */
+        schedule(() => {
+          if (inspTab) inspTab.classList.remove('active');
+          if (MAINTTAB) MAINTTAB.classList.add('active');
+          if (MAINTSTAGE) {
+            MAINTSTAGE.classList.remove('sh-maint-stage-exit');
+            MAINTSTAGE.classList.add('is-active', 'sh-maint-stage-enter');
+            MAINTSTAGE.setAttribute('aria-hidden', 'false');
+          }
+        }, MAINTSTAGET);
+
+        schedule(() => {
+          if (MAINTSTAGE) MAINTSTAGE.classList.remove('sh-maint-stage-enter');
+        }, MAINTSTAGET + 800);
+
+        /* reveal rows */
+        schedule(() => {
+          if (MAINTSTAGE) MAINTSTAGE.setAttribute('aria-hidden', 'false');
+          getMaintRows().forEach((row, i) => {
+            schedule(() => row.classList.add('is-visible'), i * 60);
+          });
+        }, MAINTROWST);
+
+        /* act 1 */
+        focusMaintRow(getMaintRowByCode(m1.code), MAINTACT1);
+        maintCard(startServiceCardHTML(m1.code, m1.name), MAINTACT1 + 400);
+        morphMaintCardToForm(MAINTACT1 + 2200);
+        typeMaintReason(MAINTACT1 + 2400);
+        removeMaintCard(MAINTACT1 + 3600);
+        clearMaintFocus(MAINTACT1 + 3700);
+        flipMaintPill(getMaintRowByCode(m1.code), 'status', 'sh-maint-pill sh-maint-pill--success sh-maint-status-pill', 'In Progress', MAINTACT1 + 3800);
+
+        /* act 2 */
+        focusMaintRow(getMaintRowByCode(m2.code), MAINTACT2);
+        maintCard(skipMaintCardHTML(m2.code, m2.name), MAINTACT2 + 400);
+        removeMaintCard(MAINTACT2 + 2800);
+        clearMaintFocus(MAINTACT2 + 2900);
+        flipMaintPill(getMaintRowByCode(m2.code), 'status', 'sh-maint-pill sh-maint-pill--warning sh-maint-status-pill', 'Skipped', MAINTACT2 + 3000);
+
+        /* act 3 */
+        focusMaintRow(getMaintRowByCode(m3.code), MAINTACT3);
+        maintCard(startServiceCardHTML(m3.code, m3.name), MAINTACT3 + 400);
+        morphMaintCardToForm(MAINTACT3 + 2200);
+        typeMaintReason(MAINTACT3 + 2400);
+        removeMaintCard(MAINTACT3 + 3600);
+        clearMaintFocus(MAINTACT3 + 3700);
+        flipMaintPill(getMaintRowByCode(m3.code), 'status', 'sh-maint-pill sh-maint-pill--success sh-maint-status-pill', 'In Progress', MAINTACT3 + 3800);
+
+        /* act 4 */
+        focusMaintRow(getMaintRowByCode(m4.code), MAINTACT4);
+        maintCard(skipMaintCardHTML(m4.code, m4.name), MAINTACT4 + 400);
+        removeMaintCard(MAINTACT4 + 2800);
+        clearMaintFocus(MAINTACT4 + 2900);
+        flipMaintPill(getMaintRowByCode(m4.code), 'status', 'sh-maint-pill sh-maint-pill--warning sh-maint-status-pill', 'Skipped', MAINTACT4 + 3000);
+
+        /* exit maintenance stage */
+        schedule(() => {
+          if (MAINTTAB) MAINTTAB.classList.remove('active');
+          if (MAINTSTAGE) MAINTSTAGE.classList.add('sh-maint-stage-exit');
+        }, MAINTENDT);
+
+        schedule(() => {
+          if (MAINTSTAGE) {
+            MAINTSTAGE.classList.remove('is-active', 'sh-maint-stage-enter', 'sh-maint-stage-exit');
+            MAINTSTAGE.setAttribute('aria-hidden', 'true');
+          }
+        }, MAINTENDT + 650);
+
+        schedule(() => {
+          const tableScreen = qs('[data-sh-inv-screentable]');
+          if (tableScreen) {
+            tableScreen.classList.remove('is-active');
+            tableScreen.setAttribute('aria-hidden', 'true');
+          }
+          this.clearTimers();
+          this.switchScene(this.currentScene);
+        }, MAINTENDT + 720);
+
+        /* ============================================================
            LIVE ACTIONS — 8 sequential animated acts
            ============================================================ */
 
@@ -2118,7 +2457,7 @@
           }
           this.clearTimers();
           this.switchScene(this.currentScene);
-        }, CYCLE_MS);
+        }, MAINT_END_T + 650);
       }
     },
 
