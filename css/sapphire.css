@@ -1380,16 +1380,19 @@
 ═══════════════════════════════════════════════════════════════ */
 .cm-nav {
   position: sticky;
-  top: 92px;
-  margin-top: 0.5rem;
+  top: 80px;
+  margin-top: 0;
   z-index: var(--s-z-sticky);
   background: rgba(255, 255, 255, 0.92);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+border-bottom: 2px solid #0066cc; /* Uses your theme blue for separation */
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: var(--s-shadow-lg);
   margin-left: 5vw;
   margin-right: 5vw;
-  border-radius: var(--s-radius-lg);
+  border-radius: var(--s-radius-xs);
   opacity: 0;
   pointer-events: none;
   transform: translateY(-16px) scale(0.96);
@@ -1426,8 +1429,8 @@
   align-items: center;
   gap: 0.4rem;
   padding: 0.4rem 0.75rem;
-  border-radius: var(--s-radius-sm);
-  color: var(--s-gray-600);
+  border-radius: var(--s-radius-xs);
+  color: var(--s-gray-700);
   text-decoration: none;
   font-size: 0.8rem;
   font-weight: 600;

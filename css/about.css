@@ -1,182 +1,699 @@
 /* ═══════════════════════════════════════════════════════════════════════════
-   PHILOSOPHY SECTION - FLOATING ELEMENT CARDS
+   ABOUT PAGE — UNIFIED REVISED SYSTEM
+   Uses shared SCORP tokens, consolidates repeated panel/card treatments
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* Philosophy Grid - Equal Height Cards with Staggered Layout */
-.philosophy-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-/* Staggered Positioning */
-.philosophy-grid .philosophy-card-floating:nth-child(1) {
-  margin-top: 0;
-}
-
-.philosophy-grid .philosophy-card-floating:nth-child(2) {
-  margin-top: 80px;
-}
-
-.philosophy-grid .philosophy-card-floating:nth-child(3) {
-  margin-top: -40px;
-}
-
-.philosophy-grid .philosophy-card-floating:nth-child(4) {
-  margin-top: 40px;
-}
-
-/* Floating Elements Card Base Style */
-.philosophy-card-floating {
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(102, 126, 234, 0.2);
-  border-radius: 24px;
-  padding: 50px;
+.about-principles,
+.about-human-panel,
+.about-founder-panel,
+.about-quote-box,
+.about-timeline-card,
+.about-core-card,
+.about-recognition-card {
   position: relative;
-  overflow: visible;
-  color: var(--s-gray-900);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-  min-height: 400px;
-  display: flex;
-  flex-direction: column;
+  isolation: isolate;
 }
 
-/* Hover Glow Effect */
-.philosophy-card-floating::after {
+.about-principles-intro,
+.about-journey-intro {
+  max-width: 860px;
+  margin-inline: auto;
+}
+
+.about-principles-layout,
+.about-core-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.about-principles-layout {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.about-core-grid {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.about-panel {
+  min-width: 0;
+}
+
+.about-panel--mission,
+.about-panel--vision,
+.about-core-card {
+  grid-column: span 6;
+}
+
+.about-panel--approach {
+  grid-column: 1 / -1;
+}
+
+/* Shared surface system */
+.about-panel-shell,
+.about-human-panel,
+.about-founder-panel,
+.about-timeline-card,
+.about-core-card,
+.about-recognition-card,
+.about-quote-box {
+  border: 1px solid rgba(16, 24, 40, 0.08);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.98));
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 18px 44px rgba(15, 23, 42, 0.06);
+}
+
+.about-panel-shell,
+.about-human-panel,
+.about-founder-panel,
+.about-timeline-card,
+.about-core-card,
+.about-recognition-card,
+.about-quote-box {
+  border-radius: var(--s-radius-xs);
+}
+
+.about-panel-shell,
+.about-recognition-card,
+.about-core-card {
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease;
+}
+
+.about-panel-shell:hover,
+.about-recognition-card:hover,
+.about-core-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 24px 54px rgba(15, 23, 42, 0.09);
+}
+
+.about-panel-shell:hover {
+  border-color: rgba(0, 102, 204, 0.14);
+}
+
+/* Shared decorative glow */
+.about-panel-shell::before,
+.about-human-panel::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at center, rgba(102, 126, 234, 0.12) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  border-radius: 24px;
+  border-radius: 50%;
   pointer-events: none;
-  z-index: 1;
 }
 
-.philosophy-card-floating:hover::after {
-  opacity: 1;
+.about-panel-shell::before {
+  top: auto;
+  left: 50%;
+  bottom: -30%;
+  width: 240px;
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(0, 102, 204, 0.09), transparent 68%);
 }
 
-.philosophy-card-floating:hover {
-  transform: scale(1.03) translateY(-10px);
-  box-shadow: 0 30px 80px rgba(102, 126, 234, 0.25);
-  border-color: var(--s-primary);
+.about-human-panel::after {
+  left: 50%;
+  top: 50%;
+  width: 260px;
+  height: 260px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(0, 102, 204, 0.08), transparent 68%);
 }
 
-/* Floating Icons - Base Styles */
-.float-icon-top,
-.float-icon-bottom {
-  position: absolute;
-  font-size: 2rem;
-  z-index: 10;
-  filter: drop-shadow(0 4px 12px rgba(102, 126, 234, 0.3));
-  transition: transform 0.3s ease;
+/* Shared chip treatment */
+.about-panel-foot,
+.about-human-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.float-icon-top {
-  top: -20px;
-  right: -20px;
-  animation: float-up-down 3s ease-in-out infinite;
+.about-panel-foot span,
+.about-human-points span,
+.about-recognition-badge,
+.about-founder-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  border-radius: 999px;
+  font-weight: 700;
 }
 
-.float-icon-bottom {
-  bottom: -20px;
-  left: -20px;
-  animation: float-up-down 3s ease-in-out infinite 1.5s;
+.about-panel-foot span,
+.about-human-points span {
+  padding: 0.65rem 0.95rem;
+  background: rgba(0, 102, 204, 0.06);
+  border: 1px solid rgba(0, 102, 204, 0.1);
+  color: var(--s-gray-800);
+  font-size: 0.84rem;
+  line-height: 1.2;
 }
 
-/* Float Animation */
-@keyframes float-up-down {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-20px) rotate(5deg);
-  }
-}
-
-/* Main Philosophy Icon */
-.philosophy-icon {
-  font-size: 3.5rem;
-  margin-bottom: 25px;
-  display: block;
-  filter: drop-shadow(0 4px 12px rgba(102, 126, 234, 0.3));
-  position: relative;
-  z-index: 2;
-}
-
-/* Philosophy Title */
-.philosophy-title {
-  font-size: 2rem;
+.about-founder-badge {
+  align-self: flex-start;
+  padding: 0.65rem 0.95rem;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(16, 24, 40, 0.06);
+  color: var(--s-primary);
+  font-size: 0.8rem;
   font-weight: 800;
-  margin-bottom: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.about-recognition-badge {
+  padding: 0.65rem 1rem;
+  backdrop-filter: blur(12px);
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #fff;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Shared typography */
+.about-panel-kicker,
+.about-human-kicker,
+.about-timeline-kicker {
+  display: inline-block;
+  color: var(--s-primary);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.about-panel-kicker,
+.about-human-kicker {
+  letter-spacing: 0.12em;
+}
+
+.about-timeline-kicker {
+  margin: 0;
+  color: var(--s-gray-500);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.about-panel-title,
+.about-human-title,
+.about-timeline-title,
+.about-founder-name,
+.about-recognition-copy h3,
+.about-core-card h3,
+.about-quote-text {
+  margin: 0;
   font-family: "Science Gothic", sans-serif;
   color: var(--s-gray-900);
-  position: relative;
-  z-index: 2;
 }
 
-/* Philosophy Text */
-.philosophy-text {
-  font-size: 1.05rem;
-  line-height: 1.8;
+.about-panel-title,
+.about-human-title,
+.about-timeline-title,
+.about-founder-name,
+.about-recognition-copy h3,
+.about-core-card h3 {
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.about-panel-copy,
+.about-human-copy,
+.about-timeline-copy,
+.about-recognition-copy p,
+.about-core-card p,
+.about-founder-content p,
+.about-rail-item p {
+  margin: 0;
   color: var(--s-gray-600);
+  line-height: 1.8;
+}
+
+/* Mission / Vision / Approach */
+.about-panel-shell {
+  height: 100%;
+  padding: 32px;
+  overflow: hidden;
+}
+
+.about-panel-mark {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-family: "Science Gothic", sans-serif;
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  color: rgba(0, 102, 204, 0.08);
+  pointer-events: none;
+  user-select: none;
+}
+
+.about-panel-head {
   position: relative;
-  z-index: 2;
-  flex-grow: 1;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 18px;
+  align-items: start;
+  margin-bottom: 28px;
 }
 
-/* Section Header Styles */
-.section-header {
-  text-align: center;
-  margin-bottom: 100px;
+.about-panel-head-copy {
+  min-width: 0;
 }
 
-.section-label {
-  color: var(--s-primary);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  display: inline-block;
-  padding: 8px 20px;
-  background: linear-gradient(135deg, rgba(0, 102, 204, 0.1), rgba(124, 58, 237, 0.1));
+.about-panel-kicker {
+  margin-bottom: 12px;
+  font-size: 0.78rem;
+}
+
+.about-panel-title {
+  font-size: clamp(1.65rem, 2.2vw, 2.35rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+.about-panel-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 34ch;
+  font-size: 1rem;
+  line-height: 1.82;
+}
+
+.about-panel-foot {
+  position: relative;
+  z-index: 1;
+  margin-top: 32px;
+}
+
+.about-panel--approach .about-panel-shell {
+  padding: 0;
+  background: linear-gradient(135deg, rgba(248, 250, 252, 0.98), rgba(255, 255, 255, 0.94));
+}
+
+.about-panel-approach-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.95fr);
+  min-height: 100%;
+}
+
+.about-panel-approach-main {
+  position: relative;
+  padding: 36px 32px 32px;
+}
+
+.about-panel-approach-main::after {
+  content: "";
+  position: absolute;
+  top: 32px;
+  right: 0;
+  bottom: 32px;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 102, 204, 0),
+    rgba(0, 102, 204, 0.14),
+    rgba(0, 102, 204, 0)
+  );
+}
+
+.about-panel-approach-main .about-panel-copy {
+  max-width: 42ch;
+}
+
+.about-panel-approach-rail {
+  display: grid;
+  gap: 0;
+  padding: 20px;
+  background: linear-gradient(180deg, rgba(0, 102, 204, 0.035), rgba(124, 58, 237, 0.02));
+}
+
+.about-rail-item {
+  display: grid;
+  align-content: start;
+  padding: 20px 18px;
   border-radius: 20px;
 }
 
-.section-title {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  font-weight: 900;
-  font-family: "Science Gothic", sans-serif;
-  margin-bottom: 20px;
-  background: linear-gradient(135deg, var(--s-gray-900), var(--s-primary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.about-rail-item + .about-rail-item {
+  border-top: 1px solid rgba(16, 24, 40, 0.06);
 }
 
-/* .section-subtitle {
-    font-size: 1.25rem;
-    color: var(--s-gray-600);
-    max-width: 800px;
-    margin: 0 auto;
-} */
+.about-rail-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--s-gray-900);
+  font-family: "Science Gothic", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
 
-/* Fade-in Animation */
+.about-rail-item p {
+  font-size: 0.95rem;
+  line-height: 1.72;
+}
+
+/* Human-centered section */
+.about-human-panel {
+  padding: 36px 38px;
+  overflow: hidden;
+}
+
+.about-human-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.about-human-kicker {
+  margin-bottom: 14px;
+  font-size: 0.82rem;
+}
+
+.about-human-title {
+  max-width: 12ch;
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 0.96;
+  letter-spacing: -0.055em;
+}
+
+.about-human-head {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.about-human-body {
+  display: grid;
+  gap: 20px;
+  align-content: start;
+}
+
+.about-human-copy {
+  max-width: 52ch;
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+
+/* Recognition */
+.about-recognition-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.about-recognition-card {
+  overflow: hidden;
+}
+
+.about-recognition-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.about-recognition-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-recognition-overlay {
+  position: absolute;
+  inset: auto 18px 18px 18px;
+  display: flex;
+}
+
+.about-recognition-content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 18px;
+  align-items: center;
+  padding: 22px 22px 24px;
+}
+
+.about-recognition-logo-wrap {
+  width: 92px;
+  height: 92px;
+  border-radius: 22px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(16, 24, 40, 0.06);
+}
+
+.about-recognition-logo-wrap img {
+  width: auto;
+  height: auto;
+  max-width: 62px;
+  max-height: 42px;
+  object-fit: contain;
+}
+
+.about-recognition-copy h3 {
+  margin-bottom: 8px;
+  font-size: 1.45rem;
+  letter-spacing: -0.03em;
+}
+
+.about-recognition-copy p {
+  line-height: 1.7;
+}
+
+/* Journey timeline */
+.about-timeline {
+  display: grid;
+  gap: 22px;
+}
+
+.about-timeline-item {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  align-items: stretch;
+}
+
+.about-timeline-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.about-timeline-index {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--s-gray-900);
+  color: #fff;
+  font-family: "Science Gothic", sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+.about-timeline-line {
+  width: 1px;
+  flex: 1;
+  min-height: 72px;
+  margin-top: 10px;
+  background: linear-gradient(180deg, rgba(16, 24, 40, 0.18), rgba(16, 24, 40, 0.03));
+}
+
+.about-timeline-card {
+  padding: 30px 30px 28px;
+}
+
+.about-timeline-head {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 18px;
+  align-items: start;
+  margin-bottom: 18px;
+}
+
+.about-timeline-title {
+  margin-bottom: 6px;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+.about-timeline-copy {
+  max-width: 68ch;
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+/* Core philosophy */
+.about-core-card {
+  min-height: 100%;
+  padding: 28px;
+  overflow: hidden;
+}
+
+.about-core-number {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  color: rgba(0, 102, 204, 0.08);
+  font-family: "Science Gothic", sans-serif;
+  font-size: 3.4rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.about-core-head {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 18px;
+  align-items: start;
+  margin-bottom: 18px;
+}
+
+.about-core-card .s-icon-lg {
+  margin-bottom: 0;
+}
+
+.about-core-card h3 {
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+  letter-spacing: -0.035em;
+}
+
+.about-core-card p {
+  line-height: 1.8;
+}
+
+/* Founder */
+.about-founder-panel {
+  overflow: hidden;
+}
+
+.about-founder-grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.85fr) minmax(0, 1.15fr);
+  align-items: stretch;
+}
+
+.about-founder-visual {
+  position: relative;
+  min-height: 100%;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(0, 102, 204, 0.16), transparent 32%),
+    linear-gradient(145deg, #edf4fb 0%, #dfeaf7 100%);
+}
+
+.about-founder-visual-inner {
+  position: relative;
+  height: 100%;
+  min-height: 420px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.about-founder-monogram {
+  font-family: "Science Gothic", sans-serif;
+  font-size: clamp(4.5rem, 10vw, 8.5rem);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.08em;
+  color: rgba(16, 24, 40, 0.12);
+}
+
+.about-founder-content {
+  padding: 36px;
+  display: grid;
+  align-content: center;
+  gap: 18px;
+}
+
+.about-founder-head {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.about-founder-name {
+  margin-bottom: 4px;
+  font-size: clamp(1.8rem, 2.2vw, 2.4rem);
+}
+
+.about-founder-role {
+  color: var(--s-primary);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.about-founder-content p {
+  max-width: 58ch;
+  line-height: 1.86;
+}
+
+/* Quote */
+.about-quote-section {
+  padding: 0 0 5rem;
+}
+
+.about-quote-box {
+  padding: 42px 30px;
+  overflow: hidden;
+}
+
+.about-quote-mark {
+  display: block;
+  margin-bottom: 10px;
+  font-family: "Science Gothic", sans-serif;
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 0.8;
+  color: rgba(0, 102, 204, 0.18);
+}
+
+.about-quote-text {
+  margin-inline: auto;
+  max-width: 28ch;
+  font-size: clamp(1.5rem, 3vw, 2.45rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+/* Icons */
+.about-panel .s-icon-xl,
+.about-core-card .s-icon-lg {
+  flex-shrink: 0;
+}
+
+.about-panel .s-icon-xl {
+  box-shadow:
+    0 10px 24px rgba(0, 102, 204, 0.14),
+    0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+/* Reveal */
 .fade-in {
   opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s ease;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .fade-in.visible {
@@ -184,89 +701,239 @@
   transform: translateY(0);
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   RESPONSIVE DESIGN
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-@media (max-width: 992px) {
-  .philosophy-grid {
-    gap: 30px;
+/* Tablet */
+@media (max-width: 991.98px) {
+  .about-principles-layout,
+  .about-core-grid {
+    gap: 20px;
   }
 
-  .philosophy-card-floating {
-    padding: 40px;
-    min-height: 380px;
+  .about-panel--mission,
+  .about-panel--vision,
+  .about-panel--approach,
+  .about-core-card {
+    grid-column: 1 / -1;
+  }
+
+  .about-human-grid,
+  .about-founder-grid,
+  .about-recognition-grid,
+  .about-panel-approach-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-panel-shell {
+    padding: 28px;
+    border-radius: 24px;
+  }
+
+  .about-panel--approach .about-panel-shell {
+    padding: 0;
+  }
+
+  .about-panel-approach-main {
+    padding: 30px 28px 22px;
+  }
+
+  .about-panel-approach-main::after {
+    top: auto;
+    right: 28px;
+    bottom: 0;
+    left: 28px;
+    width: auto;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 102, 204, 0),
+      rgba(0, 102, 204, 0.14),
+      rgba(0, 102, 204, 0)
+    );
+  }
+
+  .about-panel-approach-rail {
+    padding: 12px 20px 20px;
+  }
+
+  .about-panel-copy,
+  .about-human-title {
+    max-width: none;
+  }
+
+  .about-human-panel {
+    padding: 30px 24px;
+  }
+
+  .about-founder-content {
+    padding: 30px 24px;
+  }
+
+  .about-founder-visual-inner {
+    min-height: 280px;
+  }
+
+  .about-timeline-item {
+    grid-template-columns: 64px minmax(0, 1fr);
   }
 }
 
-@media (max-width: 768px) {
-  .philosophy-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+/* Mobile */
+@media (max-width: 767.98px) {
+  .about-panel-shell,
+  .about-human-panel,
+  .about-founder-panel,
+  .about-quote-box,
+  .about-timeline-card,
+  .about-recognition-card,
+  .about-core-card {
+    border-radius: 22px;
   }
 
-  .philosophy-grid .philosophy-card-floating {
-    margin-top: 0 !important;
-    min-height: 350px;
+  .about-panel-shell {
+    padding: 22px;
   }
 
-  .philosophy-card-floating {
-    padding: 35px;
-  }
-
-  .float-icon-top {
-    top: -15px;
-    right: -15px;
-    font-size: 1.5rem;
-  }
-
-  .float-icon-bottom {
-    bottom: -15px;
-    left: -15px;
-    font-size: 1.5rem;
-  }
-
-  .philosophy-icon {
-    font-size: 3rem;
+  .about-panel-head {
+    gap: 14px;
     margin-bottom: 20px;
   }
 
-  .philosophy-title {
-    font-size: 1.6rem;
-    margin-bottom: 15px;
+  .about-panel-kicker {
+    margin-bottom: 8px;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
   }
 
-  .philosophy-text {
-    font-size: 1rem;
-    line-height: 1.7;
+  .about-panel-title {
+    font-size: 1.45rem;
   }
 
-  .section-title {
-    font-size: 2.5rem;
+  .about-panel-copy,
+  .about-human-copy,
+  .about-timeline-copy,
+  .about-core-card p,
+  .about-founder-content p {
+    font-size: 0.95rem;
+    line-height: 1.72;
   }
 
-  .section-subtitle {
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .philosophy-card-floating {
-    padding: 30px;
-    min-height: 320px;
+  .about-panel-foot {
+    margin-top: 24px;
   }
 
-  .philosophy-title {
-    font-size: 1.4rem;
+  .about-panel-foot span,
+  .about-human-points span {
+    font-size: 0.8rem;
   }
 
-  .philosophy-text {
+  .about-panel-mark {
+    top: 16px;
+    right: 18px;
+    font-size: 2.4rem;
+  }
+
+  .about-panel--approach .about-panel-shell {
+    padding: 0;
+  }
+
+  .about-panel-approach-main {
+    padding: 24px 22px 18px;
+  }
+
+  .about-panel-approach-rail {
+    padding: 8px 14px 14px;
+  }
+
+  .about-rail-item {
+    padding: 16px 10px;
+    border-radius: 16px;
+  }
+
+  .about-rail-label {
+    margin-bottom: 8px;
     font-size: 0.95rem;
   }
 
-  .float-icon-top,
-  .float-icon-bottom {
+  .about-rail-item p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+
+  .about-human-panel {
+    padding: 24px 18px;
+  }
+
+  .about-human-grid {
+    gap: 20px;
+  }
+
+  .about-human-title {
+    font-size: 1.75rem;
+  }
+
+  .about-recognition-content {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .about-recognition-logo-wrap {
+    width: 76px;
+    height: 76px;
+    border-radius: 18px;
+  }
+
+  .about-timeline-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .about-timeline-rail {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 12px;
+    padding-top: 0;
+  }
+
+  .about-timeline-line {
+    width: 48px;
+    height: 1px;
+    min-height: 1px;
+    margin-top: 0;
+  }
+
+  .about-timeline-card {
+    padding: 22px 18px;
+  }
+
+  .about-timeline-head {
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .about-core-card {
+    padding: 22px 18px;
+  }
+
+  .about-core-card h3 {
     font-size: 1.3rem;
   }
-}
 
+  .about-founder-visual-inner {
+    min-height: 220px;
+    padding: 20px 18px;
+  }
+
+  .about-founder-content {
+    padding: 24px 18px;
+    gap: 14px;
+  }
+
+  .about-quote-box {
+    padding: 30px 18px;
+  }
+
+  .about-quote-text {
+    max-width: 100%;
+    font-size: 1.45rem;
+    line-height: 1.12;
+  }
+}

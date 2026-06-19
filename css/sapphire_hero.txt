@@ -151,7 +151,7 @@
   aspect-ratio: 16 / 9;
   background: var(--sh-bg);
   border: 1px solid var(--sh-border);
-  border-radius: 4px;
+  border-radius: 20px;
   overflow: hidden;
   box-shadow:
     0 30px 70px -30px rgba(0, 102, 204, 0.18),
@@ -1227,6 +1227,10 @@
     font-size: 12px;
     gap: 6px;
   }
+
+  .sh-demo-frame {
+    border-radius: 18px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -1276,6 +1280,7 @@
   }
 
   .sh-demo-frame {
+    border-radius: 16px;
     box-shadow:
       0 32px 60px -24px rgba(0, 102, 204, 0.18),
       0 18px 32px -24px rgba(0, 0, 0, 0.18);
@@ -1369,6 +1374,7 @@
   }
 
   .sh-demo-frame {
+    border-radius: 12px;
     aspect-ratio: 16 / 11;
   }
 
@@ -1479,6 +1485,10 @@
     padding: 5px 8px;
     font-size: 11px;
     gap: 5px;
+  }
+
+  .sh-demo-frame {
+    border-radius: 10px;
   }
 
   .sh-prop-grid,
@@ -2538,11 +2548,13 @@
 }
 
 .sh-rep-table-wrap{
-  height:calc(100% - 86px);
+  height:calc(100% - 0px);
   overflow:hidden;
   border-radius:16px;
   border:1px solid rgba(0,102,204,.28);
   background:#f5f5f5;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+  position:relative;
 }
 
 .sh-rep-table-wrap .sh-act-card{

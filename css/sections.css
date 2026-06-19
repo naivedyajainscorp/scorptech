@@ -10,8 +10,8 @@
   left: 0;
   right: 0;
   margin: 1rem 2rem;
-  padding: 0.5rem 1rem;
-  border-radius: var(--s-radius-lg);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--s-radius-xs);
   background: rgba(255, 255, 255, 0.72) !important;
   backdrop-filter: blur(32px) saturate(200%);
   -webkit-backdrop-filter: blur(32px) saturate(200%);
@@ -54,7 +54,7 @@
 .s-brand-logo {
   width: 44px;
   height: 44px;
-  border-radius: var(--s-radius-sm);
+  border-radius: var(--s-radius-xs);
   background: var(--s-gradient-primary);
   display: flex;
   align-items: center;
@@ -96,13 +96,13 @@
   display: flex !important;
   align-items: center;
   gap: 0.55rem;
-  padding: 0.7rem 1.15rem !important;
+  padding: 0.5rem 1.15rem !important;
   color: var(--s-primary) !important;
   text-decoration: none !important;
   font-family: "Science Gothic", sans-serif !important;
   font-weight: 600;
-  font-size: 0.95rem;
-  border-radius: var(--s-radius-lg);
+  font-size: 1rem;
+  border-radius: var(--s-radius-xs);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -300,14 +300,13 @@
   backdrop-filter: blur(28px) saturate(200%) !important;
   -webkit-backdrop-filter: blur(28px) saturate(200%) !important;
   border: 1.5px solid rgba(255, 255, 255, 0.95) !important;
-  border-radius: var(--s-radius-md) !important;
+  border-radius: var(--s-radius-xs) !important;
   padding: 0.6rem !important;
   box-shadow:
     0 14px 48px rgba(0, 102, 204, 0.24),
     inset 0 1px 0 rgba(255, 255, 255, 1) !important;
   margin-top: 0.5rem !important;
   display: none;
-  /* 🫡 FIXED: Was 'display: block' - no ghost space */
   visibility: hidden;
   opacity: 0;
   transform: translateY(-12px) scale(0.96);
@@ -336,12 +335,14 @@
   padding: 0.8rem 1.1rem !important;
   color: var(--s-primary) !important;
   text-decoration: none !important;
-  border-radius: var(--s-radius-sm) !important;
+  border-radius: var(--s-radius-xs) !important;
   font-weight: 600;
   font-size: 0.95rem;
   transition: var(--s-transition-smooth);
   margin-bottom: 0.3rem;
   position: relative;
+  font-family: "Science Gothic", sans-serif;
+  text-shadow: var(--s-text-drop-shadow);
 }
 
 .s-internal-menu-item:last-child {
@@ -413,7 +414,7 @@
   position: relative;
 }
 
-/* 🫡 TR-4 FIXED: Button height matches Book Demo (48px) */
+
 .s-sapphire-trigger {
   display: flex !important;
   align-items: center;
@@ -423,20 +424,20 @@
   background: var(--s-gradient-primary) !important;
   color: white !important;
   border: none !important;
-  border-radius: var(--s-radius-md) !important;
+  border-radius: var(--s-radius-xs) !important;
   font-weight: 700;
   font-size: 0.95rem;
   font-family: "Science Gothic", sans-serif;
   cursor: pointer;
   transition: var(--s-transition-smooth);
-  box-shadow: 0 5px 18px rgba(0, 102, 204, 0.35);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18), 0 2px 6px rgba(0, 0, 0, 0.10);
   white-space: nowrap !important;
 }
 
 .s-sapphire-trigger:hover,
 .s-sapphire-trigger:focus {
   transform: translateY(-3px);
-  box-shadow: 0 8px 28px rgba(0, 102, 204, 0.5) !important;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.24), 0 3px 8px rgba(0, 0, 0, 0.12) !important;
   background: var(--s-gradient-primary) !important;
   color: white !important;
 }
@@ -445,10 +446,8 @@
   display: none !important;
 }
 
-/* 🫡 TR-4 FIXED: Logo reduced from 36px to 32px */
 .s-sapphire-logo {
   width: 32px;
-  /* 🫡 FIXED: Reduced from 36px */
   height: 32px;
   flex-shrink: 0;
   display: flex;
@@ -461,21 +460,19 @@
   transform: rotate(180deg) scale(1.12);
 }
 
-/* 🫡 TR-1 FIXED: Sapphire Dropdown Menu - No Ghost Spacing */
 .s-sapphire-menu {
   min-width: 220px !important;
   background: rgba(255, 255, 255, 0.94) !important;
   backdrop-filter: blur(28px) saturate(200%) !important;
   -webkit-backdrop-filter: blur(28px) saturate(200%) !important;
   border: 1.5px solid rgba(255, 255, 255, 0.95) !important;
-  border-radius: var(--s-radius-md) !important;
+  border-radius: var(--s-radius-xs) !important;
   padding: 0.6rem !important;
   box-shadow:
     0 14px 48px rgba(0, 102, 204, 0.24),
     inset 0 1px 0 rgba(255, 255, 255, 1) !important;
   margin-top: 0.5rem !important;
   display: none;
-  /* 🫡 FIXED: No ghost spacing */
   visibility: hidden;
   opacity: 0;
   transform: translateY(-12px) scale(0.96);
@@ -489,7 +486,6 @@
 /* 🫡 TR-2 FIXED: Click-based toggle only */
 .s-sapphire-menu.show {
   display: block;
-  /* 🫡 Only visible when .show class added by JS */
   visibility: visible;
   opacity: 1;
   transform: translateY(0) scale(1);
@@ -508,6 +504,7 @@
   font-size: 0.95rem;
   transition: var(--s-transition-smooth);
   margin-bottom: 0.3rem;
+  font-family: "Science Gothic", sans-serif;
 }
 
 .s-sapphire-menu-item:last-child {
@@ -529,27 +526,24 @@
   transform: scale(1.2) rotate(10deg);
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   BOOK DEMO BUTTON - TR-4 Fixed (Equal Height with Sapphire)
-   ═══════════════════════════════════════════════════════════════ */
+
 .book-demo-button {
   display: flex !important;
   align-items: center;
   gap: 0.65rem;
   padding: 0.6rem 1.1rem !important;
   min-height: 52px;
-  /* 🫡 FIXED: Equal height with Sapphire trigger */
   background: var(--s-gradient-success) !important;
   color: white !important;
   border: none !important;
-  border-radius: var(--s-radius-md) !important;
+  border-radius: var(--s-radius-xs) !important;
   font-family: "Science Gothic", sans-serif !important;
   font-weight: 700;
   font-size: 0.95rem;
   line-height: inherit;
   cursor: pointer;
   transition: var(--s-transition-smooth);
-  box-shadow: 0 5px 18px rgba(22, 163, 74, 0.35);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18), 0 2px 6px rgba(0, 0, 0, 0.10);
   text-decoration: none !important;
   white-space: nowrap !important;
   width: 100%;
@@ -558,7 +552,7 @@
 .book-demo-button:hover,
 .book-demo-button:focus {
   transform: translateY(-3px);
-  box-shadow: 0 8px 28px rgba(22, 163, 74, 0.5) !important;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.24), 0 3px 8px rgba(0, 0, 0, 0.12) !important;
   background: var(--s-gradient-success) !important;
   color: white !important;
 }
@@ -573,7 +567,7 @@
   transform: scale(1.15) rotate(-10deg);
 }
 
-/* Already-active feedback (shake + subtle emphasis) */
+
 @keyframes s-shake {
   0% {
     transform: translateX(0);

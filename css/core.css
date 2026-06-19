@@ -565,7 +565,7 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
 /* ─────────────────────────────────────────────────────────────────────────────
    2.1 Heading Styles (Science Gothic)
    ───────────────────────────────────────────────────────────────────────────── */
-h1, h2, h3, h4, h5, h6 { font-family: "Science Gothic", "Noto Sans Devanagari", sans-serif; font-weight: var(--s-font-extrabold); font-style: italic; line-height: var(--s-leading-tight); padding-right: 0.15em; margin-right: -0.15em; margin-top: 0; margin-bottom: 0; }
+h1, h2, h3, h4, h5, h6 { font-family: "Science Gothic", "Noto Sans Devanagari", sans-serif; font-weight: var(--s-font-extrabold); line-height: var(--s-leading-tight); padding-right: 0.15em; margin-right: -0.15em; margin-top: 0; margin-bottom: 0; }
 h1 { font-size: clamp(2.5rem, 5vw, var(--s-text-6xl)); margin-bottom: var(--s-space-8); }
 h2 { font-size: clamp(2rem, 4vw, var(--s-text-5xl)); margin-bottom: var(--s-space-6); }
 h3 { font-size: clamp(1.5rem, 3vw, var(--s-text-4xl)); margin-bottom: var(--s-space-5); }

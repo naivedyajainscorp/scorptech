@@ -5,7 +5,7 @@
 .demo-form-card {
   outline: 1px solid var(--s-primary);
   outline-offset: -1px; /* Keeps it inside the card */
-  border-radius: var(--s-radius-lg);
+  border-radius: var(--s-radius-xs);
   background: var(--s-white);
   overflow: visible;
   box-shadow: var(--s-shadow-lg) !important;
@@ -31,6 +31,7 @@
   justify-content: center;
   gap: 1rem;
 }
+
 
 /* Fieldset Legend */
 .fieldset-legend {
@@ -58,7 +59,7 @@
   gap: 0.5rem;
   padding: 0.75rem 1.25rem;
   border: 0;
-  border-radius: var(--s-radius-sm);
+  border-radius: var(--s-radius-xs);
   color: var(--s-white);
   background: linear-gradient(135deg, var(--s-primary), var(--s-primary-light));
   box-shadow:
@@ -165,16 +166,16 @@ fieldset {
 .radio-option, .checkbox-option {
   background: var(--s-white);
   border: 1px solid var(--s-primary);
-  border-radius: var(--s-radius-md);
-  padding: 0.5rem .5rem;
+  border-radius: var(--s-radius-xs);
+  padding: 0.5rem;
   cursor: pointer;
   transition: var(--s-transition-fast);
   display: flex;
   align-items: center;
   gap: 0.75rem;
   margin: 0.25rem;
-  min-height: 60px;
-  width: calc(100% - 0.5rem);
+  min-height: 42px;
+  width: calc(100% - 1rem);
   position: relative;
 }
 
@@ -191,6 +192,10 @@ fieldset {
   scale: 1.2 !important;
   accent-color: var(--s-primary);
   border: 0.5px solid var(--s-primary);
+}
+
+.checkbox-option input[type="checkbox"] {
+  border-radius: 2px !important;
 }
 
 /* Label styling */

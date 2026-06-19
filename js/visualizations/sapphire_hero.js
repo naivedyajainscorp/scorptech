@@ -8,7 +8,7 @@
   'use strict';
 
   const DESIGN_W = 1440;
-  const DESIGN_H = 760;
+  const DESIGN_H = 800;
   const CYCLE_MS = 145000;
 
   const ICON = {
@@ -716,7 +716,7 @@
     <td>Toolkit</td>
     <td>Body Shop</td>
     <td>B2BS1R8C3</td>
-    <td><span class="sh-rep-pill sh-rep-pill--success sh-rep-condition-pill">Incomplete Kit</span></td>
+    <td><span class="sh-rep-pill sh-rep-pill--warning sh-rep-condition-pill">Incomplete Kit</span></td>
     <td><span class="sh-rep-pill sh-rep-pill--success sh-rep-status-pill">Available</span></td>
   </tr>
 
@@ -2020,7 +2020,7 @@
             tableScreen.setAttribute('aria-hidden', 'true');
           }
           this.clearTimers();
-          this.switchScene(this.currentScene);
+          this.runDesktopLoop();
         }, MAINTENDT + 720);
 
         /* ============================================================
@@ -2456,179 +2456,8 @@
             tableScreen.setAttribute('aria-hidden', 'true');
           }
           this.clearTimers();
-          this.switchScene(this.currentScene);
-        }, MAINT_END_T + 650);
-      }
-    },
-
-    mobile: {
-      id: 'mobile',
-      title: 'Mobile',
-      subtitle: 'Approvals & Field Flow',
-      icon: '📱',
-      render() {
-        return `
-          <div class="sh-mobile-scene">
-            <div class="sh-phone">
-              <div class="sh-phone-screen">
-                <div class="sh-phone-status"><span>9:41</span><span>5G · 100%</span></div>
-                <div class="sh-phone-screen-inner">
-                  <div class="sh-phone-app-bar">
-                    <div class="sh-phone-app-logo">S</div>
-                    <div class="sh-phone-app-title">Sapphire Mobile</div>
-                  </div>
-                  <div class="sh-notification"><div class="sh-notif-header"><span class="sh-notif-app">Sapphire</span><span>just now</span></div><div class="sh-notif-title">Work order raised</div><div class="sh-notif-desc">WO-2026-0892 needs approval and inspection scheduling.</div></div>
-                  <div class="sh-notification"><div class="sh-notif-header"><span class="sh-notif-app">Sapphire</span><span>+12 sec</span></div><div class="sh-notif-title">Inspection assigned</div><div class="sh-notif-desc">Arjun Mehta assigned for pre-repair inspection at CNC-04.</div></div>
-                  <div class="sh-notification"><div class="sh-notif-header"><span class="sh-notif-app">Sapphire</span><span>+28 sec</span></div><div class="sh-notif-title">Approval completed</div><div class="sh-notif-desc">Supervisor approved parts issue and maintenance booking.</div></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="sh-mobile-info-panel">
-              <div class="sh-mip-title">${ICON.workorder} Approval Cascade</div>
-              <div class="sh-mip-step"><div class="sh-mip-num">1</div><div class="sh-mip-step-text"><div class="sh-mip-step-title">Work order created</div><div class="sh-mip-step-desc">Machine fault logged from production floor.</div></div></div>
-              <div class="sh-mip-step"><div class="sh-mip-num">2</div><div class="sh-mip-step-text"><div class="sh-mip-step-title">Manager notified</div><div class="sh-mip-step-desc">Approver receives mobile alert instantly.</div></div></div>
-              <div class="sh-mip-step"><div class="sh-mip-num">3</div><div class="sh-mip-step-text"><div class="sh-mip-step-title">Inspection triggered</div><div class="sh-mip-step-desc">Field technician gets checklist and schedule.</div></div></div>
-              <div class="sh-mip-step"><div class="sh-mip-num">4</div><div class="sh-mip-step-text"><div class="sh-mip-step-title">Status synced</div><div class="sh-mip-step-desc">Dashboard reflects approval and action state.</div></div></div>
-            </div>
-
-            <div class="sh-phone">
-              <div class="sh-phone-screen">
-                <div class="sh-phone-status"><span>9:42</span><span>5G · 98%</span></div>
-                <div class="sh-phone-screen-inner">
-                  <div class="sh-phone-app-bar">
-                    <div class="sh-phone-app-logo">S</div>
-                    <div class="sh-phone-app-title">Inspection App</div>
-                  </div>
-                  <div class="sh-notification"><div class="sh-notif-header"><span class="sh-notif-app">Checklist</span><span>live</span></div><div class="sh-notif-title">Pre-repair checklist opened</div><div class="sh-notif-desc">Technician captured wear status, seal condition, and image proof.</div></div>
-                  <div class="sh-notification"><div class="sh-notif-header"><span class="sh-notif-app">Maintenance</span><span>synced</span></div><div class="sh-notif-title">Repair plan linked</div><div class="sh-notif-desc">Parts and task sheet linked back to the central system.</div></div>
-                </div>
-              </div>
-            </div>
-          </div>`;
-      },
-      animate(ctx) {
-        const { schedule, qsa, qs } = ctx;
-        const phones = qsa('.sh-phone');
-        const notices = qsa('.sh-notification');
-        const steps = qsa('.sh-mip-step');
-        const panel = qs('.sh-mobile-info-panel');
-
-        phones.forEach((phone, i) => schedule(() => phone.classList.add('visible'), 300 + i * 400));
-        schedule(() => panel && panel.classList.add('visible'), 900);
-
-        notices.forEach((note, i) => schedule(() => note.classList.add('visible'), 1400 + i * 500));
-
-        steps.forEach((step, i) => {
-          schedule(() => step.classList.add('active'), 1800 + i * 900);
-          if (i > 0) schedule(() => steps[i - 1].classList.add('complete'), 1800 + i * 900);
-        });
-
-        if (steps.length) {
-          schedule(() => steps[steps.length - 1].classList.add('complete'), 1800 + steps.length * 900);
-        }
-      }
-    },
-
-    analytics: {
-      id: 'analytics',
-      title: 'Analytics',
-      subtitle: 'Live Insights',
-      icon: '📊',
-      render() {
-        const heatCells = Array.from({ length: 40 }, (_, i) => {
-          const lvl = (i % 5) + 1;
-          return `<div class="sh-heat-cell lvl-${lvl}"></div>`;
-        }).join('');
-
-        const bars = [
-          { label: 'Procure', value: '₹8K', cls: 'positive', h: '70px' },
-          { label: 'Repair', value: '₹12K', cls: 'negative', h: '110px' },
-          { label: 'Inspect', value: '₹4K', cls: 'positive', h: '44px' },
-          { label: 'Downtime', value: '₹18K', cls: 'negative', h: '140px' },
-          { label: 'Recovery', value: '₹7K', cls: 'positive', h: '60px' }
-        ].map((b) => `
-          <div class="sh-wf-bar ${b.cls}" style="--sh-wf-h:${b.h}">
-            <div class="sh-wf-value">${b.value}</div>
-            <div class="sh-wf-bar-body"></div>
-            <div class="sh-wf-label">${b.label}</div>
-          </div>
-        `).join('');
-
-        const txns = [
-          ['procure', 'Bearing assembly issued', 'Inventory → CNC-04', '₹8,450', '2m ago', 'neg'],
-          ['maint', 'Maintenance task opened', 'WO-2026-0892', '₹12,000', '1m ago', 'neg'],
-          ['prod', 'Downtime recovery estimate', 'Shift B adjustment', '₹7,200', 'just now', 'pos'],
-          ['procure', 'Seal kit reserved', 'Stores allocation', '₹3,280', 'just now', 'neg']
-        ].map((t) => `
-          <div class="sh-txn">
-            <div class="sh-txn-icon ${t[0]}">${t[0] === 'procure' ? '📦' : t[0] === 'maint' ? '🔧' : '📈'}</div>
-            <div><div class="sh-txn-title">${t[1]}</div><div class="sh-txn-meta">${t[2]}</div></div>
-            <div class="sh-txn-amount ${t[5]}">${t[3]}</div>
-            <div class="sh-txn-time">${t[4]}</div>
-          </div>
-        `).join('');
-
-        return `
-          <div class="sh-analytics">
-            <div class="sh-analytics-head">
-              <div class="sh-analytics-title">Financial & Operational Analytics</div>
-              <div class="sh-analytics-tabs">
-                <div class="sh-a-tab active">Today</div>
-                <div class="sh-a-tab">Week</div>
-                <div class="sh-a-tab">Month</div>
-              </div>
-            </div>
-
-            <div class="sh-heatmap-card">
-              <div class="sh-card-h">
-                <div class="sh-card-h-title">Module Activity Heatmap</div>
-                <div class="sh-card-h-sub">Live intensity</div>
-              </div>
-              <div class="sh-heatmap">${heatCells}</div>
-            </div>
-
-            <div class="sh-waterfall-card">
-              <div class="sh-card-h">
-                <div class="sh-card-h-title">Cost Waterfall</div>
-                <div class="sh-card-h-sub">Repair event impact</div>
-              </div>
-              <div class="sh-waterfall">${bars}</div>
-            </div>
-
-            <div class="sh-transactions-card">
-              <div class="sh-card-h">
-                <div class="sh-card-h-title">Recent Transactions</div>
-                <div class="sh-card-h-sub">Auto-posted from operations</div>
-              </div>
-              <div class="sh-txn-list">${txns}</div>
-            </div>
-          </div>`;
-      },
-      animate(ctx) {
-        const { schedule, qs, qsa } = ctx;
-        const heatCard = qs('.sh-heatmap-card');
-        const wfCard = qs('.sh-waterfall-card');
-        const txnCard = qs('.sh-transactions-card');
-        const heatCells = qsa('.sh-heat-cell');
-        const bars = qsa('.sh-wf-bar');
-        const txns = qsa('.sh-txn');
-
-        schedule(() => heatCard && heatCard.classList.add('visible'), 300);
-        schedule(() => wfCard && wfCard.classList.add('visible'), 600);
-        schedule(() => txnCard && txnCard.classList.add('visible'), 900);
-
-        heatCells.forEach((cell, i) => schedule(() => cell.classList.add('visible'), 1100 + i * 40));
-        schedule(() => {
-          [4, 11, 18, 26, 33].forEach((i) => heatCells[i] && heatCells[i].classList.add('pulse'));
-        }, 3200);
-
-        bars.forEach((bar, i) => {
-          schedule(() => bar.classList.add('visible'), 1500 + i * 180);
-          schedule(() => bar.classList.add('grow'), 1800 + i * 180);
-        });
-
-        txns.forEach((txn, i) => schedule(() => txn.classList.add('visible'), 2400 + i * 180));
+          this.runDesktopLoop();
+        }, MAINTENDT + 720);
       }
     }
   };
@@ -2638,71 +2467,41 @@
       this.container = typeof sel === 'string' ? document.querySelector(sel) : sel;
       if (!this.container || this.container.dataset.shInitialized === 'true') return this;
       this.container.dataset.shInitialized = 'true';
-      this.currentScene = null;
+      this.currentScene = 'desktop';
       this.timeouts = [];
       this.resizeObserver = null;
-      this.defaultScene = opts.defaultScene || 'desktop';
 
-      this.renderShell();
-      this.attachTabHandlers();
+      this.renderDesktopOnly();
       this.setupResize();
       this.handleVisibility();
-      this.switchScene(this.defaultScene);
+      this.runDesktopLoop();
 
       return this;
     },
 
-    renderShell() {
-      const tabsHtml = Object.values(SCENES).map(s => `
-        <button class="sh-tab" data-sh-scene="${s.id}">
-          <span class="sh-tab-icon">${s.icon}</span>
-          <span>${s.title}</span>
-        </button>
-      `).join('');
-
+    renderDesktopOnly() {
       this.container.innerHTML = `
-        <div class="sapphire-hero-viz">
-          <div class="sh-topnav">
-            <div class="sh-topnav-brand">
-              <div class="sh-topnav-logo">S</div>
-              <span>Sapphire Live Demo</span>
-            </div>
-            <div class="sh-topnav-tabs">${tabsHtml}</div>
-            <div class="sh-topnav-status">
-              <span class="sh-live-indicator"></span>
-              <span>Live Preview</span>
-            </div>
+        <div class="sh-demo-frame">
+          <div class="sh-viewport">
+            <div class="sh-canvas" data-sh-canvas></div>
           </div>
-
-          <div class="sh-demo-frame">
-            <div class="sh-viewport">
-              <div class="sh-canvas" data-sh-canvas></div>
-            </div>
-          </div>
-        </div>`;
-    },
-
-    attachTabHandlers() {
-      this.container.querySelectorAll('[data-sh-scene]').forEach(btn => {
-        btn.addEventListener('click', () => this.switchScene(btn.dataset.shScene));
-      });
-    },
-
-    switchScene(sceneId) {
-      const scene = SCENES[sceneId];
-      if (!scene) return;
-
-      this.clearTimers();
-      this.currentScene = sceneId;
-
-      this.container.querySelectorAll('.sh-tab').forEach(t => {
-        t.classList.toggle('active', t.dataset.shScene === sceneId);
-      });
+        </div>
+      `;
 
       const canvas = this.container.querySelector('[data-sh-canvas]');
       if (!canvas) return;
 
-      canvas.innerHTML = scene.render();
+      canvas.innerHTML = SCENES.desktop.render();
+      this.scaleCanvas();
+    },
+
+    runDesktopLoop() {
+      this.clearTimers();
+
+      const canvas = this.container.querySelector('[data-sh-canvas]');
+      if (!canvas) return;
+
+      canvas.innerHTML = SCENES.desktop.render();
       this.scaleCanvas();
 
       const ctx = {
@@ -2711,10 +2510,10 @@
         qsa: (sel) => canvas.querySelectorAll(sel)
       };
 
-      scene.animate.call(this, ctx);
+      SCENES.desktop.animate.call(this, ctx);
 
       this.timeouts.push(setTimeout(() => {
-        if (this.currentScene === sceneId) this.switchScene(sceneId);
+        this.runDesktopLoop();
       }, CYCLE_MS));
     },
 
@@ -2756,14 +2555,14 @@
     },
 
     handleVisibility() {
-      this._boundVisibility = () => {
+      this.boundVisibility = () => {
         if (document.hidden) {
           this.clearTimers();
-        } else if (this.currentScene) {
-          this.switchScene(this.currentScene);
+        } else {
+          this.runDesktopLoop();
         }
       };
-      document.addEventListener('visibilitychange', this._boundVisibility);
+      document.addEventListener('visibilitychange', this.boundVisibility);
     },
 
     destroy() {
@@ -2771,7 +2570,7 @@
       if (this.resizeObserver) this.resizeObserver.disconnect();
       if (this._boundResize) window.removeEventListener('resize', this._boundResize);
       if (this._boundLoad) window.removeEventListener('load', this._boundLoad);
-      if (this._boundVisibility) document.removeEventListener('visibilitychange', this._boundVisibility);
+      if (this.boundVisibility) document.removeEventListener('visibilitychange', this.boundVisibility);
 
       if (this.container) {
         this.container.innerHTML = '';
@@ -2781,7 +2580,7 @@
   };
 
   root.SapphireHero = {
-    init: (sel, opts) => {
+    init(sel, opts = {}) {
       const instance = Object.create(Engine);
       instance.init(sel, opts);
       return instance;
@@ -2790,8 +2589,7 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('[data-sapphire-hero-viz]').forEach(el => {
-      const scene = el.getAttribute('data-sapphire-hero-viz') || 'desktop';
-      root.SapphireHero.init(el, { defaultScene: scene });
+      root.SapphireHero.init(el);
     });
   });
 })(typeof window !== 'undefined' ? window : this);

@@ -221,20 +221,19 @@
 ═══════════════════════════════════════════════════════════════ */
 .intel-snav {
   position: sticky;
-  top: 88px;
+  top: 80px;
   margin-top: 0.5rem;
   z-index: var(--s-z-sticky);
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+background: linear-gradient(to bottom, #ffffff, #f4f7fa);
+border-bottom: 1px solid rgba(0, 102, 204, 0.1);
   box-shadow: var(--s-shadow-lg);
   margin-left: 5vw;
   margin-right: 5vw;
-  border-radius: var(--s-radius-lg);
+  border-radius: var(--s-radius-xs);
   opacity: 0;
   pointer-events: none;
-  /* transform: translateY(-20px); */
-  /* transition: opacity 0.4s ease, transform 0.4s ease, pointer-events 0.4s ease; */
+  transform: translateY(-20px);
+  transition: opacity 0.4s ease, transform 0.4s ease, pointer-events 0.4s ease;
   transform: translateY(-16px) scale(0.96);
   filter: blur(6px);
   transform-origin: top center;
@@ -269,7 +268,7 @@
   align-items: center;
   gap: 0.45rem;
   padding: 0.45rem 0.9rem;
-  border-radius: var(--s-radius-full);
+  border-radius: var(--s-radius-xs);
   color: var(--s-gray-600);
   text-decoration: none;
   font-size: 0.82rem;
@@ -279,7 +278,7 @@
   cursor: pointer;
 }
 .intel-snav-item:hover {
-  background: var(--s-gray-100);
+  background: var(--s-gray-200);
   color: var(--s-gray-900);
 }
 .intel-snav-item.active {

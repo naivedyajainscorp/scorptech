@@ -1280,24 +1280,26 @@ html.scrollbar-visible ::-webkit-scrollbar-track {
 }
 
 .form-control {
-  border: 2px solid var(--s-primary);
-  border-radius: var(--s-radius-sm);
+  border: 1px solid var(--s-primary);
+  border-radius: var(--s-radius-xs);
   padding: 0.5rem;
   font-size: var(--s-text-base);
   font-weight: var(--s-font-medium);
   transition: var(--s-transition-fast);
-  background: var(--s-gray-50);
+  background: var(--s-gray-100);
   width: 100%;
   color: var(--s-text-primary);
+  font-family: verdana, sans-serif;
 }
 
 .form-control:hover,
 .form-select:hover {
-  border-color: var(--s-gray-900);
+  background: var(--s-white);
+  border: 1px solid var(--s-primary-dark);
 }
 
 .form-control:focus {
-  border-color: var(--s-primary);
+  border: 2px solid var(--s-primary-dark);
   box-shadow: 0 0 0 0.2rem rgba(0, 102, 204, 0.15);
   background: var(--s-white);
   outline: none;
@@ -1306,6 +1308,7 @@ html.scrollbar-visible ::-webkit-scrollbar-track {
 .form-control::placeholder {
   color: var(--s-gray-500);
   font-weight: var(--s-font-normal);
+  font-family: verdana, sans-serif;
 }
 
 /* Textarea specific */
@@ -1315,11 +1318,11 @@ textarea.form-control {
   line-height: var(--s-leading-relaxed);
 }
 
-/* form select - Default state (closed) with chevron down */
 .form-select {
   border: 2px solid var(--s-gray-400);
-  border-radius: var(--s-radius-md);
+  border-radius: var(--s-radius-xs);
   padding: 1rem 1.5rem;
+  font-family: verdana, sans-serif;
   font-size: var(--s-text-base);
   font-weight: var(--s-font-medium);
   transition: var(--s-transition-fast);
@@ -1328,8 +1331,6 @@ textarea.form-control {
   -webkit-appearance: none;
   -moz-appearance: none;
   cursor: pointer;
-
-  /* Chevron down icon (closed state) */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%230066cc' d='M8 11L3 6h10z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 1rem center;
@@ -1428,7 +1429,7 @@ textarea.form-control {
 .iti input,
 .iti input[type="tel"] {
   width: 100%;
-  border-radius: var(--s-radius-sm);
+  border-radius: var(--s-radius-xs);
   position: relative;
   z-index: 1;
 }
@@ -1533,12 +1534,18 @@ textarea.form-control {
 }
 
 .iti__selected-country-primary {
-  border-radius: var(--s-radius-md) 0 0 var(--s-radius-md);
-  border: none;
-  background: var(--s-gray-200);
+  border-radius: var(--s-radius-xs) 0 0 var(--s-radius-xs);
+  border: 1px solid var(--s-white);
+  background: var(--s-white);
   height: 96%;
-  margin-left: 1px;
+  left: 0;
   background: var(--s-neutral-100);
+}
+
+.iti__selected-country{
+  left: 0;
+  border-radius: var(--s-radius-xs) 0 0 var(--s-radius-xs);
+  font-family: verdana, sans-serif;
 }
 
 /* ─────────────────────────────────────────────────────────────────
